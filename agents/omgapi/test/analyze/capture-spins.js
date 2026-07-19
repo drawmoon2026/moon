@@ -14,7 +14,7 @@ const path = require('path');
 const https = require('https');
 
 const gid = process.argv[2] || '74';
-const COUNT = Math.min(parseInt(process.argv[3] || "30", 10), 3000);   // 硬上限 200,防误上量
+const COUNT = Math.min(parseInt(process.argv[3] || "30", 10), 20000);   // 硬上限 200,防误上量
 const gameCode = process.argv[4] || 'mahjong-ways-two';
 
 function req(method, host, p, body, headers) {
