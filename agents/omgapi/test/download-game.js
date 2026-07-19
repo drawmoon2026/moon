@@ -24,11 +24,11 @@ const puppeteer = require('puppeteer');
 const OUT_ROOT = path.join(__dirname, 'out');
 
 // 关键 boot 文件:缺任一 → 游戏无法启动,直接判 FAIL
+// (PG 用 Cocos 3.x:index.html + 各 bundle 的 config.*.json / index.*.js,无 application/project.js)
 const CRITICAL_PATTERNS = [
     /(^|\/)index\.html$/,
-    /(^|\/)(main|application|project)\.[0-9a-f]*\.?js$/,
     /assets\/main\/config\.[0-9a-f]+\.json$/,
-    /(^|\/)settings\.[0-9a-f]*\.?json$/,
+    /assets\/main\/index\.[0-9a-f]+\.js$/,
 ];
 
 // ---- 原子写(防中断留半截) ----
@@ -120,45 +120,71 @@ function decompressUuid(s) {
     return r.join('');
 }
 
-// ---- 解析 Cocos config,枚举资源全集(门槛的"应有") ----
-function collectFromConfig(configPath, baseDir) {
+// ---- 解析 Cocos config,枚举「真实资源」列表 ----
+// 每个真实资源返回一组候选 URL(压缩/解压 UUID 两种形式;native 试多种扩展名)。
+// 关键:一个资源只要任一候选 URL 命中就算「有」——所以候选是"或"关系,不能当独立资源计数,
+// 否则分母虚高(native ×7 扩展 + import ×2 形式)。omgapi 老逻辑把候选拉平成 URL 集,
+// 用作"下载尝试列表"没问题,但当作门槛分母就错了。
+function enumerateAssets(configPath, baseDir) {
     if (!fs.existsSync(configPath)) return [];
     const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
     const dir = path.dirname(configPath).replace(baseDir, '').replace(/^\//, '');
     const importBase = config.importBase || 'import';
     const nativeBase = config.nativeBase || 'native';
-    const urls = new Set();
+    const assets = [];
     const vi = config.versions?.import || [];
     for (let i = 0; i < vi.length; i += 2) {
         const ref = vi[i], hash = vi[i + 1];
+        const cand = [];
         if (typeof ref === 'string') {
-            urls.add(`/${dir}/${importBase}/${ref.substring(0, 2).toLowerCase()}/${ref}.${hash}.json`);
+            cand.push(`/${dir}/${importBase}/${ref.substring(0, 2).toLowerCase()}/${ref}.${hash}.json`);
         } else if (typeof ref === 'number' && hash) {
-            const cmp = config.uuids?.[ref];
-            if (!cmp) continue;
+            const cmp = config.uuids?.[ref]; if (!cmp) continue;
             const cmpClean = cmp.split('@')[0];
             const full = decompressUuid(cmpClean);
-            urls.add(`/${dir}/${importBase}/${cmpClean.substring(0, 2).toLowerCase()}/${cmpClean}.${hash}.json`);
-            if (full && full.includes('-')) {
-                urls.add(`/${dir}/${importBase}/${full.substring(0, 2).toLowerCase()}/${full}.${hash}.json`);
-            }
+            cand.push(`/${dir}/${importBase}/${cmpClean.substring(0, 2).toLowerCase()}/${cmpClean}.${hash}.json`);
+            if (full && full.includes('-')) cand.push(`/${dir}/${importBase}/${full.substring(0, 2).toLowerCase()}/${full}.${hash}.json`);
         }
+        if (cand.length) assets.push({ kind: 'import', candidates: cand });
     }
     const vn = config.versions?.native || [];
     const NATIVE_EXTS = ['.png', '.jpg', '.mp3', '.plist', '.atlas', '.bin', '.webp'];
     for (let i = 0; i < vn.length; i += 2) {
         const ref = vn[i], hash = vn[i + 1];
         if (typeof ref !== 'number' || hash === undefined) continue;
-        const cmp = config.uuids?.[ref];
-        if (!cmp) continue;
+        const cmp = config.uuids?.[ref]; if (!cmp) continue;
         const cmpClean = cmp.split('@')[0];
         const full = decompressUuid(cmpClean);
-        for (const ext of NATIVE_EXTS) urls.add(`/${dir}/${nativeBase}/${cmpClean.substring(0, 2).toLowerCase()}/${cmpClean}.${hash}${ext}`);
-        if (full && full.includes('-')) {
-            for (const ext of NATIVE_EXTS) urls.add(`/${dir}/${nativeBase}/${full.substring(0, 2).toLowerCase()}/${full}.${hash}${ext}`);
-        }
+        const cand = [];
+        for (const ext of NATIVE_EXTS) cand.push(`/${dir}/${nativeBase}/${cmpClean.substring(0, 2).toLowerCase()}/${cmpClean}.${hash}${ext}`);
+        if (full && full.includes('-')) for (const ext of NATIVE_EXTS) cand.push(`/${dir}/${nativeBase}/${full.substring(0, 2).toLowerCase()}/${full}.${hash}${ext}`);
+        assets.push({ kind: 'native', candidates: cand });
     }
-    return [...urls];
+    return assets;
+}
+
+// 扫一款游戏所有 bundle 的 config,汇总真实资源(main / resources / shared-internal 都算)
+function allAssets(orDir, gameId) {
+    if (!orDir) return [];
+    const configs = [];
+    (function findConfigs(d) {
+        if (!fs.existsSync(d)) return;
+        for (const e of fs.readdirSync(d, { withFileTypes: true })) {
+            const f = path.join(d, e.name);
+            if (e.isDirectory()) findConfigs(f);
+            else if (/^config\.[0-9a-f]+\.json$/.test(e.name)) configs.push(f);
+        }
+    })(orDir);
+    const assets = [];
+    for (const cfg of configs) assets.push(...enumerateAssets(cfg, orDir));
+    return assets;
+}
+
+function assetPresent(orDir, asset) {
+    return asset.candidates.some(p => {
+        const local = path.join(orDir, p.replace(/^\//, ''));
+        return fs.existsSync(local) && fs.statSync(local).size > 0;
+    });
 }
 
 async function main(gameId, opts) {
@@ -216,37 +242,30 @@ async function main(gameId, opts) {
         await Promise.allSettled(pending);
         console.log(`[${gameId}] puppeteer: ${seenPaths.size} 资源 (saved=${saved}, skipped=${skipped})`);
 
-        // 2) 解析 config,补全缺失
+        // 2) 解析 config,按真实资源补全缺失(每个资源试候选 URL,命中一个就停)
         if (orDir) {
-            const gid = String(gameId);
-            const configDirs = [path.join(orDir, gid, 'assets/main'), path.join(orDir, gid, 'assets/resources')];
-            const expected = new Set();
-            for (const cd of configDirs) {
-                if (!fs.existsSync(cd)) continue;
-                const cfgFile = fs.readdirSync(cd).find(f => f.startsWith('config.') && f.endsWith('.json'));
-                if (!cfgFile) continue;
-                collectFromConfig(path.join(cd, cfgFile), orDir).forEach(p => expected.add(p));
-            }
-            console.log(`[${gameId}] config 枚举 ${expected.size} 个资源`);
-            const todo = [...expected].filter(p => {
-                const local = path.join(orDir, p.replace(/^\//, ''));
-                return !(fs.existsSync(local) && fs.statSync(local).size > 0);
-            });
+            const assets = allAssets(orDir, String(gameId));
+            const todo = assets.filter(a => !assetPresent(orDir, a));
+            console.log(`[${gameId}] config 枚举 ${assets.length} 个真实资源,缺 ${todo.length},补全中...`);
             let dl = 0, fail = 0;
             const CONCURRENCY = 12; let idx = 0;
             async function worker() {
                 while (idx < todo.length) {
-                    const p = todo[idx++];
-                    const local = path.join(orDir, p.replace(/^\//, ''));
-                    try {
-                        const buf = await httpFetch(`https://${launch.or_host}${p}`);
-                        if (isComplete(local, buf.length)) continue;
-                        writeFileAtomic(local, buf); dl++;
-                    } catch { fail++; }
+                    const a = todo[idx++];
+                    let ok = false;
+                    for (const p of a.candidates) {              // 候选是"或":命中一个即停
+                        const local = path.join(orDir, p.replace(/^\//, ''));
+                        try {
+                            const buf = await httpFetch(`https://${launch.or_host}${p}`);
+                            if (!isComplete(local, buf.length)) writeFileAtomic(local, buf);
+                            ok = true; dl++; break;
+                        } catch { /* 该变体不存在,试下一个候选 */ }
+                    }
+                    if (!ok) fail++;
                 }
             }
             await Promise.all(Array.from({ length: CONCURRENCY }, () => worker()));
-            console.log(`[${gameId}] config 补全: +${dl}, 失败 ${fail}`);
+            console.log(`[${gameId}] config 补全: 命中 ${dl}, 仍缺 ${fail}`);
         }
     } finally {
         await browser.close().catch(() => {});
@@ -269,42 +288,42 @@ function walkFiles(dir) {
 }
 
 function gate(gameId, provider, gameOut, orDir, minCoverage, hosts) {
-    // 应有 = config 枚举全集;已下 = 磁盘上存在且非空
-    const expected = new Set();
-    if (orDir) {
-        const gid = String(gameId);
-        for (const cd of [path.join(orDir, gid, 'assets/main'), path.join(orDir, gid, 'assets/resources')]) {
-            if (!fs.existsSync(cd)) continue;
-            const cfgFile = fs.readdirSync(cd).find(f => f.startsWith('config.') && f.endsWith('.json'));
-            if (cfgFile) collectFromConfig(path.join(cd, cfgFile), orDir).forEach(p => expected.add(p));
-        }
+    // 按真实资源算覆盖率:每个资源只要任一候选变体在盘上就算"有"
+    const assets = allAssets(orDir, String(gameId));
+    const byKind = { import: [0, 0], native: [0, 0] };  // [present, total]
+    const missingSample = [];
+    for (const a of assets) {
+        const present = assetPresent(orDir, a);
+        byKind[a.kind][1]++;
+        if (present) byKind[a.kind][0]++;
+        else if (missingSample.length < 20) missingSample.push(a.candidates[0]);
     }
-    const missing = [];
-    for (const p of expected) {
-        const local = path.join(orDir, p.replace(/^\//, ''));
-        if (!(fs.existsSync(local) && fs.statSync(local).size > 0)) missing.push(p);
-    }
+    const expectedN = assets.length;
+    const presentN = byKind.import[0] + byKind.native[0];
+    const missingN = expectedN - presentN;
+
     const totalFiles = walkFiles(path.join(gameOut, 'webgame'));
     const relFiles = totalFiles.map(f => f.replace(path.join(gameOut, 'webgame'), ''));
     const criticalMissing = CRITICAL_PATTERNS
         .filter(re => !relFiles.some(f => re.test(f)))
         .map(re => re.source);
 
-    const expectedN = expected.size;
-    const coverage = expectedN === 0 ? null : (expectedN - missing.length) / expectedN;
-    // config 无法枚举(某些游戏)时,退化门槛:只查关键文件 + 文件数下限
+    const coverage = expectedN === 0 ? null : presentN / expectedN;
+    // config 无法枚举时退化:仅查关键文件 + 文件数下限
     const coverageOk = coverage === null ? totalFiles.length >= 20 : coverage >= minCoverage;
     const verdict = (coverageOk && criticalMissing.length === 0) ? 'pass' : 'fail';
 
     const gateResult = {
         gameId: String(gameId), provider, hosts,
-        expected: expectedN,
+        expected_assets: expectedN,
+        present_assets: presentN,
+        by_kind: { import: `${byKind.import[0]}/${byKind.import[1]}`, native: `${byKind.native[0]}/${byKind.native[1]}` },
         downloaded_total_files: totalFiles.length,
-        missing_count: missing.length,
+        missing_count: missingN,
         coverage: coverage === null ? null : Number(coverage.toFixed(4)),
         min_coverage: minCoverage,
         critical_missing: criticalMissing,
-        missing_sample: missing.slice(0, 20),
+        missing_sample: missingSample,
         verdict,
         ts: new Date().toISOString(),
     };
@@ -312,7 +331,8 @@ function gate(gameId, provider, gameOut, orDir, minCoverage, hosts) {
 
     const cov = coverage === null ? 'N/A(config未枚举)' : (coverage * 100).toFixed(2) + '%';
     console.log(`\n===== 完整性门槛 [${gameId}] =====`);
-    console.log(`  应有资源: ${expectedN}   已下文件: ${totalFiles.length}   缺失: ${missing.length}`);
+    console.log(`  真实资源: ${expectedN}  (import ${gateResult.by_kind.import}, native ${gateResult.by_kind.native})`);
+    console.log(`  已下: ${presentN}   缺失: ${missingN}   总文件: ${totalFiles.length}`);
     console.log(`  覆盖率: ${cov}  (门槛 ≥ ${(minCoverage * 100).toFixed(0)}%)`);
     console.log(`  关键文件缺失: ${criticalMissing.length ? criticalMissing.join(', ') : '无'}`);
     console.log(`  判定: ${verdict === 'pass' ? '✅ PASS' : '❌ FAIL'}`);
