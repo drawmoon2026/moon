@@ -8,3 +8,6 @@ wheels/
 
 # Virtual environments
 .venv
+
+# 个人语料与检索索引(本地数据,不进仓库)
+data/

@@ -1,9 +1,25 @@
 [project]
 name = "moon"
 version = "0.1.0"
-description = "Add your description here"
+description = "个人编码 AI:本地 Qwen3-Coder-30B + 个人代码/文档 RAG"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
+    "astchunk>=0.1.0",
+    "bm25s>=0.3.9",
+    "lancedb>=0.34.0",
     "mlx-lm>=0.31.3",
+    "openai>=2.46.0",
+    "sentence-transformers>=5.6.0",
+    "tree-sitter>=0.25,<0.26",
 ]
+
+[project.scripts]
+moon = "moon.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/moon"]
