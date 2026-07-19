@@ -2,14 +2,14 @@
  * generate-algorithm.js — 汇总反推参数,生成服务器算法 JS(全程不碰答案)
  *
  * 只读 analyze/inferred/*.json(paytable/layout/reel_weights/triggers/cascade),
- * 拼出一个自包含的算法模块 generated/algorithm-74.js:
+ * 拼出一个自包含的算法模块 generated/algorithm-<gid>.js:
  *   - 按 reel_weights 加权合成落点(每轴 7 格)
  *   - 按 paytable 在可视格上结算 ways(win = pay × ways × cs × ml)
  *   - 按 cascade 规则做 tumble(消除中奖 → 重力下落 → 补顶)
  *   - 按 triggers 套 wm 阶梯 + 金色变 wild(R2/R3/R4)
  *
  * 用法: node analyze/generate-algorithm.js
- * 产出后: node generated/algorithm-74.js simulate 100000   # 跑 RTP
+ * 产出后: node generated/algorithm-<gid>.js simulate 100000   # 跑 RTP
  */
 const fs = require('fs');
 const path = require('path');
@@ -178,11 +178,11 @@ if (require.main === module) {
 
 const OUT_DIR = path.join(__dirname, '..', 'generated');
 fs.mkdirSync(OUT_DIR, { recursive: true });
-const outFile = path.join(OUT_DIR, 'algorithm-74.js');
+const outFile = path.join(OUT_DIR, `algorithm-${gid}.js`);
 fs.writeFileSync(outFile, ENGINE.trimStart());
 
-console.log('✅ 已生成服务器算法 → generated/algorithm-74.js');
+console.log(`✅ 已生成服务器算法 → generated/algorithm-${gid}.js`);
 console.log('   输入(反推参数,answer-free):paytable / layout / reel_weights / triggers / cascade');
 console.log('   赔表符号数:', Object.keys(paytable).length, '| 可视格:', layout.visible.map(v => v.length).join('/'),
     '| wm base', JSON.stringify(triggers.wm_table.base), 'fs', JSON.stringify(triggers.wm_table.fs));
-console.log('\n跑一遍验证: node generated/algorithm-74.js simulate 100000');
+console.log(`\n跑一遍验证: node generated/algorithm-${gid}.js simulate 100000`);
