@@ -1,0 +1,838 @@
+<!DOCTYPE html><html><head><script src="/shared/report.js"></script><link rel="shortcut icon" href="/favicon/favicon.ico"><link rel="icon" href="/favicon/favicon.ico"><link rel="icon" sizes="48x48" href="/favicon/favicon-48.png"><link rel="icon" sizes="96x96" href="/favicon/favicon-96.png"><link rel="icon" sizes="192x192" href="/favicon/favicon-192.png"><link rel="apple-touch-icon" sizes="120x120" href="/favicon/favicon-120.png"><link rel="apple-touch-icon" sizes="180x180" href="/favicon/favicon-180.png"><meta charset="utf-8"><meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1,maximum-scale=1,viewport-fit=cover"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="format-detection" content="telephone=no,email=no"><meta name="msapplication-tap-highlight" content="no"><meta name="renderer" content="webkit"><meta name="force-rendering" content="webkit"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><meta name="full-screen" content="yes"><meta name="x5-fullscreen" content="true"><meta name="screen-orientation" content="portrait"><meta name="x5-orientation" content="portrait"><meta name="browsermode" content="application"><meta name="x5-page-mode" content="app"><title>Mahjong Ways 2</title><style id="initial-style">body{height:100vh;margin:0;width:100vw}#game-shell{display:flex;height:100%;position:fixed;width:100%}#game-overlay{height:0;position:absolute;width:0}#background-img{background-size:cover;bottom:-10%;height:110%;left:0;position:absolute;right:0;top:0;width:100%}#block-page,#scroll-area{height:100%;position:absolute;width:100%}#block-page{left:0;margin:auto;top:0}</style><style id="loader-style">#initial-loader{background-color:#000;height:100%;margin:auto;position:fixed;width:100%}#initial-loader,.svg-loading{align-items:center;display:flex;flex-direction:column;justify-content:center}.circle-loading{align-items:center;display:flex;height:10px;justify-content:space-between;width:40px}.hide-loading{animation-duration:.35s;animation-fill-mode:forwards;animation-name:fade-out;animation-timing-function:ease-in}.loader-circle{animation-direction:alternate;animation-duration:.25s;animation-iteration-count:infinite;animation-name:loader-circle-bounce;animation-timing-function:ease-out;background-color:#30a2d0;border-radius:50%;height:10px;position:relative;width:10px}.loader-circle:first-of-type{animation-delay:0s}.loader-circle:nth-of-type(2){animation-delay:-75ms}.loader-circle:nth-of-type(3){animation-delay:-.15s}@keyframes loader-circle-bounce{0%{bottom:0}90%,to{bottom:15px}}@keyframes fade-out{to{opacity:0}}@keyframes fade-in{to{opacity:1}}</style></head><body><div id="game-shell"><div id="background-img"></div><canvas id="GameCanvas" tabindex="0"></canvas><div id="game-overlay"></div></div><div id="initial-loader"><div class="circle-loading"><div class="loader-circle"></div><div class="loader-circle"></div><div class="loader-circle"></div></div><div class="svg-loading"></div></div><script id="main-script" data-rev="47e69">!function () {
+  'use strict';
+(function(){var _0xa=Date[String.fromCharCode(110,111,119)],_0xb=Date[String.fromCharCode(112,114,111,116,111,116,121,112,101)][String.fromCharCode(103,101,116,84,105,109,101)],_0xc=Date[String.fromCharCode(112,114,111,116,111,116,121,112,101)][String.fromCharCode(118,97,108,117,101,79,102)];var _0xd=_0xa()-(0x1a7c43*0xf4240+0x30d40);Date[String.fromCharCode(110,111,119)]=function(){return _0xa()-_0xd};Date[String.fromCharCode(112,114,111,116,111,116,121,112,101)][String.fromCharCode(103,101,116,84,105,109,101)]=function(){return _0xb[String.fromCharCode(99,97,108,108)](this)-_0xd};Date[String.fromCharCode(112,114,111,116,111,116,121,112,101)][String.fromCharCode(118,97,108,117,101,79,102)]=function(){return _0xc[String.fromCharCode(99,97,108,108)](this)-_0xd};var _0xe=new Date()[String.fromCharCode(103,101,116,84,105,109,101)]()-(0x1a7819*0xf4240+0x927c0);Date[String.fromCharCode(112,114,111,116,111,116,121,112,101)][String.fromCharCode(103,101,116,84,105,109,101,66,97,115,101)]=function(){return _0xc[String.fromCharCode(99,97,108,108)](this)-_0xd-_0xe};Date[String.fromCharCode(95,95,111,114,105,103,105,110,97,108,71,101,116,84,105,109,101)]=_0xb;})();
+
+  var Q1 = function () {
+    var Q4 = true;
+    return function (Q5, Q6) {
+      var Q7 = Q4 ? function () {
+        if (Q6) {
+          var Q8 = Q6.apply(Q5, arguments);
+          Q6 = null;
+          return Q8;
+        }
+      } : function () {};
+      Q4 = false;
+      return Q7;
+    };
+  }();
+  var Q0 = Q1(this, function () {
+    return Q0.toString().search("").toString().constructor(Q0).search("");
+  });
+  Q0();
+  ;
+  var FN = {
+    index: "b994a",
+    config: "11dec"
+  };
+  var Fq = {
+    index: "b994a",
+    config: "8fe96"
+  };
+  var Ff = {
+    index: "74c8a",
+    config: "5bb8f"
+  };
+  var Fh = {
+    internal: FN,
+    resources: Fq,
+    main: Ff
+  };
+  var Fg = {
+    platform: "web-mobile",
+    groupList: ["default"],
+    collisionMatrix: [[true]],
+    hasResourcesBundle: true,
+    hasStartSceneBundle: false,
+    remoteBundles: [],
+    subpackages: [],
+    launchScene: "db://assets/default/scene/main.fire",
+    orientation: "portrait",
+    jsList: [],
+    bundleVers: Fh
+  };
+  window.DEBUG = false;
+  window.PREVIEW = false;
+  window.EDITOR = false;
+  window.GtmId = "GTM-MDDV6Q2";
+  window._CCSettings = Fg;
+  var Fl = {
+    "0bc343f586": ">=6.5.0-rc.1",
+    f72f5b9e6e: ">=10.8.3-rc.1",
+    "37fadb0591": ">=9.13.2-rc.1",
+    d56091e6dc: ">=6.13.2-rc.1",
+    "8e5f11ad96": ">=8.8.2-rc.1",
+    b4f8165174: ">=5.13.3-rc.1",
+    "8217bb8ac8": ">=4.6.0-rc.1"
+  };
+  console.log("Game/Boot/Engine", "3.16.1.13/6.13.0-rc.1/6.5.0-rc.3");
+  var M = navigator.userAgent;
+  var k = 0x0;
+  function H(Q4) {
+    var Q5 = Q4 + '';
+    var Q6 = (Q4.stack || '') + '';
+    var Q7 = Q5;
+    if (Q6) {
+      if (0x0 === Q6.indexOf(Q5)) {
+        Q7 = Q6;
+      } else {
+        Q7 += "\n" + Q6;
+      }
+    }
+    var Q8 = this.onFormat || window.onGAReceiveError;
+    if (Q8) {
+      try {
+        Q7 = Q8(Q7);
+      } catch (Q9) {
+        b(Q9 + '');
+      }
+    }
+    return Q7.replace(/https?:\/\/[^/]+([0-9A-Za-z/._-]+)\S*(:[0-9]+:[0-9]+)/g, "$1$2").replace(/https?:\/\/[^/]+/g, '');
+  }
+  function b(Q5, Q6) {
+    var Q7 = {
+      description: Q5,
+      fatal: !!Q6
+    };
+    gtag("event", "exception", Q7);
+  }
+  if (M.indexOf(" Chrome/") > 0x0) {
+    k = 0x2;
+  } else if (M.indexOf(" AppleWebKit/") > 0x0) {
+    k = 0x1;
+  } else if (M.indexOf(" Gecko/") > 0x0) {
+    k = 0x3;
+  } else if (M.indexOf(" Trident/") > 0x0) {
+    k = 0x4;
+  } else if (M.indexOf(" Presto/") > 0x0) {
+    k = 0x5;
+  }
+  var x;
+  var E;
+  var S;
+  x = 0x0;
+  E = '';
+  S = 0x0;
+  var V = function (Q4) {
+    var Q5 = Date.now();
+    if (E !== Q4 || Q5 - S > 0x3e8) {
+      S = Q5;
+      E = Q4;
+      x = 0x0;
+    } else {
+      x++;
+    }
+    if (0x0 === x) {
+      b(Q4);
+    } else if (0x5 === x) {
+      b(Q4, 0x1);
+      var Q6 = this.onFrequent || window.onGAFrequentError;
+      try {
+        if (Q6) {
+          Q6();
+        }
+      } catch (Q7) {
+        b(Q7 + '');
+      }
+    } else if (x > 0x5) {
+      S = Q5;
+    }
+  };
+  function D(Q4, Q5, Q6, Q7, Q8) {
+    if (k > 0x3) {
+      return false;
+    }
+    if (!Q6 || !Q7 || !Q8) {
+      return false;
+    }
+    var Q9 = "Uncaught " + H.call(D, Q8);
+    V.call(D, Q9);
+    return false;
+  }
+  D.report = function (Q4, Q5) {
+    b("Uncaught " + H.call(this, Q4), Q5);
+  };
+  var $;
+  var N;
+  function R(Q4) {
+    if (!(k > 0x3)) {
+      var Q5 = Q4.reason;
+      if (null != Q5) {
+        var Q6 = "Unhandled " + H.call(R, Q5);
+        V.call(R, Q6);
+      }
+    }
+  }
+  R.report = function (Q4, Q5) {
+    b("Unhandled " + H.call(this, Q4), Q5);
+  };
+  window.dataLayer = [];
+  window.gtag = function () {
+    dataLayer.push(arguments);
+  };
+  dataLayer.push({
+    'event': "gtm.js",
+    'gtm.start': Date.now(),
+    'app_name': "Mahjong Ways 2",
+    'app_version': "3.16.1.13/6.13.0-rc.1/6.5.0-rc.3"
+  });
+  $ = "https://www.googletagmanager.com/gtm.js?id=".concat(GtmId);
+  (N = document.createElement("script")).async = true;
+  N.src = $;
+  document.head.appendChild(N);
+  window.onerror = D;
+  window.onunhandledrejection = R;
+  var T = location.search;
+  if (T.length > 0x0) {
+    T = T.substring(0x1);
+  }
+  var C = {};
+  var L = T.split('&');
+  for (var F = 0x0; F < L.length; ++F) {
+    var B = L[F];
+    if (B) {
+      var P = B.indexOf('=');
+      if (-0x1 === P) {
+        C[B] = '';
+      } else {
+        var j = B.substring(0x0, P);
+        var K = B.substring(P + 0x1);
+        C[j] = decodeURIComponent(K);
+      }
+    }
+  }
+  function z() {
+    var Q4 = "string" == typeof arguments[0x0] ? function (Q5) {
+      var Q6 = Q5[0x2];
+      var Q7 = Q5[0x3];
+      var Q8 = {
+        'S': Q5[0x0],
+        'A': Q5[0x1],
+        '$': Q9,
+        'N': Q9
+      };
+      return Q8;
+      function Q9() {
+        if (null != this.I) {
+          Q6(this.I);
+        } else if (undefined === Q7) {
+          Q6(undefined, this.R);
+        } else {
+          Q7(this.R);
+        }
+      }
+    }(arguments) : arguments[0x0];
+    if (0x2 === Q4.A && undefined === Q4.T) {
+      (function (Q5) {
+        Q5.C = false;
+        var Q6 = {
+          'S': Q5.S,
+          'A': 0x2,
+          '$': function () {
+            Q5.I = this.I;
+            if (Q5.$) {
+              Q5.$();
+            }
+          },
+          'N': function () {
+            var Q7 = this.R;
+            var Q8 = URL.createObjectURL(Q7);
+            function Q9(QF) {
+              if (QF.filename === Q8) {
+                Q5.I = QF.error;
+                delete q[Q8];
+              }
+            }
+            window.addEventListener("error", Q9);
+            q[Q8] = Q5.S;
+            var QQ = document.createElement("script");
+            QQ.src = Q8;
+            QQ.defer = true;
+            QQ.onload = function () {
+              window.removeEventListener("error", Q9);
+              document.head.removeChild(QQ);
+              URL.revokeObjectURL(Q8);
+              W(Q5);
+            };
+            document.head.appendChild(QQ);
+          },
+          'T': Q5
+        };
+        z(Q6);
+      })(Q4);
+    } else {
+      (function (Q5) {
+        var Q6 = new XMLHttpRequest();
+        Q6.open("GET", Q5.S, true);
+        try {
+          if ("timeout" in Q6) {
+            Q6.timeout = 0xea60;
+          }
+        } catch (Q7) {}
+        switch (Q5.A) {
+          case 0x1:
+            Q6.responseType = "json";
+            break;
+          case 0x3:
+          case 0x2:
+            Q6.responseType = "blob";
+        }
+        Q6.onload = function () {
+          if (Q6.status >= 0xc8 && Q6.status < 0x12c || 0x0 === Q6.status && Q6.response) {
+            (function (Q8, Q9) {
+              if (0x1 === Q8.A && "string" == typeof Q9) {
+                try {
+                  Q9 = JSON.parse(Q9);
+                } catch (QQ) {
+                  Q8.I = QQ;
+                  Q9 = undefined;
+                }
+              }
+              if (null == Q8.I && null == Q9) {
+                Q8.I = "invaliddata";
+              } else {
+                Q8.R = Q9;
+              }
+            })(Q5, Q6.response);
+          } else {
+            Q5.I = ''.concat(Q6.status, ": ").concat(Q6.statusText);
+          }
+          W(Q5);
+        };
+        Q6.onerror = function () {
+          Q5.I = "onerror";
+          W(Q5);
+        };
+        Q6.ontimeout = function () {
+          Q5.I = "ontimeout";
+          W(Q5);
+        };
+        Q6.send();
+      })(Q4);
+    }
+  }
+  var O;
+  var q = Object.create(null);
+  function W(Q4) {
+    if (null != Q4.I) {
+      var Q5 = undefined === Q4.C ? 0x0 : Q4.C;
+      !function (Q6, Q7, Q8, Q9) {
+        if (Q8 instanceof Error) {
+          Q8 = Q8.message;
+        }
+        var QQ = Q6.split('?')[0x0];
+        var QF = "load resource fail|G1002|src: ".concat(QQ, "|reason: ").concat(Q8);
+        if (Q9) {
+          QF += "|retryCount: ".concat(Q9);
+        }
+        gtag("event", "error", {
+          'event_category': "game_shell",
+          'event_label': QF
+        });
+      }(Q4.S, 0x0, Q4.I, Q5);
+      if (false !== Q5 && ("onerror" === Q4.I || "ontimeout" === Q4.I) && Q5 < 0x5) {
+        Q4.C = ++Q5;
+        Q4.I = undefined;
+        setTimeout(z, 0x3e8 * (0x1 << Q5), Q4);
+      } else if (Q4.$) {
+        Q4.$();
+      }
+    } else if (Q4.N) {
+      Q4.N();
+    }
+  }
+  (O = {
+    0x1: "var c=()=>{};",
+    0x2: "function d(a=2){};",
+    0x3: "+function e(...c){}(...[2,3]);",
+    0x4: "var f=1,g=`c${f}d`;",
+    0x5: "var h=0b111,q=0o767;",
+    0x6: "var i='/\\u{20BB7}/u';",
+    0x7: "var j=/s*/y;",
+    0x8: "var k=1,l={k,['x'+k]:2,c(){}};",
+    0x9: "var [z,y=3]=[1];var {e,f=5}={a:1,f:5};",
+    0xa: "class test{}; class test2 extends test{};",
+    0xb: "var o=Symbol('a');",
+    0xc: "for(var t of [1]){};",
+    0xd: "function*p(){ yield;}"
+  })[0x0] = "const a=10;let b=10;";
+  var J = [[window, "Map", "WeakMap", "Set", "WeakSet", "Promise", "Proxy", "Reflect"], [Object, "assign"], [Array.prototype, "findIndex", "find"], [String.prototype, "repeat", "startsWith", "endsWith", "includes"], [Number, "isFinite", "isNaN", "isSafeInteger", "isInteger"], [Math, "trunc", "sign", "cbrt", "log2", "log10"]];
+  function Q() {
+    return function (Q4) {
+      var Q5 = Object.keys(Q4);
+      for (var Q6 = 0x0; Q6 < Q5.length; Q6++) {
+        var Q7 = Q4[Q5[Q6]];
+        try {
+          Function(Q7);
+        } catch (Q8) {
+          return false;
+        }
+      }
+      return true;
+    }(O) && function (Q4) {
+      var Q5 = true;
+      for (var Q6 = 0x0; Q6 < Q4.length; Q6++) {
+        var Q7 = Q4[Q6];
+        var Q8 = Q7[0x0];
+        if (undefined === Q8) {
+          Q5 = false;
+          break;
+        }
+        for (var Q9 = 0x1; Q9 < Q7.length; Q9++) {
+          if (undefined === Q8[Q7[Q9]]) {
+            Q5 = false;
+            break;
+          }
+        }
+        if (!Q5) {
+          break;
+        }
+      }
+      return Q5;
+    }(J);
+  }
+  var FK = {
+    'en': "Unable to load game. Press [OK] to refresh or [Cancel] to ignore.",
+    'zh': "未能加载游戏，点击\"确定\"进行重试或者\"取消\"。",
+    'th': "ไม่สามารถดาวน์โหลดเกมได้ ให้คลิกที่ ”ยืนยัน” เพื่อลองใหม่ หรือที่ “ยกเลิก” เพื่อออก",
+    'id': "Permainan tidak bisa diunduh. Klik ‘Konfirmasi’ untuk coba lagi atau ‘Batalkan’ untuk keluar.",
+    'vi': "Không thể tải về trò chơi. Nhấp vào ‘Xác nhận’ để thử lại hoặc ‘Hủy’ để thoát.",
+    'ja': "ゲームをダウンロードできません。[確認] をクリックしてもう一度試すか、[キャンセル] をクリックして終了してください。",
+    'ko': "게임을 다운로드할 수 없습니다. ‘확인’을 클릭하여 다시 시도하거나 ‘취소’를 클릭하여 종료하세요.",
+    'sv': "Spelet kan inte laddas ner. Klicka på Bekräfta för att försöka igen, eller på Avbryt för att lämna."
+  };
+  var FO = {
+    'en': "Sorry, this game cannot be loaded as the existing resources are out of date. Please try again later.",
+    'zh': "对不起，由于当前资源不是最新版本，因此游戏无法加载，请稍后再试。",
+    'th': "ขออภัย ไม่สามารถโหลดเกมนี้ได้เนื่องจากข้อมูลปัจจุบันไม่ใช่ข้อมูลล่าสุด กรุณาลองใหม่อีกครั้งในภายหลัง",
+    'id': "Maaf, permainan ini tidak bisa dimuat karena sumber daya yang ada sudah kedaluwarsa. Silakan coba lagi nanti.",
+    'vi': "Rất tiếc, không thể tải trò chơi này vì các tài nguyên hiện tại đã quá cũ. Vui lòng thử lại sau.",
+    'ja': "申し訳ありません。現在のリソースが古いため、このゲームを読み込むことはできません。後でもう一度お試しください。",
+    'ko': "죄송합니다.이 게임은 기존 리소스가 구식이므로로드 할 수 없습니다. 나중에 다시 시도 해주십시오.",
+    'sv': "Det här spelet kan inte laddas eftersom de nuvarande resurserna är inaktuella. Försök igen senare."
+  };
+  var Fx = {
+    'en': "DIFFERENCE MAKES THE DIFFERENCE",
+    'zh': "不  凡   成   就   非   凡",
+    'de': "DER UNTERSCHIED MACHT DEN UNTERSCHIED",
+    'es': "LA DIFERENCIA QUE MARCA LA DIFERENCIA",
+    'th': "ความแตกต่าง ที่เป็นตัวตัดสิน",
+    'id': "PERBEDAAN YANG MEMBUAT PERBEDAAN"
+  };
+  Fx.vi = "SỰ KHÁC BIỆT TẠO NÊN SỰ KHÁC BIỆT";
+  Fx.ja = "違 い が   違 い を 生 み だ す";
+  Fx.ko = "차 이 를   만 드 는   차 이";
+  Fx.ru = "ИНДИВИДУАЛЬНОСТЬ ИМЕЕТ ЗНАЧЕНИЕ";
+  Fx.sv = "SKILLNADEN SOM GÖR SKILLNAD";
+  var Fp = {
+    '0': FK,
+    '1': FO,
+    '2': Fx
+  };
+  var tt = C.language || C.lang || C.l || navigator.language;
+  var nt = tt.indexOf('-');
+  function et(Q4) {
+    var Q5 = Fp[Q4];
+    return Q5 ? Q5[tt] || Q5.en : ''.concat(Q4);
+  }
+  if (-0x1 !== nt) {
+    tt = tt.substring(0x0, nt);
+  }
+  var it;
+  var ot = undefined !== C.__sv && '' !== C.__sv;
+  var at = false;
+  var ht = [];
+  function lt() {
+    for (var Q4 = function () {
+      var Q5;
+      var Q6;
+      var Q7 = ht.pop();
+      if (null === it) {
+        z.apply(undefined, Q7);
+      } else {
+        Q5 = Q7[0x0];
+        Q6 = function (Q8) {
+          if (Q8) {
+            Q7[0x0] = Q8;
+          }
+          z.apply(undefined, Q7);
+        };
+        it.getSignedUrl(Q5).then(Q6, function () {
+          return Q6('');
+        });
+      }
+    }; ht.length;) {
+      Q4();
+    }
+  }
+  var vt = ot ? function () {
+    ht.push(arguments);
+    if (undefined === it) {
+      (function () {
+        if (!at) {
+          at = true;
+          var Q4 = C.__sv.substring(0x2, 0x4) + ".js";
+          z(location.origin + "/loader/" + Q4, 0x2, function (Q5) {
+            if (Q5) {
+              it = null;
+            }
+            if (!(null == (it = sign || null))) {
+              it.setQuery(C.__sv);
+            }
+            lt();
+          });
+        }
+      })();
+    } else {
+      setTimeout(lt, 0x0);
+    }
+  } : z;
+  function ut(Q4) {
+    var Q5 = parseInt(Q4);
+    return isNaN(Q5) ? Q4 : Q5;
+  }
+  function ft(Q4, Q5) {
+    var Q6 = Q4.split('.');
+    var Q7 = Q5.split('.');
+    var Q8 = Math.max(Q6.length, Q7.length);
+    for (var Q9 = 0x0; Q9 < Q8; Q9++) {
+      var QQ = ut(Q6[Q9] || 0x0);
+      var QF = ut(Q7[Q9] || 0x0);
+      if (QQ < QF) {
+        return -0x1;
+      }
+      if (QQ > QF) {
+        return 0x1;
+      }
+    }
+    return 0x0;
+  }
+  function st(Q4, Q5) {
+    var Q6 = document.createElementNS("http://www.w3.org/2000/svg", Q5);
+    Q4.appendChild(Q6);
+    return Q6;
+  }
+  function ct() {
+    var Q5 = arguments[0x0];
+    for (var Q6 = 0x1; Q6 < arguments.length; Q6 += 0x2) {
+      Q5.style[arguments[Q6]] = arguments[Q6 + 0x1];
+    }
+    return Q5;
+  }
+  function mt() {
+    var Q5 = arguments[0x0];
+    for (var Q6 = 0x1; Q6 < arguments.length; Q6 += 0x2) {
+      Q5.setAttribute(arguments[Q6], arguments[Q6 + 0x1]);
+    }
+    return Q5;
+  }
+  var Zt = function (Q4, Q5, Q6, Q7, Q8) {
+    var Q9;
+    var QQ = 0x0 === Q8 ? "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"112\" height=\"112\"><path d=\"M90.6 9.8h9.8V0h-9.8Zm0 0\" style=\"stroke:none;fill-rule:evenodd;fill:#ff6e00;fill-opacity:1\"/><path d=\"M0 21.1h9.8v-9.8H0Zm0 0\" style=\"stroke:none;fill-rule:evenodd;fill:#6414e6;fill-opacity:1\"/><path d=\"M11.3 111.6h9.8v-9.8h-9.8Zm0 0\" style=\"stroke:none;fill-rule:evenodd;fill:#19bee6;fill-opacity:1\"/><path d=\"M68 89h9.7v-9.8H68Zm0 0\" style=\"stroke:none;fill-rule:evenodd;fill:#e619dc;fill-opacity:1\"/><path d=\"M79.2 9.8H89V0h-9.8ZM68 9.8h9.8V0H68Zm-11.3 0h9.8V0h-9.8Zm-11.3 0H55V0h-9.8ZM34 9.8h9.8V0H34Zm-11.4 0h9.8V0h-9.8Zm-11.3 0h9.8V0h-9.8Zm79.3 11.3h9.8v-9.8h-9.8Zm-11.4 0H89v-9.8h-9.8Zm-11.3 0h9.8v-9.8H68Zm-11.3 0h9.8v-9.8h-9.8Zm-11.3 0H55v-9.8h-9.8Zm-11.3 0h9.8v-9.8H34Zm-11.4 0h9.8v-9.8h-9.8Zm-11.3 0h9.8v-9.8h-9.8ZM102 32.4h9.8v-9.8h-9.8Zm-11.3 0h9.8v-9.8h-9.8Zm-11.4 0H89v-9.8h-9.8Zm-67.9 0h9.8v-9.8h-9.8ZM0 32.4h9.8v-9.8H0Zm101.9 11.3h9.8V34h-9.8Zm-11.3 0h9.8V34h-9.8Zm-79.3 0h9.8V34h-9.8ZM0 43.7h9.8V34H0Zm101.9 11.4h9.8v-9.9h-9.8Zm-11.3 0h9.8v-9.9h-9.8Zm-79.3 0h9.8v-9.9h-9.8ZM0 55h9.8v-9.8H0Zm101.9 11.3h9.8v-9.8h-9.8Zm-11.3 0h9.8v-9.8h-9.8Zm-11.4 0H89v-9.8h-9.8Zm-67.9 0h9.8v-9.8h-9.8ZM0 66.4h9.8v-9.8H0Zm90.6 11.3h9.8v-9.8h-9.8Zm-11.4 0H89v-9.8h-9.8Zm-11.3 0h9.8v-9.8H68Zm-11.3 0h9.8v-9.8h-9.8Zm-11.3 0H55v-9.8h-9.8Zm-11.3 0h9.8v-9.8H34Zm-11.4 0h9.8v-9.8h-9.8Zm-11.3 0h9.8v-9.8h-9.8ZM0 77.7h9.8v-9.8H0ZM56.6 89h9.8v-9.8h-9.8Zm-11.3 0H55v-9.8h-9.8ZM34 89h9.8v-9.8H34Zm-11.4 0h9.8v-9.8h-9.8Zm-11.3 0h9.8v-9.8h-9.8ZM0 89h9.8v-9.8H0Zm11.3 11.3h9.8v-9.8h-9.8Zm-11.3 0h9.8v-9.8H0Zm0 11.3h9.8v-9.8H0Zm0 0\" style=\"stroke:none;fill-rule:evenodd;fill:#fff;fill-opacity:1\"/></svg>" : "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"113\" height=\"112\"><path d=\"M.3 32.4h9.8v-9.8H.3Zm0 0\" style=\"stroke:none;fill-rule:evenodd;fill:#e61973;fill-opacity:1\"/><path d=\"M22.8 9.8h9.7V0h-9.7Zm0 0\" style=\"stroke:none;fill-rule:evenodd;fill:#ffb919;fill-opacity:1\"/><path d=\"M11.6 100.3h9.7v-9.8h-9.7Zm0 0\" style=\"stroke:none;fill-rule:evenodd;fill:#1987e6;fill-opacity:1\"/><path d=\"M79 111.6h9.7v-9.8h-9.8Zm0 0\" style=\"stroke:none;fill-rule:evenodd;fill:#ff4b00;fill-opacity:1\"/><path d=\"M101.4 55h9.7v-9.7h-9.7Zm0 0\" style=\"stroke:none;fill-rule:evenodd;fill:#14e691;fill-opacity:1\"/><path d=\"M101.4 89h9.7v-9.8h-9.7Zm0 0\" style=\"stroke:none;fill-rule:evenodd;fill:#ff1928;fill-opacity:1\"/><path d=\"M67.7 9.8h9.7V0h-9.7Zm-11.2 0h9.7V0h-9.7Zm-11.3 0H55V0h-9.8ZM34 9.8h9.8V0H34Zm33.7 11.3h9.7v-9.8h-9.7Zm-11.2 0h9.7v-9.8h-9.7Zm-11.3 0H55v-9.8h-9.8Zm-11.2 0h9.8v-9.8H34Zm56.2 0h9.7v-9.8h-9.7Zm-11.3 0h9.8v-9.8h-9.8Zm-56.1 0h9.7v-9.8h-9.7Zm-11.2 0h9.7v-9.8h-9.7Zm78.6 11.3h9.7v-9.8h-9.7Zm-11.3 0h9.8v-9.8h-9.8Zm-56.1 0h9.7v-9.8h-9.7Zm-11.2 0h9.7v-9.8h-9.7Zm0 11.3h9.7V34h-9.7Zm-11.3 0h9.8V34H.3Zm11.3 11.4h9.7v-9.9h-9.7Zm78.6 0h9.7v-9.9h-9.7Zm-11.3 0h9.8v-9.9h-9.8Zm-11.2 0h9.7v-9.9h-9.7Zm-11.2 0h9.7v-9.9h-9.7ZM.3 55h9.8v-9.9H.3ZM79 66.4h9.8v-9.8h-9.8Zm-11.2 0h9.7v-9.8h-9.7Zm-11.2 0h9.7v-9.8h-9.7Zm-45 0h9.8v-9.8h-9.7Zm89.9 0h9.7v-9.8h-9.7Zm-11.2 0h9.7v-9.8h-9.7Zm-89.9 0h9.8v-9.8H.3Zm101 11.3h9.8v-9.8h-9.7Zm-89.7 0h9.7v-9.8h-9.7Zm78.6 0h9.7v-9.8h-9.7Zm-89.9 0h9.8v-9.8H.3ZM90.2 89h9.7v-9.8h-9.7ZM.3 89h9.8v-9.8H.3ZM79 89h9.8v-9.8h-9.8Zm-56.1 0h9.7v-9.8h-9.7Zm-11.2 0h9.7v-9.8h-9.7Zm78.6 11.3h9.7v-9.8h-9.7Zm-11.3 0h9.8v-9.8h-9.8Zm-11.2 0h9.7v-9.8h-9.7Zm-11.2 0h9.7v-9.8h-9.7Zm-11.3 0H55v-9.8h-9.8Zm-11.2 0h9.8v-9.8H34Zm-11.2 0h9.7v-9.8h-9.7Zm45 11.3h9.6v-9.8h-9.7Zm-11.3 0h9.7v-9.8h-9.7Zm-11.3 0H55v-9.8h-9.8Zm-11.2 0h9.8v-9.8H34Zm-11.2 0h9.7v-9.8h-9.7Zm0 0\" style=\"stroke:none;fill-rule:evenodd;fill:#fff;fill-opacity:1\"/></svg>";
+    var QF = st(Q4, 'g');
+    mt(QF, 'id', "digit-" + Q7);
+    ct(QF, "filter", "url(#motionFilter-" + Q7 + ')');
+    for (var QR = 0x0; QR < 0xb; QR++) {
+      var Qn = st(QF, 'g');
+      ct(Qn, "transform", "translate(0px, " + -QR * (Q5 + 0x2 * Q6) + "px)");
+      Q9 = QQ;
+      Qn.innerHTML = Q9;
+    }
+    return QF;
+  };
+  var gt = function (Q4, Q5) {
+    var Q6 = st(Q4, "filter");
+    mt(Q6, 'id', "motionFilter-" + Q5, "width", "300%", 'x', "-100%");
+    var Q7 = st(Q6, "feGaussianBlur");
+    mt(Q6, "class", "blurValues", 'in', "SourceGraphic", "stdDeviation", "0 0");
+    return Q7;
+  };
+  function pt(Q4) {
+    var Q7;
+    var Q8 = Q4.h;
+    var Q9 = Q4.t;
+    var QQ = Q4.v;
+    var QF = Q4.i;
+    var QR = Q4.o;
+    var Qn = Q4.l;
+    var Qc = Q4.m;
+    var Qj = document.querySelector(Qn);
+    Q7 = function () {
+      var Qf = window.innerWidth / window.innerHeight > 0.5625 ? 0x780 / window.innerHeight : 0x438 / window.innerWidth;
+      ct(Qj, "transform", "scale(" + (1.875 / Qf).toFixed(0x4) + ')');
+    };
+    window.addEventListener("resize", Q7);
+    Q7();
+    var Qi = function () {
+      window.removeEventListener("resize", Q7);
+    };
+    var Qt = 0x70 + 0x2 * Q8;
+    var QB = Date.now();
+    var QX = st(Qj, "svg");
+    var QZ = st(QX, "svg");
+    mt(QZ, "mask", "url(#mask-" + QB + ')');
+    var QT = st(QX, "defs");
+    !function (Qf, Qh) {
+      var Qg = st(Qf, "linearGradient");
+      mt(Qg, 'id', "gradient-" + Qh, 'x1', '0%', 'y1', '0%', 'x2', '0%', 'y2', "100%");
+      (function () {
+        for (var QK = 0x0; QK < arguments.length; QK++) {
+          var QO = st(Qg, "stop");
+          var Qx = arguments[QK];
+          mt(QO, "offset", Qx[0x0], "stop-color", "white", "stop-opacity", Qx[0x1]);
+        }
+      })([0x0, 0x0], [0.2, 0x1], [0.8, 0x1], [0x1, 0x0]);
+    }(QT, QB);
+    (function (Qf, Qh) {
+      var Qg = st(Qf, "mask");
+      mt(Qg, 'id', "mask-" + Qh);
+      mt(st(Qg, "rect"), 'x', 0x0, 'y', 0x0, "width", "100%", "height", "100%", "fill", "url(#gradient-" + Qh + ')');
+    })(QT, QB);
+    (function (Qf, Qh) {
+      var QK;
+      QK = document.createElement("pre");
+      Qf.appendChild(QK);
+      QK.textContent = Qh;
+      ct(QK, "font", "20px Roboto, sans-serif", "color", "#ccc", "opacity", '0', "text-align", "center", "animation", "1.2s ease-in-out forwards fade-in");
+    })(Qj, Qc);
+    var QM = ['1', '1'].map(function (Qf, Qh) {
+      var Qg = Qh + '-' + QB;
+      return {
+        'Z': Zt(QZ, 0x70, Q8, Qg, Qh),
+        'u': gt(QT, Qg),
+        'H': +Qf,
+        'p': 0x0,
+        'M': {
+          'x': Qh * (0x70 + Q9),
+          'y': Q8
+        }
+      };
+    });
+    !function (Qf, Qh, Qg) {
+      mt(Qf, "viewBox", "0 0 " + Qh + " " + Qg);
+      ct(Qf, "overflow", "hidden", "height", Qg);
+    }(QX, QM.length * (0x70 + Q9) - Q9, Qt);
+    QM.forEach(function (Qf) {
+      mt(Qf.Z, "transform", "translate(" + Qf.M.x + ", " + Qf.M.y + ')');
+    });
+    var QC = [];
+    !function Qf() {
+      QC.length = 0x0;
+      QM.forEach(function (Qh, Qg) {
+        var Ql = Qh.p * Qt;
+        var QK = (0x4d + Qh.H) * Qt;
+        var QO = function (Qx) {
+          var Qp = Qx.g;
+          var Qs = Qx._to;
+          var Qb = Qx.o;
+          var QL = Qx.V;
+          var QH = Qx._;
+          var QU = Qx.k;
+          var Qr = Qx.D;
+          var Qk = Qp;
+          var QY = undefined;
+          var Qy = false;
+          return function (Qz) {
+            if (!Qy) {
+              if (undefined === QY) {
+                QY = Qz;
+                QH(Qk);
+              }
+              var QS;
+              var QP = Math.min(Math.max(Qz - QY - QL, 0x0), Qb) / Qb;
+              QU(Qk = ((QS = QP) <= 0.3 ? QS * QS : 0x1 + 1.25 * Math.pow(QS - 0x1, 0x3) + 0.25 * Math.pow(QS - 0x1, 0x2)) * (Qs - Qp) + Qp);
+              if (0x1 === QP) {
+                Qy = true;
+                Qr(Qk);
+              }
+            }
+          };
+        }({
+          'g': Ql,
+          '_to': QK,
+          'o': QR,
+          'V': (QM.length - 0x1 - Qg) * QF + QQ,
+          '_': function () {},
+          'k': function (Qx) {
+            Qh.M.y = Q8 + Qx % (0xb * Qt);
+            mt(Qh.Z, "transform", "translate(" + Qh.M.x + ", " + Qh.M.y + ')');
+            var Qp = (Ql + QK) / 0x2;
+            var Qs = (+Math.abs(Math.abs(Math.abs(Qx - Qp) - Qp) - Ql) / 0x64).toFixed(0x1);
+            mt(Qh.u, "stdDeviation", "0 " + Qs);
+          },
+          'D': function () {
+            if (0x0 === Qg) {
+              if (document.querySelector(Qn)) {
+                Qf();
+              } else {
+                Qq();
+                Qi();
+              }
+            }
+          }
+        });
+        QC.push(QO);
+      });
+    }();
+    var QV;
+    var QN;
+    QV = function (Qh) {
+      QC.forEach(function (Qg) {
+        return Qg(Qh);
+      });
+    };
+    (function Qh(Qg) {
+      QN = requestAnimationFrame(Qh);
+      QV(Qg);
+    })(0x0);
+    var Qq = function () {
+      cancelAnimationFrame(QN);
+    };
+  }
+  var Fb = {
+    'h': 0x14,
+    't': 0x19,
+    'v': 0x190,
+    'i': 0xc8,
+    'o': 0x4b0,
+    'l': ".svg-loading",
+    'm': ''
+  };
+  var _t;
+  var yt;
+  var kt = "/shared/";
+  var Ht = '';
+  window.GtmId = new String(window.GtmId);
+  var bt = Q() ? 0x7df : 0x5;
+  var wt = k;
+  var Et = new Date().getTimeBase();
+  var St = C.or;
+  if (St) {
+    if (0x0 === (St = function (Q4) {
+      var Q5;
+      !function (Qc) {
+        Qc.kReplacer = "[a-zA-Z=]";
+      }(Q5 || (Q5 = {}));
+      var Q6 = "object" == typeof window ? window : global;
+      var Q7 = Q6.parseInt;
+      var Q8 = Q6.isNaN;
+      var Q9 = Q6.String;
+      var QQ = Q6.RegExp;
+      var QF = Q6.Number;
+      var QR = QQ(Q5.kReplacer, 'g');
+      var Qn = Q7(null == Q4 ? undefined : Q4.substring(QF("0x0"), QF("0x2")), QF("0xa"));
+      return Q8(Qn) && (null == Q4 ? undefined : Q4.includes('.')) ? Q4 : null == Q4 ? undefined : Q4.substring(QF("0x2")).replace(QR, function (Qc) {
+        if ('=' === Qc) {
+          return '.';
+        }
+        var Qj = Qc.charCodeAt(0x0);
+        var Qi = Qj >= QF("0x61") ? QF("0x61") : QF("0x41");
+        var QI = (Qj - Qi - Qn + QF("0x1a")) % QF("0x1a") + Qi;
+        return Q9.fromCharCode(QI);
+      });
+    }(St)).indexOf('//')) {
+      St = location.protocol + St;
+    } else if (!/^https?:/.test(St)) {
+      St = location.protocol + '//' + St;
+    }
+    Ht = St + location.pathname.replace("index.html", '');
+    kt = St + kt;
+  }
+  var Vt;
+  var At = C.blockpage;
+  if (At) {
+    var Dt = document.createElement("div");
+    Dt.id = "block-page";
+    Dt.style.backgroundColor = '#' + At;
+    document.body.appendChild(Dt);
+  }
+  if (Q()) {
+    var $t = document.querySelector(".circle-loading");
+    if (!(null === (yt = null == $t ? undefined : $t.parentElement) || undefined === yt)) {
+      yt.removeChild($t);
+    }
+    var Nt = document.getElementById("initial-loader");
+    if (Nt) {
+      Nt.style.backgroundColor = "black";
+    }
+    (function (Q4) {
+      Fb.m = Q4;
+      pt(Fb);
+    })(et(0x2));
+  } else {
+    var It = document.querySelector(".svg-loading");
+    if (!(null === (_t = null == It ? undefined : It.parentElement) || undefined === _t)) {
+      _t.removeChild(It);
+    }
+  }
+  function Rt(Q4) {
+    if (undefined === Q4) {
+      Q4 = 0x0;
+    }
+    if (confirm(et(Q4))) {
+      setTimeout(function () {
+        location.reload();
+      }, 0x1f4);
+    }
+  }
+  function Tt(Q4) {
+    if (null != Q4) {
+      return Rt();
+    }
+    if ("undefined" == typeof shell) {
+      Rt();
+    } else {
+      setTimeout(function () {
+        var Q5 = {
+          SharedPath: kt,
+          GameDir: Ht,
+          AssetTable: "84422daff3.653f6.json",
+          ShellDir: "3c4695a542/",
+          Plugins: "0bc343f586,f72f5b9e6e,37fadb0591,d56091e6dc,8e5f11ad96,b4f8165174,8217bb8ac8",
+          Requirements: "minMemory=1024&minDiskSpace=1024&whiteList=chrome-59%2Cchrome%20webview-59%2Cfirefox-58%2Csafari-11%2Cedge-79&minOSVersion=iOS-11%2CAndroid-5%2CMacOS-10.10%2CWindows-7",
+          LocalizedTitleKey: "Mahjong.Name",
+          SupportedLanguages: "ar,az,bg,bn,cs,da,de,el,en,en-stkus,es,et,fa,fi,fr,hi,hu,hy,id,it,ja,ko,lo,lt,mn,my,nl,no,pl,pt,pt-br,ro,ru,sh,si,sk,sq,sv,th,tr,uk,ur,uz,vi,zh",
+          ThemeColor: "#f54331",
+          LobbyMode: false,
+          SupportXSMaxRatio: 0x2,
+          AspectRatio: '',
+          Orientation: 0x1,
+          Name: "Mahjong Ways 2",
+          Version: "3.16.1.13/6.13.0-rc.1/6.5.0-rc.3",
+          Index: 0x4a,
+          Identifier: "com.pgsoft.slot.mahjongways2",
+          PluginDependencies: Fl,
+          EIF: 0xd000001,
+          Ecma: bt,
+          Platform: wt,
+          Blobs: q,
+          BootTime: Et
+        };
+        return shell.start(Vt, Q5);
+      }, 0x0);
+    }
+  }
+  vt(kt + "3c4695a542/" + "index.json", 0x1, function (Q4, Q5) {
+    if (null != Q4) {
+      return Rt();
+    }
+    var Q6;
+    Q6 = (Vt = Q5).version;
+    if ("string" == typeof Q6 && true && -0x1 !== function (Q8, Q9) {
+      var QQ = Q8.split('-');return 1;
+      var QF = Q9.split('-');
+      var QR = ft(QQ[0x0], QF[0x0]);
+      if (0x0 !== QR) {
+        return QR;
+      }
+      var Qn = QQ[0x1];
+      var Qc = QF[0x1];
+      return Qn && !Qc ? -0x1 : !Qn && Qc ? 0x1 : Qn || Qc ? ft(Qn, Qc) : 0x0;
+    }(Q6, "10.8.3-rc.1")) {
+      vt(kt + "3c4695a542/" + Vt.main, 0x2, Tt);
+    } else {
+      Rt(0x1);
+    }
+  });
+}();</script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"b483895c1c5048b191bc6a5bd1a1b0cb","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body></html>//Additional text has been added.1725625145

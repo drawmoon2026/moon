@@ -1,0 +1,41 @@
+{
+  "gameId": "74",
+  "provider": "pg",
+  "hosts": {
+    "m_host": "m.southasiabp-demo.cc",
+    "or_host": "static.southasiabp-demo.cc"
+  },
+  "expected": 4930,
+  "downloaded_total_files": 768,
+  "missing_count": 4224,
+  "coverage": 0.1432,
+  "min_coverage": 0.98,
+  "critical_missing": [
+    "(^|\\/)(main|application|project)\\.[0-9a-f]*\\.?js$",
+    "(^|\\/)settings\\.[0-9a-f]*\\.?json$"
+  ],
+  "missing_sample": [
+    "/74/assets/main/import/96/96NQrEPnlL9bH9L8B22brO.80713.json",
+    "/74/assets/resources/import/01/01DVgrkNtN64aWPMQgJesq.d93cc.json",
+    "/74/assets/resources/import/03/03QEQiHqhPLrQE0HXRDaE2.f5e74.json",
+    "/74/assets/resources/import/03/03cOFZm7pFVKY+yShqAyqP.e7ead.json",
+    "/74/assets/resources/import/03/03ls4xplZAiKsRdxzH4c+U.760c4.json",
+    "/74/assets/resources/import/08/08SUhNytdKTZLsfAye9MK2.277e0.json",
+    "/74/assets/resources/import/08/08TaJZFSFCTpKM6/2/8Pyp.3f6b0.json",
+    "/74/assets/resources/import/09/09eBnFSYlKboUGXaGV22/n.74b2e.json",
+    "/74/assets/resources/import/0b/0bU2pE81dIMrXhEzkTgSXc.9a632.json",
+    "/74/assets/resources/import/10/10W1cy1wdLSJraMxqupyep.c0552.json",
+    "/74/assets/resources/import/14/14fQeRzjBCpJRXc5+D75FP.12df7.json",
+    "/74/assets/resources/import/15/156llSFfRJCZtwdtF0fl4x.550f9.json",
+    "/74/assets/resources/import/17/17MsA+5CtIF4/cbSpu+C2a.ae2e7.json",
+    "/74/assets/resources/import/18/18QN30NrFEMaNBslIObdxR.cda0a.json",
+    "/74/assets/resources/import/1a/1a4Ls1X19M477cZ5ZpDVTJ.83864.json",
+    "/74/assets/resources/import/1e/1erVH6d+VGiLlJByj4R9RW.b37ab.json",
+    "/74/assets/resources/import/1f/1fr+RIwlRI8LKvFfuxjMYK.04568.json",
+    "/74/assets/resources/import/22/22gpPiFL9L37CT0qDNokPT.d28f1.json",
+    "/74/assets/resources/import/25/256V9E9Y1F36GzreUCmiTu.0b4b8.json",
+    "/74/assets/resources/import/27/27inVPuS9KiolDJ6Ck4zgq.da4f9.json"
+  ],
+  "verdict": "fail",
+  "ts": "2026-07-19T07:26:51.474Z"
+}
