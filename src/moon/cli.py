@@ -18,6 +18,8 @@ def main():
 
     sub.add_parser("traindata", help="从已索引语料生成 LoRA 微调数据(需 serve.sh 在运行)")
 
+    sub.add_parser("mcp", help="以 MCP server(stdio)方式暴露检索工具,供 Qwen Code 等接入")
+
     args = parser.parse_args()
 
     if args.command == "index":
@@ -31,6 +33,9 @@ def main():
             print(f"\n=== {chunk.ref}  (rrf={score:.4f}) ===")
             text = chunk.text
             print(text[:500] + ("…" if len(text) > 500 else ""))
+    elif args.command == "mcp":
+        from .mcp_server import run
+        run()
     elif args.command == "traindata":
         from .traindata import build_traindata
         build_traindata()

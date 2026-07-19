@@ -1,0 +1,12 @@
+2026-07-19 13:38:07 | INFO | Starting server on 0.0.0.0:7070
+2026-07-19 13:38:07 | INFO | Multi-handler server configuration complete.
+2026-07-19 13:38:07 | INFO | Starting Uvicorn server...
+2026-07-19 13:38:07 | INFO | Model registry initialized
+2026-07-19 13:38:07 | INFO | Spawning handler process for model 'mlx-community/Qwen3-Coder-30B-A3B-Instruct-4bit-dwq-v2' (type=lm, path=mlx-community/Qwen3-Coder-30B-A3B-Instruct-4bit-dwq-v2)
+2026-07-19 13:38:07 | INFO | Spawned handler process for 'mlx-community/Qwen3-Coder-30B-A3B-Instruct-4bit-dwq-v2' (pid=60993)
+2026-07-19 13:38:09 | INFO | 'mlx-community/Qwen3-Coder-30B-A3B-Instruct-4bit-dwq-v2': Fetching 'mlx-community/Qwen3-Coder-30B-A3B-Instruct-4bit-dwq-v2' from HuggingFace...
+2026-07-19 13:38:09 | INFO | 'mlx-community/Qwen3-Coder-30B-A3B-Instruct-4bit-dwq-v2': Fetched 'mlx-community/Qwen3-Coder-30B-A3B-Instruct-4bit-dwq-v2'
+2026-07-19 13:39:01 | INFO | Handler process for 'mlx-community/Qwen3-Coder-30B-A3B-Instruct-4bit-dwq-v2' is ready
+2026-07-19 13:39:01 | INFO | Registered model: mlx-community/Qwen3-Coder-30B-A3B-Instruct-4bit-dwq-v2 (type=lm, context_length=32768)
+2026-07-19 13:39:01 | INFO | Model 'mlx-community/Qwen3-Coder-30B-A3B-Instruct-4bit-dwq-v2' spawned and registered successfully
+2026-07-19 13:39:01 | INFO | Multi-handler initialization complete. 1 model(s) spawned.

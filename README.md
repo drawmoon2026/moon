@@ -17,6 +17,7 @@
 - [x] 阶段 1:本地推理跑通 — M5 Max 实测生成 117.8 tok/s,峰值内存 17.3GB
 - [x] 阶段 2:RAG 管线 — AST 分块(cAST)+ BM25/向量混合检索(RRF 融合),回答带出处引用
 - [x] 阶段 3:LoRA 微调 — 实测 30B 本地 QLoRA 可行(峰值 19.3GB,~2.4 it/s),无需上云
+- [x] 阶段 4:终端智能体前端 — Qwen Code 套壳 + moon RAG 经 MCP 接入(选型见 docs/前端选型调研报告.md)
 
 ## 使用
 
@@ -49,3 +50,15 @@ ADAPTER=1 ./scripts/serve.sh   # 挂载微调后的适配器提供服务
 ```
 
 适配器权重存在 `models/adapters/`,经 Git LFS 入库。微调会提升域内表现但损伤通用能力(调研实证约 -24% HumanEval),所以适配器按需挂载,基座模型始终保留。
+
+### 终端智能体(类 Claude Code 体验)
+
+```sh
+npm i -g @qwen-code/qwen-code   # 一次性安装
+./scripts/serve.sh              # 起本地推理服务
+qwen                            # 在本项目目录里启动即自动连本地模型
+```
+
+- 前端:[Qwen Code](https://github.com/QwenLM/qwen-code)(阿里官方 CLI,为 Qwen3-Coder 调优),能对话、读写文件、执行命令。
+- 项目内 `.qwen/.env` 指定本地端点(`OPENAI_BASE_URL=http://localhost:7070/v1`),`.qwen/settings.json` 通过 MCP 挂载了 `moon-rag` 检索工具——问它"我的代码库里……"时会自动检索个人语料并引用出处。
+- 推理引擎用 [mlx-openai-server](https://github.com/cubist38/mlx-openai-server)(`uv tool install mlx-openai-server`):mlx_lm.server 在智能体级长提示(约 19k token)+ prompt cache 场景有崩溃 bug,且工具调用解析弱;mlx-openai-server 自带 `qwen3_coder` 工具解析器,同一份 MLX 权重直接加载。

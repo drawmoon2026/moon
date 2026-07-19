@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "moon-rag": {
+      "command": "uv",
+      "args": [
+        "run",
+        "moon",
+        "mcp"
+      ]
+    }
+  },
+  "$version": 4
+}
