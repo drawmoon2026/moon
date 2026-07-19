@@ -11,8 +11,15 @@ const PORT = (args.find(a => a.startsWith('--port=')) || '--port=8443').split('=
 const game = require('./game.json');
 
 (async () => {
-    const rules = [game.m_host, game.static_host, game.api_host, 'api.omgapi.cc']
-        .map(h => `MAP ${h} 127.0.0.1:${PORT}`).join(',');
+    // 把所有 demo 域名(*.cc / *demo* / api.*)都导到本地后端,只让真正无关的第三方(gtm/cloudflare)漏出去
+    const rules = [
+        `MAP ${game.m_host} 127.0.0.1:${PORT}`,
+        `MAP ${game.static_host} 127.0.0.1:${PORT}`,
+        `MAP ${game.api_host} 127.0.0.1:${PORT}`,
+        `MAP *.southasiabp-demo.cc 127.0.0.1:${PORT}`,
+        `MAP *.pgsoft-games-demo.cc 127.0.0.1:${PORT}`,
+        `MAP api.omgapi.cc 127.0.0.1:${PORT}`,
+    ].join(',');
     const browser = await puppeteer.launch({
         headless: 'new',
         args: [`--host-resolver-rules=${rules}`, '--ignore-certificate-errors', '--no-sandbox', '--disable-features=DnsOverHttps'],
@@ -20,9 +27,12 @@ const game = require('./game.json');
     const page = await browser.newPage();
     const hosts = {}, errors = [];
     let external = 0;
+    const bad = [];
     page.on('response', (res) => {
         try { const h = new URL(res.url()).hostname; hosts[h] = (hosts[h] || 0) + 1; if (h !== '127.0.0.1') external++; } catch {}
+        if (res.status() >= 400) bad.push(res.status() + ' ' + res.url().slice(0, 110));
     });
+    page.on('requestfailed', (r) => bad.push('FAIL ' + (r.failure()?.errorText || '') + ' ' + r.url().slice(0, 90)));
     page.on('console', (m) => { if (m.type() === 'error') errors.push(m.text().slice(0, 120)); });
     page.on('pageerror', (e) => errors.push('pageerror: ' + e.message.slice(0, 120)));
 
@@ -45,6 +55,8 @@ const game = require('./game.json');
     console.log('  Cocos: cc=' + cocos.hasCC + ' director=' + cocos.hasDirector + ' scene=' + cocos.scene + ' canvas=' + cocos.canvas);
     console.log('  console.error 数:', errors.length);
     errors.slice(0, 8).forEach(e => console.log('    - ' + e));
+    console.log('  失败请求(4xx/5xx/failed):', bad.length);
+    bad.slice(0, 12).forEach(b => console.log('    - ' + b));
     await browser.close();
     // boot 判定:引擎起来 + canvas 存在
     const ok = cocos.hasDirector && cocos.canvas;
