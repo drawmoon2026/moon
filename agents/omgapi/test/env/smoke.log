@@ -1,0 +1,11 @@
+
+===== 前端冒烟 [74] =====
+  资源请求总数: 19  | host 分布: {"m.southasiabp-demo.cc":5,"static.southasiabp-demo.cc":11,"api.southasiabp-demo.cc":1,"":6,"static.cloudflareinsights.com":1,"www.googletagmanager.com":2}
+  外部(非本地)请求: 26 ⚠️ 有外部请求
+  Cocos: cc=false director=false scene=null canvas=true
+  console.error 数: 2
+    - A bad HTTP response code (404) was received when fetching the script.
+    - Failed to load resource: the server responded with a status of 404 (Not Found)
+  失败请求(4xx/5xx/failed): 1
+    - 404 https://m.southasiabp-demo.cc/cdn-cgi/rum?
+  判定: ❌ 未起来
