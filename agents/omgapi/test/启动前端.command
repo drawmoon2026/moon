@@ -1,17 +1,26 @@
 #!/bin/bash
-# 双击启动:用 Chrome 打开游戏,所有 demo host 映射到本地后端(免 sudo / 免改 hosts)
+# 双击启动:打开游戏。检测不到本地后端会自动拉起(所以双击这一个就够)。
+export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
 cd "$(dirname "$0")" || exit 1
 
 GID="${1:-74}"
 PORT="${2:-8443}"
 
-# 后端没起就提示(前端必须配合后端)
+# 后端没起就自动在后台拉起,并等它就绪
 if ! curl -sk -o /dev/null "https://127.0.0.1:${PORT}/" 2>/dev/null; then
-  echo "⚠️  本地后端 127.0.0.1:${PORT} 没响应 —— 请先双击「启动后端.command」"
-  echo "    (继续尝试打开,若空白请起后端后重试)"
+  echo "本地后端未运行,自动拉起中..."
+  nohup node env/server.js --gid="$GID" --port="$PORT" > env/backend.log 2>&1 &
+  for i in $(seq 1 20); do
+    sleep 0.5
+    curl -sk -o /dev/null "https://127.0.0.1:${PORT}/" 2>/dev/null && break
+  done
+  if ! curl -sk -o /dev/null "https://127.0.0.1:${PORT}/" 2>/dev/null; then
+    echo "❌ 后端拉起失败,看 env/backend.log:"; tail -5 env/backend.log; exit 1
+  fi
+  echo "✅ 后端已就绪 (127.0.0.1:${PORT})"
 fi
 
-# 读取该游戏的 host 与启动 URL(node 输出 4 个空格分隔字段)
+# 读取该游戏的 host 与启动 URL
 read -r M S A URL <<< "$(node -e 'const g=require("./env/game.json");process.stdout.write([g.m_host,g.static_host,g.api_host,g.url].join(" "))')"
 
 # puppeteer 自带的 Chrome for Testing
@@ -20,7 +29,7 @@ if [ ! -x "$CHROME" ]; then
   echo "找不到 Chrome,请先在 test 目录跑 npm i puppeteer"; exit 1
 fi
 
-# 把游戏用到的所有 host 解析到本机后端端口;忽略自签证书
+# 所有 demo host 解析到本机后端;忽略自签证书。
 # 关键:不要设 iPhone/mobile UA!Cocos 在 mobile/headless UA 下不启动;用 Chrome 默认桌面 UA。
 RULES="MAP $M 127.0.0.1:$PORT,MAP $S 127.0.0.1:$PORT,MAP $A 127.0.0.1:$PORT,MAP *.southasiabp-demo.cc 127.0.0.1:$PORT,MAP *.pgsoft-games-demo.cc 127.0.0.1:$PORT,MAP api.omgapi.cc 127.0.0.1:$PORT"
 
