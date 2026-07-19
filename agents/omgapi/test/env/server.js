@@ -111,6 +111,15 @@ const server = https.createServer(options, (req, res) => {
     });
 });
 
+server.on('error', (e) => {
+    if (e.code === 'EADDRINUSE') {
+        console.error(`\n端口 ${PORT} 已被占用 —— 后端可能已在运行。`);
+        console.error(`直接双击「启动前端.command」即可;或先释放端口: lsof -ti :${PORT} | xargs kill`);
+        process.exit(1);
+    }
+    throw e;
+});
+
 server.listen(PORT, '127.0.0.1', () => {
     console.log(`本地镜像后端已启动: https://127.0.0.1:${PORT}  (gid=${gid} ${game.gameCode})`);
     console.log(`  静态: ${game.m_host} / ${game.static_host}  →  ${path.relative(process.cwd(), WEBGAME)}`);
