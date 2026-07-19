@@ -1,11 +1,26 @@
 """全局配置:路径、模型名、检索参数。"""
+import os
 from pathlib import Path
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
-# 语料与索引位置
-CORPUS_DIR = PROJECT_ROOT / "data" / "corpus"   # 想让 AI 学习的代码/文档放这里(或 index 时指定其他路径)
-INDEX_DIR = PROJECT_ROOT / "data" / "index"
+# 智能体(agent):moon 是"养智能体"的基础设施,每个智能体有独立语料/索引/规则。
+# 用 --agent 参数或 MOON_AGENT 环境变量切换;默认 default。
+AGENT = os.environ.get("MOON_AGENT", "default")
+AGENTS_DIR = PROJECT_ROOT / "data" / "agents"
+
+
+def agent_dir(agent: str = None) -> Path:
+    return AGENTS_DIR / (agent or AGENT)
+
+
+def index_dir(agent: str = None) -> Path:
+    return agent_dir(agent) / "index"
+
+
+# 兼容旧接口(单智能体时代);运行时按当前 AGENT 解析
+CORPUS_DIR = PROJECT_ROOT / "data" / "corpus"   # 默认放置想索引的代码/文档(也可 index 时指定其他路径)
+INDEX_DIR = index_dir()
 
 # 模型
 EMBEDDING_MODEL = "Qwen/Qwen3-Embedding-0.6B"   # 0.6B 索引速度快;追求精度可换 4B

@@ -1,0 +1,13 @@
+{
+  "name": "omgapi",
+  "description": "PG 128款老虎机本地镜像/逆向;严格三阶段流水线(采集→反推→上线)",
+  "corpus": [
+    "/Users/tom/project/drawmoon/omgapi/CLAUDE.md",
+    "/Users/tom/project/drawmoon/omgapi/NEW-GAME-PIPELINE.md",
+    "/Users/tom/project/drawmoon/omgapi/PITFALLS.md",
+    "/Users/tom/project/drawmoon/omgapi/README.md",
+    "/Users/tom/project/drawmoon/omgapi/SESSION-HANDOFF.md",
+    "/Users/tom/project/drawmoon/omgapi/docs",
+    "/Users/tom/project/drawmoon/omgapi/memory"
+  ]
+}

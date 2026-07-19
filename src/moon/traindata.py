@@ -30,7 +30,7 @@ VALID_RATIO = 0.1
 
 
 def _load_code_chunks() -> list[dict]:
-    path = config.INDEX_DIR / "chunks.jsonl"
+    path = config.index_dir() / "chunks.jsonl"
     if not path.exists():
         raise SystemExit("索引不存在,先运行: moon index <路径...>")
     code_suffixes = tuple(config.AST_LANGUAGES) + (".sh", ".zsh", ".go", ".rs", ".c", ".cpp", ".rb", ".swift", ".kt", ".sql")

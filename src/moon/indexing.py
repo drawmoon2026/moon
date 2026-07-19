@@ -43,10 +43,10 @@ def build_index(paths: list[str]) -> int:
     if not chunks:
         print("没有可索引的内容")
         return 0
-    config.INDEX_DIR.mkdir(parents=True, exist_ok=True)
+    config.index_dir().mkdir(parents=True, exist_ok=True)
 
     # 1) chunk 元数据(两路索引共用,行号即 id)
-    with open(config.INDEX_DIR / "chunks.jsonl", "w", encoding="utf-8") as f:
+    with open(config.index_dir() / "chunks.jsonl", "w", encoding="utf-8") as f:
         for c in chunks:
             f.write(json.dumps(c.__dict__, ensure_ascii=False) + "\n")
 
@@ -54,13 +54,13 @@ def build_index(paths: list[str]) -> int:
     corpus_tokens = [tokenize(c.text) for c in chunks]
     retriever = bm25s.BM25()
     retriever.index(corpus_tokens)
-    retriever.save(str(config.INDEX_DIR / "bm25"))
+    retriever.save(str(config.index_dir() / "bm25"))
 
     # 3) 向量(LanceDB)
     import lancedb
     from .embedding import embed_documents
     vectors = embed_documents([c.text for c in chunks])
-    db = lancedb.connect(str(config.INDEX_DIR / "lance"))
+    db = lancedb.connect(str(config.index_dir() / "lance"))
     db.create_table(
         "chunks",
         data=[{"id": i, "vector": v} for i, v in enumerate(vectors)],

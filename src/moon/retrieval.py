@@ -9,7 +9,7 @@ from .indexing import tokenize
 
 
 def _load_chunks() -> list[Chunk]:
-    path = config.INDEX_DIR / "chunks.jsonl"
+    path = config.index_dir() / "chunks.jsonl"
     if not path.exists():
         raise FileNotFoundError("索引不存在,先运行: moon index <路径...>")
     with open(path, encoding="utf-8") as f:
@@ -20,7 +20,7 @@ def search(query: str, top_n: int = config.FINAL_TOP_N) -> list[tuple[Chunk, flo
     chunks = _load_chunks()
 
     # BM25 一路
-    retriever = bm25s.BM25.load(str(config.INDEX_DIR / "bm25"))
+    retriever = bm25s.BM25.load(str(config.index_dir() / "bm25"))
     q_tokens = tokenize(query)
     ranks: dict[int, float] = {}
     if q_tokens:
@@ -32,7 +32,7 @@ def search(query: str, top_n: int = config.FINAL_TOP_N) -> list[tuple[Chunk, flo
     # 向量一路
     import lancedb
     from .embedding import embed_query
-    db = lancedb.connect(str(config.INDEX_DIR / "lance"))
+    db = lancedb.connect(str(config.index_dir() / "lance"))
     table = db.open_table("chunks")
     hits = table.search(embed_query(query)).limit(config.VECTOR_TOP_K).to_list()
     for rank, hit in enumerate(hits):

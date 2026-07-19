@@ -1,0 +1,9 @@
+{
+  "name": "omgapi-test",
+  "private": true,
+  "type": "commonjs",
+  "description": "moon omgapi 智能体流程测试:硬流程脚本 + 单款下载验证",
+  "dependencies": {
+    "puppeteer": "^25.3.0"
+  }
+}
