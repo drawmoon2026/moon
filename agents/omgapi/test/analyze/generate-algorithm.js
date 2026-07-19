@@ -47,7 +47,7 @@ const PARAMS = {
     targetRtp: config74rtp(),
 };
 function config74rtp() {
-    try { return JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'env', 'mock', '74', 'config.json'), 'utf8')).rtp / 100; }
+    try { return JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'env', 'mock', gid, 'config.json'), 'utf8')).rtp / 100; }
     catch { return 0.9681; }
 }
 

@@ -15,20 +15,27 @@ const fs = require('fs');
 const path = require('path');
 
 const gid = process.argv[2] || '74';
-const jsPath = process.argv[3] ||
-    `out/pg/${gid}/webgame/static.southasiabp-demo.cc/${gid}/assets/main/index.74c8a.js`;
 const ROOT = path.join(__dirname, '..');
+// 自动发现主逻辑 JS(assets/main/index.<hash>.js);hash 每款不同,不能写死
+function findMainJs() {
+    if (process.argv[3]) return process.argv[3];
+    const base = path.join(ROOT, 'out', 'pg', gid, 'webgame');
+    let hit = null;
+    (function walk(d) { if (hit || !fs.existsSync(d)) return; for (const e of fs.readdirSync(d, { withFileTypes: true })) { const p = path.join(d, e.name); if (e.isDirectory()) walk(p); else if (/assets\/main\/index\.[0-9a-f]+\.js$/.test(p)) hit = p; } })(base);
+    return hit ? path.relative(ROOT, hit) : null;
+}
+const jsPath = findMainJs();
 const run = (cmd) => { console.log('\n$ ' + cmd); execSync(cmd, { cwd: ROOT, stdio: 'inherit' }); };
 
 console.log('======== 答案无关提取流程 gid=' + gid + ' ========');
-console.log('\n【1/5】JS 逆向 → 机制');
-try { run(`node analyze/deob-strings.js "${jsPath}"`); }
-catch { console.log('  (JS 逆向跳过:路径不存在或混淆变体不同)'); }
+console.log('\n【1/6】JS 逆向 → 机制' + (jsPath ? ` (${path.basename(jsPath)})` : ''));
+if (jsPath) { try { run(`node analyze/deob-strings.js "${jsPath}"`); } catch { console.log('  (JS 逆向失败:混淆变体不同)'); } }
+else console.log('  (未找到主逻辑 JS,跳过)');
 
-console.log('\n【2/5】boot 配置');
+console.log('\n【2/6】boot 配置');
 run(`node analyze/infer-config.js ${gid}`);
 
-console.log('\n【3/5】spin 反推');
+console.log('\n【3/6】spin 反推');
 for (const s of ['infer-paytable', 'infer-reel-weights', 'infer-triggers', 'infer-cascade'])
     run(`node analyze/${s}.js`);
 

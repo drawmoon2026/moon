@@ -70,20 +70,4 @@ for (let r = 0; r < REELS; r++) {
     console.log(`  R${r + 1}: ${row.join(' ')}`);
 }
 console.log(`\n已写反推参数 → analyze/inferred/reel_weights.json`);
-
-// ── dev 校验:与答案的概率偏差(最终生成器不依赖)──
-const ANS = path.join('/Users/tom/project/drawmoon/omgapi/mocks/pg/74/reel_strip_weights.json');
-if (fs.existsSync(ANS)) {
-    const ans = JSON.parse(fs.readFileSync(ANS, 'utf8'));
-    let maxDev = 0, n = 0;
-    for (let r = 0; r < REELS; r++) {
-        const mine = result.reels['R' + (r + 1)].probabilities;
-        const theirs = (ans.reels?.['R' + (r + 1)] || {}).probabilities || {};
-        for (let s = 1; s <= 10; s++) {
-            const a = mine[s] || 0, b = theirs[s] || 0;
-            maxDev = Math.max(maxDev, Math.abs(a - b)); n++;
-        }
-    }
-    console.log(`\n[dev 校验] 对照答案 reel_strip_weights.json:最大概率偏差 ${(maxDev * 100).toFixed(2)} 个百分点` +
-        (maxDev < 0.02 ? '  ✅ 分布吻合(样本越多越准)' : '  ⚠️ 偏差偏大,需更多样本'));
-}
+// 纯统计产物,不做答案对照;样本越多概率越准。

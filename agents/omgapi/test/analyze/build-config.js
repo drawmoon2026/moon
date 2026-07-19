@@ -29,12 +29,22 @@ const compactReels = (reels) => {
     return out;
 };
 
+// identity 全部推导,不硬编码:
+//   game_code ← GameInfo mock 文件名(game-api_<code>_v2_GameInfo_Get.json)
+//   ways      ← 可视格数连乘(4×5×5×5×4=2000)
+//   type      ← 有级联=tumble;结算方式 ways(可视格>1连乘)
+const apiDir = path.join(__dirname, '..', 'env', 'mock', gid, 'api');
+let gameCode = null;
+try { const gi = fs.readdirSync(apiDir).find(f => /GameInfo/i.test(f)); const m = gi && gi.match(/game-api_(.+?)_v\d/i); gameCode = m && m[1]; } catch {}
+const ways = (layout.visible && layout.visible.length) ? layout.visible.reduce((a, v) => a * v.length, 1) : null;
+const hasCascade = casc.pass_rate !== undefined;
+
 const spec = {
     $schema: 'moon/game-spec/v1',
     _note: '游戏规格 —— 从 spin 样本 + 客户端 JS 逆向提炼,答案无关。通用引擎的唯一输入。',
     identity: {
-        gid, provider: 'pg', game_code: 'mahjong-ways-two', engine: 'cocos',
-        type: 'ways-tumble', ways: 2000,
+        gid, provider: 'pg', game_code: gameCode, engine: 'cocos',
+        type: hasCascade ? 'ways-tumble' : 'ways', ways,
     },
     // ① 机制(来源:客户端 JS 反混淆)
     mechanics: {

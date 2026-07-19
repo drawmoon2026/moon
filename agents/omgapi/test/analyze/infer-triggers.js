@@ -73,13 +73,4 @@ console.log(`金色变 wild 每轴发生率:`);
 for (let r = 0; r < REELS; r++) console.log(`  R${r + 1}: ${(goldWildRate['R' + (r + 1)] * 100).toFixed(2)}%`);
 console.log(`  → 生效轴: ${result.gold_wild_reels.join(', ')}`);
 console.log(`\n已写反推参数 → analyze/inferred/triggers.json`);
-
-// ── dev 校验(最终生成器不依赖)──
-const ansBase = [1, 2, 3, 5], ansFs = [2, 4, 6, 10];
-const eq = (a, b) => a.length === b.length && a.every((v, i) => v === b[i]);
-const wmOk = eq(wmBase, ansBase) && eq(wmFs, ansFs);
-const reelsOk = goldWildRate.R1 < 0.001 && goldWildRate.R5 < 0.001 &&
-    goldWildRate.R2 > 0 && goldWildRate.R3 > 0 && goldWildRate.R4 > 0;
-console.log(`\n[dev 校验] wm 阶梯 vs 答案([1,2,3,5]/[2,4,6,10]): ${wmOk ? '✅ 一致' : '❌ 不符'}`);
-console.log(`[dev 校验] 金色变 wild 仅 R2/R3/R4(R1/R5=0): ${reelsOk ? '✅ 一致' : '❌ 不符'}`);
-process.exit(wmOk && reelsOk ? 0 : 1);
+// 反推产物,不做答案对照;wm 阶梯/金色轴由 spin 数据直接统计得出。
