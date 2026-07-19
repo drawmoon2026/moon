@@ -35,10 +35,21 @@ RULES="MAP $M 127.0.0.1:$PORT,MAP $S 127.0.0.1:$PORT,MAP $A 127.0.0.1:$PORT,MAP 
 
 echo "打开游戏 $GID → 本地后端 127.0.0.1:$PORT"
 echo "(若弹「浏览器不支持」:点『继续游戏』即可 —— PITFALLS #18)"
-exec "$CHROME" \
-  --user-data-dir="$(pwd)/env/.chrome-profile" \
+
+# 每次用独立的全新 profile:避免 Chrome 单实例转发(旧实例还活着时,新 URL 会被塞成新标签,越叠越多)。
+# 关窗后自动删除该 profile,保持干净。
+PROFILE="$(pwd)/env/.chrome-profile-$$"
+rm -rf "$(pwd)"/env/.chrome-profile-* 2>/dev/null   # 清理上次被强杀留下的残留 profile
+trap 'rm -rf "$PROFILE"' EXIT
+
+"$CHROME" \
+  --user-data-dir="$PROFILE" \
   --host-resolver-rules="$RULES" \
   --ignore-certificate-errors \
   --disable-features=DnsOverHttps \
+  --no-first-run \
+  --no-default-browser-check \
+  --hide-crash-restore-bubble \
+  --disable-session-crashed-bubble \
   --window-size=440,900 \
   "$URL"
