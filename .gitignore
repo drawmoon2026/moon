@@ -16,3 +16,15 @@ data/.DS_Store
 # 运行日志
 logs/
 agents/omgapi/test/node_modules
+
+dl/
+out/
+node_modules/
+agents/omgapi/test/env/cert/
+agents/omgapi/test/env/.chrome-profile*
+agents/omgapi/test/env/*.log
+agents/omgapi/test/analyze/deob/
+agents/omgapi/test/env/mock/*/spin/
+agents/omgapi/test/env/mock/*/spin-live/
+agents/omgapi/test/analyze/inferred/
+agents/omgapi/test/generated/

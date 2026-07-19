@@ -35,15 +35,19 @@ else console.log('  (未找到主逻辑 JS,跳过)');
 console.log('\n【2/6】boot 配置');
 run(`node analyze/infer-config.js ${gid}`);
 
-console.log('\n【3/6】spin 反推');
+// spin 目录:拷来的样本在 spin/,自采的在 spin-live/;哪个有用哪个
+const spinCands = [path.join(ROOT, 'env', 'mock', gid, 'spin'), path.join(ROOT, 'env', 'mock', gid, 'spin-live')];
+const spinDir = spinCands.find(d => fs.existsSync(d) && fs.readdirSync(d).some(f => f.endsWith('.json')));
+if (!spinDir) { console.error(`没有 ${gid} 的 spin 样本(env/mock/${gid}/spin 或 spin-live)`); process.exit(1); }
+console.log('\n【3/6】spin 反推  (样本: ' + path.relative(ROOT, spinDir) + ')');
 for (const s of ['infer-paytable', 'infer-reel-weights', 'infer-triggers', 'infer-cascade'])
-    run(`node analyze/${s}.js`);
+    run(`node analyze/${s}.js "${spinDir}"`);
 
 console.log('\n【4/6】合成游戏规格(核心产物)');
 run(`node analyze/build-config.js ${gid}`);
 
 console.log('\n【5/6】答案无关自校验门槛(config 必须与数据自洽)');
-try { run(`node analyze/validate.js ${gid}`); }
+try { run(`node analyze/validate.js ${gid} "${spinDir}"`); }
 catch { console.log('  ❌ 自校验未过 —— config 与 spin 数据不符,不应放行下游。'); process.exitCode = 1; }
 const IN = path.join(__dirname, 'inferred');
 const rd = (n) => { try { return JSON.parse(fs.readFileSync(path.join(IN, n), 'utf8')); } catch { return null; } };

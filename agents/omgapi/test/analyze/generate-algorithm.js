@@ -25,7 +25,7 @@ const triggers = { wm_table: { base: spec.multiplier.ladder_base, fs: spec.multi
 // 从规格里的概率表建每轴采样器([symbol, weight])
 function samplers(probByReel) {
     const out = [];
-    for (let r = 0; r < 5; r++) {
+    for (let r = 0; r < layout.reels.length; r++) {
         const p = probByReel['R' + (r + 1)] || {};
         const entries = Object.entries(p).map(([s, prob]) => [+s, prob]);
         const total = entries.reduce((a, [, w]) => a + w, 0) || 1;
@@ -57,6 +57,10 @@ const ENGINE = `
 // 参数全部来自 spin 样本反推(answer-free)。RTP 由权重决定,可再叠 target-ratio 调节。
 const P = ${JSON.stringify(PARAMS)};
 const WILD = 0;
+const NR = P.reels.length;                     // 轴数(推导)
+const RL = P.reels[NR-1][1] + 1;                // 牌面长度(推导)
+const SYMS = Object.keys(P.paytable).map(Number).sort((a,b)=>a-b);  // 赔表里的符号
+
 
 function draw(sampler) {
   let x = Math.random() * sampler.total, i = 0;
@@ -66,8 +70,8 @@ function draw(sampler) {
 
 // 合成一整块 35 格落点(sampler 是按轴的数组)
 function spinBoard(sampler) {
-  const b = new Array(35).fill(0);
-  for (let r = 0; r < 5; r++) { const [s, e] = P.reels[r]; for (let i = s; i <= e; i++) b[i] = draw(sampler[r]); }
+  const b = new Array(RL).fill(0);
+  for (let r = 0; r < NR; r++) { const [s, e] = P.reels[r]; for (let i = s; i <= e; i++) b[i] = draw(sampler[r]); }
   return b;
 }
 
@@ -75,14 +79,14 @@ function spinBoard(sampler) {
 // lw(每符号赢分)= pay×ways×cs×ml,不含 wm;wm 只乘在这一步的总分上(tw = Σlw × wm)
 function settle(board, cs, ml, wm) {
   const wins = {}; const winCells = new Set(); let base = 0;
-  for (let sym = 2; sym <= 10; sym++) {
+  for (const sym of SYMS) {
     const per = []; const cellsByReel = [];
-    for (let r = 0; r < 5; r++) {
+    for (let r = 0; r < NR; r++) {
       let cnt = 0; const cells = [];
       for (const idx of P.visible[r]) { const v = board[idx]; if (v === sym || v === WILD) { cnt++; cells.push(idx); } }
       per.push(cnt); cellsByReel.push(cells);
     }
-    let N = 0; for (let r = 0; r < 5; r++) { if (per[r] > 0) N++; else break; }
+    let N = 0; for (let r = 0; r < NR; r++) { if (per[r] > 0) N++; else break; }
     const pay = P.paytable[sym] && P.paytable[sym][N];
     if (N >= 3 && pay) {
       const ways = per.slice(0, N).reduce((a, b) => a * b, 1);
@@ -96,8 +100,8 @@ function settle(board, cs, ml, wm) {
 
 // 级联:消除中奖格 → 重力下落(高idx=底)→ 补顶
 function tumble(board, remove, sampler) {
-  const rm = new Set(remove); const nb = new Array(35).fill(0);
-  for (let r = 0; r < 5; r++) {
+  const rm = new Set(remove); const nb = new Array(RL).fill(0);
+  for (let r = 0; r < NR; r++) {
     const [s, e] = P.reels[r]; const kept = [];
     for (let i = s; i <= e; i++) if (!rm.has(i)) kept.push(board[i]);
     const newCount = (e - s + 1) - kept.length; const col = [];
@@ -110,7 +114,7 @@ function tumble(board, remove, sampler) {
 
 // 金色变 wild:R2/R3/R4 可视格按反推概率原地变 wild
 function applyGoldWild(board) {
-  for (let r = 0; r < 5; r++) {
+  for (let r = 0; r < NR; r++) {
     const rate = P.goldWildRate['R' + (r + 1)] || 0;
     if (rate <= 0) continue;
     for (const idx of P.visible[r]) if (board[idx] !== WILD && Math.random() < rate) board[idx] = WILD;

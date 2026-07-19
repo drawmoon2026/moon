@@ -12,10 +12,12 @@
  */
 const fs = require('fs');
 const path = require('path');
+const { deriveLayout } = require('./lib-layout');
 
-const ROWS_PER_REEL = 7, REELS = 5;
 const spinDir = process.argv[2] || path.join(__dirname, '..', 'env', 'mock', '74', 'spin');
 const files = fs.readdirSync(spinDir).filter(f => f.endsWith('.json'));
+const _L = deriveLayout(spinDir);            // 布局从数据推导
+const ROWS_PER_REEL = _L.rows_per_reel, REELS = _L.num_reels;
 
 const wmSeen = { base: {}, fs: {} };        // 状态类 → {wm值: 次数}
 const stSeen = {};

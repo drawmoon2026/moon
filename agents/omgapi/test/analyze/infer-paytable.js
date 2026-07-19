@@ -15,12 +15,15 @@
  */
 const fs = require('fs');
 const path = require('path');
-
-const ROWS_PER_REEL = 7;                 // 结构常量:条带每轴 7 格(位置÷7=轴号)
-const reelOf = (pos) => Math.floor(pos / ROWS_PER_REEL);
+const { deriveLayout } = require('./lib-layout');
 
 const spinDir = process.argv[2] || path.join(__dirname, '..', 'env', 'mock', '74', 'spin');
 const files = fs.readdirSync(spinDir).filter(f => f.endsWith('.json'));
+
+// 布局从数据推导(轴数/每轴行数),不写死尺寸
+const LAYOUT = deriveLayout(spinDir);
+const ROWS_PER_REEL = LAYOUT.rows_per_reel;
+const reelOf = (pos) => Math.floor(pos / ROWS_PER_REEL);
 
 // paytable[sym][N] = { pay, count }  —— 同一 (sym,N) 多次观测应一致
 const inferred = {};
@@ -85,12 +88,10 @@ const OUT_DIR = path.join(__dirname, 'inferred');
 fs.mkdirSync(OUT_DIR, { recursive: true });
 fs.writeFileSync(path.join(OUT_DIR, 'paytable.json'), JSON.stringify(outParams, null, 2));
 
-// 布局:每轴可视格(从中奖位置并集反推),供生成器结算 ways 用
-const visible = Array.from({ length: 5 }, () => []);
-for (const p of [...visiblePos].sort((a, b) => a - b)) visible[Math.floor(p / ROWS_PER_REEL)].push(p);
-const layout = { rows_per_reel: ROWS_PER_REEL, reels: [[0, 6], [7, 13], [14, 20], [21, 27], [28, 34]], visible };
+// 布局:推导出的轴数/每轴行数/可视格(全部答案无关)
+const layout = { rows_per_reel: LAYOUT.rows_per_reel, num_reels: LAYOUT.num_reels, reels: LAYOUT.reels, visible: LAYOUT.visible };
 fs.writeFileSync(path.join(OUT_DIR, 'layout.json'), JSON.stringify(layout, null, 2));
 console.log(`\n已写反推参数 → analyze/inferred/paytable.json, layout.json`);
-console.log(`  可视格布局: ${visible.map(v => v.length).join('/')}`);
+console.log(`  布局: ${LAYOUT.num_reels}轴 × ${LAYOUT.rows_per_reel}行,可视格 ${LAYOUT.visible.map(v => v.length).join('/')}`);
 // 答案无关的质量信号:lw 公式自校验 + 赔率一致性(见上)。正确性由 validate.js 统一把关。
 process.exit(conflicts.length || formulaFail ? 1 : 0);

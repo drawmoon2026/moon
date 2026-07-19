@@ -15,13 +15,14 @@ const path = require('path');
 const gid = process.argv[2] || '74';
 const ROOT = path.join(__dirname, '..');
 const spec = JSON.parse(fs.readFileSync(path.join(ROOT, 'config', `pg-${gid}.json`), 'utf8'));
-const spinDir = path.join(ROOT, 'env', 'mock', gid, 'spin');
+const spinDir = process.argv[3] || [path.join(ROOT, 'env', 'mock', gid, 'spin'), path.join(ROOT, 'env', 'mock', gid, 'spin-live')].find(d => fs.existsSync(d));
 const files = fs.readdirSync(spinDir).filter(f => f.endsWith('.json'));
 
 const PT = spec.paytable.table;
 const VIS = spec.layout.visible;
 const REELS = spec.layout.reels;
 const WILD = 0;
+const NR = REELS.length, RL = REELS[REELS.length-1][1] + 1;
 
 // 某格能否用作符号 s:真符号 / 通用wild(rl=0,orl=0)/ 限制性wild匹配(rl=0,orl=s)
 function usable(rv, ov, s) { return rv === s || (rv === WILD && (ov === 0 || ov === s)); }
@@ -30,12 +31,12 @@ function usable(rv, ov, s) { return rv === s || (rv === WILD && (ov === 0 || ov 
 // 注意:lw(每符号赢分)不含倍率 wm —— wm 只加在总分上(tw = Σlw × wm)
 function symbolWin(board, orl, sym, cs, ml) {
     const per = [];
-    for (let r = 0; r < 5; r++) {
+    for (let r = 0; r < NR; r++) {
         let cnt = 0;
         for (const idx of VIS[r]) if (usable(board[idx], orl[idx], sym)) cnt++;
         per.push(cnt);
     }
-    let N = 0; for (let r = 0; r < 5; r++) { if (per[r] > 0) N++; else break; }
+    let N = 0; for (let r = 0; r < NR; r++) { if (per[r] > 0) N++; else break; }
     const pay = PT[sym] && PT[sym][N];
     if (N < 3 || !pay) return 0;
     const ways = per.slice(0, N).reduce((a, b) => a * b, 1);
@@ -65,8 +66,8 @@ for (const f of files) {
 for (const a of seqs.values()) a.sort((x, y) => x.f.localeCompare(y.f));
 let cascPairs = 0, cascPass = 0;
 function rebuild(p, rns) {
-    const rm = new Set(p.ptbr || []); const R = new Array(35).fill(0);
-    for (let r = 0; r < 5; r++) {
+    const rm = new Set(p.ptbr || []); const R = new Array(RL).fill(0);
+    for (let r = 0; r < NR; r++) {
         const [s, e] = REELS[r]; const kept = [];
         for (let i = s; i <= e; i++) if (!rm.has(i)) { const rv = p.rl[i], ov = p.orl[i]; kept.push(rv === 0 && ov !== 0 ? 0 : rv); }
         const ns = rns[r] || []; const nc = (e - s + 1) - kept.length; const col = [];
@@ -80,7 +81,8 @@ for (const arr of seqs.values()) for (let i = 0; i + 1 < arr.length; i++) {
     if (!p.ptbr || !p.ptbr.length || !(n.rs && n.rs.rns)) continue;
     cascPairs++;
     const R = rebuild(p, n.rs.rns);
-    let ok = true; for (let k = 0; k < 35; k++) if (R[k] !== n.rl[k] && !(n.rl[k] === 0 && n.orl[k] !== 0)) { ok = false; break; }
+    // 差异仅在"新变成 wild 的格"(rl=0)可接受——金色变wild 是 RNG 叠加层(限制性或通用),不属确定性级联
+    let ok = true; for (let k = 0; k < RL; k++) if (R[k] !== n.rl[k] && n.rl[k] !== 0) { ok = false; break; }
     if (ok) cascPass++;
 }
 
