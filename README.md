@@ -16,7 +16,7 @@
 - [x] 技术方案调研
 - [x] 阶段 1:本地推理跑通 — M5 Max 实测生成 117.8 tok/s,峰值内存 17.3GB
 - [x] 阶段 2:RAG 管线 — AST 分块(cAST)+ BM25/向量混合检索(RRF 融合),回答带出处引用
-- [ ] 阶段 3:LoRA 微调 — 学习我的代码风格(先 7B 验证流程,再决定 30B 是否上云)
+- [x] 阶段 3:LoRA 微调 — 实测 30B 本地 QLoRA 可行(峰值 19.3GB,~2.4 it/s),无需上云
 
 ## 使用
 
@@ -38,4 +38,14 @@ uv run moon search "某个函数怎么实现的"      # 只检索,调试用
 uv run moon ask "我的项目里鉴权是怎么做的?"  # 检索 + 生成,回答附出处(需先 serve.sh)
 ```
 
-管线:AST 结构感知分块(astchunk,函数/类不被切断;文档按段落)→ BM25 词法检索 + Qwen3-Embedding 向量检索双路召回 → RRF 融合 → 30B 模型生成带 `文件:行号` 引用的回答。索引存在 `data/index/`(BM25 + LanceDB),不进 git。
+管线:AST 结构感知分块(astchunk,函数/类不被切断;文档按段落)→ BM25 词法检索 + Qwen3-Embedding 向量检索双路召回 → RRF 融合 → 30B 模型生成带 `文件:行号` 引用的回答。索引存在 `data/index/`(BM25 + LanceDB),随仓库走(大二进制经 Git LFS)。
+
+### LoRA 微调:让 AI 内化我的代码风格
+
+```sh
+uv run moon traindata    # 从已索引语料生成微调数据(30B 反向生成指令对,需 serve.sh 在运行)
+./scripts/train.sh 200   # QLoRA 训练(训练前停掉 serve.sh;实测峰值内存 19.3GB)
+ADAPTER=1 ./scripts/serve.sh   # 挂载微调后的适配器提供服务
+```
+
+适配器权重存在 `models/adapters/`,经 Git LFS 入库。微调会提升域内表现但损伤通用能力(调研实证约 -24% HumanEval),所以适配器按需挂载,基座模型始终保留。

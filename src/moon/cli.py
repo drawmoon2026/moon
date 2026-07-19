@@ -16,6 +16,8 @@ def main():
     p_ask = sub.add_parser("ask", help="基于你的代码/文档提问")
     p_ask.add_argument("question")
 
+    sub.add_parser("traindata", help="从已索引语料生成 LoRA 微调数据(需 serve.sh 在运行)")
+
     args = parser.parse_args()
 
     if args.command == "index":
@@ -29,6 +31,9 @@ def main():
             print(f"\n=== {chunk.ref}  (rrf={score:.4f}) ===")
             text = chunk.text
             print(text[:500] + ("…" if len(text) > 500 else ""))
+    elif args.command == "traindata":
+        from .traindata import build_traindata
+        build_traindata()
     elif args.command == "ask":
         from .rag import ask
         for piece in ask(args.question):
