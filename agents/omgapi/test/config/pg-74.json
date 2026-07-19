@@ -333,5 +333,13 @@
   "rtp": {
     "method": "target-ratio (no_win_prob)",
     "note": "权重合成不复现PG概率,RTP由此层调到目标"
+  },
+  "completeness": {
+    "self_consistent": true,
+    "paytable_coverage": "27/27",
+    "paytable_complete": true,
+    "base_spin_samples": 1484,
+    "gold_wild_detected": true,
+    "warnings": []
   }
 }

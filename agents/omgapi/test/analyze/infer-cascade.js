@@ -54,6 +54,8 @@ function rebuild(siPrev, rns) {
 // 差异格若全部是「金色变 wild」(next 限制性 wild:rl=0,orl≠0)则算结构命中——
 // 金色变 wild 是 RNG 叠加层(见 infer-triggers),不属于确定性级联结构。
 let pairs = 0, pass = 0, goldWildCells = 0;
+const rows = REELS.length ? (REELS[0][1] - REELS[0][0] + 1) : 1;
+const goldByReel = Array(REELS.length).fill(0);     // 每轴创生 wild 计数(通用金色变wild探测)
 const fails = [];
 for (const arr of seqs.values()) {
     for (let i = 0; i + 1 < arr.length; i++) {
@@ -68,10 +70,17 @@ for (const arr of seqs.values()) {
         // 新变成 wild 的格(rl=0)= 金色变wild 的 RNG 叠加层,豁免。
         // 74 变限制性wild(orl≠0),65 变通用wild(orl=0),两者都是 wild 生成,不属确定性级联结构。
         const allGoldWild = diffs.every(k => next.rl[k] === 0);
-        if (diffs.length === 0 || allGoldWild) { pass++; goldWildCells += diffs.length; }
+        if (diffs.length === 0 || allGoldWild) {
+            pass++; goldWildCells += diffs.length;
+            for (const k of diffs) goldByReel[Math.floor(k / rows)]++;   // 按轴记创生 wild
+        }
         else if (fails.length < 5) fails.push({ f: arr[i + 1].f, diffs });
     }
 }
+// 通用金色变wild:创生 wild / (级联步数 × 每轴行数)≈ 每格每步概率
+const goldWildRate = {};
+for (let r = 0; r < REELS.length; r++) goldWildRate['R' + (r + 1)] = pairs ? +(goldByReel[r] / (pairs * rows)).toFixed(5) : 0;
+const goldWildReels = Object.entries(goldWildRate).filter(([, v]) => v > 0.001).map(([k]) => k);
 
 const rate = pairs ? pass / pairs : 0;
 const result = {
@@ -82,6 +91,8 @@ const result = {
     note: '金色变wild(限制性wild)是RNG叠加层,不属确定性级联结构,验证时豁免',
     cascade_pairs: pairs, passed: pass, pass_rate: pairs ? +rate.toFixed(4) : null,
     gold_wild_cells_excluded: goldWildCells,
+    gold_wild_reels: goldWildReels,                 // 通用探测(限制性+通用wild都算)
+    gold_wild_rate_per_reel: goldWildRate,
 };
 const OUT_DIR = path.join(__dirname, 'inferred');
 fs.mkdirSync(OUT_DIR, { recursive: true });

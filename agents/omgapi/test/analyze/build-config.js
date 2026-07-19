@@ -69,11 +69,35 @@ const spec = {
     reels: { source: 'spin-board-statistics', base: compactReels(reelW.reels), free_spin: compactReels(reelW.fs_reels) },
     // ⑥ 倍率阶梯 + 金色变 wild(来源:spin wm / 限制性wild统计)
     multiplier: { source: 'spin-wm-inference', ladder_base: trig.wm_table && trig.wm_table.base, ladder_fs: trig.wm_table && trig.wm_table.fs },
-    gold_wild: { source: 'spin-restricted-wild-statistics', reels: trig.gold_wild_reels, rate_per_reel: trig.gold_to_wild_rate_per_reel },
+    // 金色变wild:triggers 用限制性wild统计(74),级联用通用创生wild统计(65)。谁探测到用谁。
+    gold_wild: (trig.gold_wild_reels && trig.gold_wild_reels.length)
+        ? { source: 'spin-restricted-wild-statistics', reels: trig.gold_wild_reels, rate_per_reel: trig.gold_to_wild_rate_per_reel }
+        : { source: 'cascade-created-wild-statistics', reels: casc.gold_wild_reels || [], rate_per_reel: casc.gold_wild_rate_per_reel || {} },
     // ⑦ 级联(来源:spin ptbr/rns 回放验证)
     cascade: { source: 'spin-ptbr-rns-replay', rule: casc.rule, verified_pass_rate: casc.pass_rate },
     // ⑧ RTP(target-ratio 层,庄家可调)
-    rtp: { target: (cfg.max_win_multiplier ? undefined : undefined), method: 'target-ratio (no_win_prob)', note: '权重合成不复现PG概率,RTP由此层调到目标' },
+    rtp: { method: 'target-ratio (no_win_prob)', note: '权重合成不复现PG概率,RTP由此层调到目标' },
+};
+
+// ⑨ 完整度(诚实标注:自洽 ≠ 完整。样本不够会漏格,机制探测可能缺)
+const syms = Object.keys(paytable).map(Number);
+const cellsHave = syms.reduce((a, s) => a + Object.keys(paytable[s]).length, 0);
+const cellsExpect = syms.length * 3;                       // 每符号应有 3/4/5 三档
+const missingCells = [];
+for (const s of syms) for (const N of [3, 4, 5]) if (!paytable[s] || paytable[s][N] === undefined) missingCells.push(`${s}:${N}连`);
+const goldDetected = (spec.gold_wild.reels || []).length > 0;
+const warnings = [];
+if (missingCells.length) warnings.push(`赔表缺 ${missingCells.length} 格(需更多中奖样本):${missingCells.join(',')}`);
+if (!goldDetected) warnings.push('未检出金色变wild(可能样本不足,或该游戏是通用wild需专门探测)');
+const fsReelsN = reelW.fs_reels ? Object.keys(reelW.fs_reels).length : 0;
+if (!fsReelsN) warnings.push('未采到免费局样本(fs卷轴权重缺失)');
+spec.completeness = {
+    self_consistent: casc.pass_rate === null || casc.pass_rate === 1,   // validate.js 才是最终门槛
+    paytable_coverage: `${cellsHave}/${cellsExpect}`,
+    paytable_complete: cellsHave === cellsExpect,
+    base_spin_samples: reelW.base_samples || null,
+    gold_wild_detected: goldDetected,
+    warnings,
 };
 
 const OUT_DIR = path.join(__dirname, '..', 'config');
@@ -82,6 +106,7 @@ const outFile = path.join(OUT_DIR, `pg-${gid}.json`);
 fs.writeFileSync(outFile, JSON.stringify(spec, null, 2));
 
 console.log(`✅ 游戏规格 → config/pg-${gid}.json`);
-console.log(`   机制 ${spec.mechanics.components.length} 类 | 赔表 ${Object.keys(paytable).length} 符号 | 可视格 ${(layout.visible || []).map(v => v.length).join('/')}`);
+console.log(`   机制 ${spec.mechanics.components.length} 类 | 赔表 ${cellsHave}/${cellsExpect} 格 | 可视格 ${(layout.visible || []).map(v => v.length).join('/')}`);
 console.log(`   倍率 base ${JSON.stringify(spec.multiplier.ladder_base)} fs ${JSON.stringify(spec.multiplier.ladder_fs)} | 金色轴 ${JSON.stringify(spec.gold_wild.reels)}`);
-console.log(`   级联验证 ${(spec.cascade.verified_pass_rate * 100).toFixed(0)}% | 配置 币值${JSON.stringify(spec.config.coin_sizes)} 最大倍率${spec.config.max_win_multiplier}`);
+console.log(`   级联验证 ${spec.cascade.verified_pass_rate === null ? 'N/A' : (spec.cascade.verified_pass_rate * 100).toFixed(0) + '%'} | 完整度: ${spec.completeness.paytable_complete && goldDetected ? '✅ 完整' : '⚠️ 不完整'}`);
+if (warnings.length) warnings.forEach(w => console.log(`   ⚠️  ${w}`));

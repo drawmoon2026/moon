@@ -233,13 +233,17 @@
     "ladder_fs": []
   },
   "gold_wild": {
-    "source": "spin-restricted-wild-statistics",
-    "reels": [],
+    "source": "cascade-created-wild-statistics",
+    "reels": [
+      "R2",
+      "R3",
+      "R4"
+    ],
     "rate_per_reel": {
       "R1": 0,
-      "R2": 0,
-      "R3": 0,
-      "R4": 0,
+      "R2": 0.01932,
+      "R3": 0.02093,
+      "R4": 0.00322,
       "R5": 0
     }
   },
@@ -251,5 +255,15 @@
   "rtp": {
     "method": "target-ratio (no_win_prob)",
     "note": "权重合成不复现PG概率,RTP由此层调到目标"
+  },
+  "completeness": {
+    "self_consistent": true,
+    "paytable_coverage": "22/24",
+    "paytable_complete": false,
+    "base_spin_samples": 640,
+    "gold_wild_detected": true,
+    "warnings": [
+      "赔表缺 2 格(需更多中奖样本):2:5连,4:5连"
+    ]
   }
 }
