@@ -20,6 +20,10 @@ def main():
 
     sub.add_parser("mcp", help="以 MCP server(stdio)方式暴露检索工具,供 Qwen Code 等接入")
 
+    p_distill = sub.add_parser("distill", help="用云端老师模型(Qwen3-Coder-480B)生成蒸馏训练数据")
+    p_distill.add_argument("--limit", type=int, default=None, help="只处理前 N 个 chunk(试跑用)")
+    p_distill.add_argument("--rounds", type=int, default=2, help="每个 chunk 生成几条样本(默认 2)")
+
     args = parser.parse_args()
 
     if args.command == "index":
@@ -33,6 +37,9 @@ def main():
             print(f"\n=== {chunk.ref}  (rrf={score:.4f}) ===")
             text = chunk.text
             print(text[:500] + ("…" if len(text) > 500 else ""))
+    elif args.command == "distill":
+        from .distill import build_distill_data
+        build_distill_data(limit=args.limit, rounds=args.rounds)
     elif args.command == "mcp":
         from .mcp_server import run
         run()

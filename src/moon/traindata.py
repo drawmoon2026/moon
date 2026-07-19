@@ -43,6 +43,28 @@ def _load_code_chunks() -> list[dict]:
     return chunks
 
 
+RAW_SELFGEN = TRAIN_DIR / "selfgen_raw.jsonl"
+
+
+def merge_and_split(seed: int = 7) -> tuple[int, int]:
+    """合并所有来源的 raw 样本(自生成 + 蒸馏),统一切分出 train/valid。"""
+    samples = []
+    for raw in sorted(TRAIN_DIR.glob("*_raw.jsonl")):
+        with open(raw, encoding="utf-8") as f:
+            samples.extend(json.loads(line) for line in f)
+    if not samples:
+        raise SystemExit("没有任何 raw 样本,先运行 moon traindata 或 moon distill")
+    random.Random(seed).shuffle(samples)
+    n_valid = max(1, int(len(samples) * VALID_RATIO))
+    valid, train = samples[:n_valid], samples[n_valid:]
+    for name, rows in (("train", train), ("valid", valid)):
+        with open(TRAIN_DIR / f"{name}.jsonl", "w", encoding="utf-8") as f:
+            for r in rows:
+                f.write(json.dumps(r, ensure_ascii=False) + "\n")
+    print(f"训练集合并完成: train {len(train)} 条, valid {len(valid)} 条(来源: 全部 *_raw.jsonl)")
+    return len(train), len(valid)
+
+
 def build_traindata(seed: int = 7) -> tuple[int, int]:
     chunks = _load_code_chunks()
     if not chunks:
@@ -69,14 +91,9 @@ def build_traindata(seed: int = 7) -> tuple[int, int]:
         ]})
         print(f"[{i}/{len(chunks)}] {c['source']} -> {instruction[:60]}")
 
-    random.Random(seed).shuffle(samples)
-    n_valid = max(1, int(len(samples) * VALID_RATIO))
-    valid, train = samples[:n_valid], samples[n_valid:]
-
     TRAIN_DIR.mkdir(parents=True, exist_ok=True)
-    for name, rows in (("train", train), ("valid", valid)):
-        with open(TRAIN_DIR / f"{name}.jsonl", "w", encoding="utf-8") as f:
-            for r in rows:
-                f.write(json.dumps(r, ensure_ascii=False) + "\n")
-    print(f"完成: train {len(train)} 条, valid {len(valid)} 条 -> {TRAIN_DIR}")
-    return len(train), len(valid)
+    with open(RAW_SELFGEN, "w", encoding="utf-8") as f:
+        for s in samples:
+            f.write(json.dumps(s, ensure_ascii=False) + "\n")
+    print(f"自生成完成: {len(samples)} 条 -> {RAW_SELFGEN.name}")
+    return merge_and_split(seed)

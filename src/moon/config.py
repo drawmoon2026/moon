@@ -12,6 +12,12 @@ EMBEDDING_MODEL = "Qwen/Qwen3-Embedding-0.6B"   # 0.6B 索引速度快;追求精
 CHAT_BASE_URL = "http://localhost:7070/v1"       # scripts/serve.sh 起的本地服务
 CHAT_MODEL = "mlx-community/Qwen3-Coder-30B-A3B-Instruct-4bit-dwq-v2"
 
+# 蒸馏老师模型(阿里 DashScope,OpenAI 兼容模式;API key 走环境变量 DASHSCOPE_API_KEY)
+# 可用 MOON_TEACHER_BASE_URL / MOON_TEACHER_MODEL 覆盖(换 DeepSeek 等其他老师,或本地联调)
+import os as _os
+TEACHER_BASE_URL = _os.environ.get("MOON_TEACHER_BASE_URL", "https://dashscope.aliyuncs.com/compatible-mode/v1")
+TEACHER_MODEL = _os.environ.get("MOON_TEACHER_MODEL", "qwen3-coder-480b-a35b-instruct")
+
 # 分块(cAST:按非空白字符数预算)
 MAX_CHUNK_SIZE = 1600
 # astchunk 支持的语言,按扩展名映射

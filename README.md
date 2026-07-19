@@ -51,6 +51,17 @@ ADAPTER=1 ./scripts/serve.sh   # 挂载微调后的适配器提供服务
 
 适配器权重存在 `models/adapters/`,经 Git LFS 入库。微调会提升域内表现但损伤通用能力(调研实证约 -24% HumanEval),所以适配器按需挂载,基座模型始终保留。
 
+### 知识蒸馏:用云端大模型当老师
+
+```sh
+export DASHSCOPE_API_KEY=sk-xxx        # 阿里云百炼 https://bailian.console.aliyun.com
+uv run moon distill --limit 5 --rounds 1   # 先小规模试跑,人工检查样本质量
+uv run moon distill                        # 全量:每个代码 chunk 生成 2 条
+./scripts/train.sh 200                     # 蒸馏样本 + 自生成样本合并后训练
+```
+
+老师默认 Qwen3-Coder-480B(DashScope,与本地 30B 同家族,蒸馏风格衔接最好;480B 本地跑不动也不需要跑,按 token 计费)。老师读代码库 chunk,生成"贴合本代码库风格的指令 + 参考答案"对,追加进 `data/train/distill_raw.jsonl`,与 `moon traindata` 的自生成样本(`selfgen_raw.jsonl`)统一合并切分。换老师(如 DeepSeek)用 `MOON_TEACHER_BASE_URL` / `MOON_TEACHER_MODEL` 覆盖。
+
 ### 终端智能体(类 Claude Code 体验)
 
 ```sh
