@@ -1,0 +1,29 @@
+{
+  "provider": "pg",
+  "gid": "74",
+  "gameCode": "mahjong-ways-two",
+  "engineFamily": "cocos-2x",
+  "paylineFactor": 0,
+  "cs": [
+    0.02,
+    0.1,
+    0.5
+  ],
+  "ml": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "mxl": 20,
+  "currency": "R$",
+  "rtp": 96.81,
+  "capturedAt": "2026-05-23T08:43:12.648Z",
+  "capturedFromUrl": "https://m.southasiabp-demo.cc/74/index.html?gi=74&l=zh&reqt=1779525771&btt=1&op=1727060615&ah=api-demo&ot=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjcmVhdGUiOjE3Nzk1MjU3NzEsInVzZXIiOiJ7XCJpZFwiOjkyNjA2MSxcIm9wZXJhdGVyX2lkXCI6MSxcImFnZW50X2lkXCI6MTAwMDEzLFwiYXBwX2lkXCI6MTAwMTMsXCJhY2NvdW50X3R5cGVcIjowLFwibm93X2dhbWVfaWRcIjoxMDAwMDAwMSxcIm5pY2tfbmFtZVwiOlwiaU1UamhxaGxHNVwiLFwidG9rZW5cIjpcIlwiLFwibGFuZ3VhZ2VcIjpcIlwiLFwicmVnaW9uXCI6XCJoa1wifSJ9.WAFL-FWgaIXmHfZ1ejhyDZfwOGGsF-_1EqpOAye0v_s&ops=luck_single_10013&ao=api.pgsoft-games-demo.cc&oc=0&n=74&ct=BRL&__refer=m.southasiabp-demo.cc&__hv=1fdf8553&or=static.southasiabp-demo.cc&cid=0&gv=cebf9"
+}

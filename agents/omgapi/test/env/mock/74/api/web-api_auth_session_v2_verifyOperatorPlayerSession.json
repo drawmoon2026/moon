@@ -1,0 +1,156 @@
+{
+  "meta": {
+    "capturedAt": "2026-05-23T08:43:12.646Z",
+    "provider": "pg",
+    "gid": "74",
+    "gameCode": "mahjong-ways-two",
+    "captureBatchId": "20260523-1633",
+    "sourceHost": "api.pgsoft-games-demo.cc"
+  },
+  "request": {
+    "method": "POST",
+    "url": "https://api.pgsoft-games-demo.cc/web-api/auth/session/v2/verifyOperatorPlayerSession?traceId=OPQFJF23",
+    "headers": {
+      "referer": "https://m.southasiabp-demo.cc/",
+      "accept-language": "zh-CN,zh;q=0.9",
+      "user-agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1",
+      "content-type": "application/x-www-form-urlencoded",
+      ":authority": "api.pgsoft-games-demo.cc",
+      ":method": "POST",
+      ":path": "/web-api/auth/session/v2/verifyOperatorPlayerSession?traceId=OPQFJF23",
+      ":scheme": "https",
+      "accept": "*/*",
+      "accept-encoding": "gzip, deflate, br, zstd",
+      "content-length": "453",
+      "origin": "https://m.southasiabp-demo.cc",
+      "priority": "u=1, i",
+      "sec-fetch-dest": "empty",
+      "sec-fetch-mode": "cors",
+      "sec-fetch-site": "cross-site"
+    },
+    "body": {
+      "cp": "1727060615",
+      "btt": "1",
+      "vc": "2",
+      "pf": "5",
+      "l": "zh",
+      "gi": "74",
+      "os": "luck_single_10013",
+      "otk": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjcmVhdGUiOjE3Nzk1MjU3NzEsInVzZXIiOiJ7XCJpZFwiOjkyNjA2MSxcIm9wZXJhdGVyX2lkXCI6MSxcImFnZW50X2lkXCI6MTAwMDEzLFwiYXBwX2lkXCI6MTAwMTMsXCJhY2NvdW50X3R5cGVcIjowLFwibm93X2dhbWVfaWRcIjoxMDAwMDAwMSxcIm5pY2tfbmFtZVwiOlwiaU1UamhxaGxHNVwiLFwidG9rZW5cIjpcIlwiLFwibGFuZ3VhZ2VcIjpcIlwiLFwicmVnaW9uXCI6XCJoa1wifSJ9.WAFL-FWgaIXmHfZ1ejhyDZfwOGGsF-_1EqpOAye0v_s",
+      "cid": "0"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "access-control-allow-credentials": "true",
+      "access-control-allow-headers": "Content-Type, Authorization",
+      "access-control-allow-methods": "GET, POST, PUT, DELETE, OPTIONS",
+      "access-control-allow-origin": "https://m.southasiabp-demo.cc",
+      "access-control-allow-private-network": "true",
+      "alt-svc": "h3=\":443\"; ma=86400",
+      "cf-cache-status": "DYNAMIC",
+      "cf-ray": "a002c52689a833b6-BKK",
+      "content-encoding": "gzip",
+      "content-type": "application/json; charset=utf-8",
+      "date": "Sat, 23 May 2026 08:42:57 GMT",
+      "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+      "priority": "u=1,i",
+      "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=5jvzZCPK7XdJcFVUv%2Fn4AZKRlGFsTi3U8o9qkEZ1RSCNpaTfyEZVMch1hss4a9GvP3enPfVljvpkMnN8BYqDb1ab%2FcalI%2Bf%2FjMm851aTB14%2FiBBhaUGDDx5ZMb5z0%2BfyPxgEUIfExe%2FaFkU%3D\"}]}",
+      "server": "cloudflare",
+      "server-timing": "cfExtPri",
+      "vary": "Accept-Encoding"
+    },
+    "body": {
+      "dt": {
+        "oj": {
+          "jid": 1
+        },
+        "pid": "BZLiV3qIxp",
+        "pcd": "luck_single_10013",
+        "tk": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjcmVhdGUiOjE3Nzk1MjU3NzcsInVzZXIiOiJ7XCJpZFwiOjkyNjA2MixcIm9wZXJhdGVyX2lkXCI6MSxcImFnZW50X2lkXCI6MTAwMDEzLFwiYXBwX2lkXCI6MTAwMTMsXCJhY2NvdW50X3R5cGVcIjowLFwibm93X2dhbWVfaWRcIjo3NCxcIm5pY2tfbmFtZVwiOlwiYWx2WXFwWDB3ZlwiLFwidG9rZW5cIjpcImV5SmhiR2NpT2lKSVV6STFOaUlzSW5SNWNDSTZJa3BYVkNKOS5leUpqY21WaGRHVWlPakUzTnprMU1qVTNOekVzSW5WelpYSWlPaUo3WENKcFpGd2lPamt5TmpBMk1TeGNJbTl3WlhKaGRHVnlYMmxrWENJNk1TeGNJbUZuWlc1MFgybGtYQ0k2TVRBd01ERXpMRndpWVhCd1gybGtYQ0k2TVRBd01UTXNYQ0poWTJOdmRXNTBYM1I1Y0dWY0lqb3dMRndpYm05M1gyZGhiV1ZmYVdSY0lqb3hNREF3TURBd01TeGNJbTVwWTJ0ZmJtRnRaVndpT2x3aWFVMVVhbWh4YUd4SE5Wd2lMRndpZEc5clpXNWNJanBjSWx3aUxGd2liR0Z1WjNWaFoyVmNJanBjSWx3aUxGd2ljbVZuYVc5dVhDSTZYQ0pvYTF3aWZTSjkuV0FGTC1GV2dhSVhtSGZaMWVqaHlEWmZ3T0dHc0YtXzFFcXBPQXllMHZfc1wiLFwibGFuZ3VhZ2VcIjpcIlwiLFwicmVnaW9uXCI6XCJoa1wifSJ9.weoCFCGoHIJ2F2nThyyqnxX1qMGPJ-FyPtzakX7fiNw",
+        "st": 1,
+        "geu": "game-api/mahjong-ways-two/",
+        "lau": "/game-api/lobby/",
+        "bau": "web-api/game-proxy/",
+        "cc": "BRL",
+        "cs": "R$",
+        "nkn": "luck_single_10013",
+        "gm": [
+          {
+            "gid": 74,
+            "msdt": 1638432092000,
+            "medt": 1638432092000,
+            "st": 1,
+            "amsg": "",
+            "rtp": {
+              "df": {
+                "min": 96.81,
+                "max": 96.81
+              }
+            },
+            "mxe": 2500,
+            "mxehr": 8960913
+          }
+        ],
+        "uiogc": {
+          "bb": 1,
+          "grtp": 0,
+          "gec": 1,
+          "cbu": 0,
+          "cl": 0,
+          "bf": 0,
+          "mr": 0,
+          "phtr": 0,
+          "vc": 0,
+          "bfbsi": 1,
+          "bfbli": 1,
+          "il": 0,
+          "rp": 0,
+          "gc": 0,
+          "ign": 0,
+          "tsn": 0,
+          "we": 0,
+          "gsc": 0,
+          "bu": 0,
+          "pwr": 0,
+          "hd": 0,
+          "et": 0,
+          "np": 0,
+          "igv": 0,
+          "as": 0,
+          "asc": 1,
+          "std": 0,
+          "hnp": 0,
+          "ts": 1,
+          "smpo": 0,
+          "ivs": 1,
+          "ir": 0,
+          "hn": 1,
+          "show_rtp": 0,
+          "sp": 0,
+          "sbb": 0,
+          "gvs": 0,
+          "rcf": 0,
+          "swf": 0,
+          "swfbli": 0,
+          "swfbsi": 0
+        },
+        "ec": null,
+        "occ": {
+          "rurl": "",
+          "tcm": "",
+          "tsc": 0,
+          "ttp": 0,
+          "tlb": "",
+          "trb": ""
+        },
+        "ioph": "f810d610efd4",
+        "ws": "",
+        "sdn": "",
+        "gcv": "2.2.1.0"
+      },
+      "err": null
+    }
+  }
+}

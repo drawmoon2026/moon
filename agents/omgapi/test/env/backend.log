@@ -1,0 +1,4 @@
+本地镜像后端已启动: https://127.0.0.1:8443  (gid=74 mahjong-ways-two)
+  静态: m.southasiabp-demo.cc / static.southasiabp-demo.cc  →  out/pg/74/webgame
+  API : api.pgsoft-games-demo.cc  →  boot mock (5 个)
+  现在双击「启动前端.command」打开游戏。Ctrl+C 停止。
