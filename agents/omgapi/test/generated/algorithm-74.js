@@ -17,8 +17,9 @@ function spinBoard(sampler) {
 }
 
 // ways 结算:可视格上,从第0轴起连续含该符号(或wild)的轴数=N,ways=各轴出现数乘积
+// lw(每符号赢分)= pay×ways×cs×ml,不含 wm;wm 只乘在这一步的总分上(tw = Σlw × wm)
 function settle(board, cs, ml, wm) {
-  const wins = {}; const winCells = new Set(); let total = 0;
+  const wins = {}; const winCells = new Set(); let base = 0;
   for (let sym = 2; sym <= 10; sym++) {
     const per = []; const cellsByReel = [];
     for (let r = 0; r < 5; r++) {
@@ -30,12 +31,12 @@ function settle(board, cs, ml, wm) {
     const pay = P.paytable[sym] && P.paytable[sym][N];
     if (N >= 3 && pay) {
       const ways = per.slice(0, N).reduce((a, b) => a * b, 1);
-      const w = pay * ways * cs * ml * wm;
-      wins[sym] = w; total += w;
+      const lw = pay * ways * cs * ml;              // 每符号赢分,不含 wm
+      wins[sym] = lw; base += lw;
       for (let r = 0; r < N; r++) for (const idx of cellsByReel[r]) winCells.add(idx);
     }
   }
-  return { wins, winCells: [...winCells], total };
+  return { wins, winCells: [...winCells], total: base * wm };   // 总分 = Σlw × wm
 }
 
 // 级联:消除中奖格 → 重力下落(高idx=底)→ 补顶

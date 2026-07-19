@@ -32,11 +32,15 @@ console.log('\n【3/5】spin 反推');
 for (const s of ['infer-paytable', 'infer-reel-weights', 'infer-triggers', 'infer-cascade'])
     run(`node analyze/${s}.js`);
 
-console.log('\n【4/5】合成游戏规格(核心产物)');
+console.log('\n【4/6】合成游戏规格(核心产物)');
 run(`node analyze/build-config.js ${gid}`);
+
+console.log('\n【5/6】答案无关自校验门槛(config 必须与数据自洽)');
+try { run(`node analyze/validate.js ${gid}`); }
+catch { console.log('  ❌ 自校验未过 —— config 与 spin 数据不符,不应放行下游。'); process.exitCode = 1; }
 const IN = path.join(__dirname, 'inferred');
 const rd = (n) => { try { return JSON.parse(fs.readFileSync(path.join(IN, n), 'utf8')); } catch { return null; } };
-console.log('\n【5/5】生成算法(引擎读规格)');
+console.log('\n【6/6】生成算法(引擎读规格)');
 run(`node analyze/generate-algorithm.js ${gid}`);
 
 console.log('\n======== 完成。关键信息来源(全部答案无关)========');
