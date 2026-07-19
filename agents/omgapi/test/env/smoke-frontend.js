@@ -25,8 +25,11 @@ const game = require('./game.json');
         args: [`--host-resolver-rules=${rules}`, '--ignore-certificate-errors', '--no-sandbox', '--disable-features=DnsOverHttps'],
     });
     const page = await browser.newPage();
-    const hosts = {}, errors = [];
+    // 用真实桌面 Chrome UA(避免 HeadlessChrome UA 触发站点分支);贴近 headful 启动器
+    await page.setUserAgent('Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36');
+    const hosts = {}, errors = [], allReqs = [];
     let external = 0;
+    page.on('request', (r) => allReqs.push(r.url()));
     const bad = [];
     page.on('response', (res) => {
         try { const h = new URL(res.url()).hostname; hosts[h] = (hosts[h] || 0) + 1; if (h !== '127.0.0.1') external++; } catch {}
@@ -57,6 +60,8 @@ const game = require('./game.json');
     errors.slice(0, 8).forEach(e => console.log('    - ' + e));
     console.log('  失败请求(4xx/5xx/failed):', bad.length);
     bad.slice(0, 12).forEach(b => console.log('    - ' + b));
+    console.log('  --- 全部请求(末 15 条,看停在哪)---');
+    allReqs.slice(-15).forEach(u => console.log('    · ' + u.replace(/^https?:\/\//, '').slice(0, 100)));
     await browser.close();
     // boot 判定:引擎起来 + canvas 存在
     const ok = cocos.hasDirector && cocos.canvas;
