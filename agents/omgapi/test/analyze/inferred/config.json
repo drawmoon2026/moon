@@ -1,0 +1,29 @@
+{
+  "description": "服务端 boot 配置(GameInfo),答案无关",
+  "coin_sizes": [
+    0.02,
+    0.1,
+    0.5
+  ],
+  "bet_multipliers": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "max_lines": 20,
+  "max_win_multiplier": 10000,
+  "win_tiers": {
+    "bw": 20,
+    "mgw": 35,
+    "mw": 5,
+    "smgw": 50
+  },
+  "feature_buy": true
+}

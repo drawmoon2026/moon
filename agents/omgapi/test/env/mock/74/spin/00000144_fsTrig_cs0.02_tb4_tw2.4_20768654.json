@@ -1,0 +1,218 @@
+{
+  "meta": {
+    "capturedAt": "2026-07-14T03:04:42.168Z",
+    "responseTimeMs": 101,
+    "provider": "pg",
+    "gid": "74",
+    "gameCode": "mahjong-ways-two",
+    "workerId": "74_a07",
+    "captureMethod": "scripted",
+    "state": "fsTrig",
+    "step": 144,
+    "psid": "2076865441219952641",
+    "sourceHost": "api.pgsoft-games-demo.cc"
+  },
+  "request": {
+    "method": "POST",
+    "url": "https://api.pgsoft-games-demo.cc/game-api/mahjong-ways-two/v2/Spin?traceId=PECHL21V",
+    "headers": {
+      "content-type": "application/x-www-form-urlencoded",
+      "user-agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1",
+      "origin": "https://m.southasiabp-demo.cc",
+      "referer": "https://m.southasiabp-demo.cc/",
+      "accept": "*/*",
+      "accept-encoding": "gzip, deflate",
+      "host": "api.pgsoft-games-demo.cc",
+      "content-length": 941
+    },
+    "body": {
+      "cs": "0.02",
+      "ml": "10",
+      "sn": "1",
+      "id": "0",
+      "ss": "[]",
+      "wk": "0_C",
+      "btt": "1",
+      "atk": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjcmVhdGUiOjE3ODM5OTgyMTksInVzZXIiOiJ7XCJpZFwiOjEwNzc0MDksXCJvcGVyYXRlcl9pZFwiOjEsXCJhZ2VudF9pZFwiOjEwMDAxMyxcImFwcF9pZFwiOjEwMDEzLFwiYWNjb3VudF90eXBlXCI6MCxcIm5vd19nYW1lX2lkXCI6NzQsXCJuaWNrX25hbWVcIjpcIjFUSHdVZnFxMDBcIixcInRva2VuXCI6XCJleUpoYkdjaU9pSklVekkxTmlJc0luUjVjQ0k2SWtwWFZDSjkuZXlKamNtVmhkR1VpT2pFM09ETTVPVGd5TVRRc0luVnpaWElpT2lKN1hDSnBaRndpT2pFd056Y3pPVGNzWENKdmNHVnlZWFJsY2w5cFpGd2lPakVzWENKaFoyVnVkRjlwWkZ3aU9qRXdNREF4TXl4Y0ltRndjRjlwWkZ3aU9qRXdNREV6TEZ3aVlXTmpiM1Z1ZEY5MGVYQmxYQ0k2TUN4Y0ltNXZkMTluWVcxbFgybGtYQ0k2TVRBd01EQXdNREVzWENKdWFXTnJYMjVoYldWY0lqcGNJa3MxWjNaaU9ESlFPRU5jSWl4Y0luUnZhMlZ1WENJNlhDSmNJaXhjSW14aGJtZDFZV2RsWENJNlhDSmNJaXhjSW5KbFoybHZibHdpT2x3aWFHdGNJbjBpZlEualBzV2N0ZjZoSlRaTmxydHZIdVpudk56NUNscy1kUHlnbG1WZjF2ZXVka1wiLFwibGFuZ3VhZ2VcIjpcIlwiLFwicmVnaW9uXCI6XCJoa1wifSJ9.VkzSXIrLxH1qQvQ_2M9S9iD_FMtKisJC4WxpkuzkAtI",
+      "pf": "5"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "date": "Tue, 14 Jul 2026 03:04:42 GMT",
+      "content-type": "application/json; charset=utf-8",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "server": "cloudflare",
+      "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+      "access-control-allow-credentials": "true",
+      "access-control-allow-headers": "Content-Type, Authorization",
+      "access-control-allow-methods": "GET, POST, PUT, DELETE, OPTIONS",
+      "access-control-allow-origin": "https://m.southasiabp-demo.cc",
+      "access-control-allow-private-network": "true",
+      "cf-cache-status": "DYNAMIC",
+      "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=Dg1N7s1Cf6TgtU50M4G95sQI5rHHuuF7t7nuAc%2F6T%2BvikVtkA3bG9sz0MHISAzOxr2V%2BTEc5NdzVksm7QqeXM%2FpFG2HelQydKI%2BG4SgLcFafNXdS3cDzQ0cZC4zANYavmi0kunrf8KsLvqg%3D\"}]}",
+      "content-encoding": "gzip",
+      "cf-ray": "a1ad4d2f292cfe17-SIN",
+      "alt-svc": "h3=\":443\"; ma=86400"
+    },
+    "body": {
+      "dt": {
+        "si": {
+          "ab": null,
+          "aw": 2.4,
+          "bl": 79735.4,
+          "blab": 79733,
+          "blb": 79737,
+          "cs": 0.02,
+          "ctw": 2.4,
+          "cwc": 1,
+          "fb": null,
+          "fs": null,
+          "fstc": null,
+          "game_multiple": 0,
+          "ge": [
+            1,
+            11
+          ],
+          "gwt": -1,
+          "hashr": null,
+          "lw": {
+            "7": 2.4
+          },
+          "lwa": 2.4,
+          "mi": 0,
+          "ml": 10,
+          "mr": null,
+          "np": -1.6,
+          "nst": 4,
+          "ocr": null,
+          "orl": [
+            7,
+            7,
+            8,
+            8,
+            7,
+            6,
+            7,
+            10,
+            7,
+            4,
+            4,
+            7,
+            5,
+            7,
+            6,
+            9,
+            9,
+            9,
+            6,
+            7,
+            2,
+            6,
+            1,
+            6,
+            3,
+            5,
+            4,
+            9,
+            1,
+            4,
+            10,
+            5,
+            4,
+            7,
+            2
+          ],
+          "pcwc": 1,
+          "pf": 2,
+          "pmt": null,
+          "psid": "2076865441219952641",
+          "ptbr": [
+            1,
+            4,
+            8,
+            11
+          ],
+          "rl": [
+            7,
+            7,
+            8,
+            8,
+            7,
+            6,
+            7,
+            10,
+            7,
+            4,
+            4,
+            7,
+            5,
+            7,
+            6,
+            9,
+            9,
+            9,
+            6,
+            0,
+            2,
+            6,
+            1,
+            6,
+            3,
+            5,
+            4,
+            9,
+            1,
+            4,
+            10,
+            5,
+            4,
+            7,
+            2
+          ],
+          "rs": null,
+          "rwsp": {
+            "7": 3
+          },
+          "sc": 1,
+          "sid": "2076865441219952641",
+          "small_game_type": 0,
+          "snww": {
+            "7": 4
+          },
+          "ss": {
+            "1": 17
+          },
+          "ssaw": 2.4,
+          "ssb": {
+            "1": 17,
+            "2": 19
+          },
+          "st": 1,
+          "tb": 4,
+          "tbb": 4,
+          "tw": 2.4,
+          "wbn": null,
+          "wfg": null,
+          "wid": 0,
+          "wk": "0_C",
+          "wm": 1,
+          "wp": {
+            "7": [
+              1,
+              4,
+              8,
+              11,
+              19
+            ]
+          },
+          "wt": "C"
+        }
+      },
+      "err": null
+    }
+  },
+  "_localFile": "/Users/tom/project/drawmoon/omgapi/mocks/pg/74/spin-scripted/74_a07/00000144_fsTrig_cs0.02_tb4_tw2.4_20768654.json"
+}

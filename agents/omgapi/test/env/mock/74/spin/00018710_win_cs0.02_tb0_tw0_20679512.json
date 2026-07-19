@@ -1,0 +1,272 @@
+{
+  "meta": {
+    "capturedAt": "2026-06-19T12:43:35.953Z",
+    "responseTimeMs": 235,
+    "provider": "pg",
+    "gid": "74",
+    "gameCode": "mahjong-ways-two",
+    "workerId": "74_a07",
+    "captureMethod": "scripted",
+    "state": "win",
+    "step": 18710,
+    "psid": "2067951251788730368",
+    "sourceHost": "api.pgsoft-games-demo.cc"
+  },
+  "request": {
+    "method": "POST",
+    "url": "https://api.pgsoft-games-demo.cc/game-api/mahjong-ways-two/v2/Spin?traceId=9S5VDIGC",
+    "headers": {
+      "content-type": "application/x-www-form-urlencoded",
+      "user-agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1",
+      "origin": "https://m.southasiabp-demo.cc",
+      "referer": "https://m.southasiabp-demo.cc/",
+      "accept": "*/*",
+      "accept-encoding": "gzip, deflate",
+      "host": "api.pgsoft-games-demo.cc",
+      "content-length": 941
+    },
+    "body": {
+      "cs": "0.02",
+      "ml": "10",
+      "sn": "1",
+      "id": "0",
+      "ss": "[]",
+      "wk": "0_C",
+      "btt": "1",
+      "atk": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJjcmVhdGUiOjE3ODE4NzIyMzIsInVzZXIiOiJ7XCJpZFwiOjEwMTE3NTEsXCJvcGVyYXRlcl9pZFwiOjEsXCJhZ2VudF9pZFwiOjEwMDAxMyxcImFwcF9pZFwiOjEwMDEzLFwiYWNjb3VudF90eXBlXCI6MCxcIm5vd19nYW1lX2lkXCI6NzQsXCJuaWNrX25hbWVcIjpcInEycUxPb1ZCUDRcIixcInRva2VuXCI6XCJleUpoYkdjaU9pSklVekkxTmlJc0luUjVjQ0k2SWtwWFZDSjkuZXlKamNtVmhkR1VpT2pFM09ERTROekl5TVRVc0luVnpaWElpT2lKN1hDSnBaRndpT2pFd01URTNNekVzWENKdmNHVnlZWFJsY2w5cFpGd2lPakVzWENKaFoyVnVkRjlwWkZ3aU9qRXdNREF4TXl4Y0ltRndjRjlwWkZ3aU9qRXdNREV6TEZ3aVlXTmpiM1Z1ZEY5MGVYQmxYQ0k2TUN4Y0ltNXZkMTluWVcxbFgybGtYQ0k2TVRBd01EQXdNREVzWENKdWFXTnJYMjVoYldWY0lqcGNJa3AwYlRBeGJqRjZSMmhjSWl4Y0luUnZhMlZ1WENJNlhDSmNJaXhjSW14aGJtZDFZV2RsWENJNlhDSmNJaXhjSW5KbFoybHZibHdpT2x3aWFHdGNJbjBpZlEub0NhXzk0b0tKQ2RtZkt2cmh6NUk1dWNqUlNJcDVKdWxtVWxCT3VHT254VVwiLFwibGFuZ3VhZ2VcIjpcIlwiLFwicmVnaW9uXCI6XCJoa1wifSJ9.qkec9lYEtQxF06jN3AsWz12PclUllvejVNmZPl9PW2E",
+      "pf": "5"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "date": "Fri, 19 Jun 2026 12:43:35 GMT",
+      "content-type": "application/json; charset=utf-8",
+      "transfer-encoding": "chunked",
+      "connection": "keep-alive",
+      "server": "cloudflare",
+      "nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+      "vary": "Accept-Encoding",
+      "access-control-allow-credentials": "true",
+      "access-control-allow-headers": "Content-Type, Authorization",
+      "access-control-allow-methods": "GET, POST, PUT, DELETE, OPTIONS",
+      "access-control-allow-origin": "https://m.southasiabp-demo.cc",
+      "access-control-allow-private-network": "true",
+      "content-encoding": "gzip",
+      "cf-cache-status": "DYNAMIC",
+      "report-to": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=SFl%2BpwFrOVCA%2BeoGOlwsJE7OprXKJ728q27xTrd8sTO6Om7Jx%2FEUK708zXa8sCeKCWVRQ4nhmgoa0hlbEV30JOrmFlKb9G%2FuBwn7vLVV6Yq6j4i52QLET7xuaZeHDEtkr%2BV3c%2BBVDpi9YCk%3D\"}]}",
+      "cf-ray": "a0e29ecd5dac4096-SIN",
+      "alt-svc": "h3=\":443\"; ma=86400"
+    },
+    "body": {
+      "dt": {
+        "si": {
+          "ab": null,
+          "aw": 453.4,
+          "bl": 80193.8,
+          "blab": 80193.8,
+          "blb": 80193.8,
+          "cs": 0.02,
+          "ctw": 0,
+          "cwc": 0,
+          "fb": null,
+          "fs": {
+            "aw": 435.6,
+            "nosa": 0,
+            "s": 1,
+            "ts": 20
+          },
+          "fstc": {
+            "4": 5,
+            "21": 19,
+            "22": 31
+          },
+          "game_multiple": 0,
+          "ge": [
+            1,
+            11
+          ],
+          "gwt": -1,
+          "hashr": null,
+          "lw": null,
+          "lwa": 0,
+          "mi": 3,
+          "ml": 10,
+          "mr": null,
+          "np": 0,
+          "nst": 21,
+          "ocr": null,
+          "orl": [
+            7,
+            6,
+            7,
+            6,
+            7,
+            8,
+            8,
+            7,
+            7,
+            5,
+            4,
+            4,
+            4,
+            5,
+            9,
+            6,
+            5,
+            9,
+            2,
+            9,
+            9,
+            2,
+            9,
+            8,
+            2,
+            9,
+            9,
+            6,
+            5,
+            7,
+            10,
+            7,
+            10,
+            6,
+            10
+          ],
+          "pcwc": 0,
+          "pf": 2,
+          "pmt": null,
+          "psid": "2067951251788730368",
+          "ptbr": null,
+          "rl": [
+            7,
+            6,
+            7,
+            6,
+            7,
+            8,
+            8,
+            7,
+            7,
+            5,
+            4,
+            4,
+            4,
+            5,
+            9,
+            6,
+            5,
+            9,
+            2,
+            9,
+            9,
+            2,
+            9,
+            8,
+            2,
+            9,
+            9,
+            6,
+            5,
+            7,
+            10,
+            7,
+            10,
+            6,
+            10
+          ],
+          "rs": {
+            "bsb": [],
+            "rns": [
+              [
+                7
+              ],
+              [
+                7
+              ],
+              [
+                9,
+                6
+              ],
+              [],
+              []
+            ],
+            "rnss": [
+              [],
+              [],
+              [
+                1,
+                0
+              ],
+              [],
+              []
+            ],
+            "sspt": {
+              "4": {
+                "np": 170,
+                "op": 15
+              },
+              "6": {
+                "np": 180,
+                "op": 17
+              },
+              "7": {
+                "np": 190,
+                "op": 18
+              },
+              "11": {
+                "np": 160,
+                "op": 14
+              },
+              "12": {
+                "np": 80,
+                "op": 7
+              }
+            }
+          },
+          "rwsp": null,
+          "sc": 0,
+          "sid": "2067951251826479141",
+          "small_game_type": 2,
+          "snww": null,
+          "ss": {
+            "3": 11,
+            "4": 17,
+            "6": 18,
+            "7": 19,
+            "10": 20,
+            "11": 16,
+            "12": 8,
+            "13": 15,
+            "14": 14
+          },
+          "ssaw": 96.4,
+          "ssb": {
+            "3": 11,
+            "4": 17,
+            "6": 18,
+            "7": 19,
+            "10": 20,
+            "11": 16,
+            "12": 8,
+            "13": 15,
+            "14": 14
+          },
+          "st": 22,
+          "tb": 0,
+          "tbb": 4,
+          "tw": 0,
+          "wbn": null,
+          "wfg": null,
+          "wid": 0,
+          "wk": "0_C",
+          "wm": 10,
+          "wp": null,
+          "wt": "C"
+        }
+      },
+      "err": null
+    }
+  },
+  "_localFile": "/Users/tom/project/drawmoon/omgapi/mocks/pg/74/spin-scripted/74_a07/00018710_win_cs0.02_tb0_tw0_20679512.json"
+}

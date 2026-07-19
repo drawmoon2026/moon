@@ -32,6 +32,25 @@ node download-game.js <gameId> [--provider=pg] [--min-coverage=0.98] [--visible]
 
 **关键教训(UA):** headless/HeadlessChrome UA 下 Cocos **不启动**(只 19 个请求就停,cc=undefined);换真实**桌面 UA** 后满血启动(245 请求、进主场景)。所以启动器**绝不能设 mobile/iPhone UA**(PITFALLS #18/#22b)。桌面 UA 会弹"浏览器不支持",点『继续游戏』即可。
 
-## 下一步:分析脚本
+## 已验证:反推分析 → 生成算法(纯脚本,不用 AI)
 
-游戏能进 = 具备了跑分析脚本的前提。接下来在这里做 Stage B 的分析脚本(从 spin 样本反推算法),门槛化每一步。
+`analyze/` 下的脚本从 spin 样本(`env/mock/74/spin/`,3000 个)**确定性反推**出游戏算法的全部关键参数,写入 `analyze/inferred/*.json`(**答案无关**),最后由生成器拼成可运行的服务器算法 JS。
+
+| 脚本 | 反推产物 | dev 校验(对照 omgapi 答案)|
+|---|---|---|
+| `infer-paytable.js` | `paytable.json` + `layout.json`(可视格 4/5/5/5/4)| 赔表 27/27 一致 ✅ |
+| `infer-reel-weights.js` | `reel_weights.json` | 概率偏差 1.79pp ✅ |
+| `infer-triggers.js` | `triggers.json`(wm 阶梯 + 金色变 wild 轴)| base[1,2,3,5]/fs[2,4,6,10]、R2/R3/R4 ✅ |
+| `infer-cascade.js` | `cascade.json`(级联规则)| 结构 100% PASS ✅ |
+| `generate-algorithm.js` | `generated/algorithm-74.js` | 只读 inferred/,**不碰答案** |
+
+```sh
+node analyze/infer-paytable.js && node analyze/infer-reel-weights.js \
+  && node analyze/infer-triggers.js && node analyze/infer-cascade.js
+node analyze/generate-algorithm.js          # → generated/algorithm-74.js
+node generated/algorithm-74.js calibrate     # 校准 RTP 到 config 的 96.81%
+```
+
+**成品管线 answer-free**:`infer-* → generate` 全程只读 spin 样本和自己产出的 inferred 参数,答案仅在开发期做 dev 校验(那几行可删)。这就是"光跑脚本就能生成算法"。
+
+**RNG 边界(与 omgapi 设计一致)**:确定性部分(赔付/级联/wm/可视格)100% 反推还原;真实 PG 的条带序列 / 金色变 wild 是服务端 RNG 黑盒,反推只能拿经验统计。生成算法用加权合成 + `noWinProb`(target-ratio 层,契约 `rtp_config`)把 RTP 调到目标;完整还原命中率分布需再配 target-ratio 档位比,属庄家可调,非反推。

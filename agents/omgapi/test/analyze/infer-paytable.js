@@ -32,6 +32,7 @@ const files = fs.readdirSync(spinDir).filter(f => f.endsWith('.json'));
 // paytable[sym][N] = { pay, count }  —— 同一 (sym,N) 多次观测应一致
 const inferred = {};
 const conflicts = [];
+const visiblePos = new Set();   // 所有出现过中奖的条带 idx → 可视格(只有可视格能中奖)
 let winSpins = 0, formulaChecked = 0, formulaFail = 0;
 
 for (const f of files) {
@@ -45,6 +46,7 @@ for (const f of files) {
     for (const sym of Object.keys(wp)) {
         const positions = wp[sym];
         if (!Array.isArray(positions) || positions.length === 0) continue;
+        for (const p of positions) visiblePos.add(p);       // 可视格 = 能中奖的位置
         // 每轴出现次数
         const perReel = {};
         for (const p of positions) perReel[reelOf(p)] = (perReel[reelOf(p)] || 0) + 1;
@@ -90,7 +92,14 @@ for (const s of syms) { outParams[s] = {}; for (const N of [3, 4, 5]) if (inferr
 const OUT_DIR = path.join(__dirname, 'inferred');
 fs.mkdirSync(OUT_DIR, { recursive: true });
 fs.writeFileSync(path.join(OUT_DIR, 'paytable.json'), JSON.stringify(outParams, null, 2));
-console.log(`\n已写反推参数 → analyze/inferred/paytable.json`);
+
+// 布局:每轴可视格(从中奖位置并集反推),供生成器结算 ways 用
+const visible = Array.from({ length: 5 }, () => []);
+for (const p of [...visiblePos].sort((a, b) => a - b)) visible[Math.floor(p / ROWS_PER_REEL)].push(p);
+const layout = { rows_per_reel: ROWS_PER_REEL, reels: [[0, 6], [7, 13], [14, 20], [21, 27], [28, 34]], visible };
+fs.writeFileSync(path.join(OUT_DIR, 'layout.json'), JSON.stringify(layout, null, 2));
+console.log(`\n已写反推参数 → analyze/inferred/paytable.json, layout.json`);
+console.log(`  可视格布局: ${visible.map(v => v.length).join('/')}`);
 
 // ── 对照答案(仅开发期验证,最终生成器不依赖)──
 console.log(`\n[dev 校验] 对照答案(omgapi verify_algorithm.js):`);
