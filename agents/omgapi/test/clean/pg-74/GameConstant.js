@@ -46,9 +46,7 @@ function GameConstant(V, N, exports) {
   U['4'] = 3;
   U['3'] = 1;
   cc._RF.push(N, "8157bnDDORH7q7DDuws+1ft", "GameConstant") || (Object.defineProperty(exports, "__esModule", f), exports.isRTL = exports.customAutoSpinDelayTime = exports.PayOutData = exports.BLOCK_TYPE = exports.SlotItemZindex = exports.DisplayState = exports.SpinTrigger = exports.TransitionState = exports.SLOT_SYMBOLS = undefined, function (r) {
-    {
-      r[r.WILD = 0] = "WILD", r[r.SCATTER = 1] = "SCATTER", r[r.GREEN = 2] = "GREEN", r[r.RED = 3] = "RED", r[r.WHITE = 4] = "WHITE", r[r.CHAR8 = 5] = "CHAR8", r[r.BALL5 = 6] = "BALL5", r[r.BAMBOO5 = 7] = "BAMBOO5", r[r.BALL3 = 8] = "BALL3", r[r.BALL2 = 9] = "BALL2", r[r.BAMBOO2 = 10] = "BAMBOO2";
-    }
+    r[r.WILD = 0] = "WILD", r[r.SCATTER = 1] = "SCATTER", r[r.GREEN = 2] = "GREEN", r[r.RED = 3] = "RED", r[r.WHITE = 4] = "WHITE", r[r.CHAR8 = 5] = "CHAR8", r[r.BALL5 = 6] = "BALL5", r[r.BAMBOO5 = 7] = "BAMBOO5", r[r.BALL3 = 8] = "BALL3", r[r.BALL2 = 9] = "BALL2", r[r.BAMBOO2 = 10] = "BAMBOO2";
   }(exports.SLOT_SYMBOLS || (exports.SLOT_SYMBOLS = {})), function (r) {
     r[r.NORMAL = 1] = "NORMAL", r[r.FREE_SPIN = 21] = "FREE_SPIN", r[r.FREE_SPIN_RESPIN = 22] = "FREE_SPIN_RESPIN", r[r.RESPIN = 4] = "RESPIN";
   }(exports.TransitionState || (exports.TransitionState = {})), function (r) {

@@ -33,49 +33,43 @@ function WalletHelper(require, j, exports) {
             f.iC.activateWalletNotify(true);
           });
         }, N.prototype.processInitGameInfo = function (q, f) {
-          {
-            var g = this,
-              l = q.dt.ls.si;
-            this.Yg = q.dt.inwe;
-            var K = function (O) {
-              {
-                if (O) switch (O.s) {
-                  case B.EXPIRED:
-                  case B.DISCARDED:
-                  case B.INACTIVE:
-                    if (!g.Ju) throw Error("Wallethelper :: processInitGameInfo : getGameInfo callback not found!");
-                    return void g.Ju("0_C", function () {
-                      f && f();
-                    });
-                }
-                f && f();
-              }
-            };
-            switch (l.wt) {
-              case 'B':
-                K(l.wbn);
-                break;
-              case 'G':
-                K(l.wfg);
-                break;
-              default:
-                f && f();
+          var g = this,
+            l = q.dt.ls.si;
+          this.Yg = q.dt.inwe;
+          var K = function (O) {
+            if (O) switch (O.s) {
+              case B.EXPIRED:
+              case B.DISCARDED:
+              case B.INACTIVE:
+                if (!g.Ju) throw Error("Wallethelper :: processInitGameInfo : getGameInfo callback not found!");
+                return void g.Ju("0_C", function () {
+                  f && f();
+                });
             }
+            f && f();
+          };
+          switch (l.wt) {
+            case 'B':
+              K(l.wbn);
+              break;
+            case 'G':
+              K(l.wfg);
+              break;
+            default:
+              f && f();
           }
         }, N.prototype.setup = function (q) {
           this.sC = q.setFreeGameModeFunc, this.iC = q.footerController, this.iC.activateWalletNotify(this.Yg);
         }, N.prototype.setupWallet = function (q) {
-          {
-            var f = this.iC,
-              g = this.sC,
-              l = q.wfg,
-              K = q.wbn;
-            if (K) {
-              var O = K.bra !== K.ibra;
-              g && g(false), f.showCustomInfoFooter(), this.tC(K.bra, O), f.setWalletNavigateIcon(X.WALLET_FOOTER_TYPE.BONUS);
-            } else l ? (O = l.gc !== l.tg, g && g(true), f.showCustomInfoFooter(), this.$g(l.gc, O), f.setWalletNavigateIcon(X.WALLET_FOOTER_TYPE.FREE_GAME)) : (g && g(false), f.hideCustomInfoFooter(), f.setWalletNavigateIcon(X.WALLET_FOOTER_TYPE.CASH));
-            this.Xg = q;
-          }
+          var f = this.iC,
+            g = this.sC,
+            l = q.wfg,
+            K = q.wbn;
+          if (K) {
+            var O = K.bra !== K.ibra;
+            g && g(false), f.showCustomInfoFooter(), this.tC(K.bra, O), f.setWalletNavigateIcon(X.WALLET_FOOTER_TYPE.BONUS);
+          } else l ? (O = l.gc !== l.tg, g && g(true), f.showCustomInfoFooter(), this.$g(l.gc, O), f.setWalletNavigateIcon(X.WALLET_FOOTER_TYPE.FREE_GAME)) : (g && g(false), f.hideCustomInfoFooter(), f.setWalletNavigateIcon(X.WALLET_FOOTER_TYPE.CASH));
+          this.Xg = q;
         }, N.prototype.hasFreeGame = function () {
           return this.isFreeGameMode() && this.Xg.wfg.gc > 0;
         }, N.prototype.spin = function (q) {
@@ -83,11 +77,9 @@ function WalletHelper(require, j, exports) {
             var f = this.Xg.wfg.gc;
             this.$g(f - 1), this.Zg = true;
           } else if (this.isBonusGameMode()) {
-            {
-              var g = this.Xg.wbn.bra,
-                l = q > g ? 0 : g - q;
-              this.tC(l), this.Zg = true;
-            }
+            var g = this.Xg.wbn.bra,
+              l = q > g ? 0 : g - q;
+            this.tC(l), this.Zg = true;
           }
         }, N.prototype.isFreeGameMode = function () {
           return this.Xg && this.Xg.wfg;
@@ -106,13 +98,9 @@ function WalletHelper(require, j, exports) {
         }, N.prototype.cleanUp = function () {
           this.iC = undefined;
         }, N.prototype.$g = function (q, f) {
-          {
-            undefined === f && (f = true), this.iC.setCustomMiddleInfoFooter(q, f);
-          }
+          undefined === f && (f = true), this.iC.setCustomMiddleInfoFooter(q, f);
         }, N.prototype.tC = function (q, f) {
-          {
-            undefined === f && (f = true), this.iC.setCustomMiddleInfoFooter(Z.formatCurrency(q), f);
-          }
+          undefined === f && (f = true), this.iC.setCustomMiddleInfoFooter(Z.formatCurrency(q), f);
         }, __decorate([M("WalletHelper")], N);
       }(cc.Object))();
     exports.walletHelper = C, cc._RF.pop();

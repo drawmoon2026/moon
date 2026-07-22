@@ -14,13 +14,28 @@ const gid = process.argv[2] || '74';
 const IN = path.join(__dirname, 'inferred');
 const rd = (n) => { try { return JSON.parse(fs.readFileSync(path.join(IN, n), 'utf8')); } catch { return null; } };
 
-const paytable = rd('paytable.json') || {};
+const paytableSpin = rd('paytable.json') || {};        // spin rwsp 反推(做验证)
+const paytableJsWrap = rd('paytable_from_js.json');    // JS 执行提取(基石,优先)
 const layout = rd('layout.json') || {};
 const reelW = rd('reel_weights.json') || {};
 const trig = rd('triggers.json') || {};
 const casc = rd('cascade.json') || {};
 const cfg = rd('config.json') || {};
 const mech = rd('mechanics.json') || {};
+const structure = rd('structure.json');                // 模块名特性(比正则可靠)
+
+// 赔表:信息来源以 JS 为准,spin 数据做交叉验证(用户原则:信息从 JS/消息得到,数据只做验证)。
+const paytableJs = paytableJsWrap && paytableJsWrap.paytable;
+const paytable = paytableJs && Object.keys(paytableJs).length ? paytableJs : paytableSpin;
+const paytableSource = (paytableJs && Object.keys(paytableJs).length) ? 'client-js-deobfuscation' : 'spin-rwsp-inference';
+// 交叉验证:JS 赔表 vs spin 反推,逐格比对,不一致则告警(而非静默采信其一)
+const paytableMismatches = [];
+if (paytableSource === 'client-js-deobfuscation' && Object.keys(paytableSpin).length) {
+    for (const s of Object.keys(paytableJs)) for (const N of [3, 4, 5]) {
+        const a = paytableJs[s] && paytableJs[s][N], b = paytableSpin[s] && paytableSpin[s][N];
+        if (a !== undefined && b !== undefined && a !== b) paytableMismatches.push(`${s}:${N}连 JS=${a}≠spin=${b}`);
+    }
+}
 
 // 卷轴权重压成紧凑概率表(每轴 符号→概率)
 const compactReels = (reels) => {
@@ -46,11 +61,10 @@ const spec = {
         gid, provider: 'pg', game_code: gameCode, engine: 'cocos',
         type: hasCascade ? 'ways-tumble' : 'ways', ways,
     },
-    // ① 机制(来源:客户端 JS 反混淆)
-    mechanics: {
-        source: 'client-js-deobfuscation',
-        components: Object.keys(mech.mechanics || {}),
-    },
+    // ① 机制(来源:客户端 JS 反混淆;优先用拆出的模块名特性,退回旧字符串反混淆)
+    mechanics: structure && structure.features
+        ? { source: 'client-js-module-names', components: Object.entries(structure.features).filter(([k, v]) => v === true).map(([k]) => k), evidence: structure.features._evidence || [] }
+        : { source: 'client-js-deobfuscation', components: Object.keys(mech.mechanics || {}) },
     // ② 配置常量(来源:GameInfo boot)
     config: {
         source: 'gameinfo-boot',
@@ -63,8 +77,8 @@ const spec = {
         source: 'spin-wp-inference',
         reels: layout.reels, rows_per_reel: layout.rows_per_reel, visible: layout.visible,
     },
-    // ④ 赔付(来源:spin rwsp/wp)
-    paytable: { source: 'spin-rwsp-inference', formula: 'win = pay[sym][N] × ways × cs × ml × wm', table: paytable },
+    // ④ 赔付(来源:JS 反混淆执行提取为准,spin rwsp 交叉验证)
+    paytable: { source: paytableSource, validated_by: 'spin-rwsp-cross-check', formula: 'win = pay[sym][N] × ways × cs × ml × wm', table: paytable },
     // ⑤ 卷轴权重(来源:spin 牌面统计)
     reels: { source: 'spin-board-statistics', base: compactReels(reelW.reels), free_spin: compactReels(reelW.fs_reels) },
     // ⑥ 倍率阶梯 + 金色变 wild(来源:spin wm / 限制性wild统计)
@@ -88,6 +102,7 @@ for (const s of syms) for (const N of [3, 4, 5]) if (!paytable[s] || paytable[s]
 const goldDetected = (spec.gold_wild.reels || []).length > 0;
 const warnings = [];
 if (missingCells.length) warnings.push(`赔表缺 ${missingCells.length} 格(需更多中奖样本):${missingCells.join(',')}`);
+if (paytableMismatches.length) warnings.push(`⚠️ JS赔表与spin反推不一致 ${paytableMismatches.length} 格(需人工核对):${paytableMismatches.join(',')}`);
 if (!goldDetected) warnings.push('未检出金色变wild(可能样本不足,或该游戏是通用wild需专门探测)');
 const fsReelsN = reelW.fs_reels ? Object.keys(reelW.fs_reels).length : 0;
 if (!fsReelsN) warnings.push('未采到免费局样本(fs卷轴权重缺失)');
@@ -106,7 +121,7 @@ const outFile = path.join(OUT_DIR, `pg-${gid}.json`);
 fs.writeFileSync(outFile, JSON.stringify(spec, null, 2));
 
 console.log(`✅ 游戏规格 → config/pg-${gid}.json`);
-console.log(`   机制 ${spec.mechanics.components.length} 类 | 赔表 ${cellsHave}/${cellsExpect} 格 | 可视格 ${(layout.visible || []).map(v => v.length).join('/')}`);
+console.log(`   机制 ${spec.mechanics.components.length} 类(${spec.mechanics.source})| 赔表 ${cellsHave}/${cellsExpect} 格(${paytableSource}${paytableMismatches.length ? ',⚠️' + paytableMismatches.length + '格与spin不符' : ',spin已验证'})| 可视格 ${(layout.visible || []).map(v => v.length).join('/')}`);
 console.log(`   倍率 base ${JSON.stringify(spec.multiplier.ladder_base)} fs ${JSON.stringify(spec.multiplier.ladder_fs)} | 金色轴 ${JSON.stringify(spec.gold_wild.reels)}`);
 console.log(`   级联验证 ${spec.cascade.verified_pass_rate === null ? 'N/A' : (spec.cascade.verified_pass_rate * 100).toFixed(0) + '%'} | 完整度: ${spec.completeness.paytable_complete && goldDetected ? '✅ 完整' : '⚠️ 不完整'}`);
 if (warnings.length) warnings.forEach(w => console.log(`   ⚠️  ${w}`));

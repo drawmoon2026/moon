@@ -25,27 +25,21 @@ function MJSpinState(require, j, exports) {
         return __extends(x, O), x.prototype.callApi = function (p) {
           N.sequenceCallback(g.goToStateCallback("result", true), this.gu.bind(this))(p);
         }, x.prototype.gu = function (p) {
-          {
-            var b = this;
-            T.doTransactionAPIRequest({
-              'name': this.name,
-              'apiRequest': B.mjApiClient.spin.bind(B.mjApiClient),
-              'fallbackRequest': B.mjApiClient.getGameInfo.bind(B.mjApiClient)
-            }, this.dataSource, function (L, H) {
-              {
-                H && H.dt && (L && q.shouldAutoSpin() && q.exitAutoSpin(b.generalControllers.spinButtonController), g.transitionCompleteCallback("result")(p));
-              }
-            });
-          }
+          var b = this;
+          T.doTransactionAPIRequest({
+            'name': this.name,
+            'apiRequest': B.mjApiClient.spin.bind(B.mjApiClient),
+            'fallbackRequest': B.mjApiClient.getGameInfo.bind(B.mjApiClient)
+          }, this.dataSource, function (L, H) {
+            H && H.dt && (L && q.shouldAutoSpin() && q.exitAutoSpin(b.generalControllers.spinButtonController), g.transitionCompleteCallback("result")(p));
+          });
         }, x.prototype.stateWillStartSpin = function () {
-          {
-            switch (this.dataSource.transactionModel.transitionTo) {
-              case X.TransitionState.NORMAL:
-                this.Cu(), this.generalControllers.multiplierBoardController.resetMultiplier();
-                break;
-              case X.TransitionState.FREE_SPIN:
-                M.playAudio(C.GENERAL_AUDIO.bonusReelSpin.key), this.Cu(), this.generalControllers.multiplierBoardController.resetMultiplier();
-            }
+          switch (this.dataSource.transactionModel.transitionTo) {
+            case X.TransitionState.NORMAL:
+              this.Cu(), this.generalControllers.multiplierBoardController.resetMultiplier();
+              break;
+            case X.TransitionState.FREE_SPIN:
+              M.playAudio(C.GENERAL_AUDIO.bonusReelSpin.key), this.Cu(), this.generalControllers.multiplierBoardController.resetMultiplier();
           }
         }, x.prototype.Cu = function () {
           var p = this.generalControllers.infoboardController;

@@ -14,12 +14,10 @@ function UISetupHandler(require, j, exports) {
       M = require("AudioManager"),
       C = (require("SlotHandler"), require("MultiplierBoardController"));
     exports.renderUIBaseOnState = function (O, x, p, b, L, H) {
-      {
-        var U = {};
-        U.generalControllers = b;
-        U.bonusControllers = L;
-        H || 2 === Math.floor(x / 10) && 2 === Math.floor(p / 10) ? new N().setup(U, O) : new V().setup(b, O);
-      }
+      var U = {};
+      U.generalControllers = b;
+      U.bonusControllers = L;
+      H || 2 === Math.floor(x / 10) && 2 === Math.floor(p / 10) ? new N().setup(U, O) : new V().setup(b, O);
     }, exports.settingMenuInteractable = function (O) {
       Z.settingMenuHelper.setAllButtonsInteractable(O);
     };
@@ -60,16 +58,12 @@ function UISetupHandler(require, j, exports) {
       }, O.prototype.Pg = function (x) {
         this.Zh.backGroundController.switchBackground(X.TransitionState.FREE_SPIN), this.Zh.foregroundController.switchBackground(X.TransitionState.FREE_SPIN), this.Zh.infoboardController.switchBackground(X.TransitionState.FREE_SPIN), this.Zh.infoboardController.freeSpinTips(true), x && x();
       }, O.prototype.Du = function (x) {
-        {
-          this.Jg(), T.sequenceCallback(this.qg.bind(this), this.Kg.bind(this))(x);
-        }
+        this.Jg(), T.sequenceCallback(this.qg.bind(this), this.Kg.bind(this))(x);
       }, O.prototype.zg = function (x) {
-        {
-          var p = this.Zh.multiplierBoardController,
-            b = B.mjDataSource.transactionModel.winMultiplier,
-            L = B.mjDataSource.transactionModel.transitionTo;
-          2 === Math.floor(L / 10) ? p.switchMultiplier(X.TransitionState.FREE_SPIN, undefined, false) : p.switchMultiplier(X.TransitionState.FREE_SPIN), p.initMultiplier(b), x && x();
-        }
+        var p = this.Zh.multiplierBoardController,
+          b = B.mjDataSource.transactionModel.winMultiplier,
+          L = B.mjDataSource.transactionModel.transitionTo;
+        2 === Math.floor(L / 10) ? p.switchMultiplier(X.TransitionState.FREE_SPIN, undefined, false) : p.switchMultiplier(X.TransitionState.FREE_SPIN), p.initMultiplier(b), x && x();
       }, O.prototype.Jg = function () {
         this.Zh.slotController.playAllScatterEffect(undefined, false, true);
       }, O.prototype.qg = function (x) {

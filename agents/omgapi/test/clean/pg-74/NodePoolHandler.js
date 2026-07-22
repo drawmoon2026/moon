@@ -28,18 +28,14 @@ function NodePoolHandler(F, c, exports) {
       }, X.prototype.replaceReusableItem = function (Z, T, M, C, V) {
         undefined === C && (C = 0), undefined === V && (V = C), this.unregisterReusableItem(Z), this.registerReusableItem(Z, T, M, C, V);
       }, X.prototype.dequeueReusableItem = function (Z) {
-        {
-          var T = this.hf[Z],
-            M = T.nodePool,
-            C = T.prefab;
-          if (M.size() <= 0) {
-            {
-              var V = cc.instantiate(C);
-              return V.rf = C.data.uuid, V;
-            }
-          }
-          return M.get();
+        var T = this.hf[Z],
+          M = T.nodePool,
+          C = T.prefab;
+        if (M.size() <= 0) {
+          var V = cc.instantiate(C);
+          return V.rf = C.data.uuid, V;
         }
+        return M.get();
       }, X.prototype.enqueueReusableItem = function (Z, T) {
         var M = this.hf[T],
           C = M.nodePool,
@@ -62,16 +58,12 @@ function NodePoolHandler(F, c, exports) {
         var Z = this.hf;
         for (var T in Z) Object.prototype.hasOwnProperty.call(Z, T) && this.clear(T);
       }, X.prototype.destroy = function () {
-        {
-          this.unregisterAllReusableItem();
-        }
+        this.unregisterAllReusableItem();
       }, X.prototype.ki = function (Z, T) {
-        {
-          var M = this.hf[T],
-            C = M.nodePool,
-            V = M.prefab;
-          Z.rf === V.data.uuid ? (Z.removeFromParent(), C.put(Z)) : Z.destroy();
-        }
+        var M = this.hf[T],
+          C = M.nodePool,
+          V = M.prefab;
+        Z.rf === V.data.uuid ? (Z.removeFromParent(), C.put(Z)) : Z.destroy();
       }, X;
     }();
     exports.NodePoolHandler = m;

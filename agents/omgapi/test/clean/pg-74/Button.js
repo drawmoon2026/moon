@@ -26,18 +26,16 @@ function Button(j, I, exports) {
         return __extends(q, N), q.prototype.update = function (f) {
           var g = this.target;
           if (!this[Z.Hs] && (this.transition === cc.Button.Transition.COLOR || this.transition === cc.Button.Transition.SCALE)) {
-            {
-              this.time += f;
-              var l,
-                K,
-                O,
-                x = 1;
-              if (this.duration > 0 && (x = this.time / this.duration), x >= 1 && (x = 1, this[Z.Hs] = true), this.transition === cc.Button.Transition.COLOR) {
-                this[Z.Os].a = g.opacity;
-                var p = this[Z.Os].lerp(this[Z.Is], x);
-                g.opacity = p.a, p.a = 255, g.color = p;
-              } else this.transition === cc.Button.Transition.SCALE && (g.scale = (l = this[Z.Ts], K = this[Z.Es], O = x, cc.misc.lerp(l, K, O)));
-            }
+            this.time += f;
+            var l,
+              K,
+              O,
+              x = 1;
+            if (this.duration > 0 && (x = this.time / this.duration), x >= 1 && (x = 1, this[Z.Hs] = true), this.transition === cc.Button.Transition.COLOR) {
+              this[Z.Os].a = g.opacity;
+              var p = this[Z.Os].lerp(this[Z.Is], x);
+              g.opacity = p.a, p.a = 255, g.color = p;
+            } else this.transition === cc.Button.Transition.SCALE && (g.scale = (l = this[Z.Ts], K = this[Z.Es], O = x, cc.misc.lerp(l, K, O)));
           }
         }, q.prototype.Di = function (f) {
           this.Gs = this.node.parent.convertToWorldSpaceAR(f.touch.getLocation()), N.prototype.Di.call(this, f);

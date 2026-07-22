@@ -13,28 +13,22 @@ function SettingMenuHandlers(require, I, exports) {
       T = require("AnalyticsHelper"),
       M = require("QuitGameWithEvent");
     exports.setupSettingMenu = function (x) {
-      {
-        var p = Object.assign({}, C, x.settingMenuDependenciesPath),
-          b = x.settingMenuHelper,
-          L = x.dataSource,
-          H = x.callback;
-        b.path = p.settingMenuLibPath, b.showChangeBetReminder = x.isProgressiveGame, b.manualUpdateBetFactorCallBack = N(L, b, x.betChangeCallback), b.betModifierUpdateCallback = V(L, b, x.betChangeCallback), b.reevaluateBetCallback = q(L, x.reevaluateBetCallback), b.additionalBetCalculationCallback = x.additionalBetCalculation ? x.additionalBetCalculation : g, b.changeSoundVolume = O(x.toggleEffectMuted, x.toggleMusicMuted);
-        var U = '1' !== Z.cs_Launch.noAudio;
-        b.audioConfigure = U, H && H();
-      }
+      var p = Object.assign({}, C, x.settingMenuDependenciesPath),
+        b = x.settingMenuHelper,
+        L = x.dataSource,
+        H = x.callback;
+      b.path = p.settingMenuLibPath, b.showChangeBetReminder = x.isProgressiveGame, b.manualUpdateBetFactorCallBack = N(L, b, x.betChangeCallback), b.betModifierUpdateCallback = V(L, b, x.betChangeCallback), b.reevaluateBetCallback = q(L, x.reevaluateBetCallback), b.additionalBetCalculationCallback = x.additionalBetCalculation ? x.additionalBetCalculation : g, b.changeSoundVolume = O(x.toggleEffectMuted, x.toggleMusicMuted);
+      var U = '1' !== Z.cs_Launch.noAudio;
+      b.audioConfigure = U, H && H();
     }, exports.initializeSettingMenu = function (x) {
-      {
-        var p = x.settingMenuHelper,
-          b = x.dataSource,
-          L = x.callback;
-        p.setSettingMenuController(x.settingController), p.addSettingInfoFooter(x.settingWalletPanelController), p.setOnClickReturnButtonCallback(function () {
-          {
-            M.quitGameWithEvent("Setting Quit")();
-          }
-        }), p.setupSettingMenuButtons(), p.menuChangedCallBack = x.settingMenuChangedHandling ? x.settingMenuChangedHandling : K(x.spinButtonController);
-        var H = b.playerModel.balance;
-        p.setBalance(H), p.updateBetValues(), p.setAllButtonsInteractable(false), L && L();
-      }
+      var p = x.settingMenuHelper,
+        b = x.dataSource,
+        L = x.callback;
+      p.setSettingMenuController(x.settingController), p.addSettingInfoFooter(x.settingWalletPanelController), p.setOnClickReturnButtonCallback(function () {
+        M.quitGameWithEvent("Setting Quit")();
+      }), p.setupSettingMenuButtons(), p.menuChangedCallBack = x.settingMenuChangedHandling ? x.settingMenuChangedHandling : K(x.spinButtonController);
+      var H = b.playerModel.balance;
+      p.setBalance(H), p.updateBetValues(), p.setAllButtonsInteractable(false), L && L();
     }, exports.updateBetChangesCallback = V, exports.getBetChangeCallback = N, exports.updateDataSourceBetValue = q, exports.additionalBetCalculation = g, exports.handleSettingMenuFlipped = K, exports.handleSettingMenuMusicChange = O, cc._RF.pop();
   }
   function V(x, p, b) {
@@ -47,19 +41,13 @@ function SettingMenuHandlers(require, I, exports) {
   }
   function N(x, p, b) {
     return function (L, H) {
-      {
-        V(x, p)(L, H), p.updateBetValues(), b && b();
-      }
+      V(x, p)(L, H), p.updateBetValues(), b && b();
     };
   }
   function q(x, p) {
-    {
-      return function (b, L) {
-        {
-          x.transactionModel.betSizeValue = b, x.transactionModel.betLevelValue = L, p && p();
-        }
-      };
-    }
+    return function (b, L) {
+      x.transactionModel.betSizeValue = b, x.transactionModel.betLevelValue = L, p && p();
+    };
   }
   function g(x, p, b) {
     return x * p * b;
@@ -71,9 +59,7 @@ function SettingMenuHandlers(require, I, exports) {
   }
   function O(x, p) {
     return function (b) {
-      {
-        x(!b), p(!b);
-      }
+      x(!b), p(!b);
     };
   }
 }

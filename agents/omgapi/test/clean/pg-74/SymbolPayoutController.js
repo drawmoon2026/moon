@@ -34,9 +34,7 @@ function SymbolPayoutController(require, j, exports) {
           } else O = cc.instantiate(this.popOutTint), this.mS.addChild(O), this.rS = O.getComponent("PopOutTintController"), this.rS.setup(this.bS);
           this.lS.init(this.popOutItem, this.pS), this.dS.payoutData = g.payoutData, this.fS && this.fS(g);
         }, f.prototype.resetPanel = function (g) {
-          {
-            g.containerNode = g.containerNode ? g.containerNode : this.node, this._S = g, this.vS.regeneratePanel(g), this.dS.payoutData = g.payoutData ? g.payoutData : this.dS.payoutData;
-          }
+          g.containerNode = g.containerNode ? g.containerNode : this.node, this._S = g, this.vS.regeneratePanel(g), this.dS.payoutData = g.payoutData ? g.payoutData : this.dS.payoutData;
         }, f.prototype.setExtraInitialzation = function (g) {
           this.fS = g;
         }, f.prototype.setPopOutDisplayHolder = function (g) {
@@ -70,11 +68,9 @@ function SymbolPayoutController(require, j, exports) {
         }, f.prototype.setAdditionalOnCancelCallback = function (g) {
           this.uS = g;
         }, f.prototype.clearOnClickCallback = function () {
-          {
-            this.vS.getButtonControllerList().forEach(function (g) {
-              g.clearClickCallback();
-            });
-          }
+          this.vS.getButtonControllerList().forEach(function (g) {
+            g.clearClickCallback();
+          });
         }, f.prototype.enablePanel = function () {
           this.node.active = true, this.vS.getButtonComponentList().forEach(function (g) {
             g.interactable = true;
@@ -84,9 +80,7 @@ function SymbolPayoutController(require, j, exports) {
             g.interactable = false;
           }), this.node.active = false;
         }, f.prototype.hidePopOutItem = function (g) {
-          {
-            this.gS(g);
-          }
+          this.gS(g);
         }, Object.defineProperty(f.prototype, "buttonList", {
           'get': function () {
             return this.vS.getButtonList();

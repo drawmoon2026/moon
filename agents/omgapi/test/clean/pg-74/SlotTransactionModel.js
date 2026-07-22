@@ -22,22 +22,16 @@ function SlotTransactionModel(require, j, exports) {
         V.configurable = true;
         var N = {};
         N.get = function () {
-          {
-            return this.Ap;
-          }
+          return this.Ap;
         };
         N.enumerable = false;
         N.configurable = true;
         return __extends(C, M), Object.defineProperty(C.prototype, "winLines", V), Object.defineProperty(C.prototype, "winValues", N), Object.defineProperty(C.prototype, "betLevelValue", {
           'get': function () {
-            {
-              return this.Hp.selectedBetLevelValue;
-            }
+            return this.Hp.selectedBetLevelValue;
           },
           'set': function (q) {
-            {
-              this.Hp.selectedBetLevelValue = q;
-            }
+            this.Hp.selectedBetLevelValue = q;
           },
           'enumerable': false,
           'configurable': true
@@ -58,9 +52,7 @@ function SlotTransactionModel(require, j, exports) {
           'configurable': true
         }), Object.defineProperty(C.prototype, "originalReels", {
           'get': function () {
-            {
-              return this.Ip;
-            }
+            return this.Ip;
           },
           'enumerable': false,
           'configurable': true

@@ -12,14 +12,10 @@ function WinLinesModel(F, c, exports) {
         X && (this.oC = JSON.parse(JSON.stringify(X)), this.cC = Object.keys(this.oC));
       }
       return B.prototype.getWinLinesByPosition = function (X) {
-        {
-          return this.oC[X];
-        }
+        return this.oC[X];
       }, Object.defineProperty(B.prototype, "winPositions", {
         'get': function () {
-          {
-            return this.cC;
-          }
+          return this.cC;
         },
         'enumerable': false,
         'configurable': true

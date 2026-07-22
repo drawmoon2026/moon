@@ -30,72 +30,62 @@ function AudioAdapter(require, I, exports) {
         this.on = function (b, L, H, U) {
           null != H && H in x.H == 0 || p.on(b, L, H, U);
         }, this.off = p.off.bind(p), this.once = function (b, L, H) {
-          {
-            null != H && H in x.H == 0 || p.once(b, L, H);
-          }
+          null != H && H in x.H == 0 || p.once(b, L, H);
         }, this.D = p.emit.bind(p), O.preload && setTimeout(this.load.bind(this), 0);
       }
       return K.prototype.load = function () {
         this.I !== M.AUDIO_ADAPTER_STATE.LOADED && this.I !== M.AUDIO_ADAPTER_STATE.LODING && (this.P.load(this.N, this.U.bind(this)), this.I = M.AUDIO_ADAPTER_STATE.LODING);
       }, K.prototype.U = function (O, x) {
-        {
-          O ? (this.D(M.AUDIO_ADAPTER_EVENT.LOAD_ERROR, undefined, O.message || O), this.T = false, this.I = M.AUDIO_ADAPTER_STATE.UNLOADED) : (this.I = M.AUDIO_ADAPTER_STATE.LOADED, x && (this.F = x[Z.C]), this.D(M.AUDIO_ADAPTER_EVENT.LOADED), this.T && this.unload());
-        }
+        O ? (this.D(M.AUDIO_ADAPTER_EVENT.LOAD_ERROR, undefined, O.message || O), this.T = false, this.I = M.AUDIO_ADAPTER_STATE.UNLOADED) : (this.I = M.AUDIO_ADAPTER_STATE.LOADED, x && (this.F = x[Z.C]), this.D(M.AUDIO_ADAPTER_EVENT.LOADED), this.T && this.unload());
       }, K.prototype.unload = function () {
         this.I !== M.AUDIO_ADAPTER_STATE.UNLOADED && (this.I !== M.AUDIO_ADAPTER_STATE.LODING ? (0 !== this.O && this.stop(), this.F = undefined, this.P.unload(this.N), this.T = false, this.I = M.AUDIO_ADAPTER_STATE.UNLOADED) : this.T = true);
       }, K.prototype.play = function (O) {
-        {
-          var x = this;
-          if (this.I !== M.AUDIO_ADAPTER_STATE.LOADED) throw Error("Audio Adapter:: play : audio not yet loaded!");
-          var p = "number" == typeof O,
-            b = !p && "string" == typeof O;
-          if (this.M || p) return this.resume(O), p ? O : -1;
-          var L = this.H;
-          if (this.O >= this.maxInstance) {
-            var H = undefined;
-            for (var U in L) {
-              H = U;
-              break;
-            }
-            var k = this.H[H];
-            k.stop(), delete this.H[H], this.O--, this.off(H), this.addAudioToPool(k);
+        var x = this;
+        if (this.I !== M.AUDIO_ADAPTER_STATE.LOADED) throw Error("Audio Adapter:: play : audio not yet loaded!");
+        var p = "number" == typeof O,
+          b = !p && "string" == typeof O;
+        if (this.M || p) return this.resume(O), p ? O : -1;
+        var L = this.H;
+        if (this.O >= this.maxInstance) {
+          var H = undefined;
+          for (var U in L) {
+            H = U;
+            break;
           }
-          var Y = this.getAudioFromPool();
-          var y = {};
-          y.loop = this.j;
-          y.muted = this.R;
-          y.volume = this.G;
-          y.rate = this.k;
-          Y.reset(y);
-          var z = b && this.L ? this.L[O] : undefined,
-            S = 0,
-            P = 0;
-          z && (S = z.from, P = z.to - S);
-          var G = N();
-          return Y.play(S, P), Y.once(shell.WebAudioEvent.ENDED, function () {
-            if (!x.H[G]) throw Error("AudioAdapter :: play : audio doesn't exist on this adapter anymore");
-            delete x.H[G], x.O--, x.D(M.AUDIO_ADAPTER_EVENT.END, G, undefined, true), x.addAudioToPool(Y);
-          }), L[G] = Y, this.O++, this.D(M.AUDIO_ADAPTER_EVENT.PLAY, G), G;
+          var k = this.H[H];
+          k.stop(), delete this.H[H], this.O--, this.off(H), this.addAudioToPool(k);
         }
+        var Y = this.getAudioFromPool();
+        var y = {};
+        y.loop = this.j;
+        y.muted = this.R;
+        y.volume = this.G;
+        y.rate = this.k;
+        Y.reset(y);
+        var z = b && this.L ? this.L[O] : undefined,
+          S = 0,
+          P = 0;
+        z && (S = z.from, P = z.to - S);
+        var G = N();
+        return Y.play(S, P), Y.once(shell.WebAudioEvent.ENDED, function () {
+          if (!x.H[G]) throw Error("AudioAdapter :: play : audio doesn't exist on this adapter anymore");
+          delete x.H[G], x.O--, x.D(M.AUDIO_ADAPTER_EVENT.END, G, undefined, true), x.addAudioToPool(Y);
+        }), L[G] = Y, this.O++, this.D(M.AUDIO_ADAPTER_EVENT.PLAY, G), G;
       }, K.prototype.stop = function (O) {
-        {
-          if (this.I !== M.AUDIO_ADAPTER_STATE.LOADED) throw Error("Audio Adapter :: stop : Attemp to stop not loaded audio!");
-          if (0 !== this.O) if ("number" == typeof O) (p = this.H[O]) && (delete this.H[O], this.O--, p.stop(), this.D(M.AUDIO_ADAPTER_EVENT.STOP, O, undefined, true), this.addAudioToPool(p));else {
-            for (var x in this.H) {
-              var p;
-              (p = this.H[x]).stop(), this.D(M.AUDIO_ADAPTER_EVENT.STOP, +x, undefined, true), this.addAudioToPool(p);
-            }
-            this.H = Object.create(null), this.O = 0;
+        if (this.I !== M.AUDIO_ADAPTER_STATE.LOADED) throw Error("Audio Adapter :: stop : Attemp to stop not loaded audio!");
+        if (0 !== this.O) if ("number" == typeof O) (p = this.H[O]) && (delete this.H[O], this.O--, p.stop(), this.D(M.AUDIO_ADAPTER_EVENT.STOP, O, undefined, true), this.addAudioToPool(p));else {
+          for (var x in this.H) {
+            var p;
+            (p = this.H[x]).stop(), this.D(M.AUDIO_ADAPTER_EVENT.STOP, +x, undefined, true), this.addAudioToPool(p);
           }
+          this.H = Object.create(null), this.O = 0;
         }
       }, K.prototype.pause = function (O) {
         if ("number" == typeof O) (p = this.H[O]) && p.playing && (p.pause(), this.D(M.AUDIO_ADAPTER_EVENT.PAUSE, O));else {
-          {
-            if (this.M = true, 0 === this.O) return;
-            for (var x in this.H) {
-              var p;
-              (p = this.H[x]).playing && (p.pause(), this.D(M.AUDIO_ADAPTER_EVENT.PAUSE, +x));
-            }
+          if (this.M = true, 0 === this.O) return;
+          for (var x in this.H) {
+            var p;
+            (p = this.H[x]).playing && (p.pause(), this.D(M.AUDIO_ADAPTER_EVENT.PAUSE, +x));
           }
         }
       }, K.prototype.resume = function (O) {
@@ -116,10 +106,8 @@ function AudioAdapter(require, I, exports) {
         }
       }, K.prototype.isMute = function (O) {
         if ("number" == typeof O) {
-          {
-            var x = this.H[O];
-            return !!x && x.muted;
-          }
+          var x = this.H[O];
+          return !!x && x.muted;
         }
         return this.R;
       }, K.prototype.setVolume = function (O, x) {
@@ -131,13 +119,11 @@ function AudioAdapter(require, I, exports) {
           }
         }
       }, K.prototype.getVolume = function (O) {
-        {
-          if ("number" == typeof O) {
-            var x = this.H[O];
-            return x ? x.volume : 0;
-          }
-          return this.G;
+        if ("number" == typeof O) {
+          var x = this.H[O];
+          return x ? x.volume : 0;
         }
+        return this.G;
       }, K.prototype.getInstantVolume = function (O) {
         var x = this.H[O];
         return x ? x.instantVolume : 0;
@@ -161,13 +147,11 @@ function AudioAdapter(require, I, exports) {
           for (var Y in this.H) U(Y);
         }
       }, K.prototype.setLoop = function (O, x) {
-        {
-          if ("number" == typeof x) (b = this.H[x]) && (b.loop = O);else {
-            if (this.j = O, 0 === this.O) return;
-            for (var p in this.H) {
-              var b;
-              (b = this.H[p]).loop = O;
-            }
+        if ("number" == typeof x) (b = this.H[x]) && (b.loop = O);else {
+          if (this.j = O, 0 === this.O) return;
+          for (var p in this.H) {
+            var b;
+            (b = this.H[p]).loop = O;
           }
         }
       }, K.prototype.isLoop = function (O) {
@@ -177,15 +161,11 @@ function AudioAdapter(require, I, exports) {
         }
         return this.j;
       }, K.prototype.setRate = function (O, x) {
-        {
-          if ("number" == typeof x) (b = this.H[x]) && (b.rate = O);else {
-            if (this.k = O, 0 === this.O) return;
-            for (var p in this.H) {
-              {
-                var b;
-                (b = this.H[p]).rate = O;
-              }
-            }
+        if ("number" == typeof x) (b = this.H[x]) && (b.rate = O);else {
+          if (this.k = O, 0 === this.O) return;
+          for (var p in this.H) {
+            var b;
+            (b = this.H[p]).rate = O;
           }
         }
       }, K.prototype.getRate = function (O) {
@@ -207,9 +187,7 @@ function AudioAdapter(require, I, exports) {
         } else if (this.F) return this.F.duration;
         return 0;
       }, K.prototype.getState = function () {
-        {
-          return this.I;
-        }
+        return this.I;
       }, K.prototype.getCurrentTime = function (O) {
         var x = this.H[O];
         return x ? x.currentTime : 0;
@@ -217,30 +195,24 @@ function AudioAdapter(require, I, exports) {
         var p = this;
         if (this.I !== M.AUDIO_ADAPTER_STATE.LOADED) throw Error("Audio Adapter:: seek : audio not yet loaded!");
         if (0 !== this.O) if ("number" == typeof x) {
-          {
-            var b = this.H[x];
-            b && (b.once(shell.WebAudioEvent.SEEK, function () {
-              p.D(M.AUDIO_ADAPTER_EVENT.SEEK, x);
-            }), b.seek(O), b.off(shell.WebAudioEvent.SEEK));
-          }
+          var b = this.H[x];
+          b && (b.once(shell.WebAudioEvent.SEEK, function () {
+            p.D(M.AUDIO_ADAPTER_EVENT.SEEK, x);
+          }), b.seek(O), b.off(shell.WebAudioEvent.SEEK));
         } else {
           if (0 === this.O) return;
           this.M = false;
           var L = __assign({}, this.H),
             H = function (k) {
-              {
-                var Y = L[k];
-                Y.once(shell.WebAudioEvent.SEEK, function () {
-                  p.D(M.AUDIO_ADAPTER_EVENT.SEEK, +k);
-                }), Y.seek(O), Y.off(shell.WebAudioEvent.SEEK);
-              }
+              var Y = L[k];
+              Y.once(shell.WebAudioEvent.SEEK, function () {
+                p.D(M.AUDIO_ADAPTER_EVENT.SEEK, +k);
+              }), Y.seek(O), Y.off(shell.WebAudioEvent.SEEK);
             };
           for (var U in L) H(U);
         }
       }, K.prototype.getAudioFromPool = function () {
-        {
-          return this.factory.get() || new shell.WebAudio(this.F);
-        }
+        return this.factory.get() || new shell.WebAudio(this.F);
       }, K.prototype.addAudioToPool = function (O) {
         O.reset(), O.removeAll(), this.factory.put(O) || O.destroy();
       }, K.prototype.stereo = function () {}, K.getNewId = N, K;

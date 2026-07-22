@@ -10,49 +10,35 @@ function SettingMenuButtonHelper(F, c, exports) {
     var m = cc._decorator.ccclass,
       B = function () {
         function X() {
-          {
-            this.rv = [], this.av = Object.create(null), this.uv = Object.create(null), this.lv = Object.create(null), this.fv = Object.create(null), this.dv = Object.create(null), this.vv = Object.create(null);
-          }
+          this.rv = [], this.av = Object.create(null), this.uv = Object.create(null), this.lv = Object.create(null), this.fv = Object.create(null), this.dv = Object.create(null), this.vv = Object.create(null);
         }
         return X.prototype.setButtonPrefab = function (Z, T, M) {
-          {
-            this.av[Z] = T, this.vv[Z] = M;
-          }
+          this.av[Z] = T, this.vv[Z] = M;
         }, X.prototype.totalButtonsOccupied = function () {
           return this.rv.length;
         }, X.prototype.getButtonInList = function (Z) {
           return cc.instantiate(this.av[Z]).getComponent("GenericSettingButton");
         }, X.prototype.setupSettingMenuButtonInList = function (Z, T, M) {
-          {
-            var C = cc.instantiate(this.av[Z]),
-              V = C.getComponent("GenericSettingButton");
-            return this.rv.push(V.button), V.onClick = T, this.lv[Z] = false, this.fv[Z] = V, M && (C.getComponent("ButtonTheme").colorKey = M), V;
-          }
+          var C = cc.instantiate(this.av[Z]),
+            V = C.getComponent("GenericSettingButton");
+          return this.rv.push(V.button), V.onClick = T, this.lv[Z] = false, this.fv[Z] = V, M && (C.getComponent("ButtonTheme").colorKey = M), V;
         }, X.prototype.setupIndependentSettingMenuButton = function (Z, T) {
           if (this.av[Z]) {
-            {
-              var M = cc.instantiate(this.av[Z]).getComponent("GenericSettingButton");
-              return M.onClick = T, this.lv[Z] = false, this.fv[Z] = M, M;
-            }
+            var M = cc.instantiate(this.av[Z]).getComponent("GenericSettingButton");
+            return M.onClick = T, this.lv[Z] = false, this.fv[Z] = M, M;
           }
         }, X.prototype.setupOtherButtonInList = function (Z, T) {
-          {
-            var M = {};
-            M.isInteractable = T;
-            this.lv[Z] = false, this.dv[Z] = M, this.vv[Z] = false;
-          }
+          var M = {};
+          M.isInteractable = T;
+          this.lv[Z] = false, this.dv[Z] = M, this.vv[Z] = false;
         }, X.prototype.setButtonInteractableFlag = function (Z, T) {
           undefined === T && (T = false), this.uv[Z] = T;
         }, X.prototype.setButtonInteractable = function (Z) {
-          {
-            this.vv[Z] || false !== this.lv[Z] || (this.dv[Z] ? this.dv[Z].isInteractable(this.uv[Z]) : this.fv[Z].isInteractable = this.uv[Z]);
-          }
+          this.vv[Z] || false !== this.lv[Z] || (this.dv[Z] ? this.dv[Z].isInteractable(this.uv[Z]) : this.fv[Z].isInteractable = this.uv[Z]);
         }, X.prototype.setButtonLock = function (Z, T) {
           undefined === T && (T = false), this.lv[Z] = T;
         }, X.prototype.isButtonLocked = function (Z) {
-          {
-            return this.lv[Z];
-          }
+          return this.lv[Z];
         }, X.prototype.setAllButtonsInteractable = function (Z) {
           for (var T = Object.keys(this.fv), M = 0, C = T.length; M < C; M++) this.setButtonInteractableFlag(parseInt(T[M]), Z), this.setButtonInteractable(parseInt(T[M]));
           var V = Object.keys(this.dv);

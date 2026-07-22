@@ -33,26 +33,22 @@ function SettingMenuHelper(require, j, exports) {
     }(T = exports.SettingMenuType || (exports.SettingMenuType = {}));
     var y = new (function (A) {
       function w() {
-        {
-          var W = A.call(this) || this;
-          var D = {};
-          D.sliderEffect = "audio/slider_effect";
-          D.listItemClick = "audio/list_item_click";
-          D.menuIconPress = "audio/menu_icon_press";
-          D.walletCountingAbove = "audio/wallet_counting_above";
-          var J = {};
-          J.sliderEffect = false;
-          J.listItemClick = false;
-          J.menuIconPress = false;
-          J.walletCountingAbove = false;
-          return W.soundOn = Y.soundOn, W.turboSpinOn = false, W.isFreeGameMode = false, W.Ev = false, W.Nv = true, W.Gv = Z.HIDDEN, W.kv = 0, W.Rv = '', W.jv = 0, W.Lv = [], W.Pv = [], W.vt = 0, W.ft = 0, W.Dv = '', W.Uv = D, W.xv = J, W.Fv = 0, W.balanceAmountLessThan = 0, W.autoSpinCount = 0, W.balanceAmountMoreThan = 0, W.singleWinAmount = 0, W.Wv = false, W.Jv = false, W.Vv = false, W.zv = new V.default(), W.wv = K.getGameContext(), W.Kv = false, W.qv(), W.Qv(), W.wv.on("Game.Initialized", W.Yv.bind(W)), W;
-        }
+        var W = A.call(this) || this;
+        var D = {};
+        D.sliderEffect = "audio/slider_effect";
+        D.listItemClick = "audio/list_item_click";
+        D.menuIconPress = "audio/menu_icon_press";
+        D.walletCountingAbove = "audio/wallet_counting_above";
+        var J = {};
+        J.sliderEffect = false;
+        J.listItemClick = false;
+        J.menuIconPress = false;
+        J.walletCountingAbove = false;
+        return W.soundOn = Y.soundOn, W.turboSpinOn = false, W.isFreeGameMode = false, W.Ev = false, W.Nv = true, W.Gv = Z.HIDDEN, W.kv = 0, W.Rv = '', W.jv = 0, W.Lv = [], W.Pv = [], W.vt = 0, W.ft = 0, W.Dv = '', W.Uv = D, W.xv = J, W.Fv = 0, W.balanceAmountLessThan = 0, W.autoSpinCount = 0, W.balanceAmountMoreThan = 0, W.singleWinAmount = 0, W.Wv = false, W.Jv = false, W.Vv = false, W.zv = new V.default(), W.wv = K.getGameContext(), W.Kv = false, W.qv(), W.Qv(), W.wv.on("Game.Initialized", W.Yv.bind(W)), W;
       }
       return __extends(w, A), Object.defineProperty(w.prototype, "path", {
         'get': function () {
-          {
-            return this.Rv;
-          }
+          return this.Rv;
         },
         'set': function (W) {
           this.Rv = W;
@@ -69,9 +65,7 @@ function SettingMenuHelper(require, j, exports) {
         'enumerable': false,
         'configurable': true
       }), w.prototype.initAudio = function (W) {
-        {
-          this.Xv(W);
-        }
+        this.Xv(W);
       }, w.prototype.loadAudio = function (W) {
         this.$v(W);
       }, w.prototype.setButtonPrefab = function (W, D, J) {
@@ -85,19 +79,15 @@ function SettingMenuHelper(require, j, exports) {
         'configurable': true
       }), Object.defineProperty(w.prototype, "historyButtonLocaleIcon", {
         'get': function () {
-          {
-            if (!this.i_) throw Error("SettingMenuHelper :: historyButtonLocaleIcon : Cannot find historyButtonLocaleIcon. Please setup using settingMenuLocaleIcons setter first!");
-            return this.i_;
-          }
+          if (!this.i_) throw Error("SettingMenuHelper :: historyButtonLocaleIcon : Cannot find historyButtonLocaleIcon. Please setup using settingMenuLocaleIcons setter first!");
+          return this.i_;
         },
         'enumerable': false,
         'configurable': true
       }), Object.defineProperty(w.prototype, "settingInfoFooterLocaleWinIcon", {
         'get': function () {
-          {
-            if (!this.s_) throw Error("SettingMenuHelper :: settingInfoFooterLocaleWinIcon : Cannot find settingInfoFooterLocaleWinIcon. Please setup using settingMenuLocaleIcons setter first!");
-            return this.s_;
-          }
+          if (!this.s_) throw Error("SettingMenuHelper :: settingInfoFooterLocaleWinIcon : Cannot find settingInfoFooterLocaleWinIcon. Please setup using settingMenuLocaleIcons setter first!");
+          return this.s_;
         },
         'enumerable': false,
         'configurable': true
@@ -117,9 +107,7 @@ function SettingMenuHelper(require, j, exports) {
         'configurable': true
       }), Object.defineProperty(w.prototype, "settingMenuLocaleIcons", {
         'set': function (W) {
-          {
-            this.t_ = W.getSpriteFrame("txt_auto"), this.i_ = W.getSpriteFrame("ic_hist"), this.o_ && this.o_.setIconSprite(this.i_), this.s_ = W.getSpriteFrame("ic_win"), this.c_ && this.c_.setWinIcon(this.s_), this.e_ = W.getSpriteFrame("txt_turbo_on"), this.n_ = W.getSpriteFrame("txt_turbo_off");
-          }
+          this.t_ = W.getSpriteFrame("txt_auto"), this.i_ = W.getSpriteFrame("ic_hist"), this.o_ && this.o_.setIconSprite(this.i_), this.s_ = W.getSpriteFrame("ic_win"), this.c_ && this.c_.setWinIcon(this.s_), this.e_ = W.getSpriteFrame("txt_turbo_on"), this.n_ = W.getSpriteFrame("txt_turbo_off");
         },
         'enumerable': false,
         'configurable': true
@@ -130,9 +118,7 @@ function SettingMenuHelper(require, j, exports) {
             D.isSwitchingMenuLayer() || (W.setTurboSpinButtonState(!W.turboSpinOn), W.playMenuIconPressSound(), P() && D.hideMoreMenuLayer());
           });
         J.setTurboSprites(this.turboOnButtonLocaleIcon, this.turboOffButtonLocaleIcon), J.getTurboSpinCallback = function () {
-          {
-            return this.turboSpinOn;
-          }
+          return this.turboSpinOn;
         }.bind(this), J.setButtonOnColor("setting", "color_button_transition_a"), J.setButtonOffColor("setting", "white_button_transition_a"), J.sprite.spriteFrame = J.turboSpinOn, J.spriteEffect.spriteFrame = J.turboSpinEffectOn, J.changeButtonColor(true), J.changeSpriteEffectColor();
         var E = this;
         this.r_ = function () {
@@ -143,9 +129,7 @@ function SettingMenuHelper(require, j, exports) {
           W.setTurboSpinButtonState(false);
         });
       }, w.prototype.setTurboSpinButtonState = function (W) {
-        {
-          this.turboSpinOn = W, this.wv.emit("Game.TurboSpinStateChanged", this.turboSpinOn);
-        }
+        this.turboSpinOn = W, this.wv.emit("Game.TurboSpinStateChanged", this.turboSpinOn);
       }, w.prototype.sendEventToGoogleAnalytic = function (W) {
         var D = {};
         D.name = "Turbo Spin";
@@ -176,19 +160,13 @@ function SettingMenuHelper(require, j, exports) {
           });
           if (!Q2) throw Error("SettingMenuHelper :: setupSettingMenuButtons : fail to setupIndependentSettingMenuButton when creating landscape sound button");
           Q2.setTitle(shell.I18n.t("SettingMenu.SettingSoundWord")), D.landscapeSoundButtonHolder.addChild(Q2.node), W.d_ = function () {
-            {
-              this.sprite.spriteFrame = E.soundOn ? this.soundOn : this.soundOff, this.largeSprite && (this.largeSprite.spriteFrame = E.soundOn ? this.largeSoundOnIcon : this.largeSoundOffIcon);
-            }
+            this.sprite.spriteFrame = E.soundOn ? this.soundOn : this.soundOff, this.largeSprite && (this.largeSprite.spriteFrame = E.soundOn ? this.largeSoundOnIcon : this.largeSoundOffIcon);
           }.bind(Q2), W.v_ = Q2.node, W.__ = D.landscapeSoundButtonHolder, W.Nv || (W.soundEnable = W.Nv, W.setLockAccess(X.SOUND, true)), W.d_(), W.m_ = M.observeCallback(W, "soundOn")(W.d_), Q2.customSetup();
         }()) : Q1(true), (Q0 = this.p_ = J.setupSettingMenuButtonInList(X.MINUS_BET, this.decreaseBet.bind(this))).setShowSettingToastCallback(D.showSettingToast.bind(D)), Q0.setHideSettingToastCallback(D.hideSettingToast.bind(D)), D.addMenuItem(Q0.node), (Q0 = this.S_ = J.setupSettingMenuButtonInList(X.PLUS_BET, this.increaseBet.bind(this))).setShowSettingToastCallback(D.showSettingToast.bind(D)), Q0.setHideSettingToastCallback(D.hideSettingToast.bind(D)), D.addMenuItem(Q0.node), this.g_ && ((Q0 = this.C_ = J.setupSettingMenuButtonInList(X.SPIN_OPTIONS, this.M_.bind(this))).setAutoSpinSprite(this.autoSpinButtonLocaleIcon), D.addMenuItem(Q0.node)), Q0 = J.setupSettingMenuButtonInList(X.MORE_MENU, this.showMoreMenuLayer.bind(this), this.g_ ? "white_button_transition_a" : "color_button_transition_a"), D.addMenuItem(Q0.node), this.g_ || (Q0.customSetup(), D.addEmptyItem(), this.kv += 1), this.Gv === Z.NORMAL_BACK_FUNC && (Q0 = J.setupSettingMenuButtonInList(X.QUIT, this.onClickQuitButton.bind(this)), D.addMenuItem(Q0.node)), this.b_ && !P() && Q1(false), Q0 = J.setupSettingMenuButtonInList(X.PAYTABLE, this.y_.bind(this)), D.addMenuItem(Q0.node), Q0 = J.setupSettingMenuButtonInList(X.RULE, this.w_.bind(this)), D.addMenuItem(Q0.node), (Q0 = this.o_ = J.setupSettingMenuButtonInList(X.HISTORY, this.B_.bind(this))).setIconSprite(this.historyButtonLocaleIcon), D.addMenuItem(Q0.node), Q0 = J.setupSettingMenuButtonInList(X.HIDE_MORE, this.A_.bind(this)), D.addMenuItem(Q0.node), (Q0 = this.H_ = this.zv.setupIndependentSettingMenuButton(X.MAX_BET, this.maxBet.bind(this))) && (this.settingInfoFooter.maxBetButtonHolder.addChild(Q0.node), Q0.setShowSettingToastCallback(D.showSettingToast.bind(D)), Q0.setHideSettingToastCallback(D.hideSettingToast.bind(D))), this.O_(), D.updateLayout(G());
       }, w.prototype.O_ = function () {
-        {
-          for (var W = this.settingMenuController.buttonsHolder(), D = this.zv.totalButtonsOccupied(), J = W.length - D - this.kv, E = W.length - 1; E >= 0 && !(J <= 0); E--) W[E].active = false, J--;
-        }
+        for (var W = this.settingMenuController.buttonsHolder(), D = this.zv.totalButtonsOccupied(), J = W.length - D - this.kv, E = W.length - 1; E >= 0 && !(J <= 0); E--) W[E].active = false, J--;
       }, w.prototype.setFeatureBuyToastNodePosition = function (W, D, J) {
-        {
-          this.settingMenuController.setFeatureBuyToastNodePosition(W, D, J);
-        }
+        this.settingMenuController.setFeatureBuyToastNodePosition(W, D, J);
       }, Object.defineProperty(w.prototype, "menuChangedCallBack", {
         'set': function (W) {
           this.I_ = W;
@@ -207,9 +185,7 @@ function SettingMenuHelper(require, j, exports) {
       }), w.prototype.setOnClickReturnButtonCallback = function (W) {
         this.T_ = W;
       }, w.prototype.setIsControllerPresenting = function (W) {
-        {
-          this.settingMenuController.setIsControllerPresenting(W);
-        }
+        this.settingMenuController.setIsControllerPresenting(W);
       }, w.prototype.M_ = function () {
         this.playMenuIconPressSound(), this.settingMenuController.isPanelTouchMoving() || this.openAutoSpinMenu();
       }, w.prototype.E_ = function () {
@@ -219,13 +195,9 @@ function SettingMenuHelper(require, j, exports) {
       }, w.prototype.B_ = function (W) {
         undefined === W && (W = false), this.playMenuIconPressSound(), this.settingMenuController.isPanelTouchMoving() || this.openHistoryMenu(W);
       }, w.prototype.y_ = function () {
-        {
-          this.playMenuIconPressSound(), this.settingMenuController.isPanelTouchMoving() || this.openPayoutMenu();
-        }
+        this.playMenuIconPressSound(), this.settingMenuController.isPanelTouchMoving() || this.openPayoutMenu();
       }, w.prototype.w_ = function () {
-        {
-          this.playMenuIconPressSound(), this.settingMenuController.isPanelTouchMoving() || this.openRulesMenu();
-        }
+        this.playMenuIconPressSound(), this.settingMenuController.isPanelTouchMoving() || this.openRulesMenu();
       }, w.prototype.N_ = function () {
         this.playMenuIconPressSound(), this.openWalletMenu();
       }, w.prototype.A_ = function () {
@@ -239,11 +211,9 @@ function SettingMenuHelper(require, j, exports) {
       }, w.prototype.toggleSound = function () {
         var W = this.settingMenuController;
         if (!W.isControllerPresenting() && !W.isSwitchingMenuLayer()) {
-          {
-            this.soundEnable = !this.soundEnable;
-            var D = true === this.soundEnable ? "OnGameSound" : "OffGameSound";
-            this.R_(D), this.playMenuIconPressSound();
-          }
+          this.soundEnable = !this.soundEnable;
+          var D = true === this.soundEnable ? "OnGameSound" : "OffGameSound";
+          this.R_(D), this.playMenuIconPressSound();
         }
       }, w.prototype.openHistoryMenu = function (W) {
         undefined === W && (W = false);
@@ -273,30 +243,26 @@ function SettingMenuHelper(require, j, exports) {
           D && D(false, true);
         }
       }, w.prototype.onClickQuitButton = function () {
-        {
-          var W = this,
-            D = this.settingMenuController;
-          if (!D.isSwitchingMenuLayer() && !D.isControllerPresenting()) {
-            var J = {
-              'title_message': shell.I18n.t("SettingMenuHelper.QuitGameTitle"),
-              'content_message': shell.I18n.t("SettingMenuHelper.QuitGameMessage"),
-              'actions': [{
-                'title': shell.I18n.t("SettingMenuHelper.Cancel"),
-                'handler': function () {
-                  D.setIsControllerPresenting(false);
-                }
-              }, {
-                'title': shell.I18n.t("SettingMenuHelper.Quit"),
-                'handler': function () {
-                  {
-                    D.setIsControllerPresenting(false), W.T_ && W.T_();
-                  }
-                },
-                'auto_dismiss': false
-              }]
-            };
-            D.setIsControllerPresenting(true), N.showDialog(J), this.playMenuIconPressSound();
-          }
+        var W = this,
+          D = this.settingMenuController;
+        if (!D.isSwitchingMenuLayer() && !D.isControllerPresenting()) {
+          var J = {
+            'title_message': shell.I18n.t("SettingMenuHelper.QuitGameTitle"),
+            'content_message': shell.I18n.t("SettingMenuHelper.QuitGameMessage"),
+            'actions': [{
+              'title': shell.I18n.t("SettingMenuHelper.Cancel"),
+              'handler': function () {
+                D.setIsControllerPresenting(false);
+              }
+            }, {
+              'title': shell.I18n.t("SettingMenuHelper.Quit"),
+              'handler': function () {
+                D.setIsControllerPresenting(false), W.T_ && W.T_();
+              },
+              'auto_dismiss': false
+            }]
+          };
+          D.setIsControllerPresenting(true), N.showDialog(J), this.playMenuIconPressSound();
         }
       }, w.prototype.isBalanceHitTargetInAutoSpinMode = function (W, D) {
         var J = false,
@@ -311,15 +277,11 @@ function SettingMenuHelper(require, j, exports) {
         this.C_ && this.C_.playAutoSpinAnim();
       }, Object.defineProperty(w.prototype, "autoSpinCallback", {
         'set': function (W) {
-          {
-            var D = this;
-            this.L_ = function (J) {
-              {
-                var E = J.payload;
-                D.autoSpinCount = E.autoSpinCount, D.singleWinAmount = E.singleWinAmount, D.balanceAmountMoreThan = E.balanceAmountMoreThan, D.balanceAmountLessThan = E.balanceAmountLessThan, D.Fv = E.autoSpinStartBalance, D.autoSpinCount > 0 && D.playSpinOptionButtonAnim(), W && W();
-              }
-            };
-          }
+          var D = this;
+          this.L_ = function (J) {
+            var E = J.payload;
+            D.autoSpinCount = E.autoSpinCount, D.singleWinAmount = E.singleWinAmount, D.balanceAmountMoreThan = E.balanceAmountMoreThan, D.balanceAmountLessThan = E.balanceAmountLessThan, D.Fv = E.autoSpinStartBalance, D.autoSpinCount > 0 && D.playSpinOptionButtonAnim(), W && W();
+          };
         },
         'enumerable': false,
         'configurable': true
@@ -339,9 +301,7 @@ function SettingMenuHelper(require, j, exports) {
         'configurable': true
       }), Object.defineProperty(w.prototype, "audioConfigure", {
         'get': function () {
-          {
-            return this.Nv;
-          }
+          return this.Nv;
         },
         'set': function (W) {
           this.Nv = W;
@@ -364,9 +324,7 @@ function SettingMenuHelper(require, j, exports) {
         'set': function (W) {
           var D = this;
           this.x_ = function (J, E) {
-            {
-              D.checkSelectedValue(M.toDecimalWithExp(J * E * D.betLineValue, 2)), W(J, E);
-            }
+            D.checkSelectedValue(M.toDecimalWithExp(J * E * D.betLineValue, 2)), W(J, E);
           };
         },
         'enumerable': false,
@@ -403,29 +361,23 @@ function SettingMenuHelper(require, j, exports) {
           D = this.betLevelValue;
         return !(!W || !cc.js.isNumber(D)) && -1 !== W.indexOf(D);
       }, w.prototype.Q_ = function () {
-        {
-          var W = M.toDecimalWithExp(this.betLineValue * this.betLevelValue * this.betSizeValue, 2);
-          return this.Y_ && W < this.Y_ && (!this.Z_ || W > this.Z_) && W.toFixed(2) !== this.X_;
-        }
+        var W = M.toDecimalWithExp(this.betLineValue * this.betLevelValue * this.betSizeValue, 2);
+        return this.Y_ && W < this.Y_ && (!this.Z_ || W > this.Z_) && W.toFixed(2) !== this.X_;
       }, w.prototype.reevaluateBet = function () {
-        {
-          return !(this.K_() && this.q_() && !this.Q_() || (this.tm(), this.checkSelectedValue(M.toDecimalWithExp(this.betSizeValue * this.betLevelValue * this.betLineValue, 2)), this.im && this.im(this.betSizeValue, this.betLevelValue), 0));
-        }
+        return !(this.K_() && this.q_() && !this.Q_() || (this.tm(), this.checkSelectedValue(M.toDecimalWithExp(this.betSizeValue * this.betLevelValue * this.betLineValue, 2)), this.im && this.im(this.betSizeValue, this.betLevelValue), 0));
       }, w.prototype.showInvalidBetDialog = function () {
-        {
-          var W = this,
-            D = {
-              'title_message': undefined,
-              'content_message': shell.I18n.t("SettingMenuHelper.ReevaluateBet"),
-              'actions': [{
-                'title': shell.I18n.t("SettingMenuHelper.Select"),
-                'handler': function () {
-                  W.openBetMenu();
-                }
-              }]
-            };
-          N.showDialog(D);
-        }
+        var W = this,
+          D = {
+            'title_message': undefined,
+            'content_message': shell.I18n.t("SettingMenuHelper.ReevaluateBet"),
+            'actions': [{
+              'title': shell.I18n.t("SettingMenuHelper.Select"),
+              'handler': function () {
+                W.openBetMenu();
+              }
+            }]
+          };
+        N.showDialog(D);
       }, Object.defineProperty(w.prototype, "betModifierUpdateCallback", {
         'get': function () {
           return this.sm;
@@ -457,60 +409,54 @@ function SettingMenuHelper(require, j, exports) {
           D = this.betLevelList || [],
           J = this.betLineValue || 0;
         if (0 !== W.length && 0 !== D.length && 0 !== J) {
-          {
-            var E,
-              Q0 = this.Y_,
-              Q1 = this.Z_,
-              Q2 = [];
-            if (this.X_ = undefined, Q0) {
-              Q1 && (E = []), Q7 = 0;
-              for (var Q3 = W.length; Q7 < Q3; Q7++) for (var Q4 = 0, Q5 = D.length; Q4 < Q5; Q4++) {
-                {
-                  var Q6 = M.toDecimalWithExp(W[Q7] * D[Q4] * J, 2);
-                  if (Q6 >= Q0) {
-                    undefined === this.X_ && (this.X_ = M.toFixed(Q6, 2)), Q2[Q7] = D.slice(Q4);
-                    break;
-                  }
-                  Q1 && (Q1 < Q0 && Q6 <= Q1 || Q1 >= Q0 && Q6 < Q0) && (E[Q7] || (E[Q7] = []), E[Q7].push(D[Q4])), Q4 === Q5 - 1 && (Q2[Q7] = []);
-                }
+          var E,
+            Q0 = this.Y_,
+            Q1 = this.Z_,
+            Q2 = [];
+          if (this.X_ = undefined, Q0) {
+            Q1 && (E = []), Q7 = 0;
+            for (var Q3 = W.length; Q7 < Q3; Q7++) for (var Q4 = 0, Q5 = D.length; Q4 < Q5; Q4++) {
+              var Q6 = M.toDecimalWithExp(W[Q7] * D[Q4] * J, 2);
+              if (Q6 >= Q0) {
+                undefined === this.X_ && (this.X_ = M.toFixed(Q6, 2)), Q2[Q7] = D.slice(Q4);
+                break;
               }
-              if (undefined === this.X_) return this.X_ = M.toFixed(W[0] * D[0] * J, 2), this.um = Object.create(null), void (this.um[this.X_] = {
-                'betSize': W[0],
-                'betLevel': D[0]
-              });
-            } else {
-              for (var Q7 = 0; Q7 < W.length; Q7++) Q2[Q7] = D;
-              this.X_ = M.toFixed(W[0] * D[0] * J, 2);
+              Q1 && (Q1 < Q0 && Q6 <= Q1 || Q1 >= Q0 && Q6 < Q0) && (E[Q7] || (E[Q7] = []), E[Q7].push(D[Q4])), Q4 === Q5 - 1 && (Q2[Q7] = []);
             }
-            var Q8 = function (Qn, Qc) {
-                if (Qn < 2) return Qc.slice();
-                var Qj = Qc.length;
-                if (Qj < (Qn > 2 ? 4 : 6)) return Qc.slice();
-                var Qi = Qc[Qc.length - 1],
-                  QI = [Qi];
-                2 === Qn && QI.unshift(Qi - (Math.round(Qj / 5) || 1)), QI.unshift(Qi - (Math.floor(Qj / 2) || 1)), 2 === Qn && QI.unshift(QI[0] - (Math.floor(Qj / 5) || 1));
-                var Qm = Qc[0];
-                return QI.unshift(Qm + (Math.floor(Qj / 10) || 1)), QI.unshift(Qm), QI;
-              },
-              Q9 = Object.create(null);
-            for (Q7 = 0, Q3 = W.length; Q7 < Q3; Q7++) {
-              var QQ = Q8(Q7, Q2[Q7]);
-              if (E && E[Q7] && (QQ = QQ.concat(E[Q7])), 0 !== QQ.length) for (Q4 = 0, Q5 = D.length; Q4 < Q5; Q4++) if (QQ.includes(D[Q4])) {
-                var QF = M.toFixed(W[Q7] * D[Q4] * J, 2);
-                var QR = {};
-                QR.betSize = W[Q7];
-                QR.betLevel = D[Q4];
-                Q9[QF] || (Q9[QF] = QR);
-              }
-            }
-            this.um = Q9;
+            if (undefined === this.X_) return this.X_ = M.toFixed(W[0] * D[0] * J, 2), this.um = Object.create(null), void (this.um[this.X_] = {
+              'betSize': W[0],
+              'betLevel': D[0]
+            });
+          } else {
+            for (var Q7 = 0; Q7 < W.length; Q7++) Q2[Q7] = D;
+            this.X_ = M.toFixed(W[0] * D[0] * J, 2);
           }
+          var Q8 = function (Qn, Qc) {
+              if (Qn < 2) return Qc.slice();
+              var Qj = Qc.length;
+              if (Qj < (Qn > 2 ? 4 : 6)) return Qc.slice();
+              var Qi = Qc[Qc.length - 1],
+                QI = [Qi];
+              2 === Qn && QI.unshift(Qi - (Math.round(Qj / 5) || 1)), QI.unshift(Qi - (Math.floor(Qj / 2) || 1)), 2 === Qn && QI.unshift(QI[0] - (Math.floor(Qj / 5) || 1));
+              var Qm = Qc[0];
+              return QI.unshift(Qm + (Math.floor(Qj / 10) || 1)), QI.unshift(Qm), QI;
+            },
+            Q9 = Object.create(null);
+          for (Q7 = 0, Q3 = W.length; Q7 < Q3; Q7++) {
+            var QQ = Q8(Q7, Q2[Q7]);
+            if (E && E[Q7] && (QQ = QQ.concat(E[Q7])), 0 !== QQ.length) for (Q4 = 0, Q5 = D.length; Q4 < Q5; Q4++) if (QQ.includes(D[Q4])) {
+              var QF = M.toFixed(W[Q7] * D[Q4] * J, 2);
+              var QR = {};
+              QR.betSize = W[Q7];
+              QR.betLevel = D[Q4];
+              Q9[QF] || (Q9[QF] = QR);
+            }
+          }
+          this.um = Q9;
         }
       }, w.prototype.tm = function () {
-        {
-          var W = this.um[this.X_];
-          this.betSizeValue = W.betSize, this.betLevelValue = W.betLevel;
-        }
+        var W = this.um[this.X_];
+        this.betSizeValue = W.betSize, this.betLevelValue = W.betLevel;
       }, w.prototype.checkSelectedValue = function (W) {
         var D,
           J,
@@ -528,26 +474,22 @@ function SettingMenuHelper(require, j, exports) {
           J = this,
           E = this.settingMenuController;
         this.Wv || this.Jv ? E.isSettingBetReminderBoardShowed() || (this.em = this.V_, this.nm = this.betSizeValue, this.om = this.betLevelValue, this.hm = this.cm, W.selectedBet !== this.hm && (null === (D = this.wv) || undefined === D || D.emit("SlotMenu.GetShowChangeBetReminder", undefined, function (Q0) {
-          {
-            var Q1,
-              Q2 = '';
-            Q0.response ? (Q2 = shell.I18n.t("BetOptions.BetChangeProgressRemind"), E.setBetChangeReminderLabel(Q2)) : null === (Q1 = J.wv) || undefined === Q1 || Q1.emit("SlotMenu.GetShowForfeitProgressReminder", undefined, function (Q3) {
-              Q3.response && (Q2 = shell.I18n.t("BetOptions.BetChangeForfeitProgressRemind"), E.setBetChangeReminderLabel(Q2));
-            }), E.showBetReminderBoard(M.formatCurrency(parseFloat(J.em)));
-          }
+          var Q1,
+            Q2 = '';
+          Q0.response ? (Q2 = shell.I18n.t("BetOptions.BetChangeProgressRemind"), E.setBetChangeReminderLabel(Q2)) : null === (Q1 = J.wv) || undefined === Q1 || Q1.emit("SlotMenu.GetShowForfeitProgressReminder", undefined, function (Q3) {
+            Q3.response && (Q2 = shell.I18n.t("BetOptions.BetChangeForfeitProgressRemind"), E.setBetChangeReminderLabel(Q2));
+          }), E.showBetReminderBoard(M.formatCurrency(parseFloat(J.em)));
         }), this.am && this.am())) : this.fm(parseFloat(W.selectedBetAmount));
       }, w.prototype.dm = function (W, D) {
         var J = RegExp('<' + W + " style=['\"]color:\\s*([^'\"]+)['\"]>", 'gi');
         return D.replace(J, "<color=$1>").replace('</' + W + '>', "</color>");
       }, w.prototype.vm = function (W) {
         if (this.Y_ && this.Z_) if (W < this.Y_ && W <= this.Z_) {
-          {
-            var D = this.dm("span", shell.I18n.t("FeatureBuy.BetForFeatureBuyOnly")),
-              J = this.dm("span", shell.I18n.t("FeatureBuy.BetSuggestion", {
-                'amount': M.formatCurrency(this.Y_)
-              }));
-            this.settingMenuController.showFeatureBuyToast(D + '\x0a' + J, 2);
-          }
+          var D = this.dm("span", shell.I18n.t("FeatureBuy.BetForFeatureBuyOnly")),
+            J = this.dm("span", shell.I18n.t("FeatureBuy.BetSuggestion", {
+              'amount': M.formatCurrency(this.Y_)
+            }));
+          this.settingMenuController.showFeatureBuyToast(D + '\x0a' + J, 2);
         } else this.settingMenuController.hideFeatureBuyToast();
       }, w.prototype.increaseBet = function () {
         var W,
@@ -565,49 +507,41 @@ function SettingMenuHelper(require, j, exports) {
           this.V_ = E.selectedBetAmount, this.betSizeValue = this.um[J[Q0]].betSize, this.betLevelValue = this.um[J[Q0]].betLevel, this.updateBetValues(z(Q0, this.um)), this.Wv || this.Jv || this.sm && this.sm(this.betSizeValue, this.betLevelValue), P() && D.hideMoreMenuLayer();
         }
       }, w.prototype.decreaseBet = function () {
-        {
-          var W,
-            D = this.settingMenuController;
-          if (!D.isSwitchingMenuLayer()) {
-            if (!this.um) throw Error("SettingMenuHelper :: decreaseBet : bet combination did not generate");
-            var J = Object.keys(this.um).sort(function (Q1, Q2) {
-                var Q3 = parseFloat(Q1),
-                  Q4 = parseFloat(Q2);
-                return Q3 < Q4 ? -1 : Q3 > Q4 ? 1 : 0;
-              }),
-              E = this.p_.decreaseBet(J, this.cm, this.V_);
-            this.lm(E), this.vm(+E.selectedBetAmount), this.p_.updateBetModifierColor(E.selectedBet), this.S_.updateBetModifierColor(E.selectedBet, J.length - 1), null === (W = this.H_) || undefined === W || W.updateBetModifierColor(E.selectedBet, J.length - 1);
-            var Q0 = this.cm = E.selectedBet;
-            this.V_ = E.selectedBetAmount, this.betSizeValue = this.um[J[Q0]].betSize, this.betLevelValue = this.um[J[Q0]].betLevel, this.updateBetValues(z(Q0, this.um)), this.Wv || this.Jv || this.sm && this.sm(this.betSizeValue, this.betLevelValue), P() && D.hideMoreMenuLayer();
-          }
+        var W,
+          D = this.settingMenuController;
+        if (!D.isSwitchingMenuLayer()) {
+          if (!this.um) throw Error("SettingMenuHelper :: decreaseBet : bet combination did not generate");
+          var J = Object.keys(this.um).sort(function (Q1, Q2) {
+              var Q3 = parseFloat(Q1),
+                Q4 = parseFloat(Q2);
+              return Q3 < Q4 ? -1 : Q3 > Q4 ? 1 : 0;
+            }),
+            E = this.p_.decreaseBet(J, this.cm, this.V_);
+          this.lm(E), this.vm(+E.selectedBetAmount), this.p_.updateBetModifierColor(E.selectedBet), this.S_.updateBetModifierColor(E.selectedBet, J.length - 1), null === (W = this.H_) || undefined === W || W.updateBetModifierColor(E.selectedBet, J.length - 1);
+          var Q0 = this.cm = E.selectedBet;
+          this.V_ = E.selectedBetAmount, this.betSizeValue = this.um[J[Q0]].betSize, this.betLevelValue = this.um[J[Q0]].betLevel, this.updateBetValues(z(Q0, this.um)), this.Wv || this.Jv || this.sm && this.sm(this.betSizeValue, this.betLevelValue), P() && D.hideMoreMenuLayer();
         }
       }, w.prototype.maxBet = function () {
-        {
-          var W = this.settingMenuController;
-          if (!W.isSwitchingMenuLayer()) {
-            {
-              if (!this.um) throw Error("SettingMenuHelper :: maxBet : bet combination did not generate");
-              if (!this.H_) throw Error("SettingMenuHelper :: maxBet : max bet button cannot be found");
-              var D = Object.keys(this.um).sort(function (Q0, Q1) {
-                  var Q2 = parseFloat(Q0),
-                    Q3 = parseFloat(Q1);
-                  return Q2 < Q3 ? -1 : Q2 > Q3 ? 1 : 0;
-                }),
-                J = this.H_.maxBet(D);
-              this.lm(J), this.p_.updateBetModifierColor(J.selectedBet), this.S_.updateBetModifierColor(J.selectedBet, D.length - 1), this.H_.updateBetModifierColor(J.selectedBet, D.length - 1);
-              var E = this.cm = J.selectedBet;
-              this.V_ = J.selectedBetAmount, this.betSizeValue = this.um[D[E]].betSize, this.betLevelValue = this.um[D[E]].betLevel, this.updateBetValues(z(E, this.um)), this.Wv || this.Jv || this.sm && this.sm(this.betSizeValue, this.betLevelValue), P() && W.hideMoreMenuLayer();
-            }
-          }
+        var W = this.settingMenuController;
+        if (!W.isSwitchingMenuLayer()) {
+          if (!this.um) throw Error("SettingMenuHelper :: maxBet : bet combination did not generate");
+          if (!this.H_) throw Error("SettingMenuHelper :: maxBet : max bet button cannot be found");
+          var D = Object.keys(this.um).sort(function (Q0, Q1) {
+              var Q2 = parseFloat(Q0),
+                Q3 = parseFloat(Q1);
+              return Q2 < Q3 ? -1 : Q2 > Q3 ? 1 : 0;
+            }),
+            J = this.H_.maxBet(D);
+          this.lm(J), this.p_.updateBetModifierColor(J.selectedBet), this.S_.updateBetModifierColor(J.selectedBet, D.length - 1), this.H_.updateBetModifierColor(J.selectedBet, D.length - 1);
+          var E = this.cm = J.selectedBet;
+          this.V_ = J.selectedBetAmount, this.betSizeValue = this.um[D[E]].betSize, this.betLevelValue = this.um[D[E]].betLevel, this.updateBetValues(z(E, this.um)), this.Wv || this.Jv || this.sm && this.sm(this.betSizeValue, this.betLevelValue), P() && W.hideMoreMenuLayer();
         }
       }, Object.defineProperty(w.prototype, "changeSoundVolume", {
         'set': function (W) {
-          {
-            var D = this;
-            this._m && (this.mm && this.mm(), this._m = undefined), this._m = function () {
-              D.bm(D.soundOn), W && W(D.soundOn);
-            }, this.mm = M.observeCallback(this, "soundOn")(this._m);
-          }
+          var D = this;
+          this._m && (this.mm && this.mm(), this._m = undefined), this._m = function () {
+            D.bm(D.soundOn), W && W(D.soundOn);
+          }, this.mm = M.observeCallback(this, "soundOn")(this._m);
         },
         'enumerable': false,
         'configurable': true
@@ -627,9 +561,7 @@ function SettingMenuHelper(require, j, exports) {
           'totalWin': M.toDecimalWithExp(W, 2)
         });
       }, w.prototype.setAllButtonsInteractable = function (W, D) {
-        {
-          undefined === D && (D = true), this.zv.setAllButtonsInteractable(W), W && this.checkSelectedValue(M.toDecimalWithExp(this.betSizeValue * this.betLevelValue * this.betLineValue, 2));
-        }
+        undefined === D && (D = true), this.zv.setAllButtonsInteractable(W), W && this.checkSelectedValue(M.toDecimalWithExp(this.betSizeValue * this.betLevelValue * this.betLineValue, 2));
       }, w.prototype.setLockAccess = function (W, D) {
         this.zv.setLockAccess(W, D);
       }, w.prototype.isButtonLocked = function (W) {
@@ -647,9 +579,7 @@ function SettingMenuHelper(require, j, exports) {
       }, w.prototype.setHidden = function (W) {
         this.Ev = W, this.settingMenuController.setHidden(W);
       }, w.prototype.isIdle = function () {
-        {
-          return this.settingMenuController.isIdle();
-        }
+        return this.settingMenuController.isIdle();
       }, Object.defineProperty(w.prototype, "isShowBlackTintBg", {
         'set': function (W) {
           this.Vv = W;
@@ -664,10 +594,8 @@ function SettingMenuHelper(require, j, exports) {
         return this.settingInfoFooter;
       }, Object.defineProperty(w.prototype, "settingInfoFooter", {
         'get': function () {
-          {
-            if (!this.c_) throw Error("SettingMenuHelper :: settingInfoFooter : Cannot find settingInfoFooter. Please setup setting info footer first! (addSettingInfoFooter)");
-            return this.c_;
-          }
+          if (!this.c_) throw Error("SettingMenuHelper :: settingInfoFooter : Cannot find settingInfoFooter. Please setup setting info footer first! (addSettingInfoFooter)");
+          return this.c_;
         },
         'enumerable': false,
         'configurable': true
@@ -701,9 +629,7 @@ function SettingMenuHelper(require, j, exports) {
         'configurable': true
       }), Object.defineProperty(w.prototype, "betSizeValue", {
         'get': function () {
-          {
-            return this.vt;
-          }
+          return this.vt;
         },
         'set': function (W) {
           this.wv.emit("SlotMenu.SetBetSizeValue", W), this.vt = W;
@@ -712,9 +638,7 @@ function SettingMenuHelper(require, j, exports) {
         'configurable': true
       }), Object.defineProperty(w.prototype, "minimumBetAmount", {
         'get': function () {
-          {
-            return this.Y_;
-          }
+          return this.Y_;
         },
         'set': function (W) {
           this.wv.emit("SlotMenu.SetMinimumBetAmount", W), this.Y_ = W, this.preCalculateCombination();
@@ -759,9 +683,7 @@ function SettingMenuHelper(require, j, exports) {
         'configurable': true
       }), Object.defineProperty(w.prototype, "soundEnable", {
         'get': function () {
-          {
-            return Y.soundOn;
-          }
+          return Y.soundOn;
         },
         'set': function (W) {
           this.soundOn = W, Y.soundOn = W;
@@ -769,18 +691,14 @@ function SettingMenuHelper(require, j, exports) {
         'enumerable': false,
         'configurable': true
       }), w.prototype.playWalletCountingAboveSfx = function () {
-        {
-          var W = this.walletCountingAbove;
-          W && W.play();
-        }
+        var W = this.walletCountingAbove;
+        W && W.play();
       }, w.prototype.playMenuIconPressSound = function () {
         var W = this.menuIconPress;
         W && W.play();
       }, w.prototype.playListItemClickSound = function () {
-        {
-          var W = this.listItemClick;
-          W && W.play();
-        }
+        var W = this.listItemClick;
+        W && W.play();
       }, w.prototype.playSliderEffectSound = function () {
         var W = this.sliderEffect;
         W && W.play();
@@ -790,51 +708,39 @@ function SettingMenuHelper(require, j, exports) {
           'src': M.getCocosMajor() >= 4 ? "/lib/setting_menu/" + this.Uv[D] : cc.url.raw("/resources/lib/setting_menu/" + this.Uv[D] + ".mp3")
         });
       }, w.prototype.$v = function (W) {
-        {
-          var D = this;
-          if (this.gm) {
-            {
-              var J = this.gm;
-              this.gm = undefined, J && J();
-            }
-          }
-          this.gm = M.sequenceCallback(function (E) {
-            {
-              D.Cm("menuIconPress", function (Q0) {
-                Q0 ? W(Q0) : E();
-              });
-            }
-          }, function (E) {
-            D.Cm("listItemClick", function (Q0) {
-              Q0 ? W(Q0) : E();
-            });
-          }, function (E) {
-            D.Cm("sliderEffect", function (Q0) {
-              {
-                Q0 ? W(Q0) : E();
-              }
-            });
-          }, function (E) {
-            D.Cm("walletCountingAbove", function (Q0) {
-              Q0 ? W(Q0) : E();
-            });
-          })(W);
+        var D = this;
+        if (this.gm) {
+          var J = this.gm;
+          this.gm = undefined, J && J();
         }
+        this.gm = M.sequenceCallback(function (E) {
+          D.Cm("menuIconPress", function (Q0) {
+            Q0 ? W(Q0) : E();
+          });
+        }, function (E) {
+          D.Cm("listItemClick", function (Q0) {
+            Q0 ? W(Q0) : E();
+          });
+        }, function (E) {
+          D.Cm("sliderEffect", function (Q0) {
+            Q0 ? W(Q0) : E();
+          });
+        }, function (E) {
+          D.Cm("walletCountingAbove", function (Q0) {
+            Q0 ? W(Q0) : E();
+          });
+        })(W);
       }, w.prototype.Cm = function (W, D) {
-        {
-          var J = this;
-          if (this.xv[W]) D && D();else {
-            {
-              var E = this[W],
-                Q0 = function () {
-                  E.off("loaderror", Q1), J.xv[W] = true, D && D();
-                },
-                Q1 = function (Q2, Q3) {
-                  E.off("load", Q0), D && D(Q3);
-                };
-              E.once("load", Q0), E.once("loaderror", Q1), E.load();
-            }
-          }
+        var J = this;
+        if (this.xv[W]) D && D();else {
+          var E = this[W],
+            Q0 = function () {
+              E.off("loaderror", Q1), J.xv[W] = true, D && D();
+            },
+            Q1 = function (Q2, Q3) {
+              E.off("load", Q0), D && D(Q3);
+            };
+          E.once("load", Q0), E.once("loaderror", Q1), E.load();
         }
       }, w.prototype.reset = function () {
         var W = {};
@@ -847,16 +753,12 @@ function SettingMenuHelper(require, j, exports) {
       }, w.prototype.z_ = function (W) {
         this.wv.emit("Game.TransactionInfoChanged", W);
       }, w.prototype.bm = function (W) {
-        {
-          var D = W ? 'On' : "Off";
-          this.wv.emit("Game.AudioStateChanged", D);
-        }
+        var D = W ? 'On' : "Off";
+        this.wv.emit("Game.AudioStateChanged", D);
       }, w.prototype.qv = function () {
         var W = this;
         O.setGamePlayUIBlockEventCallback("settingmenu", function (D) {
-          {
-            W.settingMenuController.setMenuUIBlock(D);
-          }
+          W.settingMenuController.setMenuUIBlock(D);
         }), x && (this.wv.on("Wallet.Hidden", function () {
           W.settingMenuController.setIsControllerPresenting(false);
         }), this.wv.on("Wallet.Shown", function () {
@@ -875,12 +777,10 @@ function SettingMenuHelper(require, j, exports) {
         }, this), this.wv.on("SlotMenu.CancelBetPanelCallback", function () {
           W.W_ && W.W_();
         }, this), this.wv.on("SlotMenu.FinishBetPickCallback", function (D) {
-          {
-            var J = D.payload,
-              E = J.betSize,
-              Q0 = J.betLevel;
-            W.F_ && W.F_(E, Q0);
-          }
+          var J = D.payload,
+            E = J.betSize,
+            Q0 = J.betLevel;
+          W.F_ && W.F_(E, Q0);
         }, this)), U && (this.wv.on("Paytable.Hide", function () {
           W.settingMenuController.setIsControllerPresenting(false);
         }), this.wv.on("GameRules.Hide", function () {
@@ -890,9 +790,7 @@ function SettingMenuHelper(require, j, exports) {
         }), this.wv.on("Game.OnAudio", function () {
           W.soundEnable = true;
         }), this.wv.on("Game.OffAudio", function () {
-          {
-            W.soundEnable = false;
-          }
+          W.soundEnable = false;
         }), this.wv.on("Game.RequestAudioState", function (D) {
           true === W.soundEnable ? D.response = 'On' : D.response = "Off";
         }), this.wv.on("SettingMenuHelper.GetSettingMenuType", function (D) {
@@ -900,30 +798,22 @@ function SettingMenuHelper(require, j, exports) {
         }), this.wv.on("Game.GetSettingMenuType", function (D) {
           D.response = T.NEW;
         }), this.wv.on("Game.ReplayInitiated", function () {
-          {
-            var D = W.settingMenuController;
-            if (P() ? D.muteIcon.active = false : W.soundOn ? D.muteIcon.active = false : D.muteIcon.active = true, !D.isControllerPresenting() && !D.isSwitchingMenuLayer()) {
-              {
-                D.hideMoreMenuLayer();
-                var J = W.I_;
-                J && J(W.Ev, true);
-              }
-            }
+          var D = W.settingMenuController;
+          if (P() ? D.muteIcon.active = false : W.soundOn ? D.muteIcon.active = false : D.muteIcon.active = true, !D.isControllerPresenting() && !D.isSwitchingMenuLayer()) {
+            D.hideMoreMenuLayer();
+            var J = W.I_;
+            J && J(W.Ev, true);
           }
         });
       }, w.prototype.Qv = function () {
         var W = this;
         this.wv.on("Game.TransactionStateComplete", function (D) {
           if (W.ym) {
-            {
-              var J = D.payload.to;
-              "setup" === J && W.Kv && (W.Kv = false), "action" !== J || W.Kv || (W.Kv = true);
-            }
+            var J = D.payload.to;
+            "setup" === J && W.Kv && (W.Kv = false), "action" !== J || W.Kv || (W.Kv = true);
           }
         }), this.wv.on("Game.TransactionInfoUpdated", function (D) {
-          {
-            W.ym && (W.wm = D.payload.tbb);
-          }
+          W.ym && (W.wm = D.payload.tbb);
         });
       }, w.prototype.Yv = function () {
         var W = this;
@@ -945,14 +835,10 @@ function SettingMenuHelper(require, j, exports) {
         D.actionName = W;
         this.wv.emit("Analytics.Event", D);
       }, w.prototype.fm = function (W) {
-        {
-          var D = this;
-          this.Bm ? this.Bm() : this.Am = parseFloat(this.V_), this.Bm = M.delayCallback(0.6)(function () {
-            {
-              W !== D.Am && D.wv.emit("SlotMenu.ChangeBet", W), D.Bm = undefined, D.Am = undefined;
-            }
-          });
-        }
+        var D = this;
+        this.Bm ? this.Bm() : this.Am = parseFloat(this.V_), this.Bm = M.delayCallback(0.6)(function () {
+          W !== D.Am && D.wv.emit("SlotMenu.ChangeBet", W), D.Bm = undefined, D.Am = undefined;
+        });
       }, w.prototype.changeSoundButtonHolder = function () {
         if (P()) {
           var W = this.settingInfoFooter;
@@ -961,9 +847,7 @@ function SettingMenuHelper(require, j, exports) {
       }, w.prototype.returnSoundButtonHolder = function () {
         P() && this.__ && this.v_ && (this.v_.parent = this.__, this.b_ || (this.v_.getComponent("GenericSettingButton").largeSprite.node.active = true, this.v_.getComponent("GenericSettingButton").sprite.node.active = false));
       }, w.prototype.getSettingMenuButtonNode = function (W) {
-        {
-          return this.zv.getButtonNode(W);
-        }
+        return this.zv.getButtonNode(W);
       }, w.prototype.pm = function (W) {
         var D = this.settingInfoFooter;
         if (this.Kv && this.ym) {

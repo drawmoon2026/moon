@@ -18,18 +18,16 @@ function SystemFeatureHandler(require, j, exports) {
         g = C.betChangedHandler;
       X.sequenceCallback(T(q, V, N), M(f, g))(C.callback);
     }, exports.checkSpinValidity = function (C) {
-      {
-        var V = C.callback,
-          N = C.walletHelper,
-          q = C.getCostPerSpinFunction,
-          f = C.dataSource,
-          g = q();
-        var l = {};
-        l.totalBet = g;
-        Z.emitRequestPlayEvent(l, function (K) {
-          K ? N.isFreeGameMode() && N.hasFreeGame() ? V(B.SpinCredits.FREE_GAME) : V(B.SpinCredits.CASH) : g > f.playerModel.balance ? V(B.SpinCredits.INSUFFICIENT) : V(B.SpinCredits.BET_INVALID);
-        });
-      }
+      var V = C.callback,
+        N = C.walletHelper,
+        q = C.getCostPerSpinFunction,
+        f = C.dataSource,
+        g = q();
+      var l = {};
+      l.totalBet = g;
+      Z.emitRequestPlayEvent(l, function (K) {
+        K ? N.isFreeGameMode() && N.hasFreeGame() ? V(B.SpinCredits.FREE_GAME) : V(B.SpinCredits.CASH) : g > f.playerModel.balance ? V(B.SpinCredits.INSUFFICIENT) : V(B.SpinCredits.BET_INVALID);
+      });
     }, cc._RF.pop();
   }
   function T(C, V, N) {

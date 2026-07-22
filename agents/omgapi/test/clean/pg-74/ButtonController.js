@@ -9,28 +9,22 @@ function ButtonController(F, c, exports) {
     Object.defineProperty(exports, "__esModule", I);
     var m = cc._decorator.ccclass,
       B = function (X) {
-        {
-          function Z() {
-            var T = null !== X && X.apply(this, arguments) || this;
-            return T.Ss = undefined, T;
-          }
-          return __extends(Z, X), Z.prototype.setClickCallback = function (T) {
-            {
-              this.Ss = T;
-            }
-          }, Z.prototype.onClick = function () {
-            this.Ss && this.Ss();
-          }, Z.prototype.clearClickCallback = function () {
-            this.Ss = undefined;
-          }, Z.prototype.getControllerAndHandlerName = function () {
-            {
-              var T = {};
-              T.ControllerName = "ButtonController";
-              T.HandlerName = "onClick";
-              return T;
-            }
-          }, __decorate([m], Z);
+        function Z() {
+          var T = null !== X && X.apply(this, arguments) || this;
+          return T.Ss = undefined, T;
         }
+        return __extends(Z, X), Z.prototype.setClickCallback = function (T) {
+          this.Ss = T;
+        }, Z.prototype.onClick = function () {
+          this.Ss && this.Ss();
+        }, Z.prototype.clearClickCallback = function () {
+          this.Ss = undefined;
+        }, Z.prototype.getControllerAndHandlerName = function () {
+          var T = {};
+          T.ControllerName = "ButtonController";
+          T.HandlerName = "onClick";
+          return T;
+        }, __decorate([m], Z);
       }(cc.Component);
     exports.default = B, cc._RF.pop();
   }

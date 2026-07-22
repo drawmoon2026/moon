@@ -27,9 +27,7 @@ function BonusLoadingController(require, j, exports) {
           'configurable': true
         }), Object.defineProperty(f.prototype, "loadingPercentDisplayController", {
           'get': function () {
-            {
-              return this.di || (this.di = this.loadingPercentNode.getComponent("NumberDisplayController")), this.di;
-            }
+            return this.di || (this.di = this.loadingPercentNode.getComponent("NumberDisplayController")), this.di;
           },
           'enumerable': false,
           'configurable': true
@@ -61,37 +59,25 @@ function BonusLoadingController(require, j, exports) {
           var g = this.hoverEffectNode;
           g.setScale(cc.v2(0, 0)), g.opacity = 255, g.runAction(cc.sequence(cc.scaleTo(0.3, 3).easing(cc.easeIn(2)), cc.spawn(cc.scaleTo(0.5, 5), cc.fadeOut(0.5))));
         }, f.prototype.Si = function (g) {
-          {
-            var l = this;
-            this.startTextSprite.spriteFrame = this.ai, this.startButtonNode.stopAllActions(), this.startButtonNode.active = true, this.startButtonNode.scale = 0, this.startButtonNode.runAction(cc.sequence(cc.scaleTo(0.15, 1.15), cc.scaleTo(0.1, 0.95), cc.scaleTo(0.1, 1))), Z.delayCallback(0.35)(function () {
-              {
-                l.Ci(), l.schedule(l.Ci, 1);
-              }
-            }), this.Mi(g), T.spaceBarInterrupter.subscribeEventInterrupter("bonus", this.node, this.startButtonClick.bind(this));
-          }
+          var l = this;
+          this.startTextSprite.spriteFrame = this.ai, this.startButtonNode.stopAllActions(), this.startButtonNode.active = true, this.startButtonNode.scale = 0, this.startButtonNode.runAction(cc.sequence(cc.scaleTo(0.15, 1.15), cc.scaleTo(0.1, 0.95), cc.scaleTo(0.1, 1))), Z.delayCallback(0.35)(function () {
+            l.Ci(), l.schedule(l.Ci, 1);
+          }), this.Mi(g), T.spaceBarInterrupter.subscribeEventInterrupter("bonus", this.node, this.startButtonClick.bind(this));
         }, f.prototype._i = function () {
-          {
-            this.loadingNode.active = true, this.loadingNode.stopAllActions(), this.loadingNode.runAction(cc.spawn(cc.fadeIn(0.5), cc.callFunc(this.yi, this)));
-          }
+          this.loadingNode.active = true, this.loadingNode.stopAllActions(), this.loadingNode.runAction(cc.spawn(cc.fadeIn(0.5), cc.callFunc(this.yi, this)));
         }, f.prototype.gi = function () {
           this.loadingPercentNode.runAction(cc.fadeOut(0.1)), this.loadingNode.runAction(cc.fadeOut(0.1));
         }, f.prototype.yi = function () {
-          {
-            var g = this.fi;
-            this.fi = undefined, this.loadingNode.runAction(cc.repeatForever(cc.rotateBy(2, 360))), this.loadingPercentNode.active = true, this.loadingPercentNode.opacity = 255, this.loadingPercentDisplayController.displayNumber(0, false), g && g();
-          }
+          var g = this.fi;
+          this.fi = undefined, this.loadingNode.runAction(cc.repeatForever(cc.rotateBy(2, 360))), this.loadingPercentNode.active = true, this.loadingPercentNode.opacity = 255, this.loadingPercentDisplayController.displayNumber(0, false), g && g();
         }, f.prototype.startButtonClick = function () {
-          {
-            this.unscheduleAllCallbacks(), T.spaceBarInterrupter.unsubscribeEventInterrupter("bonus"), B.playAudio(X.GENERAL_AUDIO.uiStart.key), this.startTextSprite.spriteFrame = this.ui, this.startButtonNode.getComponent("cc.Button").enabled = false, this.collectHoverNode.active = false, this.collectHoverNode.opacity = 0, this.collectHoverNode.stopAllActions(), this.startButtonNode.stopAllActions(), this.startButtonNode.runAction(cc.sequence(cc.scaleTo(0.15, 0.9), cc.scaleTo(0.1, 1.1), cc.scaleTo(0.1, 1), cc.delayTime(0.15), cc.callFunc(this.hideLoading, this)));
-          }
+          this.unscheduleAllCallbacks(), T.spaceBarInterrupter.unsubscribeEventInterrupter("bonus"), B.playAudio(X.GENERAL_AUDIO.uiStart.key), this.startTextSprite.spriteFrame = this.ui, this.startButtonNode.getComponent("cc.Button").enabled = false, this.collectHoverNode.active = false, this.collectHoverNode.opacity = 0, this.collectHoverNode.stopAllActions(), this.startButtonNode.stopAllActions(), this.startButtonNode.runAction(cc.sequence(cc.scaleTo(0.15, 0.9), cc.scaleTo(0.1, 1.1), cc.scaleTo(0.1, 1), cc.delayTime(0.15), cc.callFunc(this.hideLoading, this)));
         }, f.prototype.hideLoading = function () {
           var g = this;
           this.startButtonNode.stopAllActions(), this.startButtonNode.runAction(cc.sequence(cc.scaleTo(0.1, 1.1), cc.scaleTo(0.1, 0)));
           var l = function () {
-            {
-              var K = g.fi;
-              g.fi = undefined, Z.delayCallback(0.22)(g.Xt.bind(g)), K && K();
-            }
+            var K = g.fi;
+            g.fi = undefined, Z.delayCallback(0.22)(g.Xt.bind(g)), K && K();
           };
           this.particleEffectNode.runAction(cc.tintTo(0.3, 0, 0, 0).easing(cc.easeIn(2))), this.content.runAction(cc.spawn(cc.fadeOut(0.5), cc.callFunc(function () {
             Z.delayCallback(0.5)(l);

@@ -9,15 +9,13 @@ function SlotGameTools(require, c, exports) {
     Object.defineProperty(exports, "__esModule", I), exports.emitSocialBigWinEnd = exports.emitSocialBigWinStart = exports.isSuperMegaWinThreshold = exports.isMegaWinThreshold = exports.isBigWinThreshold = exports.isMediumWinThreshold = exports.getWinThresholds = undefined;
     var m = require("GameEventHandler");
     exports.getWinThresholds = function (B) {
-      {
-        var X = B.systemModel,
-          Z = X.maxLineNumber,
-          T = X.winThresholds,
-          M = B.transactionModel,
-          C = M.betSizeValue,
-          V = M.betLevelValue;
-        return T.getAllThresholds(C, V, Z);
-      }
+      var X = B.systemModel,
+        Z = X.maxLineNumber,
+        T = X.winThresholds,
+        M = B.transactionModel,
+        C = M.betSizeValue,
+        V = M.betLevelValue;
+      return T.getAllThresholds(C, V, Z);
     }, exports.isMediumWinThreshold = function (B, X) {
       return !!(X.mediumWinThreshold && B >= X.mediumWinThreshold);
     }, exports.isBigWinThreshold = function (B, X) {
@@ -27,19 +25,15 @@ function SlotGameTools(require, c, exports) {
     }, exports.isSuperMegaWinThreshold = function (B, X) {
       return !!(X.superMegaWinThreshold && B >= X.superMegaWinThreshold);
     }, exports.emitSocialBigWinStart = function (B) {
-      {
-        var X = {};
-        X.displayState = "Start";
-        X.effectType = "BigWin";
-        m.emitGameEffectStateChangedEvent(X), B && B();
-      }
+      var X = {};
+      X.displayState = "Start";
+      X.effectType = "BigWin";
+      m.emitGameEffectStateChangedEvent(X), B && B();
     }, exports.emitSocialBigWinEnd = function (B) {
-      {
-        var X = {};
-        X.displayState = "End";
-        X.effectType = "BigWin";
-        m.emitGameEffectStateChangedEvent(X), B && B();
-      }
+      var X = {};
+      X.displayState = "End";
+      X.effectType = "BigWin";
+      m.emitGameEffectStateChangedEvent(X), B && B();
     }, cc._RF.pop();
   }
 }

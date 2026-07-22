@@ -14,9 +14,7 @@ function CustomAssetConfig(require, c, exports) {
         'type': m.LoaderType.CUSTOM,
         'loadFunc': function (Z, T) {
           B.settingMenuHelper.loadAudio(function (M) {
-            {
-              M ? T(M) : Z(undefined);
-            }
+            M ? T(M) : Z(undefined);
           });
         }
       }];

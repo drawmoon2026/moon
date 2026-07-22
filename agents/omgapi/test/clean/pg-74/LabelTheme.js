@@ -20,10 +20,8 @@ function LabelTheme(require, module, exports) {
         var y = {},
           z = Object.defineProperty && Object.getOwnPropertyDescriptor;
         for (var S in k) if ("default" !== S && Object.prototype.hasOwnProperty.call(k, S)) {
-          {
-            var P = z ? Object.getOwnPropertyDescriptor(k, S) : null;
-            P && (P.get || P.set) ? Object.defineProperty(y, S, P) : y[S] = k[S];
-          }
+          var P = z ? Object.getOwnPropertyDescriptor(k, S) : null;
+          P && (P.get || P.set) ? Object.defineProperty(y, S, P) : y[S] = k[S];
         }
         return y.default = k, Y && Y.set(k, y), y;
       }(require("ResRC")),
@@ -64,9 +62,7 @@ function LabelTheme(require, module, exports) {
           'tooltip': false,
           'default': '',
           'notify': function () {
-            {
-              this.rc();
-            }
+            this.rc();
           }
         },
         'fontFamilyKey': x,
@@ -79,14 +75,10 @@ function LabelTheme(require, module, exports) {
       },
       'rc': function () {
         if (this.followThemeColor) {
-          {
-            var k = this.node;
-            if (this.domainKey, this.colorKey, k && '' != this.colorKey) {
-              {
-                var Y = f.uiAppearanceHelper.v(this.domainKey + '.' + this.colorKey);
-                k.color = new cc.Color(Y.r, Y.g, Y.b), k.opacity = Y.getA();
-              }
-            }
+          var k = this.node;
+          if (this.domainKey, this.colorKey, k && '' != this.colorKey) {
+            var Y = f.uiAppearanceHelper.v(this.domainKey + '.' + this.colorKey);
+            k.color = new cc.Color(Y.r, Y.g, Y.b), k.opacity = Y.getA();
           }
         }
       },
@@ -96,10 +88,8 @@ function LabelTheme(require, module, exports) {
           var Y = this.nc;
           if (Y) {
             if (Y.offsetY = (0, f.getOffsetY)(), this.fontFamilyKey && this.domainKey) {
-              {
-                var y = f.uiAppearanceHelper.v(this.domainKey + '.' + this.fontFamilyKey);
-                this.uc(y);
-              }
+              var y = f.uiAppearanceHelper.v(this.domainKey + '.' + this.fontFamilyKey);
+              this.uc(y);
             }
             if (this.fontWeightKey) {
               var z = this.fontWeightKey;
@@ -113,12 +103,10 @@ function LabelTheme(require, module, exports) {
               var P = f.uiAppearanceHelper.v(this.domainKey + '.' + this.fontKey);
               if ("object" == typeof P) return void this.dc(P);
               if (P) {
-                {
-                  var G = (0, N.getResourceURL)(P);
-                  return void (G && V.load(G, cc.Font, function (v, A) {
-                    v || k.dc(A);
-                  }));
-                }
+                var G = (0, N.getResourceURL)(P);
+                return void (G && V.load(G, cc.Font, function (v, A) {
+                  v || k.dc(A);
+                }));
               }
             }
           }
@@ -133,10 +121,8 @@ function LabelTheme(require, module, exports) {
         cc.isValid(this.node) && (Y.fontFamily = k, Y instanceof cc.Label ? C(Y) : Y instanceof cc.RichText && Y[g.oc]());
       },
       'lc': function (k) {
-        {
-          var Y = this.nc;
-          cc.isValid(this.node) && (Y[g.cc] = k, Y instanceof cc.Label ? C(Y) : cc.RichText);
-        }
+        var Y = this.nc;
+        cc.isValid(this.node) && (Y[g.cc] = k, Y instanceof cc.Label ? C(Y) : cc.RichText);
       },
       'fc': function (k) {
         var Y = this.nc;
@@ -150,9 +136,7 @@ function LabelTheme(require, module, exports) {
     var Y = new WeakMap(),
       y = new WeakMap();
     return (U = function (z) {
-      {
-        return z ? y : Y;
-      }
+      return z ? y : Y;
     })(k);
   }
 }

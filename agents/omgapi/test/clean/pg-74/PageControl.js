@@ -18,16 +18,14 @@ function PageControl(require, j, exports) {
         }
         return __extends(V, C), V.prototype.init = function (N, q, f) {
           if (!(N >= q || N < 0)) {
-            {
-              this.node.removeAllChildren(), this.Lf = q, this.delegate = f;
-              for (var g = [], l = 0; l < q; l++) {
-                var K = cc.instantiate(this.buttonPrefab);
-                K.parent = this.node;
-                var O = K.getComponent(B.default);
-                O.index = l, O.delegate = this, O.init(), g.push(O);
-              }
-              g[N].setSelect(), this.jf = N, this.Pf = g;
+            this.node.removeAllChildren(), this.Lf = q, this.delegate = f;
+            for (var g = [], l = 0; l < q; l++) {
+              var K = cc.instantiate(this.buttonPrefab);
+              K.parent = this.node;
+              var O = K.getComponent(B.default);
+              O.index = l, O.delegate = this, O.init(), g.push(O);
             }
+            g[N].setSelect(), this.jf = N, this.Pf = g;
           }
         }, V.prototype.layoutContainer = function (N) {
           this.getComponent(cc.Layout).spacingX = N;
@@ -38,9 +36,7 @@ function PageControl(require, j, exports) {
             f[this.jf].setUnselect(), f[N].setSelect(), this.jf = N;
           }
         }, V.prototype.getCurrentPage = function () {
-          {
-            return this.jf;
-          }
+          return this.jf;
         }, V.prototype.didSelectDotAtIndex = function (N) {
           this.Pf[this.jf].setUnselect(), this.jf = N, this.delegate && this.delegate.changePage && this.delegate.changePage(N);
         }, V.prototype.canChangePage = function () {

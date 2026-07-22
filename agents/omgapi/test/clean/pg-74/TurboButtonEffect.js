@@ -10,17 +10,13 @@ function TurboButtonEffect(F, c, exports) {
     var m = cc._decorator.ccclass,
       B = function (X) {
         function Z() {
-          {
-            var T = null !== X && X.apply(this, arguments) || this;
-            return T.Fg = undefined, T;
-          }
+          var T = null !== X && X.apply(this, arguments) || this;
+          return T.Fg = undefined, T;
         }
         return __extends(Z, X), Z.prototype.setUpdateTurboMiddleIconCallback = function (T) {
           this.Fg = T;
         }, Z.prototype.changeTurboSprite = function () {
-          {
-            this.Fg && this.Fg();
-          }
+          this.Fg && this.Fg();
         }, __decorate([m], Z);
       }(cc.Component);
     exports.default = B, cc._RF.pop();

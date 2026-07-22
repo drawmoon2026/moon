@@ -20,10 +20,8 @@ function WildSymbolController(F, j, exports) {
         }, C.prototype.playWin = function () {
           this.node.active = true, this.wildSpine.setAnimation(0, "win", false), this.wildSpine.setCompleteListener(this.nC.bind(this, true));
         }, C.prototype.stop = function () {
-          {
-            var V = this.wildSpine;
-            V.clearTrack(0), V.setToSetupPose(), V.setCompleteListener(undefined), this.node.active = false;
-          }
+          var V = this.wildSpine;
+          V.clearTrack(0), V.setToSetupPose(), V.setCompleteListener(undefined), this.node.active = false;
         }, C.prototype.nC = function (V) {
           undefined === V && (V = true), this.wildSpine.setAnimation(0, "win_idle", V);
         }, C.prototype.eC = function (V) {

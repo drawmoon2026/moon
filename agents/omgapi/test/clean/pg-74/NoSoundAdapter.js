@@ -23,22 +23,18 @@ function NoSoundAdapter(require, j, exports) {
         }
         return __extends(N, V), N.prototype.reset = function (q) {
           if (this.Yl = 0, this.Zl = 0, undefined !== q) {
-            {
-              var f = q.loop,
-                g = q.volume,
-                l = q.muted,
-                K = q.rate,
-                O = q.duration;
-              "boolean" == typeof f && (this.j = f), "number" == typeof g && g >= 0 && g <= 1 && (this.G = g), "boolean" == typeof l && (this.ql = l), "number" == typeof K && K > 0 && (this.k = K), "number" == typeof O && O > 0 && (this.Ql = O);
-            }
+            var f = q.loop,
+              g = q.volume,
+              l = q.muted,
+              K = q.rate,
+              O = q.duration;
+            "boolean" == typeof f && (this.j = f), "number" == typeof g && g >= 0 && g <= 1 && (this.G = g), "boolean" == typeof l && (this.ql = l), "number" == typeof K && K > 0 && (this.k = K), "number" == typeof O && O > 0 && (this.Ql = O);
           }
         }, N.prototype.destroy = function () {
           this.reset(), this.removeAll();
         }, Object.defineProperty(N.prototype, "instantVolume", {
           'get': function () {
-            {
-              return this.G;
-            }
+            return this.G;
           },
           'enumerable': false,
           'configurable': true
@@ -47,22 +43,16 @@ function NoSoundAdapter(require, j, exports) {
             return this.G;
           },
           'set': function (q) {
-            {
-              this.G = q, this.tf(undefined);
-            }
+            this.G = q, this.tf(undefined);
           },
           'enumerable': false,
           'configurable': true
         }), Object.defineProperty(N.prototype, "loop", {
           'get': function () {
-            {
-              return this.j;
-            }
+            return this.j;
           },
           'set': function (q) {
-            {
-              q !== this.j && (this.j = q, q ? this.if(undefined) : this.sf());
-            }
+            q !== this.j && (this.j = q, q ? this.if(undefined) : this.sf());
           },
           'enumerable': false,
           'configurable': true
@@ -89,9 +79,7 @@ function NoSoundAdapter(require, j, exports) {
             return this.k;
           },
           'set': function (q) {
-            {
-              "number" == typeof q && q > 0 && q !== this.k && (this.k = q);
-            }
+            "number" == typeof q && q > 0 && q !== this.k && (this.k = q);
           },
           'enumerable': false,
           'configurable': true
@@ -130,41 +118,35 @@ function NoSoundAdapter(require, j, exports) {
         }, N.prototype.stop = function () {
           this.tf(undefined), this.if(undefined), this.Yl = 0, this.Zl = 0, this.emit(shell.WebAudioEvent.STOP);
         }, N.prototype.fade = function (q, f, g) {
-          {
-            this.G = f, this.tf(g);
-          }
+          this.G = f, this.tf(g);
         }, N.prototype.$l = function () {
           this.emit(shell.WebAudioEvent.FADED);
         }, N.prototype.sf = function () {
           var q = this.Ql - this.currentTime;
           q >= 0 ? this.if(q) : this.if(undefined);
         }, N.prototype.if = function (q) {
-          {
-            var f = this.nf;
-            f && f(), this.nf = null == q ? undefined : B.delayCallback(q)(this.Xl);
-          }
+          var f = this.nf;
+          f && f(), this.nf = null == q ? undefined : B.delayCallback(q)(this.Xl);
         }, N.prototype.tf = function (q) {
           var f = this.ef;
           f && f(), this.ef = null == q ? undefined : B.delayCallback(q)(this.$l);
         }, N;
       }(shell.CustomEventTarget),
       C = function (V) {
-        {
-          function N(q) {
-            var f = this;
-            return q.loader = Z, (f = V.call(this, q) || this).cf = q.estimatedDuration || T, f;
-          }
-          return __extends(N, V), N.prototype.getDuration = function (q) {
-            return "number" == typeof q ? V.prototype.getDuration.call(this, q) : this.cf;
-          }, N.prototype.getAudioFromPool = function () {
-            var q = this.factory.get();
-            var f = {};
-            f.duration = this.cf;
-            var g = {};
-            g.duration = this.cf;
-            return q ? (q.reset(f), q) : new M(g);
-          }, N;
+        function N(q) {
+          var f = this;
+          return q.loader = Z, (f = V.call(this, q) || this).cf = q.estimatedDuration || T, f;
         }
+        return __extends(N, V), N.prototype.getDuration = function (q) {
+          return "number" == typeof q ? V.prototype.getDuration.call(this, q) : this.cf;
+        }, N.prototype.getAudioFromPool = function () {
+          var q = this.factory.get();
+          var f = {};
+          f.duration = this.cf;
+          var g = {};
+          g.duration = this.cf;
+          return q ? (q.reset(f), q) : new M(g);
+        }, N;
       }(X.default);
     exports.default = C, cc._RF.pop();
   }

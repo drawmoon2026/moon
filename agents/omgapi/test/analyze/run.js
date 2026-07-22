@@ -27,19 +27,34 @@ function findMainJs() {
 const jsPath = findMainJs();
 const run = (cmd) => { console.log('\n$ ' + cmd); execSync(cmd, { cwd: ROOT, stdio: 'inherit' }); };
 
-console.log('======== 答案无关提取流程 gid=' + gid + ' ========');
-console.log('\n【1/6】JS 逆向 → 机制' + (jsPath ? ` (${path.basename(jsPath)})` : ''));
-if (jsPath) { try { run(`node analyze/deob-strings.js "${jsPath}"`); } catch { console.log('  (JS 逆向失败:混淆变体不同)'); } }
-else console.log('  (未找到主逻辑 JS,跳过)');
-
-console.log('\n【2/6】boot 配置');
-run(`node analyze/infer-config.js ${gid}`);
-
-// spin 目录:拷来的样本在 spin/,自采的在 spin-live/;哪个有用哪个
+// spin 目录:拷来的样本在 spin/,自采的在 spin-live/;哪个有用哪个(step1 的 parse-structure 也要用)
 const spinCands = [path.join(ROOT, 'env', 'mock', gid, 'spin'), path.join(ROOT, 'env', 'mock', gid, 'spin-live')];
 const spinDir = spinCands.find(d => fs.existsSync(d) && fs.readdirSync(d).some(f => f.endsWith('.json')));
 if (!spinDir) { console.error(`没有 ${gid} 的 spin 样本(env/mock/${gid}/spin 或 spin-live)`); process.exit(1); }
-console.log('\n【3/6】spin 反推  (样本: ' + path.relative(ROOT, spinDir) + ')');
+const spinRel = path.relative(ROOT, spinDir);
+
+console.log('======== 答案无关提取流程 gid=' + gid + ' ========');
+// 【1】JS 深度反混淆链:混淆JS → 清晰代码 → 拆模块 → 赔表(执行式)+ 结构(模块名特性)。
+// 赔表/机制的信息来源是 JS(基石);spin 数据在后面做交叉验证。混淆变体失败则整链退回 spin 反推。
+const cleanJs = `clean/pg-${gid}.clean.js`;
+console.log('\n【1/6】JS 深度反混淆 → 清晰代码 → 拆模块 → 赔表/结构' + (jsPath ? ` (${path.basename(jsPath)})` : ''));
+if (jsPath) {
+    try {
+        run(`node analyze/deob-clean.js "${jsPath}" "${cleanJs}"`);
+        run(`node analyze/split-modules.js "${cleanJs}" "clean/pg-${gid}"`);
+        try { run(`node analyze/extract-paytable-js.js "${cleanJs}"`); }
+        catch { console.log('  (JS 赔表提取失败:模块结构不同,退回 spin 反推)'); }
+        try { run(`node analyze/parse-structure.js "${cleanJs}" "${spinRel}"`); }
+        catch { console.log('  (结构解析失败)'); }
+    } catch {
+        console.log('  (深度反混淆失败:混淆变体不同,退回旧字符串反混淆 + spin 反推)');
+        try { run(`node analyze/deob-strings.js "${jsPath}"`); } catch {}
+    }
+} else console.log('  (未找到主逻辑 JS,跳过 JS 逆向)');
+
+console.log('\n【2/6】boot 配置');
+run(`node analyze/infer-config.js ${gid}`);
+console.log('\n【3/6】spin 反推(交叉验证 JS 赔表 + 反推数值)  (样本: ' + spinRel + ')');
 for (const s of ['infer-paytable', 'infer-reel-weights', 'infer-triggers', 'infer-cascade'])
     run(`node analyze/${s}.js "${spinDir}"`);
 

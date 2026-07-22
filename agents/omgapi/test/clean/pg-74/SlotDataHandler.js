@@ -21,9 +21,7 @@ function SlotDataHandler(require, c, exports) {
       }, B.prototype.setSpinType = function (X) {
         this.spinType = X;
       }, B.prototype.setReelDataPosition = function (X, Z) {
-        {
-          this.isStopping = true, this.formattedDataPositions[X] = Z - this.bottomBufferRow;
-        }
+        this.isStopping = true, this.formattedDataPositions[X] = Z - this.bottomBufferRow;
       }, B.prototype.getReelDataPosition = function (X) {
         return this.formattedDataPositions[X] + this.bottomBufferRow;
       }, B.prototype.getItemInfo = function (X, Z) {
@@ -48,21 +46,17 @@ function SlotDataHandler(require, c, exports) {
         this.updateReelData(X, Z);
       }, B.prototype.updateReelData = function (X, Z) {
         for (var T = this.numberOfColumn, M = this.numberOfRow, C = this.bottomBufferRow, V = this.backupBufferedSymbol, N = this.getSymbolSize, q = this.formattedReelData = [], f = 0; f < T; f++) {
-          {
-            var g = f * M,
-              l = __spread(V[f]);
-            l.splice.apply(l, __spread([C, M], X.slice(g, g + M).reverse())), q.push(l);
-          }
+          var g = f * M,
+            l = __spread(V[f]);
+          l.splice.apply(l, __spread([C, M], X.slice(g, g + M).reverse())), q.push(l);
         }
         N && Z && Z.forEach(function (K) {
           K.sort(function (y, z) {
             return y - z;
           });
           for (var O, x, p = X[K[0]], b = N(p), L = Math.floor(K[0] / M), H = K[0] % M, U = 1; U < K.length; U++) if (Math.floor(K[U] / M) !== L) {
-            {
-              O = K[U - 1] % M;
-              break;
-            }
+            O = K[U - 1] % M;
+            break;
           }
           for (x = 0 === H ? M - O - 1 + C : M - H + C - b.height, U = 0; U < b.width; U++) {
             var k = q[U + L];
@@ -73,26 +67,20 @@ function SlotDataHandler(require, c, exports) {
       }, B.prototype.getFormattedData = function (X) {
         return __spread(this.formattedReelData[X]);
       }, B.prototype.overwriteFormattedData = function (X, Z, T) {
-        {
-          this.formattedReelData[X][Z] = T;
-        }
+        this.formattedReelData[X][Z] = T;
       }, B.prototype.getSymbol = function (X, Z) {
         var T = this.formattedDataPositions[X];
         if (undefined !== T) {
-          {
-            var M = this.formattedReelData[X];
-            if (Z >= T && Z <= T + M.length - 1) return M[Z - T];
-          }
+          var M = this.formattedReelData[X];
+          if (Z >= T && Z <= T + M.length - 1) return M[Z - T];
         }
         var C = this.getSymbolSize,
           V = 1;
         if (C) for (var N = X + 1; N < this.numberOfColumn && !this.slotViews[N].isIndexVisible(Z); N++) V++;
         var q = this.getRandomSymbol(X, this.spinType, Z, this.isStopping, false, V);
         if (C) {
-          {
-            var f = C(q);
-            for (N = 1; N < f.width; N++) this.bufferedEmptyItemInfo[X + N] = this.createEmptyItemInfo(f.height, Z);
-          }
+          var f = C(q);
+          for (N = 1; N < f.width; N++) this.bufferedEmptyItemInfo[X + N] = this.createEmptyItemInfo(f.height, Z);
         }
         return q;
       }, B.prototype.createEmptyItemInfo = function (X, Z) {

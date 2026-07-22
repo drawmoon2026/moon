@@ -20,16 +20,12 @@ function MaxBetButton(require, j, exports) {
         }
         return __extends(q, N), q.prototype.changeButtonPressedColor = function (f) {
           if (this.buttonTheme) {
-            {
-              var g = X.uiAppearanceHelper.v(this.buttonTheme.domainKey + '.' + this.buttonTheme.colorKey + ".normal"),
-                l = X.uiAppearanceHelper.v(this.buttonTheme.domainKey + '.' + this.buttonTheme.colorKey + ".pressed");
-              if (this.isReachLimit) {
-                {
-                  var K = X.uiAppearanceHelper.v(this.buttonTheme.domainKey + '.' + this.buttonTheme.colorKey + ".disabled");
-                  Z.setNodeColorWithOpacity(this.iconSprite, K), this.labelNode.opacity = 127.5;
-                }
-              } else Z.setNodeColorWithOpacity(this.iconSprite, f ? l : g), this.labelNode.opacity = f ? 127.5 : 255;
-            }
+            var g = X.uiAppearanceHelper.v(this.buttonTheme.domainKey + '.' + this.buttonTheme.colorKey + ".normal"),
+              l = X.uiAppearanceHelper.v(this.buttonTheme.domainKey + '.' + this.buttonTheme.colorKey + ".pressed");
+            if (this.isReachLimit) {
+              var K = X.uiAppearanceHelper.v(this.buttonTheme.domainKey + '.' + this.buttonTheme.colorKey + ".disabled");
+              Z.setNodeColorWithOpacity(this.iconSprite, K), this.labelNode.opacity = 127.5;
+            } else Z.setNodeColorWithOpacity(this.iconSprite, f ? l : g), this.labelNode.opacity = f ? 127.5 : 255;
           }
         }, q.prototype.interactableButtonColor = function (f) {
           if (this.buttonTheme) {

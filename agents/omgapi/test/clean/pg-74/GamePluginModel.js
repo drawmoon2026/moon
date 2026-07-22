@@ -4,10 +4,8 @@ function GamePluginModel(Q, module) {
   'use strict';
 
   if (!cc._RF.push(module, "c0badZnWvFI0LG/0J35BfII", "GamePluginModel")) {
-    {
-      var c = System.get("bvframework").GamePluginModel;
-      module.exports.default = c, module.exports.__esModule = true, cc._RF.pop();
-    }
+    var c = System.get("bvframework").GamePluginModel;
+    module.exports.default = c, module.exports.__esModule = true, cc._RF.pop();
   }
 }
 module.exports = GamePluginModel;

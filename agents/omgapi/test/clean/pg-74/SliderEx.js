@@ -20,9 +20,7 @@ function SliderEx(F, j, exports) {
         }, C.prototype.onDisable = function () {
           this.node.off(cc.Node.EventType.TOUCH_START, this.Di, this), this.node.off(cc.Node.EventType.TOUCH_MOVE, this.ot, this), this.node.off(cc.Node.EventType.TOUCH_END, this.Fi, this), this.node.off(cc.Node.EventType.TOUCH_CANCEL, this.Vi, this), this.handle && this.handle.isValid && (this.handle.node.off(cc.Node.EventType.TOUCH_START, this.wb, this), this.handle.node.off(cc.Node.EventType.TOUCH_MOVE, this.ot, this), this.handle.node.off(cc.Node.EventType.TOUCH_END, this.Fi, this)), this.Ab();
         }, C.prototype.Hb = function (V) {
-          {
-            this.Ob(V), this.Ln(), this.Ib();
-          }
+          this.Ob(V), this.Ln(), this.Ib();
         }, C.prototype.hs = function (V) {
           var N = -cc.view._scaleY,
             q = cc.v2(0, V.getScrollY() * N),
@@ -30,9 +28,7 @@ function SliderEx(F, j, exports) {
             h = f + q.y / 10;
           this.progress = cc.misc.clamp01(this.progress + (h - f) / this.node.width), this.Tb(), this.Ln(), this.Ib();
         }, C.prototype.Bb = function () {
-          {
-            this.content && this.content.parent.on(cc.Node.EventType.MOUSE_WHEEL, this.hs, this, true);
-          }
+          this.content && this.content.parent.on(cc.Node.EventType.MOUSE_WHEEL, this.hs, this, true);
         }, C.prototype.Ab = function () {
           this.content && this.content.parent.off(cc.Node.EventType.MOUSE_WHEEL, this.hs, this, true);
         }, C.prototype.Ln = function () {

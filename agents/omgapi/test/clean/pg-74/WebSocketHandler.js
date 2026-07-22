@@ -4,11 +4,9 @@ function WebSocketHandler(Q, module) {
   'use strict';
 
   if (!cc._RF.push(module, "d571cdfj6pHMqHdyAI82QnG", "WebSocketHandler")) {
-    {
-      var c = System.get("bvframework").WebSocketHandler;
-      for (var j in c) c.hasOwnProperty(j) && (module.exports[j] = c[j]);
-      module.exports.__esModule = true, cc._RF.pop();
-    }
+    var c = System.get("bvframework").WebSocketHandler;
+    for (var j in c) c.hasOwnProperty(j) && (module.exports[j] = c[j]);
+    module.exports.__esModule = true, cc._RF.pop();
   }
 }
 module.exports = WebSocketHandler;

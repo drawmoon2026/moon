@@ -14,25 +14,19 @@ function LinePrefabController(Q, module, exports) {
         I && I.setCurrentTime(0) && I.stop(), this.hi = null;
       },
       'setAnimTimeFrameCallback': function (I) {
-        {
-          this.hi = I;
-        }
+        this.hi = I;
       },
       'getAnimTimeFrameCallback': function () {
-        {
-          return this.hi;
-        }
+        return this.hi;
       },
       'onAnimTimeFrameCallback': function () {
         var I = this.hi;
         I && I();
       },
       'destroy': function () {
-        {
-          this.hi = null;
-          var I = this.node.getComponent(cc.Animation);
-          I && I.stop(), this.node.destroy(), this._super();
-        }
+        this.hi = null;
+        var I = this.node.getComponent(cc.Animation);
+        I && I.stop(), this.node.destroy(), this._super();
       }
     });
     exports.default = j, module.exports = exports.default, cc._RF.pop();

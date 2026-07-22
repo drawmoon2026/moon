@@ -21,9 +21,7 @@ function RemainingFreeSpinController(require, j, module) {
         }
         return __extends(f, q), Object.defineProperty(f.prototype, "numberDisplayController", {
           'get': function () {
-            {
-              return this.ci || (this.ci = this.numberDisplayNode.getComponent("NumberDisplayController")), this.ci;
-            }
+            return this.ci || (this.ci = this.numberDisplayNode.getComponent("NumberDisplayController")), this.ci;
           },
           'enumerable': false,
           'configurable': true
@@ -38,33 +36,23 @@ function RemainingFreeSpinController(require, j, module) {
         }, f.prototype.setLocalizedSpriteFrame = function (g, l) {
           this.remainingSprite.spriteFrame = g, this.lastFreeSpinSprite.spriteFrame = l;
         }, f.prototype.show = function () {
-          {
-            this.node.active = true;
-          }
+          this.node.active = true;
         }, f.prototype.hide = function () {
-          {
-            this.node.active = false;
-          }
+          this.node.active = false;
         }, f.prototype.setFreeSpinCount = function (g) {
-          {
-            this.numberDisplayController.clear(), this.fd = g, this.setRemainingFreeSpinCount(this.fd);
-          }
+          this.numberDisplayController.clear(), this.fd = g, this.setRemainingFreeSpinCount(this.fd);
         }, f.prototype.decrementFreeSpinCount = function (g) {
           this.fd--, this.setRemainingFreeSpinCount(this.fd), g && g();
         }, f.prototype.increaseFreeSpinCount = function (g, l) {
-          {
-            this.fd !== g ? (this.dd = this.fd, this.fd = g, this.scheduleOnce(this.md, 0), this.hi = l) : l && l();
-          }
+          this.fd !== g ? (this.dd = this.fd, this.fd = g, this.scheduleOnce(this.md, 0), this.hi = l) : l && l();
         }, f.prototype.setRemainingFreeSpinCount = function (g) {
           0 === g ? (this.numberDisplayNode.active = false, this.lastFreeSpinSprite.node.active = true, this.remainingFreeSpinNode.active = false, this.numberDisplayContainer.setScale(0)) : g > 0 && (this.numberDisplayContainer.setScale(1), this.numberDisplayNode.active = true, this.numberDisplayController.displayNumber(g), this.lastFreeSpinSprite.node.active = false, this.remainingFreeSpinNode.active = true), this.node.active = true;
         }, f.prototype.md = function () {
           this.fd != this.dd ? (X.playAudio(Z.GENERAL_AUDIO.freespinRemainingUp.key), this.dd++, this.numberDisplayNode.y = 25, this.numberDisplayNode.runAction(cc.moveTo(0.1, cc.v2(0, 0)).easing(cc.easeBackOut())), this._d++, this.particles[this._d].resetSystem(), 2 === this._d && (this._d = -1), this.setRemainingFreeSpinCount(this.dd), this.bd(), B.delayCallback(0.1)(this.md.bind(this))) : this.ri();
         }, f.prototype.ri = function () {
-          {
-            this._d = -1, this.vd = 0;
-            var g = this.hi;
-            this.hi = undefined, g && g();
-          }
+          this._d = -1, this.vd = 0;
+          var g = this.hi;
+          this.hi = undefined, g && g();
         }, f.prototype.bd = function () {
           this.vd += 1, this.glowNode.opacity = this.vd > 1 ? 150 : 0, this.glowNode.stopAllActions(), this.glowNode.runAction(cc.sequence(cc.fadeIn(0.4), cc.fadeOut(0.2)));
         }, f.prototype.pd = function () {

@@ -10,42 +10,30 @@ function SlotSymbol(require, c, exports) {
     var m = require("BVFramework"),
       B = cc._decorator.ccclass,
       X = function (Z) {
-        {
-          function T() {
-            {
-              var M = null !== Z && Z.apply(this, arguments) || this;
-              return M.symbolRow = 1, M.symbolColumn = 1, M.Sp = true, M.gp = false, M;
-            }
-          }
-          return __extends(T, Z), Object.defineProperty(T.prototype, "visible", {
-            'get': function () {
-              return this.node.active;
-            },
-            'set': function (M) {
-              this.node.active = M;
-            },
-            'enumerable': false,
-            'configurable': true
-          }), T.prototype.onLoad = function () {
-            {
-              this.Sp && (m.getGameContext().emit("Game.SymbolCreated", this), this.gp = true);
-            }
-          }, T.prototype.unuse = function () {
-            this.symbolRow = 1, this.symbolColumn = 1, this.Sp && this.gp && m.getGameContext().emit("Game.SymbolRemoved", this);
-          }, T.prototype.reuse = function () {
-            {
-              this.Sp && this.gp && m.getGameContext().emit("Game.SymbolCreated", this);
-            }
-          }, T.prototype.onDestroy = function () {
-            {
-              this.Sp && this.gp && m.getGameContext().emit("Game.SymbolRemoved", this);
-            }
-          }, T.prototype.enableEvent = function (M) {
-            {
-              this.Sp = M;
-            }
-          }, __decorate([B], T);
+        function T() {
+          var M = null !== Z && Z.apply(this, arguments) || this;
+          return M.symbolRow = 1, M.symbolColumn = 1, M.Sp = true, M.gp = false, M;
         }
+        return __extends(T, Z), Object.defineProperty(T.prototype, "visible", {
+          'get': function () {
+            return this.node.active;
+          },
+          'set': function (M) {
+            this.node.active = M;
+          },
+          'enumerable': false,
+          'configurable': true
+        }), T.prototype.onLoad = function () {
+          this.Sp && (m.getGameContext().emit("Game.SymbolCreated", this), this.gp = true);
+        }, T.prototype.unuse = function () {
+          this.symbolRow = 1, this.symbolColumn = 1, this.Sp && this.gp && m.getGameContext().emit("Game.SymbolRemoved", this);
+        }, T.prototype.reuse = function () {
+          this.Sp && this.gp && m.getGameContext().emit("Game.SymbolCreated", this);
+        }, T.prototype.onDestroy = function () {
+          this.Sp && this.gp && m.getGameContext().emit("Game.SymbolRemoved", this);
+        }, T.prototype.enableEvent = function (M) {
+          this.Sp = M;
+        }, __decorate([B], T);
       }(cc.Component);
     exports.default = X, cc._RF.pop();
   }

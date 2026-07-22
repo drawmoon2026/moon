@@ -12,17 +12,13 @@ function ButtonBackground(require, j, exports) {
       Z = X.ccclass,
       T = X.property,
       M = function (C) {
-        {
-          function V() {
-            {
-              var N = null !== C && C.apply(this, arguments) || this;
-              return N.background = undefined, N.backgroundColorKey = '', N;
-            }
-          }
-          return __extends(V, C), V.prototype.onLoad = function () {
-            this.background.color = B.uiAppearanceHelper.v('' + this.backgroundColorKey) ? B.uiAppearanceHelper.v('' + this.backgroundColorKey) : B.uiAppearanceHelper.v("setting.theme_color");
-          }, __decorate([T(cc.Node)], V.prototype, "background", undefined), __decorate([T(cc.String)], V.prototype, "backgroundColorKey", undefined), __decorate([Z], V);
+        function V() {
+          var N = null !== C && C.apply(this, arguments) || this;
+          return N.background = undefined, N.backgroundColorKey = '', N;
         }
+        return __extends(V, C), V.prototype.onLoad = function () {
+          this.background.color = B.uiAppearanceHelper.v('' + this.backgroundColorKey) ? B.uiAppearanceHelper.v('' + this.backgroundColorKey) : B.uiAppearanceHelper.v("setting.theme_color");
+        }, __decorate([T(cc.Node)], V.prototype, "background", undefined), __decorate([T(cc.String)], V.prototype, "backgroundColorKey", undefined), __decorate([Z], V);
       }(cc.Component);
     exports.default = M, cc._RF.pop();
   }

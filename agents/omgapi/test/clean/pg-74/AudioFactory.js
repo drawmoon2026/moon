@@ -10,14 +10,10 @@ function AudioFactory(require, c, exports) {
     var m = require("AudioAdapterConstant"),
       B = function () {
         function X() {
-          {
-            this.maxStackSound = m.MAX_STACK_SOUND, this.W = [];
-          }
+          this.maxStackSound = m.MAX_STACK_SOUND, this.W = [];
         }
         return X.prototype.put = function (Z) {
-          {
-            return this.W.length < this.maxStackSound && (this.W.push(Z), true);
-          }
+          return this.W.length < this.maxStackSound && (this.W.push(Z), true);
         }, X.prototype.get = function () {
           return this.W.pop();
         }, X.prototype.size = function () {

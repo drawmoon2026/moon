@@ -13,12 +13,10 @@ function SpinConfigHandler(c, j, exports) {
     B.fastStopFeature = false;
     B.turboSpinFeature = false;
     exports.featureConfig = X, exports.initSpinConfig = function (Z) {
-      {
-        var M = Z.jurisdictionModel.singlePlayMinDuration,
-          C = M > 0 ? Z.minimumSpinningTimeOffset || 0 : Z.minimumSpinningTime,
-          V = M > 0 ? Z.regularSpinningTimeOffset || 0 : Z.regularSpinningTime;
-        T.minimumSpinningTime = M + C, T.regularSpinningTime = M + V, T.turboSpinFeature = Z.jurisdictionModel.turboSpinEnable, T.fastStopFeature = Z.jurisdictionModel.turboSpinEnable, exports.featureConfig = Object.freeze(T);
-      }
+      var M = Z.jurisdictionModel.singlePlayMinDuration,
+        C = M > 0 ? Z.minimumSpinningTimeOffset || 0 : Z.minimumSpinningTime,
+        V = M > 0 ? Z.regularSpinningTimeOffset || 0 : Z.regularSpinningTime;
+      T.minimumSpinningTime = M + C, T.regularSpinningTime = M + V, T.turboSpinFeature = Z.jurisdictionModel.turboSpinEnable, T.fastStopFeature = Z.jurisdictionModel.turboSpinEnable, exports.featureConfig = Object.freeze(T);
     }, cc._RF.pop();
   }
 }

@@ -21,9 +21,7 @@ function CameraScaleController(require, j, exports) {
         }, V.prototype.playZoomOutEffect = function () {
           this.node.stopAllActions(), this.node.runAction(cc.sequence(cc.spawn(cc.scaleTo(0.3, 1).easing(cc.easeInOut(3)), cc.moveTo(0.3, cc.v2(0, 0)).easing(cc.easeInOut(3))), cc.delayTime(0.1)));
         }, V.prototype.resetDefault = function () {
-          {
-            this.randomShakingEffectController.stop(), this.node.y = 0, this.node.x = 0, this.mainCamera.zoomRatio = 1;
-          }
+          this.randomShakingEffectController.stop(), this.node.y = 0, this.node.x = 0, this.mainCamera.zoomRatio = 1;
         }, V.prototype.destroy = function () {
           return this.resetDefault(), this.node.destroy(), C.prototype.destroy.call(this);
         }, __decorate([T(B.default)], V.prototype, "randomShakingEffectController", undefined), __decorate([Z], V);

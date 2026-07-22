@@ -30,9 +30,7 @@ function MJFreeSpinModel(F, c, exports) {
       Z.configurable = true;
       return Object.defineProperty(B.prototype, "accumulatedWin", X), Object.defineProperty(B.prototype, "step", Z), Object.defineProperty(B.prototype, "totalStep", {
         'get': function () {
-          {
-            return this.Gr;
-          }
+          return this.Gr;
         },
         'enumerable': false,
         'configurable': true

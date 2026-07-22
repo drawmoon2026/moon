@@ -19,14 +19,12 @@ function GenericSettingButton(require, j, exports) {
           return f.iconSprite = undefined, f.collider = undefined, f.buttonTheme = undefined, f.circleCollider = undefined, f.Js = true, f.Vs = cc.v2(), f.zs = cc.v2(), f.Ks = false, f.qs = false, f.Qs = false, f.Ys = undefined, f.willHideOnceClick = true, f;
         }
         return __extends(q, N), q.prototype.onLoad = function () {
-          {
-            var f, g;
-            if ("land" === shell.environment.getOrientationMode() && (null === (f = this.circleCollider) || undefined === f || (f.getComponent(cc.Sprite).spriteFrame = undefined), this.circleCollider = undefined), this.enableTouchInteraction(), null === (g = this.circleCollider) || undefined === g || (g.opacity = 0), this.buttonTheme) {
-              var l = X.uiAppearanceHelper.v(this.buttonTheme.domainKey + '.' + this.buttonTheme.colorKey + ".normal");
-              Z.setNodeColorWithOpacity(this.iconSprite, l);
-            }
-            this.Ys = this.iconSprite.getComponent(cc.Sprite).spriteFrame;
+          var f, g;
+          if ("land" === shell.environment.getOrientationMode() && (null === (f = this.circleCollider) || undefined === f || (f.getComponent(cc.Sprite).spriteFrame = undefined), this.circleCollider = undefined), this.enableTouchInteraction(), null === (g = this.circleCollider) || undefined === g || (g.opacity = 0), this.buttonTheme) {
+            var l = X.uiAppearanceHelper.v(this.buttonTheme.domainKey + '.' + this.buttonTheme.colorKey + ".normal");
+            Z.setNodeColorWithOpacity(this.iconSprite, l);
           }
+          this.Ys = this.iconSprite.getComponent(cc.Sprite).spriteFrame;
         }, q.prototype.setIconSprite = function (f) {
           this.iconSprite.getComponent(cc.Sprite).spriteFrame = f;
         }, q.prototype.destroy = function () {
@@ -38,9 +36,7 @@ function GenericSettingButton(require, j, exports) {
             return this.Js;
           },
           'set': function (f) {
-            {
-              this.Js = f, this.interactableButtonColor(f), f ? this.enableTouchInteraction() : (this.disableTouchInteraction(), this.Qs = false);
-            }
+            this.Js = f, this.interactableButtonColor(f), f ? this.enableTouchInteraction() : (this.disableTouchInteraction(), this.Qs = false);
           },
           'enumerable': false,
           'configurable': true
@@ -51,37 +47,27 @@ function GenericSettingButton(require, j, exports) {
             this.Ks = !g, this.$s(g);
           } else f.stopPropagation();
         }, q.prototype.qi = function (f) {
-          {
-            var g, l;
-            this.Qs && (this.Js ? (this.zs = f.touch.getLocation(), this.circleCollider && (this.Ks || (this.zs = f.touch.getLocation(), g = cc.v2(0, this.Vs.y), l = cc.v2(0, this.zs.y), g.sub(l).mag() > 60 && (this.$s(false), this.Ks = true), f.stopPropagation()))) : f.stopPropagation());
-          }
+          var g, l;
+          this.Qs && (this.Js ? (this.zs = f.touch.getLocation(), this.circleCollider && (this.Ks || (this.zs = f.touch.getLocation(), g = cc.v2(0, this.Vs.y), l = cc.v2(0, this.zs.y), g.sub(l).mag() > 60 && (this.$s(false), this.Ks = true), f.stopPropagation()))) : f.stopPropagation());
         }, q.prototype.te = function (f) {
-          {
-            this.Qs && (this.Js ? this.Ks || (f.stopPropagation(), this.$s(false), this.onClick(), this.willHideOnceClick && this.ie()) : f.stopPropagation());
-          }
+          this.Qs && (this.Js ? this.Ks || (f.stopPropagation(), this.$s(false), this.onClick(), this.willHideOnceClick && this.ie()) : f.stopPropagation());
         }, q.prototype.se = function (f) {
           this.Qs && (this.Js ? this.Ks || (f.stopPropagation(), this.$s(false)) : f.stopPropagation());
         }, q.prototype.changeButtonColor = function (f) {
           this.changeButtonPressedColor(f);
         }, q.prototype.$s = function (f) {
-          {
-            this.Ks || this.changeButtonPressedColor(f);
-          }
+          this.Ks || this.changeButtonPressedColor(f);
         }, q.prototype.changeButtonPressedColor = function (f) {
-          {
-            if (this.buttonTheme) {
-              var g = X.uiAppearanceHelper.v(this.buttonTheme.domainKey + '.' + this.buttonTheme.colorKey + ".normal"),
-                l = X.uiAppearanceHelper.v(this.buttonTheme.domainKey + '.' + this.buttonTheme.colorKey + ".pressed");
-              Z.setNodeColorWithOpacity(this.iconSprite, f ? l : g);
-            }
+          if (this.buttonTheme) {
+            var g = X.uiAppearanceHelper.v(this.buttonTheme.domainKey + '.' + this.buttonTheme.colorKey + ".normal"),
+              l = X.uiAppearanceHelper.v(this.buttonTheme.domainKey + '.' + this.buttonTheme.colorKey + ".pressed");
+            Z.setNodeColorWithOpacity(this.iconSprite, f ? l : g);
           }
         }, q.prototype.interactableButtonColor = function (f) {
           if (this.buttonTheme) {
-            {
-              var g = X.uiAppearanceHelper.v(this.buttonTheme.domainKey + '.' + this.buttonTheme.colorKey + ".normal"),
-                l = X.uiAppearanceHelper.v(this.buttonTheme.domainKey + '.' + this.buttonTheme.colorKey + ".disabled");
-              Z.setNodeColorWithOpacity(this.iconSprite, f ? g : l);
-            }
+            var g = X.uiAppearanceHelper.v(this.buttonTheme.domainKey + '.' + this.buttonTheme.colorKey + ".normal"),
+              l = X.uiAppearanceHelper.v(this.buttonTheme.domainKey + '.' + this.buttonTheme.colorKey + ".disabled");
+            Z.setNodeColorWithOpacity(this.iconSprite, f ? g : l);
           }
         }, q.prototype.Xs = function (f) {
           var g = this.circleCollider;

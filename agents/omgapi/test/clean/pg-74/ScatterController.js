@@ -30,13 +30,9 @@ function ScatterController(require, j, exports) {
           this.playLoop();
         }, N.prototype.stop = function (q) {
           q ? (this.vfx[0] && (this.vfx[0].opacity = 0), this.winGlowA.forEach(function (f) {
-            {
-              f.opacity = 0, f.angle = 0;
-            }
+            f.opacity = 0, f.angle = 0;
           })) : (this.vfx[0] && this.vfx[0].runAction(cc.fadeOut(0.2).easing(cc.easeIn(2))), this.winGlowA.forEach(function (f) {
-            {
-              f.runAction(cc.fadeOut(0.2).easing(cc.easeIn(2))), f.angle = 0;
-            }
+            f.runAction(cc.fadeOut(0.2).easing(cc.easeIn(2))), f.angle = 0;
           })), this.finalCallback();
         }, N.prototype.reset = function () {
           this.winAnim.stop(), this.winAnim.setCurrentTime(0), this.unscheduleAllCallbacks(), this.disableDimLight(true), this.heartBeatEffects.active = false, this.vfx.forEach(function (q) {
@@ -58,21 +54,15 @@ function ScatterController(require, j, exports) {
           this.winGlowA.forEach(function (f) {
             f.color = new cc.Color(255, 255, 255);
           }), this.screenModeNodes.forEach(function (f, g) {
-            {
-              0 !== g && 1 !== g && 3 !== g && f.stopAllActions();
-            }
+            0 !== g && 1 !== g && 3 !== g && f.stopAllActions();
           }), this.otherNodes.forEach(function (f, g) {
-            {
-              1 !== g && 4 !== g && 9 !== g && 7 !== g && f.stopAllActions();
-            }
+            1 !== g && 4 !== g && 9 !== g && 7 !== g && f.stopAllActions();
           }), q ? (this.screenModeNodes.forEach(function (f, g) {
             0 !== g && 1 !== g && 3 !== g && (f.color = cc.Color.WHITE);
           }), this.otherNodes.forEach(function (f, g) {
             1 !== g && 4 !== g && 9 !== g && 7 !== g && (f.color = cc.Color.WHITE);
           })) : (this.screenModeNodes.forEach(function (f, g) {
-            {
-              0 !== g && 1 !== g && 3 !== g && f.runAction(cc.tintTo(0.2, 255, 255, 255));
-            }
+            0 !== g && 1 !== g && 3 !== g && f.runAction(cc.tintTo(0.2, 255, 255, 255));
           }), this.otherNodes.forEach(function (f, g) {
             1 !== g && 4 !== g && 9 !== g && 7 !== g && f.runAction(cc.tintTo(0.2, 255, 255, 255));
           }));

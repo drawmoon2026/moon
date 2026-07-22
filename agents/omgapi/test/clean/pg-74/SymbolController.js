@@ -28,21 +28,17 @@ function SymbolController(require, j, module) {
         }, q.prototype.disableDimLight = function (f) {
           this.symbolBase.stopAllActions(), this.winGlowC.stopAllActions(), this.scatterVfx.stopAllActions(), this.symbolSprite.node.stopAllActions(), f ? (this.symbolBase.color = cc.Color.WHITE, this.winGlowC.color = cc.Color.WHITE, this.scatterVfx.color = cc.Color.WHITE, this.symbolSprite.node.color = cc.Color.WHITE) : (this.symbolBase.runAction(cc.tintTo(0.2, 255, 255, 255)), this.winGlowC.runAction(cc.tintTo(0.2, 255, 255, 255)), this.scatterVfx.runAction(cc.tintTo(0.2, 255, 255, 255)), this.symbolSprite.node.runAction(cc.tintTo(0.2, 255, 255, 255)));
         }, q.prototype.playWin = function (f, g) {
-          {
-            this.fi = g;
-            var l = f === B.SLOT_SYMBOLS.WILD;
-            this.symbolSprite.spriteFrame = X.symbolImageHandler.symbolImages[f], this.symbolBaseSprite.spriteFrame = l ? this.symbolBases[2] : this.symbolBases[0], this.symbolBaseSprite.node.active = true, this.winVfx.active = true, this.winGlowC.runAction(cc.fadeTo(0.2, 180)), this.nS(), l ? (this.scatterVfx.active = true, this.symbolBase.setScale(1.15), this.symbolBase.width = 224, this.winAnim.playAdditive("wild_loop_anim")) : this.scatterVfx.active = false;
-          }
+          this.fi = g;
+          var l = f === B.SLOT_SYMBOLS.WILD;
+          this.symbolSprite.spriteFrame = X.symbolImageHandler.symbolImages[f], this.symbolBaseSprite.spriteFrame = l ? this.symbolBases[2] : this.symbolBases[0], this.symbolBaseSprite.node.active = true, this.winVfx.active = true, this.winGlowC.runAction(cc.fadeTo(0.2, 180)), this.nS(), l ? (this.scatterVfx.active = true, this.symbolBase.setScale(1.15), this.symbolBase.width = 224, this.winAnim.playAdditive("wild_loop_anim")) : this.scatterVfx.active = false;
         }, q.prototype.playGoldWin = function (f, g) {
           this.fi = g, this.eS = true, this.symbolSprite.spriteFrame = X.symbolImageHandler.symbolImages[f], this.symbolBaseSprite.spriteFrame = this.symbolBases[1], this.symbolBaseGoldIngot.active = true, this.winGlowC.runAction(cc.fadeTo(0.2, 180)), this.winVfx.active = true, this.nS(), this.scatterVfx.active = false;
         }, q.prototype.playRotate = function (f, g) {
-          {
-            this.winAnim.stop();
-            var l = Z.slotHandler.isTurboMode() || Z.slotHandler.isFreeSpinTurboMode() ? Z.TURBO_MODE_SPEED_FACTOR : 1;
-            this.winAnim.getAnimationState("symbol_rotate_fx_anim").speed = l, this.winAnim.getAnimationState("ingot_rotate").speed = l, this.winAnim.getAnimationState("normal_symbol_rotate").speed = l, this.fi = g;
-            var K = f === B.SLOT_SYMBOLS.WILD;
-            this.symbolSprite.node.active = true, this.symbolSprite.spriteFrame = X.symbolImageHandler.symbolImages[f], this.symbolBaseSprite.spriteFrame = K ? this.symbolBases[2] : this.symbolBases[0], this.symbolBaseSprite.node.active = true, this.winFrame.runAction(cc.fadeOut(0.1 / l)), this.winGlowC.runAction(cc.fadeOut(0.1 / l)), this.winAnim.playAdditive("symbol_rotate_fx_anim"), K ? (this.scatterVfx.active = true, this.winAnim.playAdditive("wild_loop_anim"), this.winAnim.playAdditive("ingot_rotate")) : (this.scatterVfx.active = false, this.winAnim.playAdditive("normal_symbol_rotate"));
-          }
+          this.winAnim.stop();
+          var l = Z.slotHandler.isTurboMode() || Z.slotHandler.isFreeSpinTurboMode() ? Z.TURBO_MODE_SPEED_FACTOR : 1;
+          this.winAnim.getAnimationState("symbol_rotate_fx_anim").speed = l, this.winAnim.getAnimationState("ingot_rotate").speed = l, this.winAnim.getAnimationState("normal_symbol_rotate").speed = l, this.fi = g;
+          var K = f === B.SLOT_SYMBOLS.WILD;
+          this.symbolSprite.node.active = true, this.symbolSprite.spriteFrame = X.symbolImageHandler.symbolImages[f], this.symbolBaseSprite.spriteFrame = K ? this.symbolBases[2] : this.symbolBases[0], this.symbolBaseSprite.node.active = true, this.winFrame.runAction(cc.fadeOut(0.1 / l)), this.winGlowC.runAction(cc.fadeOut(0.1 / l)), this.winAnim.playAdditive("symbol_rotate_fx_anim"), K ? (this.scatterVfx.active = true, this.winAnim.playAdditive("wild_loop_anim"), this.winAnim.playAdditive("ingot_rotate")) : (this.scatterVfx.active = false, this.winAnim.playAdditive("normal_symbol_rotate"));
         }, q.prototype.playGoldRotate = function (f, g) {
           this.winAnim.stop();
           var l = Z.slotHandler.isTurboMode() || Z.slotHandler.isFreeSpinTurboMode() ? Z.TURBO_MODE_SPEED_FACTOR : 1;
@@ -50,15 +46,11 @@ function SymbolController(require, j, module) {
         }, q.prototype.onGoldRotate = function () {
           this.scatterVfx.active = true, this.winAnim.playAdditive("wild_loop_anim"), this.symbolSprite.spriteFrame = X.symbolImageHandler.symbolImages[B.SLOT_SYMBOLS.WILD];
         }, q.prototype.onWinHighlightEnd = function () {
-          {
-            this.winVfx.active = false, this.oS();
-          }
+          this.winVfx.active = false, this.oS();
         }, q.prototype.onAnimEnd = function () {
           this.eS || this.oS();
         }, q.prototype.onGoldAnimEnd = function () {
-          {
-            this.oS();
-          }
+          this.oS();
         }, q.prototype.playWildAnim = function () {
           this.winAnim.playAdditive("wild_appear_effect_anim");
         }, q.prototype.replayIngotShine = function () {

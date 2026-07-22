@@ -11,12 +11,10 @@ function BigWinController_spec(F, c, exports) {
     B.displayState = "SkipNumberRollEnabled";
     m && m.emit("BigWin", B);
   }, exports.skipBigWinAnimationActiveEvent = function () {
-    {
-      var m = System.get("automation") && System.get("automation").GameData;
-      var B = {};
-      B.displayState = "SkipAnimationEnabled";
-      m && m.emit("BigWin", B);
-    }
+    var m = System.get("automation") && System.get("automation").GameData;
+    var B = {};
+    B.displayState = "SkipAnimationEnabled";
+    m && m.emit("BigWin", B);
   }, exports.initBigWinNodes = function (m) {
     var B = System.get("automation") && System.get("automation").GameConfigs;
     B && B.initNodeConfig(m.skipButtonNode, "big_win_skip_button");

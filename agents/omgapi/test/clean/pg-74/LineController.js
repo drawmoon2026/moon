@@ -43,24 +43,22 @@ function LineController(F, module, exports) {
           if (!this.wc[Z]) {
             var M = [];
             X.forEach(function (V, N, q) {
-              {
-                if (0 != N) {
-                  var g,
-                    K,
-                    O = q[N - 1],
-                    x = q[N];
-                  1 == N ? ((g = T.Ic.get()) || (g = cc.instantiate(T.headerLinePrefab)), K = T.headerLineMargin, g.typeIdentifier = m.HEAD) : N == q.length - 1 ? ((g = T.Tc.get()) || (g = cc.instantiate(T.tailLinePrefab)), K = T.tailLineMargin, g.typeIdentifier = m.TAIL) : ((g = T.Oc.get()) || (g = cc.instantiate(T.linePrefab)), K = T.lineMargin, g.typeIdentifier = m.BODY);
-                  var L = O.x,
-                    H = O.y,
-                    U = x.x,
-                    k = x.y,
-                    Y = (L + U) / 2,
-                    y = (H + k) / 2,
-                    z = 180 * Math.atan2(k - H, U - L) / Math.PI,
-                    S = T.Gc(z),
-                    P = Math.sqrt(Math.pow(U + -L, 2) + Math.pow(k - H, 2));
-                  g.x = Y, g.y = y, g.width = P + K, g.angle = -S, 0 == T.Ac && T.kc(g, "line").getComponent("LinePrefabController").setAnimTimeFrameCallback(T.Rc.bind(T)), T.node.addChild(g), M.push(g);
-                }
+              if (0 != N) {
+                var g,
+                  K,
+                  O = q[N - 1],
+                  x = q[N];
+                1 == N ? ((g = T.Ic.get()) || (g = cc.instantiate(T.headerLinePrefab)), K = T.headerLineMargin, g.typeIdentifier = m.HEAD) : N == q.length - 1 ? ((g = T.Tc.get()) || (g = cc.instantiate(T.tailLinePrefab)), K = T.tailLineMargin, g.typeIdentifier = m.TAIL) : ((g = T.Oc.get()) || (g = cc.instantiate(T.linePrefab)), K = T.lineMargin, g.typeIdentifier = m.BODY);
+                var L = O.x,
+                  H = O.y,
+                  U = x.x,
+                  k = x.y,
+                  Y = (L + U) / 2,
+                  y = (H + k) / 2,
+                  z = 180 * Math.atan2(k - H, U - L) / Math.PI,
+                  S = T.Gc(z),
+                  P = Math.sqrt(Math.pow(U + -L, 2) + Math.pow(k - H, 2));
+                g.x = Y, g.y = y, g.width = P + K, g.angle = -S, 0 == T.Ac && T.kc(g, "line").getComponent("LinePrefabController").setAnimTimeFrameCallback(T.Rc.bind(T)), T.node.addChild(g), M.push(g);
               }
             }), this.Ac = true, 1 == this.animationInverted && M.reverse();
             var C = this.jc(M);
@@ -82,9 +80,7 @@ function LineController(F, module, exports) {
           0 == this.Hc && Object.keys(this.wc).length > 0 && (this.Hc = true, this.Bc = 0, this.Dc(), this.Nc[0] = true, this.Uc());
         },
         'stopAnimation': function () {
-          {
-            this.Bc = 0, this.Hc = false;
-          }
+          this.Bc = 0, this.Hc = false;
         },
         'Pc': function () {
           var X = this,
@@ -101,36 +97,32 @@ function LineController(F, module, exports) {
         },
         'Uc': function () {
           if (1 == this.Hc) {
-            {
-              var X = this.Nc.indexOf(true);
-              if (this.Bc = X, -1 == X) return;
-              var Z = this.xc();
-              Z.length > 0 && (Z.forEach(function (T) {
-                var M = T.LineAnimation,
-                  C = this.Fc(T.Line.typeIdentifier);
-                M.play(C);
-              }, this), this.Nc[X] = false, ++X < this.Nc.length ? this.Nc[X] = true : this.Bc = X);
-            }
+            var X = this.Nc.indexOf(true);
+            if (this.Bc = X, -1 == X) return;
+            var Z = this.xc();
+            Z.length > 0 && (Z.forEach(function (T) {
+              var M = T.LineAnimation,
+                C = this.Fc(T.Line.typeIdentifier);
+              M.play(C);
+            }, this), this.Nc[X] = false, ++X < this.Nc.length ? this.Nc[X] = true : this.Bc = X);
           }
         },
         'Rc': function () {
           this.xc().length < 1 ? this.Wc() : 1 == this.Hc && this.Uc();
         },
         'Fc': function (X) {
-          {
-            var Z;
-            switch (X) {
-              case m.HEAD:
-                Z = 1 == this.animationInverted ? this.animtionReverseHeaderLineName : this.animtionHeaderLineName;
-                break;
-              case m.TAIL:
-                Z = 1 == this.animationInverted ? this.animtionReverseTailLineName : this.animtionTailLineName;
-                break;
-              default:
-                Z = 1 == this.animationInverted ? this.animtionReverseLineName : this.animtionLineName;
-            }
-            return Z;
+          var Z;
+          switch (X) {
+            case m.HEAD:
+              Z = 1 == this.animationInverted ? this.animtionReverseHeaderLineName : this.animtionHeaderLineName;
+              break;
+            case m.TAIL:
+              Z = 1 == this.animationInverted ? this.animtionReverseTailLineName : this.animtionTailLineName;
+              break;
+            default:
+              Z = 1 == this.animationInverted ? this.animtionReverseLineName : this.animtionLineName;
           }
+          return Z;
         },
         'xc': function () {
           var X = this,
@@ -147,39 +139,29 @@ function LineController(F, module, exports) {
           var X = this;
           1 == this.animtionLoop ? (Object.keys(this.wc).map(function (T) {
             X.wc[T].forEach(function (M) {
-              {
-                var C = M.LineAnimation;
-                C.setCurrentTime(0), C.stop();
-              }
+              var C = M.LineAnimation;
+              C.setCurrentTime(0), C.stop();
             });
           }), this.Dc(), this.Nc[0] = true, this.scheduleOnce(this.Uc)) : this.Hc = false;
           var Z = this.hi;
           Z && Z();
         },
         'Lc': function (X, Z) {
-          {
-            X && X.length > 0 && (X.forEach(function (T) {
-              T.LinePrefabController.setAnimTimeFrameCallback(null);
-              var M = T.LineAnimation;
-              M.setCurrentTime(0), M.stop(), T.parent = null, T.Line.typeIdentifier == m.HEAD ? this.Ic.put(T.Line) : T.Line.typeIdentifier == m.TAIL ? this.Tc.put(T.Line) : this.Oc.put(T.Line);
-            }, this), delete this.wc[Z]);
-          }
+          X && X.length > 0 && (X.forEach(function (T) {
+            T.LinePrefabController.setAnimTimeFrameCallback(null);
+            var M = T.LineAnimation;
+            M.setCurrentTime(0), M.stop(), T.parent = null, T.Line.typeIdentifier == m.HEAD ? this.Ic.put(T.Line) : T.Line.typeIdentifier == m.TAIL ? this.Tc.put(T.Line) : this.Oc.put(T.Line);
+          }, this), delete this.wc[Z]);
         },
         'Dc': function () {
-          {
-            for (var X = 0; X < this.Nc.length; X++) this.Nc[X] = false;
-          }
+          for (var X = 0; X < this.Nc.length; X++) this.Nc[X] = false;
         },
         'Gc': function (X) {
-          {
-            return 0 == X ? 0 : X > 0 ? -1 * X : Math.abs(X);
-          }
+          return 0 == X ? 0 : X > 0 ? -1 * X : Math.abs(X);
         },
         'Jc': function (X) {
-          {
-            var Z = this.angleMarginRatio;
-            return Math.abs(X) / 180 * Z;
-          }
+          var Z = this.angleMarginRatio;
+          return Math.abs(X) / 180 * Z;
         },
         'jc': function (X) {
           var Z = this;

@@ -20,10 +20,8 @@ function BookView(require, I, exports) {
       V = C.ccclass,
       N = (C.property, function (q) {
         function f() {
-          {
-            var K = null !== q && q.apply(this, arguments) || this;
-            return K.wi = {}, K.Bi = {}, K.Ai = undefined, K;
-          }
+          var K = null !== q && q.apply(this, arguments) || this;
+          return K.wi = {}, K.Bi = {}, K.Ai = undefined, K;
         }
         var g = {};
         g.get = function () {
@@ -47,14 +45,12 @@ function BookView(require, I, exports) {
         }, f.prototype.reloadData = function () {
           this.Hi(), this.init(this.Oi);
         }, f.prototype.Ii = function () {
-          {
-            for (this.contentChildsLayout = []; this.content.children.length < 3;) {
-              var K = this.node.width,
-                O = this.node.height,
-                x = new cc.Node(),
-                p = x.addComponent(cc.Layout);
-              p.type = cc.Layout.Type.VERTICAL, x.setContentSize(K, O), this.content.addChild(x), this.contentChildsLayout.push(p);
-            }
+          for (this.contentChildsLayout = []; this.content.children.length < 3;) {
+            var K = this.node.width,
+              O = this.node.height,
+              x = new cc.Node(),
+              p = x.addComponent(cc.Layout);
+            p.type = cc.Layout.Type.VERTICAL, x.setContentSize(K, O), this.content.addChild(x), this.contentChildsLayout.push(p);
           }
         }, f.prototype.Ti = function () {
           for (var K = this.node.width, O = this.node.height, x = 0; x < this.content.children.length; x++) this.content.children[x].setContentSize(K, O);
@@ -82,100 +78,72 @@ function BookView(require, I, exports) {
           var K = this.content.children[0].children[0].cellIndex - 1;
           if (2 === this.currIndex) return this.currIndex -= 1, this.Ni(this.currIndex), void (this.nextAppearTarget && this.nextAppearTarget(this.constChildList[this.content.children[this.currIndex].slotID].cellIndex));
           if (K < 0) 0 === this.currIndex ? (this.closeFromLeft && this.closeFromLeft(), this.Ni(this.currIndex)) : (this.currIndex = 0, this.Ni(this.currIndex), this.cancelCloseBook && this.cancelCloseBook(), this.nextAppearTarget && this.nextAppearTarget(this.constChildList[this.content.children[this.currIndex].slotID].cellIndex));else {
-            {
-              for (var O = 0; O < this.content.children.length; O++) if (O === this.content.children.length - 1) {
-                K < 0 && (K = this.Ei - 1), this.ki(this.content.children[O].children[0]);
-                var x = this.Ai.getItem(this, K, this.Oi);
-                this.constChildList[this.content.children[O].slotID] = x, this.constChildList[this.content.children[O].slotID].cellIndex = K, this.content.children[O].zIndex = 0, x.parent = this.content.children[O];
-              } else this.content.children[O].zIndex += 1;
-              this.resetLayout = true, this.changeIndexTo = 0, this.currIndex -= 1, this.nextAppearTarget && this.nextAppearTarget(this.constChildList[this.content.children[this.currIndex].slotID].cellIndex), this.contentLayout.updateLayout(), this.content.x = this.content.x + this.itemOffSet, this.snapDone = false, this.currIndex = this.middleIndex;
-            }
+            for (var O = 0; O < this.content.children.length; O++) if (O === this.content.children.length - 1) {
+              K < 0 && (K = this.Ei - 1), this.ki(this.content.children[O].children[0]);
+              var x = this.Ai.getItem(this, K, this.Oi);
+              this.constChildList[this.content.children[O].slotID] = x, this.constChildList[this.content.children[O].slotID].cellIndex = K, this.content.children[O].zIndex = 0, x.parent = this.content.children[O];
+            } else this.content.children[O].zIndex += 1;
+            this.resetLayout = true, this.changeIndexTo = 0, this.currIndex -= 1, this.nextAppearTarget && this.nextAppearTarget(this.constChildList[this.content.children[this.currIndex].slotID].cellIndex), this.contentLayout.updateLayout(), this.content.x = this.content.x + this.itemOffSet, this.snapDone = false, this.currIndex = this.middleIndex;
           }
         }, f.prototype.toRightItem = function () {
-          {
-            var K = this.content.children[this.totalItems].children[0].cellIndex + 1;
-            if (0 === this.currIndex && this.currIndex < this.totalItems) return this.currIndex += 1, this.Ni(this.currIndex), void (this.nextAppearTarget && this.nextAppearTarget(this.constChildList[this.content.children[this.currIndex].slotID].cellIndex));
-            if (K > this.Ei - 1) this.currIndex === this.totalItems ? (this.closeFromRight && this.closeFromRight(), this.Ni(this.currIndex)) : (this.currIndex = this.totalItems, this.Ni(this.currIndex), this.cancelCloseBook && this.cancelCloseBook(), this.nextAppearTarget && this.nextAppearTarget(this.constChildList[this.content.children[this.currIndex].slotID].cellIndex));else {
-              {
-                for (var O = this.content.children.length - 1; O >= 0; O--) if (0 === O) {
-                  K >= this.Ei && (K = 0), this.ki(this.content.children[O].children[0]);
-                  var x = this.Ai.getItem(this, K, this.Oi);
-                  this.constChildList[this.content.children[O].slotID] = x, this.constChildList[this.content.children[O].slotID].cellIndex = K, this.content.children[O].zIndex = this.content.children.length - 1, x.parent = this.content.children[O];
-                } else this.content.children[O].zIndex -= 1;
-                this.resetLayout = true, this.changeIndexTo = 2, this.currIndex += 1, this.nextAppearTarget && this.nextAppearTarget(this.constChildList[this.content.children[this.currIndex].slotID].cellIndex), this.contentLayout.updateLayout(), this.content.x = this.content.x + this.itemOffSet, this.snapDone = false, this.currIndex = this.middleIndex;
-              }
-            }
+          var K = this.content.children[this.totalItems].children[0].cellIndex + 1;
+          if (0 === this.currIndex && this.currIndex < this.totalItems) return this.currIndex += 1, this.Ni(this.currIndex), void (this.nextAppearTarget && this.nextAppearTarget(this.constChildList[this.content.children[this.currIndex].slotID].cellIndex));
+          if (K > this.Ei - 1) this.currIndex === this.totalItems ? (this.closeFromRight && this.closeFromRight(), this.Ni(this.currIndex)) : (this.currIndex = this.totalItems, this.Ni(this.currIndex), this.cancelCloseBook && this.cancelCloseBook(), this.nextAppearTarget && this.nextAppearTarget(this.constChildList[this.content.children[this.currIndex].slotID].cellIndex));else {
+            for (var O = this.content.children.length - 1; O >= 0; O--) if (0 === O) {
+              K >= this.Ei && (K = 0), this.ki(this.content.children[O].children[0]);
+              var x = this.Ai.getItem(this, K, this.Oi);
+              this.constChildList[this.content.children[O].slotID] = x, this.constChildList[this.content.children[O].slotID].cellIndex = K, this.content.children[O].zIndex = this.content.children.length - 1, x.parent = this.content.children[O];
+            } else this.content.children[O].zIndex -= 1;
+            this.resetLayout = true, this.changeIndexTo = 2, this.currIndex += 1, this.nextAppearTarget && this.nextAppearTarget(this.constChildList[this.content.children[this.currIndex].slotID].cellIndex), this.contentLayout.updateLayout(), this.content.x = this.content.x + this.itemOffSet, this.snapDone = false, this.currIndex = this.middleIndex;
           }
         }, f.prototype.setElasticLeft = function (K) {
-          {
-            this.elasticLeft = K;
-          }
+          this.elasticLeft = K;
         }, f.prototype.setElasticRight = function (K) {
-          {
-            this.elasticRight = K;
-          }
+          this.elasticRight = K;
         }, f.prototype.setClosingFromLeft = function (K) {
-          {
-            this.closingFromLeft = K;
-          }
+          this.closingFromLeft = K;
         }, f.prototype.setCloseFromLeft = function (K) {
           this.closeFromLeft = K;
         }, f.prototype.setClosingFromRight = function (K) {
-          {
-            this.closingFromRight = K;
-          }
+          this.closingFromRight = K;
         }, f.prototype.setCloseFromRight = function (K) {
-          {
-            this.closeFromRight = K;
-          }
+          this.closeFromRight = K;
         }, f.prototype.setCancelCloseBook = function (K) {
-          {
-            this.cancelCloseBook = K;
-          }
+          this.cancelCloseBook = K;
         }, f.prototype.setStartScrolling = function (K) {
           this.startScrolling = K;
         }, f.prototype.getAllItems = function () {
-          {
-            var K = [];
-            return this.content.children.forEach(function (O) {
-              O.children.length && K.push(O.children[0]);
-            }), K;
-          }
+          var K = [];
+          return this.content.children.forEach(function (O) {
+            O.children.length && K.push(O.children[0]);
+          }), K;
         }, f.prototype.scrollTo = function (K) {
           if (this.snapDone && !this.snapPause) {
-            {
-              var O = this.content.children[this.currIndex].children[0].cellIndex;
-              if (O !== K && !(K > this.Ei - 1 || K < 0)) if (K > O) {
-                if (K === O + 1) 0 === this.currIndex ? this.toRightItem() : (this.dir = T.RIGHT, this.itemOffSet = this.cellSize, this.ji());else if (0 === this.currIndex) {
-                  var x = this.content.children.length - 1;
-                  this.ki(this.content.children[x].children[0]);
-                  var p = this.Ai.getItem(this, K, this.Oi);
-                  this.constChildList[this.content.children[x].slotID] = p, this.constChildList[this.content.children[x].slotID].cellIndex = K, p.parent = this.content.children[x], this.speed = 10, this.currIndex = 2, this.reloadCells = true, this.Ni(this.currIndex);
-                } else {
-                  for (var L = this.content.children.length - 1; L >= 0; L--) 0 === L ? (this.content.children[L].zIndex = 2, this.ki(this.content.children[L].children[0]), p = this.Ai.getItem(this, b, this.Oi), this.constChildList[this.content.children[L].slotID] = p, this.constChildList[this.content.children[L].slotID].cellIndex = b, p.parent = this.content.children[L]) : this.content.children[L].zIndex = 1 === L ? 0 : 1;
-                  this.currIndex = 0, this.changeIndexTo = 2, this.changeContentPos = true;
-                }
-              } else if (K === O - 1) 2 === this.currIndex ? this.toLeftItem() : (this.dir = T.LEFT, this.itemOffSet = -this.cellSize, this.ji());else if (this.currIndex === this.content.children.length - 1) b = 0, this.ki(this.content.children[b].children[0]), p = this.Ai.getItem(this, K, this.Oi), this.constChildList[this.content.children[b].slotID] = p, this.constChildList[this.content.children[b].slotID].cellIndex = K, p.parent = this.content.children[b], this.speed = 10, this.currIndex = 0, this.reloadCells = true, this.Ni(this.currIndex);else {
-                {
-                  for (x = K, L = this.content.children.length - 1; L >= 0; L--) 2 === L ? (this.content.children[L].zIndex = 0, this.ki(this.content.children[L].children[0]), p = this.Ai.getItem(this, x, this.Oi), this.constChildList[this.content.children[L].slotID] = p, this.constChildList[this.content.children[L].slotID].cellIndex = x, p.parent = this.content.children[L]) : this.content.children[L].zIndex = 1 === L ? 2 : 1;
-                  this.currIndex = 2, this.changeIndexTo = 0, this.changeContentPos = true;
-                }
+            var O = this.content.children[this.currIndex].children[0].cellIndex;
+            if (O !== K && !(K > this.Ei - 1 || K < 0)) if (K > O) {
+              if (K === O + 1) 0 === this.currIndex ? this.toRightItem() : (this.dir = T.RIGHT, this.itemOffSet = this.cellSize, this.ji());else if (0 === this.currIndex) {
+                var x = this.content.children.length - 1;
+                this.ki(this.content.children[x].children[0]);
+                var p = this.Ai.getItem(this, K, this.Oi);
+                this.constChildList[this.content.children[x].slotID] = p, this.constChildList[this.content.children[x].slotID].cellIndex = K, p.parent = this.content.children[x], this.speed = 10, this.currIndex = 2, this.reloadCells = true, this.Ni(this.currIndex);
+              } else {
+                for (var L = this.content.children.length - 1; L >= 0; L--) 0 === L ? (this.content.children[L].zIndex = 2, this.ki(this.content.children[L].children[0]), p = this.Ai.getItem(this, b, this.Oi), this.constChildList[this.content.children[L].slotID] = p, this.constChildList[this.content.children[L].slotID].cellIndex = b, p.parent = this.content.children[L]) : this.content.children[L].zIndex = 1 === L ? 0 : 1;
+                this.currIndex = 0, this.changeIndexTo = 2, this.changeContentPos = true;
               }
+            } else if (K === O - 1) 2 === this.currIndex ? this.toLeftItem() : (this.dir = T.LEFT, this.itemOffSet = -this.cellSize, this.ji());else if (this.currIndex === this.content.children.length - 1) b = 0, this.ki(this.content.children[b].children[0]), p = this.Ai.getItem(this, K, this.Oi), this.constChildList[this.content.children[b].slotID] = p, this.constChildList[this.content.children[b].slotID].cellIndex = K, p.parent = this.content.children[b], this.speed = 10, this.currIndex = 0, this.reloadCells = true, this.Ni(this.currIndex);else {
+              for (x = K, L = this.content.children.length - 1; L >= 0; L--) 2 === L ? (this.content.children[L].zIndex = 0, this.ki(this.content.children[L].children[0]), p = this.Ai.getItem(this, x, this.Oi), this.constChildList[this.content.children[L].slotID] = p, this.constChildList[this.content.children[L].slotID].cellIndex = x, p.parent = this.content.children[L]) : this.content.children[L].zIndex = 1 === L ? 2 : 1;
+              this.currIndex = 2, this.changeIndexTo = 0, this.changeContentPos = true;
             }
           }
         }, f.prototype.dequeueReusableItem = function (K) {
           var O,
             x = this.wi[K];
           if (x) {
-            {
-              if (!(O = x.get())) {
-                {
-                  var p = this.Bi[K];
-                  O = cc.instantiate(p);
-                }
-              }
-              O.lv_type = K;
+            if (!(O = x.get())) {
+              var p = this.Bi[K];
+              O = cc.instantiate(p);
             }
+            O.lv_type = K;
           }
           return O;
         }, f.prototype.ki = function (K) {
@@ -195,18 +163,14 @@ function BookView(require, I, exports) {
             var L = K + 2;
             for (p = this.content.children.length - 1; p >= 0; p--) 1 === p ? (this.ki(this.content.children[p].children[0]), b = this.Ai.getItem(this, x, this.Oi), this.constChildList[this.content.children[p].slotID] = b, this.constChildList[this.content.children[p].slotID].cellIndex = x, b.parent = this.content.children[p]) : 2 === p && (this.ki(this.content.children[p].children[0]), b = this.Ai.getItem(this, L, this.Oi), this.constChildList[this.content.children[p].slotID] = b, this.constChildList[this.content.children[p].slotID].cellIndex = L, b.parent = this.content.children[p]);
           } else if (0 === this.currIndex) {
-            {
-              for (x = K + 1, L = K - 1, p = this.content.children.length - 1; p >= 0; p--) 1 === p ? (this.content.children[p].zIndex = 2, this.ki(this.content.children[p].children[0]), b = this.Ai.getItem(this, x, this.Oi), this.constChildList[this.content.children[p].slotID] = b, this.constChildList[this.content.children[p].slotID].cellIndex = x, b.parent = this.content.children[p]) : 2 === p ? (this.content.children[p].zIndex = 0, this.ki(this.content.children[p].children[0]), b = this.Ai.getItem(this, L, this.Oi), this.constChildList[this.content.children[p].slotID] = b, this.constChildList[this.content.children[p].slotID].cellIndex = L, b.parent = this.content.children[p]) : this.content.children[p].zIndex = 1;
-              this.resetContentPos = true;
-            }
+            for (x = K + 1, L = K - 1, p = this.content.children.length - 1; p >= 0; p--) 1 === p ? (this.content.children[p].zIndex = 2, this.ki(this.content.children[p].children[0]), b = this.Ai.getItem(this, x, this.Oi), this.constChildList[this.content.children[p].slotID] = b, this.constChildList[this.content.children[p].slotID].cellIndex = x, b.parent = this.content.children[p]) : 2 === p ? (this.content.children[p].zIndex = 0, this.ki(this.content.children[p].children[0]), b = this.Ai.getItem(this, L, this.Oi), this.constChildList[this.content.children[p].slotID] = b, this.constChildList[this.content.children[p].slotID].cellIndex = L, b.parent = this.content.children[p]) : this.content.children[p].zIndex = 1;
+            this.resetContentPos = true;
           } else {
             for (O = K + 1, x = K - 1, p = this.content.children.length - 1; p >= 0; p--) 0 === p ? (this.content.children[p].zIndex = 2, this.ki(this.content.children[p].children[0]), b = this.Ai.getItem(this, O, this.Oi), this.constChildList[this.content.children[p].slotID] = b, this.constChildList[this.content.children[p].slotID].cellIndex = O, b.parent = this.content.children[p]) : 1 === p ? (this.content.children[p].zIndex = 0, this.ki(this.content.children[p].children[0]), b = this.Ai.getItem(this, x, this.Oi), this.constChildList[this.content.children[p].slotID] = b, this.constChildList[this.content.children[p].slotID].cellIndex = x, b.parent = this.content.children[p]) : this.content.children[p].zIndex = 1;
             this.resetContentPos = true;
           }
         }, f.prototype.Ni = function (K) {
-          {
-            K > this.totalItems || K < 0 || (this.currIndex = K, this.target = -this.currIndex * this.distance, this.snapDone = false);
-          }
+          K > this.totalItems || K < 0 || (this.currIndex = K, this.target = -this.currIndex * this.distance, this.snapDone = false);
         }, f.prototype.ji = function () {
           this.dir === T.LEFT && this.content.x > this.maxScrollArea.y ? this.toLeftItem() : this.dir === T.RIGHT && this.content.x < this.maxScrollArea.x && this.toRightItem(), this.dir = T.NULL;
         }, f.prototype.update = function (K) {
@@ -240,56 +204,40 @@ function BookView(require, I, exports) {
             this.currentPos = p, this.startPos && (this.Wi(this.startPos.x, this.currentPos.x) && this.selected ? this.dir != T.RIGHT && this.startPos.x > this.currentPos.x ? (this.dir = T.RIGHT, this.itemOffSet = this.cellSize, this.ji(), this.cancelCloseBook && this.cancelCloseBook()) : this.dir != T.LEFT && this.startPos.x < this.currentPos.x ? (this.dir = T.LEFT, this.itemOffSet = -this.cellSize, this.ji()) : (this.Ni(this.currIndex), this.cancelCloseBook && this.cancelCloseBook()) : (this.Ni(this.currIndex), this.cancelCloseBook && this.cancelCloseBook()), this.snapPause = false, this.zi(K, O));
           }
         }, f.prototype.Ui = function (K) {
-          {
-            if (this.clickBegan = true, this.enabledInHierarchy) {
-              {
-                var O = K.touch;
-                this.content && this.Ki(O), this.qi = false, this.Qi(K);
-              }
-            }
+          if (this.clickBegan = true, this.enabledInHierarchy) {
+            var O = K.touch;
+            this.content && this.Ki(O), this.qi = false, this.Qi(K);
           }
         }, f.prototype.xi = function (K) {
-          {
-            if (this.clickBegan && (this.clickBegan = false, this.startScrolling && this.startScrolling()), this.enabledInHierarchy) {
-              {
-                var O = K.touch;
-                if (this.content && this.Yi(O), this.cancelInnerEvents) {
-                  var x,
-                    p = (x = O.getLocation(), O.getStartLocation(), x.mag());
-                  if (M(p) > 7 && !this.qi && K.target !== this.node) {
-                    {
-                      var b = new cc.Event.EventTouch(K.getTouches(), K.bubbles);
-                      b.type = cc.Node.EventType.TOUCH_CANCEL, b.touch = K.touch, b.simulate = true, K.target.dispatchEvent(b), this.qi = true;
-                    }
-                  }
-                  this.Qi(K);
-                }
-              }
-            }
-          }
-        }, f.prototype.Ji = function (K) {
-          {
-            if (this.clickBegan = false, this.enabledInHierarchy) {
-              var O = K.touch;
-              this.content && this.Zi(O), this.Xi("touch-up"), this.qi ? K.stopPropagation() : this.Qi(K);
-            }
-          }
-        }, f.prototype.zi = function (K) {
-          {
-            if (this.clickBegan = false, this.enabledInHierarchy) {
-              if (!K.simulate) {
-                var O = K.touch;
-                this.content && this.Zi(O);
+          if (this.clickBegan && (this.clickBegan = false, this.startScrolling && this.startScrolling()), this.enabledInHierarchy) {
+            var O = K.touch;
+            if (this.content && this.Yi(O), this.cancelInnerEvents) {
+              var x,
+                p = (x = O.getLocation(), O.getStartLocation(), x.mag());
+              if (M(p) > 7 && !this.qi && K.target !== this.node) {
+                var b = new cc.Event.EventTouch(K.getTouches(), K.bubbles);
+                b.type = cc.Node.EventType.TOUCH_CANCEL, b.touch = K.touch, b.simulate = true, K.target.dispatchEvent(b), this.qi = true;
               }
               this.Qi(K);
             }
           }
+        }, f.prototype.Ji = function (K) {
+          if (this.clickBegan = false, this.enabledInHierarchy) {
+            var O = K.touch;
+            this.content && this.Zi(O), this.Xi("touch-up"), this.qi ? K.stopPropagation() : this.Qi(K);
+          }
+        }, f.prototype.zi = function (K) {
+          if (this.clickBegan = false, this.enabledInHierarchy) {
+            if (!K.simulate) {
+              var O = K.touch;
+              this.content && this.Zi(O);
+            }
+            this.Qi(K);
+          }
         }, f.prototype.$i = function () {
           this.es && this.es.getScrollY() > 0 ? this.dir = T.RIGHT : this.es && this.es.getScrollY() < 0 && (this.dir = T.LEFT);
         }, f.prototype.ns = function () {
-          {
-            this.snapPause = true, this.snapDone = true;
-          }
+          this.snapPause = true, this.snapDone = true;
         }, f.prototype.os = function () {
           this.itemOffSet = this.cellSize, this.ji(), this.snapPause = false, this.es = undefined;
         }, f.prototype.hs = function (K) {

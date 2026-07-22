@@ -7,32 +7,26 @@ function GameUtil(require, j, exports) {
     var m = {};
     m.value = true;
     Object.defineProperty(exports, "__esModule", m), exports.isPassUKGC = exports.getWinPoitionArr = exports.generateGroupOfSlotItemWin = exports.uniqueArray = exports.differentArray = exports.scheduleIterator = exports.transformMultiplierData = undefined, exports.transformMultiplierData = function (C) {
-      {
-        for (var V = [0, 1, 2, 3, 4, 5, 6, 7, 8], N = false; !N;) if (V[4] === C) N = true;else {
-          var q = V.shift();
-          V.push(q);
-        }
-        return V;
+      for (var V = [0, 1, 2, 3, 4, 5, 6, 7, 8], N = false; !N;) if (V[4] === C) N = true;else {
+        var q = V.shift();
+        V.push(q);
       }
+      return V;
     };
     var B = require("Utils"),
       X = require("SlotHandler");
     exports.scheduleIterator = function (C, V, N, q) {
-      {
-        var f = 0,
-          g = 0,
-          l = function () {
-            {
-              ++g === N && q && q();
-            }
-          },
-          K = function () {
-            C(f, l), f++;
-          };
-        return K(), N >= 2 && B.sharedScheduler.schedule(K, V, N - 2), function () {
-          N >= 2 && B.sharedScheduler.unschedule(K), q = undefined;
+      var f = 0,
+        g = 0,
+        l = function () {
+          ++g === N && q && q();
+        },
+        K = function () {
+          C(f, l), f++;
         };
-      }
+      return K(), N >= 2 && B.sharedScheduler.schedule(K, V, N - 2), function () {
+        N >= 2 && B.sharedScheduler.unschedule(K), q = undefined;
+      };
     }, exports.differentArray = function (C, V) {
       for (var N = [], q = 0; q < C.length; q++) V.includes(C[q]) || N.push(C[q]);
       return N;

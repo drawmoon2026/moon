@@ -34,22 +34,16 @@ function NumberDisplayController(require, j, exports) {
           'configurable': true
         }), Object.defineProperty(N.prototype, "previewNumber", {
           'get': function () {
-            {
-              return this._f;
-            }
+            return this._f;
           },
           'set': function (l) {
-            {
-              this._f = l, this.displayNumber(l);
-            }
+            this._f = l, this.displayNumber(l);
           },
           'enumerable': false,
           'configurable': true
         }), Object.defineProperty(N.prototype, "currentNumberBlurSprite", {
           'get': function () {
-            {
-              return this.numberBlurSpriteAtlas ? this.numberBlurSpriteAtlas.getSpriteFrames() : this.numberBlurSprite;
-            }
+            return this.numberBlurSpriteAtlas ? this.numberBlurSpriteAtlas.getSpriteFrames() : this.numberBlurSprite;
           },
           'enumerable': false,
           'configurable': true
@@ -62,19 +56,15 @@ function NumberDisplayController(require, j, exports) {
         }), N.prototype.onLoad = function () {
           this.mf = this.numberContainer.scaleX, this.bf = this.numberContainer.scaleY, this.numberContainer.on(cc.Node.EventType.SIZE_CHANGED, this.resizeNumberIfNeeded, this);
         }, N.prototype.getNumberList = function (l, K) {
-          {
-            var O = /(?:\d+)(?:\.\d+)?/gm.exec(l.toString());
-            if (O) {
-              {
-                var x = parseFloat(O[0]),
-                  p = this.pf(x, K),
-                  b = "number" == typeof l ? p : l.replace(O[0], p),
-                  L = Array.from(b);
-                return this.enablePrefixNumber && L.unshift('x'), L;
-              }
-            }
-            return Array.from(l.toString());
+          var O = /(?:\d+)(?:\.\d+)?/gm.exec(l.toString());
+          if (O) {
+            var x = parseFloat(O[0]),
+              p = this.pf(x, K),
+              b = "number" == typeof l ? p : l.replace(O[0], p),
+              L = Array.from(b);
+            return this.enablePrefixNumber && L.unshift('x'), L;
           }
+          return Array.from(l.toString());
         }, N.prototype.getSpriteConfig = function (l) {
           switch (l) {
             case ',':
@@ -116,19 +106,17 @@ function NumberDisplayController(require, j, exports) {
               return;
           }
         }, N.prototype.getNumberSpriteConfig = function (l, K, O) {
-          {
-            return O ? {
-              'scale': K ? this.decimalNumberScale * this.blurScale : this.decimalNumberScale,
-              'width': this.decimalNumberWidth,
-              'y': this.decimalNumberY,
-              'spriteFrame': K ? this.currentNumberBlurSprite[parseInt(l, 10)] : this.currentNumberSprite[parseInt(l, 10)]
-            } : {
-              'scale': this.nodeNumberScale,
-              'width': this.nodeNumberWidth,
-              'y': this.nodeNumberY,
-              'spriteFrame': K ? this.currentNumberBlurSprite[parseInt(l, 10)] : this.currentNumberSprite[parseInt(l, 10)]
-            };
-          }
+          return O ? {
+            'scale': K ? this.decimalNumberScale * this.blurScale : this.decimalNumberScale,
+            'width': this.decimalNumberWidth,
+            'y': this.decimalNumberY,
+            'spriteFrame': K ? this.currentNumberBlurSprite[parseInt(l, 10)] : this.currentNumberSprite[parseInt(l, 10)]
+          } : {
+            'scale': this.nodeNumberScale,
+            'width': this.nodeNumberWidth,
+            'y': this.nodeNumberY,
+            'spriteFrame': K ? this.currentNumberBlurSprite[parseInt(l, 10)] : this.currentNumberSprite[parseInt(l, 10)]
+          };
         }, N.prototype.displayNumber = function (K, O, x) {
           undefined === O && (O = true), this.Sf();
           var p = this.getNumberList(K, O);
@@ -195,11 +183,9 @@ function NumberDisplayController(require, j, exports) {
         }, N.prototype.wf = function (l, K, O) {
           this.numberContainer.runAction(cc.sequence(cc.scaleTo(0.08, l), cc.scaleTo(0.05, K), cc.callFunc(O, this)));
         }, N.prototype.Sf = function () {
-          {
-            if (!this.ff) {
-              var l = this.ff = this.numberContainer.getComponent(cc.Layout);
-              l || (l = this.ff = this.numberContainer.addComponent(cc.Layout)), l.resizeMode = cc.Layout.ResizeMode.CONTAINER, l.horizontalDirection = cc.Layout.HorizontalDirection.RIGHT_TO_LEFT, l.type = cc.Layout.Type.HORIZONTAL, l.spacingX = this.layoutSpacingX, l.spacingY = this.layoutSpacingY;
-            }
+          if (!this.ff) {
+            var l = this.ff = this.numberContainer.getComponent(cc.Layout);
+            l || (l = this.ff = this.numberContainer.addComponent(cc.Layout)), l.resizeMode = cc.Layout.ResizeMode.CONTAINER, l.horizontalDirection = cc.Layout.HorizontalDirection.RIGHT_TO_LEFT, l.type = cc.Layout.Type.HORIZONTAL, l.spacingX = this.layoutSpacingX, l.spacingY = this.layoutSpacingY;
           }
         }, N.prototype.onDestroy = function () {
           this.attributesForNumberContainer = undefined;
@@ -282,9 +268,7 @@ function NumberDisplayController(require, j, exports) {
         })], N.prototype, "blurScale", undefined), __decorate([M(q)], N.prototype, "spriteColor", undefined), __decorate([M(f)], N.prototype, "disableFixedWidth", undefined), __decorate([M(g)], N.prototype, "enablePrefixNumber", undefined), __decorate([M({
           'type': cc.Float,
           'visible': function () {
-            {
-              return this.preview;
-            }
+            return this.preview;
           }
         })], N.prototype, "previewNumber", null), __decorate([T], N);
       }(X.default);

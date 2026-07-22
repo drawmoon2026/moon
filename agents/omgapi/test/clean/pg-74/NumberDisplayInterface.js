@@ -26,19 +26,13 @@ function NumberDisplayInterface(require, j, exports) {
           var l = B.getDefaultCurrencyFormat().groupSeparator;
           return g.toString().replace(/\B(?=(\d{3})+(?!\d))/g, l);
         }, V.prototype.setResizeAnimation = function (g) {
-          {
-            this.Bf = g;
-          }
+          this.Bf = g;
         }, V.prototype.displayNumber = function (g, l) {
           throw undefined === l && (l = true), Error("NumberDisplayInterface: method must be overriden");
         }, V.prototype.clear = function () {
-          {
-            throw Error("NumberDisplayInterface: method must be overriden");
-          }
+          throw Error("NumberDisplayInterface: method must be overriden");
         }, V.prototype.resizeNumberIfNeeded = function () {
-          {
-            throw Error("NumberDisplayInterface: method must be overriden");
-          }
+          throw Error("NumberDisplayInterface: method must be overriden");
         }, __decorate([T(cc.Node)], V.prototype, "numberContainer", undefined), __decorate([T(cc.Float)], V.prototype, "maxContainerSize", undefined), __decorate([T(N)], V.prototype, "enableComma", undefined), __decorate([T(q)], V.prototype, "enableDecimal", undefined), __decorate([T(f)], V.prototype, "enableShortenNumber", undefined), __decorate([Z], V);
       }(cc.Component);
     exports.default = M, cc._RF.pop();

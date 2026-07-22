@@ -22,12 +22,10 @@ function MJFreeSpinGameState(require, j, exports) {
           this.name = "Free Spin", this.dataSource = undefined, this.generalControllers = undefined, this.bonusControllers = undefined, this.loadingControllers = undefined, this.finalCallback = undefined, this.dataSource = x, this.generalControllers = p.generalControllers, this.bonusControllers = p.bonusControllers, this.loadingControllers = b, this.finalCallback = L;
         }
         return O.prototype.run = function () {
-          {
-            var x = this.dataSource.transactionModel.previousTransactionInfo,
-              p = x ? x.tw : undefined,
-              b = this.dataSource.transactionModel.transitionFrom;
-            b === M.TransitionState.NORMAL || b === M.TransitionState.RESPIN ? this.vr() : undefined !== p && 0 !== p ? this.vr() : this._r();
-          }
+          var x = this.dataSource.transactionModel.previousTransactionInfo,
+            p = x ? x.tw : undefined,
+            b = this.dataSource.transactionModel.transitionFrom;
+          b === M.TransitionState.NORMAL || b === M.TransitionState.RESPIN ? this.vr() : undefined !== p && 0 !== p ? this.vr() : this._r();
         }, O.prototype.forceExit = function () {
           var x = this.mr;
           x && x(), this.ro();
@@ -53,20 +51,16 @@ function MJFreeSpinGameState(require, j, exports) {
         }, O.prototype.Cr = function (x) {
           this.bonusControllers.freeSpinEffectController.stop(), x && x();
         }, O.prototype.pr = function (x) {
-          {
-            this.bonusControllers.remainingFreeSpinController.decrementFreeSpinCount(undefined), x && x();
-          }
+          this.bonusControllers.remainingFreeSpinController.decrementFreeSpinCount(undefined), x && x();
         }, O.prototype.Sr = function (x) {
           new B.default(this.dataSource, {
             'generalControllers': this.generalControllers
           }, x).run();
         }, O.prototype.Mr = function (x) {
-          {
-            new Z.default(this.dataSource, {
-              'generalControllers': this.generalControllers,
-              'bonusControllers': this.bonusControllers
-            }, x).run();
-          }
+          new Z.default(this.dataSource, {
+            'generalControllers': this.generalControllers,
+            'bonusControllers': this.bonusControllers
+          }, x).run();
         }, O.prototype.yr = function (x) {
           new X.default(this.dataSource, {
             'generalControllers': this.generalControllers
@@ -84,22 +78,18 @@ function MJFreeSpinGameState(require, j, exports) {
             L = p.freeSpin,
             H = this.generalControllers;
           if (b === M.TransitionState.NORMAL) {
-            {
-              var U = L ? L.accumulatedWin : 0;
-              C.sequenceCallback(C.delayCallback(1), function (k) {
-                {
-                  var Y = {};
-                  Y.displayState = "Start";
-                  Y.effectType = "TotalWin";
-                  U > 0 ? (q.emitGameEffectStateChangedEvent(Y), k()) : g.showLoadingPage(k);
-                }
-              }, C.spawnCallback(this.Hr.bind(this), this.Ar.bind(this), this.Or.bind(this)), this.Ir.bind(this), function (k) {
-                var Y = {};
-                Y.displayState = "End";
-                Y.effectType = "TotalWin";
-                U > 0 ? (q.emitGameEffectStateChangedEvent(Y), H.spinButtonController.show(), k()) : (H.spinButtonController.show(), g.hideLoadingPage(k));
-              })(x);
-            }
+            var U = L ? L.accumulatedWin : 0;
+            C.sequenceCallback(C.delayCallback(1), function (k) {
+              var Y = {};
+              Y.displayState = "Start";
+              Y.effectType = "TotalWin";
+              U > 0 ? (q.emitGameEffectStateChangedEvent(Y), k()) : g.showLoadingPage(k);
+            }, C.spawnCallback(this.Hr.bind(this), this.Ar.bind(this), this.Or.bind(this)), this.Ir.bind(this), function (k) {
+              var Y = {};
+              Y.displayState = "End";
+              Y.effectType = "TotalWin";
+              U > 0 ? (q.emitGameEffectStateChangedEvent(Y), H.spinButtonController.show(), k()) : (H.spinButtonController.show(), g.hideLoadingPage(k));
+            })(x);
           } else N.transitionCompleteCallback("idle")(x);
         }, O.prototype.ro = function () {
           var x = this.finalCallback;
@@ -118,36 +108,30 @@ function MJFreeSpinGameState(require, j, exports) {
             L.switchBackground(Y), H.switchBackground(Y), U.switchBackground(Y), p.Tr(), k.switchMultiplier(Y, x);
           });
         }, O.prototype.Hr = function (x) {
-          {
-            var p = this.dataSource.transactionModel.freeSpin,
-              b = p ? p.accumulatedWin : 0,
-              L = this.dataSource.isGameReplaying,
-              H = this.generalControllers,
-              U = function (Y) {
-                N.transitionCompleteCallback("setup")(Y);
-              };
-            if (b > 0) {
-              {
-                var k = {
-                  'numberRollingEndCallback': function () {
-                    var Y = {};
-                    Y.displayState = "DidUpdate";
-                    Y.effectType = "TotalWin";
-                    q.emitGameEffectStateChangedEvent(Y);
-                  },
-                  'collectButtonClickedCallback': function (Y) {
-                    {
-                      var y = {};
-                      y.displayState = "WillEnd";
-                      y.effectType = "TotalWin";
-                      q.emitGameEffectStateChangedEvent(y), U(Y);
-                    }
-                  }
-                };
-                H.totalWinController.setSocialShareEventCallback(k), H.totalWinController.play(b, L, x);
+          var p = this.dataSource.transactionModel.freeSpin,
+            b = p ? p.accumulatedWin : 0,
+            L = this.dataSource.isGameReplaying,
+            H = this.generalControllers,
+            U = function (Y) {
+              N.transitionCompleteCallback("setup")(Y);
+            };
+          if (b > 0) {
+            var k = {
+              'numberRollingEndCallback': function () {
+                var Y = {};
+                Y.displayState = "DidUpdate";
+                Y.effectType = "TotalWin";
+                q.emitGameEffectStateChangedEvent(Y);
+              },
+              'collectButtonClickedCallback': function (Y) {
+                var y = {};
+                y.displayState = "WillEnd";
+                y.effectType = "TotalWin";
+                q.emitGameEffectStateChangedEvent(y), U(Y);
               }
-            } else U(x);
-          }
+            };
+            H.totalWinController.setSocialShareEventCallback(k), H.totalWinController.play(b, L, x);
+          } else U(x);
         }, O.prototype.Ir = function (x) {
           var p = this.dataSource.transactionModel.accumulatedWinAmount;
           p > 0 ? this.generalControllers.infoboardController.setTotalWinAmount(p) : this.generalControllers.infoboardController.switchToTips(true), x && x();

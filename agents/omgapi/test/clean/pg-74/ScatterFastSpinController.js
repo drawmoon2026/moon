@@ -13,13 +13,9 @@ function ScatterFastSpinController(F, j, exports) {
       T = Z.ccclass,
       M = Z.property;
     (function (V) {
-      {
-        V[V.A = 0] = 'A', V[V.B = 1] = 'B';
-      }
+      V[V.A = 0] = 'A', V[V.B = 1] = 'B';
     })(B || (B = {})), function (V) {
-      {
-        V[V.Playing = 0] = "Playing", V[V.Stopped = 1] = "Stopped";
-      }
+      V[V.Playing = 0] = "Playing", V[V.Stopped = 1] = "Stopped";
     }(X || (X = {}));
     var C = function (V) {
       function N() {
@@ -28,18 +24,12 @@ function ScatterFastSpinController(F, j, exports) {
       }
       return __extends(N, V), N.prototype.play = function (q) {
         this.fsGlowNode.forEach(function (f) {
-          {
-            f.opacity = 255, f.active = true;
-          }
+          f.opacity = 255, f.active = true;
         }), this.speedLineAnimation.stop(), this.content.x = 186.4 * (q - 2), this.I = X.Playing, this.content.stopAllActions(), this.content.runAction(cc.fadeIn(0.5)), this.fastGlowA.runAction(cc.tintTo(0.5, 255, 255, 255)), this.Rd();
       }, N.prototype.stop = function () {
-        {
-          this.I !== X.Stopped && (this.I = X.Stopped, this.jd(), this.content.runAction(cc.fadeOut(0.2)));
-        }
+        this.I !== X.Stopped && (this.I = X.Stopped, this.jd(), this.content.runAction(cc.fadeOut(0.2)));
       }, N.prototype.Rd = function () {
-        {
-          this.speedLineAnimation.node.active = true, this.speedLineAnimation.node.stopAllActions(), this.speedLineAnimation.node.runAction(cc.fadeIn(0.5)), this.speedLineAnimation.play("fast_spin_speedline", 0), this.speedLineAnimation.playAdditive("fast_vfx_b"), this.speedLineAnimation.playAdditive("fast_vfx_c"), this.speedLineAnimation.playAdditive("fast_vfx_d");
-        }
+        this.speedLineAnimation.node.active = true, this.speedLineAnimation.node.stopAllActions(), this.speedLineAnimation.node.runAction(cc.fadeIn(0.5)), this.speedLineAnimation.play("fast_spin_speedline", 0), this.speedLineAnimation.playAdditive("fast_vfx_b"), this.speedLineAnimation.playAdditive("fast_vfx_c"), this.speedLineAnimation.playAdditive("fast_vfx_d");
       }, N.prototype.jd = function () {
         var q = this;
         this.speedLineAnimation.node.runAction(cc.sequence(cc.fadeOut(0.2), cc.callFunc(function () {

@@ -21,9 +21,7 @@ function RandomShakingEffectController(require, j, exports) {
         return q.moveVariance = 8, q.repeatTime = 0.02, q.Zf = B.NORMAL, q.Xf = undefined, q;
       }
       return __extends(N, V), N.prototype.play = function (q) {
-        {
-          this.Zf !== B.SHAKING && (this.Zf = B.SHAKING, this.Xf = this.node.position, this.$f(), q && this.scheduleOnce(this.stop, q));
-        }
+        this.Zf !== B.SHAKING && (this.Zf = B.SHAKING, this.Xf = this.node.position, this.$f(), q && this.scheduleOnce(this.stop, q));
       }, N.prototype.$f = function () {
         var q = this.moveVariance,
           f = M.generateRandomInt(this.Xf.x - q, this.Xf.x + q),

@@ -14,9 +14,7 @@ function GenericLoadingScreenController(require, j, exports) {
       M = undefined,
       C = undefined;
     exports.showLoadingPage = function (K) {
-      {
-        X.showFullLoadingPage(), M = K, B.delayCallback(0.3)(g);
-      }
+      X.showFullLoadingPage(), M = K, B.delayCallback(0.3)(g);
     }, exports.hideLoadingPage = function (K) {
       C = K, T = true, Z && N();
     }, cc._RF.pop();
@@ -28,9 +26,7 @@ function GenericLoadingScreenController(require, j, exports) {
     X.hideFullLoadingPage(), B.delayCallback(0.3)(V);
   }
   function q() {
-    {
-      Z = true, T && N();
-    }
+    Z = true, T && N();
   }
   function g() {
     B.delayCallback(1)(q), M && M(), M = undefined;

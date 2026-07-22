@@ -13,10 +13,8 @@ function GameAudioAdapter(require, j, exports) {
       T = cc._decorator.ccclass,
       M = function (C) {
         function V(N, q) {
-          {
-            var f = C.call(this, N) || this;
-            return f.Fs = undefined, f.Ws = undefined, f.Ws = q, f;
-          }
+          var f = C.call(this, N) || this;
+          return f.Fs = undefined, f.Ws = undefined, f.Ws = q, f;
         }
         return __extends(V, C), V.prototype.load = function () {
           var N = this,

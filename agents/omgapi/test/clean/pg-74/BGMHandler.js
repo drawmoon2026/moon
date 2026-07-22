@@ -17,11 +17,9 @@ function BGMHandler(require, j, exports) {
           return f.J = undefined, f.V = 0, f;
         }
         return __extends(q, N), q.prototype.playBgm = function (f) {
-          {
-            var g = this.K(this.J),
-              l = this.K(f);
-            undefined === g ? (this.V = 1, l.setVolume(1), l.play()) : this.J !== f && (l.isPlaying() ? f === Z.TransitionState.FREE_SPIN && (V(), l.play(), g.stop(), l.setVolume(1)) : (l.play(), f === Z.TransitionState.FREE_SPIN ? (g.stop(), l.setVolume(1)) : (l.setVolume(0), l.fade(0, 1, 0.7), g.fade(g.getVolume(), 0, 0.7), g.once("fade", V)))), this.J = f;
-          }
+          var g = this.K(this.J),
+            l = this.K(f);
+          undefined === g ? (this.V = 1, l.setVolume(1), l.play()) : this.J !== f && (l.isPlaying() ? f === Z.TransitionState.FREE_SPIN && (V(), l.play(), g.stop(), l.setVolume(1)) : (l.play(), f === Z.TransitionState.FREE_SPIN ? (g.stop(), l.setVolume(1)) : (l.setVolume(0), l.fade(0, 1, 0.7), g.fade(g.getVolume(), 0, 0.7), g.once("fade", V)))), this.J = f;
         }, q.prototype.fadeOutBgm = function (f) {
           var g = this.K(this.J);
           g && (this.V = g.getVolume(), this.fadeBgmTo(0, f));

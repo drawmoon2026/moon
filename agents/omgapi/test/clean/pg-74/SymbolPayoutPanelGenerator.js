@@ -9,62 +9,52 @@ function SymbolPayoutPanelGenerator(require, c, exports) {
     Object.defineProperty(exports, "__esModule", I), exports.regeneratePanel = exports.getButtonList = exports.getButtonComponentList = exports.getButtonControllerList = exports.generatePanel = exports.symbolPayoutPanelGenerator = undefined;
     var m = require("ButtonController"),
       B = function () {
-        {
-          function X() {
-            {
-              this.As = [], this.AS = [], this.HS = [], this.OS = new cc.NodePool();
-            }
-          }
-          return X.prototype.IS = function (Z, T, M, C, V, N, q) {
-            {
-              var g = Math.floor(M % q),
-                K = Math.floor(M / q),
-                O = V * (1 - Z.anchorY),
-                x = C * Z.anchorX,
-                p = O - T.height / 2,
-                b = -(x - T.width / 2),
-                L = p - T.height * g,
-                H = b + T.width * K;
-              T.setPosition(H, L);
-            }
-          }, X.prototype.generatePanel = function (Z) {
-            var T = Z.containerNode,
-              M = Z.containerSize ? Z.containerSize : T.getContentSize(),
-              C = M.width,
-              V = M.height;
-            T.width = C, T.height = V;
-            for (var N = Z.numberOfColumn, q = Z.numberOfRow, g = Z.numberOfButton ? Z.numberOfButton : N * q, K = C / N, O = V / q, x = 0; x < g; x++) {
-              {
-                var p = this.OS.get(),
-                  L = undefined,
-                  H = undefined;
-                if (p) L = p.getComponent(m.default), H = p.getComponent(cc.Button);else {
-                  p = new cc.Node("payout_button");
-                  var U = new cc.Node("background");
-                  p.addChild(U), H = p.addComponent(cc.Button), L = p.addComponent(m.default), H.target = U, p.height = Z.buttonHeight ? Z.buttonHeight : O, p.width = Z.buttonWidth ? Z.buttonWidth : K, H.transition = cc.Button.Transition.COLOR, H.pressedColor = cc.Color.GRAY;
-                  var k = U.addComponent(cc.Sprite);
-                  k.sizeMode = cc.Sprite.SizeMode.CUSTOM, Z.buttonBase && (k.spriteFrame = Z.buttonBase.spriteFrame), U.height = O, U.width = K;
-                }
-                p.parent = T;
-                var Y = Z.buttonPosition;
-                Y ? p.setPosition(Y[x]) : this.IS(T, p, x, C, V, N, q), this.As.push(p), this.AS.push(L), this.HS.push(H);
-              }
-            }
-          }, X.prototype.getButtonList = function () {
-            return this.As;
-          }, X.prototype.getButtonControllerList = function () {
-            {
-              return this.AS;
-            }
-          }, X.prototype.getButtonComponentList = function () {
-            return this.HS;
-          }, X.prototype.regeneratePanel = function (Z) {
-            var T = this;
-            this.As.forEach(function (M) {
-              T.OS.put(M);
-            }), this.As = [], this.HS = [], this.AS = [], this.generatePanel(Z);
-          }, X;
+        function X() {
+          this.As = [], this.AS = [], this.HS = [], this.OS = new cc.NodePool();
         }
+        return X.prototype.IS = function (Z, T, M, C, V, N, q) {
+          var g = Math.floor(M % q),
+            K = Math.floor(M / q),
+            O = V * (1 - Z.anchorY),
+            x = C * Z.anchorX,
+            p = O - T.height / 2,
+            b = -(x - T.width / 2),
+            L = p - T.height * g,
+            H = b + T.width * K;
+          T.setPosition(H, L);
+        }, X.prototype.generatePanel = function (Z) {
+          var T = Z.containerNode,
+            M = Z.containerSize ? Z.containerSize : T.getContentSize(),
+            C = M.width,
+            V = M.height;
+          T.width = C, T.height = V;
+          for (var N = Z.numberOfColumn, q = Z.numberOfRow, g = Z.numberOfButton ? Z.numberOfButton : N * q, K = C / N, O = V / q, x = 0; x < g; x++) {
+            var p = this.OS.get(),
+              L = undefined,
+              H = undefined;
+            if (p) L = p.getComponent(m.default), H = p.getComponent(cc.Button);else {
+              p = new cc.Node("payout_button");
+              var U = new cc.Node("background");
+              p.addChild(U), H = p.addComponent(cc.Button), L = p.addComponent(m.default), H.target = U, p.height = Z.buttonHeight ? Z.buttonHeight : O, p.width = Z.buttonWidth ? Z.buttonWidth : K, H.transition = cc.Button.Transition.COLOR, H.pressedColor = cc.Color.GRAY;
+              var k = U.addComponent(cc.Sprite);
+              k.sizeMode = cc.Sprite.SizeMode.CUSTOM, Z.buttonBase && (k.spriteFrame = Z.buttonBase.spriteFrame), U.height = O, U.width = K;
+            }
+            p.parent = T;
+            var Y = Z.buttonPosition;
+            Y ? p.setPosition(Y[x]) : this.IS(T, p, x, C, V, N, q), this.As.push(p), this.AS.push(L), this.HS.push(H);
+          }
+        }, X.prototype.getButtonList = function () {
+          return this.As;
+        }, X.prototype.getButtonControllerList = function () {
+          return this.AS;
+        }, X.prototype.getButtonComponentList = function () {
+          return this.HS;
+        }, X.prototype.regeneratePanel = function (Z) {
+          var T = this;
+          this.As.forEach(function (M) {
+            T.OS.put(M);
+          }), this.As = [], this.HS = [], this.AS = [], this.generatePanel(Z);
+        }, X;
       }();
     exports.default = B, exports.symbolPayoutPanelGenerator = new B(), exports.generatePanel = exports.symbolPayoutPanelGenerator.generatePanel.bind(exports.symbolPayoutPanelGenerator), exports.getButtonControllerList = exports.symbolPayoutPanelGenerator.getButtonControllerList.bind(exports.symbolPayoutPanelGenerator), exports.getButtonComponentList = exports.symbolPayoutPanelGenerator.getButtonComponentList.bind(exports.symbolPayoutPanelGenerator), exports.getButtonList = exports.symbolPayoutPanelGenerator.getButtonList.bind(exports.symbolPayoutPanelGenerator), exports.regeneratePanel = exports.symbolPayoutPanelGenerator.regeneratePanel.bind(exports.symbolPayoutPanelGenerator), cc._RF.pop();
   }

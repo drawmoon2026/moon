@@ -33,13 +33,9 @@ function MJSpinButtonController(require, j, exports) {
             'spinButtonNode': this.node
           }), this.ru();
         }, x.prototype.onStopAllAnimations = function () {
-          {
-            this.arrowHolder.stopAllActions(), this.arrowSprite.spriteFrame = this.arrowGreySF;
-          }
+          this.arrowHolder.stopAllActions(), this.arrowSprite.spriteFrame = this.arrowGreySF;
         }, x.prototype.onShowIdleAnimation = function () {
-          {
-            this.arrowHolder.stopAllActions(), this.arrowSprite.spriteFrame = this.arrowSF, this.au(), this.arrowHolder.runAction(cc.repeatForever(cc.rotateBy(4, 360))), this.uu();
-          }
+          this.arrowHolder.stopAllActions(), this.arrowSprite.spriteFrame = this.arrowSF, this.au(), this.arrowHolder.runAction(cc.repeatForever(cc.rotateBy(4, 360))), this.uu();
         }, x.prototype.onShowSpinAnimation = function (p) {
           undefined === p && (p = true), p && (this.lu(), X.playAudio(Z.GENERAL_AUDIO.spinBtn.key)), this.onHideMouseOverEffect(), this.fu(), this.arrowHolder.stopAllActions(), this.arrowSprite.spriteFrame = this.arrowBlurSF;
           var b = cc.sequence(cc.scaleTo(0.1, 1.35), cc.scaleTo(0.1, 1.5)),
@@ -52,9 +48,7 @@ function MJSpinButtonController(require, j, exports) {
         }, x.prototype.onEnableButton = function () {
           this.du = true, this.onShowIdleAnimation(), this.vu(true);
         }, x.prototype.onDisableButton = function () {
-          {
-            this.du = false, this.animationState === B.SpinButtonAnimationState.SPINNING ? this.onReplaceSpinBlurredSpriteFrame() : this.onShowStopSpinningAnimation(), this.vu(false);
-          }
+          this.du = false, this.animationState === B.SpinButtonAnimationState.SPINNING ? this.onReplaceSpinBlurredSpriteFrame() : this.onShowStopSpinningAnimation(), this.vu(false);
         }, x.prototype.showAutoSpinLook = function (p) {
           var b = this;
           this.autoSpinHolder.active = true, this.autoSpinHolder.opacity = 0, this.autoSpinHolder.runAction(cc.sequence(cc.fadeIn(0.3), cc.callFunc(function () {
@@ -71,14 +65,10 @@ function MJSpinButtonController(require, j, exports) {
         }, x.prototype.onResumeStop = function () {
           this.onShowStopSpinningAnimation();
         }, x.prototype.onPlayMouseOverEffect = function () {
-          {
-            var p = this.buttonHoveredHolderNode;
-            if (p.stopAllActions(), this.animationState === B.SpinButtonAnimationState.IDLE || this.mode === B.SpinButtonMode.AUTOSPIN) {
-              {
-                var b = cc.callFunc(this.mu, this);
-                p.runAction(b);
-              }
-            }
+          var p = this.buttonHoveredHolderNode;
+          if (p.stopAllActions(), this.animationState === B.SpinButtonAnimationState.IDLE || this.mode === B.SpinButtonMode.AUTOSPIN) {
+            var b = cc.callFunc(this.mu, this);
+            p.runAction(b);
           }
         }, x.prototype.onHideMouseOverEffect = function () {
           var p = this.buttonHoveredGlowNode;
@@ -86,43 +76,33 @@ function MJSpinButtonController(require, j, exports) {
         }, x.prototype.mouseHovered = function (p) {
           this.du && this.mode !== B.SpinButtonMode.DISABLED && (this.isHover || this.bu(p) && O.prototype.mouseHovered.call(this, p));
         }, x.prototype.mouseLeave = function (p) {
-          {
-            this.isHover && (this.bu(p) || O.prototype.mouseLeave.call(this, p));
-          }
+          this.isHover && (this.bu(p) || O.prototype.mouseLeave.call(this, p));
         }, x.prototype.clickSpinButton = function (p) {
           if (undefined === p && (p = C.SpinTrigger.CLICK), this.mode !== B.SpinButtonMode.DISABLED && V.buttonHitTest(this.node)) {
             var b = this.clickCallback;
             b && b(p);
           }
         }, x.prototype._u = function () {
-          {
-            var p = this;
-            this.autoSpinHolder.stopAllActions(), this.autoSpinHolder.runAction(cc.sequence(cc.fadeOut(0.3), cc.callFunc(function () {
-              p.autoSpinHolder.active = false;
-            })));
-          }
+          var p = this;
+          this.autoSpinHolder.stopAllActions(), this.autoSpinHolder.runAction(cc.sequence(cc.fadeOut(0.3), cc.callFunc(function () {
+            p.autoSpinHolder.active = false;
+          })));
         }, x.prototype.lu = function () {
-          {
-            this.spinAnim.play();
-          }
+          this.spinAnim.play();
         }, x.prototype.au = function () {
           this.spinBaseSF && (this.spinBase.spriteFrame = this.spinBaseSF);
         }, x.prototype.fu = function () {
-          {
-            this.spinBaseGreySF && (this.spinBase.spriteFrame = this.spinBaseGreySF);
-          }
+          this.spinBaseGreySF && (this.spinBase.spriteFrame = this.spinBaseGreySF);
         }, x.prototype.mu = function () {
           var p = this.buttonHoveredGlowNode;
           p.setScale(2.36), p.runAction(cc.repeatForever(cc.spawn(cc.scaleTo(1, 3.5), cc.sequence(cc.tintTo(0.5, 255, 255, 255).easing(cc.easeIn(3)), cc.delayTime(0.2), cc.tintTo(0.45, 0, 0, 0).easing(cc.easeIn(3)), cc.delayTime(0.4), cc.scaleTo(0, 2.36)))));
         }, x.prototype.uu = function () {
           this.ci = undefined;
         }, x.prototype.hu = function () {}, x.prototype.vu = function () {}, x.prototype.bu = function (p) {
-          {
-            var b = p.touch ? p.touch.getLocation() : p.getLocation(),
-              L = this.node.convertToNodeSpaceAR(b),
-              H = this.node.width / 2;
-            return Math.sqrt(Math.pow(L.x, 2) + Math.pow(L.y, 2)) <= H;
-          }
+          var b = p.touch ? p.touch.getLocation() : p.getLocation(),
+            L = this.node.convertToNodeSpaceAR(b),
+            H = this.node.width / 2;
+          return Math.sqrt(Math.pow(L.x, 2) + Math.pow(L.y, 2)) <= H;
         }, x.prototype.pu = function (p) {
           this.bu(p) && this.du && this.clickSpinButton();
         }, x.prototype.Su = function (p) {

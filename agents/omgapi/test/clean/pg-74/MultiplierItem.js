@@ -47,9 +47,7 @@ function MultiplierItem(require, j, exports) {
             case B.TransitionState.FREE_SPIN:
             case B.TransitionState.FREE_SPIN_RESPIN:
               this.pl(), f ? (this.free_spin_multi_sprite.node.setScale(0.9), this.free_spin_multi_sprite.node.active = true, this.free_spin_multi_sprite.spriteFrame = this.free_spin_inactive, this.free_spin_multi_sprite.node.opacity = 255, this.normal_multi_sprite.node.active = false, q && q()) : (this.changeToFreeSpinInactive(), this.free_spin_multi_sprite.node.setScale(1.05), this.free_spin_multi_sprite.node.active = true, this.free_spin_multi_sprite.spriteFrame = this.free_spin_active, this.free_spin_multi_sprite.node.runAction(cc.sequence(cc.spawn(cc.fadeTo(0.2, 0), cc.scaleTo(0.2, 0.9)), cc.callFunc(function () {
-                {
-                  g.free_spin_multi_sprite.spriteFrame = g.free_spin_inactive, g.free_spin_multi_sprite.node.opacity = 255, g.normal_multi_sprite.node.active = false, q && q();
-                }
+                g.free_spin_multi_sprite.spriteFrame = g.free_spin_inactive, g.free_spin_multi_sprite.node.opacity = 255, g.normal_multi_sprite.node.active = false, q && q();
               }))), this.scatter_glow_a.runAction(cc.sequence(cc.fadeTo(0.2, 255), cc.fadeTo(0.1, 0))), this.bonus_glow_c.runAction(cc.sequence(cc.fadeTo(0.2, 255), cc.fadeTo(0.1, 0))));
               break;
             case B.TransitionState.NORMAL:
@@ -62,9 +60,7 @@ function MultiplierItem(require, j, exports) {
         }, V.prototype.pl = function () {
           this.multiplierVfxB.stop(), this.multiplierVfxB.setCurrentTime(0), this.multiplierVfxB.play();
         }, V.prototype.Rt = function () {
-          {
-            this.node.stopAllActions(), this.node.setScale(0.9), this.node.opacity = 255;
-          }
+          this.node.stopAllActions(), this.node.setScale(0.9), this.node.opacity = 255;
         }, __decorate([T(cc.Sprite)], V.prototype, "normal_multi_sprite", undefined), __decorate([T(cc.Sprite)], V.prototype, "free_spin_multi_sprite", undefined), __decorate([T(cc.SpriteFrame)], V.prototype, "normal_active", undefined), __decorate([T(cc.SpriteFrame)], V.prototype, "normal_inactive", undefined), __decorate([T(cc.SpriteFrame)], V.prototype, "free_spin_before_inactive", undefined), __decorate([T(cc.SpriteFrame)], V.prototype, "free_spin_active", undefined), __decorate([T(cc.SpriteFrame)], V.prototype, "free_spin_inactive", undefined), __decorate([T(cc.Node)], V.prototype, "scatter_glow_a", undefined), __decorate([T(cc.Node)], V.prototype, "bonus_glow_c", undefined), __decorate([T(cc.Animation)], V.prototype, "multiplierVfxB", undefined), __decorate([Z], V);
       }(cc.Component);
     exports.default = M, cc._RF.pop();

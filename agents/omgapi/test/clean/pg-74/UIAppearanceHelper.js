@@ -46,22 +46,18 @@ function UIAppearanceHelper(require, C, exports) {
       }(),
       Y = cc._decorator.ccclass,
       y = function (D) {
-        {
-          function J() {
-            var E = D.call(this) || this;
-            E.Wg = undefined;
-            var Q0 = E.Wg = shell.uiAppearance;
-            return Q0 && (Q0.registerInterpreter("font", new U()), Q0.registerInterpreter("value", new U()), Q0.registerInterpreter("path", new U()), Q0.registerInterpreter("color", new k()), Q0.registerInterpreter("classname", new U())), E;
-          }
-          return __extends(J, D), J.prototype.v = function (E) {
-            {
-              var Q0 = this.Wg && this.Wg.v(E);
-              return null === Q0 && (Q0 = W(E)), Q0;
-            }
-          }, J.prototype.unregisterInterpreter = function (E) {
-            return this.Wg && this.Wg.unregisterInterpreter(E);
-          }, __decorate([Y("UIAppearanceHelper")], J);
+        function J() {
+          var E = D.call(this) || this;
+          E.Wg = undefined;
+          var Q0 = E.Wg = shell.uiAppearance;
+          return Q0 && (Q0.registerInterpreter("font", new U()), Q0.registerInterpreter("value", new U()), Q0.registerInterpreter("path", new U()), Q0.registerInterpreter("color", new k()), Q0.registerInterpreter("classname", new U())), E;
         }
+        return __extends(J, D), J.prototype.v = function (E) {
+          var Q0 = this.Wg && this.Wg.v(E);
+          return null === Q0 && (Q0 = W(E)), Q0;
+        }, J.prototype.unregisterInterpreter = function (E) {
+          return this.Wg && this.Wg.unregisterInterpreter(E);
+        }, __decorate([Y("UIAppearanceHelper")], J);
       }(cc.Object),
       z = Object.freeze({
         'windows': q,

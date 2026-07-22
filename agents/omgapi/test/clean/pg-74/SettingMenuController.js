@@ -38,27 +38,21 @@ function SettingMenuController(require, j, exports) {
             var p = K.bc();
             K.subControllerHolder.height = K.pc, K.subControllerBG.height = K.pc + p;
           }), this.Bv = Z.sequenceCallback(Z.delayCallback(0))(function () {
-            {
-              K.Bv = undefined;
-              for (var p = 0; p < x.length; p++) x[p]();
-            }
+            K.Bv = undefined;
+            for (var p = 0; p < x.length; p++) x[p]();
           });
         }, g.prototype.onDestroy = function () {
           var K = this.Sc;
           this.Sc = undefined, K && K();
         }, g.prototype.setBetChangeReminderLabel = function (K) {
-          {
-            this.reminderBoardLabel.string = K;
-          }
+          this.reminderBoardLabel.string = K;
         }, g.prototype.showBetReminderBoard = function (K) {
           this.Sv || (this.Sv = true, this.reminderBoard.active = true, this.reminderBoard.stopAllActions(), this.reminderBoard.runAction(cc.fadeIn(0.2)), this.originalBetAmountLabel.string = K);
         }, g.prototype.hideBetReminderBoard = function () {
-          {
-            var K = this;
-            this.Sv && (this.Sv = false, this.reminderBoard.stopAllActions(), this.reminderBoard.runAction(cc.sequence(cc.fadeOut(0.2), cc.callFunc(function () {
-              K.reminderBoard.active = false;
-            }))));
-          }
+          var K = this;
+          this.Sv && (this.Sv = false, this.reminderBoard.stopAllActions(), this.reminderBoard.runAction(cc.sequence(cc.fadeOut(0.2), cc.callFunc(function () {
+            K.reminderBoard.active = false;
+          }))));
         }, g.prototype.isSettingBetReminderBoardShowed = function () {
           return this.Sv;
         }, g.prototype.cancelToChangeBetAmount = function () {
@@ -72,36 +66,26 @@ function SettingMenuController(require, j, exports) {
           undefined === x && (x = 2);
           var b = this.Ov;
           this.Ov = undefined, b && b(), this.settingToast.stopAllActions(), b || (this.settingToast.opacity = 1), this.settingToastLabel.string = K, this.settingTurboSprite.node.active = true, this.settingTurboSprite.spriteFrame = O ? this.settingTurboOnSprite : this.settingTurboOffSprite, this.settingTurboSprite.node.stopAllActions(), this.settingTurboSprite.node.opacity = 0, this.Ov = Z.delayCallback(0)(function () {
-            {
-              p.settingToastBg.width = p.settingToastLabel.node.width + 48 + p.settingTurboSprite.node.width, p.settingToastBg.height = p.settingToastLabel.node.height + 24, p.settingToast.opacity = 255, p.settingToast.runAction(cc.sequence(cc.scaleTo(0.1, 1.2), cc.spawn(cc.scaleTo(0.1, 1), cc.sequence(cc.delayTime(0.05), cc.callFunc(function () {
-                {
-                  p.settingTurboSprite.node.runAction(cc.fadeTo(0.05, 255));
-                }
-              }))), cc.delayTime(x), cc.fadeOut(0.3), cc.callFunc(function () {
-                p.Ov = undefined;
-              })));
-            }
+            p.settingToastBg.width = p.settingToastLabel.node.width + 48 + p.settingTurboSprite.node.width, p.settingToastBg.height = p.settingToastLabel.node.height + 24, p.settingToast.opacity = 255, p.settingToast.runAction(cc.sequence(cc.scaleTo(0.1, 1.2), cc.spawn(cc.scaleTo(0.1, 1), cc.sequence(cc.delayTime(0.05), cc.callFunc(function () {
+              p.settingTurboSprite.node.runAction(cc.fadeTo(0.05, 255));
+            }))), cc.delayTime(x), cc.fadeOut(0.3), cc.callFunc(function () {
+              p.Ov = undefined;
+            })));
           });
         }, g.prototype.showSettingToast = function (K, O) {
-          {
-            var x = this;
-            undefined === O && (O = 2);
-            var p = this.Ov;
-            this.Ov = undefined, p && p(), this.settingToast.stopAllActions(), this.settingTurboSprite.node.stopAllActions(), this.settingTurboSprite.node.active = false, this.settingTurboSprite.node.opacity = 0, p || (this.settingToast.opacity = 1), this.settingToastLabel.string = K, this.Ov = Z.delayCallback(0)(function () {
-              {
-                x.settingToastBg.width = x.settingToastLabel.node.width + 48, x.settingToastBg.height = x.settingToastLabel.node.height + 24, x.settingToast.opacity = 255, x.settingToast.runAction(cc.sequence(cc.scaleTo(0.1, 1.2), cc.scaleTo(0.1, 1), cc.delayTime(O), cc.fadeOut(0.3), cc.callFunc(function () {
-                  x.Ov = undefined;
-                })));
-              }
-            });
-          }
+          var x = this;
+          undefined === O && (O = 2);
+          var p = this.Ov;
+          this.Ov = undefined, p && p(), this.settingToast.stopAllActions(), this.settingTurboSprite.node.stopAllActions(), this.settingTurboSprite.node.active = false, this.settingTurboSprite.node.opacity = 0, p || (this.settingToast.opacity = 1), this.settingToastLabel.string = K, this.Ov = Z.delayCallback(0)(function () {
+            x.settingToastBg.width = x.settingToastLabel.node.width + 48, x.settingToastBg.height = x.settingToastLabel.node.height + 24, x.settingToast.opacity = 255, x.settingToast.runAction(cc.sequence(cc.scaleTo(0.1, 1.2), cc.scaleTo(0.1, 1), cc.delayTime(O), cc.fadeOut(0.3), cc.callFunc(function () {
+              x.Ov = undefined;
+            })));
+          });
         }, g.prototype.hideSettingToast = function () {
           var K = this,
             O = this.Ov;
           this.Ov = undefined, O && O(), this.settingToast.stopAllActions(), this.settingToast.runAction(cc.sequence(cc.fadeOut(0.3), cc.callFunc(function () {
-            {
-              K.Ov = undefined;
-            }
+            K.Ov = undefined;
           })));
         }, g.prototype.showFeatureBuyToast = function (K, O) {
           var x = this;
@@ -119,9 +103,7 @@ function SettingMenuController(require, j, exports) {
             K.Iv = undefined;
           })));
         }, g.prototype.setFeatureBuyToastNodePosition = function (K, O, x) {
-          {
-            this.featureBuyToast.setPosition(K, O, x);
-          }
+          this.featureBuyToast.setPosition(K, O, x);
         }, g.prototype.buttonsHolder = function () {
           return this.holders;
         }, g.prototype.addMenuItem = function (K) {
@@ -129,23 +111,17 @@ function SettingMenuController(require, j, exports) {
         }, g.prototype.addEmptyItem = function () {
           return this.mv.push(null), this.yc(), this.holders[this.mv.length - 1];
         }, g.prototype.replaceMenuItems = function (K) {
-          {
-            this.mv.length = 0;
-            for (var O = 0, x = K.length; O < x; O++) this.mv.push(K[O]);
-            this.yc();
-          }
+          this.mv.length = 0;
+          for (var O = 0, x = K.length; O < x; O++) this.mv.push(K[O]);
+          this.yc();
         }, g.prototype.yc = function () {
           this.Kc.length = 0;
           for (var K = 0, O = this.mv.length; K < O; K++) if (this.Mc) {
-            {
-              if (K >= this.FRONT_MAX_HOLDER) break;
-              this.Kc.push(this.mv[K]);
-            }
+            if (K >= this.FRONT_MAX_HOLDER) break;
+            this.Kc.push(this.mv[K]);
           } else K >= this.FRONT_MAX_HOLDER && this.Kc.push(this.mv[K]);
         }, g.prototype.isItemVisible = function (K) {
-          {
-            return -1 !== this.Kc.indexOf(K);
-          }
+          return -1 !== this.Kc.indexOf(K);
         }, g.prototype.visibleItems = function () {
           return this.Kc.slice();
         }, g.prototype.getTotalItems = function () {
@@ -160,32 +136,24 @@ function SettingMenuController(require, j, exports) {
         }, g.prototype.setHidden = function (K) {
           this.node.active = !K;
         }, g.prototype.getSettingInfoFooterFrontHolder = function () {
-          {
-            return this.settingInfoFooterFrontHolder;
-          }
+          return this.settingInfoFooterFrontHolder;
         }, g.prototype.getSettingInfoFooterBottomHolder = function () {
           return this.settingInfoFooterBottomHolder;
         }, g.prototype.getSettingInfoFooterMiddleBottomHolder = function () {
-          {
-            return this.settingInfoFooterMiddleBottomHolder;
-          }
+          return this.settingInfoFooterMiddleBottomHolder;
         }, g.prototype.setMenusLayerHolderOffsetPosition = function (K, O) {
-          {
-            var x = this.menusLayerHolder;
-            x.setPosition(x.x + K, x.y + O);
-          }
+          var x = this.menusLayerHolder;
+          x.setPosition(x.x + K, x.y + O);
         }, g.prototype.isSwitchingMenuLayer = function () {
           return this.Cc;
         }, g.prototype.showMoreMenuLayer = function (K) {
           var O = this;
           if (undefined === K && (K = false), !this.Cc) {
-            {
-              this.Cc = true, this.Mc = false, this.yc(), this.defaultMenuLayerNode.runAction(cc.sequence(cc.spawn(cc.moveTo(0.2, 0, -this.defaultMenuLayerNode.height).easing(cc.easeQuadraticActionOut()), cc.fadeOut(0.2)), cc.callFunc(function () {
-                O.defaultMenuLayerNode.active = false, O.Cc = false, O.onMenuEndChanged && O.onMenuEndChanged();
-              }))), this.moreMenuLayerNode.active = true, this.moreMenuLayerNode.runAction(cc.spawn(cc.moveTo(0.2, 0, 0).easing(cc.easeQuadraticActionOut()), cc.fadeIn(0.2).easing(cc.easeQuadraticActionOut()))), K && (this.blackTintBackground.active = true, this.blackTintBackground.runAction(cc.fadeTo(0.2, 127.5)));
-              var x = this.onMenuStartChanged;
-              x && x(true, true);
-            }
+            this.Cc = true, this.Mc = false, this.yc(), this.defaultMenuLayerNode.runAction(cc.sequence(cc.spawn(cc.moveTo(0.2, 0, -this.defaultMenuLayerNode.height).easing(cc.easeQuadraticActionOut()), cc.fadeOut(0.2)), cc.callFunc(function () {
+              O.defaultMenuLayerNode.active = false, O.Cc = false, O.onMenuEndChanged && O.onMenuEndChanged();
+            }))), this.moreMenuLayerNode.active = true, this.moreMenuLayerNode.runAction(cc.spawn(cc.moveTo(0.2, 0, 0).easing(cc.easeQuadraticActionOut()), cc.fadeIn(0.2).easing(cc.easeQuadraticActionOut()))), K && (this.blackTintBackground.active = true, this.blackTintBackground.runAction(cc.fadeTo(0.2, 127.5)));
+            var x = this.onMenuStartChanged;
+            x && x(true, true);
           }
         }, g.prototype.hideMoreMenuLayer = function () {
           var K = this;
@@ -205,9 +173,7 @@ function SettingMenuController(require, j, exports) {
         }, g.prototype.setIsControllerPresenting = function (K) {
           this._v = K;
         }, g.prototype.setSubControllerHolderMoveDuration = function (K) {
-          {
-            this.gv = K;
-          }
+          this.gv = K;
         }, g.prototype.bc = function () {
           return this.node.parent.convertToWorldSpaceAR(cc.v2(this.node.x, this.node.y)).y;
         }, g.prototype.getGapBetweenBottomScreenValue = function () {
@@ -219,15 +185,13 @@ function SettingMenuController(require, j, exports) {
         }, g.prototype.startMovePanel = function (K, O) {
           this._v || (this.pv = false, this.Cv = false, this.subControllerHolder.height = O, this.subControllerHolder.y = -O, this.Mv = K, this.subControllerBG.height = this.bc() + O);
         }, g.prototype.movePanel = function (K) {
-          {
-            if (!this._v) {
-              this.pv = true;
-              var O = this.subControllerHolder,
-                x = this.subControllerHolder.height,
-                p = O.parent.convertToNodeSpaceAR(cc.v2(0, K)).y,
-                b = Math.abs(this.Mv - K);
-              this.Cv ? (O.y = p - x, O.y >= 0 && (O.y = 0)) : b > 60 ? K > this.Mv && (this.Cv = true, this.subControllerBG.opacity = 255, this.Tv && this.Tv()) : O.y = p - x;
-            }
+          if (!this._v) {
+            this.pv = true;
+            var O = this.subControllerHolder,
+              x = this.subControllerHolder.height,
+              p = O.parent.convertToNodeSpaceAR(cc.v2(0, K)).y,
+              b = Math.abs(this.Mv - K);
+            this.Cv ? (O.y = p - x, O.y >= 0 && (O.y = 0)) : b > 60 ? K > this.Mv && (this.Cv = true, this.subControllerBG.opacity = 255, this.Tv && this.Tv()) : O.y = p - x;
           }
         }, g.prototype.closePanel = function () {
           var K = this;
@@ -235,22 +199,16 @@ function SettingMenuController(require, j, exports) {
             this._v = true;
             var O = this.subControllerHolder.height + this.bc();
             this.subControllerHolder.runAction(cc.sequence(cc.moveTo(this.gv, 0, -O), cc.callFunc(function () {
-              {
-                K._v = false, K.pv = false, K.subControllerBG.opacity = 0;
-              }
+              K._v = false, K.pv = false, K.subControllerBG.opacity = 0;
             })));
           }
         }, g.prototype.getCurrentPanelTopPositionY = function () {
-          {
-            var K = this.subControllerHolder;
-            return K.y + K.height;
-          }
+          var K = this.subControllerHolder;
+          return K.y + K.height;
         }, g.prototype.setWalletButtonLock = function (K) {
           undefined === K && (K = false), this.yv = K;
         }, g.prototype.interactableWalletButton = function (K, O) {
-          {
-            false === this.yv && !K && O && this.closePanel();
-          }
+          false === this.yv && !K && O && this.closePanel();
         }, g.prototype.setMenuUIBlock = function (K) {
           this.settingMenuUIBlock.active = K;
         }, g.prototype.updateLayout = function (K) {

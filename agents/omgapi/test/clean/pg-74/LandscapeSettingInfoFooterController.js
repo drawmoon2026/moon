@@ -22,9 +22,7 @@ function LandscapeSettingInfoFooterController(require, j, exports) {
           N.prototype.boot.call(this);
           var f = X.uiAppearanceHelper.v("setting.secondary_theme_color");
           this.borders.forEach(function (l) {
-            {
-              Z.setNodeColorWithOpacity(l, f);
-            }
+            Z.setNodeColorWithOpacity(l, f);
           });
           var g = X.uiAppearanceHelper.v("setting.tertiary_theme_color");
           this.descriptionLabel.forEach(function (l) {

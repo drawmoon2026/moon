@@ -14,23 +14,17 @@ function BonusFreeSpinController(require, j, exports) {
       M = Z.property,
       C = function (V) {
         function N() {
-          {
-            var q = null !== V && V.apply(this, arguments) || this;
-            return q.animationAnim = undefined, q.greySplash = undefined, q.freeSpinText = undefined, q.glow = undefined, q.freeSpinTextSprite = undefined, q.numberDisplayNode = undefined, q.particles = [], q.ci = undefined, q.hi = undefined, q;
-          }
+          var q = null !== V && V.apply(this, arguments) || this;
+          return q.animationAnim = undefined, q.greySplash = undefined, q.freeSpinText = undefined, q.glow = undefined, q.freeSpinTextSprite = undefined, q.numberDisplayNode = undefined, q.particles = [], q.ci = undefined, q.hi = undefined, q;
         }
         return __extends(N, V), Object.defineProperty(N.prototype, "numberDisplayController", {
           'get': function () {
-            {
-              return this.ci || (this.ci = this.numberDisplayNode.getComponent("NumberDisplayController")), this.ci;
-            }
+            return this.ci || (this.ci = this.numberDisplayNode.getComponent("NumberDisplayController")), this.ci;
           },
           'enumerable': false,
           'configurable': true
         }), N.prototype.init = function (q) {
-          {
-            this.freeSpinTextSprite.spriteFrame = q;
-          }
+          this.freeSpinTextSprite.spriteFrame = q;
         }, N.prototype.play = function (q, f) {
           var g = this;
           B.playAudio(X.GENERAL_AUDIO.freespinWon.key), B.playVocal(X.VOX.maJiangHuLe.key), this.node.opacity = 255, this.greySplash.runAction(cc.fadeTo(0.5, 150).easing(cc.easeIn(2))), this.numberDisplayController.clear(), this.numberDisplayController.displayNumber(q, false), this.hi = f, this.scheduleOnce(function () {
@@ -46,9 +40,7 @@ function BonusFreeSpinController(require, j, exports) {
         }, N.prototype.Zt = function () {
           this.freeSpinText.scale = 0, this.greySplash.opacity = 0, this.glow.opacity = 0;
         }, N.prototype.destroy = function () {
-          {
-            return this.Zt(), this.node.destroy(), V.prototype.destroy.call(this);
-          }
+          return this.Zt(), this.node.destroy(), V.prototype.destroy.call(this);
         }, __decorate([M(cc.Animation)], N.prototype, "animationAnim", undefined), __decorate([M(cc.Node)], N.prototype, "greySplash", undefined), __decorate([M(cc.Node)], N.prototype, "freeSpinText", undefined), __decorate([M(cc.Node)], N.prototype, "glow", undefined), __decorate([M(cc.Sprite)], N.prototype, "freeSpinTextSprite", undefined), __decorate([M(cc.Node)], N.prototype, "numberDisplayNode", undefined), __decorate([M([cc.ParticleSystem])], N.prototype, "particles", undefined), __decorate([T], N);
       }(cc.Component);
     exports.default = C, cc._RF.pop();

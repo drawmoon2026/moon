@@ -10,9 +10,7 @@ function PopOutItemHandler(F, c, exports) {
     var m = cc._decorator.ccclass,
       B = function () {
         function X() {
-          {
-            this.Ss = undefined, this.Df = undefined, this.Uf = undefined, this.xf = undefined, this.Ff = undefined;
-          }
+          this.Ss = undefined, this.Df = undefined, this.Uf = undefined, this.xf = undefined, this.Ff = undefined;
         }
         return X.prototype.init = function (Z, T) {
           var M = cc.instantiate(Z);
@@ -22,10 +20,8 @@ function PopOutItemHandler(F, c, exports) {
         }, X.prototype.setCancelCallback = function (Z) {
           this.Ss = Z;
         }, X.prototype.Wf = function () {
-          {
-            var Z = this.Ss;
-            Z && Z();
-          }
+          var Z = this.Ss;
+          Z && Z();
         }, X.prototype.destroy = function () {
           this.node.destroy(), _super.prototype.destroy.call(this);
         }, X.prototype.setPopoutItemShowCallback = function (Z) {
@@ -37,9 +33,7 @@ function PopOutItemHandler(F, c, exports) {
         }, X.prototype.runPopoutItemHideCallback = function () {
           var Z = this;
           this.Uf && this.Uf(function () {
-            {
-              Z.xf.off(cc.Node.EventType.TOUCH_END, Z.Wf, Z), Z.xf.active = false;
-            }
+            Z.xf.off(cc.Node.EventType.TOUCH_END, Z.Wf, Z), Z.xf.active = false;
           });
         }, __decorate([m], X);
       }();

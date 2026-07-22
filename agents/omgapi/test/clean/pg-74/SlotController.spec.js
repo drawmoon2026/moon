@@ -9,10 +9,8 @@ function SlotController_spec(F, c, exports) {
     var m = System.get("automation") && System.get("automation").GameData;
     m && m.emit("SymbolShake");
   }, exports.symbolBreak = function () {
-    {
-      var m = System.get("automation") && System.get("automation").GameData;
-      m && m.emit("SymbolBreak");
-    }
+    var m = System.get("automation") && System.get("automation").GameData;
+    m && m.emit("SymbolBreak");
   }, exports.symbolDrop = function () {
     var m = System.get("automation") && System.get("automation").GameData;
     m && m.emit("SymbolDrop");

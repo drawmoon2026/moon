@@ -37,14 +37,12 @@ function MJNormalGameState(require, j, exports) {
             'generalControllers': this.generalControllers
           })).run();
         }, O.prototype.Mr = function (x) {
-          {
-            new T.default(this.dataSource, {
-              'generalControllers': this.generalControllers,
-              'bonusControllers': undefined
-            }, x, new C.default(this.dataSource, {
-              'generalControllers': this.generalControllers
-            })).run();
-          }
+          new T.default(this.dataSource, {
+            'generalControllers': this.generalControllers,
+            'bonusControllers': undefined
+          }, x, new C.default(this.dataSource, {
+            'generalControllers': this.generalControllers
+          })).run();
         }, O.prototype.yr = function (x) {
           new Z.default(this.dataSource, {
             'generalControllers': this.generalControllers

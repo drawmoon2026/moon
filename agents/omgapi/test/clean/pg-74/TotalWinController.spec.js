@@ -6,12 +6,10 @@ function TotalWinController_spec(F, c, exports) {
   var I = {};
   I.value = true;
   cc._RF.push(c, "170daHUimdFvI5WxYlNXB4I", "TotalWinController.spec") || (Object.defineProperty(exports, "__esModule", I), exports.initTotalWinNodes = exports.skipTotalWinAnimationShownEvent = exports.collectTotalWinButtonShownEvent = undefined, exports.collectTotalWinButtonShownEvent = function () {
-    {
-      var m = System.get("automation") && System.get("automation").GameData;
-      var B = {};
-      B.displayState = "CollectButtonShown";
-      m && m.emit("TotalWin", B);
-    }
+    var m = System.get("automation") && System.get("automation").GameData;
+    var B = {};
+    B.displayState = "CollectButtonShown";
+    m && m.emit("TotalWin", B);
   }, exports.skipTotalWinAnimationShownEvent = function () {
     var m = System.get("automation") && System.get("automation").GameData;
     var B = {};

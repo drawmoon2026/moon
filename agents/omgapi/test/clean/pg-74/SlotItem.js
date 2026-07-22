@@ -11,10 +11,8 @@ function SlotItem(require, c, exports) {
       B = cc._decorator.ccclass,
       X = function (Z) {
         function T() {
-          {
-            var M = null !== Z && Z.apply(this, arguments) || this;
-            return M.positionIndex = 0, M.sprite = undefined, M.normalSpriteFrame = undefined, M.blurSpriteFrame = undefined, M.normalScale = undefined, M.blurScale = undefined, M.getSymbolZOrder = undefined, M;
-          }
+          var M = null !== Z && Z.apply(this, arguments) || this;
+          return M.positionIndex = 0, M.sprite = undefined, M.normalSpriteFrame = undefined, M.blurSpriteFrame = undefined, M.normalScale = undefined, M.blurScale = undefined, M.getSymbolZOrder = undefined, M;
         }
         return __extends(T, Z), Object.defineProperty(T.prototype, "visible", {
           'get': function () {

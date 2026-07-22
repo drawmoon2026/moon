@@ -10,10 +10,8 @@ function ButtonHitTest(F, c, exports) {
       var Z = cc.internal.eventManager[m.Cs](X);
       if (!Z) return false;
       for (var T, M = Z[m.Ms], C = B.parent.convertToWorldSpaceAR(B.getPosition()), V = 0; V < M.length; ++V) if (M[V].owner[m.ys](C, M[V])) {
-        {
-          T = M[V].owner;
-          break;
-        }
+        T = M[V].owner;
+        break;
       }
       return T && T === B;
     };

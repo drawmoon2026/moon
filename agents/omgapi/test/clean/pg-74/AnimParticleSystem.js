@@ -305,9 +305,7 @@ function AnimParticleSystem(require, module, exports) {
           },
           'endScaleIsFactor': {
             'visible': function () {
-              {
-                return this.startScale !== this.endScale || this.startScaleVar !== this.endScaleVar;
-              }
+              return this.startScale !== this.endScale || this.startScaleVar !== this.endScaleVar;
             },
             'default': false
           },
@@ -330,10 +328,8 @@ function AnimParticleSystem(require, module, exports) {
           },
           'scaleEasingParam': {
             'visible': function () {
-              {
-                var q;
-                return true === (null == (q = M[this.scaleEasing]) ? undefined : q.needParam);
-              }
+              var q;
+              return true === (null == (q = M[this.scaleEasing]) ? undefined : q.needParam);
             },
             'type': cc.Float,
             'tooltip': false,
@@ -402,18 +398,14 @@ function AnimParticleSystem(require, module, exports) {
           },
           'gravityVec': {
             'visible': function () {
-              {
-                return this.emitterMode === T.GRAVITY;
-              }
+              return this.emitterMode === T.GRAVITY;
             },
             'tooltip': false,
             'default': cc.v2(0, 0)
           },
           'gravityVecVar': {
             'visible': function () {
-              {
-                return this.emitterMode === T.GRAVITY;
-              }
+              return this.emitterMode === T.GRAVITY;
             },
             'tooltip': false,
             'default': cc.v2(0, 0)
@@ -434,19 +426,15 @@ function AnimParticleSystem(require, module, exports) {
           0 !== g && (this.schedule(this._, f), g > 0 && (this.unschedule(this.stopSystem), this.scheduleOnce(this.stopSystem, g)));
         },
         'stopSystem': function (q) {
-          {
-            var f = this;
-            undefined === q && (q = false), this.unschedule(this._), this.unschedule(this.stopSystem), true === q && (this.l.forEach(function (g) {
-              g.stopAllActions(), f.nodePool.put(g);
-            }), this.l = []);
-          }
+          var f = this;
+          undefined === q && (q = false), this.unschedule(this._), this.unschedule(this.stopSystem), true === q && (this.l.forEach(function (g) {
+            g.stopAllActions(), f.nodePool.put(g);
+          }), this.l = []);
         },
         '_': function () {
           if (!(this.l.length >= this.particleCount)) {
-            {
-              var q = this.nodePool.get();
-              q || (q = cc.instantiate(this.particlePrefab)), this.m(q), q.getComponent(cc.Animation).play();
-            }
+            var q = this.nodePool.get();
+            q || (q = cc.instantiate(this.particlePrefab)), this.m(q), q.getComponent(cc.Animation).play();
           }
         },
         'getLife': function (q, f) {
@@ -465,9 +453,7 @@ function AnimParticleSystem(require, module, exports) {
           return (0, Z.getRandomFromRange)(q, f);
         },
         'getSourceStartAlpha': function (q, f) {
-          {
-            return (0, Z.getRandomFromRange)(q, f);
-          }
+          return (0, Z.getRandomFromRange)(q, f);
         },
         'getSourceStartColor': function (q, f) {
           return f.equals(cc.Color.BLACK) ? q : new cc.Color((0, Z.getRandomFromRange)(q.getR(), f.getR()), (0, Z.getRandomFromRange)(q.getG(), f.getG()), (0, Z.getRandomFromRange)(q.getB(), f.getB()));
@@ -516,10 +502,8 @@ function AnimParticleSystem(require, module, exports) {
           return [cc.v2(P - Q1 * Q9, G - Q2), cc.v2(W - Q4 * Q9, D - Q5), cc.v2(J - Q7 * Q9, E - Q8)];
         },
         'getMoveAction': function (q, f, g, l, K) {
-          {
-            var O = cc.moveTo(g, f);
-            return l ? O.easing(l(K)) : O;
-          }
+          var O = cc.moveTo(g, f);
+          return l ? O.easing(l(K)) : O;
         },
         'getBezierAction': function (q, f, g, l, K) {
           var O = cc.bezierTo(g, f);
@@ -541,11 +525,9 @@ function AnimParticleSystem(require, module, exports) {
           return 0 === l ? cc.fadeTo(g, f).easing(x) : cc.sequence(cc.delayTime(l * g), cc.fadeTo(g - l * g, f).easing(x));
         },
         'getTintAction': function (q, f, g, l, K, O) {
-          {
-            if (!K) return 0 === l ? cc.tintTo(g, f) : cc.sequence(cc.delayTime(l * g), cc.tintTo(g - l * g, f));
-            var x = K(O);
-            return 0 === l ? cc.tintTo(g, f).easing(x) : cc.sequence(cc.delayTime(l * g), cc.tintTo(g - l * g, f).easing(x));
-          }
+          if (!K) return 0 === l ? cc.tintTo(g, f) : cc.sequence(cc.delayTime(l * g), cc.tintTo(g - l * g, f));
+          var x = K(O);
+          return 0 === l ? cc.tintTo(g, f).easing(x) : cc.sequence(cc.delayTime(l * g), cc.tintTo(g - l * g, f).easing(x));
         },
         'm': function (q) {
           var K = this,
@@ -556,17 +538,13 @@ function AnimParticleSystem(require, module, exports) {
             H = this.getEmissionAngle(this.angle, this.angleVar),
             U = [];
           if (this.emitterMode === T.LINEAR) {
-            {
-              var k,
-                Y = this.getSourceEndPositionLinear(x, L, H, O);
-              U.push(this.getMoveAction(q.position, Y, O, null == (k = M[this.particleMovementEasing]) ? undefined : k.proto, this.particleMovementEasingParam));
-            }
+            var k,
+              Y = this.getSourceEndPositionLinear(x, L, H, O);
+            U.push(this.getMoveAction(q.position, Y, O, null == (k = M[this.particleMovementEasing]) ? undefined : k.proto, this.particleMovementEasingParam));
           } else if (this.emitterMode === T.GRAVITY) {
-            {
-              var z,
-                P = this.getSourceEndPositionGravity(x, L, H, O, this.gravityVec, this.gravityVecVar);
-              U.push(this.getBezierAction(q.position, P, O, null == (z = M[this.particleMovementEasing]) ? undefined : z.proto, this.particleMovementEasingParam));
-            }
+            var z,
+              P = this.getSourceEndPositionGravity(x, L, H, O, this.gravityVec, this.gravityVecVar);
+            U.push(this.getBezierAction(q.position, P, O, null == (z = M[this.particleMovementEasing]) ? undefined : z.proto, this.particleMovementEasingParam));
           }
           var G,
             W = q.scale = this.getSourceStartScale(this.startScale, this.startScaleVar),
@@ -580,12 +558,10 @@ function AnimParticleSystem(require, module, exports) {
             Q2 = q.opacity = this.getSourceStartAlpha(this.startAlpha, this.startAlphaVar),
             Q3 = this.getSourceEndAlpha(Q2, this.endAlpha, this.endAlphaVar);
           if (Q2 !== Q3 && this.alphaDelayRatio < 1 && U.push(this.getFadeAction(Q2, Q3, O, this.alphaDelayRatio, null == (Q1 = M[this.alphaEasing]) ? undefined : Q1.proto, this.alphaEasingParam)), !(this.startColor.equals(cc.Color.WHITE) && this.startColorVar.equals(cc.Color.BLACK) && this.endColor.equals(cc.Color.WHITE) && this.endColorVar.equals(cc.Color.BLACK))) {
-            {
-              var Q4,
-                Q5 = q.color = this.getSourceStartColor(this.startColor, this.startColorVar),
-                Q6 = this.getSourceEndColor(Q5, this.endColor, this.endColorVar);
-              !Q5.equals(Q6) && this.colorDelayRatio < 1 && U.push(this.getTintAction(Q5, Q6, O, this.colorDelayRatio, null == (Q4 = M[this.colorEasing]) ? undefined : Q4.proto, this.colorEasingParam));
-            }
+            var Q4,
+              Q5 = q.color = this.getSourceStartColor(this.startColor, this.startColorVar),
+              Q6 = this.getSourceEndColor(Q5, this.endColor, this.endColorVar);
+            !Q5.equals(Q6) && this.colorDelayRatio < 1 && U.push(this.getTintAction(Q5, Q6, O, this.colorDelayRatio, null == (Q4 = M[this.colorEasing]) ? undefined : Q4.proto, this.colorEasingParam));
           }
           var Q7,
             Q8 = U.length;

@@ -18,9 +18,7 @@ function SettingSlider(Q, module, exports) {
         'showValue': false
       },
       'setValueColor': function (I, m) {
-        {
-          this.Em = I, this.Nm = m;
-        }
+        this.Em = I, this.Nm = m;
       },
       'init': function () {
         for (var I = this, m = this.Tm = [], B = this.numInterval, X = this.minNum, Z = this.maxUnit, T = this.content, M = 0; M <= Z; M++) {
@@ -34,29 +32,23 @@ function SettingSlider(Q, module, exports) {
           q.active && (g.stopPropagation(), I.km = g.getLocation().x, I.Rm = T.x);
         }), q.on(cc.Node.EventType.TOUCH_MOVE, function (g) {
           if (q.active) {
-            {
-              g.stopPropagation();
-              var K = g.getLocation().x - I.km,
-                O = I.Rm + K;
-              if (O < N) T.x = N, I.setLight(Z);else if (O > -621) T.x = -621, I.setLight(0);else {
-                var x = Math.round(K / 105),
-                  p = 105 * x,
-                  b = I.Rm + p;
-                T.x = b, I.setLight(-((621 + I.Rm) / 105 + x) / 2);
-              }
+            g.stopPropagation();
+            var K = g.getLocation().x - I.km,
+              O = I.Rm + K;
+            if (O < N) T.x = N, I.setLight(Z);else if (O > -621) T.x = -621, I.setLight(0);else {
+              var x = Math.round(K / 105),
+                p = 105 * x,
+                b = I.Rm + p;
+              T.x = b, I.setLight(-((621 + I.Rm) / 105 + x) / 2);
             }
           }
         }), q.on(cc.Node.EventType.TOUCH_CANCEL, function (g) {
           q.active && (g.stopPropagation(), I.saveValue && I.saveValue(I.jm));
         }), q.on(cc.Node.EventType.TOUCH_END, function (g) {
-          {
-            q.active && (g.stopPropagation(), I.saveValue && I.saveValue(I.jm));
-          }
+          q.active && (g.stopPropagation(), I.saveValue && I.saveValue(I.jm));
         }), this.alwaysShow) {
-          {
-            var f = this.jm || 0;
-            this.setDefaultFirstSliderNum(f);
-          }
+          var f = this.jm || 0;
+          this.setDefaultFirstSliderNum(f);
         } else q.active = false;
       },
       'setLight': function (I, m) {
@@ -73,14 +65,10 @@ function SettingSlider(Q, module, exports) {
         this.content.x = B, this.setLight(m / 2, true);
       },
       'setValue': function (I) {
-        {
-          this.jm = I;
-        }
+        this.jm = I;
       },
       'getValue': function () {
-        {
-          return this.jm;
-        }
+        return this.jm;
       },
       'updateSlider': function () {
         this.setDefaultFirstSliderNum(this.jm);
