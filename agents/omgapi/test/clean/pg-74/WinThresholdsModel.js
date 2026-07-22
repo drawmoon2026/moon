@@ -3,66 +3,66 @@
 function WinThresholdsModel(F, c, j) {
   'use strict';
 
-  if (!cc["_RF"]["push"](c, "43fa7kpruFLXK4fYDhrIgSc", "WinThresholdsModel")) {
+  if (!cc._RF.push(c, "43fa7kpruFLXK4fYDhrIgSc", "WinThresholdsModel")) {
     var I = {};
-    I["value"] = !0;
-    Object["defineProperty"](j, "__esModule", I), j["WinThresholdsModel"] = void 0;
+    I.value = true;
+    Object.defineProperty(j, "__esModule", I), j.WinThresholdsModel = undefined;
     var m = F("Utils"),
       B = function () {
         {
           function X(Z) {
             {
-              Z && (this['oC'] = JSON["parse"](JSON["stringify"](Z)), this['MC'] = Z['mw'], this['yC'] = Z['bw'], this['wC'] = Z["mgw"], this['BC'] = Z["smgw"]);
+              Z && (this.oC = JSON.parse(JSON.stringify(Z)), this.MC = Z.mw, this.yC = Z.bw, this.wC = Z.mgw, this.BC = Z.smgw);
             }
           }
-          return X["prototype"]["getAllThresholds"] = function (Z, T, M) {
+          return X.prototype.getAllThresholds = function (Z, T, M) {
             {
               var C = Z * T * M;
               return {
-                'mediumWinThreshold': m["toDecimalWithExp"](C * this['MC'], 2),
-                'bigWinThreshold': m["toDecimalWithExp"](C * this['yC'], 2),
-                'megaWinThreshold': m["toDecimalWithExp"](C * this['wC'], 2),
-                'superMegaWinThreshold': m["toDecimalWithExp"](C * this['BC'], 2)
+                'mediumWinThreshold': m.toDecimalWithExp(C * this.MC, 2),
+                'bigWinThreshold': m.toDecimalWithExp(C * this.yC, 2),
+                'megaWinThreshold': m.toDecimalWithExp(C * this.wC, 2),
+                'superMegaWinThreshold': m.toDecimalWithExp(C * this.BC, 2)
               };
             }
-          }, Object["defineProperty"](X["prototype"], "rawData", {
+          }, Object.defineProperty(X.prototype, "rawData", {
             'get': function () {
-              return this['oC'];
+              return this.oC;
             },
-            'enumerable': !1,
-            'configurable': !0
-          }), Object["defineProperty"](X["prototype"], "mediumWin", {
-            'get': function () {
-              {
-                return this['MC'];
-              }
-            },
-            'enumerable': !1,
-            'configurable': !0
-          }), Object["defineProperty"](X["prototype"], "bigWin", {
+            'enumerable': false,
+            'configurable': true
+          }), Object.defineProperty(X.prototype, "mediumWin", {
             'get': function () {
               {
-                return this['yC'];
+                return this.MC;
               }
             },
-            'enumerable': !1,
-            'configurable': !0
-          }), Object["defineProperty"](X["prototype"], "megaWin", {
+            'enumerable': false,
+            'configurable': true
+          }), Object.defineProperty(X.prototype, "bigWin", {
             'get': function () {
-              return this['wC'];
+              {
+                return this.yC;
+              }
             },
-            'enumerable': !1,
-            'configurable': !0
-          }), Object["defineProperty"](X["prototype"], "superMegaWin", {
+            'enumerable': false,
+            'configurable': true
+          }), Object.defineProperty(X.prototype, "megaWin", {
             'get': function () {
-              return this['BC'];
+              return this.wC;
             },
-            'enumerable': !1,
-            'configurable': !0
+            'enumerable': false,
+            'configurable': true
+          }), Object.defineProperty(X.prototype, "superMegaWin", {
+            'get': function () {
+              return this.BC;
+            },
+            'enumerable': false,
+            'configurable': true
           }), X;
         }
       }();
-    j["WinThresholdsModel"] = B, cc["_RF"]["pop"]();
+    j.WinThresholdsModel = B, cc._RF.pop();
   }
 }
 module.exports = WinThresholdsModel;

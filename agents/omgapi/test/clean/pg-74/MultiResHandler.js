@@ -3,10 +3,10 @@
 function MultiResHandler(Q, F) {
   'use strict';
 
-  if (!cc["_RF"]["push"](F, "3ae3du76uBKurm1YFGdqj7/", "MultiResHandler")) {
+  if (!cc._RF.push(F, "3ae3du76uBKurm1YFGdqj7/", "MultiResHandler")) {
     {
-      var c = System["get"]("common")["MultiResHandler"];
-      F["exports"]["default"] = c, F["exports"]["__esModule"] = !0, cc["_RF"]["pop"]();
+      var c = System.get("common").MultiResHandler;
+      F.exports.default = c, F.exports.__esModule = true, cc._RF.pop();
     }
   }
 }

@@ -3,10 +3,10 @@
 function APIClient(Q, F) {
   'use strict';
 
-  if (!cc["_RF"]["push"](F, "d34ca2GoqVBUbdLTDYW//l7", "APIClient")) {
+  if (!cc._RF.push(F, "d34ca2GoqVBUbdLTDYW//l7", "APIClient")) {
     {
-      var c = System["get"]("bvframework")["APIClient"];
-      F["exports"]["default"] = c, F["exports"]["__esModule"] = !0, cc["_RF"]["pop"]();
+      var c = System.get("bvframework").APIClient;
+      F.exports.default = c, F.exports.__esModule = true, cc._RF.pop();
     }
   }
 }

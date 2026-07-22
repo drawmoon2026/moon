@@ -70,7 +70,7 @@ console.log(`替换调用 ${replaced} 处`);
 
 // ── Babel AST 变换 ──
 const ast = parser.parse(code, { errorRecovery: true, sourceType: 'script' });
-const stats = { fold: 0, deadBranch: 0, hex: 0, deadAlias: 0, deadFn: 0 };
+const stats = { fold: 0, deadBranch: 0, hex: 0, deadAlias: 0, deadFn: 0, bool: 0, undef: 0, dot: 0 };
 
 traverse(ast, {
     // 折叠 "a"+"b" → "ab"
@@ -107,8 +107,23 @@ traverse(ast, {
     },
 });
 
+// 第二遍:美化类变换(放单独一遍,避免第一遍的结构改动导致同级节点被跳过)
+traverse(ast, {
+    UnaryExpression(p) {
+        const n = p.node;
+        if (n.operator === '!' && t.isNumericLiteral(n.argument)) { p.replaceWith(t.booleanLiteral(n.argument.value === 0)); stats.bool++; }
+        else if (n.operator === 'void' && t.isNumericLiteral(n.argument)) { p.replaceWith(t.identifier('undefined')); stats.undef++; }
+    },
+    MemberExpression(p) {
+        const n = p.node;
+        if (n.computed && t.isStringLiteral(n.property) && /^[A-Za-z_$][\w$]*$/.test(n.property.value)) {
+            n.property = t.identifier(n.property.value); n.computed = false; stats.dot++;
+        }
+    },
+});
+
 const out = generate(ast, { comments: false, compact: false, concise: false, retainLines: false }).code;
-console.log(`AST变换: 折叠${stats.fold} 死分支${stats.deadBranch} hex${stats.hex} 死别名${stats.deadAlias} 死函数${stats.deadFn}`);
+console.log(`AST变换: 折叠${stats.fold} 死分支${stats.deadBranch} hex${stats.hex} 死别名${stats.deadAlias} 死函数${stats.deadFn} 布尔${stats.bool} undef${stats.undef} 点属性${stats.dot}`);
 
 fs.mkdirSync(path.dirname(outPath), { recursive: true });
 fs.writeFileSync(outPath, out);

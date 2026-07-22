@@ -3,17 +3,17 @@
 function SlotDependencyManager(c, j, I) {
   'use strict';
 
-  if (!cc["_RF"]["push"](j, "f64caMdMMxCYYPxBmpx6+nL", "SlotDependencyManager")) {
+  if (!cc._RF.push(j, "f64caMdMMxCYYPxBmpx6+nL", "SlotDependencyManager")) {
     var m = {};
-    m["value"] = !0;
-    Object["defineProperty"](I, "__esModule", m), I["walletHelper"] = void 0;
+    m.value = true;
+    Object.defineProperty(I, "__esModule", m), I.walletHelper = undefined;
     var B = c("WalletHelper");
     var X = {};
-    X["enumerable"] = !0;
-    X["get"] = function () {
-      return B["walletHelper"];
+    X.enumerable = true;
+    X.get = function () {
+      return B.walletHelper;
     };
-    Object["defineProperty"](I, "walletHelper", X), cc["_RF"]["pop"]();
+    Object.defineProperty(I, "walletHelper", X), cc._RF.pop();
   }
 }
 module.exports = SlotDependencyManager;

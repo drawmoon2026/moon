@@ -3,68 +3,68 @@
 function ButtonTheme(c, j, I) {
   'use strict';
 
-  if (!cc["_RF"]["push"](j, "2a5d1nUeQZE9KCVbljwPCZP", "ButtonTheme")) {
+  if (!cc._RF.push(j, "2a5d1nUeQZE9KCVbljwPCZP", "ButtonTheme")) {
     {
-      I["__esModule"] = !0, I["default"] = void 0;
+      I.__esModule = true, I.default = undefined;
       var m = {};
-      m["NONE"] = 0;
-      m["COLOR"] = 1;
-      m["SPRITE"] = 2;
-      m["SCALE"] = 3;
+      m.NONE = 0;
+      m.COLOR = 1;
+      m.SPRITE = 2;
+      m.SCALE = 3;
       var B = {};
-      B["tooltip"] = !1;
-      B["default"] = '';
+      B.tooltip = false;
+      B.default = '';
       var X = c("UIAppearanceHelper"),
-        Z = cc["Enum"](m),
-        T = cc["Class"]({
-          'extends': cc["Component"],
+        Z = cc.Enum(m),
+        T = cc.Class({
+          'extends': cc.Component,
           'ctor': function () {},
-          'editor': !1,
+          'editor': false,
           'properties': {
             'transition': {
-              'default': Z["NONE"],
-              'tooltip': !1,
+              'default': Z.NONE,
+              'tooltip': false,
               'type': Z,
-              'animatable': !1,
+              'animatable': false,
               'notify': function () {
-                this['ws']();
+                this.ws();
               }
             },
             'domainKey': B,
             'colorKey': {
-              'tooltip': !1,
+              'tooltip': false,
               'default': '',
               'notify': function () {
-                this['Bs']();
+                this.Bs();
               }
             }
           },
           'onLoad': function () {
             {
-              this['As'] = this["node"]["getComponent"](cc["Button"]), this['ws'](), this['Bs']();
+              this.As = this.node.getComponent(cc.Button), this.ws(), this.Bs();
             }
           },
           'ws': function () {
-            var M = this['As'];
-            M && (M["transition"] = this["transition"]);
+            var M = this.As;
+            M && (M.transition = this.transition);
           },
           'Bs': function () {
             {
-              var M = this['As'];
-              if (M && this["transition"] == Z["COLOR"]) {
+              var M = this.As;
+              if (M && this.transition == Z.COLOR) {
                 {
-                  this["domainKey"], this["colorKey"];
-                  var C = X["uiAppearanceHelper"]['v'](this["domainKey"] + '.' + this["colorKey"] + ".normal"),
-                    V = X["uiAppearanceHelper"]['v'](this["domainKey"] + '.' + this["colorKey"] + ".pressed"),
-                    N = X["uiAppearanceHelper"]['v'](this["domainKey"] + '.' + this["colorKey"] + ".hover"),
-                    q = X["uiAppearanceHelper"]['v'](this["domainKey"] + '.' + this["colorKey"] + ".disabled");
-                  C && (M["node"]["opacity"] = C["getA"](), M["normalColor"] = C, M["pressedColor"] = V, M["hoverColor"] = N, M["disabledColor"] = q);
+                  this.domainKey, this.colorKey;
+                  var C = X.uiAppearanceHelper.v(this.domainKey + '.' + this.colorKey + ".normal"),
+                    V = X.uiAppearanceHelper.v(this.domainKey + '.' + this.colorKey + ".pressed"),
+                    N = X.uiAppearanceHelper.v(this.domainKey + '.' + this.colorKey + ".hover"),
+                    q = X.uiAppearanceHelper.v(this.domainKey + '.' + this.colorKey + ".disabled");
+                  C && (M.node.opacity = C.getA(), M.normalColor = C, M.pressedColor = V, M.hoverColor = N, M.disabledColor = q);
                 }
               }
             }
           }
         });
-      I["default"] = T, j["exports"] = I["default"], cc["_RF"]["pop"]();
+      I.default = T, j.exports = I.default, cc._RF.pop();
     }
   }
 }

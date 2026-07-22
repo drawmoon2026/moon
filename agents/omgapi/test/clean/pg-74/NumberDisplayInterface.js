@@ -3,45 +3,45 @@
 function NumberDisplayInterface(F, j, I) {
   'use strict';
 
-  if (!cc["_RF"]["push"](j, "6e9deOwoQZHDb/Mv4FAbr3R", "NumberDisplayInterface")) {
+  if (!cc._RF.push(j, "6e9deOwoQZHDb/Mv4FAbr3R", "NumberDisplayInterface")) {
     var m = {};
-    m["value"] = !0;
-    Object["defineProperty"](I, "__esModule", m);
+    m.value = true;
+    Object.defineProperty(I, "__esModule", m);
     var B = F("Utils"),
-      X = cc["_decorator"],
-      Z = X["ccclass"],
-      T = X["property"],
+      X = cc._decorator,
+      Z = X.ccclass,
+      T = X.property,
       M = function (C) {
         function V() {
-          var g = null !== C && C["apply"](this, arguments) || this;
-          return g["numberContainer"] = void 0, g["maxContainerSize"] = 1142, g["enableComma"] = !0, g["enableDecimal"] = !0, g["enableShortenNumber"] = !1, g;
+          var g = null !== C && C.apply(this, arguments) || this;
+          return g.numberContainer = undefined, g.maxContainerSize = 1142, g.enableComma = true, g.enableDecimal = true, g.enableShortenNumber = false, g;
         }
         var N = {};
-        N["tooltip"] = !1;
+        N.tooltip = false;
         var q = {};
-        q["tooltip"] = !1;
+        q.tooltip = false;
         var f = {};
-        f["tooltip"] = !1;
-        return __extends(V, C), V["prototype"]["numberWithComma"] = function (g) {
-          var l = B["getDefaultCurrencyFormat"]()["groupSeparator"];
-          return g["toString"]()["replace"](/\B(?=(\d{3})+(?!\d))/g, l);
-        }, V["prototype"]["setResizeAnimation"] = function (g) {
+        f.tooltip = false;
+        return __extends(V, C), V.prototype.numberWithComma = function (g) {
+          var l = B.getDefaultCurrencyFormat().groupSeparator;
+          return g.toString().replace(/\B(?=(\d{3})+(?!\d))/g, l);
+        }, V.prototype.setResizeAnimation = function (g) {
           {
-            this['Bf'] = g;
+            this.Bf = g;
           }
-        }, V["prototype"]["displayNumber"] = function (g, l) {
-          throw void 0 === l && (l = !0), Error("NumberDisplayInterface: method must be overriden");
-        }, V["prototype"]["clear"] = function () {
-          {
-            throw Error("NumberDisplayInterface: method must be overriden");
-          }
-        }, V["prototype"]["resizeNumberIfNeeded"] = function () {
+        }, V.prototype.displayNumber = function (g, l) {
+          throw undefined === l && (l = true), Error("NumberDisplayInterface: method must be overriden");
+        }, V.prototype.clear = function () {
           {
             throw Error("NumberDisplayInterface: method must be overriden");
           }
-        }, __decorate([T(cc["Node"])], V["prototype"], "numberContainer", void 0), __decorate([T(cc["Float"])], V["prototype"], "maxContainerSize", void 0), __decorate([T(N)], V["prototype"], "enableComma", void 0), __decorate([T(q)], V["prototype"], "enableDecimal", void 0), __decorate([T(f)], V["prototype"], "enableShortenNumber", void 0), __decorate([Z], V);
-      }(cc["Component"]);
-    I["default"] = M, cc["_RF"]["pop"]();
+        }, V.prototype.resizeNumberIfNeeded = function () {
+          {
+            throw Error("NumberDisplayInterface: method must be overriden");
+          }
+        }, __decorate([T(cc.Node)], V.prototype, "numberContainer", undefined), __decorate([T(cc.Float)], V.prototype, "maxContainerSize", undefined), __decorate([T(N)], V.prototype, "enableComma", undefined), __decorate([T(q)], V.prototype, "enableDecimal", undefined), __decorate([T(f)], V.prototype, "enableShortenNumber", undefined), __decorate([Z], V);
+      }(cc.Component);
+    I.default = M, cc._RF.pop();
   }
 }
 module.exports = NumberDisplayInterface;

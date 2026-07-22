@@ -3,16 +3,16 @@
 function CustomSkinConfig(c, j, I) {
   'use strict';
 
-  if (!cc["_RF"]["push"](j, "3a6afzS0JFFzKYybdacrEQR", "CustomSkinConfig")) {
+  if (!cc._RF.push(j, "3a6afzS0JFFzKYybdacrEQR", "CustomSkinConfig")) {
     var m = {};
-    m["value"] = !0;
-    Object["defineProperty"](I, "__esModule", m), I["customSkinConfig"] = void 0;
+    m.value = true;
+    Object.defineProperty(I, "__esModule", m), I.customSkinConfig = undefined;
     var B = {};
-    B["name"] = "symbol_prefab";
-    B["url"] = "prefab/g65_symbol_prefab";
-    B["type"] = cc["Prefab"];
+    B.name = "symbol_prefab";
+    B.url = "prefab/g65_symbol_prefab";
+    B.type = cc.Prefab;
     var X = [B];
-    I["customSkinConfig"] = X, cc["_RF"]["pop"]();
+    I.customSkinConfig = X, cc._RF.pop();
   }
 }
 module.exports = CustomSkinConfig;

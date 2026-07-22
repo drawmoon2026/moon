@@ -3,50 +3,50 @@
 function BetRepository(F, c, j) {
   'use strict';
 
-  if (!cc["_RF"]["push"](c, "14dfa+lfKlIS5vAzSig9n4q", "BetRepository")) {
+  if (!cc._RF.push(c, "14dfa+lfKlIS5vAzSig9n4q", "BetRepository")) {
     {
       var I = {};
-      I["value"] = !0;
-      Object["defineProperty"](j, "__esModule", I), j["BetRepository"] = void 0;
+      I.value = true;
+      Object.defineProperty(j, "__esModule", I), j.BetRepository = undefined;
       var m = function () {
         function B(X, Z) {
-          this['ft'] = X, this['vt'] = Z, this['_t'] = X, this['bt'] = Z;
+          this.ft = X, this.vt = Z, this._t = X, this.bt = Z;
         }
-        return Object["defineProperty"](B["prototype"], "selectedBetLevelValue", {
+        return Object.defineProperty(B.prototype, "selectedBetLevelValue", {
           'get': function () {
-            return this['_t'];
+            return this._t;
           },
           'set': function (X) {
-            this['_t'] = X;
+            this._t = X;
           },
-          'enumerable': !1,
-          'configurable': !0
-        }), Object["defineProperty"](B["prototype"], "selectedBetSizeValue", {
+          'enumerable': false,
+          'configurable': true
+        }), Object.defineProperty(B.prototype, "selectedBetSizeValue", {
           'get': function () {
-            return this['bt'];
+            return this.bt;
           },
           'set': function (X) {
-            this['bt'] = X;
+            this.bt = X;
           },
-          'enumerable': !1,
-          'configurable': !0
-        }), Object["defineProperty"](B["prototype"], "betLevelValue", {
+          'enumerable': false,
+          'configurable': true
+        }), Object.defineProperty(B.prototype, "betLevelValue", {
           'get': function () {
-            return this['ft'];
+            return this.ft;
           },
-          'enumerable': !1,
-          'configurable': !0
-        }), Object["defineProperty"](B["prototype"], "betSizeValue", {
+          'enumerable': false,
+          'configurable': true
+        }), Object.defineProperty(B.prototype, "betSizeValue", {
           'get': function () {
-            return this['vt'];
+            return this.vt;
           },
-          'enumerable': !1,
-          'configurable': !0
-        }), B["prototype"]["updateRemoteBets"] = function (X, Z) {
-          this['ft'] = this['_t'] = X, this['vt'] = this['bt'] = Z;
+          'enumerable': false,
+          'configurable': true
+        }), B.prototype.updateRemoteBets = function (X, Z) {
+          this.ft = this._t = X, this.vt = this.bt = Z;
         }, B;
       }();
-      j["BetRepository"] = m, cc["_RF"]["pop"]();
+      j.BetRepository = m, cc._RF.pop();
     }
   }
 }

@@ -3,11 +3,11 @@
 function MJDataSource(F, j, I) {
   'use strict';
 
-  if (!cc["_RF"]["push"](j, "4fd8cvXEPFILJnInxsPwHVw", "MJDataSource")) {
+  if (!cc._RF.push(j, "4fd8cvXEPFILJnInxsPwHVw", "MJDataSource")) {
     {
       var m = {};
-      m["value"] = !0;
-      Object["defineProperty"](I, "__esModule", m), I["mjDataSource"] = void 0;
+      m.value = true;
+      Object.defineProperty(I, "__esModule", m), I.mjDataSource = undefined;
       var B = F("PlayerModel"),
         X = F("DataSource"),
         Z = F("SlotSystemModel"),
@@ -15,18 +15,18 @@ function MJDataSource(F, j, I) {
         M = F("MJSlotTransactionModel"),
         C = function (N) {
           function q() {
-            var f = N["call"](this, {
-              'playerModel': new B["default"](),
-              'systemModel': new Z["default"](T["cs_Config"]),
-              'transactionModel': new M["default"]()
+            var f = N.call(this, {
+              'playerModel': new B.default(),
+              'systemModel': new Z.default(T.cs_Config),
+              'transactionModel': new M.default()
             }) || this;
-            return f["currentSelectedMenuIndex"] = 0, f["gameLaunched"] = !1, f["isReplayDone"] = !1, f["isRefreshWorld"] = !1, f["isReplayStarted"] = !1, f;
+            return f.currentSelectedMenuIndex = 0, f.gameLaunched = false, f.isReplayDone = false, f.isRefreshWorld = false, f.isReplayStarted = false, f;
           }
           return __extends(q, N), q;
-        }(X["default"]);
-      I["default"] = C;
+        }(X.default);
+      I.default = C;
       var V = new C();
-      I["mjDataSource"] = V, cc["_RF"]["pop"]();
+      I.mjDataSource = V, cc._RF.pop();
     }
   }
 }

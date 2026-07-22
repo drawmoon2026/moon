@@ -4,20 +4,20 @@ function MJApiClient_spec(F, c, j) {
   'use strict';
 
   var I = {};
-  I["value"] = !0;
-  cc["_RF"]["push"](c, "e2193AMdIRKpZ1efc2tlFBb", "MJApiClient.spec") || (Object["defineProperty"](j, "__esModule", I), j["onRequestSent"] = j["onRequestReceived"] = void 0, j["onRequestReceived"] = function (m, B) {
+  I.value = true;
+  cc._RF.push(c, "e2193AMdIRKpZ1efc2tlFBb", "MJApiClient.spec") || (Object.defineProperty(j, "__esModule", I), j.onRequestSent = j.onRequestReceived = undefined, j.onRequestReceived = function (m, B) {
     {
-      var X = System["get"]("automation") && System["get"]("automation")["GameData"];
+      var X = System.get("automation") && System.get("automation").GameData;
       var Z = {};
-      Z["error"] = m;
-      Z["result"] = B;
-      X && X["emit"]("RequestReceived", Z);
+      Z.error = m;
+      Z.result = B;
+      X && X.emit("RequestReceived", Z);
     }
-  }, j["onRequestSent"] = function () {
+  }, j.onRequestSent = function () {
     {
-      var m = System["get"]("automation") && System["get"]("automation")["GameData"];
-      m && m["emit"]("RequestSent");
+      var m = System.get("automation") && System.get("automation").GameData;
+      m && m.emit("RequestSent");
     }
-  }, cc["_RF"]["pop"]());
+  }, cc._RF.pop());
 }
 module.exports = MJApiClient_spec;

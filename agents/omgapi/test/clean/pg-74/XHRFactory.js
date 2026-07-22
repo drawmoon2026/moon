@@ -3,9 +3,9 @@
 function XHRFactory(Q, F) {
   'use strict';
 
-  if (!cc["_RF"]["push"](F, "f3dd4hmiBJHSqrMVzx2qXWg", "XHRFactory")) {
-    var c = System["get"]("common")["XHR"];
-    F["exports"]["XHRFactory"] = c, F["exports"]["__esModule"] = !0, cc["_RF"]["pop"]();
+  if (!cc._RF.push(F, "f3dd4hmiBJHSqrMVzx2qXWg", "XHRFactory")) {
+    var c = System.get("common").XHR;
+    F.exports.XHRFactory = c, F.exports.__esModule = true, cc._RF.pop();
   }
 }
 module.exports = XHRFactory;

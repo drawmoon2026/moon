@@ -3,14 +3,14 @@
 function GamePreference(Q, F, j) {
   'use strict';
 
-  if (!cc["_RF"]["push"](F, "3785cPSwjJF7bcaqXF8ZWoV", "GamePreference")) {
-    j["__esModule"] = !0, j["globalPreference"] = j["gamePreference"] = void 0;
+  if (!cc._RF.push(F, "3785cPSwjJF7bcaqXF8ZWoV", "GamePreference")) {
+    j.__esModule = true, j.globalPreference = j.gamePreference = undefined;
     var I = Q("Preference"),
       m = Q("RtConfig"),
-      B = (0, I["getPreference"])(m["cs_Config"]["bundleId"]);
-    j["gamePreference"] = B;
-    var X = (0, I["getPreference"])(m["cs_Config"]["globalDomain"]);
-    j["globalPreference"] = X, cc["_RF"]["pop"]();
+      B = (0, I.getPreference)(m.cs_Config.bundleId);
+    j.gamePreference = B;
+    var X = (0, I.getPreference)(m.cs_Config.globalDomain);
+    j.globalPreference = X, cc._RF.pop();
   }
 }
 module.exports = GamePreference;

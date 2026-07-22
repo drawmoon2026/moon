@@ -3,10 +3,10 @@
 function PlayerModel(Q, F) {
   'use strict';
 
-  if (!cc["_RF"]["push"](F, "a0229IKmbpNBb61dHEQilWX", "PlayerModel")) {
+  if (!cc._RF.push(F, "a0229IKmbpNBb61dHEQilWX", "PlayerModel")) {
     {
-      var c = System["get"]("bvframework")["PlayerModel"];
-      F["exports"]["default"] = c, F["exports"]["__esModule"] = !0, cc["_RF"]["pop"]();
+      var c = System.get("bvframework").PlayerModel;
+      F.exports.default = c, F.exports.__esModule = true, cc._RF.pop();
     }
   }
 }

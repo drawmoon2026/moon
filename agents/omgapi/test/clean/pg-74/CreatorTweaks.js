@@ -3,6 +3,6 @@
 function CreatorTweaks(Q, F) {
   'use strict';
 
-  cc["_RF"]["push"](F, "a569ek937NGRIiNfWZy/vYu", "CreatorTweaks") || (F["exports"] = {}, F["exports"]["__esModule"] = !0, cc["_RF"]["pop"]());
+  cc._RF.push(F, "a569ek937NGRIiNfWZy/vYu", "CreatorTweaks") || (F.exports = {}, F.exports.__esModule = true, cc._RF.pop());
 }
 module.exports = CreatorTweaks;

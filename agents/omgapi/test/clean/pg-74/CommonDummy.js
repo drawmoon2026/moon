@@ -3,6 +3,6 @@
 function CommonDummy(Q, F) {
   'use strict';
 
-  cc["_RF"]["push"](F, "b1293aDfltLSYBmQFiPHMGc", "CommonDummy") || cc["_RF"]["pop"]();
+  cc._RF.push(F, "b1293aDfltLSYBmQFiPHMGc", "CommonDummy") || cc._RF.pop();
 }
 module.exports = CommonDummy;

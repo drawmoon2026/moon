@@ -3,80 +3,80 @@
 function SinglePayoutModel(F, c, j) {
   'use strict';
 
-  if (!cc["_RF"]["push"](c, "029b1Bdw8RM4ZEeOX8HEoFh", "SinglePayoutModel")) {
+  if (!cc._RF.push(c, "029b1Bdw8RM4ZEeOX8HEoFh", "SinglePayoutModel")) {
     {
       var I = {};
-      I["value"] = !0;
-      Object["defineProperty"](j, "__esModule", I);
+      I.value = true;
+      Object.defineProperty(j, "__esModule", I);
       var m = function () {
         function B() {
           {
-            this['pb'] = [];
+            this.pb = [];
           }
         }
-        return Object["defineProperty"](B["prototype"], "reelData", {
+        return Object.defineProperty(B.prototype, "reelData", {
           'get': function () {
             {
-              return this['pb'];
+              return this.pb;
             }
           },
           'set': function (X) {
-            this['pb'] = X;
+            this.pb = X;
           },
-          'enumerable': !1,
-          'configurable': !0
-        }), Object["defineProperty"](B["prototype"], "payoutData", {
+          'enumerable': false,
+          'configurable': true
+        }), Object.defineProperty(B.prototype, "payoutData", {
           'get': function () {
-            return this['Sb'];
+            return this.Sb;
           },
           'set': function (X) {
-            this['Sb'] = X;
+            this.Sb = X;
           },
-          'enumerable': !1,
-          'configurable': !0
-        }), Object["defineProperty"](B["prototype"], "extendSymbolData", {
+          'enumerable': false,
+          'configurable': true
+        }), Object.defineProperty(B.prototype, "extendSymbolData", {
           'get': function () {
-            return this['gb'];
-          },
-          'set': function (X) {
-            {
-              this['gb'] = X;
-            }
-          },
-          'enumerable': !1,
-          'configurable': !0
-        }), Object["defineProperty"](B["prototype"], "extendBlockData", {
-          'get': function () {
-            return this['Cb'];
-          },
-          'set': function (X) {
-            this['Cb'] = X;
-          },
-          'enumerable': !1,
-          'configurable': !0
-        }), Object["defineProperty"](B["prototype"], "positionArray", {
-          'get': function () {
-            return this['Mb'];
-          },
-          'set': function (X) {
-            this['Mb'] = X;
-          },
-          'enumerable': !1,
-          'configurable': !0
-        }), Object["defineProperty"](B["prototype"], "additionalData", {
-          'get': function () {
-            return this['yb'];
+            return this.gb;
           },
           'set': function (X) {
             {
-              this['yb'] = X;
+              this.gb = X;
             }
           },
-          'enumerable': !1,
-          'configurable': !0
+          'enumerable': false,
+          'configurable': true
+        }), Object.defineProperty(B.prototype, "extendBlockData", {
+          'get': function () {
+            return this.Cb;
+          },
+          'set': function (X) {
+            this.Cb = X;
+          },
+          'enumerable': false,
+          'configurable': true
+        }), Object.defineProperty(B.prototype, "positionArray", {
+          'get': function () {
+            return this.Mb;
+          },
+          'set': function (X) {
+            this.Mb = X;
+          },
+          'enumerable': false,
+          'configurable': true
+        }), Object.defineProperty(B.prototype, "additionalData", {
+          'get': function () {
+            return this.yb;
+          },
+          'set': function (X) {
+            {
+              this.yb = X;
+            }
+          },
+          'enumerable': false,
+          'configurable': true
         }), B;
       }();
-      j["default"] = m, cc["_RF"]["pop"]();
+      j.default = m, cc._RF.pop();
     }
   }
 }

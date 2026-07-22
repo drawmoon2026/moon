@@ -3,9 +3,9 @@
 function DataSource(Q, F) {
   'use strict';
 
-  if (!cc["_RF"]["push"](F, "33f97XHWf5KOK2d9LLYgXNI", "DataSource")) {
-    var c = System["get"]("bvframework")["DataSource"];
-    F["exports"]["default"] = c, F["exports"]["__esModule"] = !0, cc["_RF"]["pop"]();
+  if (!cc._RF.push(F, "33f97XHWf5KOK2d9LLYgXNI", "DataSource")) {
+    var c = System.get("bvframework").DataSource;
+    F.exports.default = c, F.exports.__esModule = true, cc._RF.pop();
   }
 }
 module.exports = DataSource;

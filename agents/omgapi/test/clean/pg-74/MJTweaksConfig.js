@@ -3,12 +3,12 @@
 function MJTweaksConfig(Q, F, c) {
   'use strict';
 
-  if (!cc["_RF"]["push"](F, "04fb1hCR9FKeYG0VdD2KJlj", "MJTweaksConfig")) {
+  if (!cc._RF.push(F, "04fb1hCR9FKeYG0VdD2KJlj", "MJTweaksConfig")) {
     {
-      c["__esModule"] = !0, (j = Q("TweaksConfig")) && j["__esModule"], Q("CreatorTweaks");
+      c.__esModule = true, (j = Q("TweaksConfig")) && j.__esModule, Q("CreatorTweaks");
       var j,
         I = Q("TweaksData");
-      c["testApisModes"] = I["testApisModes"], c["configStore"] = I["configStore"], c["testRegionConfigModes"] = I["testRegionConfigModes"], Q("GameConstant"), cc["_RF"]["pop"]();
+      c.testApisModes = I.testApisModes, c.configStore = I.configStore, c.testRegionConfigModes = I.testRegionConfigModes, Q("GameConstant"), cc._RF.pop();
     }
   }
 }
