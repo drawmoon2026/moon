@@ -42,7 +42,7 @@ let arrayFn = null, arrayFnName = null, maxArr = 0;
 for (const m of src.matchAll(/function\s+([A-Za-z0-9_$]+)\s*\(\s*\)\s*\{\s*var\s+[A-Za-z0-9_$]+\s*=\s*\[/g)) {
     const fnSrc = braceMatchFrom(src, m.index);
     if (!fnSrc) continue;
-    const n = (fnSrc.match(/','/g) || []).length;
+    const n = (fnSrc.match(/["'],\s*["']/g) || []).length;   // 引号无关:'a','b' 或 "a","b" 都算
     if (n > maxArr) { maxArr = n; arrayFn = fnSrc; arrayFnName = m[1]; }
 }
 if (!arrayFn) { console.error('未检测到字符串数组函数'); process.exit(1); }
