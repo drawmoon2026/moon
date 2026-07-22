@@ -23,27 +23,40 @@ const t = require('@babel/types');
 const src = fs.readFileSync(process.argv[2], 'utf8');
 const outPath = process.argv[3] || path.join(__dirname, '..', 'clean', 'clean.js');
 
-function extractFn(name) {
-    const i = src.indexOf('function ' + name + '(');
-    if (i < 0) return null;
-    const bs = src.indexOf('{', i);
+// 大括号匹配抽出从 idx 起的 function{...}
+function braceMatchFrom(text, startIdx) {
+    const bs = text.indexOf('{', startIdx);
     let d = 0;
-    for (let k = bs; k < src.length; k++) {
-        const c = src[k];
+    for (let k = bs; k < text.length; k++) {
+        const c = text[k];
         if (c === '{') d++;
-        else if (c === '}') { d--; if (d === 0) return src.slice(i, k + 1); }
-        else if (c === "'" || c === '"') { k++; while (k < src.length && src[k] !== c) { if (src[k] === '\\') k++; k++; } }
+        else if (c === '}') { d--; if (d === 0) return text.slice(startIdx, k + 1); }
+        else if (c === "'" || c === '"') { k++; while (k < text.length && text[k] !== c) { if (text[k] === '\\') k++; k++; } }
     }
     return null;
 }
-const Rsrc = extractFn('R');
-if (!Rsrc) { console.error('找不到字符串数组函数 R'); process.exit(1); }
-const OFF = parseInt((src.match(/j=j-(0x[0-9a-f]+)/i) || [])[1] || '0x179', 16);
-const arr = eval(Rsrc + '\n R();');
-const dec = (hex) => arr[parseInt(hex, 16) - OFF];
 
-// 别名传递闭包
-const decoders = new Set(['n']);
+// 按结构检测(不认名字,适配 obfuscator.io 随机命名):
+// ① 字符串数组函数 = 函数体里含最大字符串数组字面量的那个 function NAME(){var V=[...]}
+let arrayFn = null, arrayFnName = null, maxArr = 0;
+for (const m of src.matchAll(/function\s+([A-Za-z0-9_$]+)\s*\(\s*\)\s*\{\s*var\s+[A-Za-z0-9_$]+\s*=\s*\[/g)) {
+    const fnSrc = braceMatchFrom(src, m.index);
+    if (!fnSrc) continue;
+    const n = (fnSrc.match(/','/g) || []).length;
+    if (n > maxArr) { maxArr = n; arrayFn = fnSrc; arrayFnName = m[1]; }
+}
+if (!arrayFn) { console.error('未检测到字符串数组函数'); process.exit(1); }
+// ② 解码器 = 调用了数组函数、且带 -0x偏移 的函数
+const decRe = new RegExp('function\\s+([A-Za-z0-9_$]+)\\s*\\([^)]*\\)\\s*\\{[\\s\\S]{0,120}?\\b' + arrayFnName + '\\(\\)[\\s\\S]{0,200}?[=-]\\s*(0x[0-9a-f]+)', 'i');
+const dm = src.match(decRe);
+if (!dm) { console.error('未检测到解码器函数'); process.exit(1); }
+const decoderName = dm[1], OFF = parseInt(dm[2], 16);
+const arr = eval(arrayFn.replace(/^function\s+[A-Za-z0-9_$]+/, 'function ' + arrayFnName) + '\n ' + arrayFnName + '();');
+const dec = (hex) => arr[parseInt(hex, 16) - OFF];
+console.log(`检测:数组函数 ${arrayFnName}(${arr.length}) | 解码器 ${decoderName} | 偏移 0x${OFF.toString(16)}`);
+
+// 别名传递闭包(从检测到的解码器名出发)
+const decoders = new Set([decoderName]);
 const assigns = [...src.matchAll(/\b([A-Za-z_$][\w$]*)\s*=\s*([A-Za-z_$][\w$]*)\b/g)].map(m => [m[1], m[2]]);
 let changed = true;
 while (changed) { changed = false; for (const [l, r] of assigns) if (decoders.has(r) && !decoders.has(l)) { decoders.add(l); changed = true; } }
@@ -86,8 +99,8 @@ traverse(ast, {
             }
         },
     },
-    // 删死机关:字符串数组 R / 解码器 n
-    FunctionDeclaration(p) { if (p.node.id && (p.node.id.name === 'R' || p.node.id.name === 'n')) { p.remove(); stats.deadFn++; } },
+    // 删死机关:字符串数组函数 / 解码器(检测到的名字)
+    FunctionDeclaration(p) { if (p.node.id && (p.node.id.name === arrayFnName || p.node.id.name === decoderName)) { p.remove(); stats.deadFn++; } },
     // 删悬空死别名 var X = <decoder>(删 R/n 后会全局报错)
     VariableDeclarator(p) {
         if (t.isIdentifier(p.node.init) && decoders.has(p.node.init.name)) { p.remove(); stats.deadAlias++; }
