@@ -12,9 +12,7 @@ function HitPassThrough(j, O, exports) {
       H = C.ccclass,
       r = C.property;
     (function (M) {
-      {
-        M.gs = "_hitTest";
-      }
+      M.gs = "_hitTest";
     })(x || (x = {}));
     var V = function (M) {
       function q() {

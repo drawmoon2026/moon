@@ -40,35 +40,29 @@ function UIAppearanceHelper(require, D, exports) {
       X = function () {
         function K() {}
         return K.prototype.interpret = function (l0) {
-          {
-            return l0[0];
-          }
+          return l0[0];
         }, K;
       }(),
       E = function () {
         function K() {}
         return K.prototype.interpret = function (l0) {
-          {
-            return new cc.Color(l0[0], l0[1], l0[2], l0[3]);
-          }
+          return new cc.Color(l0[0], l0[1], l0[2], l0[3]);
         }, K;
       }(),
       F = cc._decorator.ccclass,
       N = function (K) {
-        {
-          function l0() {
-            var l1 = K.call(this) || this;
-            l1.aS = undefined;
-            var l2 = l1.aS = shell.uiAppearance;
-            return l2 && (l2.registerInterpreter("font", new X()), l2.registerInterpreter("value", new X()), l2.registerInterpreter("path", new X()), l2.registerInterpreter("color", new E()), l2.registerInterpreter("classname", new X())), l1;
-          }
-          return __extends(l0, K), l0.prototype.v = function (l1) {
-            var l2 = this.aS && this.aS.v(l1);
-            return null === l2 && (l2 = S(l1)), l2;
-          }, l0.prototype.unregisterInterpreter = function (l1) {
-            return this.aS && this.aS.unregisterInterpreter(l1);
-          }, __decorate([F("UIAppearanceHelper")], l0);
+        function l0() {
+          var l1 = K.call(this) || this;
+          l1.aS = undefined;
+          var l2 = l1.aS = shell.uiAppearance;
+          return l2 && (l2.registerInterpreter("font", new X()), l2.registerInterpreter("value", new X()), l2.registerInterpreter("path", new X()), l2.registerInterpreter("color", new E()), l2.registerInterpreter("classname", new X())), l1;
         }
+        return __extends(l0, K), l0.prototype.v = function (l1) {
+          var l2 = this.aS && this.aS.v(l1);
+          return null === l2 && (l2 = S(l1)), l2;
+        }, l0.prototype.unregisterInterpreter = function (l1) {
+          return this.aS && this.aS.unregisterInterpreter(l1);
+        }, __decorate([F("UIAppearanceHelper")], l0);
       }(cc.Object),
       Z = Object.freeze(Q),
       p = Object.freeze({
@@ -98,13 +92,11 @@ function UIAppearanceHelper(require, D, exports) {
     exports.uiAppearanceHelper = J, cc._RF.pop();
   }
   function S(K) {
-    {
-      for (var l0, l1 = K.split('.'), l2 = 0, l3 = l1.length; l2 < l3; l2++) {
-        var l4 = l1[l2];
-        if (undefined === (l0 = l0 && l0[l4] || Y.default[l4])) return null;
-      }
-      return l0;
+    for (var l0, l1 = K.split('.'), l2 = 0, l3 = l1.length; l2 < l3; l2++) {
+      var l4 = l1[l2];
+      if (undefined === (l0 = l0 && l0[l4] || Y.default[l4])) return null;
     }
+    return l0;
   }
 }
 module.exports = UIAppearanceHelper;

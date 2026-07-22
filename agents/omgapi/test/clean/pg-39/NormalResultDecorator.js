@@ -19,9 +19,7 @@ function NormalResultDecorator(require, O, exports) {
           this.triggerFastStop = undefined, this.name = "Normal Result Decorator", this.dataSource = undefined, this.generalControllers = undefined, this.dataSource = k, this.generalControllers = z.generalControllers;
         }
         return W.prototype.destroy = function () {
-          {
-            this.clearAvailableActions(), this.triggerFastStop = undefined, this.dataSource = undefined, this.generalControllers = undefined;
-          }
+          this.clearAvailableActions(), this.triggerFastStop = undefined, this.dataSource = undefined, this.generalControllers = undefined;
         }, W.prototype.setAvailableActions = function () {
           var k = this.generalControllers.spinButtonController;
           (k.isAutoSpin() || m.featureConfig.fastStopFeature && !this.$r()) && (k.setOnClickCallback(this.Zr.bind(this, C.SpinTrigger.CLICK)), q.JSGTConfig.spaceBarInterrupterEnabled || cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.do, this));
@@ -33,22 +31,16 @@ function NormalResultDecorator(require, O, exports) {
         }, W.prototype.fastStopTriggeredWhileSpinning = function () {
           this.ta();
         }, W.prototype.triggerFastStopWhileStopping = function () {
-          {
-            this.ta();
-          }
+          this.ta();
         }, W.prototype.do = function (k) {
           if (!q.JSGTConfig.spaceBarInterrupterEnabled && M.buttonHitTest(this.generalControllers.spinButtonController.node)) switch (k.keyCode) {
             case V.SPIN_BUTTON_TRIGGER_KEY:
               this.Zr(C.SpinTrigger.SPACEBAR);
           }
         }, W.prototype.Zr = function (k) {
-          {
-            if (this.generalControllers.spinButtonController.isAutoSpin()) this.Qn();else if (this.triggerFastStop && m.featureConfig.fastStopFeature && !this.$r()) {
-              {
-                var z = this.triggerFastStop;
-                this.triggerFastStop = undefined, z(k);
-              }
-            }
+          if (this.generalControllers.spinButtonController.isAutoSpin()) this.Qn();else if (this.triggerFastStop && m.featureConfig.fastStopFeature && !this.$r()) {
+            var z = this.triggerFastStop;
+            this.triggerFastStop = undefined, z(k);
           }
         }, W.prototype.Qn = function () {
           var k = this.generalControllers,

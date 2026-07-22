@@ -22,9 +22,7 @@ function AutoSpinButtonController(j, O, exports) {
           'enumerable': false,
           'configurable': true
         }), M.prototype.show = function () {
-          {
-            this.autoSpinHolder.active = true;
-          }
+          this.autoSpinHolder.active = true;
         }, M.prototype.hide = function () {
           this.autoSpinHolder.active = false;
         }, M.prototype.showAutoSpinMode = function (q, m) {
@@ -32,15 +30,11 @@ function AutoSpinButtonController(j, O, exports) {
             m && m();
           }))), this.autoSpinNumberDisplay.clear(), this.autoSpinNumberDisplay.displayNumber(q));
         }, M.prototype.updateAutoSpinCount = function (q) {
-          {
-            this.autoSpinNumberDisplay.clear(), this.autoSpinNumberDisplay.displayNumber(q);
-          }
+          this.autoSpinNumberDisplay.clear(), this.autoSpinNumberDisplay.displayNumber(q);
         }, M.prototype.exitAutoSpinMode = function () {
           this.autoSpinHolder.stopAllActions(), this.autoSpinHolder.runAction(cc.sequence(cc.fadeOut(0.3), cc.callFunc(this.K, this)));
         }, M.prototype.K = function () {
-          {
-            this.autoSpinHolder.active = false;
-          }
+          this.autoSpinHolder.active = false;
         }, M.prototype.q = function () {
           this.autoButtonNode.stopAllActions(), this.autoButtonNode.active = false, this.V = undefined;
         }, M.prototype.destroy = function () {

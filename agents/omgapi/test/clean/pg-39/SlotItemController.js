@@ -16,9 +16,7 @@ function SlotItemController(j, O, exports) {
           return q.foreground = undefined, q.content = undefined, q.foregroundSprite = undefined, q.contentSprite = undefined, q.shadowSprite = undefined, q;
         }
         return __extends(M, V), M.prototype.setSymbol = function (q, m, D) {
-          {
-            this.foregroundSprite.spriteFrame = m, this.contentSprite.spriteFrame = q, this.shadowSprite.spriteFrame = D;
-          }
+          this.foregroundSprite.spriteFrame = m, this.contentSprite.spriteFrame = q, this.shadowSprite.spriteFrame = D;
         }, M.prototype.setBlurred = function (q) {
           this.foreground.active = q, this.content.active = !q;
         }, M.prototype.clear = function () {

@@ -18,18 +18,14 @@ function FireworkController(require, O, exports) {
         }
         return __extends(q, M), Object.defineProperty(q.prototype, "simpleAnimationController", {
           'get': function () {
-            {
-              return undefined === this.zs && (this.zs = this.firework01Node.getComponent("SimpleAnimationController")), this.zs;
-            }
+            return undefined === this.zs && (this.zs = this.firework01Node.getComponent("SimpleAnimationController")), this.zs;
           },
           'enumerable': false,
           'configurable': true
         }), q.prototype.cacheOriginalPosition = function () {
           this.xs = this.node.position;
         }, q.prototype.play = function () {
-          {
-            this.Vs = false, this.scheduleOnce(this.Ks, this.startDelayTime), x.GeneralAudioPool.bgm_bigwin_firework.play();
-          }
+          this.Vs = false, this.scheduleOnce(this.Ks, this.startDelayTime), x.GeneralAudioPool.bgm_bigwin_firework.play();
         }, q.prototype.stop = function () {
           this.Vs = true, this.unschedule(this.Ks);
         }, q.prototype.forceStop = function () {
@@ -42,10 +38,8 @@ function FireworkController(require, O, exports) {
           this.node.setPosition(W), this.simpleAnimationController.play(this.animName, this.qs.bind(this));
         }, q.prototype.qs = function () {
           if (this.Vs) this.simpleAnimationController.stop();else {
-            {
-              var m = this.Js(this.minDelayTime, this.maxDelayTime);
-              this.scheduleOnce(this.Ks, m);
-            }
+            var m = this.Js(this.minDelayTime, this.maxDelayTime);
+            this.scheduleOnce(this.Ks, m);
           }
         }, q.prototype.Js = function (m, D) {
           return Math.floor(Math.random() * Math.floor(m) + D);

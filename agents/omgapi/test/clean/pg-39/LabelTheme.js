@@ -33,9 +33,7 @@ function LabelTheme(require, module, exports) {
     m = "number" == typeof v && v >= 4 ? function (Y) {
       return Y.markForRender(true);
     } : function (Y) {
-      {
-        return Y.markForUpdateRenderData(true);
-      }
+      return Y.markForUpdateRenderData(true);
     };
     var b = {};
     b.tooltip = false;
@@ -94,10 +92,8 @@ function LabelTheme(require, module, exports) {
               this._c(E);
             }
             if (this.fontWeightKey) {
-              {
-                var F = this.fontWeightKey;
-                this.bc(F);
-              }
+              var F = this.fontWeightKey;
+              this.bc(F);
             }
             if (this.fontStyleKey) {
               var N = this.fontStyleKey;
@@ -125,10 +121,8 @@ function LabelTheme(require, module, exports) {
         cc.isValid(this.node) && (X.fontFamily = Y, X instanceof cc.Label ? m(X) : X instanceof cc.RichText && X[L.uc]());
       },
       'bc': function (Y) {
-        {
-          var X = this.ac;
-          cc.isValid(this.node) && (X[L.lc] = Y, X instanceof cc.Label ? m(X) : cc.RichText);
-        }
+        var X = this.ac;
+        cc.isValid(this.node) && (X[L.lc] = Y, X instanceof cc.Label ? m(X) : cc.RichText);
       },
       'mc': function (Y) {
         var X = this.ac;

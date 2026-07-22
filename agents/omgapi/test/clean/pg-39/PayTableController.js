@@ -28,17 +28,13 @@ function PayTableController(require, y, exports) {
       }
       return __extends(D, m), Object.defineProperty(D.prototype, "paytableWildController", {
         'get': function () {
-          {
-            return undefined === this.Wu && (this.Wu = this.wildSymbolNode.getComponent("PaytableWildEffectController")), this.Wu;
-          }
+          return undefined === this.Wu && (this.Wu = this.wildSymbolNode.getComponent("PaytableWildEffectController")), this.Wu;
         },
         'enumerable': false,
         'configurable': true
       }), Object.defineProperty(D.prototype, "paytableContainerController", {
         'get': function () {
-          {
-            return undefined === this.Fu && (this.Fu = this.containerSymbolNode.getComponent("PaytableContainerController")), this.Fu;
-          }
+          return undefined === this.Fu && (this.Fu = this.containerSymbolNode.getComponent("PaytableContainerController")), this.Fu;
         },
         'enumerable': false,
         'configurable': true
@@ -55,25 +51,17 @@ function PayTableController(require, y, exports) {
         'enumerable': false,
         'configurable': true
       }), D.prototype.init = function () {
-        {
-          C.sequenceCallback(this.paytableContainerController.init.bind(this.paytableContainerController), this.paytableNumberHolderController.init.bind(this.paytableNumberHolderController), this.paytableWildController.init.bind(this.paytableWildController))(this.setSymbolList.bind(this));
-        }
+        C.sequenceCallback(this.paytableContainerController.init.bind(this.paytableContainerController), this.paytableNumberHolderController.init.bind(this.paytableNumberHolderController), this.paytableWildController.init.bind(this.paytableWildController))(this.setSymbolList.bind(this));
       }, D.prototype.setSymbolList = function () {
         this.Du = this.paytableContainerController.symbolNode, this.Uu = this.paytableNumberHolderController.numberNode;
       }, D.prototype.setPaytableAnyLocalizeSF = function (W) {
-        {
-          this.anyNormalSprite.spriteFrame = W;
-        }
+        this.anyNormalSprite.spriteFrame = W;
       }, D.prototype.setPaytableWildLocalizeSF = function (W) {
-        {
-          this.wildText.spriteFrame = W;
-        }
+        this.wildText.spriteFrame = W;
       }, D.prototype.fadeRandomMultiple = function () {
         this.paytableWildController.randomFading();
       }, D.prototype.fadeMultiply = function (W, k) {
-        {
-          undefined === k && (k = true), this.paytableWildController.fadeMultiply(W, k);
-        }
+        undefined === k && (k = true), this.paytableWildController.fadeMultiply(W, k);
       }, D.prototype.playWildActive = function () {
         this.paytableWildController.playActive(), this.paytableWildController.randomFading();
       }, D.prototype.playWildInactive = function () {
@@ -87,13 +75,11 @@ function PayTableController(require, y, exports) {
           W !== z && L.playInactiveNode();
         });
       }, D.prototype.playActiveAllNode = function () {
-        {
-          this.paytableGlowController.stop(), this.paytableWildController.playActive(), this.Du.forEach(function (W) {
-            W.getComponent("PaytableSymbolController").playActive();
-          }), this.Uu.forEach(function (W) {
-            W.getComponent("NumberPaytableController").playActive();
-          });
-        }
+        this.paytableGlowController.stop(), this.paytableWildController.playActive(), this.Du.forEach(function (W) {
+          W.getComponent("PaytableSymbolController").playActive();
+        }), this.Uu.forEach(function (W) {
+          W.getComponent("NumberPaytableController").playActive();
+        });
       }, D.prototype.destroy = function () {
         return this.node.destroy(), m.prototype.destroy.call(this);
       }, __decorate([V(cc.Sprite)], D.prototype, "anyNormalSprite", undefined), __decorate([V(cc.Sprite)], D.prototype, "wildText", undefined), __decorate([V(cc.Node)], D.prototype, "wildSymbolNode", undefined), __decorate([V(cc.Node)], D.prototype, "containerSymbolNode", undefined), __decorate([V(cc.Node)], D.prototype, "numberHolderNode", undefined), __decorate([V(cc.Node)], D.prototype, "glowNode", undefined), __decorate([r], D);

@@ -46,27 +46,19 @@ function NavigationController(require, exports, B) {
           'configurable': true
         }), Object.defineProperty(b.prototype, "backController", {
           'get': function () {
-            {
-              var U = this.controllers;
-              if (U && U.length > 1) return U[U.length - 2];
-            }
+            var U = this.controllers;
+            if (U && U.length > 1) return U[U.length - 2];
           },
           'enumerable': false,
           'configurable': true
         }), Object.defineProperty(b.prototype, "navigationBar", {
           'get': function () {
-            {
-              return this.Gr || (this.Gr = this.defaultNavigationBar, this.Gr && (this.Gr.navigator = this)), this.Gr;
-            }
+            return this.Gr || (this.Gr = this.defaultNavigationBar, this.Gr && (this.Gr.navigator = this)), this.Gr;
           },
           'set': function (U) {
-            {
-              if (U !== this.Gr) {
-                {
-                  var Q = this.Gr;
-                  this.Gr = U, this.Gr && (this.Gr.navigator = this), Q && (Q.navigator = undefined);
-                }
-              }
+            if (U !== this.Gr) {
+              var Q = this.Gr;
+              this.Gr = U, this.Gr && (this.Gr.navigator = this), Q && (Q.navigator = undefined);
             }
           },
           'enumerable': false,
@@ -81,10 +73,8 @@ function NavigationController(require, exports, B) {
             T = Q - R;
           this.contentNode.setContentSize(w, T), this.contentNode.y = -R, this.statusBarPlaceholderNode.height = this.safeAreaInsets.top, this.node.on("size-changed", this.Rr, this);
         }, b.prototype.onEnable = function () {
-          {
-            var U = this.topController;
-            U && (U.enabled = true);
-          }
+          var U = this.topController;
+          U && (U.enabled = true);
         }, b.prototype.onDisable = function () {
           var U = this.topController;
           U && (U.enabled = false);
@@ -92,42 +82,34 @@ function NavigationController(require, exports, B) {
           var Q = this.topController;
           Q && Q.viewWillAppear(U);
         }, b.prototype.viewDidAppear = function (U) {
-          {
-            var Q = this.topController;
-            Q && Q.viewDidAppear(U);
-          }
+          var Q = this.topController;
+          Q && Q.viewDidAppear(U);
         }, b.prototype.viewWillDisappear = function (U) {
           var Q = this.topController;
           Q && Q.viewWillDisappear(U);
         }, b.prototype.viewDidDisappear = function (U) {
-          {
-            var Q = this.topController;
-            Q && Q.viewDidDisappear(U);
-          }
+          var Q = this.topController;
+          Q && Q.viewDidDisappear(U);
         }, b.prototype.viewDidLayoutSubviews = function () {}, b.prototype.pushController = function (U, Q) {
           if (!this.Tr && U) {
-            {
-              this.Tr = true;
-              var w = this.contentNode,
-                P = w.width,
-                R = w.height;
-              U.navigator = this, U.view.setContentSize(P, R);
-              var T = (U.node.anchorY - w.anchorY) * R,
-                Y = (U.node.anchorX - w.anchorX) * P;
-              Q && (Y = (U.node.anchorX - w.anchorX + 1) * P), U.view.setPosition(cc.v2(Y, T)), w.addChild(U.view), U.enabled = true, this.kr() ? U.viewWillAppear(Q) : Q = false;
-              var X = this.topController;
-              if (X && X.viewWillDisappear(Q), this.navigationBar.pushItem(U, Q), Q) {
-                {
-                  var E = undefined,
-                    F = this.navigationDelegate;
-                  E = F && F.animationForOperation ? F.animationForOperation(V.NavigationControllerOperation.Push) : new M.DefaultNavigationPushTransition();
-                  var N = X ? X.view : undefined,
-                    Z = new q.TransitionContext(X, U, N, U.view, w),
-                    p = this.Lr.bind(this, U, true);
-                  E.animateTransition(Z, p);
-                }
-              } else this.Lr(U, false);
-            }
+            this.Tr = true;
+            var w = this.contentNode,
+              P = w.width,
+              R = w.height;
+            U.navigator = this, U.view.setContentSize(P, R);
+            var T = (U.node.anchorY - w.anchorY) * R,
+              Y = (U.node.anchorX - w.anchorX) * P;
+            Q && (Y = (U.node.anchorX - w.anchorX + 1) * P), U.view.setPosition(cc.v2(Y, T)), w.addChild(U.view), U.enabled = true, this.kr() ? U.viewWillAppear(Q) : Q = false;
+            var X = this.topController;
+            if (X && X.viewWillDisappear(Q), this.navigationBar.pushItem(U, Q), Q) {
+              var E = undefined,
+                F = this.navigationDelegate;
+              E = F && F.animationForOperation ? F.animationForOperation(V.NavigationControllerOperation.Push) : new M.DefaultNavigationPushTransition();
+              var N = X ? X.view : undefined,
+                Z = new q.TransitionContext(X, U, N, U.view, w),
+                p = this.Lr.bind(this, U, true);
+              E.animateTransition(Z, p);
+            } else this.Lr(U, false);
           }
         }, b.prototype.popController = function (U) {
           var Q = this.topController,
@@ -148,18 +130,14 @@ function NavigationController(require, exports, B) {
           this.popController(U);
         }, b.prototype.popToRootController = function (U) {
           for (var Q = this.controllers.length - 2; Q;) {
-            {
-              var w = this.topController;
-              w && (w.enabled = false, this.navigationBar.popItem(false), this.contentNode.removeChild(w.view), this.Nr.pop(), w.node.destroy()), Q -= 1;
-            }
+            var w = this.topController;
+            w && (w.enabled = false, this.navigationBar.popItem(false), this.contentNode.removeChild(w.view), this.Nr.pop(), w.node.destroy()), Q -= 1;
           }
           this.popController(U);
         }, b.prototype.hideNavigationBarBackground = function () {
           this.navigationBar.background.node.active = false, this.navigationBar.shadow.active = false;
         }, b.prototype.showNavigationBarBackground = function () {
-          {
-            this.navigationBar.background.node.active = true, this.navigationBar.shadow.active = true;
-          }
+          this.navigationBar.background.node.active = true, this.navigationBar.shadow.active = true;
         }, b.prototype.hideNavigationBar = function (U) {
           undefined === U && (U = true), this.navigationBar.node.active = false, U && this.Rr();
         }, b.prototype.showNavigationBar = function (U) {
@@ -167,29 +145,21 @@ function NavigationController(require, exports, B) {
         }, b.prototype.enableItems = function () {
           this.navigationBar.enableButtons();
         }, b.prototype.disableItems = function () {
-          {
-            this.navigationBar.disableButtons();
-          }
+          this.navigationBar.disableButtons();
         }, b.prototype.setControllers = function (U) {
           if (U && U.length && !(U.length < 1)) {
             for (var Q = this.controllers, w = Q.filter(function (Y) {
-                {
-                  return U.indexOf(Y) < 0;
-                }
+                return U.indexOf(Y) < 0;
               }), P = w.length - 1; P >= 0; P--) {
-              {
-                var R = w[P];
-                R.enabled = false, this.contentNode.removeChild(R.view);
-                var T = Q.indexOf(R);
-                this.navigationBar.removeItemsAtIndex(T), R.node.destroy();
-              }
+              var R = w[P];
+              R.enabled = false, this.contentNode.removeChild(R.view);
+              var T = Q.indexOf(R);
+              this.navigationBar.removeItemsAtIndex(T), R.node.destroy();
             }
             this.Nr = U;
           }
         }, b.prototype.Rr = function () {
-          {
-            this.jr(), this.Dr();
-          }
+          this.jr(), this.Dr();
         }, b.prototype.jr = function () {
           var U = this.contentNode,
             Q = this.navigationBar.node.active ? this.navigationBar.node.height : this.statusBarPlaceholderNode.height,
@@ -219,9 +189,7 @@ function NavigationController(require, exports, B) {
           var Q = this.topController;
           Q && (this.contentNode.removeChild(Q.view), this.Nr.pop(), this.Tr = false, Q.viewDidDisappear(U), Q.enabled = false, Q.destroy && Q.destroy(), Q.node.destroy());
         }, b.prototype.kr = function () {
-          {
-            return !(this.tabBarItem instanceof D.default && !this.topController);
-          }
+          return !(this.tabBarItem instanceof D.default && !this.topController);
         }, __decorate([z(H.default)], b.prototype, "defaultNavigationBar", undefined), __decorate([z(cc.Node)], b.prototype, "statusBarPlaceholderNode", undefined), __decorate([z(cc.Node)], b.prototype, "contentNode", undefined), __decorate([k], b);
       }(C.default);
     B.default = L, cc._RF.pop();

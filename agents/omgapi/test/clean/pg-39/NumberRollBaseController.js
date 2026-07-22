@@ -32,18 +32,16 @@ function NumberRollBaseController(require, O, exports) {
         }, q.prototype.stop = function (m) {
           this.enabled = false, m && (this.displayController.clear(), this.yo = undefined);
         }, q.prototype.update = function (m) {
-          {
-            var D = this;
-            this.Ys += m;
-            var W = this.Ys / this.ds;
-            if (W >= 1) this.stop(false), this.displayController.displayNumber(this.Ga, true, function () {
-              var z = D.yo;
-              D.yo = undefined, z && z();
-            });else {
-              W = 1 - Math.cos(W * Math.PI * 0.5);
-              var k = cc.misc.lerp(this.ya, this.Ga, W);
-              this.displayController.displayNumber(k, false);
-            }
+          var D = this;
+          this.Ys += m;
+          var W = this.Ys / this.ds;
+          if (W >= 1) this.stop(false), this.displayController.displayNumber(this.Ga, true, function () {
+            var z = D.yo;
+            D.yo = undefined, z && z();
+          });else {
+            W = 1 - Math.cos(W * Math.PI * 0.5);
+            var k = cc.misc.lerp(this.ya, this.Ga, W);
+            this.displayController.displayNumber(k, false);
           }
         }, __decorate([r(cc.Integer)], q.prototype, "rollDuration", undefined), __decorate([r({
           'override': true,

@@ -163,10 +163,8 @@ function AnimParticleSystem(require, module, exports) {
           },
           'particleMovementParam': {
             'visible': function () {
-              {
-                var W;
-                return true === (null == (W = M[this.particleMovementEasing]) ? undefined : W.needParam);
-              }
+              var W;
+              return true === (null == (W = M[this.particleMovementEasing]) ? undefined : W.needParam);
             },
             'type': cc.Float,
             'tooltip': false,
@@ -191,9 +189,7 @@ function AnimParticleSystem(require, module, exports) {
           },
           'colorDelayRatio': {
             'visible': function () {
-              {
-                return !this.startColor.equals(this.endColor) || !this.startColorVar.equals(this.endColorVar);
-              }
+              return !this.startColor.equals(this.endColor) || !this.startColorVar.equals(this.endColorVar);
             },
             'type': cc.Float,
             'tooltip': false,
@@ -210,10 +206,8 @@ function AnimParticleSystem(require, module, exports) {
           },
           'colorEasingParam': {
             'visible': function () {
-              {
-                var W;
-                return true === (null == (W = M[this.colorEasing]) ? undefined : W.needParam);
-              }
+              var W;
+              return true === (null == (W = M[this.colorEasing]) ? undefined : W.needParam);
             },
             'type': cc.Float,
             'tooltip': false,
@@ -326,9 +320,7 @@ function AnimParticleSystem(require, module, exports) {
           },
           'scaleEasing': {
             'visible': function () {
-              {
-                return this.startScale !== this.endScale || this.startScaleVar !== this.endScaleVar;
-              }
+              return this.startScale !== this.endScale || this.startScaleVar !== this.endScaleVar;
             },
             'type': q,
             'tooltip': false,
@@ -381,9 +373,7 @@ function AnimParticleSystem(require, module, exports) {
           },
           'spinEasing': {
             'visible': function () {
-              {
-                return this.startSpin !== this.endSpin || this.startSpinVar !== this.endSpinVar;
-              }
+              return this.startSpin !== this.endSpin || this.startSpinVar !== this.endSpinVar;
             },
             'type': q,
             'tooltip': false,
@@ -421,9 +411,7 @@ function AnimParticleSystem(require, module, exports) {
           },
           'gravityVecVar': {
             'visible': function () {
-              {
-                return this.emitterMode === V.GRAVITY;
-              }
+              return this.emitterMode === V.GRAVITY;
             },
             'tooltip': false,
             'default': cc.v2(0, 0)
@@ -437,13 +425,11 @@ function AnimParticleSystem(require, module, exports) {
           'p': []
         },
         'resetSystem': function (W) {
-          {
-            undefined === W && (W = true), W && this.stopSystem(true);
-            var k = 1 / this.emissionRate;
-            this.unschedule(this.m);
-            var z = this.duration;
-            0 !== z && (this.schedule(this.m, k), z > 0 && (this.unschedule(this.stopSystem), this.scheduleOnce(this.stopSystem, z)));
-          }
+          undefined === W && (W = true), W && this.stopSystem(true);
+          var k = 1 / this.emissionRate;
+          this.unschedule(this.m);
+          var z = this.duration;
+          0 !== z && (this.schedule(this.m, k), z > 0 && (this.unschedule(this.stopSystem), this.scheduleOnce(this.stopSystem, z)));
         },
         'stopSystem': function (W) {
           var k = this;
@@ -452,19 +438,13 @@ function AnimParticleSystem(require, module, exports) {
           }), this.p = []);
         },
         'm': function () {
-          {
-            if (!(this.p.length >= this.particleCount)) {
-              {
-                var W = this.nodePool.get();
-                W || (W = cc.instantiate(this.particlePrefab)), this.S(W), W.getComponent(cc.Animation).play();
-              }
-            }
+          if (!(this.p.length >= this.particleCount)) {
+            var W = this.nodePool.get();
+            W || (W = cc.instantiate(this.particlePrefab)), this.S(W), W.getComponent(cc.Animation).play();
           }
         },
         'getLife': function (W, k) {
-          {
-            return (0, H.getRandomFromRange)(W, k);
-          }
+          return (0, H.getRandomFromRange)(W, k);
         },
         'getSpeed': function (W, k) {
           return (0, H.getRandomFromRange)(W, k);
@@ -473,27 +453,19 @@ function AnimParticleSystem(require, module, exports) {
           return (0, H.getRandomFromRange)(W, k);
         },
         'getSourceStartScale': function (W, k) {
-          {
-            return (0, H.getRandomFromRange)(W, k);
-          }
+          return (0, H.getRandomFromRange)(W, k);
         },
         'getSourceStartSpinAngle': function (W, k) {
           return (0, H.getRandomFromRange)(W, k);
         },
         'getSourceStartAlpha': function (W, k) {
-          {
-            return (0, H.getRandomFromRange)(W, k);
-          }
+          return (0, H.getRandomFromRange)(W, k);
         },
         'getSourceStartColor': function (W, k) {
-          {
-            return k.equals(cc.Color.BLACK) ? W : new cc.Color((0, H.getRandomFromRange)(W.getR(), k.getR()), (0, H.getRandomFromRange)(W.getG(), k.getG()), (0, H.getRandomFromRange)(W.getB(), k.getB()));
-          }
+          return k.equals(cc.Color.BLACK) ? W : new cc.Color((0, H.getRandomFromRange)(W.getR(), k.getR()), (0, H.getRandomFromRange)(W.getG(), k.getG()), (0, H.getRandomFromRange)(W.getB(), k.getB()));
         },
         'getSourceStartPosition': function (W, k) {
-          {
-            return cc.v2((0, H.getRandomFromRange)(W.x, k.x), (0, H.getRandomFromRange)(W.y, k.y));
-          }
+          return cc.v2((0, H.getRandomFromRange)(W.x, k.x), (0, H.getRandomFromRange)(W.y, k.y));
         },
         'getSourceEndScale': function (W, k, z, L) {
           return (L ? W : 1) * (0, H.getRandomFromRange)(k, z);
@@ -513,29 +485,27 @@ function AnimParticleSystem(require, module, exports) {
           return cc.v2(W.x + v, W.y + b);
         },
         'getSourceEndPositionGravity': function (W, k, z, L, U, Q) {
-          {
-            var R = Math.cos(z / 180 * Math.PI) * k * L,
-              T = Math.sin(z / 180 * Math.PI) * k * L,
-              Y = (0, H.getRandomFromRange)(U.x, Q.x),
-              X = (0, H.getRandomFromRange)(U.y, Q.y),
-              E = W.x + R / 3,
-              F = W.y + T / 3,
-              N = W.x + R / 3 * 2,
-              Z = W.y + T / 3 * 2,
-              G = W.x + R,
-              J = W.y + T,
-              K = 60 * L / 3,
-              l0 = (0, H.getAccelerationDistance)(Y, K),
-              l1 = (0, H.getAccelerationDistance)(X, K),
-              l2 = 2 * K,
-              l3 = (0, H.getAccelerationDistance)(Y, l2),
-              l4 = (0, H.getAccelerationDistance)(X, l2),
-              l5 = 3 * K,
-              l6 = (0, H.getAccelerationDistance)(Y, l5),
-              l7 = (0, H.getAccelerationDistance)(X, l5),
-              l8 = G > 0 ? 1 : -1;
-            return [cc.v2(E - l0 * l8, F - l1), cc.v2(N - l3 * l8, Z - l4), cc.v2(G - l6 * l8, J - l7)];
-          }
+          var R = Math.cos(z / 180 * Math.PI) * k * L,
+            T = Math.sin(z / 180 * Math.PI) * k * L,
+            Y = (0, H.getRandomFromRange)(U.x, Q.x),
+            X = (0, H.getRandomFromRange)(U.y, Q.y),
+            E = W.x + R / 3,
+            F = W.y + T / 3,
+            N = W.x + R / 3 * 2,
+            Z = W.y + T / 3 * 2,
+            G = W.x + R,
+            J = W.y + T,
+            K = 60 * L / 3,
+            l0 = (0, H.getAccelerationDistance)(Y, K),
+            l1 = (0, H.getAccelerationDistance)(X, K),
+            l2 = 2 * K,
+            l3 = (0, H.getAccelerationDistance)(Y, l2),
+            l4 = (0, H.getAccelerationDistance)(X, l2),
+            l5 = 3 * K,
+            l6 = (0, H.getAccelerationDistance)(Y, l5),
+            l7 = (0, H.getAccelerationDistance)(X, l5),
+            l8 = G > 0 ? 1 : -1;
+          return [cc.v2(E - l0 * l8, F - l1), cc.v2(N - l3 * l8, Z - l4), cc.v2(G - l6 * l8, J - l7)];
         },
         'getMoveAction': function (W, k, z, L, v) {
           var b = cc.moveTo(z, k);
@@ -551,11 +521,9 @@ function AnimParticleSystem(require, module, exports) {
           return 0 === L ? cc.scaleTo(z, k).easing(U) : cc.sequence(cc.delayTime(L * z), cc.scaleTo(z - L * z, k).easing(U));
         },
         'getRotateAction': function (W, k, z, L, v, b) {
-          {
-            if (!v) return 0 === L ? cc.rotateTo(z, -k) : cc.sequence(cc.delayTime(L * z), cc.rotateTo(z - L * z, -k));
-            var U = v(b);
-            return 0 === L ? cc.rotateTo(z, -k).easing(U) : cc.sequence(cc.delayTime(L * z), cc.rotateTo(z - L * z, -k).easing(U));
-          }
+          if (!v) return 0 === L ? cc.rotateTo(z, -k) : cc.sequence(cc.delayTime(L * z), cc.rotateTo(z - L * z, -k));
+          var U = v(b);
+          return 0 === L ? cc.rotateTo(z, -k).easing(U) : cc.sequence(cc.delayTime(L * z), cc.rotateTo(z - L * z, -k).easing(U));
         },
         'getFadeAction': function (W, k, z, L, v, b) {
           if (!v) return 0 === L ? cc.fadeTo(z, k) : cc.sequence(cc.delayTime(L * z), cc.fadeTo(z - L * z, k));
@@ -609,9 +577,7 @@ function AnimParticleSystem(require, module, exports) {
           l7 > 1 ? l6 = cc.sequence(cc.spawn(R), cc.callFunc(function () {
             k.C(W);
           }, this)) : 1 === l7 && (l6 = cc.sequence(R[0], cc.callFunc(function () {
-            {
-              k.C(W);
-            }
+            k.C(W);
           }, this))), this.p.push(W), this.node.addChild(W), W.runAction(l6);
         },
         'M': function (W, k) {

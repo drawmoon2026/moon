@@ -16,36 +16,30 @@ function PGGRefreshWorldHandler(require, O, exports) {
           return null !== M && M.apply(this, arguments) || this;
         }
         return __extends(q, M), q.prototype.resetController = function (m) {
-          {
-            var D = this.generalControllers,
-              W = D.slotController,
-              k = D.paySelectController,
-              z = D.payTableController,
-              L = D.scrollerManagerController,
-              b = D.fastSpinAnimationController,
-              U = D.wildMultiplySpineController,
-              Q = this.dataSource.transactionModel,
-              w = Q.fakeReels,
-              P = Q.reels,
-              R = Q.middleReelsMutiply,
-              T = Q.piggyFeature,
-              Y = Q.wildMultiply;
-            k.hide(), z.playActiveAllNode(), L.playExit(), b.reset(), Y ? z.fadeMultiply(Y, false) : z.fadeMultiply(H.WildSlotIndexes.ONE, false), U.stop(), W.resetSlot(w, P, R, T), m && m();
-          }
+          var D = this.generalControllers,
+            W = D.slotController,
+            k = D.paySelectController,
+            z = D.payTableController,
+            L = D.scrollerManagerController,
+            b = D.fastSpinAnimationController,
+            U = D.wildMultiplySpineController,
+            Q = this.dataSource.transactionModel,
+            w = Q.fakeReels,
+            P = Q.reels,
+            R = Q.middleReelsMutiply,
+            T = Q.piggyFeature,
+            Y = Q.wildMultiply;
+          k.hide(), z.playActiveAllNode(), L.playExit(), b.reset(), Y ? z.fadeMultiply(Y, false) : z.fadeMultiply(H.WildSlotIndexes.ONE, false), U.stop(), W.resetSlot(w, P, R, T), m && m();
         }, q.prototype.executeTransition = function (m) {
           var D = this.generalControllers,
             W = new x.ToNormalSpinTransition();
           var k = {};
           k.generalControllers = D;
           W.run(k, function () {
-            {
-              W.destroy(), m();
-            }
+            W.destroy(), m();
           });
         }, q.prototype.changeWalletIdleSetUp = function (m) {
-          {
-            this.reenableSpinButton(m);
-          }
+          this.reenableSpinButton(m);
         }, q.prototype.betOptionPreIdleSetUp = function () {}, q.prototype.betOptionIdleSetUp = function (m) {
           this.reenableSpinButton(m);
         }, __decorate([r], q);

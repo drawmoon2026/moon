@@ -26,9 +26,7 @@ function ButtonTheme(require, module, exports) {
             'type': r,
             'animatable': false,
             'notify': function () {
-              {
-                this.Cs();
-              }
+              this.Cs();
             }
           },
           'domainKey': C,
@@ -48,16 +46,14 @@ function ButtonTheme(require, module, exports) {
           M && (M.transition = this.transition);
         },
         'ys': function () {
-          {
-            var M = this.Ms;
-            if (M && this.transition == r.COLOR) {
-              this.domainKey, this.colorKey;
-              var q = H.uiAppearanceHelper.v(this.domainKey + '.' + this.colorKey + ".normal"),
-                m = H.uiAppearanceHelper.v(this.domainKey + '.' + this.colorKey + ".pressed"),
-                D = H.uiAppearanceHelper.v(this.domainKey + '.' + this.colorKey + ".hover"),
-                W = H.uiAppearanceHelper.v(this.domainKey + '.' + this.colorKey + ".disabled");
-              q && (M.node.opacity = q.getA(), M.normalColor = q, M.pressedColor = m, M.hoverColor = D, M.disabledColor = W);
-            }
+          var M = this.Ms;
+          if (M && this.transition == r.COLOR) {
+            this.domainKey, this.colorKey;
+            var q = H.uiAppearanceHelper.v(this.domainKey + '.' + this.colorKey + ".normal"),
+              m = H.uiAppearanceHelper.v(this.domainKey + '.' + this.colorKey + ".pressed"),
+              D = H.uiAppearanceHelper.v(this.domainKey + '.' + this.colorKey + ".hover"),
+              W = H.uiAppearanceHelper.v(this.domainKey + '.' + this.colorKey + ".disabled");
+            q && (M.node.opacity = q.getA(), M.normalColor = q, M.pressedColor = m, M.hoverColor = D, M.disabledColor = W);
           }
         }
       });

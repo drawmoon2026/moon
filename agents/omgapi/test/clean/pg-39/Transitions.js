@@ -9,9 +9,7 @@ function Transitions(j, O, exports) {
     Object.defineProperty(exports, "__esModule", B), exports.ToNormalSpinTransition = undefined;
     var x = function (C) {
       function H() {
-        {
-          return null !== C && C.apply(this, arguments) || this;
-        }
+        return null !== C && C.apply(this, arguments) || this;
       }
       return __extends(H, C), H.prototype.run = function (r, V) {
         this.hS = r.generalControllers, V && V();

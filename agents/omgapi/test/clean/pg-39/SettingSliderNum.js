@@ -19,17 +19,13 @@ function SettingSliderNum(require, module, exports) {
           'isMin': false
         },
         'setColor': function (x, C) {
-          {
-            this.onColor = x, this.offColor = C;
-          }
+          this.onColor = x, this.offColor = C;
         },
         'setDisplayValue': function (x, C) {
           this.numberLabel.string = C, this.numberLabel.node.active = x;
         },
         'onLoad': function () {
-          {
-            this.isMin && (this.shortLine.active = false);
-          }
+          this.isMin && (this.shortLine.active = false);
         },
         'setLight': function (x) {
           x ? (0, y.setNodeColorWithOpacity)(this.numberLabel.node, this.onColor) : (0, y.setNodeColorWithOpacity)(this.numberLabel.node, this.offColor);

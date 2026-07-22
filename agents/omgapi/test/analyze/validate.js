@@ -21,8 +21,46 @@ const files = fs.readdirSync(spinDir).filter(f => f.endsWith('.json'));
 const PT = spec.paytable.table;
 const VIS = spec.layout.visible;
 const REELS = spec.layout.reels;
-const WILD = 0;
 const NR = REELS.length, RL = REELS[REELS.length-1][1] + 1;
+
+// ── 线号(paylines)自校验:用 config 的赔表/wild/低分组回放每条中奖线,应重现样本 rwsp ──
+// 证明 线号赔表 + wild规则 + 低分组 正确。级联对纯线号 N/A(无 ptbr tumble)。
+if ((spec.paytable.mechanic === 'paylines') || spec.identity.type === 'paylines') {
+    const WILD = spec.paytable.wild, LL = spec.paytable.line_length, LG = spec.paytable.low_group;
+    const inLow = (s) => LG && LG.symbols.includes(s);
+    const lowPay = LG ? (Array.isArray(LG.any_pay) ? LG.any_pay : [LG.any_pay]) : [];
+    // 一条线(wild 可代任意)→ config 赔付:全同符号=单符号赔;全低分混合=低分组赔;否则 0
+    function linePay(syms) {
+        const nonW = syms.filter(s => s !== WILD);
+        const distinct = [...new Set(nonW)];
+        if (distinct.length <= 1) { const S = distinct.length ? distinct[0] : null; return (S !== null && PT[S] && PT[S][syms.length] !== undefined) ? [PT[S][syms.length]] : [0]; }
+        if (distinct.every(inLow)) return lowPay;            // 低分组任意混合
+        return [0];
+    }
+    let lineChecked = 0, lineMatch = 0, winSpins2 = 0;
+    for (const f of files) {
+        let si; try { si = JSON.parse(fs.readFileSync(path.join(spinDir, f), 'utf8')).response.body.dt.si; } catch { continue; }
+        if (!si || !si.wp || !si.rwsp) continue;
+        const board = si.frl || si.rl; if (!Array.isArray(board)) continue;
+        let any = false;
+        for (const L of Object.keys(si.wp)) {
+            const pos = si.wp[L]; if (!Array.isArray(pos) || si.rwsp[L] === undefined) continue;
+            const syms = pos.map(p => board[p]); if (syms.some(s => s === undefined)) continue;
+            lineChecked++; any = true;
+            if (linePay(syms).includes(si.rwsp[L])) lineMatch++;
+        }
+        if (any) winSpins2++;
+    }
+    const rate = lineChecked ? lineMatch / lineChecked : 0;
+    const ok = rate >= 0.999;
+    console.log(`\n===== 答案无关自校验 [pg-${gid}] (线号) =====`);
+    console.log(`结算:用 config 回放 ${lineChecked} 条中奖线,重现样本 rwsp: ${lineMatch}/${lineChecked} = ${(rate * 100).toFixed(2)}% (中奖样本 ${winSpins2})`);
+    console.log(`\n门槛(≥99.9%): ${ok ? '✅ PASS —— 线号赔表/wild/低分组 与数据自洽,可信' : '❌ FAIL —— config 与数据不符,需回查'}`);
+    console.log('(全程未使用任何 omgapi 答案)');
+    process.exit(ok ? 0 : 1);
+}
+
+const WILD = 0;
 
 // 某格能否用作符号 s:真符号 / 通用wild(rl=0,orl=0)/ 限制性wild匹配(rl=0,orl=s)
 function usable(rv, ov, s) { return rv === s || (rv === WILD && (ov === 0 || ov === s)); }

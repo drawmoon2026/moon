@@ -12,10 +12,8 @@ function InfoboardMessageController_spec(j, O, exports) {
     }
   }, exports.setWinAmount = function (x, C) {
     if (x && x > 0) {
-      {
-        var H = System.get("automation") && System.get("automation").GameData;
-        H && H.emit(C ? "ShowTotalWin" : "ShowWin");
-      }
+      var H = System.get("automation") && System.get("automation").GameData;
+      H && H.emit(C ? "ShowTotalWin" : "ShowWin");
     }
   }, cc._RF.pop());
 }

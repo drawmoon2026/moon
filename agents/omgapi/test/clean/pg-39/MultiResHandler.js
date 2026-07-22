@@ -4,10 +4,8 @@ function MultiResHandler(l, module) {
   'use strict';
 
   if (!cc._RF.push(module, "3ae3du76uBKurm1YFGdqj7/", "MultiResHandler")) {
-    {
-      var O = System.get("common").MultiResHandler;
-      module.exports.default = O, module.exports.__esModule = true, cc._RF.pop();
-    }
+    var O = System.get("common").MultiResHandler;
+    module.exports.default = O, module.exports.__esModule = true, cc._RF.pop();
   }
 }
 module.exports = MultiResHandler;

@@ -20,9 +20,7 @@ function ResponsiveHandler(require, O, exports) {
           x.default.subscribe(this.onCanvasResize.bind(this)), this.onCanvasResize();
         }, q.prototype.onCanvasResize = function () {
           this.fullScreenWidgets.forEach(function (m) {
-            {
-              m.updateAlignment();
-            }
+            m.updateAlignment();
           });
         }, __decorate([r([cc.Widget])], q.prototype, "fullScreenWidgets", undefined), __decorate([r(cc.Node)], q.prototype, "edgeMarker", undefined), __decorate([H], q);
       }(cc.Component);

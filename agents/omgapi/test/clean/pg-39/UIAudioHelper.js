@@ -14,24 +14,20 @@ function UIAudioHelper(require, O, exports) {
       M = require("Utils"),
       q = require("UIAudioConstant");
     (function (D) {
-      {
-        D[D.BACK_OR_CLOSE = 0] = "BACK_OR_CLOSE", D[D.BUTTON_CLICK = 1] = "BUTTON_CLICK", D[D.LIST_ITEN_CLICK = 2] = "LIST_ITEN_CLICK", D[D.SLIDER_EFFECT = 3] = "SLIDER_EFFECT", D[D.WALLET_COUNTING_ABOVE = 4] = "WALLET_COUNTING_ABOVE";
-      }
+      D[D.BACK_OR_CLOSE = 0] = "BACK_OR_CLOSE", D[D.BUTTON_CLICK = 1] = "BUTTON_CLICK", D[D.LIST_ITEN_CLICK = 2] = "LIST_ITEN_CLICK", D[D.SLIDER_EFFECT = 3] = "SLIDER_EFFECT", D[D.WALLET_COUNTING_ABOVE = 4] = "WALLET_COUNTING_ABOVE";
     })(H = exports.UIAudioIndex || (exports.UIAudioIndex = {})), exports.loadAudio = function (D) {
-      {
-        if (x) {
-          x = undefined, W && W();
-        }
-        if (C) {
-          var z = undefined,
-            L = function () {
-              k.off("loaderror", z), D && D();
-            };
-          z = function (v, b) {
-            k.off("load", L), D && D(b);
-          }, k.once("load", L), k.once("loaderror", z), k.load();
-        } else D && D(Error("UIAudioHelper not initialized"));
+      if (x) {
+        x = undefined, W && W();
       }
+      if (C) {
+        var z = undefined,
+          L = function () {
+            k.off("loaderror", z), D && D();
+          };
+        z = function (v, b) {
+          k.off("load", L), D && D(b);
+        }, k.once("load", L), k.once("loaderror", z), k.load();
+      } else D && D(Error("UIAudioHelper not initialized"));
     }, exports.initUIAudioHelper = function (D) {
       var W = M.getCocosMajor() >= 4 ? "/lib/ui_audio_helper/res/ui_audio" : cc.url.raw("/resources/lib/ui_audio_helper/res/ui_audio.mp3");
       var k = {};

@@ -31,11 +31,9 @@ function SlotProperties(require, y, exports) {
       'name': "SlotProperties",
       'extends': cc.Object,
       'ctor': function () {
-        {
-          this.slotItemCoordinates = [], this.slotItemWorldCoordinates = [], this.dirtyCoordinatesFlag = [];
-          for (var m = 0; m < 3; m++) this.slotItemCoordinates.push([]), this.slotItemWorldCoordinates.push([]), this.dirtyCoordinatesFlag.push([]);
-          this.Dp = undefined, this._i = {}, this.Up = {}, this.Wp = {}, this.Fp = H.default.subscribe(this.xp.bind(this));
-        }
+        this.slotItemCoordinates = [], this.slotItemWorldCoordinates = [], this.dirtyCoordinatesFlag = [];
+        for (var m = 0; m < 3; m++) this.slotItemCoordinates.push([]), this.slotItemWorldCoordinates.push([]), this.dirtyCoordinatesFlag.push([]);
+        this.Dp = undefined, this._i = {}, this.Up = {}, this.Wp = {}, this.Fp = H.default.subscribe(this.xp.bind(this));
       },
       'setSlotController': function (m) {
         this.Dp = m;
@@ -57,11 +55,9 @@ function SlotProperties(require, y, exports) {
               X = U.convertToNodeSpaceAR(cc.v2(Y.x, Y.y));
             W[D].push(X), k[D].push(Y), z[D].push(false);
           }), !this.slotItemSize) {
-            {
-              var Q = m.node.width,
-                w = m.rowHeight;
-              this.slotItemSize = cc.v2(Q, w);
-            }
+            var Q = m.node.width,
+              w = m.rowHeight;
+            this.slotItemSize = cc.v2(Q, w);
           }
         }
       },
@@ -76,9 +72,7 @@ function SlotProperties(require, y, exports) {
         if (Number.isInteger(m) && m < 9) return Math.floor(m / 3);
       },
       'getSlotItemSize': function () {
-        {
-          return this.slotItemSize;
-        }
+        return this.slotItemSize;
       },
       'getSlotItemScale': function () {
         return this.slotItemScale;
@@ -88,22 +82,18 @@ function SlotProperties(require, y, exports) {
         return D;
       },
       'getAllSlotIndexes': function () {
-        {
-          for (var m = [], D = 0; D < 9; D++) m.push(D);
-          return m;
-        }
+        for (var m = [], D = 0; D < 9; D++) m.push(D);
+        return m;
       },
       'registerReusePrefab': function (m, D, W, k) {
         if (undefined === k && (k = 0), !m || !D) throw Error("incorrect parameter");
         var z = this.Up,
           L = this._i;
         if (!z[m] && !L[m]) {
-          {
-            z[m] = D, L[m] = W ? new cc.NodePool(W) : new cc.NodePool(), this.Wp[m] = k;
-            for (var v = 0; v < k; v++) {
-              var b = cc.instantiate(D);
-              b.reuseIdentifier = m, this.enqueueReusableItem(b);
-            }
+          z[m] = D, L[m] = W ? new cc.NodePool(W) : new cc.NodePool(), this.Wp[m] = k;
+          for (var v = 0; v < k; v++) {
+            var b = cc.instantiate(D);
+            b.reuseIdentifier = m, this.enqueueReusableItem(b);
           }
         }
       },
@@ -120,13 +110,9 @@ function SlotProperties(require, y, exports) {
       },
       'xp': function () {
         this.dirtyCoordinatesFlag.forEach(function (m) {
-          {
-            m.forEach(function (D, W) {
-              {
-                m[W] = true;
-              }
-            });
-          }
+          m.forEach(function (D, W) {
+            m[W] = true;
+          });
         });
       }
     }))();

@@ -35,7 +35,7 @@ const spinRel = path.relative(ROOT, spinDir);
 
 // inferred/ 是每次运行的临时产物区,多款游戏共用;清掉上一款的赔表/结构残留,避免串味。
 const INF = path.join(__dirname, 'inferred');
-for (const f of ['paytable_from_js.json', 'paytable_from_lines.json', 'paytable.json', 'structure.json'])
+for (const f of ['paytable_from_js.json', 'paytable_from_lines.json', 'paytable.json', 'structure.json', 'layout.json'])
     try { fs.unlinkSync(path.join(INF, f)); } catch {}
 
 console.log('======== 答案无关提取流程 gid=' + gid + ' ========');
@@ -60,10 +60,18 @@ if (jsPath) {
 console.log('\n【2/6】boot 配置');
 run(`node analyze/infer-config.js ${gid}`);
 console.log('\n【3/6】spin 反推(交叉验证 JS 赔表 + 反推数值)  (样本: ' + spinRel + ')');
-for (const s of ['infer-paytable', 'infer-reel-weights', 'infer-triggers', 'infer-cascade'])
-    run(`node analyze/${s}.js "${spinDir}"`);
-// 线号游戏(如 39):赔表不在 JS,从服务器 spin 消息(wp/rwsp)反推;ways 游戏自动跳过。
-try { run(`node analyze/extract-paytable-lines.js "${spinDir}"`); } catch { console.log('  (线号赔表提取失败)'); }
+// 机制来自 step1 的 parse-structure(structure.json);据此选对赔表反推路径。
+let mechanic = null;
+try { mechanic = JSON.parse(fs.readFileSync(path.join(INF, 'structure.json'), 'utf8')).mechanic; } catch {}
+const isPaylines = mechanic === 'paylines';
+// 线号游戏:赔表在服务器 spin 消息(wp/rwsp),不用 ways 的 infer-paytable(其冲突判定对线号无意义)。
+if (isPaylines) { run(`node analyze/extract-paytable-lines.js "${spinDir}"`); }
+else { run(`node analyze/infer-paytable.js "${spinDir}"`); try { run(`node analyze/extract-paytable-lines.js "${spinDir}"`); } catch {} }
+// 卷轴权重/倍率/级联对两类机制都有意义,但线号可能缺免费局/级联 → 容错不致命。
+for (const s of ['infer-reel-weights', 'infer-triggers', 'infer-cascade']) {
+    if (isPaylines) { try { run(`node analyze/${s}.js "${spinDir}"`); } catch { console.log(`  (${s} 对本游戏 N/A,跳过)`); } }
+    else run(`node analyze/${s}.js "${spinDir}"`);
+}
 
 console.log('\n【4/6】合成游戏规格(核心产物)');
 run(`node analyze/build-config.js ${gid}`);

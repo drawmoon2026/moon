@@ -17,17 +17,11 @@ function PiggyParticleFeatureManager(require, O, exports) {
           return m.piggyParticleFeatureController = undefined, m.leftParticleAnimation = undefined, m.rightParticleAnimation = undefined, m.leftBParticleAnimation = undefined, m.rightBParticleAnimation = undefined, m.featureParticle = undefined, m.onScrollerPlayCallback = undefined, m;
         }
         return __extends(q, M), q.prototype.play = function (m) {
-          {
-            this.node.active = true, this.onScrollerPlayCallback = m, this.piggyParticleFeatureController.setScrollerShowCallback(this.Il.bind(this)), this.leftParticleAnimation.play(), this.rightParticleAnimation.play();
-          }
+          this.node.active = true, this.onScrollerPlayCallback = m, this.piggyParticleFeatureController.setScrollerShowCallback(this.Il.bind(this)), this.leftParticleAnimation.play(), this.rightParticleAnimation.play();
         }, q.prototype.stop = function () {
-          {
-            this.leftParticleAnimation.stop(), this.rightParticleAnimation.stop(), this.leftBParticleAnimation.stop(), this.rightBParticleAnimation.stop(), this.featureParticle.stopSystem(), this.node.active = false;
-          }
+          this.leftParticleAnimation.stop(), this.rightParticleAnimation.stop(), this.leftBParticleAnimation.stop(), this.rightBParticleAnimation.stop(), this.featureParticle.stopSystem(), this.node.active = false;
         }, q.prototype.Gl = function () {
-          {
-            this.leftBParticleAnimation.play(), this.rightBParticleAnimation.play(), this.featureParticle.resetSystem();
-          }
+          this.leftBParticleAnimation.play(), this.rightBParticleAnimation.play(), this.featureParticle.resetSystem();
         }, q.prototype.Il = function () {
           var m = this.onScrollerPlayCallback;
           this.onScrollerPlayCallback = undefined, m && m(), this.Gl();

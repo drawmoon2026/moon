@@ -27,9 +27,7 @@ function SimpleStartScroller(require, y, exports) {
           return this.delay = 0, this.rs = 0, this.as = 0, this.ps = 0, this.W_ = 0, this.ns = false, this;
         }
         return __extends(k, W), k.prototype.onPlay = function () {
-          {
-            this.emit("play", this), this.rs = 0, this.as = this.target.y, this.ps = this.as + this.bounceDistance, this.W_ = this.ps - this.accelerateDistance, this.ns = false;
-          }
+          this.emit("play", this), this.rs = 0, this.as = this.target.y, this.ps = this.as + this.bounceDistance, this.W_ = this.ps - this.accelerateDistance, this.ns = false;
         }, k.prototype.update = function (z) {
           if (!((z = this.rs += z) <= this.delay)) {
             z -= this.delay;

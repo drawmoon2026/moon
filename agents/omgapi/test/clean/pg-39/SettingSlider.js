@@ -18,50 +18,38 @@ function SettingSlider(l, module, exports) {
         'showValue': false
       },
       'setValueColor': function (B, x) {
-        {
-          this.C_ = B, this.y_ = x;
-        }
+        this.C_ = B, this.y_ = x;
       },
       'init': function () {
-        {
-          for (var B = this, x = this.g_ = [], C = this.numInterval, H = this.minNum, V = this.maxUnit, M = this.content, q = 0; q <= V; q++) {
-            {
-              var m = cc.instantiate(this.settingSliderNum),
-                D = x[q] = m.getComponent("SettingSliderNum");
-              D.setColor(this.C_, this.y_), D.num = H + q * C, m.x = 621 + 210 * q, 0 == q ? D.isMin = true : D.setDisplayValue(this.showValue, D.num), m.parent = M;
+        for (var B = this, x = this.g_ = [], C = this.numInterval, H = this.minNum, V = this.maxUnit, M = this.content, q = 0; q <= V; q++) {
+          var m = cc.instantiate(this.settingSliderNum),
+            D = x[q] = m.getComponent("SettingSliderNum");
+          D.setColor(this.C_, this.y_), D.num = H + q * C, m.x = 621 + 210 * q, 0 == q ? D.isMin = true : D.setDisplayValue(this.showValue, D.num), m.parent = M;
+        }
+        var W = -621 - 210 * V,
+          k = this.node;
+        if (k.on(cc.Node.EventType.TOUCH_START, function (L) {
+          k.active && (L.stopPropagation(), B.w_ = L.getLocation().x, B.A_ = M.x);
+        }), k.on(cc.Node.EventType.TOUCH_MOVE, function (L) {
+          if (k.active) {
+            L.stopPropagation();
+            var v = L.getLocation().x - B.w_,
+              b = B.A_ + v;
+            if (b < W) M.x = W, B.setLight(V);else if (b > -621) M.x = -621, B.setLight(0);else {
+              var U = Math.round(v / 105),
+                Q = 105 * U,
+                w = B.A_ + Q;
+              M.x = w, B.setLight(-((621 + B.A_) / 105 + U) / 2);
             }
           }
-          var W = -621 - 210 * V,
-            k = this.node;
-          if (k.on(cc.Node.EventType.TOUCH_START, function (L) {
-            k.active && (L.stopPropagation(), B.w_ = L.getLocation().x, B.A_ = M.x);
-          }), k.on(cc.Node.EventType.TOUCH_MOVE, function (L) {
-            if (k.active) {
-              {
-                L.stopPropagation();
-                var v = L.getLocation().x - B.w_,
-                  b = B.A_ + v;
-                if (b < W) M.x = W, B.setLight(V);else if (b > -621) M.x = -621, B.setLight(0);else {
-                  {
-                    var U = Math.round(v / 105),
-                      Q = 105 * U,
-                      w = B.A_ + Q;
-                    M.x = w, B.setLight(-((621 + B.A_) / 105 + U) / 2);
-                  }
-                }
-              }
-            }
-          }), k.on(cc.Node.EventType.TOUCH_CANCEL, function (L) {
-            k.active && (L.stopPropagation(), B.saveValue && B.saveValue(B.P_));
-          }), k.on(cc.Node.EventType.TOUCH_END, function (L) {
-            k.active && (L.stopPropagation(), B.saveValue && B.saveValue(B.P_));
-          }), this.alwaysShow) {
-            {
-              var z = this.P_ || 0;
-              this.setDefaultFirstSliderNum(z);
-            }
-          } else k.active = false;
-        }
+        }), k.on(cc.Node.EventType.TOUCH_CANCEL, function (L) {
+          k.active && (L.stopPropagation(), B.saveValue && B.saveValue(B.P_));
+        }), k.on(cc.Node.EventType.TOUCH_END, function (L) {
+          k.active && (L.stopPropagation(), B.saveValue && B.saveValue(B.P_));
+        }), this.alwaysShow) {
+          var z = this.P_ || 0;
+          this.setDefaultFirstSliderNum(z);
+        } else k.active = false;
       },
       'setLight': function (B, x) {
         if (undefined === x && (x = false), this.P_, !x && this.P_, B % 1 == 0) {

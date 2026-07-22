@@ -21,9 +21,7 @@ function DrawLine(j, O, exports) {
           var q, m;
           this.graphics.clear(), this.horizontal ? (q = -this.node.width * this.node.anchorX, m = this.node.width - this.node.width * this.node.anchorX, this.graphics.moveTo(q, this.node.height / 2), this.graphics.lineTo(m, this.node.height / 2)) : (q = this.node.height * this.node.anchorX, m = this.node.height * this.node.anchorX - this.node.height, this.graphics.moveTo(this.node.width / 2, q), this.graphics.lineTo(this.node.width / 2, m)), this.graphics.stroke();
         }, M.prototype.onDestroy = function () {
-          {
-            this.node.off("size-changed", this.Ds, this), this.graphics.clear();
-          }
+          this.node.off("size-changed", this.Ds, this), this.graphics.clear();
         }, __decorate([H(cc.Boolean)], M.prototype, "horizontal", undefined), __decorate([H(cc.Boolean)], M.prototype, "vertical", undefined), __decorate([C], M);
       }(cc.Component);
     exports.default = r, cc._RF.pop();

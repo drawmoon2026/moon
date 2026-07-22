@@ -17,17 +17,11 @@ function AudioFactory(require, O, exports) {
         }, H.prototype.get = function () {
           return this.F.pop();
         }, H.prototype.size = function () {
-          {
-            return this.F.length;
-          }
+          return this.F.length;
         }, H.prototype.destroy = function () {
-          {
-            this.F.forEach(function (r) {
-              {
-                r.destroy();
-              }
-            }), this.F = [];
-          }
+          this.F.forEach(function (r) {
+            r.destroy();
+          }), this.F = [];
         }, H;
       }();
     exports.default = C, cc._RF.pop();

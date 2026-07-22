@@ -14,9 +14,7 @@ function WinRollController(require, O, exports) {
       M = H.property,
       q = function (m) {
         function D() {
-          {
-            return null !== m && m.apply(this, arguments) || this;
-          }
+          return null !== m && m.apply(this, arguments) || this;
         }
         var W = {};
         W.type = x.default;

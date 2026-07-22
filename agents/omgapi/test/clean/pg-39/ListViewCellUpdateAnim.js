@@ -9,14 +9,12 @@ function ListViewCellUpdateAnim(j, O, exports) {
     Object.defineProperty(exports, "__esModule", B);
     var x = cc._decorator.ccclass,
       C = function () {
-        {
-          function H() {}
-          return H.prototype.layoutDuration = function () {
-            return 0.5;
-          }, H.prototype.layoutDelay = function () {
-            return 0.5;
-          }, H.prototype.updateCellAmimation = function () {}, H.prototype.animationEnd = function () {}, __decorate([x], H);
-        }
+        function H() {}
+        return H.prototype.layoutDuration = function () {
+          return 0.5;
+        }, H.prototype.layoutDelay = function () {
+          return 0.5;
+        }, H.prototype.updateCellAmimation = function () {}, H.prototype.animationEnd = function () {}, __decorate([x], H);
       }();
     exports.default = C, cc._RF.pop();
   }

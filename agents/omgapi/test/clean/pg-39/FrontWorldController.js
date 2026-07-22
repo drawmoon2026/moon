@@ -12,10 +12,8 @@ function FrontWorldController(j, O, exports) {
       H = x.property,
       r = function (V) {
         function M() {
-          {
-            var q = null !== V && V.apply(this, arguments) || this;
-            return q.bloomLeftParticle = undefined, q.Ys = 0, q;
-          }
+          var q = null !== V && V.apply(this, arguments) || this;
+          return q.bloomLeftParticle = undefined, q.Ys = 0, q;
         }
         return __extends(M, V), M.prototype.play = function () {
           this.bloomLeftParticle.resetSystem();

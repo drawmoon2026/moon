@@ -18,14 +18,10 @@ function SettingSliderSingleNum(require, module, exports) {
           this.numberLabel.string = this.num;
         },
         'setColor': function (x, C) {
-          {
-            this.onColor = x, this.offColor = C;
-          }
+          this.onColor = x, this.offColor = C;
         },
         'setLight': function (x) {
-          {
-            x ? (0, y.setNodeColorWithOpacity)(this.numberLabel.node, this.onColor) : (0, y.setNodeColorWithOpacity)(this.numberLabel.node, this.offColor);
-          }
+          x ? (0, y.setNodeColorWithOpacity)(this.numberLabel.node, this.onColor) : (0, y.setNodeColorWithOpacity)(this.numberLabel.node, this.offColor);
         }
       });
     exports.default = B, module.exports = exports.default, cc._RF.pop();

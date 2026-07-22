@@ -31,9 +31,7 @@ function GameEventHandler(j, module) {
       x = y,
       C = __assign({}, B);
     for (var H in Object.keys(x).forEach(function (r) {
-      {
-        C[x[r]] = C[r];
-      }
+      C[x[r]] = C[r];
     }), C.emitGameWinAnnouncement = function () {}, C) module.exports[H] = C[H];
     module.exports.__esModule = true, cc._RF.pop();
   }

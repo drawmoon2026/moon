@@ -21,9 +21,7 @@ function ClickEffectController(j, O, exports) {
           var m = this.node.convertToNodeSpaceAR(q);
           this.clickEffectNode.setPosition(m), this.Ts.play("click_effect");
         }, M.prototype.showFlash = function () {
-          {
-            this.flashSpriteNode.runAction(cc.sequence(cc.spawn(cc.scaleTo(0.3, 150), cc.sequence(cc.delayTime(0.05), cc.fadeOut(0.3))), cc.callFunc(this.Hs, this)));
-          }
+          this.flashSpriteNode.runAction(cc.sequence(cc.spawn(cc.scaleTo(0.3, 150), cc.sequence(cc.delayTime(0.05), cc.fadeOut(0.3))), cc.callFunc(this.Hs, this)));
         }, M.prototype.Hs = function () {
           var q = this.flashSpriteNode;
           q.opacity = 128, q.scale = 0;

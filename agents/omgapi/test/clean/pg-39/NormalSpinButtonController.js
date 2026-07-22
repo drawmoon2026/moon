@@ -26,13 +26,9 @@ function NormalSpinButtonController(j, O, exports) {
         }, M.prototype.setFastSpinLook = function () {
           this.arrowSprite.spriteFrame = this.arrowGreyBlurSprite, this.sa();
         }, M.prototype.setFastStopLook = function () {
-          {
-            this.arrowSprite.spriteFrame = this.arrowGreyBlurSprite, this.arrowSpriteNode.stopAllActions();
-          }
+          this.arrowSprite.spriteFrame = this.arrowGreyBlurSprite, this.arrowSpriteNode.stopAllActions();
         }, M.prototype.setStopLook = function () {
-          {
-            this.arrowSprite.spriteFrame = this.arrowGreySprite, this.arrowSpriteNode.stopAllActions();
-          }
+          this.arrowSprite.spriteFrame = this.arrowGreySprite, this.arrowSpriteNode.stopAllActions();
         }, M.prototype.show = function (q) {
           undefined === q && (q = true), this.normalSpinHolder.active = true, this.normalSpinHolder.stopAllActions(), q ? (this.normalSpinHolder.opacity = 0, this.normalSpinHolder.runAction(cc.fadeIn(0.3))) : this.normalSpinHolder.opacity = 255;
         }, M.prototype.hide = function () {
@@ -42,15 +38,11 @@ function NormalSpinButtonController(j, O, exports) {
         }, M.prototype.ia = function () {
           this.arrowSpriteNode.runAction(cc.repeatForever(cc.rotateBy(4, 360)));
         }, M.prototype.sa = function () {
-          {
-            this.arrowSpriteNode.runAction(cc.repeatForever(cc.rotateBy(0.4, 360)));
-          }
+          this.arrowSpriteNode.runAction(cc.repeatForever(cc.rotateBy(0.4, 360)));
         }, M.prototype.q = function () {
           this.arrowSpriteNode.stopAllActions(), this.normalSpinHolder.stopAllActions();
         }, M.prototype.destroy = function () {
-          {
-            return this.q(), this.node.destroy(), V.prototype.destroy.call(this);
-          }
+          return this.q(), this.node.destroy(), V.prototype.destroy.call(this);
         }, __decorate([H(cc.Node)], M.prototype, "normalSpinHolder", undefined), __decorate([H(cc.Node)], M.prototype, "arrowSpriteNode", undefined), __decorate([H(cc.Sprite)], M.prototype, "arrowSprite", undefined), __decorate([C], M);
       }(cc.Component);
     exports.default = r, cc._RF.pop();

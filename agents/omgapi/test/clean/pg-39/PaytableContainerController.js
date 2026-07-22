@@ -15,16 +15,12 @@ function PaytableContainerController(require, O, exports) {
     M[x.PAYTABLE_ITEM_INDEXES.WILD] = new cc.Vec2(-310, -90), M[x.PAYTABLE_ITEM_INDEXES.GOLD_PIG] = new cc.Vec2(-310, -150), M[x.PAYTABLE_ITEM_INDEXES.INGOT] = new cc.Vec2(-310, -210), M[x.PAYTABLE_ITEM_INDEXES.JADE] = new cc.Vec2(-310, -270), M[x.PAYTABLE_ITEM_INDEXES.BAR_3] = new cc.Vec2(200, -90), M[x.PAYTABLE_ITEM_INDEXES.BAR_2] = new cc.Vec2(200, -150), M[x.PAYTABLE_ITEM_INDEXES.BAR_1] = new cc.Vec2(200, -210);
     var q = function (m) {
       function D() {
-        {
-          var W = null !== m && m.apply(this, arguments) || this;
-          return W.symbolItem = undefined, W.anySymbolItem = undefined, W.symbolSprite = [], W.zu = [], W;
-        }
+        var W = null !== m && m.apply(this, arguments) || this;
+        return W.symbolItem = undefined, W.anySymbolItem = undefined, W.symbolSprite = [], W.zu = [], W;
       }
       return __extends(D, m), Object.defineProperty(D.prototype, "symbolNode", {
         'get': function () {
-          {
-            return this.zu;
-          }
+          return this.zu;
         },
         'enumerable': false,
         'configurable': true

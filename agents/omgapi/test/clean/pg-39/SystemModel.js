@@ -4,10 +4,8 @@ function SystemModel(l, module) {
   'use strict';
 
   if (!cc._RF.push(module, "daa8eblXeJHyaG5qwoh+Te0", "SystemModel")) {
-    {
-      var O = System.get("bvframework").SystemModel;
-      module.exports.default = O, module.exports.__esModule = true, cc._RF.pop();
-    }
+    var O = System.get("bvframework").SystemModel;
+    module.exports.default = O, module.exports.__esModule = true, cc._RF.pop();
   }
 }
 module.exports = SystemModel;

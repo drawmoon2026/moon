@@ -9,12 +9,10 @@ function SlotAnalyticsHelper(require, O, exports) {
     Object.defineProperty(exports, "__esModule", B), exports.sendFastStopGA = undefined;
     var x = require("AnalyticsHelper");
     exports.sendFastStopGA = function (C, H) {
-      {
-        var r = {};
-        r.type = C;
-        r.is_auto = H;
-        x.sendEvent(shell.ga.CATEGORY_GAME, shell.ga.EVENT_SLOT_STOP_SPIN, r);
-      }
+      var r = {};
+      r.type = C;
+      r.is_auto = H;
+      x.sendEvent(shell.ga.CATEGORY_GAME, shell.ga.EVENT_SLOT_STOP_SPIN, r);
     }, cc._RF.pop();
   }
 }

@@ -14,19 +14,15 @@ function BackWorldController(require, O, exports) {
       M = H.property,
       q = function (m) {
         function D() {
-          {
-            var W = null !== m && m.apply(this, arguments) || this;
-            return W.ipBg = undefined, W.lanternControllers = [], W;
-          }
+          var W = null !== m && m.apply(this, arguments) || this;
+          return W.ipBg = undefined, W.lanternControllers = [], W;
         }
         return __extends(D, m), D.prototype.init = function () {
           this.Y();
         }, D.prototype.Y = function () {
           var W = this;
           this.lanternControllers.forEach(function (k, z) {
-            {
-              C.delayCallback(z)(W.X(k));
-            }
+            C.delayCallback(z)(W.X(k));
           });
         }, D.prototype.X = function (W) {
           return function () {

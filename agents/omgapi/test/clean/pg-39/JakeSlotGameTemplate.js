@@ -8,9 +8,7 @@ function JakeSlotGameTemplate(O, y, exports) {
   var C = {};
   C.spaceBarInterrupterEnabled = false;
   cc._RF.push(y, "e12d8fBWfBCyboZWCaBLXDu", "JakeSlotGameTemplate") || (Object.defineProperty(exports, "__esModule", x), exports.initJakeSlotGameTemplate = exports.JSGTConfig = undefined, exports.JSGTConfig = C, exports.initJakeSlotGameTemplate = function (H) {
-    {
-      exports.JSGTConfig = Object.freeze(H);
-    }
+    exports.JSGTConfig = Object.freeze(H);
   }, cc._RF.pop());
 }
 module.exports = JakeSlotGameTemplate;

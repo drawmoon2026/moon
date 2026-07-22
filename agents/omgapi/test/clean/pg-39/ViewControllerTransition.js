@@ -8,14 +8,10 @@ function ViewControllerTransition(j, O, exports) {
     B.value = true;
     Object.defineProperty(exports, "__esModule", B);
     var x = function () {
-      {
-        function C() {}
-        return C.prototype.transitionDuration = function () {
-          {
-            return 0.3;
-          }
-        }, C.prototype.animateTransition = function () {}, C.prototype.animationEnd = function () {}, C;
-      }
+      function C() {}
+      return C.prototype.transitionDuration = function () {
+        return 0.3;
+      }, C.prototype.animateTransition = function () {}, C.prototype.animationEnd = function () {}, C;
     }();
     exports.default = x, cc._RF.pop();
   }

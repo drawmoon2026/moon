@@ -32,11 +32,9 @@ function Utils(j, module) {
     y.u24 = "getOrigin";
     var B = System.get("common").Utils,
       x = function (H, r) {
-        {
-          var V = {};
-          for (var M in r) H.hasOwnProperty(M) ? V[H[M]] = r[M] : V[M] = r[M];
-          return DEBUG, V;
-        }
+        var V = {};
+        for (var M in r) H.hasOwnProperty(M) ? V[H[M]] = r[M] : V[M] = r[M];
+        return DEBUG, V;
       }(y, B);
     for (var C in x) x.hasOwnProperty(C) && (module.exports[C] = x[C]);
     module.exports.__esModule = true, null == B.sharedScheduler && (module.exports.sharedScheduler = x.getSharedScheduler()), cc._RF.pop();

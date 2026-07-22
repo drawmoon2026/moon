@@ -26,13 +26,9 @@ function NumberDisplayInterface(require, O, exports) {
           var z = x.getDefaultCurrencyFormat().groupSeparator;
           return k.toString().replace(/\B(?=(\d{3})+(?!\d))/g, z);
         }, q.prototype.setResizeAnimation = function (k) {
-          {
-            this.ga = k;
-          }
+          this.ga = k;
         }, q.prototype.displayNumber = function (k, z) {
-          {
-            throw undefined === z && (z = true), Error("NumberDisplayInterface: method must be overriden");
-          }
+          throw undefined === z && (z = true), Error("NumberDisplayInterface: method must be overriden");
         }, q.prototype.clear = function () {
           throw Error("NumberDisplayInterface: method must be overriden");
         }, q.prototype.resizeNumberIfNeeded = function () {

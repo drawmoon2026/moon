@@ -22,9 +22,7 @@ function SystemFeatureHandler(require, O, exports) {
       var W = {};
       W.totalBet = D;
       H.emitRequestPlayEvent(W, function (k) {
-        {
-          k ? M(x.SpinCredits.CASH) : D > m.playerModel.balance ? M(x.SpinCredits.INSUFFICIENT) : M(x.SpinCredits.BET_INVALID);
-        }
+        k ? M(x.SpinCredits.CASH) : D > m.playerModel.balance ? M(x.SpinCredits.INSUFFICIENT) : M(x.SpinCredits.BET_INVALID);
       });
     }, cc._RF.pop();
   }

@@ -28,32 +28,22 @@ function InfobarController(require, y, exports) {
         b.func = q.showWinEvent;
         return __extends(v, L), Object.defineProperty(v.prototype, "infoBoardTipsController", {
           'get': function () {
-            {
-              return this.So || (this.So = this.normalMessageNode.getComponent("InfoboardMessageController")), this.So;
-            }
+            return this.So || (this.So = this.normalMessageNode.getComponent("InfoboardMessageController")), this.So;
           },
           'enumerable': false,
           'configurable': true
         }), Object.defineProperty(v.prototype, "numberDisplayController", {
           'get': function () {
-            {
-              return this.Co || (this.Co = this.winAmountNode.getComponent("NumberDisplayController")), this.Co;
-            }
+            return this.Co || (this.Co = this.winAmountNode.getComponent("NumberDisplayController")), this.Co;
           },
           'enumerable': false,
           'configurable': true
         }), v.prototype.init = function () {
-          {
-            this.Mo = H.default.subscribe(this.Ao.bind(this)), this.Ao();
-          }
+          this.Mo = H.default.subscribe(this.Ao.bind(this)), this.Ao();
         }, v.prototype.setWinSF = function (U) {
-          {
-            this.mo = U;
-          }
+          this.mo = U;
         }, v.prototype.setInfoTipsFont = function (U) {
-          {
-            this.normalMessageNode.getComponent(cc.Label).font = U;
-          }
+          this.normalMessageNode.getComponent(cc.Label).font = U;
         }, v.prototype.runShine = function () {
           this.infoBarMaskNode.active = true, this.Po();
           var U = this.infoBarNode.width / 2 + this.shineNode.width / 2;
@@ -63,15 +53,11 @@ function InfobarController(require, y, exports) {
         }, v.prototype.displayNormalTip = function () {
           this.wo !== C.NORMAL_TIPS && (this.wo = C.NORMAL_TIPS, this.normalMessageNode.active = true, this.winMessageNode.active = false, this.infoBoardTipsController.setSprites(this.bo), this.infoBoardTipsController.showInfoboardMessage(), this.infoBoardTipsController.clear(true));
         }, v.prototype.showWin = function (U, Q) {
-          {
-            m.checkUKGCRegion(U) && (this.wo = C.WIN, M.GeneralAudioPool.prize_win.play(), this.yo = Q, this.normalMessageNode.active = false, this.winMessageNode.active = true, this.numberDisplayController.clear(), this.numberDisplayController.displayNumber(U), this.winTextSprite.spriteFrame = this.mo, this.Oo());
-          }
+          m.checkUKGCRegion(U) && (this.wo = C.WIN, M.GeneralAudioPool.prize_win.play(), this.yo = Q, this.normalMessageNode.active = false, this.winMessageNode.active = true, this.numberDisplayController.clear(), this.numberDisplayController.displayNumber(U), this.winTextSprite.spriteFrame = this.mo, this.Oo());
         }, v.prototype.show = function () {
           this.node.runAction(cc.fadeIn(0.2));
         }, v.prototype.hide = function () {
-          {
-            this.node.runAction(cc.fadeOut(0.2));
-          }
+          this.node.runAction(cc.fadeOut(0.2));
         }, v.prototype.backToNormalBar = function () {
           M.GeneralAudioPool.prize_win_end.play(), this.infoBar.runAction(cc.sequence(cc.scaleTo(0.1, 1.2), cc.scaleTo(0.1, 1), cc.callFunc(this.Io, this)));
         }, v.prototype.Oo = function () {
@@ -81,9 +67,7 @@ function InfobarController(require, y, exports) {
         }, v.prototype.Ho = function () {
           this.infoBar.stopAllActions(), this.infoBar.runAction(cc.sequence(cc.scaleTo(0.1, 1), cc.scaleTo(0.1, 1.15)));
         }, v.prototype.Ro = function () {
-          {
-            this.normalMessageNode.runAction(cc.sequence(cc.scaleTo(0.2, 1.1).easing(cc.easeBackOut()), cc.scaleTo(0.2, 1).easing(cc.easeBackIn())));
-          }
+          this.normalMessageNode.runAction(cc.sequence(cc.scaleTo(0.2, 1.1).easing(cc.easeBackOut()), cc.scaleTo(0.2, 1).easing(cc.easeBackIn())));
         }, v.prototype.No = function () {
           this.ko(), this.Lo();
         }, v.prototype.ko = function () {
@@ -93,19 +77,15 @@ function InfobarController(require, y, exports) {
             w = cc.sequence(Q, U);
           this.barBackGlow.stopAllActions(), this.barBackGlow.opacity = 255, this.barBackGlow.setScale(cc.v2(0, 0)), this.barBackGlow.runAction(w);
         }, v.prototype.Lo = function () {
-          {
-            this.barFrontGlow.active = true;
-            var U = cc.spawn(cc.scaleTo(0.2, 1.01, 1.01).easing(cc.easeOut(1)), cc.fadeOut(0.2)),
-              Q = cc.fadeIn(0.1),
-              w = cc.sequence(Q, U);
-            this.barFrontGlow.stopAllActions(), this.barFrontGlow.opacity = 0, this.barFrontGlow.setScale(cc.v2(1, 1)), this.barFrontGlow.runAction(w);
-          }
+          this.barFrontGlow.active = true;
+          var U = cc.spawn(cc.scaleTo(0.2, 1.01, 1.01).easing(cc.easeOut(1)), cc.fadeOut(0.2)),
+            Q = cc.fadeIn(0.1),
+            w = cc.sequence(Q, U);
+          this.barFrontGlow.stopAllActions(), this.barFrontGlow.opacity = 0, this.barFrontGlow.setScale(cc.v2(1, 1)), this.barFrontGlow.runAction(w);
         }, v.prototype.Po = function () {
           this.shineNode.active = true, this.secondBarShine.x = -5, this.secondBarShine.runAction(cc.sequence(cc.moveTo(0.6, cc.v2(15, this.secondBarShine.position.y)).easing(cc.easeSineInOut()), cc.moveTo(0.8, cc.v2(-25, this.secondBarShine.position.y)).easing(cc.easeSineInOut())));
         }, v.prototype.To = function () {
-          {
-            this.barFlare.active = true, this.barFlare.stopAllActions(), this.barFlare.setScale(cc.v2(0, 0)), this.barFlare.runAction(cc.sequence(cc.scaleTo(0.2, 7, 2), cc.scaleTo(0.1, 0)));
-          }
+          this.barFlare.active = true, this.barFlare.stopAllActions(), this.barFlare.setScale(cc.v2(0, 0)), this.barFlare.runAction(cc.sequence(cc.scaleTo(0.2, 7, 2), cc.scaleTo(0.1, 0)));
         }, v.prototype.Ao = function () {
           this.widgets.forEach(function (U) {
             U.updateAlignment();
@@ -121,10 +101,8 @@ function InfobarController(require, y, exports) {
         }, v.prototype.jo = function () {
           this.yo = undefined, this.bo.length = 0, this.wo = undefined;
         }, v.prototype.destroy = function () {
-          {
-            var U = this.Mo;
-            return this.Mo = undefined, U && U(), this.jo(), this.Go(), this.node.destroy(), L.prototype.destroy.call(this);
-          }
+          var U = this.Mo;
+          return this.Mo = undefined, U && U(), this.jo(), this.Go(), this.node.destroy(), L.prototype.destroy.call(this);
         }, __decorate([k(cc.Node)], v.prototype, "infoBar", undefined), __decorate([k(cc.Node)], v.prototype, "infoBarNode", undefined), __decorate([k(cc.Node)], v.prototype, "infoBarMaskNode", undefined), __decorate([k(cc.Node)], v.prototype, "normalMessageNode", undefined), __decorate([k(cc.Node)], v.prototype, "winMessageNode", undefined), __decorate([k(cc.Node)], v.prototype, "barFlare", undefined), __decorate([k(cc.Node)], v.prototype, "secondBarShine", undefined), __decorate([k(cc.Node)], v.prototype, "shineNode", undefined), __decorate([k(cc.Node)], v.prototype, "barBackGlow", undefined), __decorate([k(cc.Node)], v.prototype, "barFrontGlow", undefined), __decorate([k(cc.Node)], v.prototype, "winAmountNode", undefined), __decorate([k(cc.Sprite)], v.prototype, "winTextSprite", undefined), __decorate([k(cc.Widget)], v.prototype, "widgets", undefined), __decorate([V.automationDec(b)], v.prototype, "showWin", null), __decorate([W], v);
       }(cc.Component);
     exports.default = z, cc._RF.pop();

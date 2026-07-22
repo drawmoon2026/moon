@@ -10,10 +10,8 @@ function PiggyParticleFeatureController(j, O, exports) {
     var x = cc._decorator.ccclass,
       C = function (H) {
         function r() {
-          {
-            var V = null !== H && H.apply(this, arguments) || this;
-            return V.onScrollerCallback = undefined, V;
-          }
+          var V = null !== H && H.apply(this, arguments) || this;
+          return V.onScrollerCallback = undefined, V;
         }
         return __extends(r, H), r.prototype.setScrollerShowCallback = function (V) {
           this.onScrollerCallback = V;

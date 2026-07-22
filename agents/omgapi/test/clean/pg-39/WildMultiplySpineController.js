@@ -16,10 +16,8 @@ function WildMultiplySpineController(j, O, exports) {
     })(x || (x = {}));
     var V = function (M) {
       function q() {
-        {
-          var m = null !== M && M.apply(this, arguments) || this;
-          return m.multiplySpine = undefined, m.Nu = x.HIDE, m.fS = 0, m.dS = undefined, m;
-        }
+        var m = null !== M && M.apply(this, arguments) || this;
+        return m.multiplySpine = undefined, m.Nu = x.HIDE, m.fS = 0, m.dS = undefined, m;
       }
       return __extends(q, M), q.prototype.playWinMultiply = function (m, D) {
         if (x.SHOW !== this.Nu) {
@@ -30,13 +28,11 @@ function WildMultiplySpineController(j, O, exports) {
           k.clearTrack(0), k.setCompleteListener(this.vS.bind(this)), k.setAnimation(0, W, false);
         }
       }, q.prototype.vS = function () {
-        {
-          var m = 'x' + this.fS + "_idle",
-            D = this.multiplySpine;
-          D.clearTrack(0), D.setCompleteListener(undefined), D.setAnimation(0, m, true);
-          var W = this.dS;
-          this.dS = undefined, W && W();
-        }
+        var m = 'x' + this.fS + "_idle",
+          D = this.multiplySpine;
+        D.clearTrack(0), D.setCompleteListener(undefined), D.setAnimation(0, m, true);
+        var W = this.dS;
+        this.dS = undefined, W && W();
       }, q.prototype.playIdleMultiply = function () {
         if (x.SHOW !== this.Nu) {
           var m = 'x' + this.fS + "_idle";
@@ -45,19 +41,13 @@ function WildMultiplySpineController(j, O, exports) {
           D.clearTrack(0), D.setAnimation(0, m, true);
         }
       }, q.prototype.stop = function () {
-        {
-          if (this.multiplySpine.node.active) {
-            {
-              var m = this.multiplySpine;
-              m.clearTrack(0), m.setCompleteListener(undefined), m.setToSetupPose(), this.multiplySpine.node.active = false;
-            }
-          }
-          this.Nu = x.HIDE;
+        if (this.multiplySpine.node.active) {
+          var m = this.multiplySpine;
+          m.clearTrack(0), m.setCompleteListener(undefined), m.setToSetupPose(), this.multiplySpine.node.active = false;
         }
+        this.Nu = x.HIDE;
       }, q.prototype.destroy = function () {
-        {
-          return this.node.destroy(), this.stop(), M.prototype.destroy.call(this);
-        }
+        return this.node.destroy(), this.stop(), M.prototype.destroy.call(this);
       }, __decorate([r(sp.Skeleton)], q.prototype, "multiplySpine", undefined), __decorate([H], q);
     }(cc.Component);
     exports.default = V, cc._RF.pop();

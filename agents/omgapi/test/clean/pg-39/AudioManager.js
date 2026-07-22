@@ -26,22 +26,18 @@ function AudioManager(require, B, exports) {
     W.bgm_mg = undefined, W.prize_win = undefined, W.prize_win_end = undefined, W.bgm_bigwin = undefined, W.bgm_bigwin_cue = undefined, W.bgm_bigwin_end = undefined, W.bgm_bigwin_firework = undefined, W.spin_btn = undefined, W.spin_reel_quickstop = undefined, W.spin_reel_stop = undefined, W.spin_reel = undefined, W.fs_fastspin = undefined, W.reel_nearwin_slowdown = undefined, W.sym_wild_normal = undefined, W.sym_wild_nowin = undefined, W.cha_afterbigwin = undefined, W.cha_inactive = undefined, W.cha_prize_win_a = undefined, W.cha_prize_win_b = undefined, W.cha_prize_win_c = undefined, W.feature_raise_angpau = undefined, W.angpau_shiny = undefined, W.sym_wild_x2 = undefined, W.sym_wild_x5 = undefined, W.sym_wild_x10 = undefined;
     var T = ["bgm_mg", "bgm_bigwin"];
     exports.init = function () {
-      {
-        var A;
-        Object.keys(A = W).forEach(function (G) {
-          var J = -1 !== T.indexOf(G) ? L.MUSIC : L.SOUND;
-          A[G] = Y(G, J);
-        }), W.bgm_mg.setLoop(true), W.spin_reel.setLoop(true), X(true), E(true), cc.game.on(cc.game.EVENT_HIDE, N), cc.game.on(cc.game.EVENT_SHOW, Z);
-      }
+      var A;
+      Object.keys(A = W).forEach(function (G) {
+        var J = -1 !== T.indexOf(G) ? L.MUSIC : L.SOUND;
+        A[G] = Y(G, J);
+      }), W.bgm_mg.setLoop(true), W.spin_reel.setLoop(true), X(true), E(true), cc.game.on(cc.game.EVENT_HIDE, N), cc.game.on(cc.game.EVENT_SHOW, Z);
     }, exports.registerAudio = function (A, G) {
-      {
-        var J = G ? L.MUSIC : L.SOUND;
-        if (U) {
-          var K = M.settingMenuHelper.soundEnable;
-          A.setMute(K);
-        }
-        return z[J] || (z[J] = []), z[J].push(A), A.setRate(w), J;
+      var J = G ? L.MUSIC : L.SOUND;
+      if (U) {
+        var K = M.settingMenuHelper.soundEnable;
+        A.setMute(K);
       }
+      return z[J] || (z[J] = []), z[J].push(A), A.setRate(w), J;
     }, exports.unregisterAudio = function (A, G) {
       var J = z[G],
         K = J.indexOf(A);
@@ -53,19 +49,15 @@ function AudioManager(require, B, exports) {
     }, exports.toggleAudioGameStarted = function () {
       U = true, X(!M.settingMenuHelper.soundEnable), E(!M.settingMenuHelper.soundEnable);
     }, exports.toggleMusicMuted = X, exports.toggleEffectMuted = E, exports.crossFadeAudio = function (A, G, J) {
-      {
-        undefined === J && (J = 1), G.setVolume(0), G.play(), G.fade(0, J, 1000), 0 === A.getVolume() ? A.stop() : (A.fade(A.getVolume(), 0, 1000), A.once("fade", function () {
-          A.stop();
-        }));
-      }
+      undefined === J && (J = 1), G.setVolume(0), G.play(), G.fade(0, J, 1000), 0 === A.getVolume() ? A.stop() : (A.fade(A.getVolume(), 0, 1000), A.once("fade", function () {
+        A.stop();
+      }));
     }, exports.loadAudio = function (A, G) {
       var J = function () {
           A.off("loaderror", K), G && G();
         },
         K = function (l0, l1) {
-          {
-            A.off("load", J), G && G(l1, l0);
-          }
+          A.off("load", J), G && G(l1, l0);
         };
       return A.once("load", J), A.once("loaderror", K), A.load();
     }, exports.releaseAudioPool = function (A) {
@@ -86,11 +78,9 @@ function AudioManager(require, B, exports) {
     return '1' === q.cs_Launch.noAudio ? new D.default(l0) : new V.default(l0, G);
   }
   function X(A) {
-    {
-      undefined === A && (A = false), z[L.MUSIC] && z[L.MUSIC].map(function (G) {
-        G.setMute(A);
-      });
-    }
+    undefined === A && (A = false), z[L.MUSIC] && z[L.MUSIC].map(function (G) {
+      G.setMute(A);
+    });
   }
   function E(A) {
     undefined === A && (A = false), z[L.SOUND] && z[L.SOUND].map(function (G) {
@@ -98,20 +88,16 @@ function AudioManager(require, B, exports) {
     });
   }
   function F(A) {
-    {
-      return A.unload();
-    }
+    return A.unload();
   }
   function N() {
-    {
-      if (!Q) {
-        Q = true;
-        var A = [];
-        Object.keys(W).forEach(function (K) {
-          A.push(W[K]);
-        });
-        for (var G = 0, J = A.length; G < J; G++) A[G].pause(), P.push(A[G]);
-      }
+    if (!Q) {
+      Q = true;
+      var A = [];
+      Object.keys(W).forEach(function (K) {
+        A.push(W[K]);
+      });
+      for (var G = 0, J = A.length; G < J; G++) A[G].pause(), P.push(A[G]);
     }
   }
   function Z() {

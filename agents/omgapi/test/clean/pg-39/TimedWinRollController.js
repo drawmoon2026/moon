@@ -13,18 +13,14 @@ function TimedWinRollController(require, O, exports) {
       V = H.ccclass,
       M = H.property,
       q = function (m) {
-        {
-          function W() {
-            {
-              var k = null !== m && m.apply(this, arguments) || this;
-              return k.displayController = undefined, k;
-            }
-          }
-          var D = {};
-          D.type = x.default;
-          D.override = true;
-          return __extends(W, m), __decorate([M(D)], W.prototype, "displayController", undefined), __decorate([V], W);
+        function W() {
+          var k = null !== m && m.apply(this, arguments) || this;
+          return k.displayController = undefined, k;
         }
+        var D = {};
+        D.type = x.default;
+        D.override = true;
+        return __extends(W, m), __decorate([M(D)], W.prototype, "displayController", undefined), __decorate([V], W);
       }(C.default);
     exports.default = q, cc._RF.pop();
   }

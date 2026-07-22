@@ -14,10 +14,8 @@ function TimedWinRollLabelController(require, O, exports) {
       M = H.property,
       q = function (m) {
         function D() {
-          {
-            var k = null !== m && m.apply(this, arguments) || this;
-            return k.displayController = undefined, k;
-          }
+          var k = null !== m && m.apply(this, arguments) || this;
+          return k.displayController = undefined, k;
         }
         var W = {};
         W.type = x.default;

@@ -4,7 +4,7 @@
   "identity": {
     "gid": "39",
     "provider": "pg",
-    "game_code": null,
+    "game_code": "piggy-gold",
     "engine": "cocos",
     "type": "paylines",
     "ways": null
@@ -27,9 +27,9 @@
   "config": {
     "source": "gameinfo-boot",
     "coin_sizes": [
-      0.02,
-      0.1,
-      0.5
+      0.5,
+      2,
+      10
     ],
     "bet_multipliers": [
       1,
@@ -43,15 +43,14 @@
       9,
       10
     ],
-    "max_lines": 20,
-    "max_win_multiplier": 10000,
+    "max_lines": 1,
     "win_tiers": {
-      "bw": 20,
-      "mgw": 35,
+      "bw": 10,
+      "mgw": 20,
       "mw": 5,
-      "smgw": 50
+      "smgw": 35
     },
-    "feature_buy": true
+    "feature_buy": null
   },
   "layout": {
     "source": "server-spin-frl-board",

@@ -18,9 +18,7 @@ function AutoSpinHandler(require, O, exports) {
         H(V);
       });
     }, exports.resetAutoSpinCount = function () {
-      {
-        C = -1;
-      }
+      C = -1;
     }, exports.decrementAutoSpinCount = function (r) {
       C -= 1, r.updateAutoSpinCount(C);
     }, exports.exitAutoSpin = function (r) {

@@ -14,14 +14,12 @@ function PGGDataSource(require, O, exports) {
       M = require("PlayerModel"),
       q = function (D) {
         function W() {
-          {
-            var k = D.call(this, {
-              'playerModel': new M.default(),
-              'systemModel': new H.default(x.cs_Config),
-              'transactionModel': new C.default()
-            }) || this;
-            return k.autoSpinCount = -1, k.gameLaunched = false, k.isReplayStarted = false, k;
-          }
+          var k = D.call(this, {
+            'playerModel': new M.default(),
+            'systemModel': new H.default(x.cs_Config),
+            'transactionModel': new C.default()
+          }) || this;
+          return k.autoSpinCount = -1, k.gameLaunched = false, k.isReplayStarted = false, k;
         }
         return __extends(W, D), W;
       }(V.default);

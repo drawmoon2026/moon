@@ -18,9 +18,7 @@ function PaytableSymbolController(j, O, exports) {
         return __extends(M, V), M.prototype.playInactiveNode = function (q) {
           undefined === q && (q = true), this.symbolNode.stopAllActions(), q ? this.symbolNode.runAction(cc.fadeTo(0.1, 102)) : this.symbolNode.opacity = 102;
         }, M.prototype.playActive = function (q) {
-          {
-            undefined === q && (q = true), this.symbolNode.stopAllActions(), q ? this.symbolNode.runAction(cc.fadeTo(0.1, 255)) : this.symbolNode.opacity = 255;
-          }
+          undefined === q && (q = true), this.symbolNode.stopAllActions(), q ? this.symbolNode.runAction(cc.fadeTo(0.1, 255)) : this.symbolNode.opacity = 255;
         }, M.prototype.setSymbol = function (q) {
           this.symbol01.spriteFrame = q, this.symbol02.spriteFrame = q, this.symbol03.spriteFrame = q;
         }, M.prototype.setAnySymbol = function (q, m, D) {

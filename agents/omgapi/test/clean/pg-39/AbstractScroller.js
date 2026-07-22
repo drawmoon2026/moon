@@ -26,19 +26,13 @@ function AbstractScroller(j, O, exports) {
       return Object.defineProperty(C.prototype, "isPlaying", H), Object.defineProperty(C.prototype, "isPaused", r), C.prototype.play = function () {
         this.t ? this.i && (this.i = false, this.onResume()) : (this.t = true, this.onPlay());
       }, C.prototype.onPlay = function () {}, C.prototype.stop = function () {
-        {
-          this.t && (this.t = false, this.onStop(), this.i = false);
-        }
+        this.t && (this.t = false, this.onStop(), this.i = false);
       }, C.prototype.onStop = function () {}, C.prototype.pause = function () {
         this.t && !this.i && (this.i = true, this.onPause());
       }, C.prototype.onPause = function () {}, C.prototype.resume = function () {
-        {
-          this.t && this.i && (this.i = false, this.onResume());
-        }
+        this.t && this.i && (this.i = false, this.onResume());
       }, C.prototype.onResume = function () {}, C.prototype.step = function () {
-        {
-          this.pause(), this.s = true, this.t || this.play();
-        }
+        this.pause(), this.s = true, this.t || this.play();
       }, C.prototype.update = function () {}, C;
     }();
     exports.default = x, cc._RF.pop();

@@ -22,16 +22,12 @@ function SlotScroller(require, O, exports) {
         }, D.prototype.indexOfScroller = function (W) {
           return this.Kp.indexOf(W);
         }, D.prototype.getScrollState = function () {
-          {
-            return this.Vp;
-          }
+          return this.Vp;
         }, D.prototype.setScrollState = function (W) {
           if (this.enabledInHierarchy) {
-            {
-              this.zp = undefined;
-              var k = this.Vp;
-              k !== W && this.Jp(W, k);
-            }
+            this.zp = undefined;
+            var k = this.Vp;
+            k !== W && this.Jp(W, k);
           } else this.zp = W;
         }, D.prototype.Jp = function (W, k) {
           var z = this.views,
@@ -48,12 +44,10 @@ function SlotScroller(require, O, exports) {
           b.didChangeScrollState(this, W, k);
         }, D.prototype.onEnable = function () {
           if (undefined !== this.zp) {
-            {
-              var W = this.zp;
-              this.zp = undefined;
-              var k = this.Vp;
-              k !== W && this.Jp(W, k);
-            }
+            var W = this.zp;
+            this.zp = undefined;
+            var k = this.Vp;
+            k !== W && this.Jp(W, k);
           }
         }, D.prototype.onDisable = function () {
           for (var W = this.qp, k = 0, z = W.length; k < z; k++) W[k].stop();

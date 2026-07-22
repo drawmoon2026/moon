@@ -24,17 +24,11 @@ function NumberLabelControllerLite(require, O, exports) {
         }, D.prototype.play = function (W, k) {
           this.wa && (this.unschedule(this.Ba), this.wa = false), this.ya = W, this.Ma = k, this.Ys = 0, this.wa = true, this.Ca = !(W > k), this.schedule(this.Ba, 0);
         }, D.prototype.skip = function (W) {
-          {
-            this.wa && (this.unschedule(this.Ba), this.wa = false), this.label.string = x.formatCurrency(W, this.Aa, this.Pa);
-          }
+          this.wa && (this.unschedule(this.Ba), this.wa = false), this.label.string = x.formatCurrency(W, this.Aa, this.Pa);
         }, D.prototype.skipNoCurrencyValue = function (W) {
-          {
-            this.wa && (this.unschedule(this.Ba), this.wa = false), this.label.string = x.formatGroup(W);
-          }
+          this.wa && (this.unschedule(this.Ba), this.wa = false), this.label.string = x.formatGroup(W);
         }, D.prototype.setString = function (W) {
-          {
-            this.wa && (this.unschedule(this.Ba), this.wa = false), this.label.string = W;
-          }
+          this.wa && (this.unschedule(this.Ba), this.wa = false), this.label.string = W;
         }, D.prototype.Ba = function (W) {
           this.Ys += W;
           var k = this.Ys / this.rollDuration;

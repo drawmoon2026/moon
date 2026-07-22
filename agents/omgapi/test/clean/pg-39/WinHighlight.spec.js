@@ -6,10 +6,8 @@ function WinHighlight_spec(j, O, exports) {
   var B = {};
   B.value = true;
   cc._RF.push(O, "1aa77YtUcFBUomDDx/cedzg", "WinHighlight.spec") || (Object.defineProperty(exports, "__esModule", B), exports.showWinHighlight = undefined, exports.showWinHighlight = function () {
-    {
-      var x = System.get("automation") && System.get("automation").GameData;
-      x && x.emit("WinHighlightShown");
-    }
+    var x = System.get("automation") && System.get("automation").GameData;
+    x && x.emit("WinHighlightShown");
   }, cc._RF.pop());
 }
 module.exports = WinHighlight_spec;

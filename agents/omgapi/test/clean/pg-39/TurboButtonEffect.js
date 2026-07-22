@@ -14,13 +14,9 @@ function TurboButtonEffect(j, O, exports) {
           return V.rS = undefined, V;
         }
         return __extends(r, H), r.prototype.setUpdateTurboMiddleIconCallback = function (V) {
-          {
-            this.rS = V;
-          }
+          this.rS = V;
         }, r.prototype.changeTurboSprite = function () {
-          {
-            this.rS && this.rS();
-          }
+          this.rS && this.rS();
         }, __decorate([x], r);
       }(cc.Component);
     exports.default = C, cc._RF.pop();

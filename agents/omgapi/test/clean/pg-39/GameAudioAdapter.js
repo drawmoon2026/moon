@@ -17,18 +17,14 @@ function GameAudioAdapter(require, O, exports) {
           return W.Qs = undefined, W.Xs = undefined, W.Xs = D, W;
         }
         return __extends(q, M), q.prototype.load = function () {
-          {
-            var m = this,
-              D = function () {
-                {
-                  m.off(H.AUDIO_ADAPTER_EVENT.LOAD_ERROR, W), m.Qs = x.registerAudio(m, m.Xs);
-                }
-              },
-              W = function () {
-                m.off(H.AUDIO_ADAPTER_EVENT.LOADED, D);
-              };
-            return this.once(H.AUDIO_ADAPTER_EVENT.LOADED, D), this.once(H.AUDIO_ADAPTER_EVENT.LOAD_ERROR, W), M.prototype.load.call(this);
-          }
+          var m = this,
+            D = function () {
+              m.off(H.AUDIO_ADAPTER_EVENT.LOAD_ERROR, W), m.Qs = x.registerAudio(m, m.Xs);
+            },
+            W = function () {
+              m.off(H.AUDIO_ADAPTER_EVENT.LOADED, D);
+            };
+          return this.once(H.AUDIO_ADAPTER_EVENT.LOADED, D), this.once(H.AUDIO_ADAPTER_EVENT.LOAD_ERROR, W), M.prototype.load.call(this);
         }, q.prototype.unload = function () {
           return x.unregisterAudio(this, this.Qs), M.prototype.unload.call(this);
         }, __decorate([r], q);
