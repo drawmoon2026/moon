@@ -33,6 +33,11 @@ const spinDir = spinCands.find(d => fs.existsSync(d) && fs.readdirSync(d).some(f
 if (!spinDir) { console.error(`没有 ${gid} 的 spin 样本(env/mock/${gid}/spin 或 spin-live)`); process.exit(1); }
 const spinRel = path.relative(ROOT, spinDir);
 
+// inferred/ 是每次运行的临时产物区,多款游戏共用;清掉上一款的赔表/结构残留,避免串味。
+const INF = path.join(__dirname, 'inferred');
+for (const f of ['paytable_from_js.json', 'paytable_from_lines.json', 'paytable.json', 'structure.json'])
+    try { fs.unlinkSync(path.join(INF, f)); } catch {}
+
 console.log('======== 答案无关提取流程 gid=' + gid + ' ========');
 // 【1】JS 深度反混淆链:混淆JS → 清晰代码 → 拆模块 → 赔表(执行式)+ 结构(模块名特性)。
 // 赔表/机制的信息来源是 JS(基石);spin 数据在后面做交叉验证。混淆变体失败则整链退回 spin 反推。
@@ -57,6 +62,8 @@ run(`node analyze/infer-config.js ${gid}`);
 console.log('\n【3/6】spin 反推(交叉验证 JS 赔表 + 反推数值)  (样本: ' + spinRel + ')');
 for (const s of ['infer-paytable', 'infer-reel-weights', 'infer-triggers', 'infer-cascade'])
     run(`node analyze/${s}.js "${spinDir}"`);
+// 线号游戏(如 39):赔表不在 JS,从服务器 spin 消息(wp/rwsp)反推;ways 游戏自动跳过。
+try { run(`node analyze/extract-paytable-lines.js "${spinDir}"`); } catch { console.log('  (线号赔表提取失败)'); }
 
 console.log('\n【4/6】合成游戏规格(核心产物)');
 run(`node analyze/build-config.js ${gid}`);

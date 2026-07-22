@@ -10,15 +10,24 @@
     "ways": 2000
   },
   "mechanics": {
-    "source": "client-js-deobfuscation",
+    "source": "client-js-module-names",
     "components": [
+      "free_spin",
+      "respin_or_hold",
       "scatter",
       "wild",
       "multiplier",
-      "free_spin",
-      "payout",
-      "symbol",
-      "feature_buy"
+      "bonus"
+    ],
+    "evidence": [
+      "BonusAssetConfig",
+      "BonusFreeSpinController",
+      "BonusLoadingController",
+      "FreeSpinEffectController",
+      "MJFreeSpinGameState",
+      "MJFreeSpinModel",
+      "MJRespinGameState",
+      "MJRespinModel"
     ]
   },
   "config": {
@@ -112,7 +121,8 @@
     ]
   },
   "paytable": {
-    "source": "spin-rwsp-inference",
+    "source": "client-js-deobfuscation",
+    "validated_by": "spin-rwsp-cross-check",
     "formula": "win = pay[sym][N] × ways × cs × ml × wm",
     "table": {
       "2": {

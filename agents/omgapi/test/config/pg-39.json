@@ -1,0 +1,172 @@
+{
+  "$schema": "moon/game-spec/v1",
+  "_note": "游戏规格 —— 从 spin 样本 + 客户端 JS 逆向提炼,答案无关。通用引擎的唯一输入。",
+  "identity": {
+    "gid": "39",
+    "provider": "pg",
+    "game_code": null,
+    "engine": "cocos",
+    "type": "paylines",
+    "ways": null
+  },
+  "mechanics": {
+    "source": "client-js-module-names",
+    "components": [
+      "scatter",
+      "wild"
+    ],
+    "evidence": [
+      "BounceScatterStopScroller",
+      "PaytableWildEffectController",
+      "ScatterStopScroller",
+      "WildBounceScroller",
+      "WildMultiplySpineController",
+      "WildMultiplySpineManager"
+    ]
+  },
+  "config": {
+    "source": "gameinfo-boot",
+    "coin_sizes": [
+      0.02,
+      0.1,
+      0.5
+    ],
+    "bet_multipliers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "max_lines": 20,
+    "max_win_multiplier": 10000,
+    "win_tiers": {
+      "bw": 20,
+      "mgw": 35,
+      "mw": 5,
+      "smgw": 50
+    },
+    "feature_buy": true
+  },
+  "layout": {
+    "source": "spin-wp-inference",
+    "reels": [
+      [
+        0,
+        2
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        6,
+        8
+      ]
+    ],
+    "rows_per_reel": 3,
+    "visible": [
+      [
+        1
+      ],
+      [
+        4
+      ],
+      [
+        7
+      ]
+    ]
+  },
+  "paytable": {
+    "source": "server-spin-lines",
+    "mechanic": "paylines",
+    "wild": 0,
+    "line_length": 3,
+    "formula": "win = pay[sym][线长] × cs × ml(每条中奖线)",
+    "table": {
+      "1": {
+        "3": 50
+      },
+      "2": {
+        "3": 20
+      },
+      "3": {
+        "3": 15
+      },
+      "4": {
+        "3": 10
+      },
+      "5": {
+        "3": 8
+      },
+      "6": {
+        "3": 5
+      }
+    },
+    "low_group": {
+      "symbols": [
+        4,
+        5,
+        6
+      ],
+      "any_pay": 3,
+      "line_length": 3,
+      "note": "任意 3 个属于 {4,5,6} 的符号(非同一符号)按此组合赔付"
+    }
+  },
+  "reels": {
+    "source": "spin-board-statistics",
+    "base": {
+      "R1": {},
+      "R2": {},
+      "R3": {}
+    },
+    "free_spin": {
+      "R1": {},
+      "R2": {},
+      "R3": {}
+    }
+  },
+  "multiplier": {
+    "source": "spin-wm-inference",
+    "ladder_base": [
+      1,
+      2,
+      10
+    ],
+    "ladder_fs": []
+  },
+  "gold_wild": {
+    "source": "cascade-created-wild-statistics",
+    "reels": [],
+    "rate_per_reel": {
+      "R1": 0,
+      "R2": 0,
+      "R3": 0
+    }
+  },
+  "cascade": {
+    "source": "spin-ptbr-rns-replay",
+    "rule": null,
+    "verified_pass_rate": null
+  },
+  "rtp": {
+    "method": "target-ratio (no_win_prob)",
+    "note": "权重合成不复现PG概率,RTP由此层调到目标"
+  },
+  "completeness": {
+    "self_consistent": true,
+    "paytable_coverage": "6/6",
+    "paytable_complete": true,
+    "base_spin_samples": null,
+    "gold_wild_detected": false,
+    "warnings": [
+      "未检出金色变wild(可能样本不足,或该游戏是通用wild需专门探测)"
+    ]
+  }
+}
