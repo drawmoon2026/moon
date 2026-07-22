@@ -54,7 +54,7 @@
     "feature_buy": true
   },
   "layout": {
-    "source": "spin-wp-inference",
+    "source": "server-spin-frl-board",
     "reels": [
       [
         0,
@@ -72,13 +72,19 @@
     "rows_per_reel": 3,
     "visible": [
       [
-        1
+        0,
+        1,
+        2
       ],
       [
-        4
+        3,
+        4,
+        5
       ],
       [
-        7
+        6,
+        7,
+        8
       ]
     ]
   },
@@ -165,8 +171,6 @@
     "paytable_complete": true,
     "base_spin_samples": null,
     "gold_wild_detected": false,
-    "warnings": [
-      "未检出金色变wild(可能样本不足,或该游戏是通用wild需专门探测)"
-    ]
+    "warnings": []
   }
 }

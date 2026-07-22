@@ -23,10 +23,12 @@ if (!spinDir || !fs.existsSync(spinDir)) { console.error('用法: node analyze/e
 
 // 收集中奖线:{ syms:[线上符号], pay }。symbols 用 frl[wp位置] 取(兼容多线)。
 const lines = [];
+const boardLens = new Set();     // 完整牌面长度(paylines 全牌面可视)
 let winSpins = 0, filesN = 0;
 for (const f of fs.readdirSync(spinDir).filter(x => x.endsWith('.json'))) {
     filesN++;
     let si; try { si = JSON.parse(fs.readFileSync(path.join(spinDir, f), 'utf8')).response.body.dt.si; } catch { continue; }
+    if (Array.isArray(si && si.frl)) boardLens.add(si.frl.length);
     if (!si || !si.wp || !si.rwsp) continue;
     const frl = si.frl || si.rl;
     if (!Array.isArray(frl)) continue;
@@ -103,6 +105,16 @@ const lowGroup = lowGroupSet.length
         note: `任意 ${lineLen} 个属于 {${lowGroupSet.join(',')}} 的符号(非同一符号)按此组合赔付` }
     : null;
 
+// 布局:paylines 全牌面可视。一条线覆盖每轴一格 → 轴数=线长;行数=牌面/轴数;可视=满格。
+const boardLen = boardLens.size ? Math.max(...boardLens) : lineLen * lineLen;
+const numReels = lineLen;
+const rowsPerReel = numReels ? Math.round(boardLen / numReels) : null;
+const layout = (rowsPerReel && numReels * rowsPerReel === boardLen)
+    ? { source: 'server-spin-frl-board', num_reels: numReels, rows_per_reel: rowsPerReel,
+        reels: Array.from({ length: numReels }, (_, r) => [r * rowsPerReel, r * rowsPerReel + rowsPerReel - 1]),
+        visible: Array.from({ length: numReels }, (_, r) => Array.from({ length: rowsPerReel }, (_, i) => r * rowsPerReel + i)) }
+    : null;
+
 const out = {
     source: 'server-spin-messages (wp/rwsp/frl 反推,非OCR)',
     mechanic: 'paylines',
@@ -111,6 +123,7 @@ const out = {
     win_lines_scanned: lines.length,
     paytable,               // { 符号: { 连数: 赔率 } }
     low_group: lowGroup,    // 低分符号混合组合赔付(若有)
+    layout,                 // 全牌面布局(轴数/行数/可视,满格)
     self_check: { conflicts: best.conflicts, single_resolved: best.singleCount },
 };
 const OUT = path.join(__dirname, 'inferred');
@@ -123,5 +136,6 @@ console.log('符号  N连  赔率');
 for (const S of Object.keys(paytable).map(Number).sort((a, b) => a - b))
     for (const N of Object.keys(paytable[S])) console.log(`  ${String(S).padStart(2)}   ${N}连  ${paytable[S][N]}`);
 if (lowGroup) console.log(`低分组 {${lowGroup.symbols.join(',')}} 任意${lineLen}混合 → ${JSON.stringify(lowGroup.any_pay)}`);
+if (layout) console.log(`布局:${layout.num_reels}轴 × ${layout.rows_per_reel}行(全牌面可视 ${layout.visible.map(v => v.length).join('/')})`);
 console.log(`自证:赔率冲突 ${best.conflicts}${best.conflicts ? ' ❌' : ' ✅'} → analyze/inferred/paytable_from_lines.json`);
 process.exit(best.conflicts ? 1 : 0);

@@ -33,13 +33,12 @@ const detectedMech = structure && structure.mechanic;
 const paytableJs = paytableJsWrap && paytableJsWrap.paytable;
 const paytableLines = paytableLinesWrap && paytableLinesWrap.paytable;
 let paytable, paytableSource, lineExtras = null;
+const linesExtra = () => ({ wild: paytableLinesWrap.wild, line_length: paytableLinesWrap.line_length, low_group: paytableLinesWrap.low_group, layout: paytableLinesWrap.layout });
 if (detectedMech === 'paylines' && paytableLines && Object.keys(paytableLines).length) {
-    paytable = paytableLines; paytableSource = 'server-spin-lines';
-    lineExtras = { wild: paytableLinesWrap.wild, line_length: paytableLinesWrap.line_length, low_group: paytableLinesWrap.low_group };
+    paytable = paytableLines; paytableSource = 'server-spin-lines'; lineExtras = linesExtra();
 } else if (paytableJs && Object.keys(paytableJs).length) { paytable = paytableJs; paytableSource = 'client-js-deobfuscation'; }
 else if (paytableLines && Object.keys(paytableLines).length) {
-    paytable = paytableLines; paytableSource = 'server-spin-lines';
-    lineExtras = { wild: paytableLinesWrap.wild, line_length: paytableLinesWrap.line_length, low_group: paytableLinesWrap.low_group };
+    paytable = paytableLines; paytableSource = 'server-spin-lines'; lineExtras = linesExtra();
 } else { paytable = paytableSpin; paytableSource = 'spin-rwsp-inference'; }
 const isPaylines = paytableSource === 'server-spin-lines';
 const payCols = isPaylines ? [paytableLinesWrap.line_length] : [3, 4, 5];   // 线号只有"线长"一档
@@ -88,11 +87,10 @@ const spec = {
         max_lines: cfg.max_lines, max_win_multiplier: cfg.max_win_multiplier,
         win_tiers: cfg.win_tiers, feature_buy: cfg.feature_buy,
     },
-    // ③ 布局(来源:spin 中奖位置反推)
-    layout: {
-        source: 'spin-wp-inference',
-        reels: layout.reels, rows_per_reel: layout.rows_per_reel, visible: layout.visible,
-    },
+    // ③ 布局(ways:spin 中奖位置反推可视遮罩;paylines:全牌面可视,由线号提取器给出)
+    layout: (isPaylines && lineExtras.layout)
+        ? { source: lineExtras.layout.source, reels: lineExtras.layout.reels, rows_per_reel: lineExtras.layout.rows_per_reel, visible: lineExtras.layout.visible }
+        : { source: 'spin-wp-inference', reels: layout.reels, rows_per_reel: layout.rows_per_reel, visible: layout.visible },
     // ④ 赔付(ways:JS 提取为准+spin 交叉验证;paylines:服务器 spin 消息 wp/rwsp 反推,自证)
     paytable: isPaylines
         ? { source: paytableSource, mechanic: 'paylines', wild: lineExtras.wild, line_length: lineExtras.line_length,
@@ -141,7 +139,7 @@ fs.writeFileSync(outFile, JSON.stringify(spec, null, 2));
 
 console.log(`✅ 游戏规格 → config/pg-${gid}.json`);
 const payNote = isPaylines ? '自证0冲突' : (paytableMismatches.length ? '⚠️' + paytableMismatches.length + '格与spin不符' : 'spin已验证');
-console.log(`   机制 ${spec.mechanics.components.length} 类(${spec.mechanics.source})| 类型 ${spec.identity.type} | 赔表 ${cellsHave}/${cellsExpect} 格(${paytableSource},${payNote})| 可视格 ${(layout.visible || []).map(v => v.length).join('/')}`);
+console.log(`   机制 ${spec.mechanics.components.length} 类(${spec.mechanics.source})| 类型 ${spec.identity.type} | 赔表 ${cellsHave}/${cellsExpect} 格(${paytableSource},${payNote})| 可视格 ${(spec.layout.visible || []).map(v => v.length).join('/')}`);
 if (isPaylines && lineExtras.low_group) console.log(`   线号:wild=${lineExtras.wild} 线长=${lineExtras.line_length} 低分组 {${lineExtras.low_group.symbols.join(',')}}→${JSON.stringify(lineExtras.low_group.any_pay)}`);
 console.log(`   倍率 base ${JSON.stringify(spec.multiplier.ladder_base)} fs ${JSON.stringify(spec.multiplier.ladder_fs)} | 金色轴 ${JSON.stringify(spec.gold_wild.reels)}`);
 const complete = spec.completeness.paytable_complete && (isPaylines || goldDetected);
