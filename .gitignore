@@ -28,5 +28,3 @@ agents/omgapi/test/env/mock/*/spin/
 agents/omgapi/test/env/mock/*/spin-live/
 agents/omgapi/test/analyze/inferred/
 agents/omgapi/test/generated/
-agents/omgapi/test/clean/*.clean.js
-agents/omgapi/test/clean/pg-*/*.js

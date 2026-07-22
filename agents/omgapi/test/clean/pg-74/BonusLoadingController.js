@@ -1,0 +1,115 @@
+// module: BonusLoadingController
+// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
+function BonusLoadingController(F, j, I) {
+  'use strict';
+
+  if (!cc["_RF"]["push"](j, "4e73fN1PSVGTpZlJtvO3hpI", "BonusLoadingController")) {
+    var m = {};
+    m["value"] = !0;
+    Object["defineProperty"](I, "__esModule", m);
+    var B = F("AudioManager"),
+      X = F("AudioConstant"),
+      Z = F("Utils"),
+      T = F("SpaceBarInterrupter"),
+      M = cc["_decorator"],
+      C = M["ccclass"],
+      V = M["property"],
+      N = function (q) {
+        function f() {
+          var g = null !== q && q["apply"](this, arguments) || this;
+          return g["content"] = void 0, g["backgroundNode"] = void 0, g["particleEffectNode"] = void 0, g["numberDisplayHolderNode"] = void 0, g["freeSpinWonTextNode"] = void 0, g["startTextSprite"] = void 0, g["loadingNode"] = void 0, g["loadingPercentNode"] = void 0, g["hoverEffectNode"] = void 0, g["freeSpinTextSprite"] = void 0, g["featureLoadingSprite"] = void 0, g["startButtonNode"] = void 0, g["collectHoverNode"] = void 0, g["numberDisplayNode"] = void 0, g['ai'] = void 0, g['ui'] = void 0, g['li'] = void 0, g['fi'] = void 0, g['ci'] = void 0, g['di'] = void 0, g;
+        }
+        return __extends(f, q), Object["defineProperty"](f["prototype"], "numberDisplayController", {
+          'get': function () {
+            return this['ci'] || (this['ci'] = this["numberDisplayNode"]["getComponent"]("NumberDisplayController")), this['ci'];
+          },
+          'enumerable': !1,
+          'configurable': !0
+        }), Object["defineProperty"](f["prototype"], "loadingPercentDisplayController", {
+          'get': function () {
+            {
+              return this['di'] || (this['di'] = this["loadingPercentNode"]["getComponent"]("NumberDisplayController")), this['di'];
+            }
+          },
+          'enumerable': !1,
+          'configurable': !0
+        }), f["prototype"]["init"] = function (g, l, K, O) {
+          this["freeSpinTextSprite"]["spriteFrame"] = g, this['ai'] = l, this['ui'] = K, this["featureLoadingSprite"]["spriteFrame"] = O;
+        }, f["prototype"]["show"] = function (g, l) {
+          void 0 === g && (g = 9), this['li'] = g, this['fi'] = l, this['vi'](), this['_i']();
+        }, f["prototype"]['vi'] = function () {
+          var g = this;
+          this["content"]["stopAllActions"](), this["content"]["active"] = !0, this["content"]["opacity"] = 0, this["content"]["runAction"](cc["fadeIn"](0.5)["easing"](cc["easeIn"](2))), this["numberDisplayController"]["clear"](), this["numberDisplayController"]["displayNumber"](this['li'], !1);
+          var l = cc["Color"]["WHITE"];
+          this["particleEffectNode"]["runAction"](cc["tintTo"](0.3, l["getR"](), l["getG"](), l["getB"]())), Z["delayCallback"](0.05)(function () {
+            g['bi']();
+          }), this['pi'](), this['Jt']();
+        }, f["prototype"]['bi'] = function () {
+          var g = this;
+          this["numberDisplayHolderNode"]["stopAllActions"](), this["numberDisplayHolderNode"]["runAction"](cc["sequence"](cc["scaleTo"](0.3, 1.25), cc["scaleTo"](0.15, 0.9), cc["scaleTo"](0.15, 1))), Z["delayCallback"](0.05)(function () {
+            g["freeSpinWonTextNode"]["stopAllActions"](), g["freeSpinWonTextNode"]["runAction"](cc["sequence"](cc["scaleTo"](0.3, 2), cc["scaleTo"](0.15, 1.25), cc["scaleTo"](0.15, 1.43)));
+          });
+        }, f["prototype"]['pi'] = function () {
+          this["backgroundNode"]["scale"] = 2.5, this["backgroundNode"]["runAction"](cc["scaleTo"](80, 3)), this["particleEffectNode"]["scale"] = 2.5, this["particleEffectNode"]["runAction"](cc["scaleTo"](20, 5));
+        }, f["prototype"]["updateProgress"] = function (g, l) {
+          var K = g / l * 100;
+          this["loadingPercentDisplayController"]["displayNumber"](K, !1);
+        }, f["prototype"]["onLoadComplete"] = function (g, l) {
+          this['fi'] = l, this['Si'](g), this['gi']();
+        }, f["prototype"]['Jt'] = function () {
+          this["hoverEffectNode"]["stopAllActions"]();
+          var g = this["hoverEffectNode"];
+          g["setScale"](cc['v2'](0, 0)), g["opacity"] = 255, g["runAction"](cc["sequence"](cc["scaleTo"](0.3, 3)["easing"](cc["easeIn"](2)), cc["spawn"](cc["scaleTo"](0.5, 5), cc["fadeOut"](0.5))));
+        }, f["prototype"]['Si'] = function (g) {
+          {
+            var l = this;
+            this["startTextSprite"]["spriteFrame"] = this['ai'], this["startButtonNode"]["stopAllActions"](), this["startButtonNode"]["active"] = !0, this["startButtonNode"]["scale"] = 0, this["startButtonNode"]["runAction"](cc["sequence"](cc["scaleTo"](0.15, 1.15), cc["scaleTo"](0.1, 0.95), cc["scaleTo"](0.1, 1))), Z["delayCallback"](0.35)(function () {
+              {
+                l['Ci'](), l["schedule"](l['Ci'], 1);
+              }
+            }), this['Mi'](g), T["spaceBarInterrupter"]["subscribeEventInterrupter"]("bonus", this["node"], this["startButtonClick"]["bind"](this));
+          }
+        }, f["prototype"]['_i'] = function () {
+          {
+            this["loadingNode"]["active"] = !0, this["loadingNode"]["stopAllActions"](), this["loadingNode"]["runAction"](cc["spawn"](cc["fadeIn"](0.5), cc["callFunc"](this['yi'], this)));
+          }
+        }, f["prototype"]['gi'] = function () {
+          this["loadingPercentNode"]["runAction"](cc["fadeOut"](0.1)), this["loadingNode"]["runAction"](cc["fadeOut"](0.1));
+        }, f["prototype"]['yi'] = function () {
+          {
+            var g = this['fi'];
+            this['fi'] = void 0, this["loadingNode"]["runAction"](cc["repeatForever"](cc["rotateBy"](2, 360))), this["loadingPercentNode"]["active"] = !0, this["loadingPercentNode"]["opacity"] = 255, this["loadingPercentDisplayController"]["displayNumber"](0, !1), g && g();
+          }
+        }, f["prototype"]["startButtonClick"] = function () {
+          {
+            this["unscheduleAllCallbacks"](), T["spaceBarInterrupter"]["unsubscribeEventInterrupter"]("bonus"), B["playAudio"](X["GENERAL_AUDIO"]["uiStart"]["key"]), this["startTextSprite"]["spriteFrame"] = this['ui'], this["startButtonNode"]["getComponent"]("cc.Button")["enabled"] = !1, this["collectHoverNode"]["active"] = !1, this["collectHoverNode"]["opacity"] = 0, this["collectHoverNode"]["stopAllActions"](), this["startButtonNode"]["stopAllActions"](), this["startButtonNode"]["runAction"](cc["sequence"](cc["scaleTo"](0.15, 0.9), cc["scaleTo"](0.1, 1.1), cc["scaleTo"](0.1, 1), cc["delayTime"](0.15), cc["callFunc"](this["hideLoading"], this)));
+          }
+        }, f["prototype"]["hideLoading"] = function () {
+          var g = this;
+          this["startButtonNode"]["stopAllActions"](), this["startButtonNode"]["runAction"](cc["sequence"](cc["scaleTo"](0.1, 1.1), cc["scaleTo"](0.1, 0)));
+          var l = function () {
+            {
+              var K = g['fi'];
+              g['fi'] = void 0, Z["delayCallback"](0.22)(g['Xt']["bind"](g)), K && K();
+            }
+          };
+          this["particleEffectNode"]["runAction"](cc["tintTo"](0.3, 0, 0, 0)["easing"](cc["easeIn"](2))), this["content"]["runAction"](cc["spawn"](cc["fadeOut"](0.5), cc["callFunc"](function () {
+            Z["delayCallback"](0.5)(l);
+          }))), B["playAudio"](X["GENERAL_AUDIO"]["uiStartOut"]["key"]);
+        }, f["prototype"]['Ci'] = function () {
+          this["startButtonNode"]["getComponent"](cc["Button"])["enabled"] = !0;
+          var g = this["collectHoverNode"];
+          g["active"] = !0, g["opacity"] = 0, g["setScale"](2.5), g["stopAllActions"](), g["runAction"](cc["sequence"](cc["fadeIn"](0.5)["easing"](cc["easeInOut"](1)), cc["fadeOut"](0.5)["easing"](cc["easeInOut"](1)))), g["runAction"](cc["scaleTo"](1, 3)["easing"](cc["easeInOut"](2)));
+        }, f["prototype"]['Mi'] = function (g) {
+          var l = g ? 1 : 6;
+          this["scheduleOnce"](this["startButtonClick"], l);
+        }, f["prototype"]['Xt'] = function () {
+          this["unscheduleAllCallbacks"](), this["freeSpinWonTextNode"]["stopAllActions"](), this["freeSpinWonTextNode"]["setScale"](0), this["numberDisplayHolderNode"]["stopAllActions"](), this["numberDisplayHolderNode"]["setScale"](0);
+          var g = this["collectHoverNode"];
+          g["active"] = !1, g["opacity"] = 0, g["setScale"](0), g["stopAllActions"](), this["hoverEffectNode"]["stopAllActions"](), this["hoverEffectNode"]["setScale"](0), this["hoverEffectNode"]["opacity"] = 0, this["backgroundNode"]["stopAllActions"](), this["backgroundNode"]["scale"] = 2.5, this["particleEffectNode"]["stopAllActions"](), this["particleEffectNode"]["scale"] = 2.5, this["startButtonNode"]["stopAllActions"](), this["startButtonNode"]["scale"] = 0, this["startButtonNode"]["active"] = !1, this["loadingNode"]["stopAllActions"](), this["loadingNode"]["opacity"] = 0, this["loadingNode"]["active"] = !1, this["numberDisplayController"]["clear"](), this["content"]["stopAllActions"](), this["content"]["active"] = !1;
+        }, __decorate([V(cc["Node"])], f["prototype"], "content", void 0), __decorate([V(cc["Node"])], f["prototype"], "backgroundNode", void 0), __decorate([V(cc["Node"])], f["prototype"], "particleEffectNode", void 0), __decorate([V(cc["Node"])], f["prototype"], "numberDisplayHolderNode", void 0), __decorate([V(cc["Node"])], f["prototype"], "freeSpinWonTextNode", void 0), __decorate([V(cc["Sprite"])], f["prototype"], "startTextSprite", void 0), __decorate([V(cc["Node"])], f["prototype"], "loadingNode", void 0), __decorate([V(cc["Node"])], f["prototype"], "loadingPercentNode", void 0), __decorate([V(cc["Node"])], f["prototype"], "hoverEffectNode", void 0), __decorate([V(cc["Sprite"])], f["prototype"], "freeSpinTextSprite", void 0), __decorate([V(cc["Sprite"])], f["prototype"], "featureLoadingSprite", void 0), __decorate([V(cc["Node"])], f["prototype"], "startButtonNode", void 0), __decorate([V(cc["Node"])], f["prototype"], "collectHoverNode", void 0), __decorate([V(cc["Node"])], f["prototype"], "numberDisplayNode", void 0), __decorate([C], f);
+      }(cc["Component"]);
+    I["default"] = N, cc["_RF"]["pop"]();
+  }
+}
+module.exports = BonusLoadingController;
