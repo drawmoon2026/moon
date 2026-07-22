@@ -47,10 +47,17 @@ for (const m of src.matchAll(/function\s+([A-Za-z0-9_$]+)\s*\(\s*\)\s*\{\s*var\s
 }
 if (!arrayFn) { console.error('未检测到字符串数组函数'); process.exit(1); }
 // ② 解码器 = 调用了数组函数、且带 -0x偏移 的函数
-const decRe = new RegExp('function\\s+([A-Za-z0-9_$]+)\\s*\\([^)]*\\)\\s*\\{[\\s\\S]{0,120}?\\b' + arrayFnName + '\\(\\)[\\s\\S]{0,200}?[=-]\\s*(0x[0-9a-f]+)', 'i');
-const dm = src.match(decRe);
-if (!dm) { console.error('未检测到解码器函数'); process.exit(1); }
-const decoderName = dm[1], OFF = parseInt(dm[2], 16);
+// 解码器 = 调用数组函数 _a() 且带 -0x偏移 的函数。逐个函数取其【自身函数体】(大括号匹配)检测,
+// 避免正则跨函数越界(小模块里数组fn与解码器相邻时会误配)。排除数组函数本身。
+let decoderName = null, OFF = null;
+for (const m of src.matchAll(/function\s+([A-Za-z0-9_$]+)\s*\([^)]*\)\s*\{/g)) {
+    if (m[1] === arrayFnName) continue;
+    const body = braceMatchFrom(src, m.index);
+    if (!body || !new RegExp('\\b' + arrayFnName + '\\(\\)').test(body)) continue;
+    const off = body.match(/[=-]\s*(0x[0-9a-f]+)/i);
+    if (off) { decoderName = m[1]; OFF = parseInt(off[1], 16); break; }
+}
+if (decoderName === null) { console.error('未检测到解码器函数'); process.exit(1); }
 const arr = eval(arrayFn.replace(/^function\s+[A-Za-z0-9_$]+/, 'function ' + arrayFnName) + '\n ' + arrayFnName + '();');
 const dec = (hex) => arr[parseInt(hex, 16) - OFF];
 console.log(`检测:数组函数 ${arrayFnName}(${arr.length}) | 解码器 ${decoderName} | 偏移 0x${OFF.toString(16)}`);
@@ -94,7 +101,10 @@ traverse(ast, {
                 const eq = test.left.value === test.right.value;
                 const truthy = (test.operator === '===' || test.operator === '==') ? eq : !eq;
                 const keep = truthy ? p.node.consequent : p.node.alternate;
-                if (keep) p.replaceWith(keep); else p.remove();
+                // 保留分支若是块,摊平进父级语句列表(Program 或 Block;否则留下裸块 {...})
+                if (keep && t.isBlockStatement(keep) && p.inList) p.replaceWithMultiple(keep.body);
+                else if (keep) p.replaceWith(keep);
+                else p.remove();
                 stats.deadBranch++;
             }
         },

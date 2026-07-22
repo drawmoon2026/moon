@@ -33,15 +33,28 @@ function intern(s) {
     if (strIndex.has(s)) return strIndex.get(s);
     const i = strings.length; strings.push(s); strIndex.set(s, i); return i;
 }
-const DEC = '_d';     // 解码器名(固定,反混淆器按结构检测,不认名字)
+const DEC = '_d';     // 解码器基名
+const ALIASES = ['_d', '_e0', '_e1', '_e2'];   // 链式别名(逼近真实 PG 的 pE=pJ=pb...)
+const rnd = () => Math.random();
+const randId = () => Array.from({ length: 5 }, () => 'abcdefghijklmnopqrstuvwxyz'[(rnd() * 26) | 0]).join('');
+// 一个字符串 → 解码调用(随机用别名);长串随机拆成两段拼接(逼近真实的碎片拼接)
+function decodeCall(str) {
+    const alias = ALIASES[(rnd() * ALIASES.length) | 0];
+    if (str.length >= 4 && rnd() < 0.6) {
+        const cut = 1 + ((rnd() * (str.length - 1)) | 0);
+        const a = ALIASES[(rnd() * ALIASES.length) | 0], b = ALIASES[(rnd() * ALIASES.length) | 0];
+        return t.binaryExpression('+',
+            t.callExpression(t.identifier(a), [t.numericLiteral(intern(str.slice(0, cut)) + OFFSET)]),
+            t.callExpression(t.identifier(b), [t.numericLiteral(intern(str.slice(cut)) + OFFSET)]));
+    }
+    return t.callExpression(t.identifier(alias), [t.numericLiteral(intern(str) + OFFSET)]);
+}
 
 traverse(ast, {
     StringLiteral(p) {
-        // 跳过已经是解码调用的、以及对象键/import 等不便替换的位置
         if (p.parentPath.isObjectProperty({ key: p.node }) && !p.parentPath.node.computed) return;
         if (p.parentPath.isImportDeclaration() || p.parentPath.isExportDeclaration()) return;
-        const idx = intern(p.node.value);
-        p.replaceWith(t.callExpression(t.identifier(DEC), [t.numericLiteral(idx + OFFSET)]));
+        p.replaceWith(decodeCall(p.node.value));
         p.skip();
     },
     BooleanLiteral(p) {
@@ -53,6 +66,21 @@ traverse(ast, {
         const n = p.node;
         if (!n.computed && t.isIdentifier(n.property)) {
             n.property = t.stringLiteral(n.property.name); n.computed = true;
+        }
+    },
+});
+
+// 死分支(opaque predicate):把部分表达式语句包进 if("A"!=="B"){真}else{假}(A≠B 恒真)
+traverse(ast, {
+    ExpressionStatement(p) {
+        // 只包语句列表里的语句(p.inList);裸 for/if 体是单语句槽,包了会多出块,无法完美还原
+        if (p.inList && rnd() < 0.4 && !p.findParent(x => x.isObjectExpression())) {
+            const a = randId(), b = randId();  // 两个不同随机串 → !== 恒真
+            p.replaceWith(t.ifStatement(
+                t.binaryExpression('!==', t.stringLiteral(a), t.stringLiteral(b)),
+                t.blockStatement([p.node]),
+                t.blockStatement([t.expressionStatement(t.callExpression(t.identifier('_junk'), []))])));
+            p.skip();
         }
     },
 });
@@ -72,7 +100,8 @@ let body = generate(ast, { comments: false }).code;
 const arrLit = JSON.stringify(strings);
 const prelude =
     `function _a(){var arr=${arrLit};_a=function(){return arr};return _a();}\n` +
-    `function _d(i){var a=_a();_d=function(j){j=j-0x${OFFSET.toString(16)};return a[j];};return _d(i);}\n`;
+    `function _d(i){var a=_a();_d=function(j){j=j-0x${OFFSET.toString(16)};return a[j];};return _d(i);}\n` +
+    `var _e0=_d,_e1=_e0,_e2=_e1;\n`;   // 链式别名(逼近真实 PG 的 pE=pJ=pb...)
 
 fs.writeFileSync(outPath, prelude + body);
 console.log(`混淆完成 → ${outPath}`);
