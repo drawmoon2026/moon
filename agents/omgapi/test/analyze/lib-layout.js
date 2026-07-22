@@ -14,15 +14,21 @@ const path = require('path');
 function deriveLayout(spinDir) {
     const files = fs.readdirSync(spinDir).filter(f => f.endsWith('.json'));
     const visPos = new Set();
-    let rlLen = 0;
+    const boardLens = new Set();     // 见过的候选 board 长度(rl 与 frl)
     for (const f of files) {
         let si; try { si = JSON.parse(fs.readFileSync(path.join(spinDir, f), 'utf8')).response.body.dt.si; } catch { continue; }
         if (!si) continue;
-        if (Array.isArray(si.rl)) rlLen = Math.max(rlLen, si.rl.length);
+        if (Array.isArray(si.rl)) boardLens.add(si.rl.length);
+        if (Array.isArray(si.frl)) boardLens.add(si.frl.length);   // paylines 牌面在 frl
+        // wp 位是牌面下标(ways 按符号、paylines 按线号,取值都是位置)
         if (si.wp) for (const s of Object.values(si.wp)) if (Array.isArray(s)) for (const p of s) visPos.add(p);
     }
     const pos = [...visPos].sort((a, b) => a - b);
-    if (!pos.length || !rlLen) throw new Error('样本不足,无法推导布局(需要含中奖的样本)');
+    if (!pos.length) throw new Error('样本不足,无法推导布局(需要含中奖的样本)');
+    // board = 能容纳所有中奖位的最小数组长度(ways→rl 35;paylines→frl 9)
+    const maxWp = pos[pos.length - 1];
+    const rlLen = Math.min(...[...boardLens].filter(L => L > maxWp));
+    if (!rlLen || !isFinite(rlLen)) throw new Error('找不到能容纳中奖位的牌面数组');
 
     // 连续段 = 轴数
     const runs = [[pos[0]]];
