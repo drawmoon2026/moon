@@ -1,23 +1,23 @@
 // module: GenericLoadingScreenController
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function GenericLoadingScreenController(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function GenericLoadingScreenController(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "cb530nJjNxEeb1kcmn96QZc", "GenericLoadingScreenController")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m), I.hideLoadingPage = I.showLoadingPage = undefined;
-    var B = F("Utils"),
-      X = F("NotifyHelper"),
+    Object.defineProperty(exports, "__esModule", m), exports.hideLoadingPage = exports.showLoadingPage = undefined;
+    var B = require("Utils"),
+      X = require("NotifyHelper"),
       Z = false,
       T = false,
       M = undefined,
       C = undefined;
-    I.showLoadingPage = function (K) {
+    exports.showLoadingPage = function (K) {
       {
         X.showFullLoadingPage(), M = K, B.delayCallback(0.3)(g);
       }
-    }, I.hideLoadingPage = function (K) {
+    }, exports.hideLoadingPage = function (K) {
       C = K, T = true, Z && N();
     }, cc._RF.pop();
   }

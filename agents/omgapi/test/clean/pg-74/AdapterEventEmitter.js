@@ -1,15 +1,15 @@
 // module: AdapterEventEmitter
-// Cocos 模块函数,参数 (require, module, exports) = (F, c, j)
-function AdapterEventEmitter(F, c, j) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, c, exports)
+function AdapterEventEmitter(require, c, exports) {
   'use strict';
 
   if (!cc._RF.push(c, "4a843d9tZpBC5Aag4RGjJxr", "AdapterEventEmitter")) {
     {
       var I = {};
       I.value = true;
-      Object.defineProperty(j, "__esModule", I);
-      var m = F("Utils"),
-        B = (F("AudioAdapterConstant"), function () {
+      Object.defineProperty(exports, "__esModule", I);
+      var m = require("Utils"),
+        B = (require("AudioAdapterConstant"), function () {
           {
             function Z() {
               {
@@ -77,7 +77,7 @@ function AdapterEventEmitter(F, c, j) {
             }, Z;
           }
         }());
-      j.default = B, cc._RF.pop();
+      exports.default = B, cc._RF.pop();
     }
   }
   function X(Z, T, M) {

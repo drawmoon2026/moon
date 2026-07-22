@@ -1,12 +1,12 @@
 // module: TransitionContext
-// Cocos 模块函数,参数 (require, module, exports) = (F, c, j)
-function TransitionContext(F, c, j) {
+// Cocos 模块函数,参数 (require, module, exports) = (F, c, exports)
+function TransitionContext(F, c, exports) {
   'use strict';
 
   if (!cc._RF.push(c, "9fd10r5SF9AY7ViKPJFg+fR", "TransitionContext")) {
     var I = {};
     I.value = true;
-    Object.defineProperty(j, "__esModule", I), j.TransitionContext = undefined;
+    Object.defineProperty(exports, "__esModule", I), exports.TransitionContext = undefined;
     var m = function () {
       {
         function B(X, Z, T, M, C) {
@@ -27,7 +27,7 @@ function TransitionContext(F, c, j) {
         }, B;
       }
     }();
-    j.TransitionContext = m, cc._RF.pop();
+    exports.TransitionContext = m, cc._RF.pop();
   }
 }
 module.exports = TransitionContext;

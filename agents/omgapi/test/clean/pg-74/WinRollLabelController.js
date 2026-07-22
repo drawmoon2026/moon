@@ -1,14 +1,14 @@
 // module: WinRollLabelController
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function WinRollLabelController(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, exports, I)
+function WinRollLabelController(require, exports, I) {
   'use strict';
 
-  if (!cc._RF.push(j, "f7e1diBGQ5A8KF1oMrYEMNU", "WinRollLabelController")) {
+  if (!cc._RF.push(exports, "f7e1diBGQ5A8KF1oMrYEMNU", "WinRollLabelController")) {
     var m = {};
     m.value = true;
     Object.defineProperty(I, "__esModule", m);
-    var B = F("NumberLabelController"),
-      X = F("WinRollBaseController"),
+    var B = require("NumberLabelController"),
+      X = require("WinRollBaseController"),
       Z = cc._decorator,
       T = Z.ccclass,
       M = Z.property,

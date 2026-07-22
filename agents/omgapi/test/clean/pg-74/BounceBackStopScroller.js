@@ -1,14 +1,14 @@
 // module: BounceBackStopScroller
-// Cocos 模块函数,参数 (require, module, exports) = (F, c, j)
-function BounceBackStopScroller(F, c, j) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, c, exports)
+function BounceBackStopScroller(require, c, exports) {
   'use strict';
 
   if (!cc._RF.push(c, "e1fcdCNaWpBco8rzjpMx33K", "BounceBackStopScroller")) {
     var I = {};
     I.value = true;
-    Object.defineProperty(j, "__esModule", I);
-    var m = F("DefaultStopScroller"),
-      B = F("BaseScroller"),
+    Object.defineProperty(exports, "__esModule", I);
+    var m = require("DefaultStopScroller"),
+      B = require("BaseScroller"),
       X = function (Z) {
         function T() {
           var M = null !== Z && Z.apply(this, arguments) || this;
@@ -43,7 +43,7 @@ function BounceBackStopScroller(F, c, j) {
           }
         }, T;
       }(m.default);
-    j.default = X, cc._RF.pop();
+    exports.default = X, cc._RF.pop();
   }
 }
 module.exports = BounceBackStopScroller;

@@ -1,27 +1,27 @@
 // module: SlotGenerator
-// Cocos 模块函数,参数 (require, module, exports) = (j, I, m)
-function SlotGenerator(j, I, m) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, I, exports)
+function SlotGenerator(require, I, exports) {
   'use strict';
 
   if (!cc._RF.push(I, "213874uZn5HSqZznN5luzQQ", "SlotGenerator")) {
     {
       var B = {};
       B.value = true;
-      Object.defineProperty(m, "__esModule", B), m.generateSlot = undefined;
+      Object.defineProperty(exports, "__esModule", B), exports.generateSlot = undefined;
       var X = {};
       X.up = 0;
       X.down = 0;
       X.left = 0;
       X.right = 0;
-      var Z = j("SlotView"),
-        T = j("SlotScrollerController"),
+      var Z = require("SlotView"),
+        T = require("SlotScrollerController"),
         C = {
           'containerNode': undefined,
           'numberOfColumn': undefined,
           'slotView': Z.default,
           'slotScrollerController': T.default
         };
-      m.generateSlot = function (V) {
+      exports.generateSlot = function (V) {
         var N,
           q = (V = __assign(__assign({}, C), V)).containerNode,
           g = V.slotSize ? V.slotSize : q.getContentSize(),

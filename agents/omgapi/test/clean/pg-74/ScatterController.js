@@ -1,14 +1,14 @@
 // module: ScatterController
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function ScatterController(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function ScatterController(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "26262Toe5JM2YL3I29am66v", "ScatterController")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m);
-    var B = F("SymbolImageHandler"),
-      X = F("GameConstant"),
+    Object.defineProperty(exports, "__esModule", m);
+    var B = require("SymbolImageHandler"),
+      X = require("GameConstant"),
       Z = cc._decorator,
       T = Z.ccclass,
       M = Z.property,
@@ -89,7 +89,7 @@ function ScatterController(F, j, I) {
           }), this.winGlowA[0] && this.winGlowA[0].runAction(cc.repeatForever(cc.rotateBy(10, 360))), this.winGlowA[1] && this.winGlowA[1].runAction(cc.repeatForever(cc.rotateBy(10, -360))), this.winGlowA[2] && this.winGlowA[2].runAction(cc.repeatForever(cc.sequence(cc.scaleTo(0.5, 1.2), cc.scaleTo(0.5, 0.8))));
         }, __decorate([M([cc.Node])], N.prototype, "screenModeNodes", undefined), __decorate([M([cc.Node])], N.prototype, "otherNodes", undefined), __decorate([M(cc.Sprite)], N.prototype, "scatterSymbol", undefined), __decorate([M(cc.Node)], N.prototype, "symbolBase", undefined), __decorate([M(cc.SpriteFrame)], N.prototype, "scatterBlur", undefined), __decorate([M([cc.Node])], N.prototype, "vfx", undefined), __decorate([M([cc.Node])], N.prototype, "winGlowA", undefined), __decorate([M(cc.Animation)], N.prototype, "winAnim", undefined), __decorate([M(cc.Node)], N.prototype, "heartBeatEffects", undefined), __decorate([T], N);
       }(cc.Component);
-    I.default = C, cc._RF.pop();
+    exports.default = C, cc._RF.pop();
   }
 }
 module.exports = ScatterController;

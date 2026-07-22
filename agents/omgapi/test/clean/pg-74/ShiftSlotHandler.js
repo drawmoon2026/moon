@@ -1,17 +1,17 @@
 // module: ShiftSlotHandler
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function ShiftSlotHandler(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function ShiftSlotHandler(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "5095e/LtCtNm4QFOnCv7NGF", "ShiftSlotHandler")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m);
-    var B = F("Utils"),
-      X = F("AudioManager"),
-      Z = F("MJDataSource"),
-      T = F("AudioConstant"),
-      M = F("SlotHandler"),
+    Object.defineProperty(exports, "__esModule", m);
+    var B = require("Utils"),
+      X = require("AudioManager"),
+      Z = require("MJDataSource"),
+      T = require("AudioConstant"),
+      M = require("SlotHandler"),
       C = function () {
         function V() {
           this.Qm = undefined, this.Oa = undefined, this.Ym = undefined, this.Zm = undefined, this.Xm = undefined, this.$m = undefined, this.tb = undefined, this.ib = undefined, this.sb = undefined, this.eb = undefined, this.nb = undefined, this.ob = undefined, this.cb = undefined, this.hb = undefined, this.rb = undefined, this.ab = undefined, this.ub = undefined, this.lb = undefined;
@@ -125,7 +125,7 @@ function ShiftSlotHandler(F, j, I) {
           }
         }, V;
       }();
-    I.default = C, cc._RF.pop();
+    exports.default = C, cc._RF.pop();
   }
 }
 module.exports = ShiftSlotHandler;

@@ -1,18 +1,18 @@
 // module: MJAPIClient
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function MJAPIClient(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function MJAPIClient(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "4e3abxO2HhAhqsmlh0UuSpt", "MJAPIClient")) {
     {
       var m = {};
       m.value = true;
-      Object.defineProperty(I, "__esModule", m), I.mjApiClient = undefined;
-      var B = F("APIClient"),
-        X = F("SettingMenuHelper"),
-        Z = F("MJDataSource"),
-        T = (F("TweaksData"), F("AutomationDecorator")),
-        M = F("MJApiClient.spec"),
+      Object.defineProperty(exports, "__esModule", m), exports.mjApiClient = undefined;
+      var B = require("APIClient"),
+        X = require("SettingMenuHelper"),
+        Z = require("MJDataSource"),
+        T = (require("TweaksData"), require("AutomationDecorator")),
+        M = require("MJApiClient.spec"),
         C = function (N) {
           function q() {
             return null !== N && N.apply(this, arguments) || this;
@@ -47,9 +47,9 @@ function MJAPIClient(F, j, I) {
             });
           }, q.prototype.lr = function () {}, q.prototype.dr = function () {}, __decorate([T.automationDec(f)], q.prototype, "_onRequestSent", null), __decorate([T.automationDec(g)], q.prototype, "_onRequestReceived", null), q;
         }(B.default);
-      I.default = C;
+      exports.default = C;
       var V = new C(Z.mjDataSource);
-      I.mjApiClient = V, cc._RF.pop();
+      exports.mjApiClient = V, cc._RF.pop();
     }
   }
 }

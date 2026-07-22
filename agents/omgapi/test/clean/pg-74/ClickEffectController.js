@@ -1,13 +1,13 @@
 // module: ClickEffectController
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function ClickEffectController(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (F, j, exports)
+function ClickEffectController(F, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "9c1bbOo47dBVKQhy7Uc4JE2", "ClickEffectController")) {
     {
       var m = {};
       m.value = true;
-      Object.defineProperty(I, "__esModule", m);
+      Object.defineProperty(exports, "__esModule", m);
       var B = cc._decorator,
         X = B.ccclass,
         Z = B.property,
@@ -34,7 +34,7 @@ function ClickEffectController(F, j, I) {
             }
           }, __decorate([Z(cc.Node)], C.prototype, "flashSpriteNode", undefined), __decorate([Z(cc.Node)], C.prototype, "clickEffectNode", undefined), __decorate([X], C);
         }(cc.Component);
-      I.default = T, cc._RF.pop();
+      exports.default = T, cc._RF.pop();
     }
   }
 }

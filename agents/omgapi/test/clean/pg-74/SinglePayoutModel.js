@@ -1,13 +1,13 @@
 // module: SinglePayoutModel
-// Cocos 模块函数,参数 (require, module, exports) = (F, c, j)
-function SinglePayoutModel(F, c, j) {
+// Cocos 模块函数,参数 (require, module, exports) = (F, c, exports)
+function SinglePayoutModel(F, c, exports) {
   'use strict';
 
   if (!cc._RF.push(c, "029b1Bdw8RM4ZEeOX8HEoFh", "SinglePayoutModel")) {
     {
       var I = {};
       I.value = true;
-      Object.defineProperty(j, "__esModule", I);
+      Object.defineProperty(exports, "__esModule", I);
       var m = function () {
         function B() {
           {
@@ -76,7 +76,7 @@ function SinglePayoutModel(F, c, j) {
           'configurable': true
         }), B;
       }();
-      j.default = m, cc._RF.pop();
+      exports.default = m, cc._RF.pop();
     }
   }
 }

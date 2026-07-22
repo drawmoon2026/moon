@@ -1,20 +1,20 @@
 // module: NormalResultDecorator
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function NormalResultDecorator(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function NormalResultDecorator(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "94e3b2snKRKspFrhelPCcrj", "NormalResultDecorator")) {
     {
       var m = {};
       m.value = true;
-      Object.defineProperty(I, "__esModule", m);
-      var B = F("SlotStateMachine"),
-        X = F("SlotAnalyticsEnum"),
-        Z = F("AutoSpinHandler"),
-        T = F("SlotGameConstants"),
-        M = F("ButtonHitTest"),
-        C = F("JakeSlotGameTemplate"),
-        V = F("SpinConfigHandler"),
+      Object.defineProperty(exports, "__esModule", m);
+      var B = require("SlotStateMachine"),
+        X = require("SlotAnalyticsEnum"),
+        Z = require("AutoSpinHandler"),
+        T = require("SlotGameConstants"),
+        M = require("ButtonHitTest"),
+        C = require("JakeSlotGameTemplate"),
+        V = require("SpinConfigHandler"),
         N = function () {
           function q(f, g) {
             this.triggerFastStop = undefined, this.name = "Normal Result Decorator", this.dataSource = undefined, this.generalControllers = undefined, this.dataSource = f, this.generalControllers = g.generalControllers;
@@ -57,7 +57,7 @@ function NormalResultDecorator(F, j, I) {
             }
           }, q;
         }();
-      I.default = N, cc._RF.pop();
+      exports.default = N, cc._RF.pop();
     }
   }
 }

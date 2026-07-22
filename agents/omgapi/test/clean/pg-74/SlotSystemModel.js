@@ -1,14 +1,14 @@
 // module: SlotSystemModel
-// Cocos 模块函数,参数 (require, module, exports) = (F, c, j)
-function SlotSystemModel(F, c, j) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, c, exports)
+function SlotSystemModel(require, c, exports) {
   'use strict';
 
   if (!cc._RF.push(c, "b8e48q3OlREgpqZ/fqigt7Z", "SlotSystemModel")) {
     var I = {};
     I.value = true;
-    Object.defineProperty(j, "__esModule", I);
-    var m = F("SystemModel"),
-      B = F("WinThresholdsModel"),
+    Object.defineProperty(exports, "__esModule", I);
+    var m = require("SystemModel"),
+      B = require("WinThresholdsModel"),
       X = function (Z) {
         function T() {
           return null !== Z && Z.apply(this, arguments) || this;
@@ -52,7 +52,7 @@ function SlotSystemModel(F, c, j) {
           'configurable': true
         }), T;
       }(m.default);
-    j.default = X, cc._RF.pop();
+    exports.default = X, cc._RF.pop();
   }
 }
 module.exports = SlotSystemModel;

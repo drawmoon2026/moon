@@ -1,14 +1,14 @@
 // module: SlotScrollerController
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function SlotScrollerController(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function SlotScrollerController(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "3383aiogiFCOKC9u2Q0E3sA", "SlotScrollerController")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m);
-    var B = F("SlotScrollerController.spec"),
-      X = F("AutomationDecorator"),
+    Object.defineProperty(exports, "__esModule", m);
+    var B = require("SlotScrollerController.spec"),
+      X = require("AutomationDecorator"),
       Z = cc._decorator.ccclass,
       T = function (M) {
         {
@@ -161,7 +161,7 @@ function SlotScrollerController(F, j, I) {
           })], C.prototype, "onStateChange", null), __decorate([Z], C);
         }
       }(cc.Component);
-    I.default = T, cc._RF.pop();
+    exports.default = T, cc._RF.pop();
   }
 }
 module.exports = SlotScrollerController;

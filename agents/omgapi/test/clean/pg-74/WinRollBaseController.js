@@ -1,6 +1,6 @@
 // module: WinRollBaseController
-// Cocos 模块函数,参数 (require, module, exports) = (j, I, m)
-function WinRollBaseController(j, I, m) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, I, m)
+function WinRollBaseController(require, I, m) {
   'use strict';
 
   if (!cc._RF.push(I, "adab7txcZBOsJ6NClaGwrmO", "WinRollBaseController")) {
@@ -10,7 +10,7 @@ function WinRollBaseController(j, I, m) {
     var X = {};
     X.playing = -1;
     X.stop = -1;
-    var Z = j("NumberDisplayInterface"),
+    var Z = require("NumberDisplayInterface"),
       T = cc.Enum(X),
       M = cc._decorator,
       C = M.ccclass,

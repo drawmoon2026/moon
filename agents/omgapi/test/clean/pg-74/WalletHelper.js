@@ -1,16 +1,16 @@
 // module: WalletHelper
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function WalletHelper(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function WalletHelper(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "1ca2eEH71NDaahNBchOvZgw", "WalletHelper")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m), I.walletHelper = undefined;
+    Object.defineProperty(exports, "__esModule", m), exports.walletHelper = undefined;
     var B,
-      X = F("SettingInfoFooterController"),
-      Z = F("Utils"),
-      T = F("BVFramework");
+      X = require("SettingInfoFooterController"),
+      Z = require("Utils"),
+      T = require("BVFramework");
     (function (V) {
       V[V.INACTIVE = 0] = "INACTIVE", V[V.ACTIVE = 1] = "ACTIVE", V[V.EXPIRED = 2] = "EXPIRED", V[V.CONVERTED = 3] = "CONVERTED", V[V.COMPLETED = 4] = "COMPLETED", V[V.NEW = 5] = "NEW", V[V.DISCARDED = 6] = "DISCARDED", V[V.LOCKED = 7] = "LOCKED";
     })(B || (B = {}));
@@ -115,7 +115,7 @@ function WalletHelper(F, j, I) {
           }
         }, __decorate([M("WalletHelper")], N);
       }(cc.Object))();
-    I.walletHelper = C, cc._RF.pop();
+    exports.walletHelper = C, cc._RF.pop();
   }
 }
 module.exports = WalletHelper;

@@ -1,13 +1,13 @@
 // module: NumberRollBaseController
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function NumberRollBaseController(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function NumberRollBaseController(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "b940fHCDN9PkIykJo0EuNqR", "NumberRollBaseController")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m);
-    var B = F("NumberDisplayInterface"),
+    Object.defineProperty(exports, "__esModule", m);
+    var B = require("NumberDisplayInterface"),
       X = cc._decorator,
       Z = X.ccclass,
       T = X.property,
@@ -48,7 +48,7 @@ function NumberRollBaseController(F, j, I) {
           'type': B.default
         })], V.prototype, "displayController", undefined), __decorate([Z], V);
       }(cc.Component);
-    I.default = M, cc._RF.pop();
+    exports.default = M, cc._RF.pop();
   }
 }
 module.exports = NumberRollBaseController;

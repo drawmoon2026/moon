@@ -1,12 +1,12 @@
 // module: MahjongMovingController
-// Cocos 模块函数,参数 (require, module, exports) = (F, c, j)
-function MahjongMovingController(F, c, j) {
+// Cocos 模块函数,参数 (require, module, exports) = (F, c, exports)
+function MahjongMovingController(F, c, exports) {
   'use strict';
 
   if (!cc._RF.push(c, "5db74dRaTtE5brT1vVEZpMv", "MahjongMovingController")) {
     var I = {};
     I.value = true;
-    Object.defineProperty(j, "__esModule", I);
+    Object.defineProperty(exports, "__esModule", I);
     var m = cc._decorator.ccclass,
       B = function (X) {
         {
@@ -27,7 +27,7 @@ function MahjongMovingController(F, c, j) {
           }, __decorate([m], Z);
         }
       }(cc.Component);
-    j.default = B, cc._RF.pop();
+    exports.default = B, cc._RF.pop();
   }
 }
 module.exports = MahjongMovingController;

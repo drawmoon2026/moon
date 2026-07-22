@@ -1,21 +1,21 @@
 // module: MJResultState
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function MJResultState(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function MJResultState(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "a468fcacmlKWqOaXyMfMRTk", "MJResultState")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m);
-    var B = F("ResultState"),
-      X = F("GameConstant"),
-      Z = F("AudioManager"),
-      T = F("SlotHandler"),
-      M = F("SlotAnalyticsEnum"),
-      C = F("AudioConstant"),
-      V = F("MultiplierBoardController"),
-      N = F("TransactionStateMachineHandler"),
-      q = F("Utils"),
+    Object.defineProperty(exports, "__esModule", m);
+    var B = require("ResultState"),
+      X = require("GameConstant"),
+      Z = require("AudioManager"),
+      T = require("SlotHandler"),
+      M = require("SlotAnalyticsEnum"),
+      C = require("AudioConstant"),
+      V = require("MultiplierBoardController"),
+      N = require("TransactionStateMachineHandler"),
+      q = require("Utils"),
       g = function (K) {
         {
           function O(x, p, b, L) {
@@ -107,7 +107,7 @@ function MJResultState(F, j, I) {
           }, O;
         }
       }(B.default);
-    I.default = g, cc._RF.pop();
+    exports.default = g, cc._RF.pop();
   }
 }
 module.exports = MJResultState;

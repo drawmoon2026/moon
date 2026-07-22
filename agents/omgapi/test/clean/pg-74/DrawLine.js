@@ -1,12 +1,12 @@
 // module: DrawLine
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function DrawLine(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (F, j, exports)
+function DrawLine(F, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "0b006l9a0tOS5No6bQvo8YJ", "DrawLine")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m);
+    Object.defineProperty(exports, "__esModule", m);
     var B = cc._decorator,
       X = B.ccclass,
       Z = B.property,
@@ -26,7 +26,7 @@ function DrawLine(F, j, I) {
           }, __decorate([Z(cc.Boolean)], C.prototype, "horizontal", undefined), __decorate([Z(cc.Boolean)], C.prototype, "vertical", undefined), __decorate([X], C);
         }
       }(cc.Component);
-    I.default = T, cc._RF.pop();
+    exports.default = T, cc._RF.pop();
   }
 }
 module.exports = DrawLine;

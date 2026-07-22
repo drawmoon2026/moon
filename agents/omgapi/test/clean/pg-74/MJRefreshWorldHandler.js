@@ -1,14 +1,14 @@
 // module: MJRefreshWorldHandler
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function MJRefreshWorldHandler(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function MJRefreshWorldHandler(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "6724bnLODlJTqyD0ZFYBKMz", "MJRefreshWorldHandler")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m), I.mjRefreshWorldHandler = undefined;
-    var B = F("RefreshWorldHandler"),
-      X = F("GameConstant"),
+    Object.defineProperty(exports, "__esModule", m), exports.mjRefreshWorldHandler = undefined;
+    var B = require("RefreshWorldHandler"),
+      X = require("GameConstant"),
       Z = cc._decorator.ccclass,
       T = function (M) {
         {
@@ -39,7 +39,7 @@ function MJRefreshWorldHandler(F, j, I) {
           }, __decorate([Z], C);
         }
       }(B.default);
-    I.default = T, I.mjRefreshWorldHandler = new T(), cc._RF.pop();
+    exports.default = T, exports.mjRefreshWorldHandler = new T(), cc._RF.pop();
   }
 }
 module.exports = MJRefreshWorldHandler;

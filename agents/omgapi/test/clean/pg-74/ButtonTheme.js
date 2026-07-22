@@ -1,11 +1,11 @@
 // module: ButtonTheme
-// Cocos 模块函数,参数 (require, module, exports) = (c, j, I)
-function ButtonTheme(c, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, module, exports)
+function ButtonTheme(require, module, exports) {
   'use strict';
 
-  if (!cc._RF.push(j, "2a5d1nUeQZE9KCVbljwPCZP", "ButtonTheme")) {
+  if (!cc._RF.push(module, "2a5d1nUeQZE9KCVbljwPCZP", "ButtonTheme")) {
     {
-      I.__esModule = true, I.default = undefined;
+      exports.__esModule = true, exports.default = undefined;
       var m = {};
       m.NONE = 0;
       m.COLOR = 1;
@@ -14,7 +14,7 @@ function ButtonTheme(c, j, I) {
       var B = {};
       B.tooltip = false;
       B.default = '';
-      var X = c("UIAppearanceHelper"),
+      var X = require("UIAppearanceHelper"),
         Z = cc.Enum(m),
         T = cc.Class({
           'extends': cc.Component,
@@ -64,7 +64,7 @@ function ButtonTheme(c, j, I) {
             }
           }
         });
-      I.default = T, j.exports = I.default, cc._RF.pop();
+      exports.default = T, module.exports = exports.default, cc._RF.pop();
     }
   }
 }

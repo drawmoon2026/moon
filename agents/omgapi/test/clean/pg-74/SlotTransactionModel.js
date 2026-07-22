@@ -1,15 +1,15 @@
 // module: SlotTransactionModel
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function SlotTransactionModel(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function SlotTransactionModel(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "d5629sKgMRK16ZrOMxnkzm9", "SlotTransactionModel")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m);
-    var B = F("WinValuesModel"),
-      X = F("WinLinesModel"),
-      Z = F("BetRepository"),
+    Object.defineProperty(exports, "__esModule", m);
+    var B = require("WinValuesModel"),
+      X = require("WinLinesModel"),
+      Z = require("BetRepository"),
       T = function (M) {
         function C() {
           return null !== M && M.apply(this, arguments) || this;
@@ -73,8 +73,8 @@ function SlotTransactionModel(F, j, I) {
             x = q.rl;
           this.Bp = f ? new X.WinLinesModel(f) : undefined, this.Ap = g ? new B.WinValuesModel(g) : undefined, this.Hp || (this.Hp = new Z.BetRepository(l, K)), this.Hp.updateRemoteBets(l, K), this.Op = x, this.Ip = O, this.updateSlotGameTransactionInfo(q);
         }, C;
-      }(F("TransactionModel").default);
-    I.default = T, cc._RF.pop();
+      }(require("TransactionModel").default);
+    exports.default = T, cc._RF.pop();
   }
 }
 module.exports = SlotTransactionModel;

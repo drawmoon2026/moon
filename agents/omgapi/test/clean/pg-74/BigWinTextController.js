@@ -1,14 +1,14 @@
 // module: BigWinTextController
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function BigWinTextController(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function BigWinTextController(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "898b60qAJxEz6mS8OIzdH+l", "BigWinTextController")) {
     {
       var m = {};
       m.value = true;
-      Object.defineProperty(I, "__esModule", m);
-      var B = F("BigWinController"),
+      Object.defineProperty(exports, "__esModule", m);
+      var B = require("BigWinController"),
         X = cc._decorator,
         Z = X.ccclass,
         T = X.property,
@@ -57,7 +57,7 @@ function BigWinTextController(F, j, I) {
             }, __decorate([T(cc.Node)], V.prototype, "bigWinTextNode", undefined), __decorate([T(cc.Node)], V.prototype, "bigWInTextHolderNode", undefined), __decorate([T(cc.Node)], V.prototype, "winAmountHolderNode", undefined), __decorate([T(cc.Sprite)], V.prototype, "bigWinSprite", undefined), __decorate([Z], V);
           }
         }(cc.Component);
-      I.default = M, cc._RF.pop();
+      exports.default = M, cc._RF.pop();
     }
   }
 }

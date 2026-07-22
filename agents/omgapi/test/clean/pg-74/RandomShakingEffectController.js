@@ -1,17 +1,17 @@
 // module: RandomShakingEffectController
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function RandomShakingEffectController(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function RandomShakingEffectController(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "6475a4xGSdOo6lU2y387NNS", "RandomShakingEffectController")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m);
+    Object.defineProperty(exports, "__esModule", m);
     var B,
       X = cc._decorator,
       Z = X.ccclass,
       T = X.property,
-      M = F("Utils");
+      M = require("Utils");
     (function (V) {
       V[V.SHAKING = 1] = "SHAKING", V[V.NORMAL = 2] = "NORMAL";
     })(B || (B = {}));
@@ -36,7 +36,7 @@ function RandomShakingEffectController(F, j, I) {
         return this.node.stopAllActions(), this.node.destroy(), V.prototype.destroy.call(this);
       }, __decorate([T(cc.Integer)], N.prototype, "moveVariance", undefined), __decorate([T(cc.Integer)], N.prototype, "repeatTime", undefined), __decorate([Z], N);
     }(cc.Component);
-    I.default = C, cc._RF.pop();
+    exports.default = C, cc._RF.pop();
   }
 }
 module.exports = RandomShakingEffectController;

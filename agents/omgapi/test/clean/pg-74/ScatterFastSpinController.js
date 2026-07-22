@@ -1,12 +1,12 @@
 // module: ScatterFastSpinController
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function ScatterFastSpinController(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (F, j, exports)
+function ScatterFastSpinController(F, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "a6e2dVtJS5Py6b5OU84kfws", "ScatterFastSpinController")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m);
+    Object.defineProperty(exports, "__esModule", m);
     var B,
       X,
       Z = cc._decorator,
@@ -47,7 +47,7 @@ function ScatterFastSpinController(F, j, I) {
         }))), this.fastGlowA.runAction(cc.tintTo(0.2, 0, 0, 0));
       }, __decorate([M(cc.Node)], N.prototype, "content", undefined), __decorate([M(cc.Node)], N.prototype, "fastGlowA", undefined), __decorate([M(cc.Animation)], N.prototype, "speedLineAnimation", undefined), __decorate([M([cc.Node])], N.prototype, "fsGlowNode", undefined), __decorate([T], N);
     }(cc.Component);
-    I.default = C, cc._RF.pop();
+    exports.default = C, cc._RF.pop();
   }
 }
 module.exports = ScatterFastSpinController;

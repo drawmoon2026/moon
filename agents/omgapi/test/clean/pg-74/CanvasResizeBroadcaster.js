@@ -1,11 +1,11 @@
 // module: CanvasResizeBroadcaster
-// Cocos 模块函数,参数 (require, module, exports) = (Q, F)
-function CanvasResizeBroadcaster(Q, F) {
+// Cocos 模块函数,参数 (require, module, exports) = (Q, module)
+function CanvasResizeBroadcaster(Q, module) {
   'use strict';
 
-  if (!cc._RF.push(F, "1bceeNXbqdLOquKoj3nUFeA", "CanvasResizeBroadcaster")) {
+  if (!cc._RF.push(module, "1bceeNXbqdLOquKoj3nUFeA", "CanvasResizeBroadcaster")) {
     var c = System.get("common").CanvasResizeBroadcaster;
-    F.exports.default = c, F.exports.__esModule = true, cc._RF.pop();
+    module.exports.default = c, module.exports.__esModule = true, cc._RF.pop();
   }
 }
 module.exports = CanvasResizeBroadcaster;

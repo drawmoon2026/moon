@@ -1,32 +1,32 @@
 // module: LoadingController
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function LoadingController(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, exports, module)
+function LoadingController(require, exports, module) {
   'use strict';
 
-  if (!cc._RF.push(j, "3cdc7hE9NpPdoGq8/wNh2mp", "LoadingController")) {
+  if (!cc._RF.push(exports, "3cdc7hE9NpPdoGq8/wNh2mp", "LoadingController")) {
     var X = {};
     X.value = true;
-    Object.defineProperty(I, "__esModule", X);
-    var Z = F("GameAudioAdapter"),
-      T = F("AudioManager"),
-      V = F("AudioAssetConfig"),
-      N = F("CustomAssetConfig"),
-      q = F("GeneralAssetConfig"),
-      K = F("NoSoundAdapter"),
-      O = F("ResourceLoader"),
-      x = F("SettingMenuHelper"),
-      L = F("SymbolImageHandler"),
-      H = F("BonusAssetConfig"),
-      U = F("LaunchConfig"),
-      k = F("AnalyticsHelper"),
-      Y = F("QuitGameWithEvent"),
-      z = F("Utils"),
-      P = F("BVFrameworkEnum"),
-      G = F("MJSlotController"),
-      W = F("UIAppearanceHelper"),
-      D = F("ErrorHandler"),
-      J = F("MJDataSource"),
-      E = F("BonusLoadingController"),
+    Object.defineProperty(module, "__esModule", X);
+    var Z = require("GameAudioAdapter"),
+      T = require("AudioManager"),
+      V = require("AudioAssetConfig"),
+      N = require("CustomAssetConfig"),
+      q = require("GeneralAssetConfig"),
+      K = require("NoSoundAdapter"),
+      O = require("ResourceLoader"),
+      x = require("SettingMenuHelper"),
+      L = require("SymbolImageHandler"),
+      H = require("BonusAssetConfig"),
+      U = require("LaunchConfig"),
+      k = require("AnalyticsHelper"),
+      Y = require("QuitGameWithEvent"),
+      z = require("Utils"),
+      P = require("BVFrameworkEnum"),
+      G = require("MJSlotController"),
+      W = require("UIAppearanceHelper"),
+      D = require("ErrorHandler"),
+      J = require("MJDataSource"),
+      E = require("BonusLoadingController"),
       Q0 = cc._decorator,
       Q1 = Q0.ccclass,
       Q2 = Q0.property,
@@ -257,7 +257,7 @@ function LoadingController(F, j, I) {
           }, __decorate([Q2(cc.Node)], Q5.prototype, "settingMenuHolder", undefined), __decorate([Q2(cc.Node)], Q5.prototype, "settingMenuFooterHolder", undefined), __decorate([Q2(cc.Node)], Q5.prototype, "clickEffectHolder", undefined), __decorate([Q2(cc.Node)], Q5.prototype, "backgroundHolder", undefined), __decorate([Q2(cc.Node)], Q5.prototype, "foregroundHolder", undefined), __decorate([Q2(cc.Node)], Q5.prototype, "symbolEffectHolder", undefined), __decorate([Q2(cc.Node)], Q5.prototype, "scatterFeatureHolder", undefined), __decorate([Q2(cc.Node)], Q5.prototype, "paySelectEffectHolder", undefined), __decorate([Q2(cc.Node)], Q5.prototype, "payoutEffectHolder", undefined), __decorate([Q2(cc.Node)], Q5.prototype, "lineNumberHolder", undefined), __decorate([Q2(cc.Node)], Q5.prototype, "slotControllerHolder", undefined), __decorate([Q2(cc.Node)], Q5.prototype, "dimControllerHolder", undefined), __decorate([Q2(cc.Node)], Q5.prototype, "dragonControllerHolder", undefined), __decorate([Q2(cc.Node)], Q5.prototype, "infoboardHolder", undefined), __decorate([Q2(cc.Node)], Q5.prototype, "spinButtonControllerHolder", undefined), __decorate([Q2(cc.Node)], Q5.prototype, "bigWinControllerHolder", undefined), __decorate([Q2(cc.Node)], Q5.prototype, "remainingFreeSpinHolder", undefined), __decorate([Q2(cc.Node)], Q5.prototype, "totalWinHolder", undefined), __decorate([Q2(cc.Node)], Q5.prototype, "genericLoadingHolder", undefined), __decorate([Q2(cc.Node)], Q5.prototype, "fastSpinHolder", undefined), __decorate([Q2(cc.Node)], Q5.prototype, "bonusLoadingHolder", undefined), __decorate([Q2(cc.Node)], Q5.prototype, "multiplierBarHolder", undefined), __decorate([Q2(cc.Node)], Q5.prototype, "freeSpinHolder", undefined), __decorate([Q2(cc.Node)], Q5.prototype, "symbolPopOutButtonHolder", undefined), __decorate([Q2(cc.Node)], Q5.prototype, "symbolPopOutDisplayHolder", undefined), __decorate([Q2(cc.Node)], Q5.prototype, "symbolPopOutTintHolder", undefined), __decorate([Q1], Q5);
         }
       }(cc.Component);
-    I.default = Q3, cc._RF.pop();
+    module.default = Q3, cc._RF.pop();
   }
 }
 module.exports = LoadingController;

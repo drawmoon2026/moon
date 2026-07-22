@@ -1,13 +1,13 @@
 // module: MJSlotHelper
-// Cocos 模块函数,参数 (require, module, exports) = (F, c, j)
-function MJSlotHelper(F, c, j) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, c, exports)
+function MJSlotHelper(require, c, exports) {
   'use strict';
 
   if (!cc._RF.push(c, "05968Nw3yVLIpF3VfjWBLKj", "MJSlotHelper")) {
     {
       var I = {};
       I.value = true;
-      Object.defineProperty(j, "__esModule", I);
+      Object.defineProperty(exports, "__esModule", I);
       var m = function (B) {
         function X() {
           return null !== B && B.apply(this, arguments) || this;
@@ -27,8 +27,8 @@ function MJSlotHelper(F, c, j) {
             V.push(N.scaleHolder.convertToWorldSpaceAR(C));
           }), V;
         }, X;
-      }(F("SlotHelper").default);
-      j.default = m, cc._RF.pop();
+      }(require("SlotHelper").default);
+      exports.default = m, cc._RF.pop();
     }
   }
 }

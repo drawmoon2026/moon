@@ -1,19 +1,19 @@
 // module: SlotController.spec
-// Cocos 模块函数,参数 (require, module, exports) = (F, c, j)
-function SlotController_spec(F, c, j) {
+// Cocos 模块函数,参数 (require, module, exports) = (F, c, exports)
+function SlotController_spec(F, c, exports) {
   'use strict';
 
   var I = {};
   I.value = true;
-  cc._RF.push(c, "3c493RO0+JAPIWBf4Mrc4+T", "SlotController.spec") || (Object.defineProperty(j, "__esModule", I), j.symbolDrop = j.symbolBreak = j.symbolShake = undefined, j.symbolShake = function () {
+  cc._RF.push(c, "3c493RO0+JAPIWBf4Mrc4+T", "SlotController.spec") || (Object.defineProperty(exports, "__esModule", I), exports.symbolDrop = exports.symbolBreak = exports.symbolShake = undefined, exports.symbolShake = function () {
     var m = System.get("automation") && System.get("automation").GameData;
     m && m.emit("SymbolShake");
-  }, j.symbolBreak = function () {
+  }, exports.symbolBreak = function () {
     {
       var m = System.get("automation") && System.get("automation").GameData;
       m && m.emit("SymbolBreak");
     }
-  }, j.symbolDrop = function () {
+  }, exports.symbolDrop = function () {
     var m = System.get("automation") && System.get("automation").GameData;
     m && m.emit("SymbolDrop");
   }, cc._RF.pop());

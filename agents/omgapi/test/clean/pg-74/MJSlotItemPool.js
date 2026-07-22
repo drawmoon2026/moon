@@ -1,16 +1,16 @@
 // module: MJSlotItemPool
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function MJSlotItemPool(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function MJSlotItemPool(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "d96efcz4TtCt52RwuD47jVo", "MJSlotItemPool")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m);
-    var B = F("SlotItemPool"),
-      X = F("MJSlotItem"),
-      Z = F("GameEventHandler"),
-      T = F("NodePoolHandler"),
+    Object.defineProperty(exports, "__esModule", m);
+    var B = require("SlotItemPool"),
+      X = require("MJSlotItem"),
+      Z = require("GameEventHandler"),
+      T = require("NodePoolHandler"),
       M = function (C) {
         {
           function V() {
@@ -40,7 +40,7 @@ function MJSlotItemPool(F, j, I) {
           }, V;
         }
       }(B.default);
-    I.default = M, cc._RF.pop();
+    exports.default = M, cc._RF.pop();
   }
 }
 module.exports = MJSlotItemPool;

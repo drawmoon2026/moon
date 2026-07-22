@@ -1,22 +1,22 @@
 // module: MJNormalGameState
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function MJNormalGameState(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function MJNormalGameState(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "1d737SZeFpEjITSM4vRj2Jb", "MJNormalGameState")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m);
-    var B = F("MJIdleState"),
-      X = F("MJSpinState"),
-      Z = F("MJPrizeState"),
-      T = F("MJResultState"),
-      M = F("NormalSpinDecorator"),
-      C = F("NormalResultDecorator"),
-      V = F("NormalPrizeDecorator"),
-      N = F("Utils"),
-      q = F("GameConstant"),
-      g = F("TransactionStateMachineHandler"),
+    Object.defineProperty(exports, "__esModule", m);
+    var B = require("MJIdleState"),
+      X = require("MJSpinState"),
+      Z = require("MJPrizeState"),
+      T = require("MJResultState"),
+      M = require("NormalSpinDecorator"),
+      C = require("NormalResultDecorator"),
+      V = require("NormalPrizeDecorator"),
+      N = require("Utils"),
+      q = require("GameConstant"),
+      g = require("TransactionStateMachineHandler"),
       K = function () {
         function O(x, p, b) {
           this.name = "MJ Normal Game", this.dataSource = undefined, this.generalControllers = undefined, this.finalCallback = undefined, this.dataSource = x, this.generalControllers = p.generalControllers, this.finalCallback = b;
@@ -63,7 +63,7 @@ function MJNormalGameState(F, j, I) {
           this.mr = undefined, this.dataSource = undefined, this.finalCallback = undefined, this.generalControllers = undefined;
         }, O;
       }();
-    I.default = K, cc._RF.pop();
+    exports.default = K, cc._RF.pop();
   }
 }
 module.exports = MJNormalGameState;

@@ -1,15 +1,15 @@
 // module: GeneralAssetConfig
-// Cocos 模块函数,参数 (require, module, exports) = (F, c, j)
-function GeneralAssetConfig(F, c, j) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, c, exports)
+function GeneralAssetConfig(require, c, exports) {
   'use strict';
 
   if (!cc._RF.push(c, "180b37pO7xHD7ZyVGmr8Xxj", "GeneralAssetConfig")) {
     {
       var I = {};
       I.value = true;
-      Object.defineProperty(j, "__esModule", I), j.generalAssetConfig = undefined;
-      var m = F("UIAppearanceHelper");
-      j.generalAssetConfig = function () {
+      Object.defineProperty(exports, "__esModule", I), exports.generalAssetConfig = undefined;
+      var m = require("UIAppearanceHelper");
+      exports.generalAssetConfig = function () {
         {
           var B = {};
           B.name = "background_controller";

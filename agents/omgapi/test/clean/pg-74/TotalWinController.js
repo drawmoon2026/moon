@@ -1,19 +1,19 @@
 // module: TotalWinController
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function TotalWinController(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function TotalWinController(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "c7a79fdMcRHvaU/jQ/WPgZj", "TotalWinController")) {
     {
       var m = {};
       m.value = true;
-      Object.defineProperty(I, "__esModule", m);
-      var B = F("AudioManager"),
-        X = F("BGMHandler"),
-        Z = F("AudioConstant"),
-        T = F("SpaceBarInterrupter"),
-        M = F("TotalWinController.spec"),
-        C = F("AutomationDecorator"),
+      Object.defineProperty(exports, "__esModule", m);
+      var B = require("AudioManager"),
+        X = require("BGMHandler"),
+        Z = require("AudioConstant"),
+        T = require("SpaceBarInterrupter"),
+        M = require("TotalWinController.spec"),
+        C = require("AutomationDecorator"),
         V = cc._decorator,
         N = V.ccclass,
         q = V.property,
@@ -128,7 +128,7 @@ function TotalWinController(F, j, I) {
             'func': M.collectTotalWinButtonShownEvent
           })], O.prototype, "_collectButtonShown", null), __decorate([N], O);
         }(cc.Component);
-      I.default = g, cc._RF.pop();
+      exports.default = g, cc._RF.pop();
     }
   }
 }

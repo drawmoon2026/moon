@@ -1,12 +1,12 @@
 // module: APIClient
-// Cocos 模块函数,参数 (require, module, exports) = (Q, F)
-function APIClient(Q, F) {
+// Cocos 模块函数,参数 (require, module, exports) = (Q, module)
+function APIClient(Q, module) {
   'use strict';
 
-  if (!cc._RF.push(F, "d34ca2GoqVBUbdLTDYW//l7", "APIClient")) {
+  if (!cc._RF.push(module, "d34ca2GoqVBUbdLTDYW//l7", "APIClient")) {
     {
       var c = System.get("bvframework").APIClient;
-      F.exports.default = c, F.exports.__esModule = true, cc._RF.pop();
+      module.exports.default = c, module.exports.__esModule = true, cc._RF.pop();
     }
   }
 }

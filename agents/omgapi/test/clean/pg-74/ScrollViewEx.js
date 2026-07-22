@@ -1,12 +1,12 @@
 // module: ScrollViewEx
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function ScrollViewEx(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function ScrollViewEx(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "4403eAPMfNGO4d5KWMoVrU7", "ScrollViewEx")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m);
+    Object.defineProperty(exports, "__esModule", m);
     var B = cc._decorator,
       X = B.ccclass,
       Z = B.property,
@@ -96,7 +96,7 @@ function ScrollViewEx(F, j, I) {
           }, __decorate([Z(cc.Integer)], C.prototype, "speed", undefined), __decorate([X], C);
         }
       }(cc.ScrollView);
-    I.default = T, cc._RF.pop();
+    exports.default = T, cc._RF.pop();
   }
 }
 module.exports = ScrollViewEx;

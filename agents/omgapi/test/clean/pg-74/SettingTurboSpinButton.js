@@ -1,17 +1,17 @@
 // module: SettingTurboSpinButton
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function SettingTurboSpinButton(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function SettingTurboSpinButton(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "eaed475bBBLf69c2AHexgPy", "SettingTurboSpinButton")) {
     {
       var m = {};
       m.value = true;
-      Object.defineProperty(I, "__esModule", m);
-      var B = F("GenericSettingButton"),
-        X = F("UIAppearanceHelper"),
-        Z = F("Utils"),
-        T = F("TurboButtonEffect"),
+      Object.defineProperty(exports, "__esModule", m);
+      var B = require("GenericSettingButton"),
+        X = require("UIAppearanceHelper"),
+        Z = require("Utils"),
+        T = require("TurboButtonEffect"),
         M = cc._decorator,
         C = M.ccclass,
         V = M.property,
@@ -113,7 +113,7 @@ function SettingTurboSpinButton(F, j, I) {
             return this.stopTurboLighting(), f.prototype.destroy.call(this);
           }, __decorate([V(cc.Sprite)], g.prototype, "sprite", undefined), __decorate([V(cc.Sprite)], g.prototype, "spriteEffect", undefined), __decorate([V(cc.Label)], g.prototype, "titleLabel", undefined), __decorate([V(cc.SpriteFrame)], g.prototype, "turboSpinOn", undefined), __decorate([V(cc.SpriteFrame)], g.prototype, "turboSpinOff", undefined), __decorate([V(cc.SpriteFrame)], g.prototype, "turboSpinEffectOn", undefined), __decorate([V(cc.SpriteFrame)], g.prototype, "turboSpinEffectOff", undefined), __decorate([V(cc.Animation)], g.prototype, "turboSpinEffectAnim", undefined), __decorate([V(cc.Animation)], g.prototype, "lightingEffectAnim", undefined), __decorate([V(cc.Node)], g.prototype, "spriteLightEffectNode", undefined), __decorate([V(cc.Node)], g.prototype, "spriteLightShadowEffectNode", undefined), __decorate([V(T.default)], g.prototype, "turboButtonEffect", undefined), __decorate([C], g);
         }(B.default);
-      I.default = q, cc._RF.pop();
+      exports.default = q, cc._RF.pop();
     }
   }
 }

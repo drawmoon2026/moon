@@ -1,13 +1,13 @@
 // module: BetRepository
-// Cocos 模块函数,参数 (require, module, exports) = (F, c, j)
-function BetRepository(F, c, j) {
+// Cocos 模块函数,参数 (require, module, exports) = (F, c, exports)
+function BetRepository(F, c, exports) {
   'use strict';
 
   if (!cc._RF.push(c, "14dfa+lfKlIS5vAzSig9n4q", "BetRepository")) {
     {
       var I = {};
       I.value = true;
-      Object.defineProperty(j, "__esModule", I), j.BetRepository = undefined;
+      Object.defineProperty(exports, "__esModule", I), exports.BetRepository = undefined;
       var m = function () {
         function B(X, Z) {
           this.ft = X, this.vt = Z, this._t = X, this.bt = Z;
@@ -46,7 +46,7 @@ function BetRepository(F, c, j) {
           this.ft = this._t = X, this.vt = this.bt = Z;
         }, B;
       }();
-      j.BetRepository = m, cc._RF.pop();
+      exports.BetRepository = m, cc._RF.pop();
     }
   }
 }

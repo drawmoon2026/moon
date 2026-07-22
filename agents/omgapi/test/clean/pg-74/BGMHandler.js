@@ -1,15 +1,15 @@
 // module: BGMHandler
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function BGMHandler(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function BGMHandler(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "3d3dftKjVlChZnsj+3nZA0P", "BGMHandler")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m), I.bgmHandler = undefined;
-    var B = F("AudioManager"),
-      X = F("SettingMenuHelper"),
-      Z = F("GameConstant"),
+    Object.defineProperty(exports, "__esModule", m), exports.bgmHandler = undefined;
+    var B = require("AudioManager"),
+      X = require("SettingMenuHelper"),
+      Z = require("GameConstant"),
       T = cc._decorator.ccclass,
       M = function (N) {
         function q() {
@@ -50,9 +50,9 @@ function BGMHandler(F, j, I) {
           return g;
         }, __decorate([T], q);
       }(cc.Component);
-    I.default = M;
+    exports.default = M;
     var C = new M();
-    I.bgmHandler = C, cc._RF.pop();
+    exports.bgmHandler = C, cc._RF.pop();
   }
   function V() {
     B.GeneralAudioPool.bgm_fs.off("fade", V), B.GeneralAudioPool.bgm_fs.stop();

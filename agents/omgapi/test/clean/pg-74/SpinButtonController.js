@@ -1,23 +1,23 @@
 // module: SpinButtonController
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function SpinButtonController(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function SpinButtonController(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "43d12n8a1BInJvBu7QtjALE", "SpinButtonController")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m), I.SpinButtonMode = I.SpinButtonAnimationState = undefined;
+    Object.defineProperty(exports, "__esModule", m), exports.SpinButtonMode = exports.SpinButtonAnimationState = undefined;
     var B,
       X,
-      Z = F("SettingMenuHelper"),
-      T = F("ButtonHitTest"),
-      M = F("SlotAnalyticsEnum"),
+      Z = require("SettingMenuHelper"),
+      T = require("ButtonHitTest"),
+      M = require("SlotAnalyticsEnum"),
       C = cc._decorator.ccclass;
     (function (N) {
       N[N.IDLE = 1] = "IDLE", N[N.SPINNING = 2] = "SPINNING", N[N.STOPPED = 3] = "STOPPED";
-    })(B = I.SpinButtonAnimationState || (I.SpinButtonAnimationState = {})), function (N) {
+    })(B = exports.SpinButtonAnimationState || (exports.SpinButtonAnimationState = {})), function (N) {
       N[N.ENABLED = 0] = "ENABLED", N[N.DISABLED = 1] = "DISABLED", N[N.AUTOSPIN = 2] = "AUTOSPIN";
-    }(X = I.SpinButtonMode || (I.SpinButtonMode = {}));
+    }(X = exports.SpinButtonMode || (exports.SpinButtonMode = {}));
     var V = function (N) {
       function q() {
         var f = null !== N && N.apply(this, arguments) || this;
@@ -143,7 +143,7 @@ function SpinButtonController(F, j, I) {
         }
       }, __decorate([C], q);
     }(cc.Component);
-    I.default = V, cc._RF.pop();
+    exports.default = V, cc._RF.pop();
   }
 }
 module.exports = SpinButtonController;

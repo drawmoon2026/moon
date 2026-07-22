@@ -1,21 +1,21 @@
 // module: SettingMenuHelper
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function SettingMenuHelper(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function SettingMenuHelper(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "35d29M3VudMFqjm4gRoo2G6", "SettingMenuHelper")) {
     var B = {};
     B.value = true;
-    Object.defineProperty(I, "__esModule", B), I.BackButtonType = I.settingMenuHelper = I.SettingMenuType = I.ButtonPrefabType = I.SubControllers = undefined;
+    Object.defineProperty(exports, "__esModule", B), exports.BackButtonType = exports.settingMenuHelper = exports.SettingMenuType = exports.ButtonPrefabType = exports.SubControllers = undefined;
     var X,
       Z,
       T,
-      M = F("Utils"),
-      V = F("SettingMenuButtonHelper"),
-      N = F("NotifyHelper"),
-      q = F("Preference"),
-      K = F("BVFramework"),
-      O = F("GameEventHandler"),
+      M = require("Utils"),
+      V = require("SettingMenuButtonHelper"),
+      N = require("NotifyHelper"),
+      q = require("Preference"),
+      K = require("BVFramework"),
+      O = require("GameEventHandler"),
       x = System.get("wallet"),
       L = System.get("slot-menu"),
       H = System.get("game-history"),
@@ -24,13 +24,13 @@ function SettingMenuHelper(F, j, I) {
       Y = q.getPreference("setting_menu");
     Y.defineItem("soundOn", true), function (A) {
       A[A.SPIN_OPTIONS = 0] = "SPIN_OPTIONS", A[A.BET_OPTIONS = 1] = "BET_OPTIONS", A[A.SOUND = 2] = "SOUND", A[A.HISTORY = 3] = "HISTORY", A[A.PAYTABLE = 4] = "PAYTABLE", A[A.RULE = 5] = "RULE", A[A.WALLET = 6] = "WALLET";
-    }(I.SubControllers || (I.SubControllers = {})), function (A) {
+    }(exports.SubControllers || (exports.SubControllers = {})), function (A) {
       A[A.SPIN_OPTIONS = 2] = "SPIN_OPTIONS", A[A.BET_OPTIONS = 3] = "BET_OPTIONS", A[A.MORE_MENU = 4] = "MORE_MENU", A[A.SOUND = 5] = "SOUND", A[A.PAYTABLE = 6] = "PAYTABLE", A[A.RULE = 7] = "RULE", A[A.HISTORY = 8] = "HISTORY", A[A.HIDE_MORE = 9] = "HIDE_MORE", A[A.MINUS_BET = 10] = "MINUS_BET", A[A.PLUS_BET = 11] = "PLUS_BET", A[A.WALLET = 12] = "WALLET", A[A.WIN = 13] = "WIN", A[A.TURBO_SPIN = 14] = "TURBO_SPIN", A[A.QUIT = 15] = "QUIT", A[A.MAX_BET = 16] = "MAX_BET";
-    }(X = I.ButtonPrefabType || (I.ButtonPrefabType = {})), function (A) {
+    }(X = exports.ButtonPrefabType || (exports.ButtonPrefabType = {})), function (A) {
       A[A.HIDDEN = 0] = "HIDDEN", A[A.NORMAL_BACK_FUNC = 1] = "NORMAL_BACK_FUNC";
-    }(Z || (Z = {})), I.BackButtonType = Z, function (A) {
+    }(Z || (Z = {})), exports.BackButtonType = Z, function (A) {
       A[A.LEGACY = 0] = "LEGACY", A[A.NEW = 1] = "NEW";
-    }(T = I.SettingMenuType || (I.SettingMenuType = {}));
+    }(T = exports.SettingMenuType || (exports.SettingMenuType = {}));
     var y = new (function (A) {
       function w() {
         {
@@ -974,7 +974,7 @@ function SettingMenuHelper(F, j, I) {
         return false;
       }, __decorate([k("SettingMenuHelper")], w);
     }(cc.Object))();
-    I.settingMenuHelper = y, cc._RF.pop();
+    exports.settingMenuHelper = y, cc._RF.pop();
   }
   function z(A, w) {
     return (A + 1) / Object.keys(w).length;

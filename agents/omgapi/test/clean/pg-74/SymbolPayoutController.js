@@ -1,16 +1,16 @@
 // module: SymbolPayoutController
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function SymbolPayoutController(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function SymbolPayoutController(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "7c05ali6OlCEJ+GOnxbYWHT", "SymbolPayoutController")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m);
-    var B = F("SymbolPayoutPanelGenerator"),
-      X = F("SinglePayoutModel"),
-      Z = F("Utils"),
-      T = F("PopOutItemHandler"),
+    Object.defineProperty(exports, "__esModule", m);
+    var B = require("SymbolPayoutPanelGenerator"),
+      X = require("SinglePayoutModel"),
+      Z = require("Utils"),
+      T = require("PopOutItemHandler"),
       M = cc._decorator,
       C = M.ccclass,
       V = M.property,
@@ -172,7 +172,7 @@ function SymbolPayoutController(F, j, I) {
           'configurable': true
         }), __decorate([V(cc.Prefab)], f.prototype, "popOutItem", undefined), __decorate([V(cc.Prefab)], f.prototype, "popOutTint", undefined), __decorate([C], f);
       }(cc.Component);
-    I.default = N, cc._RF.pop();
+    exports.default = N, cc._RF.pop();
   }
 }
 module.exports = SymbolPayoutController;

@@ -1,10 +1,10 @@
 // module: LineController
-// Cocos 模块函数,参数 (require, module, exports) = (F, c, j)
-function LineController(F, c, j) {
+// Cocos 模块函数,参数 (require, module, exports) = (F, module, exports)
+function LineController(F, module, exports) {
   'use strict';
 
-  if (!cc._RF.push(c, "15878i9jmRPk6rKeeTw6Ok4", "LineController")) {
-    j.__esModule = true, j.default = undefined;
+  if (!cc._RF.push(module, "15878i9jmRPk6rKeeTw6Ok4", "LineController")) {
+    exports.__esModule = true, exports.default = undefined;
     var I = {};
     I.HEAD = 0;
     I.BODY = 1;
@@ -196,7 +196,7 @@ function LineController(F, c, j) {
           return null !== T ? T : X;
         }
       });
-    j.default = B, c.exports = j.default, cc._RF.pop();
+    exports.default = B, module.exports = exports.default, cc._RF.pop();
   }
 }
 module.exports = LineController;

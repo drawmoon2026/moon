@@ -1,19 +1,19 @@
 // module: RefreshWorldHandler
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function RefreshWorldHandler(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function RefreshWorldHandler(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "4ef5cJw0YpAx5UIePlauVio", "RefreshWorldHandler")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m), I.RefreshWorldGameState = undefined;
+    Object.defineProperty(exports, "__esModule", m), exports.RefreshWorldGameState = undefined;
     var B,
-      X = F("RequestHandler"),
-      Z = F("Utils"),
-      T = F("GenericLoadingScreenController");
+      X = require("RequestHandler"),
+      Z = require("Utils"),
+      T = require("GenericLoadingScreenController");
     (function (V) {
       V[V.STANDARD = 0] = "STANDARD", V[V.PROGRESSING = 1] = "PROGRESSING";
-    })(B = I.RefreshWorldGameState || (I.RefreshWorldGameState = {}));
+    })(B = exports.RefreshWorldGameState || (exports.RefreshWorldGameState = {}));
     var M = cc._decorator.ccclass,
       C = function () {
         {
@@ -118,7 +118,7 @@ function RefreshWorldHandler(F, j, I) {
           }, __decorate([M], V);
         }
       }();
-    I.default = C, cc._RF.pop();
+    exports.default = C, cc._RF.pop();
   }
 }
 module.exports = RefreshWorldHandler;

@@ -1,13 +1,13 @@
 // module: BaseListViewCell
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function BaseListViewCell(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (F, j, exports)
+function BaseListViewCell(F, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "24d8a0AiVJMa4yCegaay2ry", "BaseListViewCell")) {
     {
       var m = {};
       m.value = true;
-      Object.defineProperty(I, "__esModule", m);
+      Object.defineProperty(exports, "__esModule", m);
       var B = cc._decorator,
         X = B.ccclass,
         Z = B.property,
@@ -56,7 +56,7 @@ function BaseListViewCell(F, j, I) {
             }
           }, __decorate([Z(cc.Label)], C.prototype, "label", undefined), __decorate([Z(cc.Sprite)], C.prototype, "sprite", undefined), __decorate([Z(cc.Color)], C.prototype, "selectedBackgroundColor", undefined), __decorate([Z(cc.Color)], C.prototype, "normalBackgroundColor", undefined), __decorate([X], C);
         }(cc.Component);
-      I.default = T, cc._RF.pop();
+      exports.default = T, cc._RF.pop();
     }
   }
 }

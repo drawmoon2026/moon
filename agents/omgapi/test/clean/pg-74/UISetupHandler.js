@@ -1,26 +1,26 @@
 // module: UISetupHandler
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function UISetupHandler(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function UISetupHandler(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "fac27RnOUFFZqvCCEitlo83", "UISetupHandler")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m), I.BonusGameUI = I.NormalGameUI = I.settingMenuInteractable = I.renderUIBaseOnState = undefined;
-    var B = F("MJDataSource"),
-      X = F("GameConstant"),
-      Z = F("SettingMenuHelper"),
-      T = F("Utils"),
-      M = F("AudioManager"),
-      C = (F("SlotHandler"), F("MultiplierBoardController"));
-    I.renderUIBaseOnState = function (O, x, p, b, L, H) {
+    Object.defineProperty(exports, "__esModule", m), exports.BonusGameUI = exports.NormalGameUI = exports.settingMenuInteractable = exports.renderUIBaseOnState = undefined;
+    var B = require("MJDataSource"),
+      X = require("GameConstant"),
+      Z = require("SettingMenuHelper"),
+      T = require("Utils"),
+      M = require("AudioManager"),
+      C = (require("SlotHandler"), require("MultiplierBoardController"));
+    exports.renderUIBaseOnState = function (O, x, p, b, L, H) {
       {
         var U = {};
         U.generalControllers = b;
         U.bonusControllers = L;
         H || 2 === Math.floor(x / 10) && 2 === Math.floor(p / 10) ? new N().setup(U, O) : new V().setup(b, O);
       }
-    }, I.settingMenuInteractable = function (O) {
+    }, exports.settingMenuInteractable = function (O) {
       Z.settingMenuHelper.setAllButtonsInteractable(O);
     };
     var V = function () {
@@ -52,7 +52,7 @@ function UISetupHandler(F, j, I) {
         g(this.Zh, x);
       }, O;
     }();
-    I.NormalGameUI = V;
+    exports.NormalGameUI = V;
     var N = function () {
       function O() {}
       return O.prototype.setup = function (x, p) {
@@ -85,7 +85,7 @@ function UISetupHandler(F, j, I) {
         g(this.Zh, x);
       }, O;
     }();
-    I.BonusGameUI = N, cc._RF.pop();
+    exports.BonusGameUI = N, cc._RF.pop();
   }
   function q() {
     var O = B.mjDataSource.playerModel.balance,

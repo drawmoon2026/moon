@@ -1,15 +1,15 @@
 // module: MJSlotTransactionModel
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function MJSlotTransactionModel(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function MJSlotTransactionModel(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "52e61IcEOlECKK1RqctmBZg", "MJSlotTransactionModel")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m);
-    var B = F("SlotTransactionModel"),
-      X = F("MJFreeSpinModel"),
-      Z = F("MJRespinModel"),
+    Object.defineProperty(exports, "__esModule", m);
+    var B = require("SlotTransactionModel"),
+      X = require("MJFreeSpinModel"),
+      Z = require("MJRespinModel"),
       T = function (M) {
         {
           function C() {
@@ -141,7 +141,7 @@ function MJSlotTransactionModel(F, j, I) {
           }, C;
         }
       }(B.default);
-    I.default = T, cc._RF.pop();
+    exports.default = T, cc._RF.pop();
   }
 }
 module.exports = MJSlotTransactionModel;

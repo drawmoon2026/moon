@@ -1,13 +1,13 @@
 // module: BACKUP_DATA
-// Cocos 模块函数,参数 (require, module, exports) = (c, j, I)
-function BACKUP_DATA(c, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (c, j, exports)
+function BACKUP_DATA(c, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "4dc392lxVJArKflo+rU3j23", "BACKUP_DATA")) {
     {
       var m = {};
       m.value = true;
-      Object.defineProperty(I, "__esModule", m);
+      Object.defineProperty(exports, "__esModule", m);
       var B = {};
       B.default_font = "Arial";
       var X = new cc.Color(255, 200, 36, 255),
@@ -199,7 +199,7 @@ function BACKUP_DATA(c, j, I) {
             'font_style': "Arial"
           }
         });
-      I.default = T, cc._RF.pop();
+      exports.default = T, cc._RF.pop();
     }
   }
 }

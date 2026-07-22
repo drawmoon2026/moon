@@ -1,20 +1,20 @@
 // module: SlotStateMachine
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function SlotStateMachine(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function SlotStateMachine(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "f1d53JqS5hGVbtNCz0JAnwN", "SlotStateMachine")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m), I.StopStyle = I.SlotStates = undefined;
+    Object.defineProperty(exports, "__esModule", m), exports.StopStyle = exports.SlotStates = undefined;
     var B,
       X,
-      Z = F("Utils");
+      Z = require("Utils");
     (function (M) {
       M[M.SPINNING = 0] = "SPINNING", M[M.STOPPING = 1] = "STOPPING", M[M.STOPPED = 2] = "STOPPED";
-    })(B = I.SlotStates || (I.SlotStates = {})), function (M) {
+    })(B = exports.SlotStates || (exports.SlotStates = {})), function (M) {
       M[M.NORMAL = 0] = "NORMAL", M[M.FAST = 1] = "FAST";
-    }(X = I.StopStyle || (I.StopStyle = {}));
+    }(X = exports.StopStyle || (exports.StopStyle = {}));
     var T = function () {
       {
         function M() {
@@ -60,7 +60,7 @@ function SlotStateMachine(F, j, I) {
         }, M;
       }
     }();
-    I.default = T, cc._RF.pop();
+    exports.default = T, cc._RF.pop();
   }
 }
 module.exports = SlotStateMachine;

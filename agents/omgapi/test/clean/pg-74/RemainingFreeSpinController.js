@@ -1,16 +1,16 @@
 // module: RemainingFreeSpinController
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function RemainingFreeSpinController(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, module)
+function RemainingFreeSpinController(require, j, module) {
   'use strict';
 
   if (!cc._RF.push(j, "4e9d4vU9Y1NB5cTHTdqss09", "RemainingFreeSpinController")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m);
-    var B = F("Utils"),
-      X = F("AudioManager"),
-      Z = F("AudioConstant"),
-      T = F("GameConstant"),
+    Object.defineProperty(module, "__esModule", m);
+    var B = require("Utils"),
+      X = require("AudioManager"),
+      Z = require("AudioConstant"),
+      T = require("GameConstant"),
       M = cc._decorator,
       C = M.ccclass,
       V = M.property,
@@ -73,7 +73,7 @@ function RemainingFreeSpinController(F, j, I) {
           return this.pd(), this.node.destroy(), q.prototype.destroy.call(this);
         }, __decorate([V(cc.Node)], f.prototype, "numberDisplayNode", undefined), __decorate([V(cc.Node)], f.prototype, "numberDisplayContainer", undefined), __decorate([V(cc.Node)], f.prototype, "remainingFreeSpinNode", undefined), __decorate([V(cc.Sprite)], f.prototype, "remainingSprite", undefined), __decorate([V(cc.Sprite)], f.prototype, "lastFreeSpinSprite", undefined), __decorate([V(cc.Node)], f.prototype, "glowNode", undefined), __decorate([V([cc.ParticleSystem])], f.prototype, "particles", undefined), __decorate([C], f);
       }(cc.Component);
-    I.default = N, cc._RF.pop();
+    module.default = N, cc._RF.pop();
   }
 }
 module.exports = RemainingFreeSpinController;

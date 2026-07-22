@@ -1,16 +1,16 @@
 // module: LandscapeSoundButton
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function LandscapeSoundButton(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function LandscapeSoundButton(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "948ffXQc5hNbqpouW3VdkkX", "LandscapeSoundButton")) {
     {
       var m = {};
       m.value = true;
-      Object.defineProperty(I, "__esModule", m);
-      var B = F("SoundButton"),
-        X = F("UIAppearanceHelper"),
-        Z = F("Utils"),
+      Object.defineProperty(exports, "__esModule", m);
+      var B = require("SoundButton"),
+        X = require("UIAppearanceHelper"),
+        Z = require("Utils"),
         T = cc._decorator,
         M = T.ccclass,
         C = T.property,
@@ -40,7 +40,7 @@ function LandscapeSoundButton(F, j, I) {
             }
           }, __decorate([C(cc.Sprite)], q.prototype, "largeSprite", undefined), __decorate([C(cc.SpriteFrame)], q.prototype, "largeSoundOnIcon", undefined), __decorate([C(cc.SpriteFrame)], q.prototype, "largeSoundOffIcon", undefined), __decorate([M], q);
         }(B.default);
-      I.default = V, cc._RF.pop();
+      exports.default = V, cc._RF.pop();
     }
   }
 }

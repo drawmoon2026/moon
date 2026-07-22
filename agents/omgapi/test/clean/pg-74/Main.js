@@ -1,42 +1,42 @@
 // module: Main
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, X)
-function Main(F, j, X) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function Main(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "15e58uWzmVHI4kQUpn/O31n", "Main")) {
     {
       var Z = {};
       Z.value = true;
-      Object.defineProperty(X, "__esModule", Z);
-      var V = F("SettingMenuHandlers"),
-        q = F("WalletHandlers"),
-        K = F("WalletHelper"),
-        x = F("SettingMenuHelper"),
-        L = F("UIAppearanceHelper"),
-        U = F("Transitions"),
-        Y = F("AudioManager"),
-        z = F("UISetupHandler"),
-        P = F("MJNormalGameState"),
-        W = F("MJFreeSpinGameState"),
-        D = F("GameConstant"),
-        J = F("BGMHandler"),
-        Q0 = F("MJAPIClient"),
-        Q1 = F("MJDataSource"),
-        Q2 = F("GameLayout"),
-        Q3 = F("MultiResHandler"),
-        Q4 = F("Utils"),
-        Q5 = F("NotifyHelper"),
-        Q6 = F("GameInitializationHandler"),
-        Q7 = F("AnalyticsHelper"),
-        Q8 = F("RequestHandler"),
-        Q9 = F("GameEventHandler"),
-        QQ = F("MJRespinGameState"),
-        QF = F("SlotHandler"),
-        QR = F("MJRefreshWorldHandler"),
-        Qn = F("TransactionStateMachineHandler"),
-        Qc = F("JakeSlotGameTemplate"),
-        Qj = F("SpaceBarInterrupter"),
-        Qi = F("SpinConfigHandler"),
+      Object.defineProperty(exports, "__esModule", Z);
+      var V = require("SettingMenuHandlers"),
+        q = require("WalletHandlers"),
+        K = require("WalletHelper"),
+        x = require("SettingMenuHelper"),
+        L = require("UIAppearanceHelper"),
+        U = require("Transitions"),
+        Y = require("AudioManager"),
+        z = require("UISetupHandler"),
+        P = require("MJNormalGameState"),
+        W = require("MJFreeSpinGameState"),
+        D = require("GameConstant"),
+        J = require("BGMHandler"),
+        Q0 = require("MJAPIClient"),
+        Q1 = require("MJDataSource"),
+        Q2 = require("GameLayout"),
+        Q3 = require("MultiResHandler"),
+        Q4 = require("Utils"),
+        Q5 = require("NotifyHelper"),
+        Q6 = require("GameInitializationHandler"),
+        Q7 = require("AnalyticsHelper"),
+        Q8 = require("RequestHandler"),
+        Q9 = require("GameEventHandler"),
+        QQ = require("MJRespinGameState"),
+        QF = require("SlotHandler"),
+        QR = require("MJRefreshWorldHandler"),
+        Qn = require("TransactionStateMachineHandler"),
+        Qc = require("JakeSlotGameTemplate"),
+        Qj = require("SpaceBarInterrupter"),
+        Qi = require("SpinConfigHandler"),
         QI = cc._decorator,
         Qm = QI.ccclass,
         Qt = QI.property,
@@ -393,7 +393,7 @@ function Main(F, j, X) {
             }
           }, __decorate([Qt(cc.Prefab)], QZ.prototype, "settingInfoFooterPrefab", undefined), __decorate([Qm], QZ);
         }(cc.Component);
-      X.default = QB, cc._RF.pop();
+      exports.default = QB, cc._RF.pop();
     }
   }
 }

@@ -1,13 +1,13 @@
 // module: SlotItemHandler
-// Cocos 模块函数,参数 (require, module, exports) = (F, c, j)
-function SlotItemHandler(F, c, j) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, c, exports)
+function SlotItemHandler(require, c, exports) {
   'use strict';
 
   if (!cc._RF.push(c, "cbfb0c2igtO8oHCc6bYN0xe", "SlotItemHandler")) {
     {
       var I = {};
       I.value = true;
-      Object.defineProperty(j, "__esModule", I);
+      Object.defineProperty(exports, "__esModule", I);
       var m = function () {
         function B() {
           this.numberOfRow = undefined, this.functionalSlotItems = undefined;
@@ -37,7 +37,7 @@ function SlotItemHandler(F, c, j) {
           return __spread(T);
         }, B;
       }();
-      j.default = m, cc._RF.pop();
+      exports.default = m, cc._RF.pop();
     }
   }
 }

@@ -1,14 +1,14 @@
 // module: TimedWinRollCurveController
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function TimedWinRollCurveController(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function TimedWinRollCurveController(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "ac3b0Ey1QlMtZGe7RPoOsSH", "TimedWinRollCurveController")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m);
-    var B = F("NumberCurvedController"),
-      X = F("TimedWinRollBaseController"),
+    Object.defineProperty(exports, "__esModule", m);
+    var B = require("NumberCurvedController"),
+      X = require("TimedWinRollBaseController"),
       Z = cc._decorator,
       T = Z.ccclass,
       M = Z.property,
@@ -24,7 +24,7 @@ function TimedWinRollCurveController(F, j, I) {
           return __extends(q, V), __decorate([M(N)], q.prototype, "displayController", undefined), __decorate([T], q);
         }
       }(X.default);
-    I.default = C, cc._RF.pop();
+    exports.default = C, cc._RF.pop();
   }
 }
 module.exports = TimedWinRollCurveController;

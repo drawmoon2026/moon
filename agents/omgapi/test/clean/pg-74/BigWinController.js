@@ -1,24 +1,24 @@
 // module: BigWinController
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function BigWinController(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function BigWinController(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "d2d890Fi6BBm5DvLiZKjbd4", "BigWinController")) {
     {
       var B = {};
       B.value = true;
-      Object.defineProperty(I, "__esModule", B), I.WinRollState = undefined;
+      Object.defineProperty(exports, "__esModule", B), exports.WinRollState = undefined;
       var X,
         Z,
         T,
-        M = F("Utils"),
-        C = F("AudioManager"),
-        V = F("BGMHandler"),
-        N = F("AudioConstant"),
-        q = F("SpaceBarInterrupter"),
-        g = F("GameEventHandler"),
-        K = F("BigWinController.spec"),
-        O = F("AutomationDecorator"),
+        M = require("Utils"),
+        C = require("AudioManager"),
+        V = require("BGMHandler"),
+        N = require("AudioConstant"),
+        q = require("SpaceBarInterrupter"),
+        g = require("GameEventHandler"),
+        K = require("BigWinController.spec"),
+        O = require("AutomationDecorator"),
         x = cc._decorator,
         p = x.ccclass,
         L = x.property;
@@ -26,7 +26,7 @@ function BigWinController(F, j, I) {
         U[U.INITIAL = 1] = "INITIAL", U[U.PLAYING = 2] = "PLAYING", U[U.WAITING = 3] = "WAITING", U[U.DISMISING = 4] = "DISMISING";
       })(X || (X = {})), function (U) {
         U[U.BIG_WIN = 0] = "BIG_WIN", U[U.MEGA_WIN = 1] = "MEGA_WIN", U[U.SUPER_MEGA_WIN = 2] = "SUPER_MEGA_WIN";
-      }(Z = I.WinRollState || (I.WinRollState = {})), function (U) {
+      }(Z = exports.WinRollState || (exports.WinRollState = {})), function (U) {
         U[U.LEFT_01 = 0] = "LEFT_01", U[U.LEFT_02 = 1] = "LEFT_02", U[U.RIGHT_01 = 2] = "RIGHT_01", U[U.RIGHT_02 = 3] = "RIGHT_02", U[U.EXTRA_LEFT = 4] = "EXTRA_LEFT", U[U.EXTRA_RIGHT = 5] = "EXTRA_RIGHT";
       }(T || (T = {}));
       var H = function (U) {
@@ -169,7 +169,7 @@ function BigWinController(F, j, I) {
           })], k.prototype, "_skipButtonActive", null), __decorate([p], k);
         }
       }(cc.Component);
-      I.default = H, cc._RF.pop();
+      exports.default = H, cc._RF.pop();
     }
   }
 }

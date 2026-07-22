@@ -1,12 +1,12 @@
 // module: NodePoolHandler
-// Cocos 模块函数,参数 (require, module, exports) = (F, c, j)
-function NodePoolHandler(F, c, j) {
+// Cocos 模块函数,参数 (require, module, exports) = (F, c, exports)
+function NodePoolHandler(F, c, exports) {
   'use strict';
 
   if (!cc._RF.push(c, "2bc29Fr7txALpAImtaamDcx", "NodePoolHandler")) {
     var I = {};
     I.value = true;
-    Object.defineProperty(j, "__esModule", I), j.nodePoolHandler = j.NodePoolHandler = undefined;
+    Object.defineProperty(exports, "__esModule", I), exports.nodePoolHandler = exports.NodePoolHandler = undefined;
     var m = function () {
       function X() {
         this.hf = Object.create(null);
@@ -74,9 +74,9 @@ function NodePoolHandler(F, c, j) {
         }
       }, X;
     }();
-    j.NodePoolHandler = m;
+    exports.NodePoolHandler = m;
     var B = new m();
-    j.nodePoolHandler = B, cc._RF.pop();
+    exports.nodePoolHandler = B, cc._RF.pop();
   }
 }
 module.exports = NodePoolHandler;

@@ -1,25 +1,25 @@
 // module: IdleState
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function IdleState(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, exports, I)
+function IdleState(require, exports, I) {
   'use strict';
 
-  if (!cc._RF.push(j, "9928eUmiH5DjJzRecinmoRP", "IdleState")) {
+  if (!cc._RF.push(exports, "9928eUmiH5DjJzRecinmoRP", "IdleState")) {
     {
       var m = {};
       m.value = true;
       Object.defineProperty(I, "__esModule", m);
-      var B = F("AutoSpinHandler"),
-        X = F("SlotGameConstants"),
-        Z = F("SlotAnalyticsEnum"),
-        T = F("SystemFeatureHandler"),
-        M = F("AnalyticsHelper"),
-        C = F("GameEventHandler"),
-        V = F("ButtonHitTest"),
-        N = F("SlotDependencyManager"),
-        q = F("SettingMenuHelper"),
-        g = F("Utils"),
-        K = F("JakeSlotGameTemplate"),
-        O = F("SpinButtonController"),
+      var B = require("AutoSpinHandler"),
+        X = require("SlotGameConstants"),
+        Z = require("SlotAnalyticsEnum"),
+        T = require("SystemFeatureHandler"),
+        M = require("AnalyticsHelper"),
+        C = require("GameEventHandler"),
+        V = require("ButtonHitTest"),
+        N = require("SlotDependencyManager"),
+        q = require("SettingMenuHelper"),
+        g = require("Utils"),
+        K = require("JakeSlotGameTemplate"),
+        O = require("SpinButtonController"),
         x = function () {
           function p(b, L, H, U) {
             {

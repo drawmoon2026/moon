@@ -1,13 +1,13 @@
 // module: MJScatterState
-// Cocos 模块函数,参数 (require, module, exports) = (F, c, j)
-function MJScatterState(F, c, j) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, c, exports)
+function MJScatterState(require, c, exports) {
   'use strict';
 
   if (!cc._RF.push(c, "522e1lA8XBMZpFriJeepY8M", "MJScatterState")) {
     var I = {};
     I.value = true;
-    Object.defineProperty(j, "__esModule", I);
-    var m = F("Utils"),
+    Object.defineProperty(exports, "__esModule", I);
+    var m = require("Utils"),
       B = cc._decorator.ccclass,
       X = function () {
         function Z(T, M, C) {
@@ -30,7 +30,7 @@ function MJScatterState(F, c, j) {
           this.dataSource = undefined, this.finalCallback = undefined, this.generalControllers = undefined, this.bonusControllers = undefined;
         }, __decorate([B], Z);
       }();
-    j.default = X, cc._RF.pop();
+    exports.default = X, cc._RF.pop();
   }
 }
 module.exports = MJScatterState;

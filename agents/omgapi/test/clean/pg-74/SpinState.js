@@ -1,16 +1,16 @@
 // module: SpinState
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function SpinState(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function SpinState(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "f1de36UCZVLKpe2qk9vzSaC", "SpinState")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m);
-    var B = F("SlotAnalyticsEnum"),
-      X = F("SlotAnalyticsHelper"),
-      Z = F("Utils"),
-      T = F("SpinConfigHandler"),
+    Object.defineProperty(exports, "__esModule", m);
+    var B = require("SlotAnalyticsEnum"),
+      X = require("SlotAnalyticsHelper"),
+      Z = require("Utils"),
+      T = require("SpinConfigHandler"),
       M = function () {
         function C(V, N, q, f) {
           this.name = "Spin State", this.dataSource = undefined, this.generalControllers = undefined, this.finalCallback = undefined, this.stateDecorator = undefined, this.dataSource = V, this.generalControllers = N.generalControllers, this.finalCallback = q, f && (this.stateDecorator = f, f.triggerFastStop = this.triggerFastStop.bind(this));
@@ -54,7 +54,7 @@ function SpinState(F, j, I) {
           this.generalControllers.slotController.spin();
         }, C;
       }();
-    I.default = M, cc._RF.pop();
+    exports.default = M, cc._RF.pop();
   }
 }
 module.exports = SpinState;

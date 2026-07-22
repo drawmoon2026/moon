@@ -1,15 +1,15 @@
 // module: ForegroundController
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function ForegroundController(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function ForegroundController(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "9d8f03l/alMI4Ngb2GmjHq+", "ForegroundController")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m);
+    Object.defineProperty(exports, "__esModule", m);
     var B,
       X,
-      Z = F("GameConstant"),
+      Z = require("GameConstant"),
       T = cc._decorator,
       M = T.ccclass,
       C = T.property;
@@ -41,7 +41,7 @@ function ForegroundController(F, j, I) {
         }, __decorate([C(cc.Node)], q.prototype, "bonusNode", undefined), __decorate([C(cc.Sprite)], q.prototype, "topA", undefined), __decorate([C(cc.Sprite)], q.prototype, "topB", undefined), __decorate([C(cc.Sprite)], q.prototype, "topC", undefined), __decorate([C(cc.Sprite)], q.prototype, "bottom", undefined), __decorate([C(cc.SpriteFrame)], q.prototype, "topNormalA", undefined), __decorate([C(cc.SpriteFrame)], q.prototype, "topNormalB", undefined), __decorate([C(cc.SpriteFrame)], q.prototype, "topNormalC", undefined), __decorate([C(cc.SpriteFrame)], q.prototype, "topBonusA", undefined), __decorate([C(cc.SpriteFrame)], q.prototype, "topBonusB", undefined), __decorate([C(cc.SpriteFrame)], q.prototype, "topBonusC", undefined), __decorate([C(cc.SpriteFrame)], q.prototype, "bottomNormal", undefined), __decorate([C(cc.SpriteFrame)], q.prototype, "bottomBonus", undefined), __decorate([C(cc.Animation)], q.prototype, "bonusParticleAnim", undefined), __decorate([M], q);
       }
     }(cc.Component);
-    I.default = V, cc._RF.pop();
+    exports.default = V, cc._RF.pop();
   }
 }
 module.exports = ForegroundController;

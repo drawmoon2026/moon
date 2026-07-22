@@ -529,30 +529,30 @@
     for (var C = "function" == typeof __require && __require, H = 0; H < y.length; H++) x(y[H]);
     return x;
   }({
-    'APIClient': [function (l, j) {
+    'APIClient': [function (l, module) {
       'use strict';
 
-      if (!cc._RF.push(j, "d34ca2GoqVBUbdLTDYW//l7", "APIClient")) {
+      if (!cc._RF.push(module, "d34ca2GoqVBUbdLTDYW//l7", "APIClient")) {
         var O = System.get("bvframework").APIClient;
-        j.exports.default = O, j.exports.__esModule = true, cc._RF.pop();
+        module.exports.default = O, module.exports.__esModule = true, cc._RF.pop();
       }
     }, {}],
-    'APIEncryptor': [function (l, j) {
+    'APIEncryptor': [function (l, module) {
       'use strict';
 
-      if (!cc._RF.push(j, "bd0a1JELztCYqizHJtWld7o", "APIEncryptor")) {
+      if (!cc._RF.push(module, "bd0a1JELztCYqizHJtWld7o", "APIEncryptor")) {
         var O = System.get("common").APIEncryptor;
-        for (var y in O) j.exports[y] = O[y];
-        j.exports.__esModule = true, cc._RF.pop();
+        for (var y in O) module.exports[y] = O[y];
+        module.exports.__esModule = true, cc._RF.pop();
       }
     }, {}],
-    'AbstractScroller': [function (j, O, y) {
+    'AbstractScroller': [function (j, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "814f95HaARPXoNjY+PgOfJ6", "AbstractScroller")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B);
+        Object.defineProperty(exports, "__esModule", B);
         var x = function () {
           function C() {
             this.target = undefined, this.t = false, this.i = false, this.s = false, this.target = undefined, this.t = false, this.i = false, this.s = false;
@@ -587,18 +587,18 @@
             }
           }, C.prototype.update = function () {}, C;
         }();
-        y.default = x, cc._RF.pop();
+        exports.default = x, cc._RF.pop();
       }
     }, {}],
-    'AdapterEventEmitter': [function (j, O, y) {
+    'AdapterEventEmitter': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "4a843d9tZpBC5Aag4RGjJxr", "AdapterEventEmitter")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B);
-        var x = j("Utils"),
-          C = (j("AudioAdapterConstant"), function () {
+        Object.defineProperty(exports, "__esModule", B);
+        var x = require("Utils"),
+          C = (require("AudioAdapterConstant"), function () {
             function r() {
               this.o = Object.create(null), this.h = x.deferCallback(this);
             }
@@ -660,7 +660,7 @@
               }
             }, r;
           }());
-        y.default = C, cc._RF.pop();
+        exports.default = C, cc._RF.pop();
       }
       function H(r, V, M) {
         {
@@ -668,20 +668,20 @@
         }
       }
     }, jF],
-    'AnalyticsHelper': [function (l, j) {
+    'AnalyticsHelper': [function (l, module) {
       'use strict';
 
-      if (!cc._RF.push(j, "d1d41tYvBBPX6KJU88DFlLq", "AnalyticsHelper")) {
+      if (!cc._RF.push(module, "d1d41tYvBBPX6KJU88DFlLq", "AnalyticsHelper")) {
         var O = System.get("bvframework").AnalyticsHelper;
-        for (var y in O) j.exports[y] = O[y];
-        j.exports.__esModule = true, cc._RF.pop();
+        for (var y in O) module.exports[y] = O[y];
+        module.exports.__esModule = true, cc._RF.pop();
       }
     }, {}],
-    'AnimParticleSystemPoolHandler': [function (l, j, O) {
+    'AnimParticleSystemPoolHandler': [function (l, module, exports) {
       'use strict';
 
-      if (!cc._RF.push(j, "90167wb5w5JpKAkqWQq6cj8", "AnimParticleSystemPoolHandler")) {
-        O.__esModule = true, O.default = undefined;
+      if (!cc._RF.push(module, "90167wb5w5JpKAkqWQq6cj8", "AnimParticleSystemPoolHandler")) {
+        exports.__esModule = true, exports.default = undefined;
         var y = cc.Class({
           'extends': cc.Component,
           'unuse': function () {
@@ -689,25 +689,25 @@
             B && B.stop();
           }
         });
-        O.default = y, j.exports = O.default, cc._RF.pop();
+        exports.default = y, module.exports = exports.default, cc._RF.pop();
       }
     }, {}],
-    'AnimParticleSystemUtils': [function (l, j, O) {
+    'AnimParticleSystemUtils': [function (l, j, exports) {
       'use strict';
 
-      cc._RF.push(j, "cbd06HrkTNFtbM/q+8lJvnc", "AnimParticleSystemUtils") || (O.__esModule = true, O.getAccelerationDistance = function (y, B) {
+      cc._RF.push(j, "cbd06HrkTNFtbM/q+8lJvnc", "AnimParticleSystemUtils") || (exports.__esModule = true, exports.getAccelerationDistance = function (y, B) {
         {
           return 0.5 * y * B * B;
         }
-      }, O.getRandomFromRange = function (y, B) {
+      }, exports.getRandomFromRange = function (y, B) {
         return y + B * (Math.random() - 0.5) * 2;
       }, cc._RF.pop());
     }, {}],
-    'AnimParticleSystem': [function (O, y, B) {
+    'AnimParticleSystem': [function (require, module, exports) {
       'use strict';
 
-      if (!cc._RF.push(y, "3142aQR/shASo2uVaU35yUL", "AnimParticleSystem")) {
-        B.__esModule = true, B.default = undefined;
+      if (!cc._RF.push(module, "3142aQR/shASo2uVaU35yUL", "AnimParticleSystem")) {
+        exports.__esModule = true, exports.default = undefined;
         var x = {};
         x.LINEAR = 0;
         x.GRAVITY = 1;
@@ -746,7 +746,7 @@
         C.EaseBounceIn = 31;
         C.EaseBounceOut = 32;
         C.EaseBounceInOut = 33;
-        var H = O("AnimParticleSystemUtils"),
+        var H = require("AnimParticleSystemUtils"),
           V = cc.Enum(x),
           M = [undefined, {
             'proto': cc.easeIn,
@@ -1326,7 +1326,7 @@
               z > -1 && k.splice(z, 1), this.nodePool.put(W);
             }
           });
-        B.default = D, y.exports = B.default, cc._RF.pop();
+        exports.default = D, module.exports = exports.default, cc._RF.pop();
       }
     }, jN],
     'Appearance': [function (l, j) {
@@ -1334,7 +1334,7 @@
 
       cc._RF.push(j, "dec3c3clmFKpaYEDuWXqsW2", "Appearance") || cc._RF.pop();
     }, {}],
-    'AudioAdapterConstant': [function (y, B, x) {
+    'AudioAdapterConstant': [function (y, B, exports) {
       'use strict';
 
       var C = {};
@@ -1357,21 +1357,21 @@
       r.UNLOADED = "unloaded";
       r.LODING = "loading";
       r.LOADED = "loaded";
-      cc._RF.push(B, "a20c0AJc1VFmKnv1lBJKugX", "AudioAdapterConstant") || (Object.defineProperty(x, "__esModule", C), x.MAX_INSTANCE_NUMBER = x.MAX_STACK_SOUND = x.DEFAULT_SPRITE = x.AUDIO_ADAPTER_STATE = x.AUDIO_ADAPTER_EVENT = undefined, x.AUDIO_ADAPTER_EVENT = H, x.AUDIO_ADAPTER_STATE = r, x.DEFAULT_SPRITE = "__default", x.MAX_STACK_SOUND = 50, x.MAX_INSTANCE_NUMBER = 24, cc._RF.pop());
+      cc._RF.push(B, "a20c0AJc1VFmKnv1lBJKugX", "AudioAdapterConstant") || (Object.defineProperty(exports, "__esModule", C), exports.MAX_INSTANCE_NUMBER = exports.MAX_STACK_SOUND = exports.DEFAULT_SPRITE = exports.AUDIO_ADAPTER_STATE = exports.AUDIO_ADAPTER_EVENT = undefined, exports.AUDIO_ADAPTER_EVENT = H, exports.AUDIO_ADAPTER_STATE = r, exports.DEFAULT_SPRITE = "__default", exports.MAX_STACK_SOUND = 50, exports.MAX_INSTANCE_NUMBER = 24, cc._RF.pop());
     }, {}],
-    'AudioAdapter': [function (y, B, x) {
+    'AudioAdapter': [function (require, B, exports) {
       'use strict';
 
       if (!cc._RF.push(B, "5c3d2SrYLxJYqXl2p30apID", "AudioAdapter")) {
         var C = {};
         C.value = true;
-        Object.defineProperty(x, "__esModule", C);
+        Object.defineProperty(exports, "__esModule", C);
         var H,
           V,
-          M = y("ResRC"),
-          q = y("AudioAdapterConstant"),
-          m = y("AdapterEventEmitter"),
-          D = y("AudioFactory"),
+          M = require("ResRC"),
+          q = require("AudioAdapterConstant"),
+          m = require("AdapterEventEmitter"),
+          D = require("AudioFactory"),
           W = (H = 0, function () {
             {
               return ++H;
@@ -1614,24 +1614,24 @@
             }, v.prototype.stereo = function () {}, v.getNewId = W, v;
           }
         }();
-        x.default = L, cc._RF.pop();
+        exports.default = L, cc._RF.pop();
       }
     }, jZ],
-    'AudioAssetConfig': [function (j, O, y) {
+    'AudioAssetConfig': [function (j, O, exports) {
       'use strict';
 
       var B = {};
       B.value = true;
-      cc._RF.push(O, "8a0f1zD/IJGdYR0IcLe6dBG", "AudioAssetConfig") || (Object.defineProperty(y, "__esModule", B), y.audioAssetConfig = undefined, y.audioAssetConfig = [], cc._RF.pop());
+      cc._RF.push(O, "8a0f1zD/IJGdYR0IcLe6dBG", "AudioAssetConfig") || (Object.defineProperty(exports, "__esModule", B), exports.audioAssetConfig = undefined, exports.audioAssetConfig = [], cc._RF.pop());
     }, {}],
-    'AudioFactory': [function (j, O, y) {
+    'AudioFactory': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "bf4b5cdVNdI7rQp2MPM3CWN", "AudioFactory")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B);
-        var x = j("AudioAdapterConstant"),
+        Object.defineProperty(exports, "__esModule", B);
+        var x = require("AudioAdapterConstant"),
           C = function () {
             function H() {
               this.maxStackSound = x.MAX_STACK_SOUND, this.F = [];
@@ -1654,27 +1654,27 @@
               }
             }, H;
           }();
-        y.default = C, cc._RF.pop();
+        exports.default = C, cc._RF.pop();
       }
     }, jp],
-    'AudioManager': [function (y, B, x) {
+    'AudioManager': [function (require, B, exports) {
       'use strict';
 
       if (!cc._RF.push(B, "3b2af3+HL5O7bowqEmzJqBf", "AudioManager")) {
         var H = {};
         H.value = true;
-        Object.defineProperty(x, "__esModule", H), x.crossFadeAudio = x.updatePlayRate = x.toggleEffectMuted = x.toggleMusicMuted = x.GeneralAudioPool = x.releaseAudioPool = x.releaseAudio = x.loadAudio = x.toggleAudioGameStarted = x.unregisterAudio = x.registerAudio = x.init = x.AUDIO_TYPE = undefined;
-        var V = y("GameAudioAdapter"),
-          M = y("SettingMenuHelper"),
-          q = y("RtConfig"),
-          D = y("NoSoundAdapter"),
+        Object.defineProperty(exports, "__esModule", H), exports.crossFadeAudio = exports.updatePlayRate = exports.toggleEffectMuted = exports.toggleMusicMuted = exports.GeneralAudioPool = exports.releaseAudioPool = exports.releaseAudio = exports.loadAudio = exports.toggleAudioGameStarted = exports.unregisterAudio = exports.registerAudio = exports.init = exports.AUDIO_TYPE = undefined;
+        var V = require("GameAudioAdapter"),
+          M = require("SettingMenuHelper"),
+          q = require("RtConfig"),
+          D = require("NoSoundAdapter"),
           W = Object.create(null);
-        x.GeneralAudioPool = W;
+        exports.GeneralAudioPool = W;
         var k = {};
         k.SOUND = 0;
         k.MUSIC = 1;
         var z = Object.create(null);
-        x.AUDIO_TYPE = L;
+        exports.AUDIO_TYPE = L;
         var U = false,
           Q = false,
           w = 1,
@@ -1682,7 +1682,7 @@
           R = "audio/";
         W.bgm_mg = undefined, W.prize_win = undefined, W.prize_win_end = undefined, W.bgm_bigwin = undefined, W.bgm_bigwin_cue = undefined, W.bgm_bigwin_end = undefined, W.bgm_bigwin_firework = undefined, W.spin_btn = undefined, W.spin_reel_quickstop = undefined, W.spin_reel_stop = undefined, W.spin_reel = undefined, W.fs_fastspin = undefined, W.reel_nearwin_slowdown = undefined, W.sym_wild_normal = undefined, W.sym_wild_nowin = undefined, W.cha_afterbigwin = undefined, W.cha_inactive = undefined, W.cha_prize_win_a = undefined, W.cha_prize_win_b = undefined, W.cha_prize_win_c = undefined, W.feature_raise_angpau = undefined, W.angpau_shiny = undefined, W.sym_wild_x2 = undefined, W.sym_wild_x5 = undefined, W.sym_wild_x10 = undefined;
         var T = ["bgm_mg", "bgm_bigwin"];
-        x.init = function () {
+        exports.init = function () {
           {
             var A;
             Object.keys(A = W).forEach(function (G) {
@@ -1690,7 +1690,7 @@
               A[G] = Y(G, J);
             }), W.bgm_mg.setLoop(true), W.spin_reel.setLoop(true), X(true), E(true), cc.game.on(cc.game.EVENT_HIDE, N), cc.game.on(cc.game.EVENT_SHOW, Z);
           }
-        }, x.registerAudio = function (A, G) {
+        }, exports.registerAudio = function (A, G) {
           {
             var J = G ? L.MUSIC : L.SOUND;
             if (U) {
@@ -1699,23 +1699,23 @@
             }
             return z[J] || (z[J] = []), z[J].push(A), A.setRate(w), J;
           }
-        }, x.unregisterAudio = function (A, G) {
+        }, exports.unregisterAudio = function (A, G) {
           var J = z[G],
             K = J.indexOf(A);
           if (-1 === K) throw Error("Audio Manager :: unRegisterAudio : audio not found");
           J.splice(K, 1);
-        }, x.updatePlayRate = function (A) {
+        }, exports.updatePlayRate = function (A) {
           for (var G in z) if (z[G]) for (var J = z[G], K = 0, l0 = J.length; K < l0; K++) J[K].setRate(A);
           w = A;
-        }, x.toggleAudioGameStarted = function () {
+        }, exports.toggleAudioGameStarted = function () {
           U = true, X(!M.settingMenuHelper.soundEnable), E(!M.settingMenuHelper.soundEnable);
-        }, x.toggleMusicMuted = X, x.toggleEffectMuted = E, x.crossFadeAudio = function (A, G, J) {
+        }, exports.toggleMusicMuted = X, exports.toggleEffectMuted = E, exports.crossFadeAudio = function (A, G, J) {
           {
             undefined === J && (J = 1), G.setVolume(0), G.play(), G.fade(0, J, 1000), 0 === A.getVolume() ? A.stop() : (A.fade(A.getVolume(), 0, 1000), A.once("fade", function () {
               A.stop();
             }));
           }
-        }, x.loadAudio = function (A, G) {
+        }, exports.loadAudio = function (A, G) {
           var J = function () {
               A.off("loaderror", K), G && G();
             },
@@ -1725,11 +1725,11 @@
               }
             };
           return A.once("load", J), A.once("loaderror", K), A.load();
-        }, x.releaseAudioPool = function (A) {
+        }, exports.releaseAudioPool = function (A) {
           Object.keys(A).forEach(function (G) {
             F(A[G]);
           });
-        }, x.releaseAudio = F, cc._RF.pop();
+        }, exports.releaseAudio = F, cc._RF.pop();
       }
       function Y(A, G) {
         undefined === G && (G = L.SOUND);
@@ -1779,13 +1779,13 @@
         }
       }
     }, jg],
-    'AutoSpinButtonController': [function (j, O, y) {
+    'AutoSpinButtonController': [function (j, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "a830dvIUp5AJLfQ2C5p0lzg", "AutoSpinButtonController")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B);
+        Object.defineProperty(exports, "__esModule", B);
         var x = cc._decorator,
           C = x.ccclass,
           H = x.property,
@@ -1826,33 +1826,33 @@
               return this.q(), this.node.destroy(), V.prototype.destroy.call(this);
             }, __decorate([H(cc.Node)], M.prototype, "autoSpinHolder", undefined), __decorate([H(cc.Node)], M.prototype, "numberDisplayNode", undefined), __decorate([H(cc.Node)], M.prototype, "autoButtonNode", undefined), __decorate([C], M);
           }(cc.Component);
-        y.default = r, cc._RF.pop();
+        exports.default = r, cc._RF.pop();
       }
     }, {}],
-    'AutoSpinHandler': [function (j, O, y) {
+    'AutoSpinHandler': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "6a62eVFmd1Ng5ghvfVXBlUq", "AutoSpinHandler")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B), y.exitAutoSpin = y.decrementAutoSpinCount = y.resetAutoSpinCount = y.startAutoSpin = y.getAutoSpinCount = y.shouldAutoSpin = undefined;
-        var x = j("GameEventHandler"),
+        Object.defineProperty(exports, "__esModule", B), exports.exitAutoSpin = exports.decrementAutoSpinCount = exports.resetAutoSpinCount = exports.startAutoSpin = exports.getAutoSpinCount = exports.shouldAutoSpin = undefined;
+        var x = require("GameEventHandler"),
           C = -1;
-        y.shouldAutoSpin = function () {
+        exports.shouldAutoSpin = function () {
           return C > 0;
-        }, y.getAutoSpinCount = function () {
+        }, exports.getAutoSpinCount = function () {
           return C;
-        }, y.startAutoSpin = function (r, V, M) {
+        }, exports.startAutoSpin = function (r, V, M) {
           C = r, V.enterAutoSpinMode(r, M), x.emitAutoplayStarted(function () {
             H(V);
           });
-        }, y.resetAutoSpinCount = function () {
+        }, exports.resetAutoSpinCount = function () {
           {
             C = -1;
           }
-        }, y.decrementAutoSpinCount = function (r) {
+        }, exports.decrementAutoSpinCount = function (r) {
           C -= 1, r.updateAutoSpinCount(C);
-        }, y.exitAutoSpin = function (r) {
+        }, exports.exitAutoSpin = function (r) {
           H(r), x.emitAutoplayStopped();
         }, cc._RF.pop();
       }
@@ -1860,12 +1860,12 @@
         C = -1, r.exitAutoSpinMode();
       }
     }, jf],
-    'AutomationDecorator': [function (j, O, y) {
+    'AutomationDecorator': [function (j, O, exports) {
       'use strict';
 
       var B = {};
       B.value = true;
-      cc._RF.push(O, "607a1pUyWBLsphZz1avN+BH", "AutomationDecorator") || (Object.defineProperty(y, "__esModule", B), y.automationDec = undefined, y.automationDec = function (x) {
+      cc._RF.push(O, "607a1pUyWBLsphZz1avN+BH", "AutomationDecorator") || (Object.defineProperty(exports, "__esModule", B), exports.automationDec = undefined, exports.automationDec = function (x) {
         {
           return function (C, H, r) {
             {
@@ -1885,13 +1885,13 @@
         }
       }, cc._RF.pop());
     }, {}],
-    'BACKUP_DATA': [function (O, y, B) {
+    'BACKUP_DATA': [function (O, y, exports) {
       'use strict';
 
       if (!cc._RF.push(y, "4dc392lxVJArKflo+rU3j23", "BACKUP_DATA")) {
         var x = {};
         x.value = true;
-        Object.defineProperty(B, "__esModule", x);
+        Object.defineProperty(exports, "__esModule", x);
         var C = {};
         C.default_font = "Arial";
         var H = new cc.Color(255, 200, 36, 255),
@@ -2083,19 +2083,19 @@
               'font_style': "Arial"
             }
           });
-        B.default = V, cc._RF.pop();
+        exports.default = V, cc._RF.pop();
       }
     }, {}],
-    'BGMHandler': [function (j, O, y) {
+    'BGMHandler': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "4f2a2qJiNRKIYhkmggzb0Qg", "BGMHandler")) {
         {
           var B = {};
           B.value = true;
-          Object.defineProperty(y, "__esModule", B), y.bgmHandler = undefined;
-          var x = j("AudioManager"),
-            C = j("SettingMenuHelper"),
+          Object.defineProperty(exports, "__esModule", B), exports.bgmHandler = undefined;
+          var x = require("AudioManager"),
+            C = require("SettingMenuHelper"),
             H = cc._decorator.ccclass,
             r = function (M) {
               function q() {
@@ -2118,38 +2118,38 @@
                 }
               }, __decorate([H], q);
             }(cc.Component);
-          y.default = r;
+          exports.default = r;
           var V = new r();
-          y.bgmHandler = V, cc._RF.pop();
+          exports.bgmHandler = V, cc._RF.pop();
         }
       }
     }, jA],
-    'BVFrameworkEnum': [function (l, j) {
+    'BVFrameworkEnum': [function (l, module) {
       'use strict';
 
-      if (!cc._RF.push(j, "ec7f7EEHK9MYKQtN9oOrPGU", "BVFrameworkEnum")) {
+      if (!cc._RF.push(module, "ec7f7EEHK9MYKQtN9oOrPGU", "BVFrameworkEnum")) {
         var O = System.get("bvframework").BVFrameworkEnum;
-        for (var y in O) j.exports[y] = O[y];
-        j.exports.__esModule = true, cc._RF.pop();
+        for (var y in O) module.exports[y] = O[y];
+        module.exports.__esModule = true, cc._RF.pop();
       }
     }, {}],
-    'BVFramework': [function (l, j) {
+    'BVFramework': [function (l, module) {
       'use strict';
 
-      if (!cc._RF.push(j, "a9a1dZAV2tCnpP1jdguoThD", "BVFramework")) {
+      if (!cc._RF.push(module, "a9a1dZAV2tCnpP1jdguoThD", "BVFramework")) {
         var O = System.get("bvframework").getGameContext;
-        j.exports.getGameContext = O, j.exports.__esModule = true, cc._RF.pop();
+        module.exports.getGameContext = O, module.exports.__esModule = true, cc._RF.pop();
       }
     }, {}],
-    'BackWorldController': [function (j, O, y) {
+    'BackWorldController': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "8abeaZPLu9A7K3Hx2oixW7c", "BackWorldController")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B);
-        var x = j("LanternController"),
-          C = j("Utils"),
+        Object.defineProperty(exports, "__esModule", B);
+        var x = require("LanternController"),
+          C = require("Utils"),
           H = cc._decorator,
           V = H.ccclass,
           M = H.property,
@@ -2182,17 +2182,17 @@
               }), this.node.destroy(), m.prototype.destroy.call(this);
             }, __decorate([M(cc.Node)], D.prototype, "ipBg", undefined), __decorate([M(x.default)], D.prototype, "lanternControllers", undefined), __decorate([V], D);
           }(cc.Component);
-        y.default = q, cc._RF.pop();
+        exports.default = q, cc._RF.pop();
       }
     }, ji],
-    'BaseListViewCell': [function (j, O, y) {
+    'BaseListViewCell': [function (j, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "24d8a0AiVJMa4yCegaay2ry", "BaseListViewCell")) {
         {
           var B = {};
           B.value = true;
-          Object.defineProperty(y, "__esModule", B);
+          Object.defineProperty(exports, "__esModule", B);
           var x = cc._decorator,
             C = x.ccclass,
             H = x.property,
@@ -2231,20 +2231,20 @@
                 this.removeTouchAction(), V.prototype.destroy.call(this);
               }, __decorate([H(cc.Label)], M.prototype, "label", undefined), __decorate([H(cc.Sprite)], M.prototype, "sprite", undefined), __decorate([H(cc.Color)], M.prototype, "selectedBackgroundColor", undefined), __decorate([H(cc.Color)], M.prototype, "normalBackgroundColor", undefined), __decorate([C], M);
             }(cc.Component);
-          y.default = r, cc._RF.pop();
+          exports.default = r, cc._RF.pop();
         }
       }
     }, {}],
-    'BetModifierButton': [function (j, O, y) {
+    'BetModifierButton': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "076aehdcx9HQI7+9hg7FlGu", "BetModifierButton")) {
         {
           var B = {};
           B.value = true;
-          Object.defineProperty(y, "__esModule", B);
-          var x = j("GenericSettingButton"),
-            C = j("Utils"),
+          Object.defineProperty(exports, "__esModule", B);
+          var x = require("GenericSettingButton"),
+            C = require("Utils"),
             H = cc._decorator,
             V = H.ccclass,
             M = H.property,
@@ -2331,18 +2331,18 @@
                 W ? (this.node.active = true, this.node.parent && (this.node.parent.active = true), C.deferCallback(this)(this.enableTouchInteraction)) : (this.disableTouchInteraction(), this.node.active = false, this.node.parent && (this.node.parent.active = false));
               }, __decorate([M(cc.Node)], D.prototype, "buttonNode", undefined), __decorate([M(cc.Boolean)], D.prototype, "isIncreaseBet", undefined), __decorate([V], D);
             }(x.default);
-          y.default = q, cc._RF.pop();
+          exports.default = q, cc._RF.pop();
         }
       }
     }, ju],
-    'BetRepository': [function (j, O, y) {
+    'BetRepository': [function (j, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "14dfa+lfKlIS5vAzSig9n4q", "BetRepository")) {
         {
           var B = {};
           B.value = true;
-          Object.defineProperty(y, "__esModule", B), y.BetRepository = undefined;
+          Object.defineProperty(exports, "__esModule", B), exports.BetRepository = undefined;
           var x = function () {
             function C(H, r) {
               this.ht = H, this.rt = r, this.at = H, this.ut = r;
@@ -2385,20 +2385,20 @@
               this.ht = this.at = H, this.rt = this.ut = r;
             }, C;
           }();
-          y.BetRepository = x, cc._RF.pop();
+          exports.BetRepository = x, cc._RF.pop();
         }
       }
     }, {}],
-    'BigPrizeController': [function (j, O, y) {
+    'BigPrizeController': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "56ec0jrLzBG87IrwqxMdXpi", "BigPrizeController")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B);
-        var x = j("Utils"),
-          C = j("SettingMenuHelper"),
-          H = (j("TweaksData"), j("GameEventHandler")),
+        Object.defineProperty(exports, "__esModule", B);
+        var x = require("Utils"),
+          C = require("SettingMenuHelper"),
+          H = (require("TweaksData"), require("GameEventHandler")),
           r = cc._decorator.ccclass,
           V = function () {
             {
@@ -2461,47 +2461,47 @@
               }, __decorate([r], M);
             }
           }();
-        y.default = V, cc._RF.pop();
+        exports.default = V, cc._RF.pop();
       }
     }, jt],
-    'BigWinController.spec': [function (j, O, y) {
+    'BigWinController.spec': [function (j, O, exports) {
       'use strict';
 
       var B = {};
       B.value = true;
-      cc._RF.push(O, "4b4cdkXKahNsZ1aO6wLYThr", "BigWinController.spec") || (Object.defineProperty(y, "__esModule", B), y.initBigWinNodes = y.skipBigWinAnimationActiveEvent = y.skipBigWinButtonActiveEvent = undefined, y.skipBigWinButtonActiveEvent = function () {
+      cc._RF.push(O, "4b4cdkXKahNsZ1aO6wLYThr", "BigWinController.spec") || (Object.defineProperty(exports, "__esModule", B), exports.initBigWinNodes = exports.skipBigWinAnimationActiveEvent = exports.skipBigWinButtonActiveEvent = undefined, exports.skipBigWinButtonActiveEvent = function () {
         {
           var x = System.get("automation") && System.get("automation").GameData;
           var C = {};
           C.displayState = "SkipNumberRollEnabled";
           x && x.emit("BigWin", C);
         }
-      }, y.skipBigWinAnimationActiveEvent = function () {
+      }, exports.skipBigWinAnimationActiveEvent = function () {
         {
           var x = System.get("automation") && System.get("automation").GameData;
           var C = {};
           C.displayState = "SkipAnimationEnabled";
           x && x.emit("BigWin", C);
         }
-      }, y.initBigWinNodes = function (x) {
+      }, exports.initBigWinNodes = function (x) {
         var C = System.get("automation") && System.get("automation").GameConfigs;
         C && C.initNodeConfig(x.skipButtonNode, "big_win_skip_button");
       }, cc._RF.pop());
     }, {}],
-    'BigWinController': [function (O, y, B) {
+    'BigWinController': [function (require, y, exports) {
       'use strict';
 
       if (!cc._RF.push(y, "4cf10FfM45HlrSaOLMFcjNn", "BigWinController")) {
         {
           var x = {};
           x.value = true;
-          Object.defineProperty(B, "__esModule", x);
+          Object.defineProperty(exports, "__esModule", x);
           var C,
             H,
-            V = O("AutomationDecorator"),
-            M = O("AudioManager"),
-            q = O("BigWinController.spec"),
-            m = O("BGMHandler"),
+            V = require("AutomationDecorator"),
+            M = require("AudioManager"),
+            q = require("BigWinController.spec"),
+            m = require("BGMHandler"),
             D = cc._decorator,
             W = D.ccclass,
             k = D.property;
@@ -2701,23 +2701,23 @@
               w.opacity = 0, w.stopAllActions(), w.active = false;
             }, v.prototype.Rt = function () {}, v.prototype.Vt = function () {}, __decorate([k(cc.Sprite)], v.prototype, "bigWinSprite", undefined), __decorate([k(cc.Sprite)], v.prototype, "megaWinSprite", undefined), __decorate([k(cc.Sprite)], v.prototype, "superMegaWinSprite", undefined), __decorate([k(cc.Node)], v.prototype, "contentNode", undefined), __decorate([k(cc.Node)], v.prototype, "winAmountNode", undefined), __decorate([k(cc.Node)], v.prototype, "backGroundNode", undefined), __decorate([k(cc.Node)], v.prototype, "backDropNode", undefined), __decorate([k(cc.Node)], v.prototype, "bgTintNode", undefined), __decorate([k(cc.Node)], v.prototype, "stopButtonNode", undefined), __decorate([k(cc.Node)], v.prototype, "coinParticleNode", undefined), __decorate([k(cc.Node)], v.prototype, "allBackPatternNode", undefined), __decorate([k(cc.Node)], v.prototype, "patternANode", undefined), __decorate([k(cc.Node)], v.prototype, "patternBNode", undefined), __decorate([k(cc.Node)], v.prototype, "backLightNode", undefined), __decorate([k(cc.Node)], v.prototype, "underLightNode", undefined), __decorate([k(cc.Node)], v.prototype, "sparklesNode", undefined), __decorate([k(cc.Node)], v.prototype, "fireWorkNode", undefined), __decorate([k(cc.Node)], v.prototype, "backGlowNode", undefined), __decorate([k(cc.Animation)], v.prototype, "sparkleAnimation", undefined), __decorate([V.automationDec(b)], v.prototype, "_initBigWinNodes", null), __decorate([V.automationDec(U)], v.prototype, "_skipButtonActive", null), __decorate([W], v);
           }(cc.Component);
-          B.default = z, cc._RF.pop();
+          exports.default = z, cc._RF.pop();
         }
       }
     }, jG],
-    'BookView': [function (O, y, B) {
+    'BookView': [function (require, y, exports) {
       'use strict';
 
       if (!cc._RF.push(y, "46ec0uZUDVPMZDgV9Idp1EN", "BookView")) {
         {
           var x = {};
           x.value = true;
-          Object.defineProperty(B, "__esModule", x);
+          Object.defineProperty(exports, "__esModule", x);
           var C = {};
           C.LEFT = 1;
           C.RIGHT = 2;
           C.NULL = 3;
-          var H = O("ScrollViewEx"),
+          var H = require("ScrollViewEx"),
             V = cc.Enum(C),
             M = function (W, k) {
               {
@@ -3014,19 +3014,19 @@
                 }, __decorate([m], L);
               }
             }(H.default));
-          B.default = D, cc._RF.pop();
+          exports.default = D, cc._RF.pop();
         }
       }
     }, jd],
-    'BounceScatterStopScroller': [function (j, O, y) {
+    'BounceScatterStopScroller': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "537c3GakcJD1on4G3IvGOk+", "BounceScatterStopScroller")) {
         {
           var B = {};
           B.value = true;
-          Object.defineProperty(y, "__esModule", B);
-          var x = j("ScatterStopScroller"),
+          Object.defineProperty(exports, "__esModule", B);
+          var x = require("ScatterStopScroller"),
             C = cc._decorator,
             H = C.ccclass,
             r = C.mixins,
@@ -3069,16 +3069,16 @@
                 }
               }, __decorate([H, r(cc.EventTarget)], q);
             }(x.default);
-          y.default = V, cc._RF.pop();
+          exports.default = V, cc._RF.pop();
         }
       }
     }, jJ],
-    'ButtonHitTest': [function (j, O, y) {
+    'ButtonHitTest': [function (j, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "95aac3PHb1J8pXlbPzijfq9", "ButtonHitTest")) {
         {
-          y.__esModule = true, y.buttonHitTest = function (C) {
+          exports.__esModule = true, exports.buttonHitTest = function (C) {
             var H = cc.EventListener.ListenerID.TOUCH_ONE_BY_ONE;
             cc.internal.eventManager[x.bs](H, cc.director.getScene());
             var r = cc.internal.eventManager[x.ms](H);
@@ -3099,11 +3099,11 @@
         }
       }
     }, {}],
-    'ButtonTheme': [function (O, y, B) {
+    'ButtonTheme': [function (require, module, exports) {
       'use strict';
 
-      if (!cc._RF.push(y, "2a5d1nUeQZE9KCVbljwPCZP", "ButtonTheme")) {
-        B.__esModule = true, B.default = undefined;
+      if (!cc._RF.push(module, "2a5d1nUeQZE9KCVbljwPCZP", "ButtonTheme")) {
+        exports.__esModule = true, exports.default = undefined;
         var x = {};
         x.NONE = 0;
         x.COLOR = 1;
@@ -3112,7 +3112,7 @@
         var C = {};
         C.tooltip = false;
         C.default = '';
-        var H = O("UIAppearanceHelper"),
+        var H = require("UIAppearanceHelper"),
           r = cc.Enum(x),
           V = cc.Class({
             'extends': cc.Component,
@@ -3160,16 +3160,16 @@
               }
             }
           });
-        B.default = V, y.exports = B.default, cc._RF.pop();
+        exports.default = V, module.exports = exports.default, cc._RF.pop();
       }
     }, jS],
-    'Button': [function (O, y, B) {
+    'Button': [function (O, y, exports) {
       'use strict';
 
       if (!cc._RF.push(y, "0a573tIV9xKS4qfPLe+tVuo", "Button")) {
         var x = {};
         x.value = true;
-        Object.defineProperty(B, "__esModule", x);
+        Object.defineProperty(exports, "__esModule", x);
         var C = {};
         C.ws = "_transitionFinished";
         C.As = "_fromColor";
@@ -3212,24 +3212,24 @@
               m.prototype.Ns.call(this, W);
             }, __decorate([M(cc.Boolean)], D.prototype, "targetCascadeOpacity", undefined), __decorate([V], D);
           }(cc.Button);
-        B.default = q, cc._RF.pop();
+        exports.default = q, cc._RF.pop();
       }
     }, {}],
-    'CanvasResizeBroadcaster': [function (l, j) {
+    'CanvasResizeBroadcaster': [function (l, module) {
       'use strict';
 
-      if (!cc._RF.push(j, "1bceeNXbqdLOquKoj3nUFeA", "CanvasResizeBroadcaster")) {
+      if (!cc._RF.push(module, "1bceeNXbqdLOquKoj3nUFeA", "CanvasResizeBroadcaster")) {
         var O = System.get("common").CanvasResizeBroadcaster;
-        j.exports.default = O, j.exports.__esModule = true, cc._RF.pop();
+        module.exports.default = O, module.exports.__esModule = true, cc._RF.pop();
       }
     }, {}],
-    'ClickEffectController': [function (j, O, y) {
+    'ClickEffectController': [function (j, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "9c1bbOo47dBVKQhy7Uc4JE2", "ClickEffectController")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B);
+        Object.defineProperty(exports, "__esModule", B);
         var x = cc._decorator,
           C = x.ccclass,
           H = x.property,
@@ -3252,17 +3252,17 @@
               q.opacity = 128, q.scale = 0;
             }, __decorate([H(cc.Node)], M.prototype, "flashSpriteNode", undefined), __decorate([H(cc.Node)], M.prototype, "clickEffectNode", undefined), __decorate([C], M);
           }(cc.Component);
-        y.default = r, cc._RF.pop();
+        exports.default = r, cc._RF.pop();
       }
     }, {}],
-    'CoinParticleController': [function (j, O, y) {
+    'CoinParticleController': [function (j, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "140cdgyUZZE6oST/JsVi7hK", "CoinParticleController")) {
         {
           var B = {};
           B.value = true;
-          Object.defineProperty(y, "__esModule", B);
+          Object.defineProperty(exports, "__esModule", B);
           var x = cc._decorator,
             C = x.ccclass,
             H = x.property,
@@ -3335,7 +3335,7 @@
                 return this.q(), this.node.destroy(), V.prototype.destroy.call(this);
               }, __decorate([H(cc.Node)], M.prototype, "middleCoinParticleNode", undefined), __decorate([H(cc.Node)], M.prototype, "bottomCoinParticleNode", undefined), __decorate([H(cc.Node)], M.prototype, "bottomIngotParticleNode", undefined), __decorate([H(cc.Node)], M.prototype, "gravityCoinParticleNode", undefined), __decorate([H(cc.Node)], M.prototype, "gravityIngotParticleNode", undefined), __decorate([C], M);
             }(cc.Component);
-          y.default = r, cc._RF.pop();
+          exports.default = r, cc._RF.pop();
         }
       }
     }, {}],
@@ -3344,25 +3344,25 @@
 
       cc._RF.push(j, "b1293aDfltLSYBmQFiPHMGc", "CommonDummy") || cc._RF.pop();
     }, {}],
-    'CreatorTweaks': [function (l, j) {
+    'CreatorTweaks': [function (l, module) {
       'use strict';
 
-      cc._RF.push(j, "a569ek937NGRIiNfWZy/vYu", "CreatorTweaks") || (j.exports = {}, j.exports.__esModule = true, cc._RF.pop());
+      cc._RF.push(module, "a569ek937NGRIiNfWZy/vYu", "CreatorTweaks") || (module.exports = {}, module.exports.__esModule = true, cc._RF.pop());
     }, {}],
-    'CustomAssetConfig': [function (O, y, B) {
+    'CustomAssetConfig': [function (require, y, exports) {
       'use strict';
 
       if (!cc._RF.push(y, "641f6GBjpVE2ZOpz8U7nZ8z", "CustomAssetConfig")) {
         var x = {};
         x.value = true;
-        Object.defineProperty(B, "__esModule", x), B.customAssetConfig = undefined;
+        Object.defineProperty(exports, "__esModule", x), exports.customAssetConfig = undefined;
         var C = {};
         C.name = "click_effect";
         C.url = "lib/click_effect/prefab/click_effect_layer";
         C.type = cc.Prefab;
         C.isLocalized = false;
-        var H = O("ResourceLoader"),
-          r = O("SettingMenuHelper"),
+        var H = require("ResourceLoader"),
+          r = require("SettingMenuHelper"),
           V = [C, {
             'name': "setting_menu_audio",
             'type': H.LoaderType.CUSTOM,
@@ -3372,36 +3372,36 @@
               });
             }
           }];
-        B.customAssetConfig = V, cc._RF.pop();
+        exports.customAssetConfig = V, cc._RF.pop();
       }
     }, jK],
-    'DataSource': [function (l, j) {
+    'DataSource': [function (l, module) {
       'use strict';
 
-      if (!cc._RF.push(j, "33f97XHWf5KOK2d9LLYgXNI", "DataSource")) {
+      if (!cc._RF.push(module, "33f97XHWf5KOK2d9LLYgXNI", "DataSource")) {
         {
           var O = System.get("bvframework").DataSource;
-          j.exports.default = O, j.exports.__esModule = true, cc._RF.pop();
+          module.exports.default = O, module.exports.__esModule = true, cc._RF.pop();
         }
       }
     }, {}],
-    'Deserializer': [function (l, j) {
+    'Deserializer': [function (l, module) {
       'use strict';
 
-      if (!cc._RF.push(j, "755a5d0q9ZMN7vreqSy6/g4", "Deserializer")) {
+      if (!cc._RF.push(module, "755a5d0q9ZMN7vreqSy6/g4", "Deserializer")) {
         {
           var O = System.get("common").Deserializer;
-          j.exports.Deserializer = O, j.exports.__esModule = true, cc._RF.pop();
+          module.exports.Deserializer = O, module.exports.__esModule = true, cc._RF.pop();
         }
       }
     }, {}],
-    'DrawLine': [function (j, O, y) {
+    'DrawLine': [function (j, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "0b006l9a0tOS5No6bQvo8YJ", "DrawLine")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B);
+        Object.defineProperty(exports, "__esModule", B);
         var x = cc._decorator,
           C = x.ccclass,
           H = x.property,
@@ -3421,37 +3421,37 @@
               }
             }, __decorate([H(cc.Boolean)], M.prototype, "horizontal", undefined), __decorate([H(cc.Boolean)], M.prototype, "vertical", undefined), __decorate([C], M);
           }(cc.Component);
-        y.default = r, cc._RF.pop();
+        exports.default = r, cc._RF.pop();
       }
     }, {}],
-    'ErrorHandler': [function (l, j) {
+    'ErrorHandler': [function (l, module) {
       'use strict';
 
-      if (!cc._RF.push(j, "933099S7qNPvb+XKiLo98KQ", "ErrorHandler")) {
+      if (!cc._RF.push(module, "933099S7qNPvb+XKiLo98KQ", "ErrorHandler")) {
         {
           var O = System.get("bvframework").ErrorHandler;
-          for (var y in O) j.exports[y] = O[y];
-          j.exports.__esModule = true, cc._RF.pop();
+          for (var y in O) module.exports[y] = O[y];
+          module.exports.__esModule = true, cc._RF.pop();
         }
       }
     }, {}],
-    'FPSTracker': [function (l, j) {
+    'FPSTracker': [function (l, module) {
       'use strict';
 
-      if (!cc._RF.push(j, "f7f37JW2SxLW5uWMYCvIjkK", "FPSTracker")) {
+      if (!cc._RF.push(module, "f7f37JW2SxLW5uWMYCvIjkK", "FPSTracker")) {
         var O = System.get("common").FPSTracker;
-        j.exports.default = O, j.exports.__esModule = true, cc._RF.pop();
+        module.exports.default = O, module.exports.__esModule = true, cc._RF.pop();
       }
     }, {}],
-    'FastSpinAnimationController': [function (j, O, y) {
+    'FastSpinAnimationController': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "71b81mtzYVLsIN6c79edsP9", "FastSpinAnimationController")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B);
-        var x = j("AudioManager"),
-          C = j("Utils"),
+        Object.defineProperty(exports, "__esModule", B);
+        var x = require("AudioManager"),
+          C = require("Utils"),
           H = cc._decorator,
           V = H.ccclass,
           M = H.property,
@@ -3513,13 +3513,13 @@
               this.fastSpinNode.stopAllActions(), this.fastSpinShineLeftNode.stopAllActions(), this.fastSpinShineRightNode.stopAllActions(), this.fastSpinShineLeftNodeSecond.stopAllActions(), this.fastSpinShineRightNodeSecond.stopAllActions(), this.node.active = false;
             }, __decorate([M(cc.Node)], D.prototype, "fastSpinNode", undefined), __decorate([M(cc.Node)], D.prototype, "scrolleNode", undefined), __decorate([M(cc.Node)], D.prototype, "fastSpinShineLeftNode", undefined), __decorate([M(cc.Node)], D.prototype, "fastSpinShineRightNode", undefined), __decorate([M(cc.Node)], D.prototype, "fastSpinShineLeftNodeSecond", undefined), __decorate([M(cc.Node)], D.prototype, "fastSpinShineRightNodeSecond", undefined), __decorate([M(cc.Animation)], D.prototype, "fastSpinSpriteAnimation", undefined), __decorate([V], D);
           }(cc.Component);
-        y.default = q, cc._RF.pop();
+        exports.default = q, cc._RF.pop();
       }
     }, I0],
-    'FastStopScroller': [function (O, y, B) {
+    'FastStopScroller': [function (require, exports, B) {
       'use strict';
 
-      if (!cc._RF.push(y, "e2461hkKoFHtovzKm7oIqPe", "FastStopScroller")) {
+      if (!cc._RF.push(exports, "e2461hkKoFHtovzKm7oIqPe", "FastStopScroller")) {
         {
           var x = {};
           x.value = true;
@@ -3528,7 +3528,7 @@
           C.scrollSpeed = 5040;
           C.targetYFunc = undefined;
           C.stopDuration = 0.25;
-          var H = O("AbstractScroller"),
+          var H = require("AbstractScroller"),
             M = cc._decorator,
             q = M.ccclass,
             m = M.mixins,
@@ -3556,14 +3556,14 @@
         }
       }
     }, I1],
-    'FireworkController': [function (j, O, y) {
+    'FireworkController': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "181b8bLdcZM5qUMt8O137AJ", "FireworkController")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B);
-        var x = j("AudioManager"),
+        Object.defineProperty(exports, "__esModule", B);
+        var x = require("AudioManager"),
           C = cc._decorator,
           H = C.ccclass,
           r = C.property,
@@ -3609,16 +3609,16 @@
               return this.stop(), M.prototype.destroy.call(this);
             }, __decorate([r(cc.Node)], q.prototype, "firework01Node", undefined), __decorate([r(cc.Node)], q.prototype, "firework02Node", undefined), __decorate([r(cc.String)], q.prototype, "animName", undefined), __decorate([r(cc.Float)], q.prototype, "startDelayTime", undefined), __decorate([r(cc.Float)], q.prototype, "minDelayTime", undefined), __decorate([r(cc.Float)], q.prototype, "maxDelayTime", undefined), __decorate([r(cc.Integer)], q.prototype, "randomPosRadiusX", undefined), __decorate([r(cc.Integer)], q.prototype, "randomPosRadiusY", undefined), __decorate([H], q);
           }(cc.Component);
-        y.default = V, cc._RF.pop();
+        exports.default = V, cc._RF.pop();
       }
     }, I2],
-    'FrontWorldController': [function (j, O, y) {
+    'FrontWorldController': [function (j, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "530ebZ9UmxBa748dbGa+d6O", "FrontWorldController")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B);
+        Object.defineProperty(exports, "__esModule", B);
         var x = cc._decorator,
           C = x.ccclass,
           H = x.property,
@@ -3639,19 +3639,19 @@
               this.Ys += q, this.Ys > 2 && (this.bloomLeftParticle.gravity = cc.v2(-1 * this.bloomLeftParticle.gravity.x, -120), this.Ys = 0);
             }, __decorate([H(cc.ParticleSystem)], M.prototype, "bloomLeftParticle", undefined), __decorate([C], M);
           }(cc.Component);
-        y.default = r, cc._RF.pop();
+        exports.default = r, cc._RF.pop();
       }
     }, {}],
-    'GameAudioAdapter': [function (j, O, y) {
+    'GameAudioAdapter': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "60852/USphLYK0gkjUYFXzp", "GameAudioAdapter")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B);
-        var x = j("AudioManager"),
-          C = j("AudioAdapter"),
-          H = j("AudioAdapterConstant"),
+        Object.defineProperty(exports, "__esModule", B);
+        var x = require("AudioManager"),
+          C = require("AudioAdapter"),
+          H = require("AudioAdapterConstant"),
           r = cc._decorator.ccclass,
           V = function (M) {
             function q(m, D) {
@@ -3675,13 +3675,13 @@
               return x.unregisterAudio(this, this.Qs), M.prototype.unload.call(this);
             }, __decorate([r], q);
           }(C.default);
-        y.default = V, cc._RF.pop();
+        exports.default = V, cc._RF.pop();
       }
     }, I3],
-    'GameEventHandler': [function (j, O) {
+    'GameEventHandler': [function (j, module) {
       'use strict';
 
-      if (!cc._RF.push(O, "6da04mFMhpNcpdeGLQM+RKD", "GameEventHandler")) {
+      if (!cc._RF.push(module, "6da04mFMhpNcpdeGLQM+RKD", "GameEventHandler")) {
         var y = {};
         y.subscribeGameInfoUpdateEvent = "subscribeUpdateGameInfoEvent";
         y.subscribeGameLayoutInfoRequestEvent = "subscribeGameLayoutInfoEvent";
@@ -3712,31 +3712,31 @@
           {
             C[x[r]] = C[r];
           }
-        }), C.emitGameWinAnnouncement = function () {}, C) O.exports[H] = C[H];
-        O.exports.__esModule = true, cc._RF.pop();
+        }), C.emitGameWinAnnouncement = function () {}, C) module.exports[H] = C[H];
+        module.exports.__esModule = true, cc._RF.pop();
       }
     }, {}],
-    'GameHeaderHelper': [function (l, j) {
+    'GameHeaderHelper': [function (l, module) {
       'use strict';
 
-      if (!cc._RF.push(j, "295f80O8n1EXbn2oiNk8NLd", "GameHeaderHelper")) {
+      if (!cc._RF.push(module, "295f80O8n1EXbn2oiNk8NLd", "GameHeaderHelper")) {
         var O = System.get("bvframework").GameHeaderHelper;
-        for (var y in O) j.exports[y] = O[y];
-        j.exports.__esModule = true, cc._RF.pop();
+        for (var y in O) module.exports[y] = O[y];
+        module.exports.__esModule = true, cc._RF.pop();
       }
     }, {}],
-    'GameInitializationHandler': [function (l, j) {
+    'GameInitializationHandler': [function (l, module) {
       'use strict';
 
-      if (!cc._RF.push(j, "b3a04bieS1EsYWkuqlKhqB3", "GameInitializationHandler")) {
+      if (!cc._RF.push(module, "b3a04bieS1EsYWkuqlKhqB3", "GameInitializationHandler")) {
         {
           var O = System.get("bvframework").GameInitializationHandler;
-          for (var y in O) j.exports[y] = O[y];
-          j.exports.__esModule = true, cc._RF.pop();
+          for (var y in O) module.exports[y] = O[y];
+          module.exports.__esModule = true, cc._RF.pop();
         }
       }
     }, {}],
-    'GameLayout': [function (q, m, D) {
+    'GameLayout': [function (q, m, exports) {
       'use strict';
 
       var W = {};
@@ -3772,89 +3772,89 @@
       w.uiFreeSpace = z;
       w.uiSettingMenu = v;
       w.uiBigWinFreeSpace = Q;
-      cc._RF.push(m, "74808w89ABLOo061KyIdopY", "GameLayout") || (Object.defineProperty(D, "__esModule", W), D.gameLayout = undefined, D.gameLayout = w, cc._RF.pop());
+      cc._RF.push(m, "74808w89ABLOo061KyIdopY", "GameLayout") || (Object.defineProperty(exports, "__esModule", W), exports.gameLayout = undefined, exports.gameLayout = w, cc._RF.pop());
     }, {}],
-    'GameMaintenanceHandler': [function (l, j) {
+    'GameMaintenanceHandler': [function (l, module) {
       'use strict';
 
-      if (!cc._RF.push(j, "6c833L7mQpG+JThxZci79NX", "GameMaintenanceHandler")) {
+      if (!cc._RF.push(module, "6c833L7mQpG+JThxZci79NX", "GameMaintenanceHandler")) {
         var O = System.get("bvframework").GameMaintenanceHandler;
-        for (var y in O) j.exports[y] = O[y];
-        j.exports.__esModule = true, cc._RF.pop();
+        for (var y in O) module.exports[y] = O[y];
+        module.exports.__esModule = true, cc._RF.pop();
       }
     }, {}],
-    'GameMaintenanceModel': [function (l, j) {
+    'GameMaintenanceModel': [function (l, module) {
       'use strict';
 
-      if (!cc._RF.push(j, "9919da29LFDdJcSuJgAAHrr", "GameMaintenanceModel")) {
+      if (!cc._RF.push(module, "9919da29LFDdJcSuJgAAHrr", "GameMaintenanceModel")) {
         var O = System.get("bvframework").GameMaintenanceModel;
-        for (var y in O) j.exports[y] = O[y];
-        j.exports.__esModule = true, cc._RF.pop();
+        for (var y in O) module.exports[y] = O[y];
+        module.exports.__esModule = true, cc._RF.pop();
       }
     }, {}],
-    'GamePluginModel': [function (l, j) {
+    'GamePluginModel': [function (l, module) {
       'use strict';
 
-      if (!cc._RF.push(j, "c0badZnWvFI0LG/0J35BfII", "GamePluginModel")) {
+      if (!cc._RF.push(module, "c0badZnWvFI0LG/0J35BfII", "GamePluginModel")) {
         {
           var O = System.get("bvframework").GamePluginModel;
-          j.exports.default = O, j.exports.__esModule = true, cc._RF.pop();
+          module.exports.default = O, module.exports.__esModule = true, cc._RF.pop();
         }
       }
     }, {}],
-    'GamePreference': [function (l, j, O) {
+    'GamePreference': [function (require, j, exports) {
       'use strict';
 
       if (!cc._RF.push(j, "b7617TeDrNA16OCJDuXTFSu", "GamePreference")) {
-        O.__esModule = true, O.globalPreference = O.gamePreference = undefined;
-        var y = l("RtConfig"),
-          B = l("Preference"),
+        exports.__esModule = true, exports.globalPreference = exports.gamePreference = undefined;
+        var y = require("RtConfig"),
+          B = require("Preference"),
           x = (0, B.getPreference)(y.cs_Config.bundleId);
-        O.gamePreference = x;
+        exports.gamePreference = x;
         var C = (0, B.getPreference)(y.cs_Config.globalDomain);
-        O.globalPreference = C, cc._RF.pop();
+        exports.globalPreference = C, cc._RF.pop();
       }
     }, I4],
-    'GameRegionUtils': [function (j, O, y) {
+    'GameRegionUtils': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "bfde0A5L2BNVpzBMpH0I/vp", "GameRegionUtils")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B), y.checkUKGCRegion = undefined;
-        var x = j("GameUtils"),
-          C = j("PGGDataSource");
-        y.checkUKGCRegion = function (H) {
+        Object.defineProperty(exports, "__esModule", B), exports.checkUKGCRegion = undefined;
+        var x = require("GameUtils"),
+          C = require("PGGDataSource");
+        exports.checkUKGCRegion = function (H) {
           var r = false;
           return x.checkOperatorProfit(H, C.pgDataSource) && (r = true), r;
         }, cc._RF.pop();
       }
     }, I5],
-    'GameTitle': [function (l, j) {
+    'GameTitle': [function (l, module) {
       'use strict';
 
-      if (!cc._RF.push(j, "12eedGFUCVPu7lTHrspCNtZ", "GameTitle")) {
+      if (!cc._RF.push(module, "12eedGFUCVPu7lTHrspCNtZ", "GameTitle")) {
         var O = System.get("bvframework").GameTitle;
-        for (var y in O) j.exports[y] = O[y];
-        j.exports.__esModule = true, cc._RF.pop();
+        for (var y in O) module.exports[y] = O[y];
+        module.exports.__esModule = true, cc._RF.pop();
       }
     }, {}],
-    'GameUtils': [function (l, j) {
+    'GameUtils': [function (l, module) {
       'use strict';
 
-      if (!cc._RF.push(j, "576e78TekpIpIcjjcHFmVOq", "GameUtils")) {
+      if (!cc._RF.push(module, "576e78TekpIpIcjjcHFmVOq", "GameUtils")) {
         var O = System.get("bvframework").GameUtils;
-        for (var y in O) j.exports[y] = O[y];
-        j.exports.__esModule = true, cc._RF.pop();
+        for (var y in O) module.exports[y] = O[y];
+        module.exports.__esModule = true, cc._RF.pop();
       }
     }, {}],
-    'GeneralAssetConfig': [function (z, c, L) {
+    'GeneralAssetConfig': [function (z, c, exports) {
       'use strict';
 
       if (!cc._RF.push(c, "e8598CyDFNMsp58D0H67dlC", "GeneralAssetConfig")) {
         var v = {};
         v.value = true;
-        Object.defineProperty(L, "__esModule", v), L.generalAssetConfig = undefined;
+        Object.defineProperty(exports, "__esModule", v), exports.generalAssetConfig = undefined;
         var b = {};
         b.name = "slot_bg";
         b.url = "load_res/slot_bg";
@@ -3936,26 +3936,26 @@
         Z.type = cc.SpriteAtlas;
         Z.isLocalized = true;
         var p = [b, U, Q, w, h, P, R, T, Y, X, a, n, E, F, N, Z];
-        L.generalAssetConfig = p, cc._RF.pop();
+        exports.generalAssetConfig = p, cc._RF.pop();
       }
     }, {}],
-    'GenericLoadingScreenController': [function (O, y, B) {
+    'GenericLoadingScreenController': [function (require, y, exports) {
       'use strict';
 
       if (!cc._RF.push(y, "cb530nJjNxEeb1kcmn96QZc", "GenericLoadingScreenController")) {
         {
           var x = {};
           x.value = true;
-          Object.defineProperty(B, "__esModule", x), B.hideLoadingPage = B.showLoadingPage = undefined;
-          var C = O("Utils"),
-            H = O("NotifyHelper"),
+          Object.defineProperty(exports, "__esModule", x), exports.hideLoadingPage = exports.showLoadingPage = undefined;
+          var C = require("Utils"),
+            H = require("NotifyHelper"),
             V = false,
             M = false,
             q = undefined,
             m = undefined;
-          B.showLoadingPage = function (L) {
+          exports.showLoadingPage = function (L) {
             H.showFullLoadingPage(), q = L, C.delayCallback(0.3)(z);
-          }, B.hideLoadingPage = function (L) {
+          }, exports.hideLoadingPage = function (L) {
             {
               m = L, M = true, V && W();
             }
@@ -3977,17 +3977,17 @@
         }
       }
     }, I6],
-    'GenericSettingButton': [function (j, O, y) {
+    'GenericSettingButton': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "aeaa7CV0CtEMo2Sab7CGMw1", "GenericSettingButton")) {
         {
           var B = {};
           B.value = true;
-          Object.defineProperty(y, "__esModule", B);
-          var x = j("ButtonTheme"),
-            C = j("UIAppearanceHelper"),
-            H = j("Utils"),
+          Object.defineProperty(exports, "__esModule", B);
+          var x = require("ButtonTheme"),
+            C = require("UIAppearanceHelper"),
+            H = require("Utils"),
             V = cc._decorator,
             M = V.ccclass,
             q = V.property,
@@ -4092,18 +4092,18 @@
                 }
               }, __decorate([q(cc.Node)], W.prototype, "iconSprite", undefined), __decorate([q(cc.Node)], W.prototype, "collider", undefined), __decorate([q(x)], W.prototype, "buttonTheme", undefined), __decorate([q(cc.Node)], W.prototype, "circleCollider", undefined), __decorate([q(cc.SpriteFrame)], W.prototype, "normalSpriteFrame", undefined), __decorate([q(cc.SpriteFrame)], W.prototype, "disableSpriteFrame", undefined), __decorate([M], W);
             }(cc.Component);
-          y.default = m, cc._RF.pop();
+          exports.default = m, cc._RF.pop();
         }
       }
     }, I7],
-    'GridView': [function (j, O, y) {
+    'GridView': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "2a349Sf9h1Dw6gCmtoNZ3ZP", "GridView")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B);
-        var x = j("ScrollViewEx"),
+        Object.defineProperty(exports, "__esModule", B);
+        var x = require("ScrollViewEx"),
           C = function (m, D, W) {
             {
               return m.fuzzyEquals(D, W);
@@ -4863,16 +4863,16 @@
               this.ts();
             }, __decorate([M], D);
           }(x.default));
-        y.default = q, cc._RF.pop();
+        exports.default = q, cc._RF.pop();
       }
     }, I8],
-    'HitPassThrough': [function (j, O, y) {
+    'HitPassThrough': [function (j, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "c55eeQvpvBJQ70BFU5konXG", "HitPassThrough")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B);
+        Object.defineProperty(exports, "__esModule", B);
         var x,
           C = cc._decorator,
           H = C.ccclass,
@@ -4904,29 +4904,29 @@
             this.node[x.gs] = this.Jn, this.Jn = undefined;
           }, __decorate([r(cc.Vec2)], q.prototype, "passPoint", undefined), __decorate([r(cc.Size)], q.prototype, "passSize", undefined), __decorate([H], q);
         }(cc.Component);
-        y.default = V, cc._RF.pop();
+        exports.default = V, cc._RF.pop();
       }
     }, {}],
-    'IdleState': [function (O, y, B) {
+    'IdleState': [function (require, y, exports) {
       'use strict';
 
       if (!cc._RF.push(y, "9928eUmiH5DjJzRecinmoRP", "IdleState")) {
         {
           var x = {};
           x.value = true;
-          Object.defineProperty(B, "__esModule", x);
-          var C = O("AutoSpinHandler"),
-            H = O("SlotGameConstants"),
-            V = O("SlotAnalyticsEnum"),
-            M = O("SystemFeatureHandler"),
-            q = O("AnalyticsHelper"),
-            m = O("GameEventHandler"),
-            D = O("ButtonHitTest"),
-            W = O("SettingMenuHelper"),
-            k = O("Utils"),
-            z = O("JakeSlotGameTemplate"),
-            L = O("SpinButtonController"),
-            b = O("SettingMenuHandlers"),
+          Object.defineProperty(exports, "__esModule", x);
+          var C = require("AutoSpinHandler"),
+            H = require("SlotGameConstants"),
+            V = require("SlotAnalyticsEnum"),
+            M = require("SystemFeatureHandler"),
+            q = require("AnalyticsHelper"),
+            m = require("GameEventHandler"),
+            D = require("ButtonHitTest"),
+            W = require("SettingMenuHelper"),
+            k = require("Utils"),
+            z = require("JakeSlotGameTemplate"),
+            L = require("SpinButtonController"),
+            b = require("SettingMenuHandlers"),
             U = function () {
               {
                 function Q(w, P, R, T) {
@@ -5100,35 +5100,35 @@
                 }, Q;
               }
             }();
-          B.default = U, cc._RF.pop();
+          exports.default = U, cc._RF.pop();
         }
       }
     }, I9],
-    'InfobarController.spec': [function (j, O, y) {
+    'InfobarController.spec': [function (j, O, exports) {
       'use strict';
 
       var B = {};
       B.value = true;
-      cc._RF.push(O, "b0244uO77dCEK0ZHUK0wXzg", "InfobarController.spec") || (Object.defineProperty(y, "__esModule", B), y.showWinEvent = undefined, y.showWinEvent = function (x) {
+      cc._RF.push(O, "b0244uO77dCEK0ZHUK0wXzg", "InfobarController.spec") || (Object.defineProperty(exports, "__esModule", B), exports.showWinEvent = undefined, exports.showWinEvent = function (x) {
         if (x) {
           var C = System.get("automation") && System.get("automation").GameData;
           C && C.emit("ShowWin");
         }
       }, cc._RF.pop());
     }, {}],
-    'InfobarController': [function (O, y, B) {
+    'InfobarController': [function (require, y, exports) {
       'use strict';
 
       if (!cc._RF.push(y, "08edf/peCxFwrtPjYdXRHTM", "InfobarController")) {
         var x = {};
         x.value = true;
-        Object.defineProperty(B, "__esModule", x);
+        Object.defineProperty(exports, "__esModule", x);
         var C,
-          H = O("CanvasResizeBroadcaster"),
-          V = O("AutomationDecorator"),
-          M = O("AudioManager"),
-          q = O("InfobarController.spec"),
-          m = O("GameRegionUtils");
+          H = require("CanvasResizeBroadcaster"),
+          V = require("AutomationDecorator"),
+          M = require("AudioManager"),
+          q = require("InfobarController.spec"),
+          m = require("GameRegionUtils");
         (function (L) {
           L[L.WIN = 0] = "WIN", L[L.NORMAL_TIPS = 1] = "NORMAL_TIPS";
         })(C || (C = {}));
@@ -5243,20 +5243,20 @@
               }
             }, __decorate([k(cc.Node)], v.prototype, "infoBar", undefined), __decorate([k(cc.Node)], v.prototype, "infoBarNode", undefined), __decorate([k(cc.Node)], v.prototype, "infoBarMaskNode", undefined), __decorate([k(cc.Node)], v.prototype, "normalMessageNode", undefined), __decorate([k(cc.Node)], v.prototype, "winMessageNode", undefined), __decorate([k(cc.Node)], v.prototype, "barFlare", undefined), __decorate([k(cc.Node)], v.prototype, "secondBarShine", undefined), __decorate([k(cc.Node)], v.prototype, "shineNode", undefined), __decorate([k(cc.Node)], v.prototype, "barBackGlow", undefined), __decorate([k(cc.Node)], v.prototype, "barFrontGlow", undefined), __decorate([k(cc.Node)], v.prototype, "winAmountNode", undefined), __decorate([k(cc.Sprite)], v.prototype, "winTextSprite", undefined), __decorate([k(cc.Widget)], v.prototype, "widgets", undefined), __decorate([V.automationDec(b)], v.prototype, "showWin", null), __decorate([W], v);
           }(cc.Component);
-        B.default = z, cc._RF.pop();
+        exports.default = z, cc._RF.pop();
       }
     }, Il],
-    'InfoboardMessageController.spec': [function (j, O, y) {
+    'InfoboardMessageController.spec': [function (j, O, exports) {
       'use strict';
 
       var B = {};
       B.value = true;
-      cc._RF.push(O, "9a894aU+wtPzI8aYY1BbeiI", "InfoboardMessageController.spec") || (Object.defineProperty(y, "__esModule", B), y.setWinAmount = y.setTotalAndWinText = undefined, y.setTotalAndWinText = function (x, C) {
+      cc._RF.push(O, "9a894aU+wtPzI8aYY1BbeiI", "InfoboardMessageController.spec") || (Object.defineProperty(exports, "__esModule", B), exports.setWinAmount = exports.setTotalAndWinText = undefined, exports.setTotalAndWinText = function (x, C) {
         if (x || C) {
           var H = System.get("automation") && System.get("automation").GameData;
           H && H.emit(x ? "ShowTotalWin" : "ShowWin");
         }
-      }, y.setWinAmount = function (x, C) {
+      }, exports.setWinAmount = function (x, C) {
         if (x && x > 0) {
           {
             var H = System.get("automation") && System.get("automation").GameData;
@@ -5265,24 +5265,24 @@
         }
       }, cc._RF.pop());
     }, {}],
-    'InfoboardMessageController': [function (O, y, B) {
+    'InfoboardMessageController': [function (require, y, exports) {
       'use strict';
 
       if (!cc._RF.push(y, "f962cm61b9P6rw9Yco9B/O4", "InfoboardMessageController")) {
         {
           var x = {};
           x.value = true;
-          Object.defineProperty(B, "__esModule", x), B.InfoboardMessageOrderState = undefined;
+          Object.defineProperty(exports, "__esModule", x), exports.InfoboardMessageOrderState = undefined;
           var C,
             H,
-            V = O("NumberDisplayController"),
-            M = O("NumberRollController"),
-            q = O("Utils"),
-            m = O("AutomationDecorator"),
-            D = O("InfoboardMessageController.spec");
+            V = require("NumberDisplayController"),
+            M = require("NumberRollController"),
+            q = require("Utils"),
+            m = require("AutomationDecorator"),
+            D = require("InfoboardMessageController.spec");
           (function (v) {
             v[v.SEQUENCE = 0] = "SEQUENCE", v[v.RANDOM = 1] = "RANDOM";
-          })(C = B.InfoboardMessageOrderState || (B.InfoboardMessageOrderState = {})), function (v) {
+          })(C = exports.InfoboardMessageOrderState || (exports.InfoboardMessageOrderState = {})), function (v) {
             v.Do = "_fntConfig";
           }(H || (H = {}));
           var W = cc._decorator,
@@ -5537,18 +5537,18 @@
                 'func': D.setWinAmount
               })], b.prototype, "setWinAmount", null), __decorate([k], b);
             }(cc.Component);
-          B.default = L, cc._RF.pop();
+          exports.default = L, cc._RF.pop();
         }
       }
     }, Ij],
-    'InterruptableScroller': [function (j, O, y) {
+    'InterruptableScroller': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "ee1f5OrRUNIkJKtuzbwXtSX", "InterruptableScroller")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B);
-        var x = j("SimpleStopScroller"),
+        Object.defineProperty(exports, "__esModule", B);
+        var x = require("SimpleStopScroller"),
           C = cc._decorator.ccclass,
           H = function (r) {
             function V(M, q) {
@@ -5575,35 +5575,35 @@
               } else this.target.y = this.os, this.stop();
             }, __decorate([C], V);
           }(x.default);
-        y.default = H, cc._RF.pop();
+        exports.default = H, cc._RF.pop();
       }
     }, II],
-    'JSONSerializer': [function (l, j) {
+    'JSONSerializer': [function (l, module) {
       'use strict';
 
-      if (!cc._RF.push(j, "1252bHHaiZC15bpK+5v9l5B", "JSONSerializer")) {
+      if (!cc._RF.push(module, "1252bHHaiZC15bpK+5v9l5B", "JSONSerializer")) {
         var O = System.get("common").JSONSerializer;
-        j.exports.JSONSerializer = O, j.exports.__esModule = true, cc._RF.pop();
+        module.exports.JSONSerializer = O, module.exports.__esModule = true, cc._RF.pop();
       }
     }, {}],
-    'JakeSlotGameTemplate': [function (O, y, B) {
+    'JakeSlotGameTemplate': [function (O, y, exports) {
       'use strict';
 
       var x = {};
       x.value = true;
       var C = {};
       C.spaceBarInterrupterEnabled = false;
-      cc._RF.push(y, "e12d8fBWfBCyboZWCaBLXDu", "JakeSlotGameTemplate") || (Object.defineProperty(B, "__esModule", x), B.initJakeSlotGameTemplate = B.JSGTConfig = undefined, B.JSGTConfig = C, B.initJakeSlotGameTemplate = function (H) {
+      cc._RF.push(y, "e12d8fBWfBCyboZWCaBLXDu", "JakeSlotGameTemplate") || (Object.defineProperty(exports, "__esModule", x), exports.initJakeSlotGameTemplate = exports.JSGTConfig = undefined, exports.JSGTConfig = C, exports.initJakeSlotGameTemplate = function (H) {
         {
-          B.JSGTConfig = Object.freeze(H);
+          exports.JSGTConfig = Object.freeze(H);
         }
       }, cc._RF.pop());
     }, {}],
-    'LabelLocalized': [function (l, j, O) {
+    'LabelLocalized': [function (l, module, exports) {
       'use strict';
 
-      if (!cc._RF.push(j, "f5f30hTmFFOcLgg2elp0I0D", "LabelLocalized")) {
-        O.__esModule = true, O.default = undefined;
+      if (!cc._RF.push(module, "f5f30hTmFFOcLgg2elp0I0D", "LabelLocalized")) {
+        exports.__esModule = true, exports.default = undefined;
         var y = cc.Class({
           'extends': cc.Component,
           'editor': false,
@@ -5624,14 +5624,14 @@
             B && (B.string = shell.I18n.t(this.key));
           }
         });
-        O.default = y, j.exports = O.default, cc._RF.pop();
+        exports.default = y, module.exports = exports.default, cc._RF.pop();
       }
     }, {}],
-    'LabelTheme': [function (H, V, M) {
+    'LabelTheme': [function (require, module, exports) {
       'use strict';
 
-      if (!cc._RF.push(V, "05b6c8yPn1LZIH3AnSTBq8U", "LabelTheme")) {
-        M.__esModule = true, M.default = undefined;
+      if (!cc._RF.push(module, "05b6c8yPn1LZIH3AnSTBq8U", "LabelTheme")) {
+        exports.__esModule = true, exports.default = undefined;
         var q = {};
         q.uc = "_updateRichText";
         q.lc = "_isBold";
@@ -5651,10 +5651,10 @@
               Z && (Z.get || Z.set) ? Object.defineProperty(E, N, Z) : E[N] = Y[N];
             }
             return E.default = Y, X && X.set(Y, E), E;
-          }(H("ResRC")),
-          W = H("ResourceQualifierHelper"),
-          k = H("Utils"),
-          z = H("UIAppearanceHelper"),
+          }(require("ResRC")),
+          W = require("ResourceQualifierHelper"),
+          k = require("Utils"),
+          z = require("UIAppearanceHelper"),
           L = cc.Enum(q),
           v = (0, k.getCocosMajor)();
         m = "number" == typeof v && v >= 4 ? function (Y) {
@@ -5762,7 +5762,7 @@
             cc.isValid(this.node) && (X[L.fc] = Y, X instanceof cc.Label ? m(X) : cc.RichText);
           }
         });
-        M.default = R, V.exports = M.default, cc._RF.pop();
+        exports.default = R, module.exports = exports.default, cc._RF.pop();
       }
       function T(Y) {
         if ("function" != typeof WeakMap) return null;
@@ -5773,14 +5773,14 @@
         })(Y);
       }
     }, Is],
-    'LanternController': [function (j, O, y) {
+    'LanternController': [function (j, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "471a4h25qhKAKjcn0RFwVqv", "LanternController")) {
         {
           var B = {};
           B.value = true;
-          Object.defineProperty(y, "__esModule", B);
+          Object.defineProperty(exports, "__esModule", B);
           var x = cc._decorator,
             C = x.ccclass,
             H = x.property,
@@ -5803,26 +5803,26 @@
                 return this.lanternAnim.stop(), this.lanternShine.stopAllActions(), this.unschedule(this.moveLantern), this.node.destroy(), V.prototype.destroy.call(this);
               }, __decorate([H(cc.Node)], M.prototype, "lanternShine", undefined), __decorate([H(cc.Animation)], M.prototype, "lanternAnim", undefined), __decorate([C], M);
             }(cc.Component);
-          y.default = r, cc._RF.pop();
+          exports.default = r, cc._RF.pop();
         }
       }
     }, {}],
-    'LaunchConfig': [function (l, j) {
+    'LaunchConfig': [function (l, module) {
       'use strict';
 
-      if (!cc._RF.push(j, "9687e72GwxLXpeDvVqr6s0O", "LaunchConfig")) {
+      if (!cc._RF.push(module, "9687e72GwxLXpeDvVqr6s0O", "LaunchConfig")) {
         var O = System.get("bvframework").LaunchConfig;
-        for (var y in O) j.exports[y] = O[y];
-        j.exports.__esModule = true, cc._RF.pop();
+        for (var y in O) module.exports[y] = O[y];
+        module.exports.__esModule = true, cc._RF.pop();
       }
     }, {}],
-    'ListViewCellUpdateAnim': [function (j, O, y) {
+    'ListViewCellUpdateAnim': [function (j, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "5502dsWooBCr7Ubvh4+KVSO", "ListViewCellUpdateAnim")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B);
+        Object.defineProperty(exports, "__esModule", B);
         var x = cc._decorator.ccclass,
           C = function () {
             {
@@ -5834,28 +5834,28 @@
               }, H.prototype.updateCellAmimation = function () {}, H.prototype.animationEnd = function () {}, __decorate([x], H);
             }
           }();
-        y.default = C, cc._RF.pop();
+        exports.default = C, cc._RF.pop();
       }
     }, {}],
-    'ListViewEnum': [function (j, O, y) {
+    'ListViewEnum': [function (j, O, exports) {
       'use strict';
 
       var B = {};
       B.value = true;
-      cc._RF.push(O, "1db1bgDOdFP2LjHMP1kDfIt", "ListViewEnum") || (Object.defineProperty(y, "__esModule", B), y.cellUpdateAction = y.scrollPosition = undefined, function (x) {
+      cc._RF.push(O, "1db1bgDOdFP2LjHMP1kDfIt", "ListViewEnum") || (Object.defineProperty(exports, "__esModule", B), exports.cellUpdateAction = exports.scrollPosition = undefined, function (x) {
         x[x.scrollPositionTop = 0] = "scrollPositionTop", x[x.scrollPositionMiddle = 1] = "scrollPositionMiddle", x[x.scrollPositionBottom = 2] = "scrollPositionBottom";
-      }(y.scrollPosition || (y.scrollPosition = {})), function (x) {
+      }(exports.scrollPosition || (exports.scrollPosition = {})), function (x) {
         x[x.cellUpdateActionInsert = 0] = "cellUpdateActionInsert", x[x.cellUpdateActionRemove = 1] = "cellUpdateActionRemove", x[x.cellUpdateActionUpdate = 2] = "cellUpdateActionUpdate";
-      }(y.cellUpdateAction || (y.cellUpdateAction = {})), cc._RF.pop());
+      }(exports.cellUpdateAction || (exports.cellUpdateAction = {})), cc._RF.pop());
     }, {}],
-    'ListView': [function (j, O, y) {
+    'ListView': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "3d710qNmRNP1LLRNNBcLNnF", "ListView")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B);
-        var x = j("ListViewEnum"),
+        Object.defineProperty(exports, "__esModule", B);
+        var x = require("ListViewEnum"),
           C = cc._decorator,
           H = C.ccclass,
           V = C.property,
@@ -6420,7 +6420,7 @@
               }
             }, __decorate([V(cc.Node)], W.prototype, "view", undefined), __decorate([V(cc.Widget)], W.prototype, "contentWidget", undefined), __decorate([H], W);
           }(cc.ScrollView);
-        y.default = M, cc._RF.pop();
+        exports.default = M, cc._RF.pop();
       }
       function q(D) {
         {
@@ -6431,28 +6431,28 @@
         return D.y - D.height * D.anchorY;
       }
     }, IO],
-    'LoadingController': [function (O, y, B) {
+    'LoadingController': [function (require, y, exports) {
       'use strict';
 
       if (!cc._RF.push(y, "f2eeenbzC5EvoQZ4qaDTbwm", "LoadingController")) {
         {
           var x = {};
           x.value = true;
-          Object.defineProperty(B, "__esModule", x);
-          var C = O("GameAudioAdapter"),
-            H = O("RtConfig"),
-            V = O("GeneralAssetConfig"),
-            M = O("CustomAssetConfig"),
-            q = O("AudioAssetConfig"),
-            D = O("AudioManager"),
-            W = O("AnalyticsHelper"),
-            k = O("QuitGameWithEvent"),
-            z = O("ErrorHandler"),
-            L = O("NoSoundAdapter"),
-            U = O("ResourceLoader"),
-            Q = O("SettingMenuHelper"),
-            w = O("BVFrameworkEnum"),
-            P = O("PGGDataSource"),
+          Object.defineProperty(exports, "__esModule", x);
+          var C = require("GameAudioAdapter"),
+            H = require("RtConfig"),
+            V = require("GeneralAssetConfig"),
+            M = require("CustomAssetConfig"),
+            q = require("AudioAssetConfig"),
+            D = require("AudioManager"),
+            W = require("AnalyticsHelper"),
+            k = require("QuitGameWithEvent"),
+            z = require("ErrorHandler"),
+            L = require("NoSoundAdapter"),
+            U = require("ResourceLoader"),
+            Q = require("SettingMenuHelper"),
+            w = require("BVFrameworkEnum"),
+            P = require("PGGDataSource"),
             R = cc._decorator,
             T = R.ccclass,
             Y = R.property,
@@ -6586,18 +6586,18 @@
                 }, __decorate([Y(cc.Node)], F.prototype, "backWorldHolder", undefined), __decorate([Y(cc.Node)], F.prototype, "paytableHolder", undefined), __decorate([Y(cc.Node)], F.prototype, "frontWorldHolder", undefined), __decorate([Y(cc.Node)], F.prototype, "bottomUIHolder", undefined), __decorate([Y(cc.Node)], F.prototype, "settingMenuHolder", undefined), __decorate([Y(cc.Node)], F.prototype, "clickEffectHolder", undefined), __decorate([Y(cc.Node)], F.prototype, "infobarHolder", undefined), __decorate([Y(cc.Node)], F.prototype, "bigWinHolder", undefined), __decorate([Y(cc.Node)], F.prototype, "piggyHolder", undefined), __decorate([Y(cc.Node)], F.prototype, "featurePiggyHolder", undefined), __decorate([Y(cc.Node)], F.prototype, "wildMultiplySpineHolder", undefined), __decorate([Y(cc.Node)], F.prototype, "spinButtonHolder", undefined), __decorate([Y(cc.Node)], F.prototype, "slotControllerHolder", undefined), __decorate([Y(cc.Node)], F.prototype, "footerBackgroundNode", undefined), __decorate([T], F);
               }
             }(cc.Component);
-          B.default = X, cc._RF.pop();
+          exports.default = X, cc._RF.pop();
         }
       }
     }, Iy],
-    'MainFireWorkController': [function (j, O, y) {
+    'MainFireWorkController': [function (j, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "ed2edCCqjtCGL8inu8cW2nX", "MainFireWorkController")) {
         {
           var B = {};
           B.value = true;
-          Object.defineProperty(y, "__esModule", B);
+          Object.defineProperty(exports, "__esModule", B);
           var x = cc._decorator,
             C = x.ccclass,
             H = x.property,
@@ -6634,41 +6634,41 @@
                 }, __decorate([H(cc.Node)], M.prototype, "fireWork01Node", undefined), __decorate([H(cc.Node)], M.prototype, "fireWork02Node", undefined), __decorate([C], M);
               }
             }(cc.Component);
-          y.default = r, cc._RF.pop();
+          exports.default = r, cc._RF.pop();
         }
       }
     }, {}],
-    'Main': [function (x, H, V) {
+    'Main': [function (require, H, exports) {
       'use strict';
 
       if (!cc._RF.push(H, "63ec2Bqpe5I0b4nR5JeEEaF", "Main")) {
         var q = {};
         q.value = true;
-        Object.defineProperty(V, "__esModule", q);
-        var D = x("Transitions"),
-          W = x("AudioManager"),
-          k = x("UISetupHandler"),
-          z = x("PGGAPIClient"),
-          L = x("PGGDataSource"),
-          U = x("SettingMenuHandlers"),
-          Q = x("MultiResHandler"),
-          R = x("AnalyticsHelper"),
-          T = x("GameEventHandler"),
-          Y = x("GameInitializationHandler"),
-          X = x("RequestHandler"),
-          E = x("NotifyHelper"),
-          F = x("Utils"),
-          N = x("SettingMenuHelper"),
-          Z = x("BGMHandler"),
-          J = x("PGGNormalGameState"),
-          K = x("UIAppearanceHelper"),
-          l0 = x("GameLayout"),
-          l1 = x("PGSlotTransactionModel"),
-          l2 = x("PGGRefreshWorldHandler"),
-          l3 = x("TransactionStateMachineHandler"),
-          l4 = x("SpinConfigHandler"),
-          l5 = x("JakeSlotGameTemplate"),
-          l6 = x("SpaceBarInterrupter"),
+        Object.defineProperty(exports, "__esModule", q);
+        var D = require("Transitions"),
+          W = require("AudioManager"),
+          k = require("UISetupHandler"),
+          z = require("PGGAPIClient"),
+          L = require("PGGDataSource"),
+          U = require("SettingMenuHandlers"),
+          Q = require("MultiResHandler"),
+          R = require("AnalyticsHelper"),
+          T = require("GameEventHandler"),
+          Y = require("GameInitializationHandler"),
+          X = require("RequestHandler"),
+          E = require("NotifyHelper"),
+          F = require("Utils"),
+          N = require("SettingMenuHelper"),
+          Z = require("BGMHandler"),
+          J = require("PGGNormalGameState"),
+          K = require("UIAppearanceHelper"),
+          l0 = require("GameLayout"),
+          l1 = require("PGSlotTransactionModel"),
+          l2 = require("PGGRefreshWorldHandler"),
+          l3 = require("TransactionStateMachineHandler"),
+          l4 = require("SpinConfigHandler"),
+          l5 = require("JakeSlotGameTemplate"),
+          l6 = require("SpaceBarInterrupter"),
           l7 = cc._decorator,
           l8 = l7.ccclass,
           l9 = l7.property,
@@ -6888,18 +6888,18 @@
               }, __decorate([l9(cc.Prefab)], lI.prototype, "settingInfoFooterPrefab", undefined), __decorate([l8], lI);
             }
           }(cc.Component);
-        V.default = ll, cc._RF.pop();
+        exports.default = ll, cc._RF.pop();
       }
     }, IB],
-    'MediumPrizeController': [function (j, O, y) {
+    'MediumPrizeController': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "72a61RmRLhNGLB4kvMTTD0i", "MediumPrizeController")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B);
-        var x = j("Utils"),
-          C = j("SettingMenuHelper"),
+        Object.defineProperty(exports, "__esModule", B);
+        var x = require("Utils"),
+          C = require("SettingMenuHelper"),
           H = cc._decorator.ccclass,
           r = function () {
             {
@@ -6940,27 +6940,27 @@
               }, __decorate([H], V);
             }
           }();
-        y.default = r, cc._RF.pop();
+        exports.default = r, cc._RF.pop();
       }
     }, Ix],
-    'MultiResHandler': [function (l, j) {
+    'MultiResHandler': [function (l, module) {
       'use strict';
 
-      if (!cc._RF.push(j, "3ae3du76uBKurm1YFGdqj7/", "MultiResHandler")) {
+      if (!cc._RF.push(module, "3ae3du76uBKurm1YFGdqj7/", "MultiResHandler")) {
         {
           var O = System.get("common").MultiResHandler;
-          j.exports.default = O, j.exports.__esModule = true, cc._RF.pop();
+          module.exports.default = O, module.exports.__esModule = true, cc._RF.pop();
         }
       }
     }, {}],
-    'NavigationBar': [function (j, O, y) {
+    'NavigationBar': [function (j, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "0dc7dijGWtKO4QKzl8UL9Pz", "NavigationBar")) {
         {
           var B = {};
           B.value = true;
-          Object.defineProperty(y, "__esModule", B);
+          Object.defineProperty(exports, "__esModule", B);
           var x = cc._decorator,
             C = x.ccclass,
             H = x.property,
@@ -7312,24 +7312,24 @@
                 q && m && q.addChild(m);
               }, __decorate([H(cc.Node)], M.prototype, "animatedLayer", undefined), __decorate([H(cc.Prefab)], M.prototype, "defaultLeftItem", undefined), __decorate([H(cc.Node)], M.prototype, "rightItemContainer", undefined), __decorate([H(cc.Node)], M.prototype, "leftItemContainer", undefined), __decorate([H(cc.Node)], M.prototype, "middleItemContainer", undefined), __decorate([H(cc.Label)], M.prototype, "titleLabel", undefined), __decorate([H(cc.Sprite)], M.prototype, "background", undefined), __decorate([H(cc.Node)], M.prototype, "shadow", undefined), __decorate([C], M);
             }(cc.Component);
-          y.default = r, cc._RF.pop();
+          exports.default = r, cc._RF.pop();
         }
       }
     }, {}],
-    'NavigationController': [function (O, y, B) {
+    'NavigationController': [function (require, exports, B) {
       'use strict';
 
-      if (!cc._RF.push(y, "d742diXy4tHCIVIgSy1jEIb", "NavigationController")) {
+      if (!cc._RF.push(exports, "d742diXy4tHCIVIgSy1jEIb", "NavigationController")) {
         var x = {};
         x.value = true;
         Object.defineProperty(B, "__esModule", x);
-        var C = O("ViewController"),
-          H = O("NavigationBar"),
-          V = O("TransitionEnum"),
-          M = O("NavigationDefaultTransition"),
-          q = O("TransitionContext"),
-          m = O("UIKit"),
-          D = O("TabBarItem"),
+        var C = require("ViewController"),
+          H = require("NavigationBar"),
+          V = require("TransitionEnum"),
+          M = require("NavigationDefaultTransition"),
+          q = require("TransitionContext"),
+          m = require("UIKit"),
+          D = require("TabBarItem"),
           W = cc._decorator,
           k = W.ccclass,
           z = W.property,
@@ -7543,15 +7543,15 @@
         B.default = L, cc._RF.pop();
       }
     }, IC],
-    'NavigationDefaultTransition': [function (j, O, y) {
+    'NavigationDefaultTransition': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "2472eYgH9NBWJvtIuLXvIEh", "NavigationDefaultTransition")) {
         {
           var B = {};
           B.value = true;
-          Object.defineProperty(y, "__esModule", B), y.DefaultNavigationPopTransition = y.DefaultNavigationPushTransition = undefined;
-          var x = j("ViewControllerTransition"),
+          Object.defineProperty(exports, "__esModule", B), exports.DefaultNavigationPopTransition = exports.DefaultNavigationPushTransition = undefined;
+          var x = require("ViewControllerTransition"),
             C = function (r) {
               function V() {
                 {
@@ -7574,7 +7574,7 @@
                 })));
               }, V.prototype.animationEnd = function () {}, V;
             }(x.default);
-          y.DefaultNavigationPushTransition = C;
+          exports.DefaultNavigationPushTransition = C;
           var H = function (r) {
             function V() {
               {
@@ -7601,20 +7601,20 @@
               })));
             }, V.prototype.animationEnd = function () {}, V;
           }(x.default);
-          y.DefaultNavigationPopTransition = H, cc._RF.pop();
+          exports.DefaultNavigationPopTransition = H, cc._RF.pop();
         }
       }
     }, IH],
-    'NoSoundAdapter': [function (j, O, y) {
+    'NoSoundAdapter': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "d85610Qhw9DzLM9jdvZsDKB", "NoSoundAdapter")) {
         {
           var B = {};
           B.value = true;
-          Object.defineProperty(y, "__esModule", B);
-          var x = j("Utils"),
-            C = j("AudioAdapter"),
+          Object.defineProperty(exports, "__esModule", B);
+          var x = require("Utils"),
+            C = require("AudioAdapter"),
             H = {
               'load': function (m, D) {
                 {
@@ -7776,23 +7776,23 @@
                 return W ? (W.reset(k), W) : new M(z);
               }, D;
             }(C.default);
-          y.default = q, cc._RF.pop();
+          exports.default = q, cc._RF.pop();
         }
       }
     }, Ir],
-    'NormalPrizeDecorator': [function (j, O, y) {
+    'NormalPrizeDecorator': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "106e2xHvchPlqWVXmeFLDHr", "NormalPrizeDecorator")) {
         {
           var B = {};
           B.value = true;
-          Object.defineProperty(y, "__esModule", B);
-          var x = j("SlotGameConstants"),
-            C = j("SlotAnalyticsEnum"),
-            H = j("AutoSpinHandler"),
-            V = j("ButtonHitTest"),
-            M = j("JakeSlotGameTemplate"),
+          Object.defineProperty(exports, "__esModule", B);
+          var x = require("SlotGameConstants"),
+            C = require("SlotAnalyticsEnum"),
+            H = require("AutoSpinHandler"),
+            V = require("ButtonHitTest"),
+            M = require("JakeSlotGameTemplate"),
             q = function () {
               function m(D, W) {
                 this.name = "Normal Prize Decorator", this.dataSource = undefined, this.generalControllers = undefined, this.dataSource = D, this.generalControllers = W.generalControllers;
@@ -7819,24 +7819,24 @@
                 H.exitAutoSpin(D.spinButtonController), this.clearAvailableActions(), W.disableButton();
               }, m;
             }();
-          y.default = q, cc._RF.pop();
+          exports.default = q, cc._RF.pop();
         }
       }
     }, IV],
-    'NormalResultDecorator': [function (j, O, y) {
+    'NormalResultDecorator': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "94e3b2snKRKspFrhelPCcrj", "NormalResultDecorator")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B);
-        var x = j("SlotStateMachine"),
-          C = j("SlotAnalyticsEnum"),
-          H = j("AutoSpinHandler"),
-          V = j("SlotGameConstants"),
-          M = j("ButtonHitTest"),
-          q = j("JakeSlotGameTemplate"),
-          m = j("SpinConfigHandler"),
+        Object.defineProperty(exports, "__esModule", B);
+        var x = require("SlotStateMachine"),
+          C = require("SlotAnalyticsEnum"),
+          H = require("AutoSpinHandler"),
+          V = require("SlotGameConstants"),
+          M = require("ButtonHitTest"),
+          q = require("JakeSlotGameTemplate"),
+          m = require("SpinConfigHandler"),
           D = function () {
             function W(k, z) {
               this.triggerFastStop = undefined, this.name = "Normal Result Decorator", this.dataSource = undefined, this.generalControllers = undefined, this.dataSource = k, this.generalControllers = z.generalControllers;
@@ -7883,16 +7883,16 @@
               return this.generalControllers.slotController.getStopStyle() === x.StopStyle.FAST;
             }, W;
           }();
-        y.default = D, cc._RF.pop();
+        exports.default = D, cc._RF.pop();
       }
     }, IM],
-    'NormalSpinButtonController': [function (j, O, y) {
+    'NormalSpinButtonController': [function (j, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "cf150DqXjNKya/LvYgDW43R", "NormalSpinButtonController")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B);
+        Object.defineProperty(exports, "__esModule", B);
         var x = cc._decorator,
           C = x.ccclass,
           H = x.property,
@@ -7939,25 +7939,25 @@
               }
             }, __decorate([H(cc.Node)], M.prototype, "normalSpinHolder", undefined), __decorate([H(cc.Node)], M.prototype, "arrowSpriteNode", undefined), __decorate([H(cc.Sprite)], M.prototype, "arrowSprite", undefined), __decorate([C], M);
           }(cc.Component);
-        y.default = r, cc._RF.pop();
+        exports.default = r, cc._RF.pop();
       }
     }, {}],
-    'NormalSpinDecorator': [function (O, y, B) {
+    'NormalSpinDecorator': [function (require, y, exports) {
       'use strict';
 
       if (!cc._RF.push(y, "2e3a0I2XG9HlaoLlfg0FwUG", "NormalSpinDecorator")) {
         {
           var x = {};
           x.value = true;
-          Object.defineProperty(B, "__esModule", x);
-          var C = O("SlotStateMachine"),
-            H = O("AutoSpinHandler"),
-            V = O("SlotAnalyticsEnum"),
-            M = O("SlotGameConstants"),
-            q = O("ButtonHitTest"),
-            m = O("SettingMenuHelper"),
-            D = O("JakeSlotGameTemplate"),
-            W = O("SpinConfigHandler"),
+          Object.defineProperty(exports, "__esModule", x);
+          var C = require("SlotStateMachine"),
+            H = require("AutoSpinHandler"),
+            V = require("SlotAnalyticsEnum"),
+            M = require("SlotGameConstants"),
+            q = require("ButtonHitTest"),
+            m = require("SettingMenuHelper"),
+            D = require("JakeSlotGameTemplate"),
+            W = require("SpinConfigHandler"),
             k = function () {
               function z(L, v) {
                 this.triggerFastStop = undefined, this.name = "Normal Spin Decorator", this.dataSource = undefined, this.generalControllers = undefined, this.dataSource = L, this.generalControllers = v.generalControllers;
@@ -7999,28 +7999,28 @@
                 }
               }, z;
             }();
-          B.default = k, cc._RF.pop();
+          exports.default = k, cc._RF.pop();
         }
       }
     }, Iq],
-    'NotifyHelper': [function (l, j) {
+    'NotifyHelper': [function (l, module) {
       'use strict';
 
-      if (!cc._RF.push(j, "9dba9c1YjJGvYgyg8KnkuQD", "NotifyHelper")) {
+      if (!cc._RF.push(module, "9dba9c1YjJGvYgyg8KnkuQD", "NotifyHelper")) {
         var O = System.get("bvframework").Notify;
-        for (var y in O) j.exports[y] = O[y];
-        j.exports.__esModule = true, cc._RF.pop();
+        for (var y in O) module.exports[y] = O[y];
+        module.exports.__esModule = true, cc._RF.pop();
       }
     }, {}],
-    'NumberCurvedController': [function (j, O, y) {
+    'NumberCurvedController': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "22ff3ETL9NJ6LV0gfCqckfH", "NumberCurvedController")) {
         {
           var B = {};
           B.value = true;
-          Object.defineProperty(y, "__esModule", B);
-          var x = j("NumberDisplayController"),
+          Object.defineProperty(exports, "__esModule", B);
+          var x = require("NumberDisplayController"),
             C = cc._decorator,
             H = C.ccclass,
             r = C.property,
@@ -8069,19 +8069,19 @@
                 })], q.prototype, "curveness", undefined), __decorate([H], q);
               }
             }(x.default);
-          y.default = V, cc._RF.pop();
+          exports.default = V, cc._RF.pop();
         }
       }
     }, Im],
-    'NumberDisplayController': [function (j, O, y) {
+    'NumberDisplayController': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "e13cc9FLShL66GevrFVSv5p", "NumberDisplayController")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B);
-        var x = j("Utils"),
-          C = j("NumberDisplayInterface"),
+        Object.defineProperty(exports, "__esModule", B);
+        var x = require("Utils"),
+          C = require("NumberDisplayInterface"),
           H = cc._decorator,
           V = H.ccclass,
           M = H.property,
@@ -8375,17 +8375,17 @@
               })], z.prototype, "previewNumber", null), __decorate([V], z);
             }
           }(C.default);
-        y.default = q, cc._RF.pop();
+        exports.default = q, cc._RF.pop();
       }
     }, ID],
-    'NumberDisplayInterface': [function (j, O, y) {
+    'NumberDisplayInterface': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "6e9deOwoQZHDb/Mv4FAbr3R", "NumberDisplayInterface")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B);
-        var x = j("Utils"),
+        Object.defineProperty(exports, "__esModule", B);
+        var x = require("Utils"),
           C = cc._decorator,
           H = C.ccclass,
           r = C.property,
@@ -8417,17 +8417,17 @@
               throw Error("NumberDisplayInterface: method must be overriden");
             }, __decorate([r(cc.Node)], q.prototype, "numberContainer", undefined), __decorate([r(cc.Float)], q.prototype, "maxContainerSize", undefined), __decorate([r(m)], q.prototype, "enableComma", undefined), __decorate([r(D)], q.prototype, "enableDecimal", undefined), __decorate([r(W)], q.prototype, "enableShortenNumber", undefined), __decorate([H], q);
           }(cc.Component);
-        y.default = V, cc._RF.pop();
+        exports.default = V, cc._RF.pop();
       }
     }, IW],
-    'NumberLabelControllerLite': [function (j, O, y) {
+    'NumberLabelControllerLite': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "88c0bvJUDVGt4Zbi3DnKpmf", "NumberLabelControllerLite")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B);
-        var x = j("Utils"),
+        Object.defineProperty(exports, "__esModule", B);
+        var x = require("Utils"),
           C = cc.misc.lerp,
           H = cc._decorator,
           V = H.ccclass,
@@ -8465,19 +8465,19 @@
               return this.label.string;
             }, __decorate([M(cc.Label)], D.prototype, "label", undefined), __decorate([M(cc.Integer)], D.prototype, "rollDuration", undefined), __decorate([M(cc.Float)], D.prototype, "maxWidth", undefined), __decorate([V], D);
           }(cc.Component);
-        y.default = q, cc._RF.pop();
+        exports.default = q, cc._RF.pop();
       }
     }, Ik],
-    'NumberLabelController': [function (j, O, y) {
+    'NumberLabelController': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "b6e176hgIFCvo12TMjQIRc7", "NumberLabelController")) {
         {
           var B = {};
           B.value = true;
-          Object.defineProperty(y, "__esModule", B);
-          var x = j("NumberDisplayInterface"),
-            C = j("Utils"),
+          Object.defineProperty(exports, "__esModule", B);
+          var x = require("NumberDisplayInterface"),
+            C = require("Utils"),
             H = cc._decorator.ccclass,
             r = function (V) {
               function M() {
@@ -8558,18 +8558,18 @@
                 this.Ia = null, this.ga = null;
               }, __decorate([H], M);
             }(x.default);
-          y.default = r, cc._RF.pop();
+          exports.default = r, cc._RF.pop();
         }
       }
     }, Io],
-    'NumberPaytableController': [function (j, O, y) {
+    'NumberPaytableController': [function (j, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "5a2c6Vm6u9LwpLUeGzJr4Ba", "NumberPaytableController")) {
         {
           var B = {};
           B.value = true;
-          Object.defineProperty(y, "__esModule", B);
+          Object.defineProperty(exports, "__esModule", B);
           var x = cc._decorator,
             C = x.ccclass,
             H = x.property,
@@ -8590,18 +8590,18 @@
                 return this.numberNode.stopAllActions(), this.node.destroy(), V.prototype.destroy.call(this);
               }, __decorate([H(cc.Node)], M.prototype, "numberNode", undefined), __decorate([C], M);
             }(cc.Component);
-          y.default = r, cc._RF.pop();
+          exports.default = r, cc._RF.pop();
         }
       }
     }, {}],
-    'NumberRollBaseController': [function (j, O, y) {
+    'NumberRollBaseController': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "b940fHCDN9PkIykJo0EuNqR", "NumberRollBaseController")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B);
-        var x = j("NumberDisplayInterface"),
+        Object.defineProperty(exports, "__esModule", B);
+        var x = require("NumberDisplayInterface"),
           C = cc._decorator,
           H = C.ccclass,
           r = C.property,
@@ -8644,19 +8644,19 @@
               'type': x.default
             })], q.prototype, "displayController", undefined), __decorate([H], q);
           }(cc.Component);
-        y.default = V, cc._RF.pop();
+        exports.default = V, cc._RF.pop();
       }
     }, Iz],
-    'NumberRollController': [function (j, O, y) {
+    'NumberRollController': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "6ce4aSiKeVGJZPyEX2VbsSD", "NumberRollController")) {
         {
           var B = {};
           B.value = true;
-          Object.defineProperty(y, "__esModule", B);
-          var x = j("NumberDisplayController"),
-            C = j("NumberRollBaseController"),
+          Object.defineProperty(exports, "__esModule", B);
+          var x = require("NumberDisplayController"),
+            C = require("NumberRollBaseController"),
             H = cc._decorator,
             V = H.ccclass,
             M = H.property,
@@ -8670,19 +8670,19 @@
               W.override = true;
               return __extends(D, m), __decorate([M(W)], D.prototype, "displayController", undefined), __decorate([V], D);
             }(C.default);
-          y.default = q, cc._RF.pop();
+          exports.default = q, cc._RF.pop();
         }
       }
     }, Ic],
-    'NumberRollCurveController': [function (j, O, y) {
+    'NumberRollCurveController': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "a0a6doEXuNKgJy7Sh2yc8T3", "NumberRollCurveController")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B);
-        var x = j("NumberCurvedController"),
-          C = j("NumberRollBaseController"),
+        Object.defineProperty(exports, "__esModule", B);
+        var x = require("NumberCurvedController"),
+          C = require("NumberRollBaseController"),
           H = cc._decorator,
           V = H.ccclass,
           M = H.property,
@@ -8698,19 +8698,19 @@
             W.override = true;
             return __extends(D, m), __decorate([M(W)], D.prototype, "displayController", undefined), __decorate([V], D);
           }(C.default);
-        y.default = q, cc._RF.pop();
+        exports.default = q, cc._RF.pop();
       }
     }, IL],
-    'NumberRollLabelController': [function (j, O, y) {
+    'NumberRollLabelController': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "9b7acp+xyJLMJ5gESfkIJHz", "NumberRollLabelController")) {
         {
           var B = {};
           B.value = true;
-          Object.defineProperty(y, "__esModule", B);
-          var x = j("NumberLabelController"),
-            C = j("NumberRollBaseController"),
+          Object.defineProperty(exports, "__esModule", B);
+          var x = require("NumberLabelController"),
+            C = require("NumberRollBaseController"),
             H = cc._decorator,
             V = H.ccclass,
             M = H.property,
@@ -8726,25 +8726,25 @@
               W.override = true;
               return __extends(D, m), __decorate([M(W)], D.prototype, "displayController", undefined), __decorate([V], D);
             }(C.default);
-          y.default = q, cc._RF.pop();
+          exports.default = q, cc._RF.pop();
         }
       }
     }, Iv],
-    'OperatorJurisdictionModel': [function (l, j) {
+    'OperatorJurisdictionModel': [function (l, module) {
       'use strict';
 
-      if (!cc._RF.push(j, "bcfa7PvQx1LKqzexGjCVrpW", "OperatorJurisdictionModel")) {
+      if (!cc._RF.push(module, "bcfa7PvQx1LKqzexGjCVrpW", "OperatorJurisdictionModel")) {
         var O = System.get("bvframework").OperatorJurisdictionModel;
-        for (var y in O) j.exports[y] = O[y];
-        j.exports.__esModule = true, cc._RF.pop();
+        for (var y in O) module.exports[y] = O[y];
+        module.exports.__esModule = true, cc._RF.pop();
       }
     }, {}],
-    'PGApiClient.spec': [function (j, O, y) {
+    'PGApiClient.spec': [function (j, O, exports) {
       'use strict';
 
       var B = {};
       B.value = true;
-      cc._RF.push(O, "6a5efOPxrhCWo8QfWKO1FeF", "PGApiClient.spec") || (Object.defineProperty(y, "__esModule", B), y.onRequestSent = y.onRequestReceived = undefined, y.onRequestReceived = function (x, C) {
+      cc._RF.push(O, "6a5efOPxrhCWo8QfWKO1FeF", "PGApiClient.spec") || (Object.defineProperty(exports, "__esModule", B), exports.onRequestSent = exports.onRequestReceived = undefined, exports.onRequestReceived = function (x, C) {
         {
           var H = System.get("automation") && System.get("automation").GameData;
           var r = {};
@@ -8752,20 +8752,20 @@
           r.result = C;
           H && H.emit("RequestReceived", r);
         }
-      }, y.onRequestSent = function () {
+      }, exports.onRequestSent = function () {
         var x = System.get("automation") && System.get("automation").GameData;
         x && x.emit("RequestSent");
       }, cc._RF.pop());
     }, {}],
-    'PGBetRequestModel': [function (j, O, y) {
+    'PGBetRequestModel': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "04c5dxt1DtLibUJsILbyUdl", "PGBetRequestModel")) {
         {
           var B = {};
           B.value = true;
-          Object.defineProperty(y, "__esModule", B), y.PGBetRequestModel = undefined;
-          var x = j("Protoutils"),
+          Object.defineProperty(exports, "__esModule", B), exports.PGBetRequestModel = undefined;
+          var x = require("Protoutils"),
             C = function () {
               function H() {}
               var r;
@@ -8777,24 +8777,24 @@
                 return x.createProtoMessages(q).concat(V);
               }, H.registryKey = "PiggyGoldBetRequest", __decorate([x.api('cs', 21, "double", false, false, false)], H.prototype, 'cs', undefined), __decorate([x.api('ml', 22, "int32", false, false, false)], H.prototype, 'ml', undefined), __decorate([x.api('id', 5, "string", false, false, false)], H.prototype, 'id', undefined), __decorate([x.api('wk', 12, "string", false, false, false)], H.prototype, 'wk', undefined), r = __decorate([x.messageName("PiggyGoldBetRequest")], H);
             }();
-          y.PGBetRequestModel = C, cc._RF.pop();
+          exports.PGBetRequestModel = C, cc._RF.pop();
         }
       }
     }, Ib],
-    'PGGAPIClient': [function (O, y, B) {
+    'PGGAPIClient': [function (require, y, exports) {
       'use strict';
 
       if (!cc._RF.push(y, "d1324LE8u1FgIf2d5LCWuoy", "PGGAPIClient")) {
         {
           var x = {};
           x.value = true;
-          Object.defineProperty(B, "__esModule", x), B.pgApiClient = undefined;
-          var C = O("PGGDataSource"),
-            H = O("APIClient"),
-            V = (O("TweaksData"), O("Utils")),
-            M = O("AutomationDecorator"),
-            q = O("PGApiClient.spec"),
-            m = O("PGBetRequestModel"),
+          Object.defineProperty(exports, "__esModule", x), exports.pgApiClient = undefined;
+          var C = require("PGGDataSource"),
+            H = require("APIClient"),
+            V = (require("TweaksData"), require("Utils")),
+            M = require("AutomationDecorator"),
+            q = require("PGApiClient.spec"),
+            m = require("PGBetRequestModel"),
             D = V.getPlatform(),
             W = function (z) {
               function L() {
@@ -8837,24 +8837,24 @@
                 'func': q.onRequestReceived
               })], L.prototype, "_onRespond", null), L;
             }(H.default);
-          B.default = W;
+          exports.default = W;
           var k = new W(C.pgDataSource);
-          B.pgApiClient = k, cc._RF.pop();
+          exports.pgApiClient = k, cc._RF.pop();
         }
       }
     }, IU],
-    'PGGDataSource': [function (j, O, y) {
+    'PGGDataSource': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "14007D6VmVFRIxUoOkYdI/D", "PGGDataSource")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B), y.pgDataSource = undefined;
-        var x = j("RtConfig"),
-          C = j("PGSlotTransactionModel"),
-          H = j("SlotSystemModel"),
-          V = j("DataSource"),
-          M = j("PlayerModel"),
+        Object.defineProperty(exports, "__esModule", B), exports.pgDataSource = undefined;
+        var x = require("RtConfig"),
+          C = require("PGSlotTransactionModel"),
+          H = require("SlotSystemModel"),
+          V = require("DataSource"),
+          M = require("PlayerModel"),
           q = function (D) {
             function W() {
               {
@@ -8868,19 +8868,19 @@
             }
             return __extends(W, D), W;
           }(V.default);
-        y.default = q;
+        exports.default = q;
         var m = new q();
-        y.pgDataSource = m, cc._RF.pop();
+        exports.pgDataSource = m, cc._RF.pop();
       }
     }, IQ],
-    'PGGIdleState': [function (j, O, y) {
+    'PGGIdleState': [function (require, exports, y) {
       'use strict';
 
-      if (!cc._RF.push(O, "5cb6c5+CQ5NzYA9UbiMoo6+", "PGGIdleState")) {
+      if (!cc._RF.push(exports, "5cb6c5+CQ5NzYA9UbiMoo6+", "PGGIdleState")) {
         var B = {};
         B.value = true;
         Object.defineProperty(y, "__esModule", B);
-        var x = j("TransactionStateMachineHandler"),
+        var x = require("TransactionStateMachineHandler"),
           C = function (H) {
             {
               function r() {
@@ -8902,26 +8902,26 @@
                 x.transitionCompleteCallback("action")(V);
               }, r;
             }
-          }(j("IdleState").default);
+          }(require("IdleState").default);
         y.default = C, cc._RF.pop();
       }
     }, Iw],
-    'PGGNormalGameState': [function (O, y, B) {
+    'PGGNormalGameState': [function (require, y, exports) {
       'use strict';
 
       if (!cc._RF.push(y, "4f514cB9JJKcoKpH+dGXQHY", "PGGNormalGameState")) {
         var x = {};
         x.value = true;
-        Object.defineProperty(B, "__esModule", x);
-        var C = O("PGGIdleState"),
-          H = O("PGGSpinState"),
-          V = O("PGGPrizeState"),
-          M = O("PGGResultState"),
-          q = O("NormalSpinDecorator"),
-          m = O("NormalResultDecorator"),
-          D = O("NormalPrizeDecorator"),
-          W = O("Utils"),
-          k = O("TransactionStateMachineHandler"),
+        Object.defineProperty(exports, "__esModule", x);
+        var C = require("PGGIdleState"),
+          H = require("PGGSpinState"),
+          V = require("PGGPrizeState"),
+          M = require("PGGResultState"),
+          q = require("NormalSpinDecorator"),
+          m = require("NormalResultDecorator"),
+          D = require("NormalPrizeDecorator"),
+          W = require("Utils"),
+          k = require("TransactionStateMachineHandler"),
           z = function () {
             {
               function L(v, b, U) {
@@ -8968,24 +8968,24 @@
               }, L;
             }
           }();
-        B.default = z, cc._RF.pop();
+        exports.default = z, cc._RF.pop();
       }
     }, Ih],
-    'PGGPrizeState': [function (O, y, B) {
+    'PGGPrizeState': [function (require, y, module) {
       'use strict';
 
       if (!cc._RF.push(y, "66291BwcDNB9ICAuxnTs1lf", "PGGPrizeState")) {
         var x = {};
         x.value = true;
-        Object.defineProperty(B, "__esModule", x);
-        var C = O("PrizeState"),
-          H = O("MediumPrizeController"),
-          V = O("BigPrizeController"),
-          M = O("Utils"),
-          q = O("SettingMenuHelper"),
-          m = O("AutomationDecorator"),
-          D = O("WinHighlight.spec"),
-          W = O("TransactionStateMachineHandler"),
+        Object.defineProperty(module, "__esModule", x);
+        var C = require("PrizeState"),
+          H = require("MediumPrizeController"),
+          V = require("BigPrizeController"),
+          M = require("Utils"),
+          q = require("SettingMenuHelper"),
+          m = require("AutomationDecorator"),
+          D = require("WinHighlight.spec"),
+          W = require("TransactionStateMachineHandler"),
           k = cc._decorator.ccclass,
           z = function (L) {
             {
@@ -9043,19 +9043,19 @@
               })], v.prototype, "playAllLines", null), __decorate([k], v);
             }
           }(C.default);
-        B.default = z, cc._RF.pop();
+        module.default = z, cc._RF.pop();
       }
     }, IP],
-    'PGGRefreshWorldHandler': [function (j, O, y) {
+    'PGGRefreshWorldHandler': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "8c6d3Cm7MxD/6iOfc5Ci+OI", "PGGRefreshWorldHandler")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B), y.pgRefreshWorldHandler = undefined;
-        var x = j("Transitions"),
-          C = j("RefreshWorldHandler"),
-          H = j("SlotProperties"),
+        Object.defineProperty(exports, "__esModule", B), exports.pgRefreshWorldHandler = undefined;
+        var x = require("Transitions"),
+          C = require("RefreshWorldHandler"),
+          H = require("SlotProperties"),
           r = cc._decorator.ccclass,
           V = function (M) {
             function q() {
@@ -9096,22 +9096,22 @@
               this.reenableSpinButton(m);
             }, __decorate([r], q);
           }(C.default);
-        y.default = V, y.pgRefreshWorldHandler = new V(), cc._RF.pop();
+        exports.default = V, exports.pgRefreshWorldHandler = new V(), cc._RF.pop();
       }
     }, IR],
-    'PGGResultState': [function (j, O, y) {
+    'PGGResultState': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "cfd90dFotVFuq3zVL6PFkg1", "PGGResultState")) {
         {
           var B = {};
           B.value = true;
-          Object.defineProperty(y, "__esModule", B);
-          var x = j("ResultState"),
-            C = j("AudioManager"),
-            H = j("SlotProperties"),
-            V = j("Utils"),
-            M = j("TransactionStateMachineHandler"),
+          Object.defineProperty(exports, "__esModule", B);
+          var x = require("ResultState"),
+            C = require("AudioManager"),
+            H = require("SlotProperties"),
+            V = require("Utils"),
+            M = require("TransactionStateMachineHandler"),
             q = cc._decorator.ccclass,
             m = function (D) {
               function W() {
@@ -9229,24 +9229,24 @@
                 }
               }, __decorate([q], W);
             }(x.default);
-          y.default = m, cc._RF.pop();
+          exports.default = m, cc._RF.pop();
         }
       }
     }, IT],
-    'PGGSpinState': [function (j, O, y) {
+    'PGGSpinState': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "46bf6P0fq9A86HAiiJDCia0", "PGGSpinState")) {
         {
           var B = {};
           B.value = true;
-          Object.defineProperty(y, "__esModule", B);
-          var x = j("SpinState"),
-            C = j("PGGAPIClient"),
-            H = j("RequestHandler"),
-            V = j("AutoSpinHandler"),
-            M = j("Utils"),
-            q = j("TransactionStateMachineHandler"),
+          Object.defineProperty(exports, "__esModule", B);
+          var x = require("SpinState"),
+            C = require("PGGAPIClient"),
+            H = require("RequestHandler"),
+            V = require("AutoSpinHandler"),
+            M = require("Utils"),
+            q = require("TransactionStateMachineHandler"),
             m = cc._decorator.ccclass,
             D = function (W) {
               function k() {
@@ -9279,25 +9279,25 @@
                 });
               }, __decorate([m], k);
             }(x.default);
-          y.default = D, cc._RF.pop();
+          exports.default = D, cc._RF.pop();
         }
       }
     }, IY],
-    'PGSlotTransactionModel': [function (j, O, y) {
+    'PGSlotTransactionModel': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "dd180m4s5VGebUu7dqjUGTK", "PGSlotTransactionModel")) {
         {
           var B = {};
           B.value = true;
-          Object.defineProperty(y, "__esModule", B), y.SpinType = undefined;
-          var x = j("SlotProperties"),
-            C = j("SlotTransactionModel"),
-            H = (j("PiggyGoldTweaksConfig"), j("TweaksData"), j("Protoutils")),
-            r = j("WinLinesModel");
+          Object.defineProperty(exports, "__esModule", B), exports.SpinType = undefined;
+          var x = require("SlotProperties"),
+            C = require("SlotTransactionModel"),
+            H = (require("PiggyGoldTweaksConfig"), require("TweaksData"), require("Protoutils")),
+            r = require("WinLinesModel");
           (function (M) {
             M[M.NORMAL = 1] = "NORMAL";
-          })(y.SpinType || (y.SpinType = {}));
+          })(exports.SpinType || (exports.SpinType = {}));
           var V = function (M) {
             function q() {
               return null !== M && M.apply(this, arguments) || this;
@@ -9430,27 +9430,27 @@
               return H.createProtoMessages([W]);
             }, q.registryKey = "SlotCommonResponse", __decorate([H.api('wp', 101, "Int32List", false, false, false, "int32")], q.prototype, "_winLines", undefined), __decorate([H.api("frl", 103, "int32", true, false, false)], q.prototype, "_fakeReels", undefined), __decorate([H.api('pc', 104, "int32", false, false, true)], q.prototype, "_piggyFeature", undefined), __decorate([H.api('wm', 105, "int32", false, false, true)], q.prototype, "_wildMultiply", undefined), __decorate([H.api("tnbwm", 106, "int32", false, false, false, "int32")], q.prototype, "_blankSlotMultiply", undefined), m = __decorate([H.messageName("SlotCommonResponse")], q);
           }(C.default);
-          y.default = V, cc._RF.pop();
+          exports.default = V, cc._RF.pop();
         }
       }
     }, Ie],
-    'PGSpinButtonController': [function (O, y, B) {
+    'PGSpinButtonController': [function (require, y, exports) {
       'use strict';
 
       if (!cc._RF.push(y, "78f4e8xn2pEkbcTD0r/civR", "PGSpinButtonController")) {
         {
           var x = {};
           x.value = true;
-          Object.defineProperty(B, "__esModule", x);
+          Object.defineProperty(exports, "__esModule", x);
           var C = cc._decorator,
             H = C.ccclass,
             V = C.property,
-            M = O("SpinButtonController"),
-            q = O("AudioManager"),
-            m = O("AutomationDecorator"),
-            D = O("SpinButtonViewController.spec"),
-            W = O("ButtonHitTest"),
-            k = O("SlotAnalyticsEnum"),
+            M = require("SpinButtonController"),
+            q = require("AudioManager"),
+            m = require("AutomationDecorator"),
+            D = require("SpinButtonViewController.spec"),
+            W = require("ButtonHitTest"),
+            k = require("SlotAnalyticsEnum"),
             z = function (L) {
               function v() {
                 var Q = null !== L && L.apply(this, arguments) || this;
@@ -9567,19 +9567,19 @@
                 this.node.on(cc.Node.EventType.MOUSE_MOVE, this.Pu, this), this.node.on(cc.Node.EventType.TOUCH_END, this.Au, this);
               }, v.prototype.Su = function () {}, v.prototype.Cu = function () {}, __decorate([V(cc.Node)], v.prototype, "normalSpinHolder", undefined), __decorate([V(cc.Node)], v.prototype, "autoSpinNode", undefined), __decorate([V(cc.Node)], v.prototype, "mouseHoverNode", undefined), __decorate([V(cc.Node)], v.prototype, "spinEffectNode", undefined), __decorate([V(cc.SpriteFrame)], v.prototype, "disabledBlurSpriteFrame", undefined), __decorate([V(cc.SpriteFrame)], v.prototype, "normalArrowSpriteFrame", undefined), __decorate([V(cc.SpriteFrame)], v.prototype, "blurArrowSpriteFrame", undefined), __decorate([V(cc.SpriteFrame)], v.prototype, "disabledArrowSpriteFrame", undefined), __decorate([m.automationDec(b)], v.prototype, "_initSpinButtonNodes", null), __decorate([m.automationDec(U)], v.prototype, "_setSpinButtonInteractive", null), __decorate([H], v);
             }(M.default);
-          B.default = z, cc._RF.pop();
+          exports.default = z, cc._RF.pop();
         }
       }
     }, IX],
-    'PageControlButton': [function (j, O, y) {
+    'PageControlButton': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "49dd983G1VDGoSnw7stgTlI", "PageControlButton")) {
         {
           var B = {};
           B.value = true;
-          Object.defineProperty(y, "__esModule", B);
-          var x = j("Button"),
+          Object.defineProperty(exports, "__esModule", B);
+          var x = require("Button"),
             C = cc._decorator,
             H = C.ccclass,
             r = C.property,
@@ -9604,19 +9604,19 @@
                 }
               }, __decorate([r(cc.Sprite)], q.prototype, "sprite", undefined), __decorate([r(cc.SpriteFrame)], q.prototype, "selectImg", undefined), __decorate([r(cc.SpriteFrame)], q.prototype, "normalImg", undefined), __decorate([r(cc.Color)], q.prototype, "selectTintColor", undefined), __decorate([r(cc.Color)], q.prototype, "normalTintColor", undefined), __decorate([r(cc.Integer)], q.prototype, "index", undefined), __decorate([H], q);
             }(x.default);
-          y.default = V, cc._RF.pop();
+          exports.default = V, cc._RF.pop();
         }
       }
     }, Ia],
-    'PageControl': [function (j, O, y) {
+    'PageControl': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "db0df9/6UZNW6sskb9QIFSg", "PageControl")) {
         {
           var B = {};
           B.value = true;
-          Object.defineProperty(y, "__esModule", B);
-          var x = j("PageControlButton"),
+          Object.defineProperty(exports, "__esModule", B);
+          var x = require("PageControlButton"),
             C = cc._decorator,
             H = C.ccclass,
             r = C.property,
@@ -9657,21 +9657,21 @@
                 return !(m && m.enableChangePage && !m.enableChangePage());
               }, __decorate([r(cc.Prefab)], q.prototype, "buttonPrefab", undefined), __decorate([H], q);
             }(cc.Component);
-          y.default = V, cc._RF.pop();
+          exports.default = V, cc._RF.pop();
         }
       }
     }, In],
-    'PaySelectController': [function (j, O, y) {
+    'PaySelectController': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "d84c2j6GplDordOGXSko/23", "PaySelectController")) {
         {
           var B = {};
           B.value = true;
-          Object.defineProperty(y, "__esModule", B);
+          Object.defineProperty(exports, "__esModule", B);
           var x,
-            C = j("PaySelect"),
-            H = j("SlotProperties"),
+            C = require("PaySelect"),
+            H = require("SlotProperties"),
             V = cc._decorator,
             M = V.ccclass,
             q = V.property;
@@ -9726,17 +9726,17 @@
               }, __decorate([q([C.default])], W.prototype, "paySelectList", undefined), __decorate([q(cc.Node)], W.prototype, "paySelectHolder", undefined), __decorate([M], W);
             }
           }(cc.Component);
-          y.default = m, cc._RF.pop();
+          exports.default = m, cc._RF.pop();
         }
       }
     }, IE],
-    'PaySelect': [function (j, O, y) {
+    'PaySelect': [function (j, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "13c91j1YBNNraBMILpxtarV", "PaySelect")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B);
+        Object.defineProperty(exports, "__esModule", B);
         var x = cc._decorator,
           C = x.ccclass,
           H = x.property,
@@ -9777,17 +9777,17 @@
               }
             }, __decorate([H(cc.Animation)], M.prototype, "animation", undefined), __decorate([H(cc.Animation)], M.prototype, "symbolAnimation", undefined), __decorate([H(cc.Node)], M.prototype, "glowNode", undefined), __decorate([H(cc.Sprite)], M.prototype, "symbolSprite", undefined), __decorate([H(cc.Node)], M.prototype, "payLineLeft", undefined), __decorate([H(cc.Node)], M.prototype, "payLineRight", undefined), __decorate([C], M);
           }(cc.Component);
-        y.default = r, cc._RF.pop();
+        exports.default = r, cc._RF.pop();
       }
     }, {}],
-    'PayTableController': [function (O, y, B) {
+    'PayTableController': [function (require, y, exports) {
       'use strict';
 
       if (!cc._RF.push(y, "b37daKpKgNLXravbBivYGwk", "PayTableController")) {
         var x = {};
         x.value = true;
-        Object.defineProperty(B, "__esModule", x), B.PAYTABLE_ITEM_INDEXES = undefined;
-        var C = O("Utils"),
+        Object.defineProperty(exports, "__esModule", x), exports.PAYTABLE_ITEM_INDEXES = undefined;
+        var C = require("Utils"),
           H = cc._decorator,
           r = H.ccclass,
           V = H.property;
@@ -9800,7 +9800,7 @@
         M.BAR_2 = 5;
         M.BAR_1 = 6;
         M.ANY = 7;
-        B.PAYTABLE_ITEM_INDEXES = cc.Enum(M);
+        exports.PAYTABLE_ITEM_INDEXES = cc.Enum(M);
         var q = function (m) {
           function D() {
             var W = null !== m && m.apply(this, arguments) || this;
@@ -9878,17 +9878,17 @@
             return this.node.destroy(), m.prototype.destroy.call(this);
           }, __decorate([V(cc.Sprite)], D.prototype, "anyNormalSprite", undefined), __decorate([V(cc.Sprite)], D.prototype, "wildText", undefined), __decorate([V(cc.Node)], D.prototype, "wildSymbolNode", undefined), __decorate([V(cc.Node)], D.prototype, "containerSymbolNode", undefined), __decorate([V(cc.Node)], D.prototype, "numberHolderNode", undefined), __decorate([V(cc.Node)], D.prototype, "glowNode", undefined), __decorate([r], D);
         }(cc.Component);
-        B.default = q, cc._RF.pop();
+        exports.default = q, cc._RF.pop();
       }
     }, IF],
-    'PaytableContainerController': [function (j, O, y) {
+    'PaytableContainerController': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "ed505sc27RN0ZC3TgW5G4qw", "PaytableContainerController")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B);
-        var x = j("PayTableController"),
+        Object.defineProperty(exports, "__esModule", B);
+        var x = require("PayTableController"),
           C = cc._decorator,
           H = C.ccclass,
           V = C.property,
@@ -9924,17 +9924,17 @@
             return this.node.destroy(), m.prototype.destroy.call(this);
           }, __decorate([V(cc.Prefab)], D.prototype, "symbolItem", undefined), __decorate([V(cc.Node)], D.prototype, "anySymbolItem", undefined), __decorate([V(cc.SpriteFrame)], D.prototype, "symbolSprite", undefined), __decorate([H], D);
         }(cc.Component);
-        y.default = q, cc._RF.pop();
+        exports.default = q, cc._RF.pop();
       }
     }, IN],
-    'PaytableGlowController': [function (j, O, y) {
+    'PaytableGlowController': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "bfe777kB7dHhZKNV00N7iKw", "PaytableGlowController")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B);
-        var x = j("PayTableController"),
+        Object.defineProperty(exports, "__esModule", B);
+        var x = require("PayTableController"),
           C = cc._decorator,
           H = C.ccclass,
           V = C.property,
@@ -9976,17 +9976,17 @@
             }, __decorate([V(cc.Node)], D.prototype, "glowNode", undefined), __decorate([H], D);
           }
         }(cc.Component);
-        y.default = q, cc._RF.pop();
+        exports.default = q, cc._RF.pop();
       }
     }, IZ],
-    'PaytableNumberHolderController': [function (j, O, y) {
+    'PaytableNumberHolderController': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "dc803gUPgdGMYX34ysSghk/", "PaytableNumberHolderController")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B);
-        var x = j("PayTableController"),
+        Object.defineProperty(exports, "__esModule", B);
+        var x = require("PayTableController"),
           C = cc._decorator,
           H = C.ccclass,
           V = C.property,
@@ -10070,16 +10070,16 @@
             }, __decorate([V(cc.Prefab)], W.prototype, "numberItem", undefined), __decorate([V(cc.Prefab)], W.prototype, "numberHolder", undefined), __decorate([V(cc.SpriteFrame)], W.prototype, "numberSpriteZero", undefined), __decorate([V(cc.SpriteFrame)], W.prototype, "numberSpriteOne", undefined), __decorate([V(cc.SpriteFrame)], W.prototype, "numberSpriteTwo", undefined), __decorate([V(cc.SpriteFrame)], W.prototype, "numberSpriteThree", undefined), __decorate([V(cc.SpriteFrame)], W.prototype, "numberSpriteFive", undefined), __decorate([V(cc.SpriteFrame)], W.prototype, "numberSpriteEight", undefined), __decorate([H], W);
           }
         }(cc.Component);
-        y.default = q, cc._RF.pop();
+        exports.default = q, cc._RF.pop();
       }
     }, Ip],
-    'PaytableSymbolController': [function (j, O, y) {
+    'PaytableSymbolController': [function (j, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "7ac8cKQbhVEjpzhJ0UPPFHw", "PaytableSymbolController")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B);
+        Object.defineProperty(exports, "__esModule", B);
         var x = cc._decorator,
           C = x.ccclass,
           H = x.property,
@@ -10102,19 +10102,19 @@
               return this.symbolNode.stopAllActions(), this.node.destroy(), V.prototype.destroy.call(this);
             }, __decorate([H(cc.Sprite)], M.prototype, "symbol01", undefined), __decorate([H(cc.Sprite)], M.prototype, "symbol02", undefined), __decorate([H(cc.Sprite)], M.prototype, "symbol03", undefined), __decorate([H(cc.Node)], M.prototype, "symbolNode", undefined), __decorate([C], M);
           }(cc.Component);
-        y.default = r, cc._RF.pop();
+        exports.default = r, cc._RF.pop();
       }
     }, {}],
-    'PaytableWildEffectController': [function (j, O, y) {
+    'PaytableWildEffectController': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "8c65aHRidRK5a2rYkv5vM5p", "PaytableWildEffectController")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B);
+        Object.defineProperty(exports, "__esModule", B);
         var x,
           C,
-          H = j("SlotProperties"),
+          H = require("SlotProperties"),
           V = cc._decorator,
           M = V.ccclass,
           q = V.property;
@@ -10240,19 +10240,19 @@
             }, __decorate([q(cc.Node)], W.prototype, "wildHolderNode", undefined), __decorate([q(cc.Node)], W.prototype, "normalSymbolNode", undefined), __decorate([q(cc.Node)], W.prototype, "normalSymbolNode02", undefined), __decorate([q(cc.Node)], W.prototype, "textNode", undefined), __decorate([q(cc.Sprite)], W.prototype, "currentMultiplySymbol", undefined), __decorate([q(cc.Sprite)], W.prototype, "currentMultiplySymbol02", undefined), __decorate([q(cc.SpriteFrame)], W.prototype, "wildMultiplyOne", undefined), __decorate([q(cc.SpriteFrame)], W.prototype, "wildMultiplyTwo", undefined), __decorate([q(cc.SpriteFrame)], W.prototype, "wildMultiplyFive", undefined), __decorate([q(cc.SpriteFrame)], W.prototype, "wildMultiplyTen", undefined), __decorate([q(cc.Node)], W.prototype, "wildGlowNode", undefined), __decorate([M], W);
           }
         }(cc.Component);
-        y.default = m, cc._RF.pop();
+        exports.default = m, cc._RF.pop();
       }
     }, Ig],
-    'PiggyController': [function (j, O, y) {
+    'PiggyController': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "1fe875rK4ZNGb1Yuop0XJGn", "PiggyController")) {
         {
           var B = {};
           B.value = true;
-          Object.defineProperty(y, "__esModule", B);
+          Object.defineProperty(exports, "__esModule", B);
           var x,
-            C = j("AudioManager"),
+            C = require("AudioManager"),
             H = cc._decorator,
             V = H.ccclass,
             M = H.property;
@@ -10389,39 +10389,39 @@
               }
             }, __decorate([M(sp.Skeleton)], D.prototype, "piggySpine", undefined), __decorate([M(cc.Animation)], D.prototype, "piggyAnim", undefined), __decorate([M(cc.Animation)], D.prototype, "piggyWildReactFxAnim", undefined), __decorate([M(cc.Animation)], D.prototype, "flareAnimation", undefined), __decorate([M(cc.Sprite)], D.prototype, "piggySprite", undefined), __decorate([V], D);
           }(cc.Component);
-          y.default = q, cc._RF.pop();
+          exports.default = q, cc._RF.pop();
         }
       }
     }, If],
-    'PiggyGoldTweaksConfig': [function (l, j, O) {
+    'PiggyGoldTweaksConfig': [function (require, j, exports) {
       'use strict';
 
       if (!cc._RF.push(j, "cc8b8l8piVLz5BI0oHKAZXM", "PiggyGoldTweaksConfig")) {
-        O.__esModule = true, O.multiplierValue = O.default = undefined;
+        exports.__esModule = true, exports.multiplierValue = exports.default = undefined;
         var y,
-          B = (y = l("TweaksConfig")) && y.__esModule ? y : {
+          B = (y = require("TweaksConfig")) && y.__esModule ? y : {
             'default': y
           },
-          x = l("CreatorTweaks"),
-          C = l("TweaksData"),
-          H = void l("SlotProperties");
-        O.multiplierValue = undefined;
+          x = require("CreatorTweaks"),
+          C = require("TweaksData"),
+          H = void require("SlotProperties");
+        exports.multiplierValue = undefined;
         var V = cc.Class({
           'extends': B.default,
           'onLoad': function () {
             this._super(), (0, x.bind)(C.configStore, "multiplierValue", "Test", "Test Modes", "Multiplier (custom reel only)", "RANDOM", undefined), (0, x.bind)(C.configStore, "customReelData", "Test", "Test Modes", "Custom Reel Data", ''), (0, x.bind)(C.configStore, "dummyTestSymbol", "Test", "Test Modes", "Symbol Id Reference", "[Symbol type] - [id]", H), (0, x.bind)(C.configStore, "forceWin", "Test", "Win", "Force Win", false), (0, x.bind)(C.configStore, "forceWinValue", "Test", "Win", "Force Win Value", 3000, 1, 1000000);
           }
         });
-        O.default = V, cc._RF.pop();
+        exports.default = V, cc._RF.pop();
       }
     }, IA],
-    'PiggyParticleFeatureController': [function (j, O, y) {
+    'PiggyParticleFeatureController': [function (j, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "6a159I+dZNL8bc1T22g0YDd", "PiggyParticleFeatureController")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B);
+        Object.defineProperty(exports, "__esModule", B);
         var x = cc._decorator.ccclass,
           C = function (H) {
             function r() {
@@ -10437,17 +10437,17 @@
               this.onScrollerCallback = undefined, V && V();
             }, __decorate([x], r);
           }(cc.Component);
-        y.default = C, cc._RF.pop();
+        exports.default = C, cc._RF.pop();
       }
     }, {}],
-    'PiggyParticleFeatureManager': [function (j, O, y) {
+    'PiggyParticleFeatureManager': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "43303FCKyBLAJstGmzCcZ8w", "PiggyParticleFeatureManager")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B);
-        var x = j("PiggyParticleFeatureController"),
+        Object.defineProperty(exports, "__esModule", B);
+        var x = require("PiggyParticleFeatureController"),
           C = cc._decorator,
           H = C.ccclass,
           r = C.property,
@@ -10473,28 +10473,28 @@
               this.onScrollerPlayCallback = undefined, m && m(), this.Gl();
             }, __decorate([r(x.default)], q.prototype, "piggyParticleFeatureController", undefined), __decorate([r(cc.Animation)], q.prototype, "leftParticleAnimation", undefined), __decorate([r(cc.Animation)], q.prototype, "rightParticleAnimation", undefined), __decorate([r(cc.Animation)], q.prototype, "leftBParticleAnimation", undefined), __decorate([r(cc.Animation)], q.prototype, "rightBParticleAnimation", undefined), __decorate([r(cc.ParticleSystem)], q.prototype, "featureParticle", undefined), __decorate([H], q);
           }(cc.Component);
-        y.default = V, cc._RF.pop();
+        exports.default = V, cc._RF.pop();
       }
     }, Ii],
-    'PlayerModel': [function (l, j) {
+    'PlayerModel': [function (l, module) {
       'use strict';
 
-      if (!cc._RF.push(j, "a0229IKmbpNBb61dHEQilWX", "PlayerModel")) {
+      if (!cc._RF.push(module, "a0229IKmbpNBb61dHEQilWX", "PlayerModel")) {
         {
           var O = System.get("bvframework").PlayerModel;
-          j.exports.default = O, j.exports.__esModule = true, cc._RF.pop();
+          module.exports.default = O, module.exports.__esModule = true, cc._RF.pop();
         }
       }
     }, {}],
-    'PossibleWinScroller': [function (j, O, y) {
+    'PossibleWinScroller': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "355ddjhBg9AV61e/oO2HcmQ", "PossibleWinScroller")) {
         {
           var B = {};
           B.value = true;
-          Object.defineProperty(y, "__esModule", B);
-          var x = j("InterruptableScroller"),
+          Object.defineProperty(exports, "__esModule", B);
+          var x = require("InterruptableScroller"),
             C = cc._decorator.ccclass,
             H = function (r) {
               {
@@ -10513,39 +10513,39 @@
                 }, __decorate([C], V);
               }
             }(x.default);
-          y.default = H, cc._RF.pop();
+          exports.default = H, cc._RF.pop();
         }
       }
     }, Iu],
-    'Preference': [function (l, j) {
+    'Preference': [function (l, module) {
       'use strict';
 
-      if (!cc._RF.push(j, "f7e90cT1I9BDL45c7FgvgSo", "Preference")) {
+      if (!cc._RF.push(module, "f7e90cT1I9BDL45c7FgvgSo", "Preference")) {
         var O = System.get("common").Preference;
-        for (var y in O) j.exports[y] = O[y];
-        j.exports.__esModule = true, cc._RF.pop();
+        for (var y in O) module.exports[y] = O[y];
+        module.exports.__esModule = true, cc._RF.pop();
       }
     }, {}],
-    'Printer': [function (l, j) {
+    'Printer': [function (l, module) {
       'use strict';
 
-      if (!cc._RF.push(j, "75992e1c0JLNIAsOHARyF2L", "Printer")) {
+      if (!cc._RF.push(module, "75992e1c0JLNIAsOHARyF2L", "Printer")) {
         var O = System.get("bvframework").Printer;
-        for (var y in O) j.exports[y] = O[y];
-        j.exports.__esModule = true, cc._RF.pop();
+        for (var y in O) module.exports[y] = O[y];
+        module.exports.__esModule = true, cc._RF.pop();
       }
     }, {}],
-    'PrizeState': [function (j, O, y) {
+    'PrizeState': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "b8e16tOyU5GT4m5ZQseMAOn", "PrizeState")) {
         {
           var B = {};
           B.value = true;
-          Object.defineProperty(y, "__esModule", B), j("TweaksData");
-          var x = j("SettingMenuHelper"),
-            C = j("Utils"),
-            H = j("GameEventHandler"),
+          Object.defineProperty(exports, "__esModule", B), require("TweaksData");
+          var x = require("SettingMenuHelper"),
+            C = require("Utils"),
+            H = require("GameEventHandler"),
             r = function () {
               {
                 function V(M, q, m, D) {
@@ -10625,49 +10625,49 @@
                 }, V;
               }
             }();
-          y.default = r, cc._RF.pop();
+          exports.default = r, cc._RF.pop();
         }
       }
     }, It],
-    'Protoutils': [function (l, j) {
+    'Protoutils': [function (l, module) {
       'use strict';
 
-      if (!cc._RF.push(j, "886a5iimVFNcomqVJ9Mgx0i", "Protoutils")) {
+      if (!cc._RF.push(module, "886a5iimVFNcomqVJ9Mgx0i", "Protoutils")) {
         var O = System.get("common").Protoutils;
-        for (var y in O) j.exports[y] = O[y];
-        j.exports.__esModule = true, cc._RF.pop();
+        for (var y in O) module.exports[y] = O[y];
+        module.exports.__esModule = true, cc._RF.pop();
       }
     }, {}],
-    'QuitGameWithEvent': [function (l, j) {
+    'QuitGameWithEvent': [function (l, module) {
       'use strict';
 
-      if (!cc._RF.push(j, "810d7ZWlFFHNJtnMN8hmalR", "QuitGameWithEvent")) {
+      if (!cc._RF.push(module, "810d7ZWlFFHNJtnMN8hmalR", "QuitGameWithEvent")) {
         var O = System.get("bvframework").QuitGameWithEvent;
-        for (var y in O) j.exports[y] = O[y];
-        j.exports.__esModule = true, cc._RF.pop();
+        for (var y in O) module.exports[y] = O[y];
+        module.exports.__esModule = true, cc._RF.pop();
       }
     }, {}],
-    'QuitGame': [function (l, j) {
+    'QuitGame': [function (l, module) {
       'use strict';
 
-      if (!cc._RF.push(j, "d5fa8VRcgJD0a9wBWcZ0zoO", "QuitGame")) {
+      if (!cc._RF.push(module, "d5fa8VRcgJD0a9wBWcZ0zoO", "QuitGame")) {
         var O = System.get("bvframework").QuitGame;
-        for (var y in O) j.exports[y] = O[y];
-        j.exports.__esModule = true, cc._RF.pop();
+        for (var y in O) module.exports[y] = O[y];
+        module.exports.__esModule = true, cc._RF.pop();
       }
     }, {}],
-    'RandomShakingController': [function (j, O, y) {
+    'RandomShakingController': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "97a39/uqthGupN4Dcczm9YZ", "RandomShakingController")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B);
+        Object.defineProperty(exports, "__esModule", B);
         var x,
           C = cc._decorator,
           H = C.ccclass,
           V = C.property,
-          M = j("Utils");
+          M = require("Utils");
         (function (m) {
           {
             m[m.SHAKING = 1] = "SHAKING", m[m.NORMAL = 2] = "NORMAL";
@@ -10696,23 +10696,23 @@
             }, __decorate([V(cc.Integer)], D.prototype, "moveVariance", undefined), __decorate([V(cc.Integer)], D.prototype, "repeatTime", undefined), __decorate([H], D);
           }
         }(cc.Component);
-        y.default = q, cc._RF.pop();
+        exports.default = q, cc._RF.pop();
       }
     }, IG],
-    'RefreshWorldHandler': [function (j, O, y) {
+    'RefreshWorldHandler': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "4ef5cJw0YpAx5UIePlauVio", "RefreshWorldHandler")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B), y.RefreshWorldGameState = undefined;
+        Object.defineProperty(exports, "__esModule", B), exports.RefreshWorldGameState = undefined;
         var x,
-          C = j("RequestHandler"),
-          H = j("Utils"),
-          V = j("GenericLoadingScreenController");
+          C = require("RequestHandler"),
+          H = require("Utils"),
+          V = require("GenericLoadingScreenController");
         (function (m) {
           m[m.STANDARD = 0] = "STANDARD", m[m.PROGRESSING = 1] = "PROGRESSING";
-        })(x = y.RefreshWorldGameState || (y.RefreshWorldGameState = {}));
+        })(x = exports.RefreshWorldGameState || (exports.RefreshWorldGameState = {}));
         var M = cc._decorator.ccclass,
           q = function () {
             {
@@ -10820,31 +10820,31 @@
               }, __decorate([M], m);
             }
           }();
-        y.default = q, cc._RF.pop();
+        exports.default = q, cc._RF.pop();
       }
     }, Id],
-    'RegionUtils': [function (l, j) {
+    'RegionUtils': [function (l, module) {
       'use strict';
 
-      if (!cc._RF.push(j, "478c5ZURp1N1Ide2QVm+Hgx", "RegionUtils")) {
+      if (!cc._RF.push(module, "478c5ZURp1N1Ide2QVm+Hgx", "RegionUtils")) {
         var O = System.get("bvframework").RegionUtils;
-        for (var y in O) j.exports[y] = O[y];
-        j.exports.__esModule = true, cc._RF.pop();
+        for (var y in O) module.exports[y] = O[y];
+        module.exports.__esModule = true, cc._RF.pop();
       }
     }, {}],
-    'RequestHandler': [function (l, j) {
+    'RequestHandler': [function (l, module) {
       'use strict';
 
-      if (!cc._RF.push(j, "d74abPCXkJA5YnU3Ax3A+KB", "RequestHandler")) {
+      if (!cc._RF.push(module, "d74abPCXkJA5YnU3Ax3A+KB", "RequestHandler")) {
         var O = System.get("bvframework").RequestHandler;
-        for (var y in O) j.exports[y] = O[y];
-        j.exports.__esModule = true, cc._RF.pop();
+        for (var y in O) module.exports[y] = O[y];
+        module.exports.__esModule = true, cc._RF.pop();
       }
     }, {}],
-    'ResRC': [function (j, O) {
+    'ResRC': [function (j, module) {
       'use strict';
 
-      if (!cc._RF.push(O, "741a8m7jWlDQowhgiMh2U/V", "ResRC")) {
+      if (!cc._RF.push(module, "741a8m7jWlDQowhgiMh2U/V", "ResRC")) {
         var y = {};
         y.r0 = "releaseBundleAsset";
         y.r1 = "release";
@@ -10857,26 +10857,26 @@
           for (var V in DEBUG, H) C.hasOwnProperty(V) ? r[C[V]] = H[V] : r[V] = H[V];
           return DEBUG, r;
         }(y, System.get("common").ResRC);
-        for (var x in B) B.hasOwnProperty(x) && (O.exports[x] = B[x]);
-        O.exports.__esModule = true, cc._RF.pop();
+        for (var x in B) B.hasOwnProperty(x) && (module.exports[x] = B[x]);
+        module.exports.__esModule = true, cc._RF.pop();
       }
     }, {}],
-    'ResourceLoader': [function (j, O, y) {
+    'ResourceLoader': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "517d1jsi4lLyboQPLjM/Od/", "ResourceLoader")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B), y.LoaderType = undefined;
+        Object.defineProperty(exports, "__esModule", B), exports.LoaderType = undefined;
         var x,
-          C = j("RetryHandler"),
-          H = j("ResRC"),
-          r = j("ResourceQualifierHelper");
+          C = require("RetryHandler"),
+          H = require("ResRC"),
+          r = require("ResourceQualifierHelper");
         (function (M) {
           {
             M[M.CUSTOM = -1] = "CUSTOM";
           }
-        })(x = y.LoaderType || (y.LoaderType = {}));
+        })(x = exports.LoaderType || (exports.LoaderType = {}));
         var V = function () {
           function M() {
             this.zl = new C.default();
@@ -10991,26 +10991,26 @@
             }
           }, M;
         }();
-        y.default = V, cc._RF.pop();
+        exports.default = V, cc._RF.pop();
       }
     }, IJ],
-    'ResourceQualifierHelper': [function (l, j) {
+    'ResourceQualifierHelper': [function (l, module) {
       'use strict';
 
-      if (!cc._RF.push(j, "95cabP+u+lNbIwBxruULrww", "ResourceQualifierHelper")) {
+      if (!cc._RF.push(module, "95cabP+u+lNbIwBxruULrww", "ResourceQualifierHelper")) {
         var O = System.get("bvframework").ResourceQualifierHelper;
-        for (var y in O) j.exports[y] = O[y];
-        j.exports.__esModule = true, cc._RF.pop();
+        for (var y in O) module.exports[y] = O[y];
+        module.exports.__esModule = true, cc._RF.pop();
       }
     }, {}],
-    'ResponsiveHandler': [function (j, O, y) {
+    'ResponsiveHandler': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "01f6djrQWNE6qfr49hbxdjd", "ResponsiveHandler")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B);
-        var x = j("CanvasResizeBroadcaster"),
+        Object.defineProperty(exports, "__esModule", B);
+        var x = require("CanvasResizeBroadcaster"),
           C = cc._decorator,
           H = C.ccclass,
           r = C.property,
@@ -11029,21 +11029,21 @@
               });
             }, __decorate([r([cc.Widget])], q.prototype, "fullScreenWidgets", undefined), __decorate([r(cc.Node)], q.prototype, "edgeMarker", undefined), __decorate([H], q);
           }(cc.Component);
-        y.default = V, cc._RF.pop();
+        exports.default = V, cc._RF.pop();
       }
     }, IS],
-    'ResultState': [function (j, O, y) {
+    'ResultState': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "08d5bAN5GxAf5RE9cTgDCu5", "ResultState")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B);
-        var x = j("SlotStateMachine"),
-          C = j("SlotAnalyticsHelper"),
-          H = j("SlotAnalyticsEnum"),
-          V = j("Utils"),
-          M = j("SpinConfigHandler"),
+        Object.defineProperty(exports, "__esModule", B);
+        var x = require("SlotStateMachine"),
+          C = require("SlotAnalyticsHelper"),
+          H = require("SlotAnalyticsEnum"),
+          V = require("Utils"),
+          M = require("SpinConfigHandler"),
           q = function () {
             function m(D, W, k, z) {
               this.name = "Result State", this.process = H.SpinStateProcess.REEL_SPINNING, this.dataSource = undefined, this.generalControllers = undefined, this.finalCallback = undefined, this.hasFeature = undefined, this.Tl = undefined, this.dataSource = D, this.generalControllers = W.generalControllers, this.finalCallback = k, z && (this.Tl = z, z.triggerFastStop = this.handleSlotRegionFastStop.bind(this));
@@ -11115,24 +11115,24 @@
               }
             }, m.prototype.fastStopTriggeredWhileSpinning = function () {}, m.prototype.triggerFastStopWhileStopping = function () {}, m;
           }();
-        y.default = q, cc._RF.pop();
+        exports.default = q, cc._RF.pop();
       }
     }, IK],
-    'RetryHandler': [function (l, j) {
+    'RetryHandler': [function (l, module) {
       'use strict';
 
-      if (!cc._RF.push(j, "e77ca51GO5Az7liIm6SBn3P", "RetryHandler")) {
+      if (!cc._RF.push(module, "e77ca51GO5Az7liIm6SBn3P", "RetryHandler")) {
         var O = System.get("bvframework").RetryHandler;
-        j.exports.default = O, j.exports.__esModule = true, cc._RF.pop();
+        module.exports.default = O, module.exports.__esModule = true, cc._RF.pop();
       }
     }, {}],
-    'RtConfig': [function (j, O, y) {
+    'RtConfig': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "2a134wfdAlPtpk+IjZmrypn", "RtConfig")) {
-        y.__esModule = true, y.cs_Config = undefined;
-        var B = j("LaunchConfig");
-        y.cs_Launch = B.cs_Launch;
+        exports.__esModule = true, exports.cs_Config = undefined;
+        var B = require("LaunchConfig");
+        exports.cs_Launch = B.cs_Launch;
         var x = {};
         x.gameId = 39;
         x.globalDomain = "com.pgsoft";
@@ -11141,17 +11141,17 @@
         x.apiDomain = window.ApiDomain;
         x.version = "6.1.0.0";
         var C = Object.freeze(x);
-        y.cs_Config = C, cc._RF.pop();
+        exports.cs_Config = C, cc._RF.pop();
       }
     }, s0],
-    'ScatterStopScroller': [function (O, y, B) {
+    'ScatterStopScroller': [function (require, y, exports) {
       'use strict';
 
       if (!cc._RF.push(y, "8240bXvW/lM2YNITdUUwGEO", "ScatterStopScroller")) {
         {
           var x = {};
           x.value = true;
-          Object.defineProperty(B, "__esModule", x);
+          Object.defineProperty(exports, "__esModule", x);
           var C = {};
           C.scrollSpeed = 5040;
           C.scatterScrollSpeed = 5040;
@@ -11161,7 +11161,7 @@
           C.bounceDuration = 0.15;
           C.bounceFactor = 1.84;
           C.columnIndex = undefined;
-          var H = O("AbstractScroller"),
+          var H = require("AbstractScroller"),
             M = cc._decorator,
             q = M.ccclass,
             m = M.mixins,
@@ -11208,17 +11208,17 @@
                 }, this)), this.target.y = this.os, this.stop();
               }, __decorate([q, m(cc.EventTarget)], k);
             }(H.default);
-          B.default = D, cc._RF.pop();
+          exports.default = D, cc._RF.pop();
         }
       }
     }, s1],
-    'ScrollViewEx': [function (j, O, y) {
+    'ScrollViewEx': [function (j, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "4403eAPMfNGO4d5KWMoVrU7", "ScrollViewEx")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B);
+        Object.defineProperty(exports, "__esModule", B);
         var x = cc._decorator,
           C = x.ccclass,
           H = x.property,
@@ -11308,18 +11308,18 @@
               this.clickTarget = undefined, this.timer = undefined;
             }, __decorate([H(cc.Integer)], M.prototype, "speed", undefined), __decorate([C], M);
           }(cc.ScrollView);
-        y.default = r, cc._RF.pop();
+        exports.default = r, cc._RF.pop();
       }
     }, {}],
-    'ScrollerManagerController': [function (j, O, y) {
+    'ScrollerManagerController': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "7b255Vuz2xHwINgRNvOg0Mg", "ScrollerManagerController")) {
         {
           var B = {};
           B.value = true;
-          Object.defineProperty(y, "__esModule", B);
-          var x = j("ScrollerSpineController"),
+          Object.defineProperty(exports, "__esModule", B);
+          var x = require("ScrollerSpineController"),
             C = cc._decorator,
             H = C.ccclass,
             r = C.property,
@@ -11340,18 +11340,18 @@
                 }
               }, __decorate([r(x.default)], q.prototype, "leftscrollerSpineController", undefined), __decorate([r(x.default)], q.prototype, "rightscrollerSpineController", undefined), __decorate([H], q);
             }(cc.Component);
-          y.default = V, cc._RF.pop();
+          exports.default = V, cc._RF.pop();
         }
       }
     }, s2],
-    'ScrollerSpineController': [function (j, O, y) {
+    'ScrollerSpineController': [function (j, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "86e11YzdrZBA4AC+Stl64c5", "ScrollerSpineController")) {
         {
           var B = {};
           B.value = true;
-          Object.defineProperty(y, "__esModule", B);
+          Object.defineProperty(exports, "__esModule", B);
           var x,
             C = cc._decorator,
             H = C.ccclass,
@@ -11406,45 +11406,45 @@
               }, __decorate([r(sp.Skeleton)], q.prototype, "scrollerSpine", undefined), __decorate([H], q);
             }
           }(cc.Component);
-          y.default = V, cc._RF.pop();
+          exports.default = V, cc._RF.pop();
         }
       }
     }, {}],
-    'Serializer': [function (l, j) {
+    'Serializer': [function (l, module) {
       'use strict';
 
-      if (!cc._RF.push(j, "0e825vJtv1K6qUCtfPjN7c9", "Serializer")) {
+      if (!cc._RF.push(module, "0e825vJtv1K6qUCtfPjN7c9", "Serializer")) {
         {
           var O = System.get("common").Serializer;
-          j.exports.Serializer = O, j.exports.__esModule = true, cc._RF.pop();
+          module.exports.Serializer = O, module.exports.__esModule = true, cc._RF.pop();
         }
       }
     }, {}],
-    'SettingInfoFooterController': [function (O, y, B) {
+    'SettingInfoFooterController': [function (require, y, exports) {
       'use strict';
 
       if (!cc._RF.push(y, "06e65rpYzVNHbDR0e2vljl/", "SettingInfoFooterController")) {
         var x = {};
         x.value = true;
-        Object.defineProperty(B, "__esModule", x), B.SettingInfoFooterController = B.ICON_STATE = B.ICON_FOOTER_TYPE = B.WALLET_FOOTER_TYPE = undefined;
+        Object.defineProperty(exports, "__esModule", x), exports.SettingInfoFooterController = exports.ICON_STATE = exports.ICON_FOOTER_TYPE = exports.WALLET_FOOTER_TYPE = undefined;
         var C,
           H,
-          V = O("Utils"),
-          M = O("UIAppearanceHelper"),
-          q = O("BVFramework"),
-          m = O("Preference").getPreference("setting_menu"),
+          V = require("Utils"),
+          M = require("UIAppearanceHelper"),
+          q = require("BVFramework"),
+          m = require("Preference").getPreference("setting_menu"),
           D = cc._decorator,
           W = D.ccclass,
           k = D.property;
         (function (L) {
           L[L.CASH = 1] = "CASH", L[L.FREE_GAME = 2] = "FREE_GAME", L[L.BONUS = 3] = "BONUS", L[L.POINT = 4] = "POINT", L[L.CASH_BONUS = 5] = "CASH_BONUS";
-        })(C = B.WALLET_FOOTER_TYPE || (B.WALLET_FOOTER_TYPE = {})), function (L) {
+        })(C = exports.WALLET_FOOTER_TYPE || (exports.WALLET_FOOTER_TYPE = {})), function (L) {
           {
             L[L.SPIN = 2] = "SPIN", L[L.ROLL_OVER = 3] = "ROLL_OVER";
           }
-        }(B.ICON_FOOTER_TYPE || (B.ICON_FOOTER_TYPE = {})), function (L) {
+        }(exports.ICON_FOOTER_TYPE || (exports.ICON_FOOTER_TYPE = {})), function (L) {
           L[L.DEFAULT = 0] = "DEFAULT", L[L.SOUND_ON = 1] = "SOUND_ON", L[L.SOUND_OFF = 2] = "SOUND_OFF", L[L.OFFER_SOUND_ON = 3] = "OFFER_SOUND_ON", L[L.OFFER_SOUND_OFF = 4] = "OFFER_SOUND_OFF";
-        }(H = B.ICON_STATE || (B.ICON_STATE = {}));
+        }(H = exports.ICON_STATE || (exports.ICON_STATE = {}));
         var z = function (L) {
           {
             function v() {
@@ -11930,10 +11930,10 @@
             }, __decorate([k(cc.Node)], v.prototype, "background", undefined), __decorate([k(cc.Node)], v.prototype, "balanceNode", undefined), __decorate([k(cc.Node)], v.prototype, "balanceValueHolder", undefined), __decorate([k(cc.Node)], v.prototype, "balanceValueNode", undefined), __decorate([k(cc.Node)], v.prototype, "leftSlotNode", undefined), __decorate([k(cc.Node)], v.prototype, "leftSlotNodeBg", undefined), __decorate([k(cc.Node)], v.prototype, "leftSlotNodeHover", undefined), __decorate([k(cc.Node)], v.prototype, "midSlotNode", undefined), __decorate([k(cc.Node)], v.prototype, "midSlotNodeBg", undefined), __decorate([k(cc.Node)], v.prototype, "midSlotNodeHover", undefined), __decorate([k(cc.Node)], v.prototype, "rightSlotNode", undefined), __decorate([k(cc.Node)], v.prototype, "rightSlotNodeBg", undefined), __decorate([k(cc.Node)], v.prototype, "rightSlotNodeHover", undefined), __decorate([k(cc.Node)], v.prototype, "winValueNode", undefined), __decorate([k(cc.Node)], v.prototype, "winHolderNode", undefined), __decorate([k(cc.Sprite)], v.prototype, "winCashIconNode", undefined), __decorate([k(cc.Mask)], v.prototype, "winCashIconMask", undefined), __decorate([k(cc.Button)], v.prototype, "winButton", undefined), __decorate([k(cc.Node)], v.prototype, "midSlotElementHolder", undefined), __decorate([k(cc.Node)], v.prototype, "pgIconHolder", undefined), __decorate([k(cc.Node)], v.prototype, "pgIconBgLeft", undefined), __decorate([k(cc.Node)], v.prototype, "pgIconBgRight", undefined), __decorate([k(cc.Node)], v.prototype, "pgIconBgMid", undefined), __decorate([k(cc.Node)], v.prototype, "pgIcon", undefined), __decorate([k(cc.SpriteFrame)], v.prototype, "pgIconOnSpriteFrame", undefined), __decorate([k(cc.SpriteFrame)], v.prototype, "pgIconOffSpriteFrame", undefined), __decorate([k(cc.Node)], v.prototype, "freeGamesNode", undefined), __decorate([k(cc.Sprite)], v.prototype, "specialIcon", undefined), __decorate([k(cc.Label)], v.prototype, "freeSpinValue", undefined), __decorate([k(cc.Button)], v.prototype, "walletButton", undefined), __decorate([k(cc.Node)], v.prototype, "walletButtonSensor", undefined), __decorate([k([cc.Node])], v.prototype, "walletNavigateIcon", undefined), __decorate([k(cc.Node)], v.prototype, "walletNotificationIcon", undefined), __decorate([k(cc.Node)], v.prototype, "menuIcon", undefined), __decorate([k([cc.Node])], v.prototype, "muteIcon", undefined), __decorate([k(cc.Node)], v.prototype, "betAmountHolder", undefined), __decorate([k(cc.Label)], v.prototype, "betAmountLabel", undefined), __decorate([k(cc.Button)], v.prototype, "betOptionsButton", undefined), __decorate([k(cc.Node)], v.prototype, "betOptionsIcon", undefined), __decorate([k([cc.Node])], v.prototype, "walletIconNode", undefined), __decorate([k([cc.Sprite])], v.prototype, "walletIconSprite", undefined), __decorate([k(cc.SpriteFrame)], v.prototype, "userProfitMenuOnAudioSpriteFrame", undefined), __decorate([k(cc.SpriteFrame)], v.prototype, "userProfitMenuOffAudioSpriteFrame", undefined), __decorate([k(cc.SpriteFrame)], v.prototype, "userProfitSingleIconOnAudioSpriteFrame", undefined), __decorate([k(cc.SpriteFrame)], v.prototype, "userProfitSingleIconOffAudioSpriteFrame", undefined), __decorate([k(cc.SpriteFrame)], v.prototype, "userProfitMenuOnAudioDisableSpriteFrame", undefined), __decorate([k(cc.SpriteFrame)], v.prototype, "userProfitMenuOffAudioDisableSpriteFrame", undefined), __decorate([k(cc.SpriteFrame)], v.prototype, "userProfitSingleIconOnAudioDisableSpriteFrame", undefined), __decorate([k(cc.SpriteFrame)], v.prototype, "userProfitSingleIconOffAudioDisableSpriteFrame", undefined), __decorate([k([cc.SpriteFrame])], v.prototype, "freeGameSpriteFrame", undefined), __decorate([k([cc.SpriteFrame])], v.prototype, "freeGameDisableSpriteFrame", undefined), __decorate([k([cc.SpriteFrame])], v.prototype, "bonusGameSpriteFrame", undefined), __decorate([k([cc.SpriteFrame])], v.prototype, "bonusGameDisableSpriteFrame", undefined), __decorate([k([cc.SpriteFrame])], v.prototype, "rewardFooterTypeSFList", undefined), __decorate([k(cc.Node)], v.prototype, "maxBetButtonHolder", undefined), __decorate([k([cc.Layout])], v.prototype, "languageSensitiveLayoutList", undefined), __decorate([k(cc.Node)], v.prototype, "rightSpecialInfoHolderNode", undefined), __decorate([k(cc.Node)], v.prototype, "leftGradientBg", undefined), __decorate([k(cc.Node)], v.prototype, "leftSpecialInfoHolderNode", undefined), __decorate([k(cc.RichText)], v.prototype, "leftSpecialInfoLabel", undefined), __decorate([k(cc.Layout)], v.prototype, "leftSpecialInfoLayout", undefined), __decorate([k(cc.Node)], v.prototype, "leftSpecialInfoTickHodler", undefined), __decorate([k(cc.Node)], v.prototype, "leftSpecialInfoTickCircleOutline", undefined), __decorate([k(cc.Animation)], v.prototype, "leftSpecialInfoTickAnimation", undefined), __decorate([k(cc.Node)], v.prototype, "missonBarNode", undefined), __decorate([k(cc.Node)], v.prototype, "bonusWalletPrizeNode", undefined), __decorate([k(cc.Node)], v.prototype, "bonusWalletIcon", undefined), __decorate([k(cc.Node)], v.prototype, "rolloverPrizeValueNode", undefined), __decorate([k(cc.Node)], v.prototype, "rolloverOnGoingValueNode", undefined), __decorate([k(cc.Label)], v.prototype, "totalRolloverValueLabel", undefined), __decorate([k(cc.Mask)], v.prototype, "progressBarCircleMask", undefined), __decorate([k(cc.Node)], v.prototype, "progressBarNode", undefined), __decorate([k(cc.Node)], v.prototype, "progressBarShine", undefined), __decorate([k(cc.Node)], v.prototype, "rightSpecialInfoTickHodler", undefined), __decorate([k(cc.Node)], v.prototype, "rightSpecialInfoTickCircleOutline", undefined), __decorate([k(cc.Animation)], v.prototype, "rightSpecialInfoTickAnimation", undefined), __decorate([k(cc.Node)], v.prototype, "rightSpecialInfoTextHolder", undefined), __decorate([W("SettingInfoFooterController")], v);
           }
         }(cc.Component);
-        B.SettingInfoFooterController = z, cc._RF.pop();
+        exports.SettingInfoFooterController = z, cc._RF.pop();
       }
     }, s3],
-    'SettingMenuAudioConstant': [function (C, H, r) {
+    'SettingMenuAudioConstant': [function (C, H, exports) {
       'use strict';
 
       var V = {};
@@ -11961,16 +11961,16 @@
       W.walletCountingAbove = D;
       W.__duration = 4.03;
       W.__bitrate = "96kbps";
-      cc._RF.push(H, "a27ecjviSxF+Lkka+42YOls", "SettingMenuAudioConstant") || (Object.defineProperty(r, "__esModule", V), r.SETTING_MENU_SFX = undefined, r.SETTING_MENU_SFX = W, cc._RF.pop());
+      cc._RF.push(H, "a27ecjviSxF+Lkka+42YOls", "SettingMenuAudioConstant") || (Object.defineProperty(exports, "__esModule", V), exports.SETTING_MENU_SFX = undefined, exports.SETTING_MENU_SFX = W, cc._RF.pop());
     }, {}],
-    'SettingMenuButtonHelper': [function (O, y, B) {
+    'SettingMenuButtonHelper': [function (O, y, exports) {
       'use strict';
 
       if (!cc._RF.push(y, "1ddf5VqGQ9OiqajxiLxeBVw", "SettingMenuButtonHelper")) {
         {
           var x = {};
           x.value = true;
-          Object.defineProperty(B, "__esModule", x);
+          Object.defineProperty(exports, "__esModule", x);
           var C = {};
           C['2'] = "spinOptions";
           C['3'] = "betOptions";
@@ -12045,21 +12045,21 @@
                 'configurable': true
               }), __decorate([H("SettingMenuButtonHelper")], M);
             }();
-          B.default = V, cc._RF.pop();
+          exports.default = V, cc._RF.pop();
         }
       }
     }, {}],
-    'SettingMenuController': [function (j, O, y) {
+    'SettingMenuController': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "fba916JMWpJiL2n5fnfp4nN", "SettingMenuController")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B), y.SettingMenuController = undefined;
-        var x = j("CanvasResizeBroadcaster"),
-          C = j("HitPassThrough"),
-          H = j("Utils"),
-          V = j("BVFramework"),
+        Object.defineProperty(exports, "__esModule", B), exports.SettingMenuController = undefined;
+        var x = require("CanvasResizeBroadcaster"),
+          C = require("HitPassThrough"),
+          H = require("Utils"),
+          V = require("BVFramework"),
           M = cc._decorator,
           q = M.ccclass,
           m = M.property,
@@ -12291,22 +12291,22 @@
               }
             }, __decorate([m(cc.Node)], k.prototype, "blackTintBackground", undefined), __decorate([m(cc.Node)], k.prototype, "dimBackground", undefined), __decorate([m(cc.Node)], k.prototype, "subControllerHolder", undefined), __decorate([m(cc.Node)], k.prototype, "menusLayerHolder", undefined), __decorate([m(cc.Node)], k.prototype, "defaultMenuLayerNode", undefined), __decorate([m(cc.Node)], k.prototype, "subControllerBG", undefined), __decorate([m(cc.Node)], k.prototype, "settingInfoFooterFrontHolder", undefined), __decorate([m(cc.Node)], k.prototype, "settingInfoFooterMiddleBottomHolder", undefined), __decorate([m(cc.Node)], k.prototype, "settingInfoFooterBottomHolder", undefined), __decorate([m(cc.Node)], k.prototype, "walletButtonSensor", undefined), __decorate([m(C.default)], k.prototype, "hitPassThroughComponent", undefined), __decorate([m(cc.Node)], k.prototype, "settingToast", undefined), __decorate([m(cc.Node)], k.prototype, "settingToastBg", undefined), __decorate([m(cc.Label)], k.prototype, "settingToastLabel", undefined), __decorate([m(cc.Sprite)], k.prototype, "settingTurboSprite", undefined), __decorate([m(cc.SpriteFrame)], k.prototype, "settingTurboOnSprite", undefined), __decorate([m(cc.SpriteFrame)], k.prototype, "settingTurboOffSprite", undefined), __decorate([m(cc.Node)], k.prototype, "featureBuyToast", undefined), __decorate([m(cc.Node)], k.prototype, "featureBuyToastBg", undefined), __decorate([m(cc.Layout)], k.prototype, "featureBuyToastLayout", undefined), __decorate([m(cc.RichText)], k.prototype, "featureBuyToastLabel", undefined), __decorate([m(cc.Sprite)], k.prototype, "featureBuyTurboSprite", undefined), __decorate([m(cc.Node)], k.prototype, "reminderBoard", undefined), __decorate([m(cc.Label)], k.prototype, "originalBetAmountLabel", undefined), __decorate([m(cc.Label)], k.prototype, "reminderBoardLabel", undefined), __decorate([m([cc.Node])], k.prototype, "holders", undefined), __decorate([m(cc.Node)], k.prototype, "settingMenuUIBlock", undefined), __decorate([q("SettingMenuController")], k);
           }(cc.Component);
-        y.SettingMenuController = D, cc._RF.pop();
+        exports.SettingMenuController = D, cc._RF.pop();
       }
     }, s4],
-    'SettingMenuHandlers': [function (y, B, x) {
+    'SettingMenuHandlers': [function (require, B, exports) {
       'use strict';
 
       if (!cc._RF.push(B, "e4a87/dIGtMT5oq5NQEGbT5", "SettingMenuHandlers")) {
         {
           var C = {};
           C.value = true;
-          Object.defineProperty(x, "__esModule", C), x.handleSettingMenuMusicChange = x.additionalBetCalculation = x.updateDataSourceBetValue = x.getBetChangeCallback = x.updateBetChangesCallback = x.initializeSettingMenu = x.setSettingMenuButtonsInteractable = x.setupSettingMenu = undefined;
+          Object.defineProperty(exports, "__esModule", C), exports.handleSettingMenuMusicChange = exports.additionalBetCalculation = exports.updateDataSourceBetValue = exports.getBetChangeCallback = exports.updateBetChangesCallback = exports.initializeSettingMenu = exports.setSettingMenuButtonsInteractable = exports.setupSettingMenu = undefined;
           var H = {};
           H.settingMenuLibPath = "lib/setting_menu/";
-          var V = y("LaunchConfig"),
-            M = y("AnalyticsHelper");
-          x.setupSettingMenu = function (v) {
+          var V = require("LaunchConfig"),
+            M = require("AnalyticsHelper");
+          exports.setupSettingMenu = function (v) {
             var b = Object.assign({}, q, v.settingMenuDependenciesPath),
               U = v.settingMenuHelper,
               Q = v.dataSource,
@@ -12314,14 +12314,14 @@
             U.path = b.settingMenuLibPath, U.showChangeBetReminder = v.isProgressiveGame, U.manualUpdateBetFactorCallBack = W(Q, U, v.betChangeCallback), U.betModifierUpdateCallback = D(Q, U, v.betChangeCallback), U.reevaluateBetCallback = k(Q, v.reevaluateBetCallback), U.additionalBetCalculationCallback = v.additionalBetCalculation ? v.additionalBetCalculation : z, U.changeSoundVolume = L(v.toggleEffectMuted, v.toggleMusicMuted);
             var P = '1' !== V.cs_Launch.noAudio;
             U.audioConfigure = P, w && w();
-          }, x.setSettingMenuButtonsInteractable = m, x.initializeSettingMenu = function (v) {
+          }, exports.setSettingMenuButtonsInteractable = m, exports.initializeSettingMenu = function (v) {
             var b = v.settingMenuHelper,
               U = v.dataSource,
               Q = v.callback;
             b.setSettingMenuController(v.settingController), b.addSettingInfoFooter(v.settingWalletPanelController), b.setupSettingMenuButtons();
             var w = U.playerModel.balance;
             b.setBalance(w), b.updateBetValues(), m(b, U, false), Q && Q();
-          }, x.updateBetChangesCallback = D, x.getBetChangeCallback = W, x.updateDataSourceBetValue = k, x.additionalBetCalculation = z, x.handleSettingMenuMusicChange = L, cc._RF.pop();
+          }, exports.updateBetChangesCallback = D, exports.getBetChangeCallback = W, exports.updateDataSourceBetValue = k, exports.additionalBetCalculation = z, exports.handleSettingMenuMusicChange = L, cc._RF.pop();
         }
       }
       function m(v, b, U, Q, w) {
@@ -12359,41 +12359,41 @@
         };
       }
     }, s5],
-    'SettingMenuHelper': [function (O, y, B) {
+    'SettingMenuHelper': [function (require, y, exports) {
       'use strict';
 
       if (!cc._RF.push(y, "35d29M3VudMFqjm4gRoo2G6", "SettingMenuHelper")) {
         {
           var x = {};
           x.value = true;
-          Object.defineProperty(B, "__esModule", x), B.BackButtonType = B.settingMenuHelper = B.SettingMenuType = B.UIAudioIndex = B.ButtonPrefabType = undefined;
+          Object.defineProperty(exports, "__esModule", x), exports.BackButtonType = exports.settingMenuHelper = exports.SettingMenuType = exports.UIAudioIndex = exports.ButtonPrefabType = undefined;
           var C,
             H,
             V,
             M,
-            q = O("Utils"),
-            D = O("SettingMenuButtonHelper"),
-            W = O("Preference"),
-            k = O("BVFramework"),
-            z = O("SettingInfoFooterController"),
-            L = O("UIAudioHelper"),
-            U = O("GameEventHandler"),
+            q = require("Utils"),
+            D = require("SettingMenuButtonHelper"),
+            W = require("Preference"),
+            k = require("BVFramework"),
+            z = require("SettingInfoFooterController"),
+            L = require("UIAudioHelper"),
+            U = require("GameEventHandler"),
             Q = System.get("slot-menu"),
             w = cc._decorator.ccclass,
             P = W.getPreference("setting_menu");
           P.defineItem("soundOn", true), function (X) {
             X[X.SPIN_OPTIONS = 2] = "SPIN_OPTIONS", X[X.BET_OPTIONS = 3] = "BET_OPTIONS", X[X.MINUS_BET = 4] = "MINUS_BET", X[X.PLUS_BET = 5] = "PLUS_BET", X[X.WIN = 6] = "WIN", X[X.TURBO_SPIN = 7] = "TURBO_SPIN", X[X.WALLET = 8] = "WALLET", X[X.MORE_MENU = 9] = "MORE_MENU", X[X.SOUND = 10] = "SOUND";
-          }(C = B.ButtonPrefabType || (B.ButtonPrefabType = {})), function (X) {
+          }(C = exports.ButtonPrefabType || (exports.ButtonPrefabType = {})), function (X) {
             {
               X[X.BACK_OR_CLOSE = 0] = "BACK_OR_CLOSE", X[X.BUTTON_CLICK = 1] = "BUTTON_CLICK", X[X.LIST_ITEN_CLICK = 2] = "LIST_ITEN_CLICK", X[X.SLIDER_EFFECT = 3] = "SLIDER_EFFECT", X[X.WALLET_COUNTING_ABOVE = 4] = "WALLET_COUNTING_ABOVE";
             }
-          }(H = B.UIAudioIndex || (B.UIAudioIndex = {})), function (X) {
+          }(H = exports.UIAudioIndex || (exports.UIAudioIndex = {})), function (X) {
             X[X.HIDDEN = 0] = "HIDDEN", X[X.NORMAL_BACK_FUNC = 1] = "NORMAL_BACK_FUNC";
-          }(V || (V = {})), B.BackButtonType = V, function (X) {
+          }(V || (V = {})), exports.BackButtonType = V, function (X) {
             {
               X[X.NEW = 1] = "NEW";
             }
-          }(M = B.SettingMenuType || (B.SettingMenuType = {}));
+          }(M = exports.SettingMenuType || (exports.SettingMenuType = {}));
           var R = new (function (X) {
             {
               function E() {
@@ -13203,7 +13203,7 @@
               }, __decorate([shell.deprecated("getSettingInfoFooter")], E.prototype, "getSettingInfoFooter", null), __decorate([w], E);
             }
           }(cc.Object))();
-          B.settingMenuHelper = R, cc._RF.pop();
+          exports.settingMenuHelper = R, cc._RF.pop();
         }
       }
       function T(X, E) {
@@ -13213,12 +13213,12 @@
         return shell.isRTLLanguage && shell.isRTLLanguage();
       }
     }, s6],
-    'SettingSliderNum': [function (l, j, O) {
+    'SettingSliderNum': [function (require, module, exports) {
       'use strict';
 
-      if (!cc._RF.push(j, "89028I5vilAgJwUYY+0IKoT", "SettingSliderNum")) {
-        O.__esModule = true, O.default = undefined;
-        var y = l("Utils"),
+      if (!cc._RF.push(module, "89028I5vilAgJwUYY+0IKoT", "SettingSliderNum")) {
+        exports.__esModule = true, exports.default = undefined;
+        var y = require("Utils"),
           B = cc.Class({
             'extends': cc.Component,
             'properties': {
@@ -13248,15 +13248,15 @@
               x ? (0, y.setNodeColorWithOpacity)(this.numberLabel.node, this.onColor) : (0, y.setNodeColorWithOpacity)(this.numberLabel.node, this.offColor);
             }
           });
-        O.default = B, j.exports = O.default, cc._RF.pop();
+        exports.default = B, module.exports = exports.default, cc._RF.pop();
       }
     }, s7],
-    'SettingSliderSingleNum': [function (l, j, O) {
+    'SettingSliderSingleNum': [function (require, module, exports) {
       'use strict';
 
-      if (!cc._RF.push(j, "449bftyQ69GBqYbHra7PRW2", "SettingSliderSingleNum")) {
-        O.__esModule = true, O.default = undefined;
-        var y = l("Utils"),
+      if (!cc._RF.push(module, "449bftyQ69GBqYbHra7PRW2", "SettingSliderSingleNum")) {
+        exports.__esModule = true, exports.default = undefined;
+        var y = require("Utils"),
           B = cc.Class({
             'extends': cc.Component,
             'properties': {
@@ -13279,14 +13279,14 @@
               }
             }
           });
-        O.default = B, j.exports = O.default, cc._RF.pop();
+        exports.default = B, module.exports = exports.default, cc._RF.pop();
       }
     }, s8],
-    'SettingSliderSingle': [function (l, j, O) {
+    'SettingSliderSingle': [function (l, module, exports) {
       'use strict';
 
-      if (!cc._RF.push(j, "41cdfy0E9FKC7KilcTyf7iZ", "SettingSliderSingle")) {
-        O.__esModule = true, O.default = undefined;
+      if (!cc._RF.push(module, "41cdfy0E9FKC7KilcTyf7iZ", "SettingSliderSingle")) {
+        exports.__esModule = true, exports.default = undefined;
         var y = cc.Class({
           'extends': cc.Component,
           'properties': {
@@ -13397,14 +13397,14 @@
           },
           'M_': function () {}
         });
-        O.default = y, j.exports = O.default, cc._RF.pop();
+        exports.default = y, module.exports = exports.default, cc._RF.pop();
       }
     }, {}],
-    'SettingSlider': [function (l, j, O) {
+    'SettingSlider': [function (l, module, exports) {
       'use strict';
 
-      if (!cc._RF.push(j, "357638pYQ9Eibsf8KFNqaZK", "SettingSlider")) {
-        O.__esModule = true, O.default = undefined;
+      if (!cc._RF.push(module, "357638pYQ9Eibsf8KFNqaZK", "SettingSlider")) {
+        exports.__esModule = true, exports.default = undefined;
         var y = cc.Class({
           'extends': cc.Component,
           'properties': {
@@ -13489,21 +13489,21 @@
             this.setDefaultFirstSliderNum(5 * Math.floor(21 * Math.random()));
           }
         });
-        O.default = y, j.exports = O.default, cc._RF.pop();
+        exports.default = y, module.exports = exports.default, cc._RF.pop();
       }
     }, {}],
-    'SettingTurboSpinButton': [function (O, y, B) {
+    'SettingTurboSpinButton': [function (require, y, exports) {
       'use strict';
 
       if (!cc._RF.push(y, "eaed475bBBLf69c2AHexgPy", "SettingTurboSpinButton")) {
         {
           var x = {};
           x.value = true;
-          Object.defineProperty(B, "__esModule", x);
-          var C = O("GenericSettingButton"),
-            H = O("UIAppearanceHelper"),
-            V = O("Utils"),
-            M = O("TurboButtonEffect"),
+          Object.defineProperty(exports, "__esModule", x);
+          var C = require("GenericSettingButton"),
+            H = require("UIAppearanceHelper"),
+            V = require("Utils"),
+            M = require("TurboButtonEffect"),
             q = cc._decorator,
             m = q.ccclass,
             D = q.property,
@@ -13615,17 +13615,17 @@
                 return this.stopTurboLighting(), z.prototype.destroy.call(this);
               }, __decorate([D(cc.Sprite)], L.prototype, "sprite", undefined), __decorate([D(cc.Sprite)], L.prototype, "spriteEffect", undefined), __decorate([D(cc.Label)], L.prototype, "titleLabel", undefined), __decorate([D(cc.SpriteFrame)], L.prototype, "turboSpinOn", undefined), __decorate([D(cc.SpriteFrame)], L.prototype, "turboSpinOff", undefined), __decorate([D(cc.SpriteFrame)], L.prototype, "turboSpinEffectOn", undefined), __decorate([D(cc.SpriteFrame)], L.prototype, "turboSpinEffectOff", undefined), __decorate([D(cc.Animation)], L.prototype, "turboSpinEffectAnim", undefined), __decorate([D(cc.Animation)], L.prototype, "lightingEffectAnim", undefined), __decorate([D(cc.Node)], L.prototype, "spriteLightEffectNode", undefined), __decorate([D(cc.Node)], L.prototype, "spriteLightShadowEffectNode", undefined), __decorate([D(M.default)], L.prototype, "turboButtonEffect", undefined), __decorate([m], L);
             }(C.default);
-          B.default = k, cc._RF.pop();
+          exports.default = k, cc._RF.pop();
         }
       }
     }, s9],
-    'SimpleAnimationController': [function (j, O, y) {
+    'SimpleAnimationController': [function (j, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "39e88h8Nd5Cp6FXcpdProcy", "SimpleAnimationController")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B);
+        Object.defineProperty(exports, "__esModule", B);
         var x = cc._decorator,
           C = x.ccclass,
           H = x.property,
@@ -13645,16 +13645,16 @@
               return this.stop(), this.node.destroy(), V.prototype.destroy.call(this);
             }, __decorate([H(cc.Animation)], M.prototype, "animation", undefined), __decorate([C], M);
           }(cc.Component);
-        y.default = r, cc._RF.pop();
+        exports.default = r, cc._RF.pop();
       }
     }, {}],
-    'SimpleStartScroller': [function (O, y, B) {
+    'SimpleStartScroller': [function (require, y, exports) {
       'use strict';
 
       if (!cc._RF.push(y, "761fejcJ/9N9I5O3LKCHrhS", "SimpleStartScroller")) {
         var x = {};
         x.value = true;
-        Object.defineProperty(B, "__esModule", x);
+        Object.defineProperty(exports, "__esModule", x);
         var C = {};
         C.scrollSpeed = 5040;
         C.accelerateDuration = 0.15;
@@ -13663,7 +13663,7 @@
         C.bounceDistance = 60;
         C.bounceDuration = 0.15;
         C.bounceFactor = 1.84;
-        var H = O("AbstractScroller"),
+        var H = require("AbstractScroller"),
           M = cc._decorator,
           q = M.ccclass,
           m = M.mixins,
@@ -13694,16 +13694,16 @@
               }
             }, __decorate([q, m(cc.EventTarget)], k);
           }(H.default);
-        B.default = D, cc._RF.pop();
+        exports.default = D, cc._RF.pop();
       }
     }, sl],
-    'SimpleStopScroller': [function (O, y, B) {
+    'SimpleStopScroller': [function (require, y, exports) {
       'use strict';
 
       if (!cc._RF.push(y, "b767cqex8hPhYPEWfkCcZ04", "SimpleStopScroller")) {
         var x = {};
         x.value = true;
-        Object.defineProperty(B, "__esModule", x);
+        Object.defineProperty(exports, "__esModule", x);
         var C = {};
         C.scrollSpeed = 5040;
         C.decelerateSpeed = 4680;
@@ -13711,7 +13711,7 @@
         C.bounceDistance = 60;
         C.bounceDuration = 0.15;
         C.bounceFactor = 1.84;
-        var H = O("AbstractScroller"),
+        var H = require("AbstractScroller"),
           M = cc._decorator,
           q = M.ccclass,
           m = M.mixins,
@@ -13743,16 +13743,16 @@
               }, __decorate([q, m(cc.EventTarget)], k);
             }
           }(H.default);
-        B.default = D, cc._RF.pop();
+        exports.default = D, cc._RF.pop();
       }
     }, sj],
-    'SliderEx': [function (j, O, y) {
+    'SliderEx': [function (j, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "dbb33H+Xs1Dw7xtUJLC1l6D", "SliderEx")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B);
+        Object.defineProperty(exports, "__esModule", B);
         var x = cc._decorator,
           C = x.ccclass,
           H = x.property,
@@ -13789,37 +13789,37 @@
               }, __decorate([H(cc.Node)], M.prototype, "content", undefined), __decorate([C], M);
             }
           }(cc.Slider);
-        y.default = r, cc._RF.pop();
+        exports.default = r, cc._RF.pop();
       }
     }, {}],
-    'SlotAnalyticsEnum': [function (j, O, y) {
+    'SlotAnalyticsEnum': [function (j, O, exports) {
       'use strict';
 
       var B = {};
       B.value = true;
-      cc._RF.push(O, "c270fgpIPxIwJGIYJlAbqmn", "SlotAnalyticsEnum") || (Object.defineProperty(y, "__esModule", B), y.SpinStateProcess = y.SpinCredits = y.SpinTrigger = undefined, function (x) {
+      cc._RF.push(O, "c270fgpIPxIwJGIYJlAbqmn", "SlotAnalyticsEnum") || (Object.defineProperty(exports, "__esModule", B), exports.SpinStateProcess = exports.SpinCredits = exports.SpinTrigger = undefined, function (x) {
         {
           x[x.CLICK = 0] = "CLICK", x[x.SPACEBAR = 1] = "SPACEBAR", x[x.AUTOSPIN = 2] = "AUTOSPIN", x[x.FEATURE_BUY = 3] = "FEATURE_BUY";
         }
-      }(y.SpinTrigger || (y.SpinTrigger = {})), function (x) {
+      }(exports.SpinTrigger || (exports.SpinTrigger = {})), function (x) {
         {
           x[x.CASH = 1] = "CASH", x[x.INSUFFICIENT = 3] = "INSUFFICIENT", x[x.BET_INVALID = 4] = "BET_INVALID";
         }
-      }(y.SpinCredits || (y.SpinCredits = {})), function (x) {
+      }(exports.SpinCredits || (exports.SpinCredits = {})), function (x) {
         {
           x[x.REEL_SPINNING = 0] = "REEL_SPINNING", x[x.REEL_STOPPING = 1] = "REEL_STOPPING", x[x.REEL_STOPPED = 2] = "REEL_STOPPED";
         }
-      }(y.SpinStateProcess || (y.SpinStateProcess = {})), cc._RF.pop());
+      }(exports.SpinStateProcess || (exports.SpinStateProcess = {})), cc._RF.pop());
     }, {}],
-    'SlotAnalyticsHelper': [function (j, O, y) {
+    'SlotAnalyticsHelper': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "4d769Qc8epMlozoEYpeBTit", "SlotAnalyticsHelper")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B), y.sendFastStopGA = undefined;
-        var x = j("AnalyticsHelper");
-        y.sendFastStopGA = function (C, H) {
+        Object.defineProperty(exports, "__esModule", B), exports.sendFastStopGA = undefined;
+        var x = require("AnalyticsHelper");
+        exports.sendFastStopGA = function (C, H) {
           {
             var r = {};
             r.type = C;
@@ -13829,24 +13829,24 @@
         }, cc._RF.pop();
       }
     }, sI],
-    'SlotController': [function (O, y, B) {
+    'SlotController': [function (require, module, exports) {
       'use strict';
 
-      if (!cc._RF.push(y, "b28d8bhcJFHQLAbJdbBzCKn", "SlotController")) {
+      if (!cc._RF.push(module, "b28d8bhcJFHQLAbJdbBzCKn", "SlotController")) {
         {
-          B.__esModule = true, B.default = undefined;
+          exports.__esModule = true, exports.default = undefined;
           var x = {};
           x.STOPPED = 0;
           x.SPINNING = 1;
           x.STOPPING = 2;
-          var C = O("SlotProperties"),
-            H = T(O("SlotView")),
-            V = T(O("SlotItemController")),
-            M = T(O("SimpleStartScroller")),
-            q = T(O("InterruptableScroller")),
-            D = T(O("PossibleWinScroller")),
-            W = T(O("BounceScatterStopScroller")),
-            k = O("AudioManager"),
+          var C = require("SlotProperties"),
+            H = T(require("SlotView")),
+            V = T(require("SlotItemController")),
+            M = T(require("SimpleStartScroller")),
+            q = T(require("InterruptableScroller")),
+            D = T(require("PossibleWinScroller")),
+            W = T(require("BounceScatterStopScroller")),
+            k = require("AudioManager"),
             z = function (Y) {
               if (Y && Y.__esModule) return Y;
               if (null === Y || "object" != typeof Y && "function" != typeof Y) return {
@@ -13861,10 +13861,10 @@
                 Z && (Z.get || Z.set) ? Object.defineProperty(E, N, Z) : E[N] = Y[N];
               }
               return E.default = Y, X && X.set(Y, E), E;
-            }(O("SlotStateMachine")),
-            L = O("SettingMenuHelper"),
-            U = O("PGGDataSource"),
-            Q = O("Utils"),
+            }(require("SlotStateMachine")),
+            L = require("SettingMenuHelper"),
+            U = require("PGGDataSource"),
+            Q = require("Utils"),
             w = cc.Enum(x),
             P = cc.Class({
               'extends': cc.Component,
@@ -14312,7 +14312,7 @@
                 }
               }
             });
-          B.default = P, y.exports = B.default, cc._RF.pop();
+          exports.default = P, module.exports = exports.default, cc._RF.pop();
         }
       }
       function R(Y) {
@@ -14333,20 +14333,20 @@
         }
       }
     }, ss],
-    'SlotGameConstants': [function (j, O, y) {
+    'SlotGameConstants': [function (j, O, exports) {
       'use strict';
 
       var B = {};
       B.value = true;
-      cc._RF.push(O, "d7af7yj0OxMqZa0P2+9ESqP", "SlotGameConstants") || (Object.defineProperty(y, "__esModule", B), y.DEFAULT_AUTO_SPIN_DELAY_TIME = y.SPIN_BUTTON_TRIGGER_KEY = y.TOTAL_WIN_DISMISS_TIME = y.BIG_WIN_DISMISS_TIME = undefined, y.BIG_WIN_DISMISS_TIME = 6, y.TOTAL_WIN_DISMISS_TIME = 6, y.SPIN_BUTTON_TRIGGER_KEY = cc.macro.KEY.space, y.DEFAULT_AUTO_SPIN_DELAY_TIME = 0.3, cc._RF.pop());
+      cc._RF.push(O, "d7af7yj0OxMqZa0P2+9ESqP", "SlotGameConstants") || (Object.defineProperty(exports, "__esModule", B), exports.DEFAULT_AUTO_SPIN_DELAY_TIME = exports.SPIN_BUTTON_TRIGGER_KEY = exports.TOTAL_WIN_DISMISS_TIME = exports.BIG_WIN_DISMISS_TIME = undefined, exports.BIG_WIN_DISMISS_TIME = 6, exports.TOTAL_WIN_DISMISS_TIME = 6, exports.SPIN_BUTTON_TRIGGER_KEY = cc.macro.KEY.space, exports.DEFAULT_AUTO_SPIN_DELAY_TIME = 0.3, cc._RF.pop());
     }, {}],
-    'SlotItemController': [function (j, O, y) {
+    'SlotItemController': [function (j, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "f8c175XHa1NwpzbTBevI1+l", "SlotItemController")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B);
+        Object.defineProperty(exports, "__esModule", B);
         var x = cc._decorator,
           C = x.ccclass,
           H = x.property,
@@ -14372,14 +14372,14 @@
               this.node.active = true;
             }, M.prototype.jp = function () {}, __decorate([H(cc.Node)], M.prototype, "foreground", undefined), __decorate([H(cc.Node)], M.prototype, "content", undefined), __decorate([H(cc.Sprite)], M.prototype, "foregroundSprite", undefined), __decorate([H(cc.Sprite)], M.prototype, "contentSprite", undefined), __decorate([H(cc.Sprite)], M.prototype, "shadowSprite", undefined), __decorate([C], M);
           }(cc.Component);
-        y.default = r, cc._RF.pop();
+        exports.default = r, cc._RF.pop();
       }
     }, {}],
-    'SlotProperties': [function (O, y, B) {
+    'SlotProperties': [function (require, y, exports) {
       'use strict';
 
       if (!cc._RF.push(y, "9ee5d2dkm1POa5gUOJWrwrS", "SlotProperties")) {
-        B.__esModule = true, B.slotProperties = B.WildSlotIndexes = B.SlotIndexes = B.NumberOfRow = B.NumberOfColumn = undefined;
+        exports.__esModule = true, exports.slotProperties = exports.WildSlotIndexes = exports.SlotIndexes = exports.NumberOfRow = exports.NumberOfColumn = undefined;
         var x = {};
         x.WILD = 0;
         x.GOLD_PIG = 1;
@@ -14390,18 +14390,18 @@
         x.BAR_1 = 6;
         x.BLANK = 7;
         var C,
-          H = (C = O("CanvasResizeBroadcaster")) && C.__esModule ? C : {
+          H = (C = require("CanvasResizeBroadcaster")) && C.__esModule ? C : {
             'default': C
           },
           r = cc.Enum(x);
-        B.SlotIndexes = r;
+        exports.SlotIndexes = r;
         var V = {};
         V.ONE = 1;
         V.TWO = 2;
         V.FIVE = 5;
         V.TEN = 10;
         var M = cc.Enum(V);
-        B.WildSlotIndexes = M, B.NumberOfColumn = 3, B.NumberOfRow = 3;
+        exports.WildSlotIndexes = M, exports.NumberOfColumn = 3, exports.NumberOfRow = 3;
         var q = new (cc.Class({
           'name': "SlotProperties",
           'extends': cc.Object,
@@ -14505,30 +14505,30 @@
             });
           }
         }))();
-        B.slotProperties = q, cc._RF.pop();
+        exports.slotProperties = q, cc._RF.pop();
       }
     }, sO],
-    'SlotScrollerController.spec': [function (j, O, y) {
+    'SlotScrollerController.spec': [function (j, O, exports) {
       'use strict';
 
       var B = {};
       B.value = true;
-      cc._RF.push(O, "c26a6RzZj1KjaK/sUDaiLHB", "SlotScrollerController.spec") || (Object.defineProperty(y, "__esModule", B), y.onStateChange = undefined, y.onStateChange = function (x) {
+      cc._RF.push(O, "c26a6RzZj1KjaK/sUDaiLHB", "SlotScrollerController.spec") || (Object.defineProperty(exports, "__esModule", B), exports.onStateChange = undefined, exports.onStateChange = function (x) {
         {
           var C = System.get("automation") && System.get("automation").GameData;
           x > 0 && C && C.emit("ScrollEvent", 1 === x ? "start" : "stop");
         }
       }, cc._RF.pop());
     }, {}],
-    'SlotScroller': [function (j, O, y) {
+    'SlotScroller': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "f4834Nvw9tAprbYN6xgZslW", "SlotScroller")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B);
-        var x = j("AutomationDecorator"),
-          C = j("SlotScrollerController.spec"),
+        Object.defineProperty(exports, "__esModule", B);
+        var x = require("AutomationDecorator"),
+          C = require("SlotScrollerController.spec"),
           H = cc._decorator,
           V = H.ccclass,
           M = H.property,
@@ -14592,25 +14592,25 @@
               'func': C.onStateChange
             })], D.prototype, "_onStateChange", null), __decorate([V], D);
           }(cc.Component);
-        y.default = q, cc._RF.pop();
+        exports.default = q, cc._RF.pop();
       }
     }, sy],
-    'SlotStateMachine': [function (j, O, y) {
+    'SlotStateMachine': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "f1d53JqS5hGVbtNCz0JAnwN", "SlotStateMachine")) {
         {
           var B = {};
           B.value = true;
-          Object.defineProperty(y, "__esModule", B), y.StopStyle = y.SlotStates = undefined;
+          Object.defineProperty(exports, "__esModule", B), exports.StopStyle = exports.SlotStates = undefined;
           var x,
             C,
-            H = j("Utils");
+            H = require("Utils");
           (function (V) {
             V[V.SPINNING = 0] = "SPINNING", V[V.STOPPING = 1] = "STOPPING", V[V.STOPPED = 2] = "STOPPED";
-          })(x = y.SlotStates || (y.SlotStates = {})), function (V) {
+          })(x = exports.SlotStates || (exports.SlotStates = {})), function (V) {
             V[V.NORMAL = 0] = "NORMAL", V[V.FAST = 1] = "FAST";
-          }(C = y.StopStyle || (y.StopStyle = {}));
+          }(C = exports.StopStyle || (exports.StopStyle = {}));
           var r = function () {
             function V() {
               this.I = x.STOPPED, this.Yp = C.NORMAL, this.Qp = false, this.Xp = false, this.Zp = undefined, this.$p = undefined;
@@ -14658,21 +14658,21 @@
               this.Yp = C.NORMAL, this.Qp = false, this.Xp = false, this.$p = undefined, this.Zp = undefined;
             }, V;
           }();
-          y.default = r, cc._RF.pop();
+          exports.default = r, cc._RF.pop();
         }
       }
     }, sB],
-    'SlotSystemModel': [function (j, O, y) {
+    'SlotSystemModel': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "b8e48q3OlREgpqZ/fqigt7Z", "SlotSystemModel")) {
         {
           var B = {};
           B.value = true;
-          Object.defineProperty(y, "__esModule", B);
-          var x = j("SystemModel"),
-            C = j("WinThresholdsModel"),
-            H = j("Protoutils"),
+          Object.defineProperty(exports, "__esModule", B);
+          var x = require("SystemModel"),
+            C = require("WinThresholdsModel"),
+            H = require("Protoutils"),
             r = function (V) {
               function M() {
                 return null !== V && V.apply(this, arguments) || this;
@@ -14730,23 +14730,23 @@
                 'configurable': true
               }), M.registryKey = "GeneralSlotSystemModel", __decorate([H.api('cs', 11, "double", true, false, false)], M.prototype, "_betSizeList", undefined), __decorate([H.api('ml', 12, "int32", true, false, false)], M.prototype, "_betLevelList", undefined), __decorate([H.api("mxl", 13, "int32", false, false, false)], M.prototype, "_maxLineNumber", undefined), __decorate([H.api('wt', 22, "bytes", false, false, false)], M.prototype, "_winThresholds", undefined), __decorate([H.api("maxwm", 23, "int32", false, false, true)], M.prototype, "_maxWinMultipler", undefined), q = __decorate([H.messageName("SlotGameInfoResponse")], M);
             }(x.default);
-          y.default = r, cc._RF.pop();
+          exports.default = r, cc._RF.pop();
         }
       }
     }, sx],
-    'SlotTransactionModel': [function (j, O, y) {
+    'SlotTransactionModel': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "d5629sKgMRK16ZrOMxnkzm9", "SlotTransactionModel")) {
         {
           var B = {};
           B.value = true;
-          Object.defineProperty(y, "__esModule", B);
-          var x = j("BetRepository"),
-            C = j("TransactionModel"),
-            H = j("Protoutils"),
-            V = j("WinLinesModel"),
-            M = j("WinValuesModel"),
+          Object.defineProperty(exports, "__esModule", B);
+          var x = require("BetRepository"),
+            C = require("TransactionModel"),
+            H = require("Protoutils"),
+            V = require("WinLinesModel"),
+            M = require("WinValuesModel"),
             q = function (m) {
               function D() {
                 return null !== m && m.apply(this, arguments) || this;
@@ -14881,15 +14881,15 @@
                 return [];
               }, D.registryKey = "GeneralSlotTransactionModel", __decorate([H.api('wp', 101, "Int32ListCollection", false, false, false, "int32")], D.prototype, "_winLines", undefined), __decorate([H.api('lw', 102, "double", false, false, false, "int32")], D.prototype, "_winValues", undefined), __decorate([H.api('ml', 51, "int32", false, false, false)], D.prototype, "_multiplier", undefined), __decorate([H.api('cs', 52, "double", false, false, false)], D.prototype, "_coinSize", undefined), __decorate([H.api('rl', 53, "int32", true, false, false)], D.prototype, "_reels", undefined), __decorate([H.api("ctw", 54, "double", false, false, false)], D.prototype, "_currentTotalWin", undefined), __decorate([H.api("cwc", 55, "int32", false, false, false)], D.prototype, "_comboWinCount", undefined), __decorate([H.api("fstc", 56, "int32", false, false, false, "int32")], D.prototype, "_featureSpinTypeCount", undefined), __decorate([H.api("pcwc", 57, "int32", false, false, false)], D.prototype, "_parentComboWinCount", undefined), __decorate([H.api("rwsp", 58, "string", false, false, false)], D.prototype, "_winSymbolsPayout", undefined), __decorate([H.api("hashr", 59, "string", false, false, false)], D.prototype, "_hashResult", undefined), __decorate([H.api('fb', 60, "int32", false, false, true)], D.prototype, "_featureBuy", undefined), __decorate([H.api("gwt", 71, "int32", false, false, false)], D.prototype, "_gameWinType", undefined), W = __decorate([H.messageName("SlotCommonResponse")], D);
             }(C.default);
-          y.default = q, cc._RF.pop();
+          exports.default = q, cc._RF.pop();
         }
       }
     }, sC],
-    'SlotView': [function (j, O, y) {
+    'SlotView': [function (j, module, exports) {
       'use strict';
 
-      if (!cc._RF.push(O, "65850gIkU5ByodRt+g1ZDmx", "SlotView")) {
-        y.__esModule = true, y.default = undefined;
+      if (!cc._RF.push(module, "65850gIkU5ByodRt+g1ZDmx", "SlotView")) {
+        exports.__esModule = true, exports.default = undefined;
         var B = {};
         B.RowPositionBottom = 0;
         B.RowPositionMiddle = 1;
@@ -15089,17 +15089,17 @@
             } else this.Mb = NaN;
           }
         });
-        y.default = x, O.exports = y.default, cc._RF.pop();
+        exports.default = x, module.exports = exports.default, cc._RF.pop();
       }
     }, {}],
-    'SoundButton': [function (j, O, y) {
+    'SoundButton': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "47f2aqFJBBCiYjiG/SqB5jv", "SoundButton")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B);
-        var x = j("GenericSettingButton"),
+        Object.defineProperty(exports, "__esModule", B);
+        var x = require("GenericSettingButton"),
           C = cc._decorator,
           H = C.ccclass,
           r = C.property,
@@ -15124,17 +15124,17 @@
               }, q.prototype.changeButtonColor = function () {}, __decorate([r(cc.Sprite)], q.prototype, "sprite", undefined), __decorate([r(cc.SpriteFrame)], q.prototype, "soundOn", undefined), __decorate([r(cc.SpriteFrame)], q.prototype, "soundOff", undefined), __decorate([H], q);
             }
           }(x.default);
-        y.default = V, cc._RF.pop();
+        exports.default = V, cc._RF.pop();
       }
     }, sH],
-    'SpaceBarInterrupter': [function (j, O, y) {
+    'SpaceBarInterrupter': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "676cajSckdANomyB/3kyE3c", "SpaceBarInterrupter")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B), y.spaceBarInterrupter = undefined;
-        var x = j("BVFramework"),
+        Object.defineProperty(exports, "__esModule", B), exports.spaceBarInterrupter = undefined;
+        var x = require("BVFramework"),
           C = cc._decorator.ccclass,
           H = new (function (r) {
             function V() {
@@ -15224,28 +15224,28 @@
               }
             }, __decorate([C("SpaceBarInterrupter")], V);
           }(cc.Object))();
-        y.spaceBarInterrupter = H, cc._RF.pop();
+        exports.spaceBarInterrupter = H, cc._RF.pop();
       }
     }, sr],
-    'SpinButtonController': [function (j, O, y) {
+    'SpinButtonController': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "43d12n8a1BInJvBu7QtjALE", "SpinButtonController")) {
         {
           var B = {};
           B.value = true;
-          Object.defineProperty(y, "__esModule", B), y.SpinButtonMode = y.SpinButtonAnimationState = undefined;
+          Object.defineProperty(exports, "__esModule", B), exports.SpinButtonMode = exports.SpinButtonAnimationState = undefined;
           var x,
             C,
-            H = j("SettingMenuHelper"),
-            V = j("ButtonHitTest"),
-            M = j("SlotAnalyticsEnum"),
+            H = require("SettingMenuHelper"),
+            V = require("ButtonHitTest"),
+            M = require("SlotAnalyticsEnum"),
             q = cc._decorator.ccclass;
           (function (D) {
             D[D.IDLE = 1] = "IDLE", D[D.SPINNING = 2] = "SPINNING", D[D.STOPPED = 3] = "STOPPED";
-          })(x = y.SpinButtonAnimationState || (y.SpinButtonAnimationState = {})), function (D) {
+          })(x = exports.SpinButtonAnimationState || (exports.SpinButtonAnimationState = {})), function (D) {
             D[D.ENABLED = 0] = "ENABLED", D[D.DISABLED = 1] = "DISABLED", D[D.AUTOSPIN = 2] = "AUTOSPIN";
-          }(C = y.SpinButtonMode || (y.SpinButtonMode = {}));
+          }(C = exports.SpinButtonMode || (exports.SpinButtonMode = {}));
           var m = function (D) {
             function W() {
               var k = null !== D && D.apply(this, arguments) || this;
@@ -15371,17 +15371,17 @@
               }
             }, __decorate([q], W);
           }(cc.Component);
-          y.default = m, cc._RF.pop();
+          exports.default = m, cc._RF.pop();
         }
       }
     }, sV],
-    'SpinButtonEffectController': [function (j, O, y) {
+    'SpinButtonEffectController': [function (j, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "61686G+USpOjqGCpo42S7jA", "SpinButtonEffectController")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B);
+        Object.defineProperty(exports, "__esModule", B);
         var x = cc._decorator,
           C = x.ccclass,
           H = x.property,
@@ -15402,16 +15402,16 @@
               }, __decorate([H(cc.Animation)], M.prototype, "anim", undefined), __decorate([H(cc.ParticleSystem)], M.prototype, "sparkParticle", undefined), __decorate([C], M);
             }
           }(cc.Component);
-        y.default = r, cc._RF.pop();
+        exports.default = r, cc._RF.pop();
       }
     }, {}],
-    'SpinButtonMouseHoverController': [function (j, O, y) {
+    'SpinButtonMouseHoverController': [function (j, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "c9f09tETXlEB5wl5YAQLNgt", "SpinButtonMouseHoverController")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B);
+        Object.defineProperty(exports, "__esModule", B);
         var x = cc._decorator,
           C = x.ccclass,
           H = x.property,
@@ -15449,52 +15449,52 @@
               }, __decorate([H(cc.Node)], M.prototype, "buttonHoverEffectNode", undefined), __decorate([H(cc.Node)], M.prototype, "buttonNode", undefined), __decorate([C], M);
             }
           }(cc.Component);
-        y.default = r, cc._RF.pop();
+        exports.default = r, cc._RF.pop();
       }
     }, {}],
-    'SpinButtonViewController.spec': [function (j, O, y) {
+    'SpinButtonViewController.spec': [function (j, O, exports) {
       'use strict';
 
       var B = {};
       B.value = true;
-      cc._RF.push(O, "53057veQkxJRZfpJDi5Rv1H", "SpinButtonViewController.spec") || (Object.defineProperty(y, "__esModule", B), y.initSpinButtonNode = y.setSpinButtonInteractivity = undefined, y.setSpinButtonInteractivity = function (x) {
+      cc._RF.push(O, "53057veQkxJRZfpJDi5Rv1H", "SpinButtonViewController.spec") || (Object.defineProperty(exports, "__esModule", B), exports.initSpinButtonNode = exports.setSpinButtonInteractivity = undefined, exports.setSpinButtonInteractivity = function (x) {
         var C = System.get("automation") && System.get("automation").GameData;
         C && C.emit("SpinButtonInteractivity", x);
-      }, y.initSpinButtonNode = function (x) {
+      }, exports.initSpinButtonNode = function (x) {
         var C = System.get("automation") && System.get("automation").GameConfigs;
         C && C.initNodeConfig(x.spinButton, "spin_button");
       }, cc._RF.pop());
     }, {}],
-    'SpinConfigHandler': [function (O, y, B) {
+    'SpinConfigHandler': [function (O, y, exports) {
       'use strict';
 
       if (!cc._RF.push(y, "932b5xCb0FH57DavWl/zOYi", "SpinConfigHandler")) {
         var x = {};
         x.value = true;
-        Object.defineProperty(B, "__esModule", x), B.initSpinConfig = B.featureConfig = undefined;
+        Object.defineProperty(exports, "__esModule", x), exports.initSpinConfig = exports.featureConfig = undefined;
         var C = {};
         C.minimumSpinningTime = 0;
         C.regularSpinningTime = 1;
         C.fastStopFeature = false;
         C.turboSpinFeature = false;
-        B.featureConfig = H, B.initSpinConfig = function (r) {
+        exports.featureConfig = H, exports.initSpinConfig = function (r) {
           {
             var M = r.jurisdictionModel.singlePlayMinDuration,
               q = M > 0 ? r.minimumSpinningTimeOffset || 0 : r.minimumSpinningTime,
               m = M > 0 ? r.regularSpinningTimeOffset || 0 : r.regularSpinningTime;
-            V.minimumSpinningTime = M + q, V.regularSpinningTime = M + m, V.turboSpinFeature = r.jurisdictionModel.turboSpinEnable, V.fastStopFeature = r.jurisdictionModel.turboSpinEnable, B.featureConfig = Object.freeze(V);
+            V.minimumSpinningTime = M + q, V.regularSpinningTime = M + m, V.turboSpinFeature = r.jurisdictionModel.turboSpinEnable, V.fastStopFeature = r.jurisdictionModel.turboSpinEnable, exports.featureConfig = Object.freeze(V);
           }
         }, cc._RF.pop();
       }
     }, {}],
-    'SpinOptionsButton': [function (j, O, y) {
+    'SpinOptionsButton': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "3ee68qGxY9G3q+WVKsHebfZ", "SpinOptionsButton")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B);
-        var x = j("GenericSettingButton"),
+        Object.defineProperty(exports, "__esModule", B);
+        var x = require("GenericSettingButton"),
           C = cc._decorator,
           H = C.ccclass,
           r = C.property,
@@ -15525,21 +15525,21 @@
               }, __decorate([r(cc.Node)], q.prototype, "autoSpinCircle", undefined), __decorate([r(cc.SpriteFrame)], q.prototype, "autoSpinCircleNormalSpriteFrame", undefined), __decorate([r(cc.SpriteFrame)], q.prototype, "autoSpinCircleDisableSpriteFrame", undefined), __decorate([H], q);
             }
           }(x.default);
-        y.default = V, cc._RF.pop();
+        exports.default = V, cc._RF.pop();
       }
     }, sM],
-    'SpinState': [function (j, O, y) {
+    'SpinState': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "f1de36UCZVLKpe2qk9vzSaC", "SpinState")) {
         {
           var B = {};
           B.value = true;
-          Object.defineProperty(y, "__esModule", B);
-          var x = j("SlotAnalyticsEnum"),
-            C = j("SlotAnalyticsHelper"),
-            H = j("Utils"),
-            r = j("SpinConfigHandler"),
+          Object.defineProperty(exports, "__esModule", B);
+          var x = require("SlotAnalyticsEnum"),
+            C = require("SlotAnalyticsHelper"),
+            H = require("Utils"),
+            r = require("SpinConfigHandler"),
             V = function () {
               function M(q, m, D, W) {
                 {
@@ -15581,25 +15581,25 @@
                 this.generalControllers.slotController.spin();
               }, M;
             }();
-          y.default = V, cc._RF.pop();
+          exports.default = V, cc._RF.pop();
         }
       }
     }, sq],
-    'SystemFeatureHandler': [function (j, O, y) {
+    'SystemFeatureHandler': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "c93d5OmEfVKSLl/iM1N4BVc", "SystemFeatureHandler")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B), y.checkSpinValidity = y.handleSystemEvent = y.getReevaluateBet = undefined;
-        var x = j("SlotAnalyticsEnum"),
-          C = j("Utils"),
-          H = j("GameEventHandler");
-        y.getReevaluateBet = r, y.handleSystemEvent = function (V) {
+        Object.defineProperty(exports, "__esModule", B), exports.checkSpinValidity = exports.handleSystemEvent = exports.getReevaluateBet = undefined;
+        var x = require("SlotAnalyticsEnum"),
+          C = require("Utils"),
+          H = require("GameEventHandler");
+        exports.getReevaluateBet = r, exports.handleSystemEvent = function (V) {
           var M = V.settingMenuHelper,
             q = V.betChangedHandler;
           C.sequenceCallback(r(M, q))(V.callback);
-        }, y.checkSpinValidity = function (V) {
+        }, exports.checkSpinValidity = function (V) {
           var M = V.callback,
             q = V.getCostPerSpinFunction,
             m = V.dataSource,
@@ -15619,27 +15619,27 @@
         };
       }
     }, sm],
-    'SystemModel': [function (l, j) {
+    'SystemModel': [function (l, module) {
       'use strict';
 
-      if (!cc._RF.push(j, "daa8eblXeJHyaG5qwoh+Te0", "SystemModel")) {
+      if (!cc._RF.push(module, "daa8eblXeJHyaG5qwoh+Te0", "SystemModel")) {
         {
           var O = System.get("bvframework").SystemModel;
-          j.exports.default = O, j.exports.__esModule = true, cc._RF.pop();
+          module.exports.default = O, module.exports.__esModule = true, cc._RF.pop();
         }
       }
     }, {}],
-    'TabBarController': [function (j, O, y) {
+    'TabBarController': [function (require, exports, y) {
       'use strict';
 
-      if (!cc._RF.push(O, "b2f70mOAvdOxZtKjfDu/lHM", "TabBarController")) {
+      if (!cc._RF.push(exports, "b2f70mOAvdOxZtKjfDu/lHM", "TabBarController")) {
         var B = {};
         B.value = true;
         Object.defineProperty(y, "__esModule", B);
-        var x = j("TabBar"),
-          C = j("TabBarItem"),
-          H = j("TransitionContext"),
-          V = j("ViewController"),
+        var x = require("TabBar"),
+          C = require("TabBarItem"),
+          H = require("TransitionContext"),
+          V = require("ViewController"),
           M = cc._decorator,
           q = M.ccclass,
           m = M.property,
@@ -15796,14 +15796,14 @@
         y.default = D, cc._RF.pop();
       }
     }, sD],
-    'TabBarItem': [function (j, O, y) {
+    'TabBarItem': [function (j, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "cd0fbm4LQBEVL5LzWleSsGj", "TabBarItem")) {
         {
           var B = {};
           B.value = true;
-          Object.defineProperty(y, "__esModule", B);
+          Object.defineProperty(exports, "__esModule", B);
           var x = cc._decorator,
             C = x.ccclass,
             H = x.property,
@@ -15859,18 +15859,18 @@
                 q.stopPropagation(), this.Mm && this.Mm();
               }, __decorate([H(cc.Sprite)], M.prototype, "icon", undefined), __decorate([H(cc.Label)], M.prototype, "titleLabel", undefined), __decorate([H(cc.Color)], M.prototype, "tintColor", undefined), __decorate([H(cc.Color)], M.prototype, "selectedTintColor", undefined), __decorate([C], M);
             }(cc.Component);
-          y.default = r, cc._RF.pop();
+          exports.default = r, cc._RF.pop();
         }
       }
     }, {}],
-    'TabBar': [function (j, O, y) {
+    'TabBar': [function (j, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "b8f7436fYdNnryqvtnVtqIL", "TabBar")) {
         {
           var B = {};
           B.value = true;
-          Object.defineProperty(y, "__esModule", B);
+          Object.defineProperty(exports, "__esModule", B);
           var x = cc._decorator,
             C = x.ccclass,
             H = x.property,
@@ -15922,24 +15922,24 @@
                 q ? this.background.spriteFrame = q : m && (this.background.node.color = m);
               }, __decorate([H(cc.Sprite)], M.prototype, "background", undefined), __decorate([H(cc.Node)], M.prototype, "itemsContainer", undefined), __decorate([H(cc.Sprite)], M.prototype, "shadow", undefined), __decorate([C], M);
             }(cc.Component);
-          y.default = r, cc._RF.pop();
+          exports.default = r, cc._RF.pop();
         }
       }
     }, {}],
-    'TimedWinRollBaseController': [function (O, y, B) {
+    'TimedWinRollBaseController': [function (require, y, exports) {
       'use strict';
 
       if (!cc._RF.push(y, "12aa3hO3pdL6oUvYmprts/7", "TimedWinRollBaseController")) {
         {
           var x = {};
           x.value = true;
-          Object.defineProperty(B, "__esModule", x);
+          Object.defineProperty(exports, "__esModule", x);
           var C = {};
           C.big = 0;
           C.mega = 1;
           C.superMega = 2;
           C.overflow = 3;
-          var H = O("NumberDisplayInterface"),
+          var H = require("NumberDisplayInterface"),
             M = cc._decorator,
             q = M.ccclass,
             m = M.property,
@@ -16052,7 +16052,7 @@
                 })], z.prototype, "displayController", undefined), __decorate([q], z);
               }
             }(cc.Component);
-          B.default = D, cc._RF.pop();
+          exports.default = D, cc._RF.pop();
         }
       }
       function W(k, z) {
@@ -16067,15 +16067,15 @@
         return v;
       }
     }, sW],
-    'TimedWinRollController': [function (j, O, y) {
+    'TimedWinRollController': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "bbc6c4tBJdFQ76rTU5OtO2a", "TimedWinRollController")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B);
-        var x = j("NumberDisplayController"),
-          C = j("TimedWinRollBaseController"),
+        Object.defineProperty(exports, "__esModule", B);
+        var x = require("NumberDisplayController"),
+          C = require("TimedWinRollBaseController"),
           H = cc._decorator,
           V = H.ccclass,
           M = H.property,
@@ -16093,18 +16093,18 @@
               return __extends(W, m), __decorate([M(D)], W.prototype, "displayController", undefined), __decorate([V], W);
             }
           }(C.default);
-        y.default = q, cc._RF.pop();
+        exports.default = q, cc._RF.pop();
       }
     }, sk],
-    'TimedWinRollCurveController': [function (j, O, y) {
+    'TimedWinRollCurveController': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "ac3b0Ey1QlMtZGe7RPoOsSH", "TimedWinRollCurveController")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B);
-        var x = j("NumberCurvedController"),
-          C = j("TimedWinRollBaseController"),
+        Object.defineProperty(exports, "__esModule", B);
+        var x = require("NumberCurvedController"),
+          C = require("TimedWinRollBaseController"),
           H = cc._decorator,
           V = H.ccclass,
           M = H.property,
@@ -16118,18 +16118,18 @@
             W.override = true;
             return __extends(D, m), __decorate([M(W)], D.prototype, "displayController", undefined), __decorate([V], D);
           }(C.default);
-        y.default = q, cc._RF.pop();
+        exports.default = q, cc._RF.pop();
       }
     }, so],
-    'TimedWinRollLabelController': [function (j, O, y) {
+    'TimedWinRollLabelController': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "aa2360L0o1DHbvfzQuldvyg", "TimedWinRollLabelController")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B);
-        var x = j("NumberLabelController"),
-          C = j("TimedWinRollBaseController"),
+        Object.defineProperty(exports, "__esModule", B);
+        var x = require("NumberLabelController"),
+          C = require("TimedWinRollBaseController"),
           H = cc._decorator,
           V = H.ccclass,
           M = H.property,
@@ -16145,34 +16145,34 @@
             W.override = true;
             return __extends(D, m), __decorate([M(W)], D.prototype, "displayController", undefined), __decorate([V], D);
           }(C.default);
-        y.default = q, cc._RF.pop();
+        exports.default = q, cc._RF.pop();
       }
     }, sz],
-    'TransactionModel': [function (l, j) {
+    'TransactionModel': [function (l, module) {
       'use strict';
 
-      if (!cc._RF.push(j, "54c92i9GeNK1JtqIIU4fhIX", "TransactionModel")) {
+      if (!cc._RF.push(module, "54c92i9GeNK1JtqIIU4fhIX", "TransactionModel")) {
         var O = System.get("bvframework").TransactionModel;
-        j.exports.default = O, j.exports.__esModule = true, cc._RF.pop();
+        module.exports.default = O, module.exports.__esModule = true, cc._RF.pop();
       }
     }, {}],
-    'TransactionStateMachineHandler': [function (l, j) {
+    'TransactionStateMachineHandler': [function (l, module) {
       'use strict';
 
-      if (!cc._RF.push(j, "c42f8INb4ZMyJTA7LnNSlci", "TransactionStateMachineHandler")) {
+      if (!cc._RF.push(module, "c42f8INb4ZMyJTA7LnNSlci", "TransactionStateMachineHandler")) {
         var O = System.get("bvframework").TransactionStateMachineHandler;
-        for (var y in O) O.hasOwnProperty(y) && (j.exports[y] = O[y]);
-        j.exports.__esModule = true, cc._RF.pop();
+        for (var y in O) O.hasOwnProperty(y) && (module.exports[y] = O[y]);
+        module.exports.__esModule = true, cc._RF.pop();
       }
     }, {}],
-    'TransitionContext': [function (j, O, y) {
+    'TransitionContext': [function (j, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "9fd10r5SF9AY7ViKPJFg+fR", "TransitionContext")) {
         {
           var B = {};
           B.value = true;
-          Object.defineProperty(y, "__esModule", B), y.TransitionContext = undefined;
+          Object.defineProperty(exports, "__esModule", B), exports.TransitionContext = undefined;
           var x = function () {
             {
               function C(H, r, V, M, q) {
@@ -16193,26 +16193,26 @@
               }, C;
             }
           }();
-          y.TransitionContext = x, cc._RF.pop();
+          exports.TransitionContext = x, cc._RF.pop();
         }
       }
     }, {}],
-    'TransitionEnum': [function (j, O, y) {
+    'TransitionEnum': [function (j, O, exports) {
       'use strict';
 
       var B = {};
       B.value = true;
-      cc._RF.push(O, "ba325vamDZMr5FAGrgPtoRH", "TransitionEnum") || (Object.defineProperty(y, "__esModule", B), y.NavigationControllerOperation = undefined, function (x) {
+      cc._RF.push(O, "ba325vamDZMr5FAGrgPtoRH", "TransitionEnum") || (Object.defineProperty(exports, "__esModule", B), exports.NavigationControllerOperation = undefined, function (x) {
         x[x.None = 0] = "None", x[x.Push = 1] = "Push", x[x.Pop = 2] = "Pop";
-      }(y.NavigationControllerOperation || (y.NavigationControllerOperation = {})), cc._RF.pop());
+      }(exports.NavigationControllerOperation || (exports.NavigationControllerOperation = {})), cc._RF.pop());
     }, {}],
-    'Transitions': [function (j, O, y) {
+    'Transitions': [function (j, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "4f44bvoAJdODZ+ECdfyE6W8", "Transitions")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B), y.ToNormalSpinTransition = undefined;
+        Object.defineProperty(exports, "__esModule", B), exports.ToNormalSpinTransition = undefined;
         var x = function (C) {
           function H() {
             {
@@ -16225,16 +16225,16 @@
             return this.hS = undefined, C.prototype.destroy.call(this);
           }, H;
         }(cc.Object);
-        y.ToNormalSpinTransition = x, cc._RF.pop();
+        exports.ToNormalSpinTransition = x, cc._RF.pop();
       }
     }, {}],
-    'TurboButtonEffect': [function (j, O, y) {
+    'TurboButtonEffect': [function (j, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "5e837vEECVAj4O05haO7Gt+", "TurboButtonEffect")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B);
+        Object.defineProperty(exports, "__esModule", B);
         var x = cc._decorator.ccclass,
           C = function (H) {
             function r() {
@@ -16251,31 +16251,31 @@
               }
             }, __decorate([x], r);
           }(cc.Component);
-        y.default = C, cc._RF.pop();
+        exports.default = C, cc._RF.pop();
       }
     }, {}],
-    'TweaksConfig': [function (j, O, y) {
+    'TweaksConfig': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "0602bmSQ0NBZrhW+yhcJtSb", "TweaksConfig")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B), j("RtConfig"), j("GamePreference"), j("CreatorTweaks"), j("Utils"), j("QuitGame"), j("Printer"), j("TweaksData");
-        y.default = undefined, cc._RF.pop();
+        Object.defineProperty(exports, "__esModule", B), require("RtConfig"), require("GamePreference"), require("CreatorTweaks"), require("Utils"), require("QuitGame"), require("Printer"), require("TweaksData");
+        exports.default = undefined, cc._RF.pop();
       }
     }, sc],
-    'TweaksData': [function (l, j) {
+    'TweaksData': [function (l, module) {
       'use strict';
 
-      cc._RF.push(j, "b0089xUdQRLiZXeZmKk7dCG", "TweaksData") || (j.exports = {}, j.exports.__esModule = true, cc._RF.pop());
+      cc._RF.push(module, "b0089xUdQRLiZXeZmKk7dCG", "TweaksData") || (module.exports = {}, module.exports.__esModule = true, cc._RF.pop());
     }, {}],
-    'UIAppearanceHelper': [function (m, D, W) {
+    'UIAppearanceHelper': [function (require, D, exports) {
       'use strict';
 
       if (!cc._RF.push(D, "f4549VlHlxOL4w7V7h4rhZg", "UIAppearanceHelper")) {
         var k = {};
         k.value = true;
-        Object.defineProperty(W, "__esModule", k), W.uiAppearanceHelper = W.getOffsetY = undefined;
+        Object.defineProperty(exports, "__esModule", k), exports.uiAppearanceHelper = exports.getOffsetY = undefined;
         var z = {};
         z.native = 4;
         z.non_native = 3;
@@ -16305,7 +16305,7 @@
         var T = {};
         T.native = 4;
         T.non_native = 4;
-        var Y = m("BACKUP_DATA"),
+        var Y = require("BACKUP_DATA"),
           X = function () {
             function K() {}
             return K.prototype.interpret = function (l0) {
@@ -16349,7 +16349,7 @@
           g = shell.I18n.currentLocale,
           A = shell.getBrowserBaseType().toLowerCase(),
           G = 'zh' === g || 'ko' === g || 'ja' === g ? p : Z;
-        W.getOffsetY = function () {
+        exports.getOffsetY = function () {
           switch (cc.sys.os) {
             case cc.sys.OS_WINDOWS:
               return 'ie' === A || "edge" === A ? G.windows.native : G.windows.non_native;
@@ -16364,7 +16364,7 @@
           }
         };
         var J = new N();
-        W.uiAppearanceHelper = J, cc._RF.pop();
+        exports.uiAppearanceHelper = J, cc._RF.pop();
       }
       function S(K) {
         {
@@ -16376,7 +16376,7 @@
         }
       }
     }, sL],
-    'UIAudioConstant': [function (H, r, V) {
+    'UIAudioConstant': [function (H, r, exports) {
       'use strict';
 
       var M = {};
@@ -16409,26 +16409,26 @@
       o.walletCountingAbove = k;
       o.__duration = 5;
       o.__bitrate = "96kbps";
-      cc._RF.push(r, "69d4dxPKH5CVZetz/GKOLO2", "UIAudioConstant") || (Object.defineProperty(V, "__esModule", M), V.UI_AUDIO = undefined, V.UI_AUDIO = o, cc._RF.pop());
+      cc._RF.push(r, "69d4dxPKH5CVZetz/GKOLO2", "UIAudioConstant") || (Object.defineProperty(exports, "__esModule", M), exports.UI_AUDIO = undefined, exports.UI_AUDIO = o, cc._RF.pop());
     }, {}],
-    'UIAudioHelper': [function (j, O, y) {
+    'UIAudioHelper': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "57810qsxE9IZ4RLOmdbS6tE", "UIAudioHelper")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B), y.loadAudio = y.initUIAudioHelper = y.UIAudioIndex = undefined;
+        Object.defineProperty(exports, "__esModule", B), exports.loadAudio = exports.initUIAudioHelper = exports.UIAudioIndex = undefined;
         var x,
           C,
           H,
-          V = j("BVFramework"),
-          M = j("Utils"),
-          q = j("UIAudioConstant");
+          V = require("BVFramework"),
+          M = require("Utils"),
+          q = require("UIAudioConstant");
         (function (D) {
           {
             D[D.BACK_OR_CLOSE = 0] = "BACK_OR_CLOSE", D[D.BUTTON_CLICK = 1] = "BUTTON_CLICK", D[D.LIST_ITEN_CLICK = 2] = "LIST_ITEN_CLICK", D[D.SLIDER_EFFECT = 3] = "SLIDER_EFFECT", D[D.WALLET_COUNTING_ABOVE = 4] = "WALLET_COUNTING_ABOVE";
           }
-        })(H = y.UIAudioIndex || (y.UIAudioIndex = {})), y.loadAudio = function (D) {
+        })(H = exports.UIAudioIndex || (exports.UIAudioIndex = {})), exports.loadAudio = function (D) {
           {
             if (x) {
               x = undefined, W && W();
@@ -16443,7 +16443,7 @@
               }, k.once("load", L), k.once("loaderror", z), k.load();
             } else D && D(Error("UIAudioHelper not initialized"));
           }
-        }, y.initUIAudioHelper = function (D) {
+        }, exports.initUIAudioHelper = function (D) {
           var W = M.getCocosMajor() >= 4 ? "/lib/ui_audio_helper/res/ui_audio" : cc.url.raw("/resources/lib/ui_audio_helper/res/ui_audio.mp3");
           var k = {};
           k.preload = false;
@@ -16470,7 +16470,7 @@
         }
       }
     }, sv],
-    'UIKitUtils': [function (j, O, y) {
+    'UIKitUtils': [function (j, O, exports) {
       'use strict';
 
       function B() {
@@ -16478,16 +16478,16 @@
       }
       var x = {};
       x.value = true;
-      cc._RF.push(O, "b3045XdzRhDNrJLCqWLZ6eT", "UIKitUtils") || (Object.defineProperty(y, "__esModule", x), y.isNotBrowserMode = y.deviceHasNotch = y.isIphoneX = y.isIphone = undefined, y.isIphone = B, y.isIphoneX = function () {
+      cc._RF.push(O, "b3045XdzRhDNrJLCqWLZ6eT", "UIKitUtils") || (Object.defineProperty(exports, "__esModule", x), exports.isNotBrowserMode = exports.deviceHasNotch = exports.isIphoneX = exports.isIphone = undefined, exports.isIphone = B, exports.isIphoneX = function () {
         var C = cc.view.getFrameSize();
         return B() && (812 === C.width && 375 === C.height || 375 === C.width && 812 === C.height);
-      }, y.deviceHasNotch = function () {
+      }, exports.deviceHasNotch = function () {
         return shell.environment.hasNotch();
-      }, y.isNotBrowserMode = function () {
+      }, exports.isNotBrowserMode = function () {
         return window.navigator.standalone || "app" === shell.getEnvironment();
       }, cc._RF.pop());
     }, {}],
-    'UIKit': [function (D, W, k) {
+    'UIKit': [function (D, W, exports) {
       'use strict';
 
       var o = {};
@@ -16531,26 +16531,26 @@
       T.iphone_x = h;
       T.iphone = P;
       T.normal = R;
-      cc._RF.push(W, "cfcacQ0hpxOzKvh1YNNRBbk", "UIKit") || (Object.defineProperty(k, "__esModule", o), k.safeArea = k.TabBarConfigs = k.NavigationConfigs = undefined, k.NavigationConfigs = v, k.TabBarConfigs = w, k.safeArea = Object.freeze(T), cc._RF.pop());
+      cc._RF.push(W, "cfcacQ0hpxOzKvh1YNNRBbk", "UIKit") || (Object.defineProperty(exports, "__esModule", o), exports.safeArea = exports.TabBarConfigs = exports.NavigationConfigs = undefined, exports.NavigationConfigs = v, exports.TabBarConfigs = w, exports.safeArea = Object.freeze(T), cc._RF.pop());
     }, {}],
-    'UISetupHandler': [function (j, O, y) {
+    'UISetupHandler': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "f4567d4xahD3ovewoSIICYp", "UISetupHandler")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B), y.NormalGameUI = y.settingMenuInteractable = y.renderUIBaseOnState = undefined;
-        var x = j("PGGDataSource"),
-          C = j("SettingMenuHelper"),
-          H = j("SlotProperties"),
-          r = j("GameRegionUtils");
-        y.renderUIBaseOnState = function (M, q, m, D) {
+        Object.defineProperty(exports, "__esModule", B), exports.NormalGameUI = exports.settingMenuInteractable = exports.renderUIBaseOnState = undefined;
+        var x = require("PGGDataSource"),
+          C = require("SettingMenuHelper"),
+          H = require("SlotProperties"),
+          r = require("GameRegionUtils");
+        exports.renderUIBaseOnState = function (M, q, m, D) {
           {
             var W = {};
             W.generalControllers = D;
             new V().setup(W, M);
           }
-        }, y.settingMenuInteractable = function (M) {
+        }, exports.settingMenuInteractable = function (M) {
           C.settingMenuHelper.setAllButtonsInteractable(M);
         };
         var V = function () {
@@ -16599,13 +16599,13 @@
             q > 0 && r.checkUKGCRegion(q) ? m.showWin(q) : m.displayNormalTip();
           }, M;
         }();
-        y.NormalGameUI = V, cc._RF.pop();
+        exports.NormalGameUI = V, cc._RF.pop();
       }
     }, sb],
-    'Utils': [function (j, O) {
+    'Utils': [function (j, module) {
       'use strict';
 
-      if (!cc._RF.push(O, "03755Dj0/VFQbz7rFuRrlJG", "Utils")) {
+      if (!cc._RF.push(module, "03755Dj0/VFQbz7rFuRrlJG", "Utils")) {
         var y = {};
         y.u0 = "convertToNodeSpace";
         y.u1 = "convertToNodeSpaceAR";
@@ -16640,17 +16640,17 @@
               return DEBUG, V;
             }
           }(y, B);
-        for (var C in x) x.hasOwnProperty(C) && (O.exports[C] = x[C]);
-        O.exports.__esModule = true, null == B.sharedScheduler && (O.exports.sharedScheduler = x.getSharedScheduler()), cc._RF.pop();
+        for (var C in x) x.hasOwnProperty(C) && (module.exports[C] = x[C]);
+        module.exports.__esModule = true, null == B.sharedScheduler && (module.exports.sharedScheduler = x.getSharedScheduler()), cc._RF.pop();
       }
     }, {}],
-    'ViewControllerTransition': [function (j, O, y) {
+    'ViewControllerTransition': [function (j, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "8e202781KBBRIxVxe3NWQ9e", "ViewControllerTransition")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B);
+        Object.defineProperty(exports, "__esModule", B);
         var x = function () {
           {
             function C() {}
@@ -16661,18 +16661,18 @@
             }, C.prototype.animateTransition = function () {}, C.prototype.animationEnd = function () {}, C;
           }
         }();
-        y.default = x, cc._RF.pop();
+        exports.default = x, cc._RF.pop();
       }
     }, {}],
-    'ViewController': [function (j, O, y) {
+    'ViewController': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "ef8ab8zk59N1LEX0M2uhmRU", "ViewController")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B);
-        var x = j("UIKitUtils"),
-          C = j("UIKit"),
+        Object.defineProperty(exports, "__esModule", B);
+        var x = require("UIKitUtils"),
+          C = require("UIKit"),
           H = cc._decorator,
           V = H.ccclass,
           M = H.property,
@@ -16714,29 +16714,29 @@
               }), D.prototype.onEnable = function () {}, D.prototype.onDisable = function () {}, D.prototype.viewWillAppear = function () {}, D.prototype.viewDidAppear = function () {}, D.prototype.viewWillDisappear = function () {}, D.prototype.viewDidDisappear = function () {}, D.prototype.viewWillLayoutSubviews = function () {}, D.prototype.viewDidLayoutSubviews = function () {}, __decorate([M(cc.String)], D.prototype, "title", undefined), __decorate([V], D);
             }
           }(cc.Component);
-        y.default = q, cc._RF.pop();
+        exports.default = q, cc._RF.pop();
       }
     }, sU],
-    'WebSocketHandler': [function (l, j) {
+    'WebSocketHandler': [function (l, module) {
       'use strict';
 
-      if (!cc._RF.push(j, "d571cdfj6pHMqHdyAI82QnG", "WebSocketHandler")) {
+      if (!cc._RF.push(module, "d571cdfj6pHMqHdyAI82QnG", "WebSocketHandler")) {
         {
           var O = System.get("bvframework").WebSocketHandler;
-          for (var y in O) O.hasOwnProperty(y) && (j.exports[y] = O[y]);
-          j.exports.__esModule = true, cc._RF.pop();
+          for (var y in O) O.hasOwnProperty(y) && (module.exports[y] = O[y]);
+          module.exports.__esModule = true, cc._RF.pop();
         }
       }
     }, {}],
-    'WildBounceScroller': [function (j, O, y) {
+    'WildBounceScroller': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "4ab15AknuJJ3L1MrNZXk77k", "WildBounceScroller")) {
         {
           var B = {};
           B.value = true;
-          Object.defineProperty(y, "__esModule", B);
-          var x = j("SimpleStopScroller"),
+          Object.defineProperty(exports, "__esModule", B);
+          var x = require("SimpleStopScroller"),
             C = cc._decorator.ccclass,
             H = function (r) {
               {
@@ -16773,17 +16773,17 @@
                 }, __decorate([C], V);
               }
             }(x.default);
-          y.default = H, cc._RF.pop();
+          exports.default = H, cc._RF.pop();
         }
       }
     }, sQ],
-    'WildMultiplySpineController': [function (j, O, y) {
+    'WildMultiplySpineController': [function (j, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "a0cefYe/MJNprA3dL5AZyai", "WildMultiplySpineController")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B);
+        Object.defineProperty(exports, "__esModule", B);
         var x,
           C = cc._decorator,
           H = C.ccclass,
@@ -16837,16 +16837,16 @@
             }
           }, __decorate([r(sp.Skeleton)], q.prototype, "multiplySpine", undefined), __decorate([H], q);
         }(cc.Component);
-        y.default = V, cc._RF.pop();
+        exports.default = V, cc._RF.pop();
       }
     }, {}],
-    'WildMultiplySpineManager': [function (C, H, V) {
+    'WildMultiplySpineManager': [function (require, H, exports) {
       'use strict';
 
       if (!cc._RF.push(H, "64277KuIuBLZKCFpqgnu6f3", "WildMultiplySpineManager")) {
         var M = {};
         M.value = true;
-        Object.defineProperty(V, "__esModule", M);
+        Object.defineProperty(exports, "__esModule", M);
         var q = {};
         q.x = 3.5;
         q.y = -0.5;
@@ -16864,9 +16864,9 @@
         k['2'] = m;
         k['5'] = D;
         k['10'] = W;
-        var z = C("SlotProperties"),
-          L = C("WildMultiplySpineController"),
-          v = C("AudioManager"),
+        var z = require("SlotProperties"),
+          L = require("WildMultiplySpineController"),
+          v = require("AudioManager"),
           b = cc._decorator,
           U = b.ccclass,
           Q = b.property,
@@ -16927,29 +16927,29 @@
               }, __decorate([Q([L.default])], T.prototype, "multiplySpine", undefined), __decorate([Q([cc.Node])], T.prototype, "multiplySpineNodeList", undefined), __decorate([U], T);
             }
           }(cc.Component);
-        V.default = P, cc._RF.pop();
+        exports.default = P, cc._RF.pop();
       }
     }, sw],
-    'WinHighlight.spec': [function (j, O, y) {
+    'WinHighlight.spec': [function (j, O, exports) {
       'use strict';
 
       var B = {};
       B.value = true;
-      cc._RF.push(O, "1aa77YtUcFBUomDDx/cedzg", "WinHighlight.spec") || (Object.defineProperty(y, "__esModule", B), y.showWinHighlight = undefined, y.showWinHighlight = function () {
+      cc._RF.push(O, "1aa77YtUcFBUomDDx/cedzg", "WinHighlight.spec") || (Object.defineProperty(exports, "__esModule", B), exports.showWinHighlight = undefined, exports.showWinHighlight = function () {
         {
           var x = System.get("automation") && System.get("automation").GameData;
           x && x.emit("WinHighlightShown");
         }
       }, cc._RF.pop());
     }, {}],
-    'WinLinesModel': [function (j, O, y) {
+    'WinLinesModel': [function (j, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "24a5eWztK9Pkb2VKy4b0JAV", "WinLinesModel")) {
         {
           var B = {};
           B.value = true;
-          Object.defineProperty(y, "__esModule", B), y.WinLinesModel = undefined;
+          Object.defineProperty(exports, "__esModule", B), exports.WinLinesModel = undefined;
           var x = function () {
             function C(H) {
               H && (this.gS = JSON.parse(JSON.stringify(H)), this.CS = Object.keys(this.gS));
@@ -16972,21 +16972,21 @@
               'configurable': true
             }), C;
           }();
-          y.WinLinesModel = x, cc._RF.pop();
+          exports.WinLinesModel = x, cc._RF.pop();
         }
       }
     }, {}],
-    'WinRollBaseController': [function (O, y, B) {
+    'WinRollBaseController': [function (require, y, exports) {
       'use strict';
 
       if (!cc._RF.push(y, "adab7txcZBOsJ6NClaGwrmO", "WinRollBaseController")) {
         var x = {};
         x.value = true;
-        Object.defineProperty(B, "__esModule", x);
+        Object.defineProperty(exports, "__esModule", x);
         var C = {};
         C.playing = -1;
         C.stop = -1;
-        var H = O("NumberDisplayInterface"),
+        var H = require("NumberDisplayInterface"),
           V = cc.Enum(C),
           M = cc._decorator,
           q = M.ccclass,
@@ -17059,18 +17059,18 @@
               })], k.prototype, "displayController", undefined), __decorate([q], k);
             }
           }(cc.Component);
-        B.default = D, cc._RF.pop();
+        exports.default = D, cc._RF.pop();
       }
     }, sh],
-    'WinRollController': [function (j, O, y) {
+    'WinRollController': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "00616+xbv9I/qAMwXqWbdkY", "WinRollController")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B);
-        var x = j("NumberDisplayController"),
-          C = j("WinRollBaseController"),
+        Object.defineProperty(exports, "__esModule", B);
+        var x = require("NumberDisplayController"),
+          C = require("WinRollBaseController"),
           H = cc._decorator,
           V = H.ccclass,
           M = H.property,
@@ -17085,19 +17085,19 @@
             W.override = true;
             return __extends(D, m), __decorate([M(W)], D.prototype, "displayController", undefined), __decorate([V], D);
           }(C.default);
-        y.default = q, cc._RF.pop();
+        exports.default = q, cc._RF.pop();
       }
     }, sP],
-    'WinRollCurveController': [function (j, O, y) {
+    'WinRollCurveController': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "a210c4WXCdAmKbdwKdx5P30", "WinRollCurveController")) {
         {
           var B = {};
           B.value = true;
-          Object.defineProperty(y, "__esModule", B);
-          var x = j("NumberCurvedController"),
-            C = j("WinRollBaseController"),
+          Object.defineProperty(exports, "__esModule", B);
+          var x = require("NumberCurvedController"),
+            C = require("WinRollBaseController"),
             H = cc._decorator,
             V = H.ccclass,
             M = H.property,
@@ -17110,20 +17110,20 @@
               W.override = true;
               return __extends(D, m), __decorate([M(W)], D.prototype, "displayController", undefined), __decorate([V], D);
             }(C.default);
-          y.default = q, cc._RF.pop();
+          exports.default = q, cc._RF.pop();
         }
       }
     }, sR],
-    'WinRollLabelController': [function (j, O, y) {
+    'WinRollLabelController': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "f7e1diBGQ5A8KF1oMrYEMNU", "WinRollLabelController")) {
         {
           var B = {};
           B.value = true;
-          Object.defineProperty(y, "__esModule", B);
-          var x = j("NumberLabelController"),
-            C = j("WinRollBaseController"),
+          Object.defineProperty(exports, "__esModule", B);
+          var x = require("NumberLabelController"),
+            C = require("WinRollBaseController"),
             H = cc._decorator,
             V = H.ccclass,
             M = H.property,
@@ -17136,20 +17136,20 @@
               W.override = true;
               return __extends(D, m), __decorate([M(W)], D.prototype, "displayController", undefined), __decorate([V], D);
             }(C.default);
-          y.default = q, cc._RF.pop();
+          exports.default = q, cc._RF.pop();
         }
       }
     }, sT],
-    'WinThresholdsModel': [function (j, O, y) {
+    'WinThresholdsModel': [function (require, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "43fa7kpruFLXK4fYDhrIgSc", "WinThresholdsModel")) {
         var B = {};
         B.value = true;
-        Object.defineProperty(y, "__esModule", B), y.WinThresholdsModel = undefined;
-        var x = j("APIEncryptor"),
-          C = j("Utils"),
-          H = j("Protoutils"),
+        Object.defineProperty(exports, "__esModule", B), exports.WinThresholdsModel = undefined;
+        var x = require("APIEncryptor"),
+          C = require("Utils"),
+          H = require("Protoutils"),
           r = function () {
             {
               function M(q) {
@@ -17215,17 +17215,17 @@
               }), M.registryKey = "WinThreshold", __decorate([H.api('mw', 1, "double", false, false, false)], M.prototype, "_mediumWin", undefined), __decorate([H.api('bw', 2, "double", false, false, false)], M.prototype, "_bigWin", undefined), __decorate([H.api("mgw", 3, "double", false, false, false)], M.prototype, "_megaWin", undefined), __decorate([H.api("smgw", 4, "double", false, false, false)], M.prototype, "_superMegaWin", undefined), V = __decorate([H.messageName("WinThreshold")], M);
             }
           }();
-        y.WinThresholdsModel = r, cc._RF.pop();
+        exports.WinThresholdsModel = r, cc._RF.pop();
       }
     }, sY],
-    'WinValuesModel': [function (j, O, y) {
+    'WinValuesModel': [function (j, O, exports) {
       'use strict';
 
       if (!cc._RF.push(O, "501f6RTfh9LVInQJ/Y+n54G", "WinValuesModel")) {
         {
           var B = {};
           B.value = true;
-          Object.defineProperty(y, "__esModule", B), y.WinValuesModel = undefined;
+          Object.defineProperty(exports, "__esModule", B), exports.WinValuesModel = undefined;
           var x = function () {
             function C(H) {
               H && (this.gS = JSON.parse(JSON.stringify(H)), this.WS = Object.keys(this.gS));
@@ -17246,37 +17246,37 @@
               'configurable': true
             }), C;
           }();
-          y.WinValuesModel = x, cc._RF.pop();
+          exports.WinValuesModel = x, cc._RF.pop();
         }
       }
     }, {}],
-    'XHRFactory': [function (l, j) {
+    'XHRFactory': [function (l, module) {
       'use strict';
 
-      if (!cc._RF.push(j, "f3dd4hmiBJHSqrMVzx2qXWg", "XHRFactory")) {
+      if (!cc._RF.push(module, "f3dd4hmiBJHSqrMVzx2qXWg", "XHRFactory")) {
         var O = System.get("common").XHRFactory;
-        j.exports.XHRFactory = O, j.exports.__esModule = true, cc._RF.pop();
+        module.exports.XHRFactory = O, module.exports.__esModule = true, cc._RF.pop();
       }
     }, {}],
-    'XHRHandler': [function (l, j) {
+    'XHRHandler': [function (l, module) {
       'use strict';
 
-      if (!cc._RF.push(j, "77926JsF5hDL5NbzKF89qZh", "XHRHandler")) {
+      if (!cc._RF.push(module, "77926JsF5hDL5NbzKF89qZh", "XHRHandler")) {
         {
           var O = System.get("bvframework").XHRHandler;
-          for (var y in O) j.exports[y] = O[y];
-          j.exports.__esModule = true, cc._RF.pop();
+          for (var y in O) module.exports[y] = O[y];
+          module.exports.__esModule = true, cc._RF.pop();
         }
       }
     }, {}],
-    'XHRHelper': [function (l, j) {
+    'XHRHelper': [function (l, module) {
       'use strict';
 
-      if (!cc._RF.push(j, "d29eaTApqFCCLK6u/sH0xO/", "XHRHelper")) {
+      if (!cc._RF.push(module, "d29eaTApqFCCLK6u/sH0xO/", "XHRHelper")) {
         {
           var O = System.get("bvframework").XHRHelper;
-          for (var y in O) j.exports[y] = O[y];
-          j.exports.__esModule = true, cc._RF.pop();
+          for (var y in O) module.exports[y] = O[y];
+          module.exports.__esModule = true, cc._RF.pop();
         }
       }
     }, {}]

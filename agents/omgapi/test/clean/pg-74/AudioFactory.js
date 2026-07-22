@@ -1,13 +1,13 @@
 // module: AudioFactory
-// Cocos 模块函数,参数 (require, module, exports) = (F, c, j)
-function AudioFactory(F, c, j) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, c, exports)
+function AudioFactory(require, c, exports) {
   'use strict';
 
   if (!cc._RF.push(c, "bf4b5cdVNdI7rQp2MPM3CWN", "AudioFactory")) {
     var I = {};
     I.value = true;
-    Object.defineProperty(j, "__esModule", I);
-    var m = F("AudioAdapterConstant"),
+    Object.defineProperty(exports, "__esModule", I);
+    var m = require("AudioAdapterConstant"),
       B = function () {
         function X() {
           {
@@ -28,7 +28,7 @@ function AudioFactory(F, c, j) {
           }), this.W = [];
         }, X;
       }();
-    j.default = B, cc._RF.pop();
+    exports.default = B, cc._RF.pop();
   }
 }
 module.exports = AudioFactory;

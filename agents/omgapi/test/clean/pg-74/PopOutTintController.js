@@ -1,13 +1,13 @@
 // module: PopOutTintController
-// Cocos 模块函数,参数 (require, module, exports) = (c, j, I)
-function PopOutTintController(c, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (c, j, exports)
+function PopOutTintController(c, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "58b31+llD1BAb9tUvY4+l2s", "PopOutTintController")) {
     {
       var m = {};
       m.value = true;
-      Object.defineProperty(I, "__esModule", m);
+      Object.defineProperty(exports, "__esModule", m);
       var B = {};
       B.positionX = 0;
       B.positionY = 0;
@@ -52,7 +52,7 @@ function PopOutTintController(c, j, I) {
             }, __decorate([Z], C);
           }
         }(cc.Component);
-      I.default = T, cc._RF.pop();
+      exports.default = T, cc._RF.pop();
     }
   }
 }

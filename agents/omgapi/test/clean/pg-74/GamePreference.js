@@ -1,16 +1,16 @@
 // module: GamePreference
-// Cocos 模块函数,参数 (require, module, exports) = (Q, F, j)
-function GamePreference(Q, F, j) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, F, exports)
+function GamePreference(require, F, exports) {
   'use strict';
 
   if (!cc._RF.push(F, "3785cPSwjJF7bcaqXF8ZWoV", "GamePreference")) {
-    j.__esModule = true, j.globalPreference = j.gamePreference = undefined;
-    var I = Q("Preference"),
-      m = Q("RtConfig"),
+    exports.__esModule = true, exports.globalPreference = exports.gamePreference = undefined;
+    var I = require("Preference"),
+      m = require("RtConfig"),
       B = (0, I.getPreference)(m.cs_Config.bundleId);
-    j.gamePreference = B;
+    exports.gamePreference = B;
     var X = (0, I.getPreference)(m.cs_Config.globalDomain);
-    j.globalPreference = X, cc._RF.pop();
+    exports.globalPreference = X, cc._RF.pop();
   }
 }
 module.exports = GamePreference;

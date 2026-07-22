@@ -1,13 +1,13 @@
 // module: MultiplierItem
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function MultiplierItem(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function MultiplierItem(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "ef976mKHIdI+pQp55gx+bwl", "MultiplierItem")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m);
-    var B = F("GameConstant"),
+    Object.defineProperty(exports, "__esModule", m);
+    var B = require("GameConstant"),
       X = cc._decorator,
       Z = X.ccclass,
       T = X.property,
@@ -67,7 +67,7 @@ function MultiplierItem(F, j, I) {
           }
         }, __decorate([T(cc.Sprite)], V.prototype, "normal_multi_sprite", undefined), __decorate([T(cc.Sprite)], V.prototype, "free_spin_multi_sprite", undefined), __decorate([T(cc.SpriteFrame)], V.prototype, "normal_active", undefined), __decorate([T(cc.SpriteFrame)], V.prototype, "normal_inactive", undefined), __decorate([T(cc.SpriteFrame)], V.prototype, "free_spin_before_inactive", undefined), __decorate([T(cc.SpriteFrame)], V.prototype, "free_spin_active", undefined), __decorate([T(cc.SpriteFrame)], V.prototype, "free_spin_inactive", undefined), __decorate([T(cc.Node)], V.prototype, "scatter_glow_a", undefined), __decorate([T(cc.Node)], V.prototype, "bonus_glow_c", undefined), __decorate([T(cc.Animation)], V.prototype, "multiplierVfxB", undefined), __decorate([Z], V);
       }(cc.Component);
-    I.default = M, cc._RF.pop();
+    exports.default = M, cc._RF.pop();
   }
 }
 module.exports = MultiplierItem;

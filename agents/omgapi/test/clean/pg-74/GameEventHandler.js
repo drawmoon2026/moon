@@ -1,9 +1,9 @@
 // module: GameEventHandler
-// Cocos 模块函数,参数 (require, module, exports) = (F, c)
-function GameEventHandler(F, c) {
+// Cocos 模块函数,参数 (require, module, exports) = (F, module)
+function GameEventHandler(F, module) {
   'use strict';
 
-  if (!cc._RF.push(c, "6da04mFMhpNcpdeGLQM+RKD", "GameEventHandler")) {
+  if (!cc._RF.push(module, "6da04mFMhpNcpdeGLQM+RKD", "GameEventHandler")) {
     {
       var j = {};
       j.subscribeGameInfoUpdateEvent = "subscribeUpdateGameInfoEvent";
@@ -32,8 +32,8 @@ function GameEventHandler(F, c) {
         B = __assign({}, I);
       for (var X in Object.keys(m).forEach(function (Z) {
         B[m[Z]] = B[Z];
-      }), B) c.exports[X] = B[X];
-      c.exports.__esModule = true, cc._RF.pop();
+      }), B) module.exports[X] = B[X];
+      module.exports.__esModule = true, cc._RF.pop();
     }
   }
 }

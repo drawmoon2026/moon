@@ -1,14 +1,14 @@
 // module: NumberLabelControllerLite
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function NumberLabelControllerLite(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function NumberLabelControllerLite(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "88c0bvJUDVGt4Zbi3DnKpmf", "NumberLabelControllerLite")) {
     {
       var m = {};
       m.value = true;
-      Object.defineProperty(I, "__esModule", m);
-      var B = F("Utils"),
+      Object.defineProperty(exports, "__esModule", m);
+      var B = require("Utils"),
         X = cc.misc.lerp,
         Z = cc._decorator,
         T = Z.ccclass,
@@ -34,7 +34,7 @@ function NumberLabelControllerLite(F, j, I) {
             }, __decorate([M(cc.Label)], N.prototype, "label", undefined), __decorate([M(cc.Integer)], N.prototype, "rollDuration", undefined), __decorate([M(cc.Float)], N.prototype, "maxWidth", undefined), __decorate([T], N);
           }
         }(cc.Component);
-      I.default = C, cc._RF.pop();
+      exports.default = C, cc._RF.pop();
     }
   }
 }

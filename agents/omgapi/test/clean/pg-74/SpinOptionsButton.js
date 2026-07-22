@@ -1,15 +1,15 @@
 // module: SpinOptionsButton
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function SpinOptionsButton(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function SpinOptionsButton(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "3ee68qGxY9G3q+WVKsHebfZ", "SpinOptionsButton")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m);
-    var B = F("GenericSettingButton"),
-      X = F("UIAppearanceHelper"),
-      Z = F("Utils"),
+    Object.defineProperty(exports, "__esModule", m);
+    var B = require("GenericSettingButton"),
+      X = require("UIAppearanceHelper"),
+      Z = require("Utils"),
       T = cc._decorator,
       M = T.ccclass,
       C = T.property,
@@ -61,7 +61,7 @@ function SpinOptionsButton(F, j, I) {
           }
         }, __decorate([C(cc.Node)], q.prototype, "holder", undefined), __decorate([C(cc.Node)], q.prototype, "autoSpinTurn", undefined), __decorate([C(cc.Node)], q.prototype, "autoSpinIcon", undefined), __decorate([C(cc.Node)], q.prototype, "autoSpinIconShadow", undefined), __decorate([M], q);
       }(B.default);
-    I.default = V, cc._RF.pop();
+    exports.default = V, cc._RF.pop();
   }
 }
 module.exports = SpinOptionsButton;

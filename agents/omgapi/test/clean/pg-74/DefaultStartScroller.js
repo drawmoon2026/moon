@@ -1,13 +1,13 @@
 // module: DefaultStartScroller
-// Cocos 模块函数,参数 (require, module, exports) = (c, j, I)
-function DefaultStartScroller(c, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function DefaultStartScroller(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "a9e6d7qkYZPw5K5UPSZUUME", "DefaultStartScroller")) {
     {
       var m = {};
       m.value = true;
-      Object.defineProperty(I, "__esModule", m);
+      Object.defineProperty(exports, "__esModule", m);
       var B = {};
       B.scrollCallback = undefined;
       B.maxSpeed = -5040;
@@ -17,7 +17,7 @@ function DefaultStartScroller(c, j, I) {
       B.bounceDistance = 60;
       B.bounceDuration = 0.15;
       B.bounceFactor = 1.84;
-      var X = c("BaseScroller"),
+      var X = require("BaseScroller"),
         T = function (M) {
           {
             function C(V) {
@@ -54,7 +54,7 @@ function DefaultStartScroller(c, j, I) {
             }, C;
           }
         }(X.default);
-      I.default = T, cc._RF.pop();
+      exports.default = T, cc._RF.pop();
     }
   }
 }

@@ -1,13 +1,13 @@
 // module: CameraScaleController
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function CameraScaleController(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function CameraScaleController(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "6ca2418PwNLgI9c//ZGwSCe", "CameraScaleController")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m);
-    var B = F("RandomShakingEffectController"),
+    Object.defineProperty(exports, "__esModule", m);
+    var B = require("RandomShakingEffectController"),
       X = cc._decorator,
       Z = X.ccclass,
       T = X.property,
@@ -28,7 +28,7 @@ function CameraScaleController(F, j, I) {
           return this.resetDefault(), this.node.destroy(), C.prototype.destroy.call(this);
         }, __decorate([T(B.default)], V.prototype, "randomShakingEffectController", undefined), __decorate([Z], V);
       }(cc.Component);
-    I.default = M, cc._RF.pop();
+    exports.default = M, cc._RF.pop();
   }
 }
 module.exports = CameraScaleController;

@@ -1,12 +1,12 @@
 // module: SlotDataHandler
-// Cocos 模块函数,参数 (require, module, exports) = (F, c, j)
-function SlotDataHandler(F, c, j) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, c, exports)
+function SlotDataHandler(require, c, exports) {
   'use strict';
 
   if (!cc._RF.push(c, "c92e6Vflr1IcZlyJUaCowMg", "SlotDataHandler")) {
     var I = {};
     I.value = true;
-    Object.defineProperty(j, "__esModule", I);
+    Object.defineProperty(exports, "__esModule", I);
     var m = function () {
       function B() {
         this.slotViews = undefined, this.spinType = undefined, this.topBufferRow = undefined, this.bottomBufferRow = undefined, this.numberOfRow = undefined, this.numberOfColumn = undefined, this.getSymbolSize = undefined, this.getRandomSymbol = undefined, this.isStopping = undefined, this.formattedReelData = undefined, this.backupBufferedSymbol = undefined, this.bufferedEmptyItemInfo = undefined, this.formattedDataPositions = undefined;
@@ -104,7 +104,7 @@ function SlotDataHandler(F, c, j) {
         return T;
       }, B;
     }();
-    j.default = m, cc._RF.pop();
+    exports.default = m, cc._RF.pop();
   }
 }
 module.exports = SlotDataHandler;

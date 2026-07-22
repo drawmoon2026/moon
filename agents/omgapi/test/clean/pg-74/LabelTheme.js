@@ -1,10 +1,10 @@
 // module: LabelTheme
-// Cocos 模块函数,参数 (require, module, exports) = (X, Z, T)
-function LabelTheme(X, Z, T) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, module, exports)
+function LabelTheme(require, module, exports) {
   'use strict';
 
-  if (!cc._RF.push(Z, "05b6c8yPn1LZIH3AnSTBq8U", "LabelTheme")) {
-    T.__esModule = true, T.default = undefined;
+  if (!cc._RF.push(module, "05b6c8yPn1LZIH3AnSTBq8U", "LabelTheme")) {
+    exports.__esModule = true, exports.default = undefined;
     var M = {};
     M.oc = "_updateRichText";
     M.cc = "_isBold";
@@ -26,10 +26,10 @@ function LabelTheme(X, Z, T) {
           }
         }
         return y.default = k, Y && Y.set(k, y), y;
-      }(X("ResRC")),
-      N = X("ResourceQualifierHelper"),
-      q = X("Utils"),
-      f = X("UIAppearanceHelper"),
+      }(require("ResRC")),
+      N = require("ResourceQualifierHelper"),
+      q = require("Utils"),
+      f = require("UIAppearanceHelper"),
       g = cc.Enum(M),
       K = (0, q.getCocosMajor)();
     C = "number" == typeof K && K >= 4 ? function (k) {
@@ -143,7 +143,7 @@ function LabelTheme(X, Z, T) {
         cc.isValid(this.node) && (Y[g.hc] = k, Y instanceof cc.Label ? C(Y) : cc.RichText);
       }
     });
-    T.default = H, Z.exports = T.default, cc._RF.pop();
+    exports.default = H, module.exports = exports.default, cc._RF.pop();
   }
   function U(k) {
     if ("function" != typeof WeakMap) return null;

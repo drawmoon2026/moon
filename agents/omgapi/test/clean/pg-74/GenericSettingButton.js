@@ -1,15 +1,15 @@
 // module: GenericSettingButton
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function GenericSettingButton(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function GenericSettingButton(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "aeaa7CV0CtEMo2Sab7CGMw1", "GenericSettingButton")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m);
-    var B = F("ButtonTheme"),
-      X = F("UIAppearanceHelper"),
-      Z = F("Utils"),
+    Object.defineProperty(exports, "__esModule", m);
+    var B = require("ButtonTheme"),
+      X = require("UIAppearanceHelper"),
+      Z = require("Utils"),
       T = cc._decorator,
       M = T.ccclass,
       C = T.property,
@@ -109,7 +109,7 @@ function GenericSettingButton(F, j, I) {
           }
         }, __decorate([C(cc.Node)], q.prototype, "iconSprite", undefined), __decorate([C(cc.Node)], q.prototype, "collider", undefined), __decorate([C(B)], q.prototype, "buttonTheme", undefined), __decorate([C(cc.Node)], q.prototype, "circleCollider", undefined), __decorate([M], q);
       }(cc.Component);
-    I.default = V, cc._RF.pop();
+    exports.default = V, cc._RF.pop();
   }
 }
 module.exports = GenericSettingButton;

@@ -1,23 +1,23 @@
 // module: MJPrizeState
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function MJPrizeState(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function MJPrizeState(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "5077aPdiJVBfYT9UA7aHlh1", "MJPrizeState")) {
     {
       var m = {};
       m.value = true;
-      Object.defineProperty(I, "__esModule", m);
-      var B = F("PrizeState"),
-        X = F("Utils"),
-        Z = (F("TweaksData"), F("GameEventHandler")),
-        T = F("SettingMenuHelper"),
-        M = F("GameConstant"),
-        C = F("TransactionStateMachineHandler"),
-        V = F("AudioManager"),
-        N = F("SlotHandler"),
-        q = F("SlotGameTools"),
-        g = F("GameUtil"),
+      Object.defineProperty(exports, "__esModule", m);
+      var B = require("PrizeState"),
+        X = require("Utils"),
+        Z = (require("TweaksData"), require("GameEventHandler")),
+        T = require("SettingMenuHelper"),
+        M = require("GameConstant"),
+        C = require("TransactionStateMachineHandler"),
+        V = require("AudioManager"),
+        N = require("SlotHandler"),
+        q = require("SlotGameTools"),
+        g = require("GameUtil"),
         K = function (O) {
           function x(p, b, L, H) {
             {
@@ -175,7 +175,7 @@ function MJPrizeState(F, j, I) {
             return (b === M.TransitionState.NORMAL || b === M.TransitionState.FREE_SPIN) && L > 0;
           }, x;
         }(B.default);
-      I.default = K, cc._RF.pop();
+      exports.default = K, cc._RF.pop();
     }
   }
 }

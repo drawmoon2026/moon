@@ -1,18 +1,18 @@
 // module: SettingMenuHandlers
-// Cocos 模块函数,参数 (require, module, exports) = (j, I, m)
-function SettingMenuHandlers(j, I, m) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, I, exports)
+function SettingMenuHandlers(require, I, exports) {
   'use strict';
 
   if (!cc._RF.push(I, "e4a87/dIGtMT5oq5NQEGbT5", "SettingMenuHandlers")) {
     var B = {};
     B.value = true;
-    Object.defineProperty(m, "__esModule", B), m.handleSettingMenuMusicChange = m.handleSettingMenuFlipped = m.additionalBetCalculation = m.updateDataSourceBetValue = m.getBetChangeCallback = m.updateBetChangesCallback = m.initializeSettingMenu = m.setupSettingMenu = undefined;
+    Object.defineProperty(exports, "__esModule", B), exports.handleSettingMenuMusicChange = exports.handleSettingMenuFlipped = exports.additionalBetCalculation = exports.updateDataSourceBetValue = exports.getBetChangeCallback = exports.updateBetChangesCallback = exports.initializeSettingMenu = exports.setupSettingMenu = undefined;
     var X = {};
     X.settingMenuLibPath = "lib/setting_menu/";
-    var Z = j("LaunchConfig"),
-      T = j("AnalyticsHelper"),
-      M = j("QuitGameWithEvent");
-    m.setupSettingMenu = function (x) {
+    var Z = require("LaunchConfig"),
+      T = require("AnalyticsHelper"),
+      M = require("QuitGameWithEvent");
+    exports.setupSettingMenu = function (x) {
       {
         var p = Object.assign({}, C, x.settingMenuDependenciesPath),
           b = x.settingMenuHelper,
@@ -22,7 +22,7 @@ function SettingMenuHandlers(j, I, m) {
         var U = '1' !== Z.cs_Launch.noAudio;
         b.audioConfigure = U, H && H();
       }
-    }, m.initializeSettingMenu = function (x) {
+    }, exports.initializeSettingMenu = function (x) {
       {
         var p = x.settingMenuHelper,
           b = x.dataSource,
@@ -35,7 +35,7 @@ function SettingMenuHandlers(j, I, m) {
         var H = b.playerModel.balance;
         p.setBalance(H), p.updateBetValues(), p.setAllButtonsInteractable(false), L && L();
       }
-    }, m.updateBetChangesCallback = V, m.getBetChangeCallback = N, m.updateDataSourceBetValue = q, m.additionalBetCalculation = g, m.handleSettingMenuFlipped = K, m.handleSettingMenuMusicChange = O, cc._RF.pop();
+    }, exports.updateBetChangesCallback = V, exports.getBetChangeCallback = N, exports.updateDataSourceBetValue = q, exports.additionalBetCalculation = g, exports.handleSettingMenuFlipped = K, exports.handleSettingMenuMusicChange = O, cc._RF.pop();
   }
   function V(x, p, b) {
     return function (L, H) {

@@ -1,19 +1,19 @@
 // module: SlotView
-// Cocos 模块函数,参数 (require, module, exports) = (F, c, j)
-function SlotView(F, c, j) {
+// Cocos 模块函数,参数 (require, module, exports) = (F, c, exports)
+function SlotView(F, c, exports) {
   'use strict';
 
   if (!cc._RF.push(c, "dd04eu7yQpIx4UwS/QtQOjh", "SlotView")) {
     var I = {};
     I.value = true;
-    Object.defineProperty(j, "__esModule", I), j.SlotAnchor = undefined;
+    Object.defineProperty(exports, "__esModule", I), exports.SlotAnchor = undefined;
     var m,
       B = cc._decorator.ccclass;
     (function (Z) {
       {
         Z[Z.BOTTOM = -1] = "BOTTOM", Z[Z.MIDDLE = 0] = "MIDDLE", Z[Z.TOP = 1] = "TOP";
       }
-    })(m = j.SlotAnchor || (j.SlotAnchor = {}));
+    })(m = exports.SlotAnchor || (exports.SlotAnchor = {}));
     var X = function () {
       {
         function Z(T, M) {
@@ -208,7 +208,7 @@ function SlotView(F, c, j) {
         }, __decorate([B], Z);
       }
     }();
-    j.default = X, cc._RF.pop();
+    exports.default = X, cc._RF.pop();
   }
 }
 module.exports = SlotView;

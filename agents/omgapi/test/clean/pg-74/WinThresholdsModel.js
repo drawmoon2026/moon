@@ -1,13 +1,13 @@
 // module: WinThresholdsModel
-// Cocos 模块函数,参数 (require, module, exports) = (F, c, j)
-function WinThresholdsModel(F, c, j) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, c, exports)
+function WinThresholdsModel(require, c, exports) {
   'use strict';
 
   if (!cc._RF.push(c, "43fa7kpruFLXK4fYDhrIgSc", "WinThresholdsModel")) {
     var I = {};
     I.value = true;
-    Object.defineProperty(j, "__esModule", I), j.WinThresholdsModel = undefined;
-    var m = F("Utils"),
+    Object.defineProperty(exports, "__esModule", I), exports.WinThresholdsModel = undefined;
+    var m = require("Utils"),
       B = function () {
         {
           function X(Z) {
@@ -62,7 +62,7 @@ function WinThresholdsModel(F, c, j) {
           }), X;
         }
       }();
-    j.WinThresholdsModel = B, cc._RF.pop();
+    exports.WinThresholdsModel = B, cc._RF.pop();
   }
 }
 module.exports = WinThresholdsModel;

@@ -1,15 +1,15 @@
 // module: DragonController
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function DragonController(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function DragonController(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "9a2ddmtBlZNer1AyP8uke6g", "DragonController")) {
     {
       var m = {};
       m.value = true;
-      Object.defineProperty(I, "__esModule", m);
-      var B = F("AudioManager"),
-        X = F("AudioConstant"),
+      Object.defineProperty(exports, "__esModule", m);
+      var B = require("AudioManager"),
+        X = require("AudioConstant"),
         Z = cc._decorator.ccclass,
         T = function (M) {
           function C() {
@@ -36,7 +36,7 @@ function DragonController(F, j, I) {
             this.Ds && this.Ds();
           }, __decorate([Z], C);
         }(cc.Component);
-      I.default = T, cc._RF.pop();
+      exports.default = T, cc._RF.pop();
     }
   }
 }

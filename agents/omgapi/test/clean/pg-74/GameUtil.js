@@ -1,12 +1,12 @@
 // module: GameUtil
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function GameUtil(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function GameUtil(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "df611vJ3ApIErYUXTPhKHIe", "GameUtil")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m), I.isPassUKGC = I.getWinPoitionArr = I.generateGroupOfSlotItemWin = I.uniqueArray = I.differentArray = I.scheduleIterator = I.transformMultiplierData = undefined, I.transformMultiplierData = function (C) {
+    Object.defineProperty(exports, "__esModule", m), exports.isPassUKGC = exports.getWinPoitionArr = exports.generateGroupOfSlotItemWin = exports.uniqueArray = exports.differentArray = exports.scheduleIterator = exports.transformMultiplierData = undefined, exports.transformMultiplierData = function (C) {
       {
         for (var V = [0, 1, 2, 3, 4, 5, 6, 7, 8], N = false; !N;) if (V[4] === C) N = true;else {
           var q = V.shift();
@@ -15,9 +15,9 @@ function GameUtil(F, j, I) {
         return V;
       }
     };
-    var B = F("Utils"),
-      X = F("SlotHandler");
-    I.scheduleIterator = function (C, V, N, q) {
+    var B = require("Utils"),
+      X = require("SlotHandler");
+    exports.scheduleIterator = function (C, V, N, q) {
       {
         var f = 0,
           g = 0,
@@ -33,10 +33,10 @@ function GameUtil(F, j, I) {
           N >= 2 && B.sharedScheduler.unschedule(K), q = undefined;
         };
       }
-    }, I.differentArray = function (C, V) {
+    }, exports.differentArray = function (C, V) {
       for (var N = [], q = 0; q < C.length; q++) V.includes(C[q]) || N.push(C[q]);
       return N;
-    }, I.uniqueArray = M, I.generateGroupOfSlotItemWin = function (C) {
+    }, exports.uniqueArray = M, exports.generateGroupOfSlotItemWin = function (C) {
       var V = [];
       C = C.sort(function (O, x) {
         return O - x;
@@ -46,7 +46,7 @@ function GameUtil(F, j, I) {
         K >= q && K < f && (g !== K - 1 ? (g = K, V.push(g)) : g = K);
       }
       return V;
-    }, I.getWinPoitionArr = function (C) {
+    }, exports.getWinPoitionArr = function (C) {
       var V = C.winPositions,
         N = C.rawData,
         q = [];
@@ -54,9 +54,9 @@ function GameUtil(F, j, I) {
         q = q.concat(N[f]);
       }), M(q);
     };
-    var Z = F("GameUtils"),
-      T = F("MJDataSource");
-    I.isPassUKGC = function (C) {
+    var Z = require("GameUtils"),
+      T = require("MJDataSource");
+    exports.isPassUKGC = function (C) {
       return Z.checkOperatorProfit(C, T.mjDataSource);
     }, cc._RF.pop();
   }

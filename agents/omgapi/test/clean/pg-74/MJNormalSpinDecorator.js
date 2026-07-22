@@ -1,15 +1,15 @@
 // module: MJNormalSpinDecorator
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function MJNormalSpinDecorator(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function MJNormalSpinDecorator(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "38b72yPezZAaoJqa1VvrPzu", "MJNormalSpinDecorator")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m);
-    var B = F("NormalSpinDecorator"),
-      X = F("SettingMenuHelper"),
-      Z = F("GameConstant"),
+    Object.defineProperty(exports, "__esModule", m);
+    var B = require("NormalSpinDecorator"),
+      X = require("SettingMenuHelper"),
+      Z = require("GameConstant"),
       T = function (M) {
         function C(V, N) {
           {
@@ -30,7 +30,7 @@ function MJNormalSpinDecorator(F, j, I) {
           }
         }, C;
       }(B.default);
-    I.default = T, cc._RF.pop();
+    exports.default = T, cc._RF.pop();
   }
 }
 module.exports = MJNormalSpinDecorator;

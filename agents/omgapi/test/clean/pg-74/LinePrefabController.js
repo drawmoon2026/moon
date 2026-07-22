@@ -1,10 +1,10 @@
 // module: LinePrefabController
-// Cocos 模块函数,参数 (require, module, exports) = (Q, F, c)
-function LinePrefabController(Q, F, c) {
+// Cocos 模块函数,参数 (require, module, exports) = (Q, module, exports)
+function LinePrefabController(Q, module, exports) {
   'use strict';
 
-  if (!cc._RF.push(F, "275baJMs+tIcoOItOeSbgwO", "LinePrefabController")) {
-    c.__esModule = true, c.default = undefined;
+  if (!cc._RF.push(module, "275baJMs+tIcoOItOeSbgwO", "LinePrefabController")) {
+    exports.__esModule = true, exports.default = undefined;
     var j = cc.Class({
       'extends': cc.Component,
       'properties': {},
@@ -35,7 +35,7 @@ function LinePrefabController(Q, F, c) {
         }
       }
     });
-    c.default = j, F.exports = c.default, cc._RF.pop();
+    exports.default = j, module.exports = exports.default, cc._RF.pop();
   }
 }
 module.exports = LinePrefabController;

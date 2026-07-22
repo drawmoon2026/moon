@@ -1,11 +1,11 @@
 // module: SettingSliderNum
-// Cocos 模块函数,参数 (require, module, exports) = (Q, F, c)
-function SettingSliderNum(Q, F, c) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, module, exports)
+function SettingSliderNum(require, module, exports) {
   'use strict';
 
-  if (!cc._RF.push(F, "89028I5vilAgJwUYY+0IKoT", "SettingSliderNum")) {
-    c.__esModule = true, c.default = undefined;
-    var j = Q("Utils"),
+  if (!cc._RF.push(module, "89028I5vilAgJwUYY+0IKoT", "SettingSliderNum")) {
+    exports.__esModule = true, exports.default = undefined;
+    var j = require("Utils"),
       I = cc.Class({
         'extends': cc.Component,
         'properties': {
@@ -31,7 +31,7 @@ function SettingSliderNum(Q, F, c) {
           m ? (0, j.setNodeColorWithOpacity)(this.numberLabel.node, this.onColor) : (0, j.setNodeColorWithOpacity)(this.numberLabel.node, this.offColor);
         }
       });
-    c.default = I, F.exports = c.default, cc._RF.pop();
+    exports.default = I, module.exports = exports.default, cc._RF.pop();
   }
 }
 module.exports = SettingSliderNum;

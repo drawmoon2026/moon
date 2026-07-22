@@ -1,12 +1,12 @@
 // module: SliderEx
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function SliderEx(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (F, j, exports)
+function SliderEx(F, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "dbb33H+Xs1Dw7xtUJLC1l6D", "SliderEx")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m);
+    Object.defineProperty(exports, "__esModule", m);
     var B = cc._decorator,
       X = B.ccclass,
       Z = B.property,
@@ -39,7 +39,7 @@ function SliderEx(F, j, I) {
           this.content && (this.content.y = this.progress * (this.content.height - cc.view.getVisibleSize().height));
         }, __decorate([Z(cc.Node)], C.prototype, "content", undefined), __decorate([X], C);
       }(cc.Slider);
-    I.default = T, cc._RF.pop();
+    exports.default = T, cc._RF.pop();
   }
 }
 module.exports = SliderEx;

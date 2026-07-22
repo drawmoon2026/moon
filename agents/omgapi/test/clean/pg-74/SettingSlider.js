@@ -1,10 +1,10 @@
 // module: SettingSlider
-// Cocos 模块函数,参数 (require, module, exports) = (Q, F, c)
-function SettingSlider(Q, F, c) {
+// Cocos 模块函数,参数 (require, module, exports) = (Q, module, exports)
+function SettingSlider(Q, module, exports) {
   'use strict';
 
-  if (!cc._RF.push(F, "357638pYQ9Eibsf8KFNqaZK", "SettingSlider")) {
-    c.__esModule = true, c.default = undefined;
+  if (!cc._RF.push(module, "357638pYQ9Eibsf8KFNqaZK", "SettingSlider")) {
+    exports.__esModule = true, exports.default = undefined;
     var j = cc.Class({
       'extends': cc.Component,
       'properties': {
@@ -89,7 +89,7 @@ function SettingSlider(Q, F, c) {
         this.setDefaultFirstSliderNum(5 * Math.floor(21 * Math.random()));
       }
     });
-    c.default = j, F.exports = c.default, cc._RF.pop();
+    exports.default = j, module.exports = exports.default, cc._RF.pop();
   }
 }
 module.exports = SettingSlider;

@@ -1,18 +1,18 @@
 // module: MJDataSource
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function MJDataSource(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function MJDataSource(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "4fd8cvXEPFILJnInxsPwHVw", "MJDataSource")) {
     {
       var m = {};
       m.value = true;
-      Object.defineProperty(I, "__esModule", m), I.mjDataSource = undefined;
-      var B = F("PlayerModel"),
-        X = F("DataSource"),
-        Z = F("SlotSystemModel"),
-        T = F("RtConfig"),
-        M = F("MJSlotTransactionModel"),
+      Object.defineProperty(exports, "__esModule", m), exports.mjDataSource = undefined;
+      var B = require("PlayerModel"),
+        X = require("DataSource"),
+        Z = require("SlotSystemModel"),
+        T = require("RtConfig"),
+        M = require("MJSlotTransactionModel"),
         C = function (N) {
           function q() {
             var f = N.call(this, {
@@ -24,9 +24,9 @@ function MJDataSource(F, j, I) {
           }
           return __extends(q, N), q;
         }(X.default);
-      I.default = C;
+      exports.default = C;
       var V = new C();
-      I.mjDataSource = V, cc._RF.pop();
+      exports.mjDataSource = V, cc._RF.pop();
     }
   }
 }

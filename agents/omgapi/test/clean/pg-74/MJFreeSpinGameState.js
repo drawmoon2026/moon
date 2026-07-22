@@ -1,22 +1,22 @@
 // module: MJFreeSpinGameState
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function MJFreeSpinGameState(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function MJFreeSpinGameState(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "3aecevAbR9BLYJzY6tVzX6P", "MJFreeSpinGameState")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m);
-    var B = F("MJSpinState"),
-      X = F("MJPrizeState"),
-      Z = F("MJResultState"),
-      T = F("MJScatterState"),
-      M = F("GameConstant"),
-      C = F("Utils"),
-      V = F("SettingMenuHelper"),
-      N = F("TransactionStateMachineHandler"),
-      q = F("GameEventHandler"),
-      g = F("GenericLoadingScreenController"),
+    Object.defineProperty(exports, "__esModule", m);
+    var B = require("MJSpinState"),
+      X = require("MJPrizeState"),
+      Z = require("MJResultState"),
+      T = require("MJScatterState"),
+      M = require("GameConstant"),
+      C = require("Utils"),
+      V = require("SettingMenuHelper"),
+      N = require("TransactionStateMachineHandler"),
+      q = require("GameEventHandler"),
+      g = require("GenericLoadingScreenController"),
       K = function () {
         function O(x, p, b, L) {
           this.name = "Free Spin", this.dataSource = undefined, this.generalControllers = undefined, this.bonusControllers = undefined, this.loadingControllers = undefined, this.finalCallback = undefined, this.dataSource = x, this.generalControllers = p.generalControllers, this.bonusControllers = p.bonusControllers, this.loadingControllers = b, this.finalCallback = L;
@@ -155,7 +155,7 @@ function MJFreeSpinGameState(F, j, I) {
           this.mr = undefined, this.dataSource = undefined, this.finalCallback = undefined, this.generalControllers = undefined, this.bonusControllers = undefined, this.loadingControllers = undefined;
         }, O;
       }();
-    I.default = K, cc._RF.pop();
+    exports.default = K, cc._RF.pop();
   }
 }
 module.exports = MJFreeSpinGameState;

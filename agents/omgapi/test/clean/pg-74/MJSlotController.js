@@ -1,27 +1,27 @@
 // module: MJSlotController
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function MJSlotController(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, module)
+function MJSlotController(require, j, module) {
   'use strict';
 
   if (!cc._RF.push(j, "22b87qcl6BGuZI5q43faXjH", "MJSlotController")) {
     var B = {};
     B.value = true;
-    Object.defineProperty(I, "__esModule", B);
-    var X = F("AutomationDecorator"),
-      Z = F("SlotController.spec"),
-      T = F("SlotStateMachine"),
-      M = F("SlotHandler"),
-      V = F("SymbolImageHandler"),
-      N = F("MJDataSource"),
-      q = F("GameConstant"),
-      K = F("AudioManager"),
-      O = F("Utils"),
-      x = F("AudioConstant"),
-      L = F("UIAppearanceHelper"),
-      H = F("SpaceBarInterrupter"),
-      U = F("NodePoolHandler"),
-      k = F("GameUtil"),
-      Y = F("SpinConfigHandler"),
+    Object.defineProperty(module, "__esModule", B);
+    var X = require("AutomationDecorator"),
+      Z = require("SlotController.spec"),
+      T = require("SlotStateMachine"),
+      M = require("SlotHandler"),
+      V = require("SymbolImageHandler"),
+      N = require("MJDataSource"),
+      q = require("GameConstant"),
+      K = require("AudioManager"),
+      O = require("Utils"),
+      x = require("AudioConstant"),
+      L = require("UIAppearanceHelper"),
+      H = require("SpaceBarInterrupter"),
+      U = require("NodePoolHandler"),
+      k = require("GameUtil"),
+      Y = require("SpinConfigHandler"),
       y = cc._decorator,
       z = y.ccclass,
       P = y.property,
@@ -359,7 +359,7 @@ function MJSlotController(F, j, I) {
           'func': Z.symbolBreak
         })], w.prototype, "removeSymbols", null), __decorate([z], w);
       }(cc.Component);
-    I.default = G, cc._RF.pop();
+    module.default = G, cc._RF.pop();
   }
 }
 module.exports = MJSlotController;

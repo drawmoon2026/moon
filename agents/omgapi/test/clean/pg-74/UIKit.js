@@ -1,6 +1,6 @@
 // module: UIKit
-// Cocos 模块函数,参数 (require, module, exports) = (N, q, f)
-function UIKit(N, q, f) {
+// Cocos 模块函数,参数 (require, module, exports) = (N, q, exports)
+function UIKit(N, q, exports) {
   'use strict';
 
   var h = {};
@@ -44,6 +44,6 @@ function UIKit(N, q, f) {
   k.iphone_x = H;
   k.iphone = U;
   k.normal = r;
-  cc._RF.push(q, "cfcacQ0hpxOzKvh1YNNRBbk", "UIKit") || (Object.defineProperty(f, "__esModule", h), f.safeArea = f.TabBarConfigs = f.NavigationConfigs = undefined, f.NavigationConfigs = O, f.TabBarConfigs = L, f.safeArea = Object.freeze(k), cc._RF.pop());
+  cc._RF.push(q, "cfcacQ0hpxOzKvh1YNNRBbk", "UIKit") || (Object.defineProperty(exports, "__esModule", h), exports.safeArea = exports.TabBarConfigs = exports.NavigationConfigs = undefined, exports.NavigationConfigs = O, exports.TabBarConfigs = L, exports.safeArea = Object.freeze(k), cc._RF.pop());
 }
 module.exports = UIKit;

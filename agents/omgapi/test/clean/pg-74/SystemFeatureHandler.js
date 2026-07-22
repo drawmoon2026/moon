@@ -1,23 +1,23 @@
 // module: SystemFeatureHandler
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function SystemFeatureHandler(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function SystemFeatureHandler(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "c93d5OmEfVKSLl/iM1N4BVc", "SystemFeatureHandler")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m), I.checkSpinValidity = I.handleSystemEvent = I.getReevaluateBet = undefined;
-    var B = F("SlotAnalyticsEnum"),
-      X = F("Utils"),
-      Z = F("GameEventHandler");
-    I.getReevaluateBet = M, I.handleSystemEvent = function (C) {
+    Object.defineProperty(exports, "__esModule", m), exports.checkSpinValidity = exports.handleSystemEvent = exports.getReevaluateBet = undefined;
+    var B = require("SlotAnalyticsEnum"),
+      X = require("Utils"),
+      Z = require("GameEventHandler");
+    exports.getReevaluateBet = M, exports.handleSystemEvent = function (C) {
       var V = C.autoSpinCount,
         N = C.exitAutoSpinHandler,
         q = C.walletHelper,
         f = C.settingMenuHelper,
         g = C.betChangedHandler;
       X.sequenceCallback(T(q, V, N), M(f, g))(C.callback);
-    }, I.checkSpinValidity = function (C) {
+    }, exports.checkSpinValidity = function (C) {
       {
         var V = C.callback,
           N = C.walletHelper,

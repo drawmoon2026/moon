@@ -1,19 +1,19 @@
 // module: NavigationController
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function NavigationController(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, module)
+function NavigationController(require, j, module) {
   'use strict';
 
   if (!cc._RF.push(j, "d742diXy4tHCIVIgSy1jEIb", "NavigationController")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m);
-    var B = F("ViewController"),
-      X = F("NavigationBar"),
-      Z = F("TransitionEnum"),
-      T = F("NavigationDefaultTransition"),
-      M = F("TransitionContext"),
-      C = F("UIKit"),
-      V = F("TabBarItem"),
+    Object.defineProperty(module, "__esModule", m);
+    var B = require("ViewController"),
+      X = require("NavigationBar"),
+      Z = require("TransitionEnum"),
+      T = require("NavigationDefaultTransition"),
+      M = require("TransitionContext"),
+      C = require("UIKit"),
+      V = require("TabBarItem"),
       N = cc._decorator,
       q = N.ccclass,
       g = N.property,
@@ -212,7 +212,7 @@ function NavigationController(F, j, I) {
           }, __decorate([g(X.default)], x.prototype, "defaultNavigationBar", undefined), __decorate([g(cc.Node)], x.prototype, "statusBarPlaceholderNode", undefined), __decorate([g(cc.Node)], x.prototype, "contentNode", undefined), __decorate([q], x);
         }
       }(B.default);
-    I.default = K, cc._RF.pop();
+    module.default = K, cc._RF.pop();
   }
 }
 module.exports = NavigationController;

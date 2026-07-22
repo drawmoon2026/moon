@@ -1,16 +1,16 @@
 // module: PrizeState
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function PrizeState(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, module, exports)
+function PrizeState(require, module, exports) {
   'use strict';
 
-  if (!cc._RF.push(j, "b8e16tOyU5GT4m5ZQseMAOn", "PrizeState")) {
+  if (!cc._RF.push(module, "b8e16tOyU5GT4m5ZQseMAOn", "PrizeState")) {
     {
       var m = {};
       m.value = true;
-      Object.defineProperty(I, "__esModule", m), F("TweaksData");
-      var B = F("SettingMenuHelper"),
-        X = F("Utils"),
-        Z = F("GameEventHandler"),
+      Object.defineProperty(exports, "__esModule", m), require("TweaksData");
+      var B = require("SettingMenuHelper"),
+        X = require("Utils"),
+        Z = require("GameEventHandler"),
         T = function () {
           function M(C, V, N, q) {
             {
@@ -80,7 +80,7 @@ function PrizeState(F, j, I) {
             }
           }, M;
         }();
-      I.default = T, cc._RF.pop();
+      exports.default = T, cc._RF.pop();
     }
   }
 }

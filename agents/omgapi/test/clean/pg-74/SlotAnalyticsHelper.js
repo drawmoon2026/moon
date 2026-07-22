@@ -1,14 +1,14 @@
 // module: SlotAnalyticsHelper
-// Cocos 模块函数,参数 (require, module, exports) = (F, c, j)
-function SlotAnalyticsHelper(F, c, j) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, c, exports)
+function SlotAnalyticsHelper(require, c, exports) {
   'use strict';
 
   if (!cc._RF.push(c, "4d769Qc8epMlozoEYpeBTit", "SlotAnalyticsHelper")) {
     var I = {};
     I.value = true;
-    Object.defineProperty(j, "__esModule", I), j.sendFastStopGA = undefined;
-    var m = F("AnalyticsHelper");
-    j.sendFastStopGA = function (B, X) {
+    Object.defineProperty(exports, "__esModule", I), exports.sendFastStopGA = undefined;
+    var m = require("AnalyticsHelper");
+    exports.sendFastStopGA = function (B, X) {
       {
         var Z = {};
         Z.type = B;

@@ -1,17 +1,17 @@
 // module: MJIdleState
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function MJIdleState(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function MJIdleState(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "a86bdnAkJJI/Ib/qSReHspQ", "MJIdleState")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m);
-    var B = F("IdleState"),
-      X = F("AudioManager"),
-      Z = F("TransactionStateMachineHandler"),
-      T = F("SpaceBarInterrupter"),
-      M = F("GameEventHandler"),
+    Object.defineProperty(exports, "__esModule", m);
+    var B = require("IdleState"),
+      X = require("AudioManager"),
+      Z = require("TransactionStateMachineHandler"),
+      T = require("SpaceBarInterrupter"),
+      M = require("GameEventHandler"),
       C = function (V) {
         {
           function N() {
@@ -48,7 +48,7 @@ function MJIdleState(F, j, I) {
           }, N;
         }
       }(B.default);
-    I.default = C, cc._RF.pop();
+    exports.default = C, cc._RF.pop();
   }
 }
 module.exports = MJIdleState;

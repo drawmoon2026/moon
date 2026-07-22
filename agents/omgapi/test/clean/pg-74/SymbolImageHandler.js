@@ -1,12 +1,12 @@
 // module: SymbolImageHandler
-// Cocos 模块函数,参数 (require, module, exports) = (F, c, j)
-function SymbolImageHandler(F, c, j) {
+// Cocos 模块函数,参数 (require, module, exports) = (F, c, exports)
+function SymbolImageHandler(F, c, exports) {
   'use strict';
 
   if (!cc._RF.push(c, "9b6bfcPf+VNAqt9W261jCgX", "SymbolImageHandler")) {
     var I = {};
     I.value = true;
-    Object.defineProperty(j, "__esModule", I), j.symbolImageHandler = j.SymbolImageHandler = undefined;
+    Object.defineProperty(exports, "__esModule", I), exports.symbolImageHandler = exports.SymbolImageHandler = undefined;
     var m = function () {
       function B() {
         this.cS = [], this.hS = [];
@@ -31,7 +31,7 @@ function SymbolImageHandler(F, c, j) {
         'configurable': true
       }), B;
     }();
-    j.SymbolImageHandler = m, j.symbolImageHandler = new m(), cc._RF.pop();
+    exports.SymbolImageHandler = m, exports.symbolImageHandler = new m(), cc._RF.pop();
   }
 }
 module.exports = SymbolImageHandler;

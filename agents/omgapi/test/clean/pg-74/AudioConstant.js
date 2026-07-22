@@ -1,6 +1,6 @@
 // module: AudioConstant
-// Cocos 模块函数,参数 (require, module, exports) = (QM, QC, QV)
-function AudioConstant(QM, QC, QV) {
+// Cocos 模块函数,参数 (require, module, exports) = (QM, QC, exports)
+function AudioConstant(QM, QC, exports) {
   'use strict';
 
   var QN = {};
@@ -349,6 +349,6 @@ function AudioConstant(QM, QC, QV) {
   Fx.uiStart = FK;
   Fx.uiStartOut = FO;
   Fx.__duration = 106.03;
-  cc._RF.push(QC, "830caTX97pMPp2cdgvM+3Rw", "AudioConstant") || (Object.defineProperty(QV, "__esModule", QN), QV.GENERAL_AUDIO = QV.VOX = undefined, QV.VOX = Qu, QV.GENERAL_AUDIO = Fx, cc._RF.pop());
+  cc._RF.push(QC, "830caTX97pMPp2cdgvM+3Rw", "AudioConstant") || (Object.defineProperty(exports, "__esModule", QN), exports.GENERAL_AUDIO = exports.VOX = undefined, exports.VOX = Qu, exports.GENERAL_AUDIO = Fx, cc._RF.pop());
 }
 module.exports = AudioConstant;

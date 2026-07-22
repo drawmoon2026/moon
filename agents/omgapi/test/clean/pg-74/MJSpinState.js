@@ -1,22 +1,22 @@
 // module: MJSpinState
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function MJSpinState(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function MJSpinState(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "17edcxDqq9BuY88Uc4rdBbm", "MJSpinState")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m);
-    var B = F("MJAPIClient"),
-      X = F("GameConstant"),
-      Z = F("SpinState"),
-      T = F("RequestHandler"),
-      M = F("AudioManager"),
-      C = F("AudioConstant"),
-      V = F("SlotHandler"),
-      N = F("Utils"),
-      q = F("AutoSpinHandler"),
-      g = F("TransactionStateMachineHandler"),
+    Object.defineProperty(exports, "__esModule", m);
+    var B = require("MJAPIClient"),
+      X = require("GameConstant"),
+      Z = require("SpinState"),
+      T = require("RequestHandler"),
+      M = require("AudioManager"),
+      C = require("AudioConstant"),
+      V = require("SlotHandler"),
+      N = require("Utils"),
+      q = require("AutoSpinHandler"),
+      g = require("TransactionStateMachineHandler"),
       K = function (O) {
         function x(p, b, L, H) {
           var U = O.call(this, p, b, L, H) || this;
@@ -55,7 +55,7 @@ function MJSpinState(F, j, I) {
           b === X.TransitionState.NORMAL ? p.switchToTips(L) : b === X.TransitionState.FREE_SPIN && p.freeSpinTips(L);
         }, x;
       }(Z.default);
-    I.default = K, cc._RF.pop();
+    exports.default = K, cc._RF.pop();
   }
 }
 module.exports = MJSpinState;

@@ -1,13 +1,13 @@
 // module: RowShiningController
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function RowShiningController(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function RowShiningController(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "1b37egCIUVF4qGKi0vUjP/C", "RowShiningController")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m);
-    var B = F("Utils"),
+    Object.defineProperty(exports, "__esModule", m);
+    var B = require("Utils"),
       X = cc._decorator,
       Z = X.ccclass,
       T = X.property,
@@ -40,7 +40,7 @@ function RowShiningController(F, j, I) {
           q <= 0 ? (q = 0, this.rectGlow.opacity = q, this.rectGlow.color = new cc.Color(q, q, q), this.Ed = 0, this.update = B.emptyFunc) : (this.rectGlow.opacity = q, this.rectGlow.color = new cc.Color(q, q, q));
         }, V.prototype.update = function () {}, __decorate([T(cc.Node)], V.prototype, "dragonGlow", undefined), __decorate([T(cc.Node)], V.prototype, "middleDragonGlow", undefined), __decorate([T(cc.Node)], V.prototype, "sideDragonGlow", undefined), __decorate([T(cc.Node)], V.prototype, "dragonGlow", undefined), __decorate([T(cc.Node)], V.prototype, "rectGlow", undefined), __decorate([T(cc.Node)], V.prototype, "leftParticle", undefined), __decorate([T(cc.Node)], V.prototype, "rightParticle", undefined), __decorate([Z], V);
       }(cc.Component);
-    I.default = M, cc._RF.pop();
+    exports.default = M, cc._RF.pop();
   }
 }
 module.exports = RowShiningController;

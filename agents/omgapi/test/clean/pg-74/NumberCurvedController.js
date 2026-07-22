@@ -1,13 +1,13 @@
 // module: NumberCurvedController
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function NumberCurvedController(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function NumberCurvedController(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "22ff3ETL9NJ6LV0gfCqckfH", "NumberCurvedController")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m);
-    var B = F("NumberDisplayController"),
+    Object.defineProperty(exports, "__esModule", m);
+    var B = require("NumberDisplayController"),
       X = cc._decorator,
       Z = X.ccclass,
       T = X.property,
@@ -50,7 +50,7 @@ function NumberCurvedController(F, j, I) {
           'type': cc.Float
         })], V.prototype, "curveness", undefined), __decorate([Z], V);
       }(B.default);
-    I.default = M, cc._RF.pop();
+    exports.default = M, cc._RF.pop();
   }
 }
 module.exports = NumberCurvedController;

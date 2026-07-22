@@ -1,13 +1,13 @@
 // module: SlotItemPool
-// Cocos 模块函数,参数 (require, module, exports) = (F, c, j)
-function SlotItemPool(F, c, j) {
+// Cocos 模块函数,参数 (require, module, exports) = (F, c, exports)
+function SlotItemPool(F, c, exports) {
   'use strict';
 
   if (!cc._RF.push(c, "4cb49tzG5ZEy6QJghScmBDK", "SlotItemPool")) {
     {
       var I = {};
       I.value = true;
-      Object.defineProperty(j, "__esModule", I);
+      Object.defineProperty(exports, "__esModule", I);
       var m = function () {
         function B() {
           {
@@ -49,7 +49,7 @@ function SlotItemPool(F, c, j) {
           return M.init(C), M;
         }, B;
       }();
-      j.default = m, cc._RF.pop();
+      exports.default = m, cc._RF.pop();
     }
   }
 }

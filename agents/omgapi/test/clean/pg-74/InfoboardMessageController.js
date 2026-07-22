@@ -1,24 +1,24 @@
 // module: InfoboardMessageController
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function InfoboardMessageController(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function InfoboardMessageController(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "f962cm61b9P6rw9Yco9B/O4", "InfoboardMessageController")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m), I.InfoboardMessageOrderState = undefined;
+    Object.defineProperty(exports, "__esModule", m), exports.InfoboardMessageOrderState = undefined;
     var B,
       X,
-      Z = F("NumberDisplayController"),
-      T = F("NumberRollController"),
-      M = F("Utils"),
-      C = F("AutomationDecorator"),
-      V = F("InfoboardMessageController.spec");
+      Z = require("NumberDisplayController"),
+      T = require("NumberRollController"),
+      M = require("Utils"),
+      C = require("AutomationDecorator"),
+      V = require("InfoboardMessageController.spec");
     (function (O) {
       {
         O[O.SEQUENCE = 0] = "SEQUENCE", O[O.RANDOM = 1] = "RANDOM";
       }
-    })(B = I.InfoboardMessageOrderState || (I.InfoboardMessageOrderState = {})), function (O) {
+    })(B = exports.InfoboardMessageOrderState || (exports.InfoboardMessageOrderState = {})), function (O) {
       O.Ro = "_fntConfig";
     }(X || (X = {}));
     var N = cc._decorator,
@@ -267,7 +267,7 @@ function InfoboardMessageController(F, j, I) {
           })], k.prototype, "setWinAmount", null), __decorate([q], k);
         }
       }(cc.Component);
-    I.default = K, cc._RF.pop();
+    exports.default = K, cc._RF.pop();
   }
 }
 module.exports = InfoboardMessageController;

@@ -1,13 +1,13 @@
 // module: SpaceBarInterrupter
-// Cocos 模块函数,参数 (require, module, exports) = (F, c, j)
-function SpaceBarInterrupter(F, c, j) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, c, exports)
+function SpaceBarInterrupter(require, c, exports) {
   'use strict';
 
   if (!cc._RF.push(c, "676cajSckdANomyB/3kyE3c", "SpaceBarInterrupter")) {
     var I = {};
     I.value = true;
-    Object.defineProperty(j, "__esModule", I), j.spaceBarInterrupter = undefined;
-    var m = F("BVFramework"),
+    Object.defineProperty(exports, "__esModule", I), exports.spaceBarInterrupter = undefined;
+    var m = require("BVFramework"),
       B = cc._decorator.ccclass,
       X = new (function (Z) {
         {
@@ -97,7 +97,7 @@ function SpaceBarInterrupter(F, c, j) {
           }, __decorate([B("SpaceBarInterrupter")], T);
         }
       }(cc.Object))();
-    j.spaceBarInterrupter = X, cc._RF.pop();
+    exports.spaceBarInterrupter = X, cc._RF.pop();
   }
 }
 module.exports = SpaceBarInterrupter;

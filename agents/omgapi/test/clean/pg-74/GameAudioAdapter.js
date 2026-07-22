@@ -1,15 +1,15 @@
 // module: GameAudioAdapter
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function GameAudioAdapter(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function GameAudioAdapter(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "891f2bgQ3dH25Bfnq8EGRF7", "GameAudioAdapter")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m);
-    var B = F("AudioManager"),
-      X = F("AudioAdapter"),
-      Z = F("AudioAdapterConstant"),
+    Object.defineProperty(exports, "__esModule", m);
+    var B = require("AudioManager"),
+      X = require("AudioAdapter"),
+      Z = require("AudioAdapterConstant"),
       T = cc._decorator.ccclass,
       M = function (C) {
         function V(N, q) {
@@ -31,7 +31,7 @@ function GameAudioAdapter(F, j, I) {
           return B.unregisterAudio(this, this.Fs), C.prototype.unload.call(this);
         }, __decorate([T], V);
       }(X.default);
-    I.default = M, cc._RF.pop();
+    exports.default = M, cc._RF.pop();
   }
 }
 module.exports = GameAudioAdapter;

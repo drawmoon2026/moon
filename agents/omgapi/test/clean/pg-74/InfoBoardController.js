@@ -1,20 +1,20 @@
 // module: InfoBoardController
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function InfoBoardController(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, exports, I)
+function InfoBoardController(require, exports, I) {
   'use strict';
 
-  if (!cc._RF.push(j, "5144fyBpeZLZ6aZrW4gPoIN", "InfoBoardController")) {
+  if (!cc._RF.push(exports, "5144fyBpeZLZ6aZrW4gPoIN", "InfoBoardController")) {
     {
       var m = {};
       m.value = true;
       Object.defineProperty(I, "__esModule", m), I.InfoboardState = undefined;
       var B,
-        X = F("Utils"),
-        Z = F("AudioManager"),
-        T = F("AudioConstant"),
-        M = F("GameConstant"),
-        C = F("SpaceBarInterrupter"),
-        V = F("GameUtil");
+        X = require("Utils"),
+        Z = require("AudioManager"),
+        T = require("AudioConstant"),
+        M = require("GameConstant"),
+        C = require("SpaceBarInterrupter"),
+        V = require("GameUtil");
       (function (O) {
         O[O.DISPLAY_TIP_N = 0] = "DISPLAY_TIP_N", O[O.SMALL_WIN = 1] = "SMALL_WIN", O[O.MEDIUM_WIN = 2] = "MEDIUM_WIN", O[O.BIG_WIN = 3] = "BIG_WIN", O[O.TOTAL_WIN = 4] = "TOTAL_WIN", O[O.FREE_SPIN = 5] = "FREE_SPIN", O[O.NONE = 6] = "NONE";
       })(B = I.InfoboardState || (I.InfoboardState = {}));

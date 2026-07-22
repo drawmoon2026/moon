@@ -1,13 +1,13 @@
 // module: PopOutItem
-// Cocos 模块函数,参数 (require, module, exports) = (F, c, j)
-function PopOutItem(F, c, j) {
+// Cocos 模块函数,参数 (require, module, exports) = (F, c, exports)
+function PopOutItem(F, c, exports) {
   'use strict';
 
   if (!cc._RF.push(c, "5beaedmutZIkKPi8z2EJ82d", "PopOutItem")) {
     {
       var I = {};
       I.value = true;
-      Object.defineProperty(j, "__esModule", I);
+      Object.defineProperty(exports, "__esModule", I);
       var m = cc._decorator,
         B = m.ccclass,
         X = (m.property, function (Z) {
@@ -37,7 +37,7 @@ function PopOutItem(F, c, j) {
             }
           }, __decorate([B], T);
         }(cc.Component));
-      j.default = X, cc._RF.pop();
+      exports.default = X, cc._RF.pop();
     }
   }
 }

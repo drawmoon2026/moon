@@ -1,16 +1,16 @@
 // module: FreeSpinEffectController
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function FreeSpinEffectController(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function FreeSpinEffectController(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "c10d1s0Nr5AV49OxrROlWVN", "FreeSpinEffectController")) {
     {
       var m = {};
       m.value = true;
-      Object.defineProperty(I, "__esModule", m);
-      var B = F("DragonController"),
-        X = F("MahjongMovingController"),
-        Z = F("RowShiningController"),
+      Object.defineProperty(exports, "__esModule", m);
+      var B = require("DragonController"),
+        X = require("MahjongMovingController"),
+        Z = require("RowShiningController"),
         T = cc._decorator,
         M = T.ccclass,
         C = T.property,
@@ -34,7 +34,7 @@ function FreeSpinEffectController(F, j, I) {
             this.background.runAction(cc.fadeTo(0.2, 0)), this.rowShiningController.fadeOutAll();
           }, __decorate([C(B.default)], q.prototype, "dragonController", undefined), __decorate([C(X.default)], q.prototype, "mahjongMovingController", undefined), __decorate([C(Z.default)], q.prototype, "rowShiningController", undefined), __decorate([C(cc.Node)], q.prototype, "background", undefined), __decorate([C(cc.Node)], q.prototype, "backgroundInner", undefined), __decorate([M], q);
         }(cc.Component);
-      I.default = V, cc._RF.pop();
+      exports.default = V, cc._RF.pop();
     }
   }
 }

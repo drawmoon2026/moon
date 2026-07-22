@@ -1,12 +1,12 @@
 // module: WinValuesModel
-// Cocos 模块函数,参数 (require, module, exports) = (F, c, j)
-function WinValuesModel(F, c, j) {
+// Cocos 模块函数,参数 (require, module, exports) = (F, c, exports)
+function WinValuesModel(F, c, exports) {
   'use strict';
 
   if (!cc._RF.push(c, "501f6RTfh9LVInQJ/Y+n54G", "WinValuesModel")) {
     var I = {};
     I.value = true;
-    Object.defineProperty(j, "__esModule", I), j.WinValuesModel = undefined;
+    Object.defineProperty(exports, "__esModule", I), exports.WinValuesModel = undefined;
     var m = function () {
       function B(X) {
         X && (this.oC = JSON.parse(JSON.stringify(X)), this.AC = Object.keys(this.oC));
@@ -27,7 +27,7 @@ function WinValuesModel(F, c, j) {
         'configurable': true
       }), B;
     }();
-    j.WinValuesModel = m, cc._RF.pop();
+    exports.WinValuesModel = m, cc._RF.pop();
   }
 }
 module.exports = WinValuesModel;

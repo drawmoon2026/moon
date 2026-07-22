@@ -1,12 +1,12 @@
 // module: PlayerModel
-// Cocos 模块函数,参数 (require, module, exports) = (Q, F)
-function PlayerModel(Q, F) {
+// Cocos 模块函数,参数 (require, module, exports) = (Q, module)
+function PlayerModel(Q, module) {
   'use strict';
 
-  if (!cc._RF.push(F, "a0229IKmbpNBb61dHEQilWX", "PlayerModel")) {
+  if (!cc._RF.push(module, "a0229IKmbpNBb61dHEQilWX", "PlayerModel")) {
     {
       var c = System.get("bvframework").PlayerModel;
-      F.exports.default = c, F.exports.__esModule = true, cc._RF.pop();
+      module.exports.default = c, module.exports.__esModule = true, cc._RF.pop();
     }
   }
 }

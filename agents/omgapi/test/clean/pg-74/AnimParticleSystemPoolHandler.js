@@ -1,11 +1,11 @@
 // module: AnimParticleSystemPoolHandler
-// Cocos 模块函数,参数 (require, module, exports) = (Q, F, c)
-function AnimParticleSystemPoolHandler(Q, F, c) {
+// Cocos 模块函数,参数 (require, module, exports) = (Q, module, exports)
+function AnimParticleSystemPoolHandler(Q, module, exports) {
   'use strict';
 
-  if (!cc._RF.push(F, "90167wb5w5JpKAkqWQq6cj8", "AnimParticleSystemPoolHandler")) {
+  if (!cc._RF.push(module, "90167wb5w5JpKAkqWQq6cj8", "AnimParticleSystemPoolHandler")) {
     {
-      c.__esModule = true, c.default = undefined;
+      exports.__esModule = true, exports.default = undefined;
       var j = cc.Class({
         'extends': cc.Component,
         'unuse': function () {
@@ -13,7 +13,7 @@ function AnimParticleSystemPoolHandler(Q, F, c) {
           I && I.stop();
         }
       });
-      c.default = j, F.exports = c.default, cc._RF.pop();
+      exports.default = j, module.exports = exports.default, cc._RF.pop();
     }
   }
 }

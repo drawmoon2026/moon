@@ -1,12 +1,12 @@
 // module: CoinExplosionAnimationController
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function CoinExplosionAnimationController(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (F, j, exports)
+function CoinExplosionAnimationController(F, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "602e6ZKVhxNHLGyrQdLxveu", "CoinExplosionAnimationController")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m);
+    Object.defineProperty(exports, "__esModule", m);
     var B = cc._decorator,
       X = B.ccclass,
       Z = B.property,
@@ -30,7 +30,7 @@ function CoinExplosionAnimationController(F, j, I) {
           }
         }, __decorate([Z(cc.Animation)], C.prototype, "animation", undefined), __decorate([X], C);
       }(cc.Component);
-    I.default = T, cc._RF.pop();
+    exports.default = T, cc._RF.pop();
   }
 }
 module.exports = CoinExplosionAnimationController;

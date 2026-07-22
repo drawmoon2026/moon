@@ -1,13 +1,13 @@
 // module: NavigationDefaultTransition
-// Cocos 模块函数,参数 (require, module, exports) = (F, c, j)
-function NavigationDefaultTransition(F, c, j) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, c, exports)
+function NavigationDefaultTransition(require, c, exports) {
   'use strict';
 
   if (!cc._RF.push(c, "2472eYgH9NBWJvtIuLXvIEh", "NavigationDefaultTransition")) {
     var I = {};
     I.value = true;
-    Object.defineProperty(j, "__esModule", I), j.DefaultNavigationPopTransition = j.DefaultNavigationPushTransition = undefined;
-    var m = F("ViewControllerTransition"),
+    Object.defineProperty(exports, "__esModule", I), exports.DefaultNavigationPopTransition = exports.DefaultNavigationPushTransition = undefined;
+    var m = require("ViewControllerTransition"),
       B = function (Z) {
         function T() {
           return null !== Z && Z.apply(this, arguments) || this;
@@ -32,7 +32,7 @@ function NavigationDefaultTransition(F, c, j) {
           }
         }, T.prototype.animationEnd = function () {}, T;
       }(m.default);
-    j.DefaultNavigationPushTransition = B;
+    exports.DefaultNavigationPushTransition = B;
     var X = function (Z) {
       function T() {
         return null !== Z && Z.apply(this, arguments) || this;
@@ -53,7 +53,7 @@ function NavigationDefaultTransition(F, c, j) {
         })));
       }, T.prototype.animationEnd = function () {}, T;
     }(m.default);
-    j.DefaultNavigationPopTransition = X, cc._RF.pop();
+    exports.DefaultNavigationPopTransition = X, cc._RF.pop();
   }
 }
 module.exports = NavigationDefaultTransition;

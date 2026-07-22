@@ -1,12 +1,12 @@
 // module: BonusAssetConfig
-// Cocos 模块函数,参数 (require, module, exports) = (m, B, X)
-function BonusAssetConfig(m, B, X) {
+// Cocos 模块函数,参数 (require, module, exports) = (m, B, exports)
+function BonusAssetConfig(m, B, exports) {
   'use strict';
 
   if (!cc._RF.push(B, "8935bDsi8lNBqAOuycnrTEt", "BonusAssetConfig")) {
     var Z = {};
     Z.value = true;
-    Object.defineProperty(X, "__esModule", Z), X.bonusAssetConfig = undefined;
+    Object.defineProperty(exports, "__esModule", Z), exports.bonusAssetConfig = undefined;
     var T = {};
     T.name = "remaining_free_spin_controller";
     T.url = "load_res/remaining_free_spin_controller";
@@ -28,7 +28,7 @@ function BonusAssetConfig(m, B, X) {
     V.type = cc.SpriteAtlas;
     V.isLocalized = true;
     var N = [T, M, C, V];
-    X.bonusAssetConfig = N, cc._RF.pop();
+    exports.bonusAssetConfig = N, cc._RF.pop();
   }
 }
 module.exports = BonusAssetConfig;

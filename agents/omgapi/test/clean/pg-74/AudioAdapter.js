@@ -1,18 +1,18 @@
 // module: AudioAdapter
-// Cocos 模块函数,参数 (require, module, exports) = (j, I, m)
-function AudioAdapter(j, I, m) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, I, exports)
+function AudioAdapter(require, I, exports) {
   'use strict';
 
   if (!cc._RF.push(I, "5c3d2SrYLxJYqXl2p30apID", "AudioAdapter")) {
     var B = {};
     B.value = true;
-    Object.defineProperty(m, "__esModule", B);
+    Object.defineProperty(exports, "__esModule", B);
     var X,
       Z,
-      T = j("ResRC"),
-      M = j("AudioAdapterConstant"),
-      C = j("AdapterEventEmitter"),
-      V = j("AudioFactory"),
+      T = require("ResRC"),
+      M = require("AudioAdapterConstant"),
+      C = require("AdapterEventEmitter"),
+      V = require("AudioFactory"),
       N = (X = 0, function () {
         return ++X;
       });
@@ -245,7 +245,7 @@ function AudioAdapter(j, I, m) {
         O.reset(), O.removeAll(), this.factory.put(O) || O.destroy();
       }, K.prototype.stereo = function () {}, K.getNewId = N, K;
     }();
-    m.default = g, cc._RF.pop();
+    exports.default = g, cc._RF.pop();
   }
 }
 module.exports = AudioAdapter;

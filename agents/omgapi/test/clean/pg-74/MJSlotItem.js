@@ -1,22 +1,22 @@
 // module: MJSlotItem
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function MJSlotItem(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function MJSlotItem(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "4c59f+hZadKTYoq4X+mRm22", "MJSlotItem")) {
     var B = {};
     B.value = true;
-    Object.defineProperty(I, "__esModule", B);
+    Object.defineProperty(exports, "__esModule", B);
     var X,
-      Z = F("SlotItem"),
-      T = F("GameConstant"),
-      M = F("ScatterController"),
-      C = F("AudioManager"),
-      V = F("SlotHandler"),
-      N = F("AudioConstant"),
-      q = F("Utils"),
-      g = F("UIAppearanceHelper"),
-      K = F("NodePoolHandler"),
+      Z = require("SlotItem"),
+      T = require("GameConstant"),
+      M = require("ScatterController"),
+      C = require("AudioManager"),
+      V = require("SlotHandler"),
+      N = require("AudioConstant"),
+      q = require("Utils"),
+      g = require("UIAppearanceHelper"),
+      K = require("NodePoolHandler"),
       O = cc._decorator,
       x = O.ccclass,
       p = O.property;
@@ -187,7 +187,7 @@ function MJSlotItem(F, j, I) {
         }
       }, __decorate([p(cc.Node)], H.prototype, "scaleHolder", undefined), __decorate([p(cc.Node)], H.prototype, "attachmentHolder", undefined), __decorate([p(cc.Node)], H.prototype, "background", undefined), __decorate([p(cc.Node)], H.prototype, "symbolIngot", undefined), __decorate([p(cc.Sprite)], H.prototype, "content", undefined), __decorate([p(cc.SpriteFrame)], H.prototype, "bgScatterSpriteFrame", undefined), __decorate([p(cc.SpriteFrame)], H.prototype, "bgIngotSpriteFrame", undefined), __decorate([p(cc.SpriteFrame)], H.prototype, "bgIngotBlurSpriteFrame", undefined), __decorate([p(cc.SpriteFrame)], H.prototype, "bgGoldSpriteFrame", undefined), __decorate([p(cc.SpriteFrame)], H.prototype, "bgNormalSpriteFrame", undefined), __decorate([p(cc.SpriteFrame)], H.prototype, "bgGoldBlurSpriteFrame", undefined), __decorate([p(cc.SpriteFrame)], H.prototype, "bgNormalBlurSpriteFrame", undefined), __decorate([p(cc.SpriteFrame)], H.prototype, "wildSymbolSpriteFrame", undefined), __decorate([x], H);
     }(Z.default);
-    I.default = b, cc._RF.pop();
+    exports.default = b, cc._RF.pop();
   }
 }
 module.exports = MJSlotItem;

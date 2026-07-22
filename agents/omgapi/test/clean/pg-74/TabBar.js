@@ -1,13 +1,13 @@
 // module: TabBar
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function TabBar(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (F, j, exports)
+function TabBar(F, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "b8f7436fYdNnryqvtnVtqIL", "TabBar")) {
     {
       var m = {};
       m.value = true;
-      Object.defineProperty(I, "__esModule", m);
+      Object.defineProperty(exports, "__esModule", m);
       var B = cc._decorator,
         X = B.ccclass,
         Z = B.property,
@@ -61,7 +61,7 @@ function TabBar(F, j, I) {
             }
           }, __decorate([Z(cc.Sprite)], C.prototype, "background", undefined), __decorate([Z(cc.Node)], C.prototype, "itemsContainer", undefined), __decorate([Z(cc.Sprite)], C.prototype, "shadow", undefined), __decorate([X], C);
         }(cc.Component);
-      I.default = T, cc._RF.pop();
+      exports.default = T, cc._RF.pop();
     }
   }
 }

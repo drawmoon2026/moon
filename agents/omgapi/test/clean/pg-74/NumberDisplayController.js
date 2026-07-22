@@ -1,14 +1,14 @@
 // module: NumberDisplayController
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function NumberDisplayController(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function NumberDisplayController(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "e13cc9FLShL66GevrFVSv5p", "NumberDisplayController")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m);
-    var B = F("Utils"),
-      X = F("NumberDisplayInterface"),
+    Object.defineProperty(exports, "__esModule", m);
+    var B = require("Utils"),
+      X = require("NumberDisplayInterface"),
       Z = cc._decorator,
       T = Z.ccclass,
       M = Z.property,
@@ -288,7 +288,7 @@ function NumberDisplayController(F, j, I) {
           }
         })], N.prototype, "previewNumber", null), __decorate([T], N);
       }(X.default);
-    I.default = C, cc._RF.pop();
+    exports.default = C, cc._RF.pop();
   }
 }
 module.exports = NumberDisplayController;

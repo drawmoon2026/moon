@@ -1,13 +1,13 @@
 // module: ButtonBackground
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function ButtonBackground(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function ButtonBackground(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "96252/qWvdGA7VOxWpX5d7v", "ButtonBackground")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m);
-    var B = F("UIAppearanceHelper"),
+    Object.defineProperty(exports, "__esModule", m);
+    var B = require("UIAppearanceHelper"),
       X = cc._decorator,
       Z = X.ccclass,
       T = X.property,
@@ -24,7 +24,7 @@ function ButtonBackground(F, j, I) {
           }, __decorate([T(cc.Node)], V.prototype, "background", undefined), __decorate([T(cc.String)], V.prototype, "backgroundColorKey", undefined), __decorate([Z], V);
         }
       }(cc.Component);
-    I.default = M, cc._RF.pop();
+    exports.default = M, cc._RF.pop();
   }
 }
 module.exports = ButtonBackground;

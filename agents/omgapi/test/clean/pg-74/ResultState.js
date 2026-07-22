@@ -1,17 +1,17 @@
 // module: ResultState
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function ResultState(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function ResultState(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "08d5bAN5GxAf5RE9cTgDCu5", "ResultState")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m);
-    var B = F("SlotStateMachine"),
-      X = F("SlotAnalyticsHelper"),
-      Z = F("SlotAnalyticsEnum"),
-      T = F("Utils"),
-      M = F("SpinConfigHandler"),
+    Object.defineProperty(exports, "__esModule", m);
+    var B = require("SlotStateMachine"),
+      X = require("SlotAnalyticsHelper"),
+      Z = require("SlotAnalyticsEnum"),
+      T = require("Utils"),
+      M = require("SpinConfigHandler"),
       C = function () {
         function V(N, q, f, g) {
           this.name = "Result State", this.process = Z.SpinStateProcess.REEL_SPINNING, this.dataSource = undefined, this.generalControllers = undefined, this.finalCallback = undefined, this.hasFeature = undefined, this.Yf = undefined, this.dataSource = N, this.generalControllers = q.generalControllers, this.finalCallback = f, g && (this.Yf = g, g.triggerFastStop = this.handleSlotRegionFastStop.bind(this));
@@ -85,7 +85,7 @@ function ResultState(F, j, I) {
           }
         }, V.prototype.fastStopTriggeredWhileSpinning = function () {}, V.prototype.triggerFastStopWhileStopping = function () {}, V;
       }();
-    I.default = C, cc._RF.pop();
+    exports.default = C, cc._RF.pop();
   }
 }
 module.exports = ResultState;

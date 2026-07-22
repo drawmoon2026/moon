@@ -1,14 +1,14 @@
 // module: BonusFreeSpinController
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function BonusFreeSpinController(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function BonusFreeSpinController(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "e89a856I6VFn7UEjqSF0bbR", "BonusFreeSpinController")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m);
-    var B = F("AudioManager"),
-      X = F("AudioConstant"),
+    Object.defineProperty(exports, "__esModule", m);
+    var B = require("AudioManager"),
+      X = require("AudioConstant"),
       Z = cc._decorator,
       T = Z.ccclass,
       M = Z.property,
@@ -51,7 +51,7 @@ function BonusFreeSpinController(F, j, I) {
           }
         }, __decorate([M(cc.Animation)], N.prototype, "animationAnim", undefined), __decorate([M(cc.Node)], N.prototype, "greySplash", undefined), __decorate([M(cc.Node)], N.prototype, "freeSpinText", undefined), __decorate([M(cc.Node)], N.prototype, "glow", undefined), __decorate([M(cc.Sprite)], N.prototype, "freeSpinTextSprite", undefined), __decorate([M(cc.Node)], N.prototype, "numberDisplayNode", undefined), __decorate([M([cc.ParticleSystem])], N.prototype, "particles", undefined), __decorate([T], N);
       }(cc.Component);
-    I.default = C, cc._RF.pop();
+    exports.default = C, cc._RF.pop();
   }
 }
 module.exports = BonusFreeSpinController;

@@ -1,6 +1,6 @@
 // module: BaseScroller
-// Cocos 模块函数,参数 (require, module, exports) = (c, j, I)
-function BaseScroller(c, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (c, j, exports)
+function BaseScroller(c, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "7a55d+EM2dKr590KKrgiTXR", "BaseScroller")) {
@@ -13,11 +13,11 @@ function BaseScroller(c, j, I) {
       X.END = "end";
       X.ACCELERATE = "accelerate";
       X.DECELERATE = "decelerate";
-      Object.defineProperty(I, "__esModule", B), I.SCROLLER_EVENT = I.ScrollerState = undefined, function (T) {
+      Object.defineProperty(exports, "__esModule", B), exports.SCROLLER_EVENT = exports.ScrollerState = undefined, function (T) {
         {
           T[T.IDLE = 0] = "IDLE", T[T.RUNNING = 1] = "RUNNING", T[T.ENDED = 2] = "ENDED";
         }
-      }(m = I.ScrollerState || (I.ScrollerState = {})), I.SCROLLER_EVENT = Object.freeze(X);
+      }(m = exports.ScrollerState || (exports.ScrollerState = {})), exports.SCROLLER_EVENT = Object.freeze(X);
       var Z = function (T) {
         {
           function V(N) {
@@ -60,7 +60,7 @@ function BaseScroller(c, j, I) {
           }, V;
         }
       }(cc.EventTarget);
-      I.default = Z, cc._RF.pop();
+      exports.default = Z, cc._RF.pop();
     }
   }
 }

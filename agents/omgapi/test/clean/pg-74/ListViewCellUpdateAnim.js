@@ -1,13 +1,13 @@
 // module: ListViewCellUpdateAnim
-// Cocos 模块函数,参数 (require, module, exports) = (F, c, j)
-function ListViewCellUpdateAnim(F, c, j) {
+// Cocos 模块函数,参数 (require, module, exports) = (F, c, exports)
+function ListViewCellUpdateAnim(F, c, exports) {
   'use strict';
 
   if (!cc._RF.push(c, "5502dsWooBCr7Ubvh4+KVSO", "ListViewCellUpdateAnim")) {
     {
       var I = {};
       I.value = true;
-      Object.defineProperty(j, "__esModule", I);
+      Object.defineProperty(exports, "__esModule", I);
       var m = cc._decorator.ccclass,
         B = function () {
           function X() {}
@@ -21,7 +21,7 @@ function ListViewCellUpdateAnim(F, c, j) {
             }
           }, X.prototype.updateCellAmimation = function () {}, X.prototype.animationEnd = function () {}, __decorate([m], X);
         }();
-      j.default = B, cc._RF.pop();
+      exports.default = B, cc._RF.pop();
     }
   }
 }

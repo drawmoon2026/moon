@@ -1,17 +1,17 @@
 // module: BookView
-// Cocos 模块函数,参数 (require, module, exports) = (j, I, m)
-function BookView(j, I, m) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, I, exports)
+function BookView(require, I, exports) {
   'use strict';
 
   if (!cc._RF.push(I, "46ec0uZUDVPMZDgV9Idp1EN", "BookView")) {
     var B = {};
     B.value = true;
-    Object.defineProperty(m, "__esModule", B);
+    Object.defineProperty(exports, "__esModule", B);
     var X = {};
     X.LEFT = 1;
     X.RIGHT = 2;
     X.NULL = 3;
-    var Z = j("ScrollViewEx"),
+    var Z = require("ScrollViewEx"),
       T = cc.Enum(X),
       M = function (q, f) {
         return q.sub(f);
@@ -304,7 +304,7 @@ function BookView(j, I, m) {
           this.as += K, this.as > 0.1 && (this.bs(), this.unschedule(this.vs), this.ds = false, this.os());
         }, __decorate([V], f);
       }(Z.default));
-    m.default = N, cc._RF.pop();
+    exports.default = N, cc._RF.pop();
   }
 }
 module.exports = BookView;

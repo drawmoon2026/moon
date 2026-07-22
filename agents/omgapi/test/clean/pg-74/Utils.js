@@ -1,9 +1,9 @@
 // module: Utils
-// Cocos 模块函数,参数 (require, module, exports) = (F, c)
-function Utils(F, c) {
+// Cocos 模块函数,参数 (require, module, exports) = (F, module)
+function Utils(F, module) {
   'use strict';
 
-  if (!cc._RF.push(c, "03755Dj0/VFQbz7rFuRrlJG", "Utils")) {
+  if (!cc._RF.push(module, "03755Dj0/VFQbz7rFuRrlJG", "Utils")) {
     var j = {};
     j.convertNodeSpace = "convertToNodeSpace";
     j.convertNodeSpaceAR = "convertToNodeSpaceAR";
@@ -36,8 +36,8 @@ function Utils(F, c) {
         for (var M in Z) X.hasOwnProperty(M) ? T[X[M]] = Z[M] : T[M] = Z[M];
         return T;
       }(j, I);
-    for (var B in m) m.hasOwnProperty(B) && (c.exports[B] = m[B]);
-    c.exports.__esModule = true, null == I.sharedScheduler && (c.exports.sharedScheduler = m.getSharedScheduler()), cc._RF.pop();
+    for (var B in m) m.hasOwnProperty(B) && (module.exports[B] = m[B]);
+    module.exports.__esModule = true, null == I.sharedScheduler && (module.exports.sharedScheduler = m.getSharedScheduler()), cc._RF.pop();
   }
 }
 module.exports = Utils;

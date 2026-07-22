@@ -1,14 +1,14 @@
 // module: SoundButton
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function SoundButton(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, exports, I)
+function SoundButton(require, exports, I) {
   'use strict';
 
-  if (!cc._RF.push(j, "47f2aqFJBBCiYjiG/SqB5jv", "SoundButton")) {
+  if (!cc._RF.push(exports, "47f2aqFJBBCiYjiG/SqB5jv", "SoundButton")) {
     {
       var m = {};
       m.value = true;
       Object.defineProperty(I, "__esModule", m);
-      var B = F("GenericSettingButton"),
+      var B = require("GenericSettingButton"),
         X = cc._decorator,
         Z = X.ccclass,
         T = X.property,

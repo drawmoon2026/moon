@@ -1,25 +1,25 @@
 // module: MultiplierBoardController
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function MultiplierBoardController(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function MultiplierBoardController(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "8dad3hkA+VNT7RHJJUwSzJ7", "MultiplierBoardController")) {
     {
       var m = {};
       m.value = true;
-      Object.defineProperty(I, "__esModule", m), I.PlayAnimType = undefined;
+      Object.defineProperty(exports, "__esModule", m), exports.PlayAnimType = undefined;
       var B,
-        X = F("MultiplierItem"),
-        Z = F("GameConstant"),
-        T = F("AudioConstant"),
-        M = F("AudioManager"),
-        C = F("Utils"),
+        X = require("MultiplierItem"),
+        Z = require("GameConstant"),
+        T = require("AudioConstant"),
+        M = require("AudioManager"),
+        C = require("Utils"),
         V = cc._decorator,
         N = V.ccclass,
         q = V.property;
       (function (K) {
         K[K.Once = 1] = "Once", K[K.Loop = 2] = "Loop", K[K.None = 0] = "None";
-      })(B = I.PlayAnimType || (I.PlayAnimType = {}));
+      })(B = exports.PlayAnimType || (exports.PlayAnimType = {}));
       var g = function (K) {
         function O() {
           var x = null !== K && K.apply(this, arguments) || this;
@@ -127,7 +127,7 @@ function MultiplierBoardController(F, j, I) {
           }
         }, __decorate([q(cc.Sprite)], O.prototype, "waysTextS", undefined), __decorate([q(cc.Sprite)], O.prototype, "multiplyierVfxA", undefined), __decorate([q(cc.Sprite)], O.prototype, "background", undefined), __decorate([q(cc.SpriteFrame)], O.prototype, "background_bonus", undefined), __decorate([q(cc.SpriteFrame)], O.prototype, "background_normal", undefined), __decorate([q(cc.Layout)], O.prototype, "content", undefined), __decorate([q(cc.Node)], O.prototype, "multiplierEffect", undefined), __decorate([q(cc.Node)], O.prototype, "multiplierVfxA", undefined), __decorate([q(cc.Animation)], O.prototype, "multiplierVfxB", undefined), __decorate([q(X.default)], O.prototype, "multiplierItem", undefined), __decorate([N], O);
       }(cc.Component);
-      I.default = g, cc._RF.pop();
+      exports.default = g, cc._RF.pop();
     }
   }
 }

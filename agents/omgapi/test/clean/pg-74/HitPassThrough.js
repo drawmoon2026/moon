@@ -1,12 +1,12 @@
 // module: HitPassThrough
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function HitPassThrough(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (F, j, exports)
+function HitPassThrough(F, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "c55eeQvpvBJQ70BFU5konXG", "HitPassThrough")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m);
+    Object.defineProperty(exports, "__esModule", m);
     var B,
       X = cc._decorator,
       Z = X.ccclass,
@@ -40,7 +40,7 @@ function HitPassThrough(F, j, I) {
         }, __decorate([T(cc.Vec2)], V.prototype, "passPoint", undefined), __decorate([T(cc.Size)], V.prototype, "passSize", undefined), __decorate([Z], V);
       }
     }(cc.Component);
-    I.default = M, cc._RF.pop();
+    exports.default = M, cc._RF.pop();
   }
 }
 module.exports = HitPassThrough;

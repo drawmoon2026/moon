@@ -1,13 +1,13 @@
 // module: SlotSymbol
-// Cocos 模块函数,参数 (require, module, exports) = (F, c, j)
-function SlotSymbol(F, c, j) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, c, exports)
+function SlotSymbol(require, c, exports) {
   'use strict';
 
   if (!cc._RF.push(c, "95c9eiMihhJPZX0QzA3D4uZ", "SlotSymbol")) {
     var I = {};
     I.value = true;
-    Object.defineProperty(j, "__esModule", I);
-    var m = F("BVFramework"),
+    Object.defineProperty(exports, "__esModule", I);
+    var m = require("BVFramework"),
       B = cc._decorator.ccclass,
       X = function (Z) {
         {
@@ -47,7 +47,7 @@ function SlotSymbol(F, c, j) {
           }, __decorate([B], T);
         }
       }(cc.Component);
-    j.default = X, cc._RF.pop();
+    exports.default = X, cc._RF.pop();
   }
 }
 module.exports = SlotSymbol;

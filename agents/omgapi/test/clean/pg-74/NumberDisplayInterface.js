@@ -1,13 +1,13 @@
 // module: NumberDisplayInterface
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function NumberDisplayInterface(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function NumberDisplayInterface(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "6e9deOwoQZHDb/Mv4FAbr3R", "NumberDisplayInterface")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m);
-    var B = F("Utils"),
+    Object.defineProperty(exports, "__esModule", m);
+    var B = require("Utils"),
       X = cc._decorator,
       Z = X.ccclass,
       T = X.property,
@@ -41,7 +41,7 @@ function NumberDisplayInterface(F, j, I) {
           }
         }, __decorate([T(cc.Node)], V.prototype, "numberContainer", undefined), __decorate([T(cc.Float)], V.prototype, "maxContainerSize", undefined), __decorate([T(N)], V.prototype, "enableComma", undefined), __decorate([T(q)], V.prototype, "enableDecimal", undefined), __decorate([T(f)], V.prototype, "enableShortenNumber", undefined), __decorate([Z], V);
       }(cc.Component);
-    I.default = M, cc._RF.pop();
+    exports.default = M, cc._RF.pop();
   }
 }
 module.exports = NumberDisplayInterface;

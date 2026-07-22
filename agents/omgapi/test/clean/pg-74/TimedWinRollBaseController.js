@@ -1,19 +1,19 @@
 // module: TimedWinRollBaseController
-// Cocos 模块函数,参数 (require, module, exports) = (j, I, m)
-function TimedWinRollBaseController(j, I, m) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, I, exports)
+function TimedWinRollBaseController(require, I, exports) {
   'use strict';
 
   if (!cc._RF.push(I, "12aa3hO3pdL6oUvYmprts/7", "TimedWinRollBaseController")) {
     {
       var B = {};
       B.value = true;
-      Object.defineProperty(m, "__esModule", B);
+      Object.defineProperty(exports, "__esModule", B);
       var X = {};
       X.big = 0;
       X.mega = 1;
       X.superMega = 2;
       X.overflow = 3;
-      var Z = j("NumberDisplayInterface"),
+      var Z = require("NumberDisplayInterface"),
         M = cc._decorator,
         C = M.ccclass,
         V = M.property,
@@ -134,7 +134,7 @@ function TimedWinRollBaseController(j, I, m) {
             })], g.prototype, "displayController", undefined), __decorate([C], g);
           }
         }(cc.Component);
-      m.default = N, cc._RF.pop();
+      exports.default = N, cc._RF.pop();
     }
   }
   function q(f, g) {

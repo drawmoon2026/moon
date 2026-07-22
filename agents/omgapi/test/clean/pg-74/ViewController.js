@@ -1,15 +1,15 @@
 // module: ViewController
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function ViewController(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function ViewController(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "ef8ab8zk59N1LEX0M2uhmRU", "ViewController")) {
     {
       var m = {};
       m.value = true;
-      Object.defineProperty(I, "__esModule", m);
-      var B = F("UIKitUtils"),
-        X = F("UIKit"),
+      Object.defineProperty(exports, "__esModule", m);
+      var B = require("UIKitUtils"),
+        X = require("UIKit"),
         Z = cc._decorator,
         T = Z.ccclass,
         M = Z.property,
@@ -55,7 +55,7 @@ function ViewController(F, j, I) {
             }), N.prototype.onEnable = function () {}, N.prototype.onDisable = function () {}, N.prototype.viewWillAppear = function () {}, N.prototype.viewDidAppear = function () {}, N.prototype.viewWillDisappear = function () {}, N.prototype.viewDidDisappear = function () {}, N.prototype.viewWillLayoutSubviews = function () {}, N.prototype.viewDidLayoutSubviews = function () {}, __decorate([M(cc.String)], N.prototype, "title", undefined), __decorate([T], N);
           }
         }(cc.Component);
-      I.default = C, cc._RF.pop();
+      exports.default = C, cc._RF.pop();
     }
   }
 }

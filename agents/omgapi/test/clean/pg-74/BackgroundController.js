@@ -1,15 +1,15 @@
 // module: BackgroundController
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function BackgroundController(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function BackgroundController(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "6a6d38oiGtCUZaz44KgwIjH", "BackgroundController")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m);
+    Object.defineProperty(exports, "__esModule", m);
     var B,
       X,
-      Z = F("GameConstant"),
+      Z = require("GameConstant"),
       T = cc._decorator,
       M = T.ccclass,
       C = T.property;
@@ -96,7 +96,7 @@ function BackgroundController(F, j, I) {
         }, __decorate([C(cc.Sprite)], q.prototype, "background", undefined), __decorate([C(cc.SpriteFrame)], q.prototype, "backgroundNormal", undefined), __decorate([C(cc.SpriteFrame)], q.prototype, "backgroundBonus", undefined), __decorate([C(cc.Node)], q.prototype, "bonusNode", undefined), __decorate([C(cc.Node)], q.prototype, "normalNode", undefined), __decorate([C(cc.Animation)], q.prototype, "bonusParticleAnim", undefined), __decorate([C(cc.Node)], q.prototype, "darkReel", undefined), __decorate([C(cc.Node)], q.prototype, "darkReelHolder", undefined), __decorate([C([cc.Node])], q.prototype, "darkReelNodes", undefined), __decorate([C([cc.Node])], q.prototype, "darkSideNodes", undefined), __decorate([C(cc.Node)], q.prototype, "fastSpinGlow", undefined), __decorate([M], q);
       }
     }(cc.Component);
-    I.default = V, cc._RF.pop();
+    exports.default = V, cc._RF.pop();
   }
 }
 module.exports = BackgroundController;

@@ -1,14 +1,14 @@
 // module: NumberLabelController
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function NumberLabelController(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function NumberLabelController(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "b6e176hgIFCvo12TMjQIRc7", "NumberLabelController")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m);
-    var B = F("NumberDisplayInterface"),
-      X = F("Utils"),
+    Object.defineProperty(exports, "__esModule", m);
+    var B = require("NumberDisplayInterface"),
+      X = require("Utils"),
       Z = cc._decorator.ccclass,
       T = function (M) {
         function C() {
@@ -95,7 +95,7 @@ function NumberLabelController(F, j, I) {
           }
         }, __decorate([Z], C);
       }(B.default);
-    I.default = T, cc._RF.pop();
+    exports.default = T, cc._RF.pop();
   }
 }
 module.exports = NumberLabelController;

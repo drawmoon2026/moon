@@ -1,16 +1,16 @@
 // module: TabBarController
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function TabBarController(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function TabBarController(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "b2f70mOAvdOxZtKjfDu/lHM", "TabBarController")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m);
-    var B = F("TabBar"),
-      X = F("TabBarItem"),
-      Z = F("TransitionContext"),
-      T = F("ViewController"),
+    Object.defineProperty(exports, "__esModule", m);
+    var B = require("TabBar"),
+      X = require("TabBarItem"),
+      Z = require("TransitionContext"),
+      T = require("ViewController"),
       M = cc._decorator,
       C = M.ccclass,
       V = M.property,
@@ -172,7 +172,7 @@ function TabBarController(F, j, I) {
           }, __decorate([V(cc.Node)], f.prototype, "content", undefined), __decorate([V(B.default)], f.prototype, "tabBar", undefined), __decorate([V(cc.Node)], f.prototype, "bottomNode", undefined), __decorate([V(cc.Prefab)], f.prototype, "tabBarItemPrefab", undefined), __decorate([C], f);
         }
       }(T.default);
-    I.default = N, cc._RF.pop();
+    exports.default = N, cc._RF.pop();
   }
 }
 module.exports = TabBarController;

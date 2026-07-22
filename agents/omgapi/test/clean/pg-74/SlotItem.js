@@ -1,13 +1,13 @@
 // module: SlotItem
-// Cocos 模块函数,参数 (require, module, exports) = (F, c, j)
-function SlotItem(F, c, j) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, c, exports)
+function SlotItem(require, c, exports) {
   'use strict';
 
   if (!cc._RF.push(c, "cba1dJ8KHJAlrAxCvyls0+u", "SlotItem")) {
     var I = {};
     I.value = true;
-    Object.defineProperty(j, "__esModule", I);
-    var m = F("SlotSymbol"),
+    Object.defineProperty(exports, "__esModule", I);
+    var m = require("SlotSymbol"),
       B = cc._decorator.ccclass,
       X = function (Z) {
         function T() {
@@ -40,7 +40,7 @@ function SlotItem(F, c, j) {
           C && (C.spriteFrame = M ? this.blurSpriteFrame : this.normalSpriteFrame, C.node.scale = M ? this.blurScale : this.normalScale);
         }, __decorate([B], T);
       }(m.default);
-    j.default = X, cc._RF.pop();
+    exports.default = X, cc._RF.pop();
   }
 }
 module.exports = SlotItem;

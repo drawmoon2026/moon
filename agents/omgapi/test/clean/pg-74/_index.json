@@ -4,42 +4,42 @@
     {
       "name": "AdapterEventEmitter",
       "file": "AdapterEventEmitter.js",
-      "params": "F, c, j",
+      "params": "require, c, exports",
       "deps": null,
       "lines": 84
     },
     {
       "name": "AnalyticsHelper",
       "file": "AnalyticsHelper.js",
-      "params": "Q, F",
+      "params": "Q, module",
       "deps": {},
       "lines": 9
     },
     {
       "name": "AnimParticleSystem",
       "file": "AnimParticleSystem.js",
-      "params": "j, I, m",
+      "params": "require, module, exports",
       "deps": null,
       "lines": 607
     },
     {
       "name": "AnimParticleSystemPoolHandler",
       "file": "AnimParticleSystemPoolHandler.js",
-      "params": "Q, F, c",
+      "params": "Q, module, exports",
       "deps": {},
       "lines": 17
     },
     {
       "name": "AnimParticleSystemUtils",
       "file": "AnimParticleSystemUtils.js",
-      "params": "Q, F, c",
+      "params": "Q, require, exports",
       "deps": {},
       "lines": 13
     },
     {
       "name": "APIClient",
       "file": "APIClient.js",
-      "params": "Q, F",
+      "params": "Q, module",
       "deps": {},
       "lines": 10
     },
@@ -53,238 +53,238 @@
     {
       "name": "AudioAdapter",
       "file": "AudioAdapter.js",
-      "params": "j, I, m",
+      "params": "require, I, exports",
       "deps": null,
       "lines": 248
     },
     {
       "name": "AudioAdapterConstant",
       "file": "AudioAdapterConstant.js",
-      "params": "j, I, m",
+      "params": "j, I, exports",
       "deps": {},
       "lines": 25
     },
     {
       "name": "AudioAssetConfig",
       "file": "AudioAssetConfig.js",
-      "params": "F, c, j",
+      "params": "F, c, exports",
       "deps": {},
       "lines": 7
     },
     {
       "name": "AudioConstant",
       "file": "AudioConstant.js",
-      "params": "QM, QC, QV",
+      "params": "QM, QC, exports",
       "deps": {},
       "lines": 351
     },
     {
       "name": "AudioFactory",
       "file": "AudioFactory.js",
-      "params": "F, c, j",
+      "params": "require, c, exports",
       "deps": null,
       "lines": 31
     },
     {
       "name": "AudioManager",
       "file": "AudioManager.js",
-      "params": "Z, V, q",
+      "params": "require, V, exports",
       "deps": null,
       "lines": 197
     },
     {
       "name": "AutomationDecorator",
       "file": "AutomationDecorator.js",
-      "params": "F, c, j",
+      "params": "F, c, exports",
       "deps": {},
       "lines": 19
     },
     {
       "name": "AutoSpinHandler",
       "file": "AutoSpinHandler.js",
-      "params": "F, c, j",
+      "params": "require, c, exports",
       "deps": null,
       "lines": 33
     },
     {
       "name": "BackgroundController",
       "file": "BackgroundController.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 99
     },
     {
       "name": "BACKUP_DATA",
       "file": "BACKUP_DATA.js",
-      "params": "c, j, I",
+      "params": "c, j, exports",
       "deps": {},
       "lines": 203
     },
     {
       "name": "BaseListViewCell",
       "file": "BaseListViewCell.js",
-      "params": "F, j, I",
+      "params": "F, j, exports",
       "deps": {},
       "lines": 60
     },
     {
       "name": "BaseScroller",
       "file": "BaseScroller.js",
-      "params": "c, j, I",
+      "params": "c, j, exports",
       "deps": {},
       "lines": 64
     },
     {
       "name": "BetModifierButton",
       "file": "BetModifierButton.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 113
     },
     {
       "name": "BetRepository",
       "file": "BetRepository.js",
-      "params": "F, c, j",
+      "params": "F, c, exports",
       "deps": {},
       "lines": 50
     },
     {
       "name": "BGMHandler",
       "file": "BGMHandler.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 58
     },
     {
       "name": "BigWinController",
       "file": "BigWinController.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 173
     },
     {
       "name": "BigWinController.spec",
       "file": "BigWinController.spec.js",
-      "params": "F, c, j",
+      "params": "F, c, exports",
       "deps": {},
       "lines": 22
     },
     {
       "name": "BigWinTextController",
       "file": "BigWinTextController.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 61
     },
     {
       "name": "BonusAssetConfig",
       "file": "BonusAssetConfig.js",
-      "params": "m, B, X",
+      "params": "m, B, exports",
       "deps": {},
       "lines": 31
     },
     {
       "name": "BonusFreeSpinController",
       "file": "BonusFreeSpinController.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 54
     },
     {
       "name": "BonusLoadingController",
       "file": "BonusLoadingController.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 112
     },
     {
       "name": "BookView",
       "file": "BookView.js",
-      "params": "j, I, m",
+      "params": "require, I, exports",
       "deps": null,
       "lines": 307
     },
     {
       "name": "BounceBackStopScroller",
       "file": "BounceBackStopScroller.js",
-      "params": "F, c, j",
+      "params": "require, c, exports",
       "deps": null,
       "lines": 46
     },
     {
       "name": "Button",
       "file": "Button.js",
-      "params": "j, I, m",
+      "params": "j, I, exports",
       "deps": {},
       "lines": 50
     },
     {
       "name": "ButtonBackground",
       "file": "ButtonBackground.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 27
     },
     {
       "name": "ButtonController",
       "file": "ButtonController.js",
-      "params": "F, c, j",
+      "params": "F, c, exports",
       "deps": {},
       "lines": 35
     },
     {
       "name": "ButtonHitTest",
       "file": "ButtonHitTest.js",
-      "params": "F, c, j",
+      "params": "F, c, exports",
       "deps": {},
       "lines": 26
     },
     {
       "name": "ButtonTheme",
       "file": "ButtonTheme.js",
-      "params": "c, j, I",
+      "params": "require, module, exports",
       "deps": null,
       "lines": 68
     },
     {
       "name": "BVFramework",
       "file": "BVFramework.js",
-      "params": "Q, F",
+      "params": "Q, module",
       "deps": {},
       "lines": 8
     },
     {
       "name": "BVFrameworkEnum",
       "file": "BVFrameworkEnum.js",
-      "params": "Q, F",
+      "params": "Q, module",
       "deps": {},
       "lines": 9
     },
     {
       "name": "CameraScaleController",
       "file": "CameraScaleController.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 31
     },
     {
       "name": "CanvasResizeBroadcaster",
       "file": "CanvasResizeBroadcaster.js",
-      "params": "Q, F",
+      "params": "Q, module",
       "deps": {},
       "lines": 8
     },
     {
       "name": "ClickEffectController",
       "file": "ClickEffectController.js",
-      "params": "F, j, I",
+      "params": "F, j, exports",
       "deps": {},
       "lines": 38
     },
     {
       "name": "CoinExplosionAnimationController",
       "file": "CoinExplosionAnimationController.js",
-      "params": "F, j, I",
+      "params": "F, j, exports",
       "deps": {},
       "lines": 33
     },
@@ -298,1484 +298,1484 @@
     {
       "name": "CreatorTweaks",
       "file": "CreatorTweaks.js",
-      "params": "Q, F",
+      "params": "Q, module",
       "deps": {},
       "lines": 5
     },
     {
       "name": "CustomAssetConfig",
       "file": "CustomAssetConfig.js",
-      "params": "F, c, j",
+      "params": "require, c, exports",
       "deps": null,
       "lines": 23
     },
     {
       "name": "CustomSkinConfig",
       "file": "CustomSkinConfig.js",
-      "params": "c, j, I",
+      "params": "c, j, exports",
       "deps": {},
       "lines": 15
     },
     {
       "name": "DataSource",
       "file": "DataSource.js",
-      "params": "Q, F",
+      "params": "Q, module",
       "deps": {},
       "lines": 8
     },
     {
       "name": "DefaultStartScroller",
       "file": "DefaultStartScroller.js",
-      "params": "c, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 58
     },
     {
       "name": "DefaultStopScroller",
       "file": "DefaultStopScroller.js",
-      "params": "c, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 83
     },
     {
       "name": "Deserializer",
       "file": "Deserializer.js",
-      "params": "Q, F",
+      "params": "Q, module",
       "deps": {},
       "lines": 8
     },
     {
       "name": "DragonController",
       "file": "DragonController.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 40
     },
     {
       "name": "DrawLine",
       "file": "DrawLine.js",
-      "params": "F, j, I",
+      "params": "F, j, exports",
       "deps": {},
       "lines": 29
     },
     {
       "name": "ErrorHandler",
       "file": "ErrorHandler.js",
-      "params": "Q, F",
+      "params": "Q, module",
       "deps": {},
       "lines": 11
     },
     {
       "name": "ForegroundController",
       "file": "ForegroundController.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 44
     },
     {
       "name": "FreeSpinEffectController",
       "file": "FreeSpinEffectController.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 38
     },
     {
       "name": "GameAudioAdapter",
       "file": "GameAudioAdapter.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 34
     },
     {
       "name": "GameConstant",
       "file": "GameConstant.js",
-      "params": "V, N, q",
+      "params": "V, N, exports",
       "deps": {},
       "lines": 73
     },
     {
       "name": "GameEventHandler",
       "file": "GameEventHandler.js",
-      "params": "F, c",
+      "params": "F, module",
       "deps": {},
       "lines": 37
     },
     {
       "name": "GameHeaderHelper",
       "file": "GameHeaderHelper.js",
-      "params": "Q, F",
+      "params": "Q, module",
       "deps": {},
       "lines": 9
     },
     {
       "name": "GameInitializationHandler",
       "file": "GameInitializationHandler.js",
-      "params": "Q, F",
+      "params": "Q, module",
       "deps": {},
       "lines": 11
     },
     {
       "name": "GameLayout",
       "file": "GameLayout.js",
-      "params": "q, f, h",
+      "params": "q, f, exports",
       "deps": {},
       "lines": 48
     },
     {
       "name": "GameMaintenanceHandler",
       "file": "GameMaintenanceHandler.js",
-      "params": "Q, F",
+      "params": "Q, module",
       "deps": {},
       "lines": 9
     },
     {
       "name": "GameMaintenanceModel",
       "file": "GameMaintenanceModel.js",
-      "params": "Q, F",
+      "params": "Q, module",
       "deps": {},
       "lines": 9
     },
     {
       "name": "GamePluginModel",
       "file": "GamePluginModel.js",
-      "params": "Q, F",
+      "params": "Q, module",
       "deps": {},
       "lines": 10
     },
     {
       "name": "GamePreference",
       "file": "GamePreference.js",
-      "params": "Q, F, j",
+      "params": "require, F, exports",
       "deps": null,
       "lines": 13
     },
     {
       "name": "GameTitle",
       "file": "GameTitle.js",
-      "params": "Q, F",
+      "params": "Q, module",
       "deps": {},
       "lines": 9
     },
     {
       "name": "GameUtil",
       "file": "GameUtil.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 66
     },
     {
       "name": "GameUtils",
       "file": "GameUtils.js",
-      "params": "Q, F",
+      "params": "Q, module",
       "deps": {},
       "lines": 9
     },
     {
       "name": "GeneralAssetConfig",
       "file": "GeneralAssetConfig.js",
-      "params": "F, c, j",
+      "params": "require, c, exports",
       "deps": null,
       "lines": 116
     },
     {
       "name": "GenericLoadingScreenController",
       "file": "GenericLoadingScreenController.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 36
     },
     {
       "name": "GenericSettingButton",
       "file": "GenericSettingButton.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 112
     },
     {
       "name": "GridView",
       "file": "GridView.js",
-      "params": "F, j, I",
+      "params": "require, j, module",
       "deps": null,
       "lines": 770
     },
     {
       "name": "HitPassThrough",
       "file": "HitPassThrough.js",
-      "params": "F, j, I",
+      "params": "F, j, exports",
       "deps": {},
       "lines": 43
     },
     {
       "name": "IdleState",
       "file": "IdleState.js",
-      "params": "F, j, I",
+      "params": "require, exports, I",
       "deps": null,
       "lines": 203
     },
     {
       "name": "InfoBoardController",
       "file": "InfoBoardController.js",
-      "params": "F, j, I",
+      "params": "require, exports, I",
       "deps": null,
       "lines": 199
     },
     {
       "name": "InfoboardMessageController",
       "file": "InfoboardMessageController.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 270
     },
     {
       "name": "InfoboardMessageController.spec",
       "file": "InfoboardMessageController.spec.js",
-      "params": "F, c, j",
+      "params": "F, c, exports",
       "deps": {},
       "lines": 17
     },
     {
       "name": "JakeSlotGameTemplate",
       "file": "JakeSlotGameTemplate.js",
-      "params": "c, j, I",
+      "params": "c, j, exports",
       "deps": {},
       "lines": 11
     },
     {
       "name": "JSONSerializer",
       "file": "JSONSerializer.js",
-      "params": "Q, F",
+      "params": "Q, module",
       "deps": {},
       "lines": 8
     },
     {
       "name": "LabelLocalized",
       "file": "LabelLocalized.js",
-      "params": "Q, F, c",
+      "params": "Q, module, exports",
       "deps": {},
       "lines": 32
     },
     {
       "name": "LabelTheme",
       "file": "LabelTheme.js",
-      "params": "X, Z, T",
+      "params": "require, module, exports",
       "deps": null,
       "lines": 156
     },
     {
       "name": "LandscapeSettingInfoFooterController",
       "file": "LandscapeSettingInfoFooterController.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 51
     },
     {
       "name": "LandscapeSettingMenuController",
       "file": "LandscapeSettingMenuController.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 51
     },
     {
       "name": "LandscapeSoundButton",
       "file": "LandscapeSoundButton.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 44
     },
     {
       "name": "LaunchConfig",
       "file": "LaunchConfig.js",
-      "params": "Q, F",
+      "params": "Q, module",
       "deps": {},
       "lines": 11
     },
     {
       "name": "Line",
       "file": "Line.js",
-      "params": "Q, F, c",
+      "params": "require, F, exports",
       "deps": null,
       "lines": 67
     },
     {
       "name": "LineController",
       "file": "LineController.js",
-      "params": "F, c, j",
+      "params": "F, module, exports",
       "deps": {},
       "lines": 199
     },
     {
       "name": "LinePrefabController",
       "file": "LinePrefabController.js",
-      "params": "Q, F, c",
+      "params": "Q, module, exports",
       "deps": {},
       "lines": 38
     },
     {
       "name": "ListView",
       "file": "ListView.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 585
     },
     {
       "name": "ListViewCellUpdateAnim",
       "file": "ListViewCellUpdateAnim.js",
-      "params": "F, c, j",
+      "params": "F, c, exports",
       "deps": {},
       "lines": 25
     },
     {
       "name": "ListViewEnum",
       "file": "ListViewEnum.js",
-      "params": "F, c, j",
+      "params": "F, c, exports",
       "deps": {},
       "lines": 11
     },
     {
       "name": "LoadingController",
       "file": "LoadingController.js",
-      "params": "F, j, I",
+      "params": "require, exports, module",
       "deps": null,
       "lines": 260
     },
     {
       "name": "MahjongMovingController",
       "file": "MahjongMovingController.js",
-      "params": "F, c, j",
+      "params": "F, c, exports",
       "deps": {},
       "lines": 30
     },
     {
       "name": "Main",
       "file": "Main.js",
-      "params": "F, j, X",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 397
     },
     {
       "name": "MaxBetButton",
       "file": "MaxBetButton.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 42
     },
     {
       "name": "MJAPIClient",
       "file": "MJAPIClient.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 53
     },
     {
       "name": "MJApiClient.spec",
       "file": "MJApiClient.spec.js",
-      "params": "F, c, j",
+      "params": "F, c, exports",
       "deps": {},
       "lines": 20
     },
     {
       "name": "MJDataSource",
       "file": "MJDataSource.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 30
     },
     {
       "name": "MJFreeSpinGameState",
       "file": "MJFreeSpinGameState.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 158
     },
     {
       "name": "MJFreeSpinModel",
       "file": "MJFreeSpinModel.js",
-      "params": "F, c, j",
+      "params": "F, c, exports",
       "deps": {},
       "lines": 53
     },
     {
       "name": "MJIdleState",
       "file": "MJIdleState.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 51
     },
     {
       "name": "MJNormalGameState",
       "file": "MJNormalGameState.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 66
     },
     {
       "name": "MJNormalSpinDecorator",
       "file": "MJNormalSpinDecorator.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 33
     },
     {
       "name": "MJPopOutItem",
       "file": "MJPopOutItem.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 96
     },
     {
       "name": "MJPrizeState",
       "file": "MJPrizeState.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 179
     },
     {
       "name": "MJRefreshWorldHandler",
       "file": "MJRefreshWorldHandler.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 42
     },
     {
       "name": "MJRespinGameState",
       "file": "MJRespinGameState.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 172
     },
     {
       "name": "MJRespinModel",
       "file": "MJRespinModel.js",
-      "params": "F, c, j",
+      "params": "F, c, exports",
       "deps": {},
       "lines": 52
     },
     {
       "name": "MJResultState",
       "file": "MJResultState.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 110
     },
     {
       "name": "MJScatterState",
       "file": "MJScatterState.js",
-      "params": "F, c, j",
+      "params": "require, c, exports",
       "deps": null,
       "lines": 33
     },
     {
       "name": "MJSlotController",
       "file": "MJSlotController.js",
-      "params": "F, j, I",
+      "params": "require, j, module",
       "deps": null,
       "lines": 362
     },
     {
       "name": "MJSlotHelper",
       "file": "MJSlotHelper.js",
-      "params": "F, c, j",
+      "params": "require, c, exports",
       "deps": null,
       "lines": 32
     },
     {
       "name": "MJSlotItem",
       "file": "MJSlotItem.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 190
     },
     {
       "name": "MJSlotItemPool",
       "file": "MJSlotItemPool.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 43
     },
     {
       "name": "MJSlotTransactionModel",
       "file": "MJSlotTransactionModel.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 144
     },
     {
       "name": "MJSpinButtonController",
       "file": "MJSpinButtonController.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 138
     },
     {
       "name": "MJSpinState",
       "file": "MJSpinState.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 58
     },
     {
       "name": "MJTweaksConfig",
       "file": "MJTweaksConfig.js",
-      "params": "Q, F, c",
+      "params": "require, F, exports",
       "deps": null,
       "lines": 12
     },
     {
       "name": "MoreMenuButton",
       "file": "MoreMenuButton.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 27
     },
     {
       "name": "MultiplierBoardController",
       "file": "MultiplierBoardController.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 131
     },
     {
       "name": "MultiplierItem",
       "file": "MultiplierItem.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 70
     },
     {
       "name": "MultiResHandler",
       "file": "MultiResHandler.js",
-      "params": "Q, F",
+      "params": "Q, module",
       "deps": {},
       "lines": 10
     },
     {
       "name": "NavigationBar",
       "file": "NavigationBar.js",
-      "params": "F, j, I",
+      "params": "F, j, exports",
       "deps": {},
       "lines": 371
     },
     {
       "name": "NavigationController",
       "file": "NavigationController.js",
-      "params": "F, j, I",
+      "params": "require, j, module",
       "deps": null,
       "lines": 215
     },
     {
       "name": "NavigationDefaultTransition",
       "file": "NavigationDefaultTransition.js",
-      "params": "F, c, j",
+      "params": "require, c, exports",
       "deps": null,
       "lines": 56
     },
     {
       "name": "NodePoolHandler",
       "file": "NodePoolHandler.js",
-      "params": "F, c, j",
+      "params": "F, c, exports",
       "deps": {},
       "lines": 79
     },
     {
       "name": "NormalPrizeDecorator",
       "file": "NormalPrizeDecorator.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 37
     },
     {
       "name": "NormalResultDecorator",
       "file": "NormalResultDecorator.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 61
     },
     {
       "name": "NormalSpinDecorator",
       "file": "NormalSpinDecorator.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 59
     },
     {
       "name": "NoSoundAdapter",
       "file": "NoSoundAdapter.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 169
     },
     {
       "name": "NotifyHelper",
       "file": "NotifyHelper.js",
-      "params": "Q, F",
+      "params": "Q, module",
       "deps": {},
       "lines": 9
     },
     {
       "name": "NumberCurvedController",
       "file": "NumberCurvedController.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 53
     },
     {
       "name": "NumberDisplayController",
       "file": "NumberDisplayController.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 291
     },
     {
       "name": "NumberDisplayControllerExt",
       "file": "NumberDisplayControllerExt.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 33
     },
     {
       "name": "NumberDisplayInterface",
       "file": "NumberDisplayInterface.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 44
     },
     {
       "name": "NumberLabelController",
       "file": "NumberLabelController.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 98
     },
     {
       "name": "NumberLabelControllerLite",
       "file": "NumberLabelControllerLite.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 38
     },
     {
       "name": "NumberRollBaseController",
       "file": "NumberRollBaseController.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 51
     },
     {
       "name": "NumberRollController",
       "file": "NumberRollController.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 25
     },
     {
       "name": "NumberRollCurveController",
       "file": "NumberRollCurveController.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 25
     },
     {
       "name": "NumberRollLabelController",
       "file": "NumberRollLabelController.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 27
     },
     {
       "name": "OperatorJurisdictionModel",
       "file": "OperatorJurisdictionModel.js",
-      "params": "Q, F",
+      "params": "Q, module",
       "deps": {},
       "lines": 11
     },
     {
       "name": "PageControl",
       "file": "PageControl.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 51
     },
     {
       "name": "PageControlButton",
       "file": "PageControlButton.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 35
     },
     {
       "name": "PlayerModel",
       "file": "PlayerModel.js",
-      "params": "Q, F",
+      "params": "Q, module",
       "deps": {},
       "lines": 10
     },
     {
       "name": "PopOutItem",
       "file": "PopOutItem.js",
-      "params": "F, c, j",
+      "params": "F, c, exports",
       "deps": {},
       "lines": 41
     },
     {
       "name": "PopOutItemHandler",
       "file": "PopOutItemHandler.js",
-      "params": "F, c, j",
+      "params": "F, c, exports",
       "deps": {},
       "lines": 46
     },
     {
       "name": "PopOutTintController",
       "file": "PopOutTintController.js",
-      "params": "c, j, I",
+      "params": "c, j, exports",
       "deps": {},
       "lines": 56
     },
     {
       "name": "Preference",
       "file": "Preference.js",
-      "params": "Q, F",
+      "params": "Q, module",
       "deps": {},
       "lines": 9
     },
     {
       "name": "Printer",
       "file": "Printer.js",
-      "params": "Q, F",
+      "params": "Q, module",
       "deps": {},
       "lines": 11
     },
     {
       "name": "PrizeState",
       "file": "PrizeState.js",
-      "params": "F, j, I",
+      "params": "require, module, exports",
       "deps": null,
       "lines": 84
     },
     {
       "name": "QuitGame",
       "file": "QuitGame.js",
-      "params": "Q, F",
+      "params": "Q, module",
       "deps": {},
       "lines": 9
     },
     {
       "name": "QuitGameWithEvent",
       "file": "QuitGameWithEvent.js",
-      "params": "Q, F",
+      "params": "Q, module",
       "deps": {},
       "lines": 11
     },
     {
       "name": "RandomShakingEffectController",
       "file": "RandomShakingEffectController.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 39
     },
     {
       "name": "RefreshWorldHandler",
       "file": "RefreshWorldHandler.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 121
     },
     {
       "name": "RegionUtils",
       "file": "RegionUtils.js",
-      "params": "Q, F",
+      "params": "Q, module",
       "deps": {},
       "lines": 11
     },
     {
       "name": "RemainingFreeSpinController",
       "file": "RemainingFreeSpinController.js",
-      "params": "F, j, I",
+      "params": "require, j, module",
       "deps": null,
       "lines": 76
     },
     {
       "name": "RequestHandler",
       "file": "RequestHandler.js",
-      "params": "Q, F",
+      "params": "Q, module",
       "deps": {},
       "lines": 9
     },
     {
       "name": "ResourceLoader",
       "file": "ResourceLoader.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 141
     },
     {
       "name": "ResourceQualifierHelper",
       "file": "ResourceQualifierHelper.js",
-      "params": "Q, F",
+      "params": "Q, module",
       "deps": {},
       "lines": 9
     },
     {
       "name": "ResRC",
       "file": "ResRC.js",
-      "params": "F, c",
+      "params": "F, module",
       "deps": {},
       "lines": 20
     },
     {
       "name": "ResultState",
       "file": "ResultState.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 88
     },
     {
       "name": "RetryHandler",
       "file": "RetryHandler.js",
-      "params": "Q, F",
+      "params": "Q, module",
       "deps": {},
       "lines": 8
     },
     {
       "name": "RowShiningController",
       "file": "RowShiningController.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 43
     },
     {
       "name": "RtConfig",
       "file": "RtConfig.js",
-      "params": "F, c, j",
+      "params": "require, c, exports",
       "deps": null,
       "lines": 19
     },
     {
       "name": "ScatterController",
       "file": "ScatterController.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 92
     },
     {
       "name": "ScatterFastSpinController",
       "file": "ScatterFastSpinController.js",
-      "params": "F, j, I",
+      "params": "F, j, exports",
       "deps": {},
       "lines": 50
     },
     {
       "name": "ScrollViewEx",
       "file": "ScrollViewEx.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": {},
       "lines": 99
     },
     {
       "name": "Serializer",
       "file": "Serializer.js",
-      "params": "Q, F",
+      "params": "Q, module",
       "deps": {},
       "lines": 8
     },
     {
       "name": "SettingInfoFooterController",
       "file": "SettingInfoFooterController.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 188
     },
     {
       "name": "SettingMenuButtonHelper",
       "file": "SettingMenuButtonHelper.js",
-      "params": "F, c, j",
+      "params": "F, c, exports",
       "deps": {},
       "lines": 70
     },
     {
       "name": "SettingMenuController",
       "file": "SettingMenuController.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 260
     },
     {
       "name": "SettingMenuHandlers",
       "file": "SettingMenuHandlers.js",
-      "params": "j, I, m",
+      "params": "require, I, exports",
       "deps": null,
       "lines": 77
     },
     {
       "name": "SettingMenuHelper",
       "file": "SettingMenuHelper.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 986
     },
     {
       "name": "SettingSlider",
       "file": "SettingSlider.js",
-      "params": "Q, F, c",
+      "params": "Q, module, exports",
       "deps": {},
       "lines": 92
     },
     {
       "name": "SettingSliderNum",
       "file": "SettingSliderNum.js",
-      "params": "Q, F, c",
+      "params": "require, module, exports",
       "deps": null,
       "lines": 34
     },
     {
       "name": "SettingSliderSingle",
       "file": "SettingSliderSingle.js",
-      "params": "Q, F, c",
+      "params": "Q, module, exports",
       "deps": {},
       "lines": 118
     },
     {
       "name": "SettingSliderSingleNum",
       "file": "SettingSliderSingleNum.js",
-      "params": "Q, F, c",
+      "params": "require, module, exports",
       "deps": null,
       "lines": 27
     },
     {
       "name": "SettingTurboSpinButton",
       "file": "SettingTurboSpinButton.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 117
     },
     {
       "name": "ShiftSlotHandler",
       "file": "ShiftSlotHandler.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 128
     },
     {
       "name": "SinglePayoutModel",
       "file": "SinglePayoutModel.js",
-      "params": "F, c, j",
+      "params": "F, c, exports",
       "deps": {},
       "lines": 80
     },
     {
       "name": "SliderEx",
       "file": "SliderEx.js",
-      "params": "F, j, I",
+      "params": "F, j, exports",
       "deps": {},
       "lines": 42
     },
     {
       "name": "SlotAnalyticsEnum",
       "file": "SlotAnalyticsEnum.js",
-      "params": "F, c, j",
+      "params": "F, c, exports",
       "deps": {},
       "lines": 13
     },
     {
       "name": "SlotAnalyticsHelper",
       "file": "SlotAnalyticsHelper.js",
-      "params": "F, c, j",
+      "params": "require, c, exports",
       "deps": null,
       "lines": 18
     },
     {
       "name": "SlotController.spec",
       "file": "SlotController.spec.js",
-      "params": "F, c, j",
+      "params": "F, c, exports",
       "deps": {},
       "lines": 18
     },
     {
       "name": "SlotDataHandler",
       "file": "SlotDataHandler.js",
-      "params": "F, c, j",
+      "params": "require, c, exports",
       "deps": {},
       "lines": 107
     },
     {
       "name": "SlotDependencyManager",
       "file": "SlotDependencyManager.js",
-      "params": "c, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 16
     },
     {
       "name": "SlotGameConstants",
       "file": "SlotGameConstants.js",
-      "params": "F, c, j",
+      "params": "F, c, exports",
       "deps": {},
       "lines": 7
     },
     {
       "name": "SlotGameTools",
       "file": "SlotGameTools.js",
-      "params": "F, c, j",
+      "params": "require, c, exports",
       "deps": null,
       "lines": 43
     },
     {
       "name": "SlotGenerator",
       "file": "SlotGenerator.js",
-      "params": "j, I, m",
+      "params": "require, I, exports",
       "deps": null,
       "lines": 43
     },
     {
       "name": "SlotHandler",
       "file": "SlotHandler.js",
-      "params": "Z, T, M",
+      "params": "require, module, exports",
       "deps": null,
       "lines": 405
     },
     {
       "name": "SlotHelper",
       "file": "SlotHelper.js",
-      "params": "j, I, m",
+      "params": "require, I, exports",
       "deps": null,
       "lines": 301
     },
     {
       "name": "SlotItem",
       "file": "SlotItem.js",
-      "params": "F, c, j",
+      "params": "require, c, exports",
       "deps": null,
       "lines": 43
     },
     {
       "name": "SlotItemHandler",
       "file": "SlotItemHandler.js",
-      "params": "F, c, j",
+      "params": "require, c, exports",
       "deps": {},
       "lines": 41
     },
     {
       "name": "SlotItemPool",
       "file": "SlotItemPool.js",
-      "params": "F, c, j",
+      "params": "F, c, exports",
       "deps": {},
       "lines": 53
     },
     {
       "name": "SlotScrollerController",
       "file": "SlotScrollerController.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 164
     },
     {
       "name": "SlotScrollerController.spec",
       "file": "SlotScrollerController.spec.js",
-      "params": "F, c, j",
+      "params": "F, c, exports",
       "deps": {},
       "lines": 10
     },
     {
       "name": "SlotStateMachine",
       "file": "SlotStateMachine.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 63
     },
     {
       "name": "SlotSymbol",
       "file": "SlotSymbol.js",
-      "params": "F, c, j",
+      "params": "require, c, exports",
       "deps": null,
       "lines": 50
     },
     {
       "name": "SlotSystemModel",
       "file": "SlotSystemModel.js",
-      "params": "F, c, j",
+      "params": "require, c, exports",
       "deps": null,
       "lines": 55
     },
     {
       "name": "SlotTransactionModel",
       "file": "SlotTransactionModel.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 77
     },
     {
       "name": "SlotView",
       "file": "SlotView.js",
-      "params": "F, c, j",
+      "params": "F, c, exports",
       "deps": {},
       "lines": 211
     },
     {
       "name": "SoundButton",
       "file": "SoundButton.js",
-      "params": "F, j, I",
+      "params": "require, exports, I",
       "deps": null,
       "lines": 28
     },
     {
       "name": "SpaceBarInterrupter",
       "file": "SpaceBarInterrupter.js",
-      "params": "F, c, j",
+      "params": "require, c, exports",
       "deps": null,
       "lines": 100
     },
     {
       "name": "SpinButtonController",
       "file": "SpinButtonController.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 146
     },
     {
       "name": "SpinButtonViewController.spec",
       "file": "SpinButtonViewController.spec.js",
-      "params": "F, c, j",
+      "params": "F, c, exports",
       "deps": {},
       "lines": 15
     },
     {
       "name": "SpinConfigHandler",
       "file": "SpinConfigHandler.js",
-      "params": "c, j, I",
+      "params": "c, j, exports",
       "deps": {},
       "lines": 22
     },
     {
       "name": "SpinOptionsButton",
       "file": "SpinOptionsButton.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 64
     },
     {
       "name": "SpinState",
       "file": "SpinState.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 57
     },
     {
       "name": "SubControllerConfig",
       "file": "SubControllerConfig.js",
-      "params": "F, c, j",
+      "params": "F, c, exports",
       "deps": {},
       "lines": 9
     },
     {
       "name": "SymbolController",
       "file": "SymbolController.js",
-      "params": "F, j, I",
+      "params": "require, j, module",
       "deps": null,
       "lines": 81
     },
     {
       "name": "SymbolImageHandler",
       "file": "SymbolImageHandler.js",
-      "params": "F, c, j",
+      "params": "F, c, exports",
       "deps": {},
       "lines": 34
     },
     {
       "name": "SymbolPayoutController",
       "file": "SymbolPayoutController.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 175
     },
     {
       "name": "SymbolPayoutPanelGenerator",
       "file": "SymbolPayoutPanelGenerator.js",
-      "params": "F, c, j",
+      "params": "require, c, exports",
       "deps": null,
       "lines": 69
     },
     {
       "name": "SystemFeatureHandler",
       "file": "SystemFeatureHandler.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 43
     },
     {
       "name": "SystemModel",
       "file": "SystemModel.js",
-      "params": "Q, F",
+      "params": "Q, module",
       "deps": {},
       "lines": 8
     },
     {
       "name": "TabBar",
       "file": "TabBar.js",
-      "params": "F, j, I",
+      "params": "F, j, exports",
       "deps": {},
       "lines": 65
     },
     {
       "name": "TabBarController",
       "file": "TabBarController.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 175
     },
     {
       "name": "TabBarItem",
       "file": "TabBarItem.js",
-      "params": "F, j, I",
+      "params": "F, j, exports",
       "deps": {},
       "lines": 69
     },
     {
       "name": "TimedWinRollBaseController",
       "file": "TimedWinRollBaseController.js",
-      "params": "j, I, m",
+      "params": "require, I, exports",
       "deps": null,
       "lines": 149
     },
     {
       "name": "TimedWinRollController",
       "file": "TimedWinRollController.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 29
     },
     {
       "name": "TimedWinRollCurveController",
       "file": "TimedWinRollCurveController.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 27
     },
     {
       "name": "TimedWinRollLabelController",
       "file": "TimedWinRollLabelController.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 25
     },
     {
       "name": "TotalWinController",
       "file": "TotalWinController.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 132
     },
     {
       "name": "TotalWinController.spec",
       "file": "TotalWinController.spec.js",
-      "params": "F, c, j",
+      "params": "F, c, exports",
       "deps": {},
       "lines": 22
     },
     {
       "name": "TransactionModel",
       "file": "TransactionModel.js",
-      "params": "Q, F",
+      "params": "Q, module",
       "deps": {},
       "lines": 8
     },
     {
       "name": "TransactionStateMachineHandler",
       "file": "TransactionStateMachineHandler.js",
-      "params": "Q, F",
+      "params": "Q, module",
       "deps": {},
       "lines": 11
     },
     {
       "name": "TransitionContext",
       "file": "TransitionContext.js",
-      "params": "F, c, j",
+      "params": "F, c, exports",
       "deps": {},
       "lines": 30
     },
     {
       "name": "TransitionEnum",
       "file": "TransitionEnum.js",
-      "params": "F, c, j",
+      "params": "F, c, exports",
       "deps": {},
       "lines": 9
     },
     {
       "name": "Transitions",
       "file": "Transitions.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 170
     },
     {
       "name": "TurboButtonEffect",
       "file": "TurboButtonEffect.js",
-      "params": "F, c, j",
+      "params": "F, c, exports",
       "deps": {},
       "lines": 26
     },
     {
       "name": "TweaksConfig",
       "file": "TweaksConfig.js",
-      "params": "F, c, j",
+      "params": "require, c, exports",
       "deps": null,
       "lines": 12
     },
     {
       "name": "TweaksData",
       "file": "TweaksData.js",
-      "params": "Q, F",
+      "params": "Q, module",
       "deps": {},
       "lines": 5
     },
     {
       "name": "UIAppearanceHelper",
       "file": "UIAppearanceHelper.js",
-      "params": "M, C, V",
+      "params": "require, C, exports",
       "deps": null,
       "lines": 103
     },
     {
       "name": "UIKit",
       "file": "UIKit.js",
-      "params": "N, q, f",
+      "params": "N, q, exports",
       "deps": {},
       "lines": 46
     },
     {
       "name": "UIKitUtils",
       "file": "UIKitUtils.js",
-      "params": "F, c, j",
+      "params": "F, c, exports",
       "deps": {},
       "lines": 21
     },
     {
       "name": "UISetupHandler",
       "file": "UISetupHandler.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 114
     },
     {
       "name": "Utils",
       "file": "Utils.js",
-      "params": "F, c",
+      "params": "F, module",
       "deps": {},
       "lines": 40
     },
     {
       "name": "ViewController",
       "file": "ViewController.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 59
     },
     {
       "name": "ViewControllerTransition",
       "file": "ViewControllerTransition.js",
-      "params": "F, c, j",
+      "params": "F, c, exports",
       "deps": {},
       "lines": 16
     },
     {
       "name": "WalletHandlers",
       "file": "WalletHandlers.js",
-      "params": "F, c, j",
+      "params": "F, c, exports",
       "deps": {},
       "lines": 21
     },
     {
       "name": "WalletHelper",
       "file": "WalletHelper.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 118
     },
     {
       "name": "WebSocketHandler",
       "file": "WebSocketHandler.js",
-      "params": "Q, F",
+      "params": "Q, module",
       "deps": {},
       "lines": 11
     },
     {
       "name": "WildSymbolController",
       "file": "WildSymbolController.js",
-      "params": "F, j, I",
+      "params": "F, j, exports",
       "deps": {},
       "lines": 35
     },
     {
       "name": "WinHighlight.spec",
       "file": "WinHighlight.spec.js",
-      "params": "F, c, j",
+      "params": "F, c, exports",
       "deps": {},
       "lines": 10
     },
     {
       "name": "WinLinesModel",
       "file": "WinLinesModel.js",
-      "params": "F, c, j",
+      "params": "F, c, exports",
       "deps": {},
       "lines": 34
     },
     {
       "name": "WinRollBaseController",
       "file": "WinRollBaseController.js",
-      "params": "j, I, m",
+      "params": "require, I, m",
       "deps": null,
       "lines": 92
     },
     {
       "name": "WinRollController",
       "file": "WinRollController.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 24
     },
     {
       "name": "WinRollCurveController",
       "file": "WinRollCurveController.js",
-      "params": "F, j, I",
+      "params": "require, j, exports",
       "deps": null,
       "lines": 24
     },
     {
       "name": "WinRollLabelController",
       "file": "WinRollLabelController.js",
-      "params": "F, j, I",
+      "params": "require, exports, I",
       "deps": null,
       "lines": 26
     },
     {
       "name": "WinThresholdsModel",
       "file": "WinThresholdsModel.js",
-      "params": "F, c, j",
+      "params": "require, c, exports",
       "deps": null,
       "lines": 65
     },
     {
       "name": "WinValuesModel",
       "file": "WinValuesModel.js",
-      "params": "F, c, j",
+      "params": "F, c, exports",
       "deps": {},
       "lines": 30
     },
     {
       "name": "XHRFactory",
       "file": "XHRFactory.js",
-      "params": "Q, F",
+      "params": "Q, module",
       "deps": {},
       "lines": 8
     },
     {
       "name": "XHRHandler",
       "file": "XHRHandler.js",
-      "params": "Q, F",
+      "params": "Q, module",
       "deps": {},
       "lines": 9
     },
     {
       "name": "XHRHelper",
       "file": "XHRHelper.js",
-      "params": "Q, F",
+      "params": "Q, module",
       "deps": {},
       "lines": 9
     }

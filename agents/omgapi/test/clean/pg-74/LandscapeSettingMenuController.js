@@ -1,15 +1,15 @@
 // module: LandscapeSettingMenuController
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function LandscapeSettingMenuController(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function LandscapeSettingMenuController(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "0a93fcJrXdI5b2EdfUH4UAj", "LandscapeSettingMenuController")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m), I.LandscapeSettingMenuController = undefined;
-    var B = F("SettingMenuController"),
-      X = F("CanvasResizeBroadcaster"),
-      Z = F("UIAppearanceHelper"),
+    Object.defineProperty(exports, "__esModule", m), exports.LandscapeSettingMenuController = undefined;
+    var B = require("SettingMenuController"),
+      X = require("CanvasResizeBroadcaster"),
+      Z = require("UIAppearanceHelper"),
       T = cc._decorator,
       M = T.ccclass,
       C = T.property,
@@ -48,7 +48,7 @@ function LandscapeSettingMenuController(F, j, I) {
           }, __decorate([C(cc.Node)], q.prototype, "landscapeSoundButtonHolder", undefined), __decorate([C(cc.Node)], q.prototype, "moreMenuLayoutNode", undefined), __decorate([C(cc.Node)], q.prototype, "moreMenuBGNode", undefined), __decorate([M], q);
         }
       }(B.SettingMenuController);
-    I.LandscapeSettingMenuController = V, cc._RF.pop();
+    exports.LandscapeSettingMenuController = V, cc._RF.pop();
   }
 }
 module.exports = LandscapeSettingMenuController;

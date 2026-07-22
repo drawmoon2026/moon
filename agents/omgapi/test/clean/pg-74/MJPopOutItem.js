@@ -1,25 +1,25 @@
 // module: MJPopOutItem
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function MJPopOutItem(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function MJPopOutItem(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "3f567w649xJF6nofSMlLKNP", "MJPopOutItem")) {
     {
       var m = {};
       m.value = true;
-      Object.defineProperty(I, "__esModule", m), I.PopoutSymbolState = undefined;
+      Object.defineProperty(exports, "__esModule", m), exports.PopoutSymbolState = undefined;
       var B,
-        X = F("GameConstant"),
-        Z = F("PopOutItem"),
-        T = F("SymbolImageHandler"),
-        M = F("AudioManager"),
-        C = F("AudioConstant"),
+        X = require("GameConstant"),
+        Z = require("PopOutItem"),
+        T = require("SymbolImageHandler"),
+        M = require("AudioManager"),
+        C = require("AudioConstant"),
         V = cc._decorator,
         N = V.ccclass,
         q = V.property;
       (function (K) {
         K[K.NORMAL = 0] = "NORMAL", K[K.SPECIAL = 1] = "SPECIAL", K[K.SCATTER = 2] = "SCATTER", K[K.WILD = 3] = "WILD";
-      })(B = I.PopoutSymbolState || (I.PopoutSymbolState = {}));
+      })(B = exports.PopoutSymbolState || (exports.PopoutSymbolState = {}));
       var g = function (K) {
         function O() {
           var x = null !== K && K.apply(this, arguments) || this;
@@ -92,7 +92,7 @@ function MJPopOutItem(F, j, I) {
           }
         }, __decorate([q(cc.Node)], O.prototype, "spriteHolder", undefined), __decorate([q(cc.Node)], O.prototype, "labelHolder", undefined), __decorate([q(cc.Sprite)], O.prototype, "symbolSprite", undefined), __decorate([q(cc.Node)], O.prototype, "layoutNode", undefined), __decorate([q(cc.Sprite)], O.prototype, "backgroundSprite", undefined), __decorate([q(cc.Sprite)], O.prototype, "baseSprite", undefined), __decorate([q(cc.Node)], O.prototype, "scatterbaseSpriteNode", undefined), __decorate([q(cc.Node)], O.prototype, "particleEffectNode", undefined), __decorate([q(cc.Node)], O.prototype, "goldBaseIngotSpriteNode", undefined), __decorate([q([cc.Node])], O.prototype, "winGlowA", undefined), __decorate([q([cc.Node])], O.prototype, "payoutNumber", undefined), __decorate([q([cc.Node])], O.prototype, "payoutValue", undefined), __decorate([q(cc.Node)], O.prototype, "numberHolder", undefined), __decorate([q(cc.Label)], O.prototype, "label", undefined), __decorate([q([cc.SpriteFrame])], O.prototype, "baseSpriteFrame", undefined), __decorate([q([cc.Layout])], O.prototype, "payoutLayouts", undefined), __decorate([N], O);
       }(Z.default);
-      I.default = g, cc._RF.pop();
+      exports.default = g, cc._RF.pop();
     }
   }
 }

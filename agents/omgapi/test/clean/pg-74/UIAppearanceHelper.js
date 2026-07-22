@@ -1,12 +1,12 @@
 // module: UIAppearanceHelper
-// Cocos 模块函数,参数 (require, module, exports) = (M, C, V)
-function UIAppearanceHelper(M, C, V) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, C, exports)
+function UIAppearanceHelper(require, C, exports) {
   'use strict';
 
   if (!cc._RF.push(C, "f4549VlHlxOL4w7V7h4rhZg", "UIAppearanceHelper")) {
     var N = {};
     N.value = true;
-    Object.defineProperty(V, "__esModule", N), V.uiAppearanceHelper = V.getOffsetY = undefined;
+    Object.defineProperty(exports, "__esModule", N), exports.uiAppearanceHelper = exports.getOffsetY = undefined;
     var q = {};
     q.native = 4;
     q.non_native = 3;
@@ -31,7 +31,7 @@ function UIAppearanceHelper(M, C, V) {
     var L = {};
     L.native = 4;
     L.non_native = 4;
-    var H = M("BACKUP_DATA"),
+    var H = require("BACKUP_DATA"),
       U = function () {
         function D() {}
         return D.prototype.interpret = function (J) {
@@ -78,7 +78,7 @@ function UIAppearanceHelper(M, C, V) {
       P = shell.I18n.currentLocale,
       G = shell.getBrowserBaseType().toLowerCase(),
       A = 'zh' === P || 'ko' === P || 'ja' === P ? S : z;
-    V.getOffsetY = function () {
+    exports.getOffsetY = function () {
       switch (cc.sys.os) {
         case cc.sys.OS_WINDOWS:
           return 'ie' === G || "edge" === G ? A.windows.native : A.windows.non_native;
@@ -93,7 +93,7 @@ function UIAppearanceHelper(M, C, V) {
       }
     };
     var w = new y();
-    V.uiAppearanceHelper = w, cc._RF.pop();
+    exports.uiAppearanceHelper = w, cc._RF.pop();
   }
   function W(D) {
     for (var J, E = D.split('.'), Q0 = 0, Q1 = E.length; Q0 < Q1; Q0++) {

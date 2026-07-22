@@ -1,15 +1,15 @@
 // module: SymbolController
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function SymbolController(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, module)
+function SymbolController(require, j, module) {
   'use strict';
 
   if (!cc._RF.push(j, "dd489wDY8JBhZmeIMbgCiSL", "SymbolController")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m);
-    var B = F("GameConstant"),
-      X = F("SymbolImageHandler"),
-      Z = F("SlotHandler"),
+    Object.defineProperty(module, "__esModule", m);
+    var B = require("GameConstant"),
+      X = require("SymbolImageHandler"),
+      Z = require("SlotHandler"),
       T = cc._decorator,
       M = T.ccclass,
       C = T.property,
@@ -78,7 +78,7 @@ function SymbolController(F, j, I) {
           this.eS = false, this.unscheduleAllCallbacks(), this.winFrame.stopAllActions(), this.winGlowC.stopAllActions(), this.winFrame.opacity = 0, this.winGlowC.opacity = 0, this.winAnim.stop(), this.symbolBase.y = 0, this.symbolBase.x = 0, this.symbolBase.width = 189, this.symbolBase.height = 224, this.symbolBase.setScale(1), this.symbolBase.active = true, this.symbolSprite.node.active = true, this.symbolSprite.node.x = 5, this.symbolSprite.node.y = 10, this.symbolSprite.node.scale = 1, this.symbolBaseGoldIngot.active = false, this.symbolBaseGoldIngot.setPosition(5, -72), this.symbolBase.color = cc.Color.WHITE, this.winGlowC.color = cc.Color.WHITE, this.scatterVfx.color = cc.Color.WHITE, this.symbolSprite.node.color = cc.Color.WHITE;
         }, __decorate([C([cc.SpriteFrame])], q.prototype, "symbolBases", undefined), __decorate([C(cc.Node)], q.prototype, "symbolBase", undefined), __decorate([C(cc.Node)], q.prototype, "symbolBaseGoldIngot", undefined), __decorate([C(cc.Node)], q.prototype, "winGlowC", undefined), __decorate([C(cc.Sprite)], q.prototype, "winGlowCSprite", undefined), __decorate([C(cc.Node)], q.prototype, "winFrame", undefined), __decorate([C(cc.Node)], q.prototype, "winGlow", undefined), __decorate([C(cc.Node)], q.prototype, "scatterVfx", undefined), __decorate([C(cc.Node)], q.prototype, "winVfx", undefined), __decorate([C(cc.Sprite)], q.prototype, "symbolSprite", undefined), __decorate([C(cc.Sprite)], q.prototype, "symbolBaseSprite", undefined), __decorate([C(cc.Animation)], q.prototype, "winAnim", undefined), __decorate([M], q);
       }(cc.Component);
-    I.default = V, cc._RF.pop();
+    module.default = V, cc._RF.pop();
   }
 }
 module.exports = SymbolController;

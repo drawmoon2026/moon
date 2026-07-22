@@ -1,13 +1,13 @@
 // module: DefaultStopScroller
-// Cocos 模块函数,参数 (require, module, exports) = (c, j, I)
-function DefaultStopScroller(c, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function DefaultStopScroller(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "080a20w+h1E6aNSIb84n3TU", "DefaultStopScroller")) {
     {
       var m = {};
       m.value = true;
-      Object.defineProperty(I, "__esModule", m);
+      Object.defineProperty(exports, "__esModule", m);
       var B = {};
       B.scrollCallback = undefined;
       B.getStopDistance = undefined;
@@ -16,7 +16,7 @@ function DefaultStopScroller(c, j, I) {
       B.bounceDistance = -60;
       B.bounceDuration = 0.15;
       B.bounceFactor = 1.84;
-      var X = c("BaseScroller"),
+      var X = require("BaseScroller"),
         T = function (M) {
           function C(V) {
             var N = M.call(this, __assign(__assign({}, Z), V)) || this;
@@ -79,7 +79,7 @@ function DefaultStopScroller(c, j, I) {
             this.previousMaxSpeed = q.maxSpeed, q.maxSpeed = N, this.changeSpeedDuration = V, this.changeSpeedTimer = 0;
           }, C;
         }(X.default);
-      I.default = T, cc._RF.pop();
+      exports.default = T, cc._RF.pop();
     }
   }
 }

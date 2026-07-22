@@ -1,10 +1,10 @@
 // module: ButtonHitTest
-// Cocos 模块函数,参数 (require, module, exports) = (F, c, j)
-function ButtonHitTest(F, c, j) {
+// Cocos 模块函数,参数 (require, module, exports) = (F, c, exports)
+function ButtonHitTest(F, c, exports) {
   'use strict';
 
   if (!cc._RF.push(c, "95aac3PHb1J8pXlbPzijfq9", "ButtonHitTest")) {
-    j.__esModule = true, j.buttonHitTest = function (B) {
+    exports.__esModule = true, exports.buttonHitTest = function (B) {
       var X = cc.EventListener.ListenerID.TOUCH_ONE_BY_ONE;
       cc.internal.eventManager[m.gs](X, cc.director.getScene());
       var Z = cc.internal.eventManager[m.Cs](X);

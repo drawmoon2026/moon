@@ -1,8 +1,8 @@
 // module: TweaksData
-// Cocos 模块函数,参数 (require, module, exports) = (Q, F)
-function TweaksData(Q, F) {
+// Cocos 模块函数,参数 (require, module, exports) = (Q, module)
+function TweaksData(Q, module) {
   'use strict';
 
-  cc._RF.push(F, "b0089xUdQRLiZXeZmKk7dCG", "TweaksData") || (F.exports = {}, F.exports.__esModule = true, cc._RF.pop());
+  cc._RF.push(module, "b0089xUdQRLiZXeZmKk7dCG", "TweaksData") || (module.exports = {}, module.exports.__esModule = true, cc._RF.pop());
 }
 module.exports = TweaksData;

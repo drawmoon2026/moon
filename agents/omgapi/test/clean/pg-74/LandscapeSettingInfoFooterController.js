@@ -1,15 +1,15 @@
 // module: LandscapeSettingInfoFooterController
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function LandscapeSettingInfoFooterController(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function LandscapeSettingInfoFooterController(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "e550bCO+rxMtaTFsIcS7wfm", "LandscapeSettingInfoFooterController")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m);
-    var B = F("SettingInfoFooterController"),
-      X = F("UIAppearanceHelper"),
-      Z = F("Utils"),
+    Object.defineProperty(exports, "__esModule", m);
+    var B = require("SettingInfoFooterController"),
+      X = require("UIAppearanceHelper"),
+      Z = require("Utils"),
       T = cc._decorator,
       M = T.ccclass,
       C = T.property,
@@ -48,7 +48,7 @@ function LandscapeSettingInfoFooterController(F, j, I) {
           this.descriptionLabel[0].string = shell.I18n.t("WalletHelper.Balance"), this.descriptionLabel[1].string = shell.I18n.t("SettingMenu.WinPrizeWord"), this.descriptionLabel[2].string = '', this.descriptionLabel[3].string = shell.I18n.t("SettingMenu.Bet");
         }, __decorate([C([cc.Node])], q.prototype, "borders", undefined), __decorate([C([cc.Label])], q.prototype, "descriptionLabel", undefined), __decorate([C(cc.Node)], q.prototype, "landscapeSoundButtonHolder", undefined), __decorate([M], q);
       }(B.SettingInfoFooterController);
-    I.default = V, cc._RF.pop();
+    exports.default = V, cc._RF.pop();
   }
 }
 module.exports = LandscapeSettingInfoFooterController;

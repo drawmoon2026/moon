@@ -1,14 +1,14 @@
 // module: MoreMenuButton
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function MoreMenuButton(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function MoreMenuButton(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "ea5caTag+xJsrT667bFPlnC", "MoreMenuButton")) {
     {
       var m = {};
       m.value = true;
-      Object.defineProperty(I, "__esModule", m);
-      var B = F("GenericSettingButton"),
+      Object.defineProperty(exports, "__esModule", m);
+      var B = require("GenericSettingButton"),
         X = cc._decorator,
         Z = X.ccclass,
         T = (X.property, function (M) {
@@ -23,7 +23,7 @@ function MoreMenuButton(F, j, I) {
             }, __decorate([Z], C);
           }
         }(B.default));
-      I.default = T, cc._RF.pop();
+      exports.default = T, cc._RF.pop();
     }
   }
 }

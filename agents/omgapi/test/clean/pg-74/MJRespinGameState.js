@@ -1,25 +1,25 @@
 // module: MJRespinGameState
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function MJRespinGameState(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function MJRespinGameState(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "03f8b7u8t5Ek5sUHJN0fey0", "MJRespinGameState")) {
     {
       var m = {};
       m.value = true;
-      Object.defineProperty(I, "__esModule", m);
-      var B = F("MJSpinState"),
-        X = F("MJPrizeState"),
-        Z = F("MJResultState"),
-        T = F("Utils"),
-        M = F("GameConstant"),
-        C = F("SettingMenuHelper"),
-        V = F("MJScatterState"),
-        N = F("MJNormalSpinDecorator"),
-        q = F("NormalResultDecorator"),
-        g = F("NormalPrizeDecorator"),
-        K = F("TransactionStateMachineHandler"),
-        O = F("GameEventHandler"),
+      Object.defineProperty(exports, "__esModule", m);
+      var B = require("MJSpinState"),
+        X = require("MJPrizeState"),
+        Z = require("MJResultState"),
+        T = require("Utils"),
+        M = require("GameConstant"),
+        C = require("SettingMenuHelper"),
+        V = require("MJScatterState"),
+        N = require("MJNormalSpinDecorator"),
+        q = require("NormalResultDecorator"),
+        g = require("NormalPrizeDecorator"),
+        K = require("TransactionStateMachineHandler"),
+        O = require("GameEventHandler"),
         x = function () {
           function p(b, L, H, U) {
             this.name = "Respin", this.dataSource = undefined, this.generalControllers = undefined, this.bonusControllers = undefined, this.loadingController = undefined, this.finalCallback = undefined, this.dataSource = b, this.generalControllers = L.generalControllers, this.bonusControllers = L.bonusControllers, this.loadingController = H, this.finalCallback = U;
@@ -168,7 +168,7 @@ function MJRespinGameState(F, j, I) {
             this.mr = undefined, this.dataSource = undefined, this.finalCallback = undefined, this.generalControllers = undefined;
           }, p;
         }();
-      I.default = x, cc._RF.pop();
+      exports.default = x, cc._RF.pop();
     }
   }
 }

@@ -1,13 +1,13 @@
 // module: GridView
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function GridView(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, module)
+function GridView(require, j, module) {
   'use strict';
 
   if (!cc._RF.push(j, "2a349Sf9h1Dw6gCmtoNZ3ZP", "GridView")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m);
-    var B = F("ScrollViewEx"),
+    Object.defineProperty(module, "__esModule", m);
+    var B = require("ScrollViewEx"),
       X = function (V, N, q) {
         return V.fuzzyEquals(N, q);
       },
@@ -767,7 +767,7 @@ function GridView(F, j, I) {
           }, __decorate([M], N);
         }
       }(B.default));
-    I.default = C, cc._RF.pop();
+    module.default = C, cc._RF.pop();
   }
 }
 module.exports = GridView;

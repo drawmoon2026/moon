@@ -1,21 +1,21 @@
 // module: Transitions
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function Transitions(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function Transitions(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "5d6ccC+14pH074ZH/e+rjmC", "Transitions")) {
     {
       var B = {};
       B.value = true;
-      Object.defineProperty(I, "__esModule", B), I.FreeSpinToNormalSpinTransition = I.FreeSpinToFreeSpinTransition = I.NormalSpinToFreeSpinTransition = I.RespinToNormalSpinTransition = I.RespinToRespinTransition = I.NormalSpinToRespinTransition = I.NormalSpinToNormalSpinTransition = undefined;
-      var X = F("MJDataSource"),
-        Z = F("Utils"),
-        T = F("GameEventHandler"),
-        M = F("SettingMenuHelper"),
-        C = F("BGMHandler"),
-        V = F("GameConstant"),
-        N = F("AudioManager"),
-        q = F("AudioConstant"),
+      Object.defineProperty(exports, "__esModule", B), exports.FreeSpinToNormalSpinTransition = exports.FreeSpinToFreeSpinTransition = exports.NormalSpinToFreeSpinTransition = exports.RespinToNormalSpinTransition = exports.RespinToRespinTransition = exports.NormalSpinToRespinTransition = exports.NormalSpinToNormalSpinTransition = undefined;
+      var X = require("MJDataSource"),
+        Z = require("Utils"),
+        T = require("GameEventHandler"),
+        M = require("SettingMenuHelper"),
+        C = require("BGMHandler"),
+        V = require("GameConstant"),
+        N = require("AudioManager"),
+        q = require("AudioConstant"),
         g = function (y) {
           function z() {
             return null !== y && y.apply(this, arguments) || this;
@@ -28,7 +28,7 @@ function Transitions(F, j, I) {
             return this.Zh = undefined, y.prototype.destroy.call(this);
           }, z;
         }(cc.Object);
-      I.NormalSpinToNormalSpinTransition = g;
+      exports.NormalSpinToNormalSpinTransition = g;
       var K = function (y) {
         function z() {
           return null !== y && y.apply(this, arguments) || this;
@@ -39,7 +39,7 @@ function Transitions(F, j, I) {
           return this.Zh = undefined, y.prototype.destroy.call(this);
         }, z;
       }(cc.Object);
-      I.NormalSpinToRespinTransition = K;
+      exports.NormalSpinToRespinTransition = K;
       var O = function (y) {
         {
           function z() {
@@ -54,7 +54,7 @@ function Transitions(F, j, I) {
           }, z;
         }
       }(cc.Object);
-      I.RespinToRespinTransition = O;
+      exports.RespinToRespinTransition = O;
       var x = function (y) {
         function z() {
           return null !== y && y.apply(this, arguments) || this;
@@ -69,7 +69,7 @@ function Transitions(F, j, I) {
           return this.Zh = undefined, y.prototype.destroy.call(this);
         }, z;
       }(cc.Object);
-      I.RespinToNormalSpinTransition = x;
+      exports.RespinToNormalSpinTransition = x;
       var L = function (y) {
         function z() {
           return null !== y && y.apply(this, arguments) || this;
@@ -117,7 +117,7 @@ function Transitions(F, j, I) {
           return this.Zh = undefined, this.Xh = undefined, y.prototype.destroy.call(this);
         }, z;
       }(cc.Object);
-      I.NormalSpinToFreeSpinTransition = L;
+      exports.NormalSpinToFreeSpinTransition = L;
       var H = function (y) {
         function z() {
           {
@@ -137,7 +137,7 @@ function Transitions(F, j, I) {
           }
         }, z;
       }(cc.Object);
-      I.FreeSpinToFreeSpinTransition = H;
+      exports.FreeSpinToFreeSpinTransition = H;
       var U = function (y) {
         function z() {
           return null !== y && y.apply(this, arguments) || this;
@@ -154,7 +154,7 @@ function Transitions(F, j, I) {
           }
         }, z;
       }(cc.Object);
-      I.FreeSpinToNormalSpinTransition = U, cc._RF.pop();
+      exports.FreeSpinToNormalSpinTransition = U, cc._RF.pop();
     }
   }
   function k() {

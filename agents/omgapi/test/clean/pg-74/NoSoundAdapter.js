@@ -1,14 +1,14 @@
 // module: NoSoundAdapter
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function NoSoundAdapter(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function NoSoundAdapter(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "d85610Qhw9DzLM9jdvZsDKB", "NoSoundAdapter")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m);
-    var B = F("Utils"),
-      X = F("AudioAdapter"),
+    Object.defineProperty(exports, "__esModule", m);
+    var B = require("Utils"),
+      X = require("AudioAdapter"),
       Z = {
         'load': function (V, N) {
           setTimeout(N, 0);
@@ -166,7 +166,7 @@ function NoSoundAdapter(F, j, I) {
           }, N;
         }
       }(X.default);
-    I.default = C, cc._RF.pop();
+    exports.default = C, cc._RF.pop();
   }
 }
 module.exports = NoSoundAdapter;

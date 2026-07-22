@@ -1,13 +1,13 @@
 // module: PageControl
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function PageControl(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function PageControl(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "db0df9/6UZNW6sskb9QIFSg", "PageControl")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m);
-    var B = F("PageControlButton"),
+    Object.defineProperty(exports, "__esModule", m);
+    var B = require("PageControlButton"),
       X = cc._decorator,
       Z = X.ccclass,
       T = X.property,
@@ -48,7 +48,7 @@ function PageControl(F, j, I) {
           return !(N && N.enableChangePage && !N.enableChangePage());
         }, __decorate([T(cc.Prefab)], V.prototype, "buttonPrefab", undefined), __decorate([Z], V);
       }(cc.Component);
-    I.default = M, cc._RF.pop();
+    exports.default = M, cc._RF.pop();
   }
 }
 module.exports = PageControl;

@@ -122,8 +122,47 @@ traverse(ast, {
     },
 });
 
+// 第三遍:模块参数按【用法】重命名(不写死位置)。
+//   require = 被当函数调用且传字符串;module = 被访问 .exports;exports = 被赋属性。
+traverse(ast, {
+    ObjectProperty(p) {
+        const val = p.node.value;
+        if (!t.isArrayExpression(val) || !val.elements.length) return;
+        const fnPath = p.get('value.elements.0');
+        if (!fnPath.isFunctionExpression() && !fnPath.isArrowFunctionExpression()) return;
+        const wanted = {};   // paramName → 目标名(去重:require/module/exports 各一个)
+        const taken = new Set();
+        for (const paramPath of fnPath.get('params')) {
+            if (!paramPath.isIdentifier()) continue;
+            const name = paramPath.node.name;
+            const binding = fnPath.scope.getBinding(name);
+            if (!binding) continue;
+            let req = 0, mod = 0, exp = 0;
+            for (const ref of binding.referencePaths) {
+                const par = ref.parent;
+                if (t.isCallExpression(par) && par.callee === ref.node && par.arguments.some(a => t.isStringLiteral(a))) req++;
+                else if (t.isMemberExpression(par) && par.object === ref.node) {
+                    const key = t.isIdentifier(par.property) ? par.property.name : (t.isStringLiteral(par.property) ? par.property.value : null);
+                    if (key === 'exports') mod++;
+                    else if (ref.parentPath.parentPath && ref.parentPath.parentPath.isAssignmentExpression({ operator: '=' })
+                        && ref.parentPath.parentPath.node.left === par) exp++;
+                }
+            }
+            let target = null;
+            if (req >= mod && req >= exp && req > 0) target = 'require';
+            else if (mod >= exp && mod > 0) target = 'module';
+            else if (exp > 0) target = 'exports';
+            if (target && !taken.has(target)) { wanted[name] = target; taken.add(target); }
+        }
+        for (const [oldN, newN] of Object.entries(wanted)) {
+            if (oldN !== newN && !fnPath.scope.hasBinding(newN)) { fnPath.scope.rename(oldN, newN); stats.param = (stats.param || 0) + 1; }
+        }
+        p.skip();
+    },
+});
+
 const out = generate(ast, { comments: false, compact: false, concise: false, retainLines: false }).code;
-console.log(`AST变换: 折叠${stats.fold} 死分支${stats.deadBranch} hex${stats.hex} 死别名${stats.deadAlias} 死函数${stats.deadFn} 布尔${stats.bool} undef${stats.undef} 点属性${stats.dot}`);
+console.log(`AST变换: 折叠${stats.fold} 死分支${stats.deadBranch} hex${stats.hex} 死别名${stats.deadAlias} 死函数${stats.deadFn} 布尔${stats.bool} undef${stats.undef} 点属性${stats.dot} 参数重命名${stats.param || 0}`);
 
 fs.mkdirSync(path.dirname(outPath), { recursive: true });
 fs.writeFileSync(outPath, out);

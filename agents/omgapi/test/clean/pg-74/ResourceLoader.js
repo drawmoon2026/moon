@@ -1,19 +1,19 @@
 // module: ResourceLoader
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function ResourceLoader(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function ResourceLoader(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "517d1jsi4lLyboQPLjM/Od/", "ResourceLoader")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m), I.LoaderType = undefined;
+    Object.defineProperty(exports, "__esModule", m), exports.LoaderType = undefined;
     var B,
-      X = F("RetryHandler"),
-      Z = F("ResRC"),
-      T = F("ResourceQualifierHelper");
+      X = require("RetryHandler"),
+      Z = require("ResRC"),
+      T = require("ResourceQualifierHelper");
     (function (C) {
       C[C.CUSTOM = -1] = "CUSTOM";
-    })(B = I.LoaderType || (I.LoaderType = {}));
+    })(B = exports.LoaderType || (exports.LoaderType = {}));
     var M = function () {
       function C() {
         {
@@ -138,7 +138,7 @@ function ResourceLoader(F, j, I) {
         }
       }, C;
     }();
-    I.default = M, cc._RF.pop();
+    exports.default = M, cc._RF.pop();
   }
 }
 module.exports = ResourceLoader;

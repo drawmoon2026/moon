@@ -1,17 +1,17 @@
 // module: NormalPrizeDecorator
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function NormalPrizeDecorator(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function NormalPrizeDecorator(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "106e2xHvchPlqWVXmeFLDHr", "NormalPrizeDecorator")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m);
-    var B = F("SlotGameConstants"),
-      X = F("SlotAnalyticsEnum"),
-      Z = F("AutoSpinHandler"),
-      T = F("ButtonHitTest"),
-      M = F("JakeSlotGameTemplate"),
+    Object.defineProperty(exports, "__esModule", m);
+    var B = require("SlotGameConstants"),
+      X = require("SlotAnalyticsEnum"),
+      Z = require("AutoSpinHandler"),
+      T = require("ButtonHitTest"),
+      M = require("JakeSlotGameTemplate"),
       C = function () {
         function V(N, q) {
           this.name = "Normal Prize Decorator", this.dataSource = undefined, this.generalControllers = undefined, this.dataSource = N, this.generalControllers = q.generalControllers;
@@ -34,7 +34,7 @@ function NormalPrizeDecorator(F, j, I) {
           Z.exitAutoSpin(N.spinButtonController), this.clearAvailableActions(), q.disableButton();
         }, V;
       }();
-    I.default = C, cc._RF.pop();
+    exports.default = C, cc._RF.pop();
   }
 }
 module.exports = NormalPrizeDecorator;

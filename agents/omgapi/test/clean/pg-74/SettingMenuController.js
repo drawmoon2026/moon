@@ -1,17 +1,17 @@
 // module: SettingMenuController
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function SettingMenuController(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function SettingMenuController(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "fba916JMWpJiL2n5fnfp4nN", "SettingMenuController")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m), I.SettingMenuController = undefined;
-    var B = F("CanvasResizeBroadcaster"),
-      X = F("HitPassThrough"),
-      Z = F("Utils"),
-      T = F("UIAppearanceHelper"),
-      M = F("BVFramework"),
+    Object.defineProperty(exports, "__esModule", m), exports.SettingMenuController = undefined;
+    var B = require("CanvasResizeBroadcaster"),
+      X = require("HitPassThrough"),
+      Z = require("Utils"),
+      T = require("UIAppearanceHelper"),
+      M = require("BVFramework"),
       C = cc._decorator,
       V = C.ccclass,
       N = C.property,
@@ -257,7 +257,7 @@ function SettingMenuController(F, j, I) {
           K && (this.settingToastLayout.horizontalDirection = cc.Layout.HorizontalDirection.RIGHT_TO_LEFT);
         }, __decorate([N(cc.Node)], g.prototype, "blackTintBackground", undefined), __decorate([N(cc.Node)], g.prototype, "dimBackground", undefined), __decorate([N(cc.Node)], g.prototype, "subControllerHolder", undefined), __decorate([N(cc.Node)], g.prototype, "menusLayerHolder", undefined), __decorate([N(cc.Node)], g.prototype, "defaultMenuLayerNode", undefined), __decorate([N(cc.Node)], g.prototype, "moreMenuLayerNode", undefined), __decorate([N(cc.Node)], g.prototype, "subControllerBG", undefined), __decorate([N(cc.Node)], g.prototype, "settingInfoFooterFrontHolder", undefined), __decorate([N(cc.Node)], g.prototype, "settingInfoFooterMiddleBottomHolder", undefined), __decorate([N(cc.Node)], g.prototype, "settingInfoFooterBottomHolder", undefined), __decorate([N(cc.Node)], g.prototype, "walletButtonSensor", undefined), __decorate([N(X.default)], g.prototype, "hitPassThroughComponent", undefined), __decorate([N(cc.Node)], g.prototype, "settingToast", undefined), __decorate([N(cc.Node)], g.prototype, "settingToastBg", undefined), __decorate([N(cc.Layout)], g.prototype, "settingToastLayout", undefined), __decorate([N(cc.Label)], g.prototype, "settingToastLabel", undefined), __decorate([N(cc.Sprite)], g.prototype, "settingTurboSprite", undefined), __decorate([N(cc.SpriteFrame)], g.prototype, "settingTurboOnSprite", undefined), __decorate([N(cc.SpriteFrame)], g.prototype, "settingTurboOffSprite", undefined), __decorate([N(cc.Node)], g.prototype, "featureBuyToast", undefined), __decorate([N(cc.Node)], g.prototype, "featureBuyToastBg", undefined), __decorate([N(cc.Layout)], g.prototype, "featureBuyToastLayout", undefined), __decorate([N(cc.RichText)], g.prototype, "featureBuyToastLabel", undefined), __decorate([N(cc.Sprite)], g.prototype, "featureBuyTurboSprite", undefined), __decorate([N(cc.Node)], g.prototype, "reminderBoard", undefined), __decorate([N(cc.Label)], g.prototype, "originalBetAmountLabel", undefined), __decorate([N(cc.Label)], g.prototype, "reminderBoardLabel", undefined), __decorate([N([cc.Node])], g.prototype, "holders", undefined), __decorate([N(cc.Node)], g.prototype, "muteIcon", undefined), __decorate([N(cc.Node)], g.prototype, "settingMenuUIBlock", undefined), __decorate([V], g);
       }(cc.Component);
-    I.SettingMenuController = q, cc._RF.pop();
+    exports.SettingMenuController = q, cc._RF.pop();
   }
 }
 module.exports = SettingMenuController;

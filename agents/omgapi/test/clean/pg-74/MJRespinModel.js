@@ -1,13 +1,13 @@
 // module: MJRespinModel
-// Cocos 模块函数,参数 (require, module, exports) = (F, c, j)
-function MJRespinModel(F, c, j) {
+// Cocos 模块函数,参数 (require, module, exports) = (F, c, exports)
+function MJRespinModel(F, c, exports) {
   'use strict';
 
   if (!cc._RF.push(c, "9c956QVm3NCx7e8Kl12bb94", "MJRespinModel")) {
     {
       var I = {};
       I.value = true;
-      Object.defineProperty(j, "__esModule", I);
+      Object.defineProperty(exports, "__esModule", I);
       var m = function () {
         {
           function B(X) {
@@ -48,7 +48,7 @@ function MJRespinModel(F, c, j) {
           }), B;
         }
       }();
-      j.default = m, cc._RF.pop();
+      exports.default = m, cc._RF.pop();
     }
   }
 }

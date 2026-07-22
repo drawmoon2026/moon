@@ -1,12 +1,12 @@
 // module: Button
-// Cocos 模块函数,参数 (require, module, exports) = (j, I, m)
-function Button(j, I, m) {
+// Cocos 模块函数,参数 (require, module, exports) = (j, I, exports)
+function Button(j, I, exports) {
   'use strict';
 
   if (!cc._RF.push(I, "0a573tIV9xKS4qfPLe+tVuo", "Button")) {
     var B = {};
     B.value = true;
-    Object.defineProperty(m, "__esModule", B);
+    Object.defineProperty(exports, "__esModule", B);
     var X = {};
     X.Hs = "_transitionFinished";
     X.Os = "_fromColor";
@@ -47,7 +47,7 @@ function Button(j, I, m) {
           N.prototype.ks.call(this, f);
         }, __decorate([C(cc.Boolean)], q.prototype, "targetCascadeOpacity", undefined), __decorate([M], q);
       }(cc.Button);
-    m.default = V, cc._RF.pop();
+    exports.default = V, cc._RF.pop();
   }
 }
 module.exports = Button;

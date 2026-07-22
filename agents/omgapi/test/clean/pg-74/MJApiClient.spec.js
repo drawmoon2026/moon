@@ -1,11 +1,11 @@
 // module: MJApiClient.spec
-// Cocos 模块函数,参数 (require, module, exports) = (F, c, j)
-function MJApiClient_spec(F, c, j) {
+// Cocos 模块函数,参数 (require, module, exports) = (F, c, exports)
+function MJApiClient_spec(F, c, exports) {
   'use strict';
 
   var I = {};
   I.value = true;
-  cc._RF.push(c, "e2193AMdIRKpZ1efc2tlFBb", "MJApiClient.spec") || (Object.defineProperty(j, "__esModule", I), j.onRequestSent = j.onRequestReceived = undefined, j.onRequestReceived = function (m, B) {
+  cc._RF.push(c, "e2193AMdIRKpZ1efc2tlFBb", "MJApiClient.spec") || (Object.defineProperty(exports, "__esModule", I), exports.onRequestSent = exports.onRequestReceived = undefined, exports.onRequestReceived = function (m, B) {
     {
       var X = System.get("automation") && System.get("automation").GameData;
       var Z = {};
@@ -13,7 +13,7 @@ function MJApiClient_spec(F, c, j) {
       Z.result = B;
       X && X.emit("RequestReceived", Z);
     }
-  }, j.onRequestSent = function () {
+  }, exports.onRequestSent = function () {
     {
       var m = System.get("automation") && System.get("automation").GameData;
       m && m.emit("RequestSent");

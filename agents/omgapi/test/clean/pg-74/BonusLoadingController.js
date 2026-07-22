@@ -1,16 +1,16 @@
 // module: BonusLoadingController
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function BonusLoadingController(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function BonusLoadingController(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "4e73fN1PSVGTpZlJtvO3hpI", "BonusLoadingController")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m);
-    var B = F("AudioManager"),
-      X = F("AudioConstant"),
-      Z = F("Utils"),
-      T = F("SpaceBarInterrupter"),
+    Object.defineProperty(exports, "__esModule", m);
+    var B = require("AudioManager"),
+      X = require("AudioConstant"),
+      Z = require("Utils"),
+      T = require("SpaceBarInterrupter"),
       M = cc._decorator,
       C = M.ccclass,
       V = M.property,
@@ -109,7 +109,7 @@ function BonusLoadingController(F, j, I) {
           g.active = false, g.opacity = 0, g.setScale(0), g.stopAllActions(), this.hoverEffectNode.stopAllActions(), this.hoverEffectNode.setScale(0), this.hoverEffectNode.opacity = 0, this.backgroundNode.stopAllActions(), this.backgroundNode.scale = 2.5, this.particleEffectNode.stopAllActions(), this.particleEffectNode.scale = 2.5, this.startButtonNode.stopAllActions(), this.startButtonNode.scale = 0, this.startButtonNode.active = false, this.loadingNode.stopAllActions(), this.loadingNode.opacity = 0, this.loadingNode.active = false, this.numberDisplayController.clear(), this.content.stopAllActions(), this.content.active = false;
         }, __decorate([V(cc.Node)], f.prototype, "content", undefined), __decorate([V(cc.Node)], f.prototype, "backgroundNode", undefined), __decorate([V(cc.Node)], f.prototype, "particleEffectNode", undefined), __decorate([V(cc.Node)], f.prototype, "numberDisplayHolderNode", undefined), __decorate([V(cc.Node)], f.prototype, "freeSpinWonTextNode", undefined), __decorate([V(cc.Sprite)], f.prototype, "startTextSprite", undefined), __decorate([V(cc.Node)], f.prototype, "loadingNode", undefined), __decorate([V(cc.Node)], f.prototype, "loadingPercentNode", undefined), __decorate([V(cc.Node)], f.prototype, "hoverEffectNode", undefined), __decorate([V(cc.Sprite)], f.prototype, "freeSpinTextSprite", undefined), __decorate([V(cc.Sprite)], f.prototype, "featureLoadingSprite", undefined), __decorate([V(cc.Node)], f.prototype, "startButtonNode", undefined), __decorate([V(cc.Node)], f.prototype, "collectHoverNode", undefined), __decorate([V(cc.Node)], f.prototype, "numberDisplayNode", undefined), __decorate([C], f);
       }(cc.Component);
-    I.default = N, cc._RF.pop();
+    exports.default = N, cc._RF.pop();
   }
 }
 module.exports = BonusLoadingController;

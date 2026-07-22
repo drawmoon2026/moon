@@ -1,19 +1,19 @@
 // module: MJSpinButtonController
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function MJSpinButtonController(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function MJSpinButtonController(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "fc305nPiU5MQIPHHh+18pG0", "MJSpinButtonController")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m);
-    var B = F("SpinButtonController"),
-      X = F("AudioManager"),
-      Z = F("AudioConstant"),
-      T = F("AutomationDecorator"),
-      M = F("SpinButtonViewController.spec"),
-      C = F("SlotAnalyticsEnum"),
-      V = F("ButtonHitTest"),
+    Object.defineProperty(exports, "__esModule", m);
+    var B = require("SpinButtonController"),
+      X = require("AudioManager"),
+      Z = require("AudioConstant"),
+      T = require("AutomationDecorator"),
+      M = require("SpinButtonViewController.spec"),
+      C = require("SlotAnalyticsEnum"),
+      V = require("ButtonHitTest"),
       N = cc._decorator,
       q = N.ccclass,
       g = N.property,
@@ -135,7 +135,7 @@ function MJSpinButtonController(F, j, I) {
           'func': M.setSpinButtonInteractivity
         })], x.prototype, "_setSpinButtonInteractive", null), __decorate([q], x);
       }(B.default);
-    I.default = K, cc._RF.pop();
+    exports.default = K, cc._RF.pop();
   }
 }
 module.exports = MJSpinButtonController;

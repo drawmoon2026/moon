@@ -1,13 +1,13 @@
 // module: ListView
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function ListView(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function ListView(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "3d710qNmRNP1LLRNNBcLNnF", "ListView")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m);
-    var B = F("ListViewEnum"),
+    Object.defineProperty(exports, "__esModule", m);
+    var B = require("ListViewEnum"),
       X = cc._decorator,
       Z = X.ccclass,
       T = X.property,
@@ -574,7 +574,7 @@ function ListView(F, j, I) {
           }, __decorate([T(cc.Node)], l.prototype, "view", undefined), __decorate([T(cc.Widget)], l.prototype, "contentWidget", undefined), __decorate([Z], l);
         }
       }(cc.ScrollView);
-    I.default = M, cc._RF.pop();
+    exports.default = M, cc._RF.pop();
   }
   function C(N) {
     return N.y - N.height * N.anchorY + N.height;

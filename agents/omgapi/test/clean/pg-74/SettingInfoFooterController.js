@@ -1,25 +1,25 @@
 // module: SettingInfoFooterController
-// Cocos 模块函数,参数 (require, module, exports) = (F, j, I)
-function SettingInfoFooterController(F, j, I) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, j, exports)
+function SettingInfoFooterController(require, j, exports) {
   'use strict';
 
   if (!cc._RF.push(j, "06e65rpYzVNHbDR0e2vljl/", "SettingInfoFooterController")) {
     var m = {};
     m.value = true;
-    Object.defineProperty(I, "__esModule", m), I.SettingInfoFooterController = I.ICON_FOOTER_TYPE = I.WALLET_FOOTER_TYPE = undefined;
+    Object.defineProperty(exports, "__esModule", m), exports.SettingInfoFooterController = exports.ICON_FOOTER_TYPE = exports.WALLET_FOOTER_TYPE = undefined;
     var B,
-      X = F("Utils"),
-      Z = F("UIAppearanceHelper"),
+      X = require("Utils"),
+      Z = require("UIAppearanceHelper"),
       T = cc._decorator,
       M = T.ccclass,
       C = T.property;
     (function (N) {
       N[N.CASH = 1] = "CASH", N[N.FREE_GAME = 2] = "FREE_GAME", N[N.BONUS = 3] = "BONUS", N[N.POINT = 4] = "POINT";
-    })(B = I.WALLET_FOOTER_TYPE || (I.WALLET_FOOTER_TYPE = {})), function (N) {
+    })(B = exports.WALLET_FOOTER_TYPE || (exports.WALLET_FOOTER_TYPE = {})), function (N) {
       {
         N[N.SPIN = 2] = "SPIN", N[N.ROLL_OVER = 3] = "ROLL_OVER";
       }
-    }(I.ICON_FOOTER_TYPE || (I.ICON_FOOTER_TYPE = {}));
+    }(exports.ICON_FOOTER_TYPE || (exports.ICON_FOOTER_TYPE = {}));
     var V = function (N) {
       {
         function q() {
@@ -185,7 +185,7 @@ function SettingInfoFooterController(F, j, I) {
         }, __decorate([C(cc.Node)], q.prototype, "background", undefined), __decorate([C(cc.Node)], q.prototype, "balanceNode", undefined), __decorate([C(cc.Label)], q.prototype, "customLeftFooterTitle", undefined), __decorate([C(cc.Node)], q.prototype, "balanceValueNode", undefined), __decorate([C(cc.Node)], q.prototype, "rightSlotNode", undefined), __decorate([C(cc.Node)], q.prototype, "winValueNode", undefined), __decorate([C(cc.Node)], q.prototype, "winHolderNode", undefined), __decorate([C(cc.Sprite)], q.prototype, "winCashIconNode", undefined), __decorate([C(cc.Button)], q.prototype, "winButton", undefined), __decorate([C(cc.Node)], q.prototype, "totalWinNode", undefined), __decorate([C(cc.Node)], q.prototype, "totalWinValueNode", undefined), __decorate([C(cc.Node)], q.prototype, "freeGamesNode", undefined), __decorate([C(cc.Sprite)], q.prototype, "specialIcon", undefined), __decorate([C(cc.Label)], q.prototype, "freeSpinValue", undefined), __decorate([C(cc.Button)], q.prototype, "walletButton", undefined), __decorate([C(cc.Node)], q.prototype, "walletButtonSensor", undefined), __decorate([C(cc.Node)], q.prototype, "walletNavigateIcon", undefined), __decorate([C(cc.Node)], q.prototype, "walletNotificationIcon", undefined), __decorate([C(cc.Label)], q.prototype, "betAmountLabel", undefined), __decorate([C(cc.Button)], q.prototype, "betOptionsButton", undefined), __decorate([C(cc.Node)], q.prototype, "betOptionsIcon", undefined), __decorate([C([cc.SpriteFrame])], q.prototype, "walletFooterTypeSFList", undefined), __decorate([C([cc.SpriteFrame])], q.prototype, "rewardFooterTypeSFList", undefined), __decorate([C(cc.Node)], q.prototype, "maxBetButtonHolder", undefined), __decorate([C([cc.Layout])], q.prototype, "languageSensitiveLayoutList", undefined), __decorate([M], q);
       }
     }(cc.Component);
-    I.SettingInfoFooterController = V, cc._RF.pop();
+    exports.SettingInfoFooterController = V, cc._RF.pop();
   }
 }
 module.exports = SettingInfoFooterController;

@@ -1,13 +1,13 @@
 // module: SymbolPayoutPanelGenerator
-// Cocos 模块函数,参数 (require, module, exports) = (F, c, j)
-function SymbolPayoutPanelGenerator(F, c, j) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, c, exports)
+function SymbolPayoutPanelGenerator(require, c, exports) {
   'use strict';
 
   if (!cc._RF.push(c, "b4807S7wZxNyKaQIPwkQNfI", "SymbolPayoutPanelGenerator")) {
     var I = {};
     I.value = true;
-    Object.defineProperty(j, "__esModule", I), j.regeneratePanel = j.getButtonList = j.getButtonComponentList = j.getButtonControllerList = j.generatePanel = j.symbolPayoutPanelGenerator = undefined;
-    var m = F("ButtonController"),
+    Object.defineProperty(exports, "__esModule", I), exports.regeneratePanel = exports.getButtonList = exports.getButtonComponentList = exports.getButtonControllerList = exports.generatePanel = exports.symbolPayoutPanelGenerator = undefined;
+    var m = require("ButtonController"),
       B = function () {
         {
           function X() {
@@ -66,7 +66,7 @@ function SymbolPayoutPanelGenerator(F, c, j) {
           }, X;
         }
       }();
-    j.default = B, j.symbolPayoutPanelGenerator = new B(), j.generatePanel = j.symbolPayoutPanelGenerator.generatePanel.bind(j.symbolPayoutPanelGenerator), j.getButtonControllerList = j.symbolPayoutPanelGenerator.getButtonControllerList.bind(j.symbolPayoutPanelGenerator), j.getButtonComponentList = j.symbolPayoutPanelGenerator.getButtonComponentList.bind(j.symbolPayoutPanelGenerator), j.getButtonList = j.symbolPayoutPanelGenerator.getButtonList.bind(j.symbolPayoutPanelGenerator), j.regeneratePanel = j.symbolPayoutPanelGenerator.regeneratePanel.bind(j.symbolPayoutPanelGenerator), cc._RF.pop();
+    exports.default = B, exports.symbolPayoutPanelGenerator = new B(), exports.generatePanel = exports.symbolPayoutPanelGenerator.generatePanel.bind(exports.symbolPayoutPanelGenerator), exports.getButtonControllerList = exports.symbolPayoutPanelGenerator.getButtonControllerList.bind(exports.symbolPayoutPanelGenerator), exports.getButtonComponentList = exports.symbolPayoutPanelGenerator.getButtonComponentList.bind(exports.symbolPayoutPanelGenerator), exports.getButtonList = exports.symbolPayoutPanelGenerator.getButtonList.bind(exports.symbolPayoutPanelGenerator), exports.regeneratePanel = exports.symbolPayoutPanelGenerator.regeneratePanel.bind(exports.symbolPayoutPanelGenerator), cc._RF.pop();
   }
 }
 module.exports = SymbolPayoutPanelGenerator;

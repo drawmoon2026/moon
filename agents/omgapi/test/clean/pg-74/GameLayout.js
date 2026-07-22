@@ -1,6 +1,6 @@
 // module: GameLayout
-// Cocos 模块函数,参数 (require, module, exports) = (q, f, h)
-function GameLayout(q, f, h) {
+// Cocos 模块函数,参数 (require, module, exports) = (q, f, exports)
+function GameLayout(q, f, exports) {
   'use strict';
 
   var g = {};
@@ -46,6 +46,6 @@ function GameLayout(q, f, h) {
   y.uiSettingMenu = b;
   y.uiTotalWinFreeSpace = U;
   y.uiBigWinFreeSpace = Y;
-  cc._RF.push(f, "f46a9HjFHhBZLGf1Q6Olvfz", "GameLayout") || (Object.defineProperty(h, "__esModule", g), h.gameLayout = undefined, h.gameLayout = y, cc._RF.pop());
+  cc._RF.push(f, "f46a9HjFHhBZLGf1Q6Olvfz", "GameLayout") || (Object.defineProperty(exports, "__esModule", g), exports.gameLayout = undefined, exports.gameLayout = y, cc._RF.pop());
 }
 module.exports = GameLayout;

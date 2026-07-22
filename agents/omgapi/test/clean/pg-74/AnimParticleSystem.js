@@ -1,10 +1,10 @@
 // module: AnimParticleSystem
-// Cocos 模块函数,参数 (require, module, exports) = (j, I, m)
-function AnimParticleSystem(j, I, m) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, module, exports)
+function AnimParticleSystem(require, module, exports) {
   'use strict';
 
-  if (!cc._RF.push(I, "3142aQR/shASo2uVaU35yUL", "AnimParticleSystem")) {
-    m.__esModule = true, m.default = undefined;
+  if (!cc._RF.push(module, "3142aQR/shASo2uVaU35yUL", "AnimParticleSystem")) {
+    exports.__esModule = true, exports.default = undefined;
     var B = {};
     B.LINEAR = 0;
     B.GRAVITY = 1;
@@ -43,7 +43,7 @@ function AnimParticleSystem(j, I, m) {
     X.EaseBounceIn = 31;
     X.EaseBounceOut = 32;
     X.EaseBounceInOut = 33;
-    var Z = j("AnimParticleSystemUtils"),
+    var Z = require("AnimParticleSystemUtils"),
       T = cc.Enum(B),
       M = [undefined, {
         'proto': cc.easeIn,
@@ -604,7 +604,7 @@ function AnimParticleSystem(j, I, m) {
           g > -1 && f.splice(g, 1), this.nodePool.put(q);
         }
       });
-    m.default = N, I.exports = m.default, cc._RF.pop();
+    exports.default = N, module.exports = exports.default, cc._RF.pop();
   }
 }
 module.exports = AnimParticleSystem;

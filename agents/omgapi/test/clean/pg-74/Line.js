@@ -1,13 +1,13 @@
 // module: Line
-// Cocos 模块函数,参数 (require, module, exports) = (Q, F, c)
-function Line(Q, F, c) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, F, exports)
+function Line(require, F, exports) {
   'use strict';
 
   if (!cc._RF.push(F, "fbd9fUvpvVLs5ubCe3O9Csy", "Line")) {
     {
-      c.__esModule = true, c.Line = undefined;
+      exports.__esModule = true, exports.Line = undefined;
       var j,
-        I = (j = Q("LineController")) && j.__esModule ? j : {
+        I = (j = require("LineController")) && j.__esModule ? j : {
           'default': j
         },
         m = {
@@ -63,7 +63,7 @@ function Line(Q, F, c) {
             T.animtionLoop = B, T.animationInverted = X, T.setCallbackForAnimationFinish(Z), T.startAnimation();
           }
         };
-      c.Line = m, cc._RF.pop();
+      exports.Line = m, cc._RF.pop();
     }
   }
 }

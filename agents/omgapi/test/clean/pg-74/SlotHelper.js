@@ -1,25 +1,25 @@
 // module: SlotHelper
-// Cocos 模块函数,参数 (require, module, exports) = (j, I, m)
-function SlotHelper(j, I, m) {
+// Cocos 模块函数,参数 (require, module, exports) = (require, I, exports)
+function SlotHelper(require, I, exports) {
   'use strict';
 
   if (!cc._RF.push(I, "f967cJUpgBPeZxa4E081RBj", "SlotHelper")) {
     var B = {};
     B.value = true;
-    Object.defineProperty(m, "__esModule", B), m.SlotState = undefined;
+    Object.defineProperty(exports, "__esModule", B), exports.SlotState = undefined;
     var X,
-      Z = j("SlotItem"),
-      T = j("SlotItemPool"),
-      M = j("SlotItemHandler"),
-      C = j("SlotDataHandler"),
-      V = j("BaseScroller"),
-      N = j("DefaultStartScroller"),
-      q = j("DefaultStopScroller");
+      Z = require("SlotItem"),
+      T = require("SlotItemPool"),
+      M = require("SlotItemHandler"),
+      C = require("SlotDataHandler"),
+      V = require("BaseScroller"),
+      N = require("DefaultStartScroller"),
+      q = require("DefaultStopScroller");
     (function (x) {
       {
         x[x.IDLE = 0] = "IDLE", x[x.START = 1] = "START", x[x.STOP = 2] = "STOP";
       }
-    })(X = m.SlotState || (m.SlotState = {}));
+    })(X = exports.SlotState || (exports.SlotState = {}));
     var g = {};
     g.spinType = undefined;
     g.reelData = undefined;
@@ -298,7 +298,7 @@ function SlotHelper(j, I, m) {
         }, x;
       }
     }();
-    m.default = O, cc._RF.pop();
+    exports.default = O, cc._RF.pop();
   }
 }
 module.exports = SlotHelper;
