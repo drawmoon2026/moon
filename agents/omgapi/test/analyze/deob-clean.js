@@ -14,7 +14,8 @@ const path = require('path');
 const beautify = require('js-beautify').js;
 
 const src = fs.readFileSync(process.argv[2], 'utf8');
-const outPath = process.argv[3] || 'analyze/deob/clean.js';
+// 清晰代码是产物,放项目 clean/ 目录(不藏在临时/gitignore 的 deob 里)
+const outPath = process.argv[3] || path.join(__dirname, '..', 'clean', 'clean.js');
 
 // 提取 function R(){...}
 function extractFn(name) {
@@ -62,6 +63,6 @@ let pretty;
 try { pretty = beautify(out, { indent_size: 2, max_preserve_newlines: 2, brace_style: 'collapse' }); }
 catch (e) { console.log('格式化跳过(' + e.message + '),输出未格式化'); pretty = out; }
 
-fs.mkdirSync('analyze/deob', { recursive: true });
+fs.mkdirSync(path.dirname(outPath), { recursive: true });
 fs.writeFileSync(outPath, pretty);
 console.log(`替换 ${replaced} 处 → ${outPath} (${(pretty.length / 1e6).toFixed(1)}MB, ${pretty.split('\n').length} 行)`);
