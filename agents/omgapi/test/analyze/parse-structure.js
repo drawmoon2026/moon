@@ -14,13 +14,34 @@ const { deriveLayout } = require('./lib-layout');
 const jsPath = process.argv[2];
 const spinDir = process.argv[3];
 
-// ── 从 JS 提取特性(类名/常量名是反混淆后的明文标识)──
-let features = {};
+// ── 从 JS 提取特性 ──
+// 首选:拆出的模块名(_index.json)—— 每个机制一个独立模块,名字明文,最可靠。
+// 退回:在清晰代码里正则(不如模块名可靠)。
+let features = {}, featureSource = 'none';
 let symbolsFromJs = { scatter_index: null, wild_index: null };
-if (jsPath && fs.existsSync(jsPath)) {
+
+// 找模块索引:clean/pg-74.clean.js → clean/pg-74/_index.json
+let idxPath = null;
+if (jsPath) {
+    const cand = jsPath.replace(/\.clean\.js$/, '').replace(/\.js$/, '') + '/_index.json';
+    if (fs.existsSync(cand)) idxPath = cand;
+}
+if (idxPath) {
+    const names = require(path.resolve(idxPath)).modules.map(m => m.name);
+    const any = (re) => names.some(n => re.test(n));
+    features = {
+        free_spin: any(/FreeSpin/i),
+        respin_or_hold: any(/Respin|StickyWild|HoldAndSpin|lockReel/i),
+        scatter: any(/Scatter/i),
+        wild: any(/Wild/i),
+        multiplier: any(/Multiplier/i),
+        bonus: any(/Bonus/i),
+    };
+    featureSource = 'module-names';
+    features._evidence = names.filter(n => /FreeSpin|Respin|Scatter|Wild|Multiplier|Bonus/i.test(n)).slice(0, 8);
+} else if (jsPath && fs.existsSync(jsPath)) {
     const js = fs.readFileSync(jsPath, 'utf8');
     const has = (re) => re.test(js);
-    // 特性从 JS 类名(明文可靠);注意别用泛词(如 'cascade' 会误命中 Cocos 的 targetCascadeOpacity)
     features = {
         free_spin: has(/FreeSpin(Controller|GameState|Model)/i),
         respin_or_hold: has(/ReSpinController|StickyWild|HoldAndSpin|lockReel/i),
@@ -29,7 +50,11 @@ if (jsPath && fs.existsSync(jsPath)) {
         multiplier: has(/MultiplierBoardController|MultiplierItem/i),
         bonus: has(/BonusGame|isBonusGameMode|BonusFreeSpin/i),
     };
-    // scatter/wild 的符号索引(如有明文数值)
+    featureSource = 'js-regex(建议先 split-modules 用模块名更准)';
+}
+// scatter/wild 的符号索引(明文数值)
+if (jsPath && fs.existsSync(jsPath)) {
+    const js = fs.readFileSync(jsPath, 'utf8');
     const sc = js.match(/SCATTER_INDE[^=]{0,6}=\s*(0x[0-9a-f]+|\d+)/i);
     const wi = js.match(/WILD_INDE[^=]{0,6}=\s*(0x[0-9a-f]+|\d+)/i);
     if (sc) symbolsFromJs.scatter_index = Number(sc[1]);
@@ -70,6 +95,7 @@ const structure = {
     grid,
     symbol_count: symbolCount,
     symbol_indices_from_js: symbolsFromJs,
+    feature_source: featureSource,
     features,
     elimination,          // 消除规则(来源:数据 ptbr;部分游戏有)
     paytable_source: 'placeholder → validate by spin rwsp',
@@ -82,6 +108,7 @@ console.log('=== 游戏结构解析 ===');
 console.log('机制:', mechanic);
 console.log('网格:', grid ? `${grid.reels}轴 × ${grid.rows_per_reel}行(可视 ${grid.visible.join('/')})` : '(无spin数据)');
 console.log('符号种类:', symbolCount, '| scatter_idx:', symbolsFromJs.scatter_index, 'wild_idx:', symbolsFromJs.wild_index);
-console.log('特性:', Object.entries(features).filter(([, v]) => v).map(([k]) => k).join(', ') || '(未解析JS)');
+console.log('特性(来源 ' + featureSource + '):', Object.entries(features).filter(([k, v]) => v === true && k !== '_evidence').map(([k]) => k).join(', ') || '(无)');
+if (features._evidence) console.log('  证据模块:', features._evidence.join(', '));
 console.log('消除规则:', elimination.has_elimination === null ? '(无数据)' : (elimination.has_elimination ? elimination.type + ' —— ' + elimination.rule : '无(如 paylines)'));
 console.log('→ analyze/inferred/structure.json');

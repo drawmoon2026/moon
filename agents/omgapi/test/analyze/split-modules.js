@@ -45,7 +45,8 @@ traverse(ast, {
         }
         const params = fn.params.map(pp => pp.name || '_').join(', ');
         const bodyCode = generate(fn.body, { comments: false, concise: false }).code;
-        const fname = safe(name).replace(/^[^A-Za-z_$]/, '_');
+        // 函数名必须是合法标识符:所有非 [A-Za-z0-9_$] 换成 _,首字符若是数字加 _
+        const fname = name.replace(/[^A-Za-z0-9_$]/g, '_').replace(/^([0-9])/, '_$1');
         const src = `// module: ${name}\n// Cocos 模块函数,参数 (require, module, exports) = (${params})\n` +
             `function ${fname}(${params}) ${bodyCode}\nmodule.exports = ${fname};\n`;
         fs.writeFileSync(path.join(outDir, safe(name) + '.js'), src);

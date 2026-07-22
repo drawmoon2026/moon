@@ -8,7 +8,9 @@
     "@babel/parser": "^8.0.4",
     "@babel/traverse": "^8.0.4",
     "@babel/types": "^8.0.4",
+    "deobfuscator": "^2.4.6",
     "js-beautify": "^2.0.3",
-    "puppeteer": "^25.3.0"
+    "puppeteer": "^25.3.0",
+    "restringer": "^2.2.0"
   }
 }

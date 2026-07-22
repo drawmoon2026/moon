@@ -11,28 +11,33 @@
 const fs = require('fs');
 const path = require('path');
 const vm = require('vm');
+const parser = require('@babel/parser');
+const traverse = require('@babel/traverse').default;
+const generate = require('@babel/generator').default;
+const t = require('@babel/types');
 const jsFull = fs.readFileSync(process.argv[2], 'utf8');
 
-// 抽出 'GameConstant': [function(V,N,q){ ... }, ...] 里的那个 function
-function extractModuleFn(src, moduleName) {
-    const key = "'" + moduleName + "'";
-    const ki = src.indexOf(key);
-    if (ki < 0) return null;
-    const fi = src.indexOf('function', ki);
-    if (fi < 0) return null;
-    const bodyStart = src.indexOf('{', fi);
-    let d = 0;
-    for (let k = bodyStart; k < src.length; k++) {
-        const c = src[k];
-        if (c === '{') d++;
-        else if (c === '}') { d--; if (d === 0) return src.slice(fi, k + 1); }
-        else if (c === "'" || c === '"' || c === '`') { const q = c; k++; while (k < src.length && src[k] !== q) { if (src[k] === '\\') k++; k++; } }
-    }
-    return null;
+// 用 AST 精确定位"PayOutData 赋值所在的模块函数"(名字无关,兼容整份清晰代码与拆出的单模块文件)。
+// getFunctionParent 拿到的是外层模块函数,不会误取内层枚举 IIFE。
+let fnNode = null;
+{
+    const ast = parser.parse(jsFull, { errorRecovery: true, sourceType: 'script' });
+    traverse(ast, {
+        AssignmentExpression(p) {
+            if (fnNode) return;
+            const left = p.node.left;
+            const isPayout = t.isMemberExpression(left) &&
+                ((t.isStringLiteral(left.property) && left.property.value === 'PayOutData') ||
+                 (t.isIdentifier(left.property) && left.property.name === 'PayOutData'));
+            if (isPayout && t.isObjectExpression(p.node.right)) {
+                const fp = p.getFunctionParent();
+                if (fp) fnNode = fp.node;
+            }
+        },
+    });
 }
-
-const fnSrc = extractModuleFn(jsFull, 'GameConstant');
-if (!fnSrc) { console.error('清晰代码里找不到 GameConstant 模块(先跑 deob-clean.js)'); process.exit(1); }
+if (!fnNode) { console.error('找不到定义 PayOutData 的模块(先跑 deob-clean.js;或此游戏非 PayOutData 结构)'); process.exit(1); }
+const fnSrc = generate(fnNode).code;
 
 // 沙箱:cc._RF.push 返回 falsy(进入定义分支);其余按需 stub。抛错也无妨,读已赋值的 exports。
 const exportsObj = {};
