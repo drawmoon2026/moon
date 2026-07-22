@@ -20,14 +20,14 @@ let symbolsFromJs = { scatter_index: null, wild_index: null };
 if (jsPath && fs.existsSync(jsPath)) {
     const js = fs.readFileSync(jsPath, 'utf8');
     const has = (re) => re.test(js);
+    // 特性从 JS 类名(明文可靠);注意别用泛词(如 'cascade' 会误命中 Cocos 的 targetCascadeOpacity)
     features = {
         free_spin: has(/FreeSpin(Controller|GameState|Model)/i),
-        respin_or_hold: has(/(re-?spin|sticky|hold.?spin|lockreel)/i),
+        respin_or_hold: has(/ReSpinController|StickyWild|HoldAndSpin|lockReel/i),
         scatter: has(/ScatterController|SCATTER_INDE/i),
         wild: has(/WildSymbolController|WILD_INDE/i),
         multiplier: has(/MultiplierBoardController|MultiplierItem/i),
         bonus: has(/BonusGame|isBonusGameMode|BonusFreeSpin/i),
-        cascade_tumble: has(/tumble|cascade|dropDown|gravity/i),
     };
     // scatter/wild 的符号索引(如有明文数值)
     const sc = js.match(/SCATTER_INDE[^=]{0,6}=\s*(0x[0-9a-f]+|\d+)/i);
@@ -36,8 +36,9 @@ if (jsPath && fs.existsSync(jsPath)) {
     if (wi) symbolsFromJs.wild_index = Number(wi[1]);
 }
 
-// ── 从 spin 数据拿网格 + 符号数 ──
+// ── 从 spin 数据拿网格 + 符号数 + 消除规则 ──
 let grid = null, symbolCount = null, mechanic = 'unknown';
+let elimination = { has_elimination: null, type: 'unknown', rule: null };
 if (spinDir && fs.existsSync(spinDir)) {
     try {
         const L = deriveLayout(spinDir);
@@ -56,6 +57,11 @@ if (spinDir && fs.existsSync(spinDir)) {
     }
     symbolCount = symSet.size;
     mechanic = hasPtbr ? 'ways-tumble' : (wpKeyed === 'payline' ? 'paylines' : 'ways');
+    // 消除规则(部分游戏有):可靠来源是数据里的 ptbr(消除位),不是 JS 类名。
+    // 有 ptbr = 中奖符号被消除→下落→补新(tumble);无 = 无消除(如 paylines)。
+    elimination = hasPtbr
+        ? { has_elimination: true, type: 'tumble', rule: '中奖符号消除 → 上方符号下落(重力) → 顶部补新符号;可再触发连续消除', verified_by: 'infer-cascade(逐步重建100%)' }
+        : { has_elimination: false, type: 'none', rule: null };
 }
 
 const structure = {
@@ -65,6 +71,7 @@ const structure = {
     symbol_count: symbolCount,
     symbol_indices_from_js: symbolsFromJs,
     features,
+    elimination,          // 消除规则(来源:数据 ptbr;部分游戏有)
     paytable_source: 'placeholder → validate by spin rwsp',
 };
 const OUT = path.join(__dirname, 'inferred');
@@ -76,4 +83,5 @@ console.log('机制:', mechanic);
 console.log('网格:', grid ? `${grid.reels}轴 × ${grid.rows_per_reel}行(可视 ${grid.visible.join('/')})` : '(无spin数据)');
 console.log('符号种类:', symbolCount, '| scatter_idx:', symbolsFromJs.scatter_index, 'wild_idx:', symbolsFromJs.wild_index);
 console.log('特性:', Object.entries(features).filter(([, v]) => v).map(([k]) => k).join(', ') || '(未解析JS)');
+console.log('消除规则:', elimination.has_elimination === null ? '(无数据)' : (elimination.has_elimination ? elimination.type + ' —— ' + elimination.rule : '无(如 paylines)'));
 console.log('→ analyze/inferred/structure.json');
