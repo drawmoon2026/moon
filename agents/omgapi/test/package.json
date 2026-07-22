@@ -4,6 +4,10 @@
   "type": "commonjs",
   "description": "moon omgapi 智能体流程测试:硬流程脚本 + 单款下载验证",
   "dependencies": {
+    "@babel/generator": "^8.0.0",
+    "@babel/parser": "^8.0.4",
+    "@babel/traverse": "^8.0.4",
+    "@babel/types": "^8.0.4",
     "js-beautify": "^2.0.3",
     "puppeteer": "^25.3.0"
   }
